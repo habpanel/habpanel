@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: HABPanel User Interface
+Bundle-SymbolicName: org.openhab.ui.habpanel
+Bundle-Version: 2.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Service-Component: OSGI-INF/*.xml
+Import-Package: javax.servlet,
+ javax.servlet.http,
+ org.openhab.ui.dashboard,
+ org.apache.commons.io,
+ org.osgi.framework,
+ org.osgi.service.component,
+ org.osgi.service.http,
+ org.slf4j
+Export-Package: org.openhab.ui.habpanel
