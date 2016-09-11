@@ -50,7 +50,7 @@ However, it is possible to export the current configuration object as a JSON obj
 
 ## Contributing
 
-HABPanel follows the standard openHAB 2's [contibution guidelines](CONTIBUTING.md) which should be followed by all contributors.
+HABPanel follows the standard openHAB 2's [contribution guidelines](CONTRIBUTING.md) which should be followed by all contributors.
 
 To start developing on HABPanel (it is assumed you have ```npm```, ```bower``` and ```gulp``` available; if not, check their respective docs):
 
