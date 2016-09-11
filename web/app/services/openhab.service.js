@@ -160,7 +160,7 @@
 
     OH2StorageService.$inject = ['OH2ServiceConfiguration', '$rootScope', '$http', '$q', 'localStorageService'];
     function OH2StorageService(OH2ServiceConfiguration, $rootScope, $http, $q, localStorageService) {
-        var SERVICE_NAME = 'org.openhab.ui.panelui';
+        var SERVICE_NAME = 'org.openhab.ui.habpanel';
 
         this.tryGetServiceConfiguration = tryGetServiceConfiguration;
         this.saveServiceConfiguration = saveServiceConfiguration;
