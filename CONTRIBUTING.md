@@ -1,18 +1,43 @@
-# Contributing to openHAB
+# Contributing to HABPanel
 
-Want to hack on openHAB? Awesome! Here are instructions to get you
-started. They are probably not perfect, please let us know if anything
-feels wrong or incomplete.
+Want to hack on HABPanel? Awesome!
+Here are instructions to get you started. They are similar to those of openHAB itself.
 
 ## Reporting Issues
 
-Please report [openHAB2 specific issues here](https://github.com/openhab/openhab2/issues), while issues that are related to the core framework should be reported in the [bugzilla of Eclipse SmartHome](https://bugs.eclipse.org/bugs/buglist.cgi?product=SmartHome&component=Core).
-Do not worry, if you are not clear, which category your issue belongs to - we will redirect you, if necessary.
+Please report [HABPanel specific issues here](https://github.com/ghys/habpanel/issues),
+while issues that are related to openHAB2 or Eclipse SmartHome should be reported in the
+[openHAB2 GitHub repository](https://github.com/openhab/openhab2/issues) or the
+[bugzilla of Eclipse SmartHome](https://bugs.eclipse.org/bugs/buglist.cgi?product=SmartHome&component=Core), respectively.
+Do not worry, if you are not clear, which category your issue belongs to - we will
+redirect you, if necessary.
 
 ## Build Environment
 
-For instructions on setting up your development environment, please
-see our dedicated [IDE setup guide](https://github.com/openhab/openhab/wiki/IDE-Setup).
+It is assumed you have ```npm```, ```bower``` and ```gulp``` available; if not,
+check their respective docs.
+
+To build the Javascript part of HABPanel, navigate to the ```web/``` subfolder, then:
+1. Run ```npm install```
+2. Run ```bower install```
+3. Run ```gulp```
+
+Files in the ```vendor/``` directory should be rebuilt with the above operations.
+(note: if adding a new dependency, never add it directly to the project,
+add it as a bower and/or npm dependency and rebuild the project using the
+instructions above! You would have to modify the targets in ```gulpfile.js``` as well)
+
+You also need to set up an openHAB development environment.
+For instructions on doing so, please refer to the [IDE setup guide](https://github.com/openhab/openhab/wiki/IDE-Setup).
+
+Once it's done:
+- Package a new version of the bundle using Maven (```mvn clean package``` or use m2e)
+- Copy the resulting ```target/org.openhab.ui.habpanel.{VERSION}.jar``` into your
+  server's ```addons``` subfolder to test it.
+
+If everything went well, push your branch to GitHub, create a pull request and request
+a merge approval - see instructions below.
+
 
 ## Contribution guidelines
 
@@ -33,7 +58,7 @@ that feature *on top of* openHAB.
 
 ### Discuss your design on the mailing list
 
-We recommend discussing your plans [in the discussion forum](https://community.openhab.org/c/openhab-2)
+We recommend discussing your plans [in the discussion forum](https://community.openhab.org/c/apps-services/habpanel)
 before starting to code - especially for more ambitious contributions.
 This gives other contributors a chance to point you in the right
 direction, give feedback on your design, and maybe point out if someone
@@ -42,7 +67,7 @@ else is working on the same thing.
 ### Create issues...
 
 Any significant improvement should be documented as [a GitHub
-issue](https://github.com/openhab/openhab2/issues?labels=enhancement&page=1&state=open) before anybody
+issue](https://github.com/ghys/habpanel/issues?labels=enhancement&page=1&state=open) before anybody
 starts working on it.
 
 ### ...but check for existing issues first!
@@ -109,8 +134,6 @@ A change requires LGTMs from an absolute majority of the maintainers of each
 component affected. For example, if a change affects `docs/` and `addons/`, it
 needs an absolute majority from the maintainers of `docs/` AND, separately, an
 absolute majority of the maintainers of `addons/`.
-
-For more details see [MAINTAINERS.md](project-orga/MAINTAINERS.md)
 
 ### Sign your work
 
@@ -185,7 +208,7 @@ There are several exceptions to the signing requirement. Currently these are:
 
 * Step 1: learn the component inside out
 * Step 2: make yourself useful by contributing code, bugfixes, support etc.
-* Step 3: volunteer on [the discussion group] (https://github.com/openhab/openhab2/issues?labels=question&page=1&state=open)
+* Step 3: volunteer on [the discussion group](https://community.openhab.org/c/apps-services/habpanel) or on [GitHub](https://github.com/ghys/habpanel/issues?labels=question&page=1&state=open)
 
 Don't forget: being a maintainer is a time investment. Make sure you will have time to make yourself available.
 You don't have to be a maintainer to make a difference on the project!
@@ -215,3 +238,23 @@ general guidelines for the community as a whole:
   people.  Please consider this before you update.  Also remember that
   nobody likes spam.
 
+## Acknowledgements
+
+HABPanel was made possible (apart from ESH and openHAB themselves, of course)
+thanks to these awesome JavaScript libraries, most notably:
+
+- [angular-atmosphere](https://github.com/spyboost/angular-atmosphere)
+- [angular-fullscreen](https://github.com/fabiobiondi/angular-fullscreen)
+- [angular-gridster](https://github.com/ManifestWebDesign/angular-gridster)
+- [angular-local-storage](https://github.com/grevory/angular-local-storage)
+- [angular-prompt](https://github.com/cgross/angular-prompt)
+- [angular-slider](https://github.com/angular-slider/angularjs-slider)
+- [angular-ui-bootstrap](https://github.com/angular-ui/bootstrap)
+- [atmosphere.js](https://github.com/Atmosphere/atmosphere-javascript)
+- [D3](https://github.com/d3/d3)
+- [ng-knob](https://github.com/RadMie/ng-knob)
+- [n3-line-chart](https://github.com/n3-charts/line-chart)
+- [sprintf.js](https://github.com/alexei/sprintf.js)
+- [iNoBounce](https://github.com/lazd/iNoBounce)
+
+Check out the ```web/bower.json``` and ```web/package.json``` files for the complete list.
