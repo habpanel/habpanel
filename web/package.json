@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "author": "Yannick Schaus",
   "description": "Dashboard user interface for openHAB",
-  "license": "MIT",
+  "license": "EPL",
   "repository": {
     "type": "git",
     "url": "https://github.com/ghys/habpanel"
