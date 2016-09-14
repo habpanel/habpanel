@@ -93,7 +93,7 @@
                 default: startDate.setTime(startDate.getTime() - 24*60*60*1000); break;
             }
 
-            $http.get('/rest/persistence/' + vm.widget.item + '?servicename=' + vm.widget.service + "&starttime=" + startDate.toISOString()).then(function (resp) {
+            $http.get('/rest/persistence/items/' + vm.widget.item + '?serviceId=' + vm.widget.service + "&starttime=" + startDate.toISOString()).then(function (resp) {
                 console.log('datapoints=' + resp.data.datapoints);
                 if (resp.data.datapoints < 1) return;
 
