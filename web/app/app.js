@@ -9,7 +9,9 @@
         'app.widgets',
         'cgPrompt',
         'LocalStorageModule',
-        'FBAngular'
+        'FBAngular',
+        'oc.lazyLoad',
+        'angular-clipboard'
     ])
     .config(['$routeProvider', 'localStorageServiceProvider', function($routeProvider, localStorageServiceProvider) {
         localStorageServiceProvider.setStorageType('localStorage');
@@ -32,6 +34,21 @@
                 resolve: {
                     dashboard: ['PersistenceService', '$route', function (persistenceService, $route) {
                         return persistenceService.getDashboard($route.current.params.id);
+                    }],
+                    codemirror: ['$ocLazyLoad', function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            'vendor/cm/lib/codemirror.css',
+                            'vendor/cm/lib/codemirror.js'
+                        ]).then(function () {
+                            return $ocLazyLoad.load([
+                                'vendor/cm/addon/fold/xml-fold.js',
+                                'vendor/cm/addon/edit/matchbrackets.js',
+                                'vendor/cm/addon/edit/matchtags.js',
+                                'vendor/cm/addon/edit/closebrackets.js',
+                                'vendor/cm/addon/edit/closetag.js',
+                                'vendor/cm/mode/xml/xml.js'
+                            ]);
+                        });
                     }]
                 }
             })
@@ -55,9 +72,34 @@
                     }]
                 }
             })
+            .when('/settings/localconfig', {
+                templateUrl: 'app/settings/settings.localconfig.html',
+                controller: 'SettingsLocalConfigCtrl',
+                controllerAs: 'vm',
+                resolve: {
+                    dashboards: ['PersistenceService', function (persistenceService) {
+                        return persistenceService.getDashboards();
+                    }],
+                    codemirror: ['$ocLazyLoad', '$timeout', function ($ocLazyLoad, $timeout) {
+                        return $ocLazyLoad.load([
+                            'vendor/cm/lib/codemirror.css',
+                            'vendor/cm/lib/codemirror.js',
+                            'vendor/cm/theme/rubyblue.css',
+                        ]).then (function () {
+                            return $ocLazyLoad.load([
+                                'vendor/cm/addon/edit/matchbrackets.js',
+                                'vendor/cm/addon/edit/closebrackets.js',
+                                'vendor/cm/mode/javascript/javascript.js'
+                            ]);
+                        })
+                    }]
+                }
+            })
             .otherwise({
                 redirectTo: '/'
             });
+
+
 
     }])
 })();

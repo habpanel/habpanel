@@ -1,21 +1,18 @@
 <div class="header">
 	<a class="btn pull-left" onclick="window.history.back()"><i class="glyphicon glyphicon-chevron-left"></i></a>
-	<a class="btn pull-left" href="#/"><i class="glyphicon glyphicon-home"></i></a>
-	<a class="btn pull-right" ng-click="vm.goFullscreen()"><i class="glyphicon glyphicon-resize-full"></i></a>
-	<a class="btn pull-right" ng-click="vm.refresh()"><i class="glyphicon glyphicon-refresh"></i></a>
 	<h2>Settings</h2>
 </div>
 
 <div class="box col-md-12">
 
     <br />    
-    <h4>Current storage configuration:</h4>
+    <h4>Current storage configuration</h4>
 
     <ul>
         <li>
             <input type="radio" ng-click="vm.switchToPanelConfig($event)" ng-model="vm.storageOption" value="(localStorage)" />&nbsp;<strong>Local storage</strong>
-            <br /><small>The configuration is saved for this browser and device only. Will remain as long as you don't clean up the browser's historical data.
-            <br /><a ng-click="vm.showLocalConfiguration()">Show local configuration object (experts only)</a></small>
+            <br /><small>The configuration is saved for this browser and device only. It will be kept as long as you don't clean up the browser's historical data.
+            <br /><a href="#/settings/localconfig">Edit the local panel configuration (experts only)</a></small>
             <br /><br />
         </li>
         <li ng-if="useRegistry" ng-repeat="(name, data) in vm.panelsRegistry">
@@ -37,4 +34,7 @@
     <br />
     <br />
 </div>
+
+<br />
+
 

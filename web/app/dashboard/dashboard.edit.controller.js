@@ -63,22 +63,6 @@ angular.module('app')
                 }
             };
 
-            // well, this is ugly... 
-            $scope.loadCss('vendor/cm/lib/codemirror.css', 'text/css');
-            $scope.loadScript('vendor/cm/lib/codemirror.js', 'text/javascript', 'utf-8');
-            $timeout(function () {
-                $scope.loadScript('vendor/cm/addon/fold/xml-fold.js', 'text/javascript', 'utf-8');
-                $scope.loadScript('vendor/cm/addon/edit/matchbrackets.js', 'text/javascript', 'utf-8');
-                $scope.loadScript('vendor/cm/addon/edit/matchtags.js', 'text/javascript', 'utf-8');
-                $scope.loadScript('vendor/cm/addon/edit/closebrackets.js', 'text/javascript', 'utf-8');
-                $scope.loadScript('vendor/cm/addon/edit/closetag.js', 'text/javascript', 'utf-8');
-                // $scope.loadScript('vendor/cm/addon/hint/show-hint.js', 'text/javascript', 'utf-8');
-                // $scope.loadScript('vendor/cm/addon/hint/xml-hint.js', 'text/javascript', 'utf-8');
-                // $scope.loadScript('vendor/cm/addon/hint/html-hint.js', 'text/javascript', 'utf-8');
-                // $scope.loadScript('vendor/cm/addon/hint/css-hint.js', 'text/javascript', 'utf-8');
-                $scope.loadScript('vendor/cm/mode/xml/xml.js', 'text/javascript', 'utf-8');
-            }, 200);
-
             $scope.clear = function() {
                 $scope.dashboard.widgets = [];
             };

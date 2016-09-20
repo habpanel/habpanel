@@ -5,9 +5,21 @@
         .module('app')
         .controller('SettingsCtrl', SettingsController);
 
-    SettingsController.$inject = ['$rootScope', 'OH2ServiceConfiguration', 'OH2StorageService', 'PersistenceService', 'prompt'];
-    function SettingsController($rootScope, OH2ServiceConfiguration, OH2StorageService, PersistenceService, prompt) {
+    SettingsController.$inject = ['$rootScope', '$timeout', 'OH2ServiceConfiguration', 'OH2StorageService', 'PersistenceService', 'prompt'];
+    function SettingsController($rootScope, $timeout, OH2ServiceConfiguration, OH2StorageService, PersistenceService, prompt) {
         var vm = this;
+
+        vm.editorOptions = {
+            lineNumbers: true,
+            matchBrackets: true,
+            autoCloseBrackets: true,
+            mode: "application/json",
+            json: true,
+            theme: "rubyblue"
+        };
+
+        vm.rawLocalConfig = JSON.stringify($rootScope.dashboards, null, 4);
+
         //vm.serviceConfiguration = OH2ServiceConfiguration;
         vm.useRegistry = $rootScope.useRegistry;
         vm.panelsRegistry = $rootScope.panelsRegistry;
@@ -49,30 +61,6 @@
             }
         };
 
-        vm.showLocalConfiguration = function () {
-            prompt({
-                title: "Show local configuration",
-                message: "This is the raw configuration object. You can use this to backup/restore your entire config by copy-pasting the JSON to or from somewhere else. Be careful though - no checks are performed here!",
-                input: true,
-                label: "Configuration JSON object",
-                value: JSON.stringify($rootScope.dashboards) 
-            }).then(function (confstr) {
-                try {
-                    var newconf = JSON.parse(confstr);
-                    // maybe add some checks here eventually
-                    angular.copy(newconf, $rootScope.dashboards);
-                    PersistenceService.saveDashboards();
-                    PersistenceService.getDashboards();
-                } catch (e) {
-                    prompt({
-                        title: "Error",
-                        message: "Configuration parsing error, nothing has been modified: " + e,
-                        buttons: [{ label:'OK', primary: true }]
-                    });
-                }
-            });
-        }
-
         activate();
 
         ////////////////
@@ -82,6 +70,10 @@
             if (OH2StorageService.getCurrentPanelConfig()) {
                 vm.storageOption = OH2StorageService.getCurrentPanelConfig();
             }
+
+            $timeout(function () {
+                vm.refreshEditor = new Date();
+            }, 200);
         }
     }
 })();

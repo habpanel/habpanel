@@ -136,7 +136,7 @@
 
         $timeout(function () {
             $scope.refreshEditor = new Date();
-        })
+        });
 
     }
 

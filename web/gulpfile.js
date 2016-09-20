@@ -51,8 +51,10 @@ gulp.task('vendor-js', function() {
         'bower_components/angularjs-slider/dist/rzslider.min.js',
         'bower_components/atmosphere.js/atmosphere.min.js',
         'bower_components/angular-atmosphere-service/service/angular-atmosphere-service.js',
+        'bower_components/angular-clipboard/angular-clipboard.js',
         'bower_components/ng-knob/dist/ng-knob.min.js',
         'bower_components/inobounce/inobounce.min.js',
+        'bower_components/oclazyload/dist/ocLazyLoad.min.js',
         'node_modules/n3-charts/build/LineChart.min.js',
         'vendor/angular-web-colorpicker.js'
     ]).pipe(concat('vendor.js')).pipe(gulp.dest('vendor'));
@@ -88,13 +90,27 @@ gulp.task('codemirror-addon-edit', function () {
     ]).pipe(uglify()).pipe(gulp.dest('vendor/cm/addon/edit'));
 });
 
-gulp.task('codemirror-mode', function () {
+gulp.task('codemirror-mode-xml', function () {
     return gulp.src([
         'bower_components/codemirror/mode/xml/xml.js'
     ]).pipe(uglify()).pipe(gulp.dest('vendor/cm/mode/xml'));
 });
 
-gulp.task('codemirror', ['codemirror-lib', 'codemirror-css', 'codemirror-addon-fold', 'codemirror-addon-edit', 'codemirror-mode'], function () {
+gulp.task('codemirror-mode-javascript', function () {
+    return gulp.src([
+        'bower_components/codemirror/mode/javascript/javascript.js'
+    ]).pipe(uglify()).pipe(gulp.dest('vendor/cm/mode/javascript'));
+});
+
+gulp.task('codemirror-theme', function () {
+    return gulp.src([
+        'bower_components/codemirror/theme/rubyblue.css'
+    ]).pipe(gulp.dest('vendor/cm/theme'));
+});
+
+gulp.task('codemirror', ['codemirror-lib', 'codemirror-css', 'codemirror-addon-fold',
+          'codemirror-addon-edit', 'codemirror-mode-xml', 'codemirror-mode-javascript',
+          'codemirror-theme'], function () {
 
 });
 

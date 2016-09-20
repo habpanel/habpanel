@@ -1,0 +1,20 @@
+<div class="header">
+	<a class="btn pull-left" onclick="window.history.back()"><i class="glyphicon glyphicon-chevron-left"></i></a>
+	<a class="btn pull-left" href="#/"><i class="glyphicon glyphicon-home"></i></a>
+	<h2>Settings</h2>
+</div>
+
+<div class="box col-md-12 localconfig">
+
+    <br />    
+    <div class="pull-right">
+        <a clipboard text="vm.rawLocalConfig" on-copied="vm.copiedToClipboard(true)" on-copied="vm.copiedToClipboard(false)" class="btn btn-default"><i class="glyphicon glyphicon-copy"></i>&nbsp;{{vm.copyLabel}}</a>
+        <a ng-click="vm.saveConfig()" class="btn btn-danger"><i class="glyphicon glyphicon-save"></i>&nbsp;{{vm.saveLabel}}</a>
+    </div>
+    <h4>Local panel configuration editor</h4>
+    <small>This is the raw configuration object. You can use this to backup/restore your entire config by copy-pasting the JSON to or from somewhere else.
+        Be careful though - no checks are performed here!</small>
+
+    <div ui-codemirror ui-refresh='vm.refreshEditor' ui-codemirror-opts="vm.editorOptions" ng-model="vm.rawLocalConfig" />
+
+</div>

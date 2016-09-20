@@ -28,7 +28,8 @@ input {
 }
 .container {
     margin: auto;
-    max-width: 1000px;
+    width: 100%;
+    /*max-width: 1000px;*/
     height: 100%;
     -webkit-overflow-scrolling: true;
 }
@@ -454,4 +455,16 @@ see http://www.makeuseof.com/wp-content/uploads/2016/07/mr-robot-heating.jpg */
 .template-nobkg {
     background: black;
     height: 100%;
+}
+
+.localconfig {
+    position: absolute;
+    top: 64px; left: 10px; width: calc(100% - 20px); height: calc(100% - 76px)
+}
+
+.localconfig .CodeMirror {
+  position: absolute;
+  top: 130px; left: 10px;
+  height: calc(100% - 150px);
+  width: calc(100% - 20px);
 }
