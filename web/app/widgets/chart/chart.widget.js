@@ -152,6 +152,18 @@
 
             });
         }
+
+
+        vm.imageQueryString = function(val) {
+            var ret = "";
+            if (vm.widget.isgroup)
+                ret = "groups=" + vm.widget.item;
+            else
+                ret = "items=" + vm.widget.item;
+
+            return ret + "&period=" + vm.widget.period;
+        }
+
     }
 
 
@@ -186,6 +198,8 @@
 
         $scope.submit = function() {
             angular.extend(widget, $scope.form);
+            var item = OHService.getItem(widget.item);
+            widget.isgroup = (item.type === "Group" || item.type === "GroupItem");
 
             $modalInstance.close(widget);
         };

@@ -48,7 +48,7 @@
 
         function getItem(name) {
             var item = $filter('filter')($rootScope.items, {name: name}, true); 
-            return (item && item.length == 1) ? item[0] : null;
+            return (item) ? item[0] : null;
         }
 
         function getItems() {

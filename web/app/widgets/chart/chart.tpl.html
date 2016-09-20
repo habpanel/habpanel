@@ -1,9 +1,9 @@
 <div class="box-content chart">
     <div class="chart-content" ng-if="vm.widget.charttype=='default'">
-        <img src="/chart?items={{vm.widget.item}}&period={{vm.widget.period}}&w={{vm.width}}&h={{vm.height}}" />
+        <img src="/chart?{{vm.imageQueryString()}}&h={{vm.height}}&w={{vm.width}}" />
     </div>
     <div class="chart-content" ng-if="vm.widget.charttype=='rrd4j'">
-        <img src="/rrdchart.png?items={{vm.widget.item}}&period={{vm.widget.period}}&w={{vm.width}}&h={{vm.height}}" />
+        <img src="/rrdchart.png?{{vm.imageQueryString()}}&h={{vm.height}}&w={{vm.width}}" />
     </div>
     <div class="chart-content" ng-if="vm.widget.charttype=='interactive'" style="height: calc(100% - 2em)">
         <linechart data="vm.datasets" options="vm.interactiveChartOptions"></linechart>
