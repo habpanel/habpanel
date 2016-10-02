@@ -38,7 +38,7 @@
                 var height = element[0].parentNode.parentNode.parentNode.style.height.replace('px', '');
                 if (scope.vm.widget.charttype === 'rrd4j') { // why?
                     scope.vm.width = sprintf("%d", width - 109);
-                    scope.vm.height = sprintf("%d", height - 78);
+                    scope.vm.height = sprintf("%d", height - 91);
                 } else if (scope.vm.widget.charttype === 'default') {
                     scope.vm.width = sprintf("%d", width - 20);
                     scope.vm.height = sprintf("%d", height - 20);
