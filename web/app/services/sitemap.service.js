@@ -77,9 +77,19 @@
                             id: widget.widgetId,
                             sizeX: 4,
                             sizeY: 4,
-                            type: 'switch',
+                            type: 'image',
                             name: widget.label,
                             url: widget.url
+                        };
+                        break;
+                    case "Webview":
+                        w = {
+                            id: widget.widgetId,
+                            sizeX: 4,
+                            sizeY: 4,
+                            type: 'frame',
+                            name: widget.label,
+                            frameUrl: widget.url
                         };
                         break;
                     case "Chart":
