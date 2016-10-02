@@ -1,11 +1,17 @@
-  angular
+angular
         .module('app')
         .controller('DashboardViewCtrl', DashboardViewController);
 
-  DashboardViewController.$inject = ['$scope', '$location', '$rootScope', '$timeout', 'dashboard', 'PersistenceService', 'OHService', 'Fullscreen'];
-  function DashboardViewController($scope, $location, $rootScope, $timeout, dashboard, PersistenceService, OHService, Fullscreen) {
+DashboardViewController.$inject = ['$scope', '$location', '$rootScope', '$timeout', 'dashboard', 'sitemappage', 'PersistenceService', 'OHService', 'SitemapTranslationService', 'Fullscreen'];
+function DashboardViewController($scope, $location, $rootScope, $timeout, dashboard, sitemappage, PersistenceService, OHService, SitemapTranslationService, Fullscreen) {
     var vm = this;
     vm.dashboard = dashboard;
+    if (sitemappage) {
+        vm.page = sitemappage.data;
+        vm.title = sitemappage.data.title;
+    } else {
+        vm.title = vm.dashboard.name;
+    }
 
     vm.gridsterOptions = {
         margins: [5, 5],
@@ -39,6 +45,18 @@
     ////////////////
 
     function activate() {
+        vm.widgets = [];
+        if (vm.dashboard.sitemap) {
+            var pagelayout = {};
+            if (vm.dashboard.pagelayouts && vm.dashboard.pagelayouts[vm.page.id])
+                pagelayout = vm.dashboard.pagelayouts[vm.page.id];
+
+            SitemapTranslationService.buildWidgetsFromSitemapPage(vm.widgets, vm.page.widgets, pagelayout);
+        } else {
+            vm.widgets = vm.dashboard.widgets;
+        }
+
+
         $timeout(function() {
             OHService.reloadItems();
         });
@@ -55,6 +73,14 @@
     };
 
     vm.toggleEdit = function() {
-        $location.url("/edit/" + dashboard.id);
+        if (vm.page) {
+            $location.url("/sitemap/edit/" + vm.dashboard.id + '/' + vm.page.id);
+        } else {
+            $location.url("/edit/" + vm.dashboard.id);
+        }
     };
-  }
+
+    vm.goToPage = function (pageid) {
+        $location.url('/sitemap/view/' + vm.dashboard.id + '/' + pageid);
+    };
+}

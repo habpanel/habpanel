@@ -1,5 +1,5 @@
 <div class="page-header controls">
-    <div uib-dropdown class="pull-right">
+    <div uib-dropdown class="pull-right" ng-if="!page">
         <button class="btn btn-default" uib-dropdown-toggle type="button" id="addWidgetMenu">
             <i class="glyphicon glyphicon-plus"></i> Add Widget
             <span class="caret"></span>
@@ -12,11 +12,12 @@
             </li>
         </ul>
     </div>
+    <a class="btn btn-danger pull-right" ng-click="resetPageLayout()"><i class="glyphicon glyphicon-floppy-remove"></i>&nbsp;Reset layout</a>
     <a class="btn" href="#/"><i class="glyphicon glyphicon-chevron-left"></i></a>
     <a class="btn btn-success" ng-click="save()"><i class="glyphicon glyphicon-save"></i>&nbsp;Save</a>
     <a class="btn btn-primary" ng-click="run()"><i class="glyphicon glyphicon-play"></i>&nbsp;Run</a>
 </div>
-<div ng-if="!dashboard.widgets.length">
+<div ng-if="!widgets.length && !page">
     <div class="pull-right">
         <h3>Add some widgets <i class="glyphicon glyphicon-arrow-up"></i></h3></div>
 </div>
@@ -26,7 +27,7 @@
 </div>
 <div gridster="gridsterOptions">
     <ul>
-        <li gridster-item="widget" ng-repeat="widget in dashboard.widgets">
+        <li gridster-item="widget" ng-repeat="widget in widgets">
             <div class="box box-design" ng-controller="CustomWidgetCtrl">
                 <div class="box-header pull-left" style="display: inline">
                     <i class="handle glyphicon glyphicon-move"></i>

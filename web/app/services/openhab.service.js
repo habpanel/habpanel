@@ -14,6 +14,8 @@
         this.onUpdate = onUpdate;
         this.sendCmd = sendCmd;
         this.reloadItems = reloadItems;
+        this.loadSitemaps = loadSitemaps;
+        this.loadSitemapPage = loadSitemapPage;
         //this.clearAllLongPollings = clearAllLongPollings;
 
         var liveUpdatesEnabled = false;
@@ -44,6 +46,21 @@
                 }
                 $rootScope.$emit('openhab-update');
             });
+        }
+
+        function loadSitemaps() {
+            $http.get('/rest/sitemaps')
+            .then(function (resp) {
+                console.log('Loaded sitemaps');
+
+                if (resp.data) {
+                    $rootScope.sitemaps = resp.data;
+                }
+            });
+        }
+
+        function loadSitemapPage(sitemap, page) {
+            return $http.get('/rest/sitemaps/' + sitemap + '/' + page);
         }
 
         function getItem(name) {

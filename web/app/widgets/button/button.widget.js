@@ -45,7 +45,9 @@
         vm.font_size = this.widget.font_size;
 
         function updateValue() {
-            vm.value = OHService.getItem(vm.widget.item).state;
+            var item = OHService.getItem(vm.widget.item);
+            if (!item) return;
+            vm.value = item.state;
             if (vm.value === vm.widget.command) {
                 vm.background = vm.widget.background_active;
                 vm.foreground = vm.widget.foreground_active;
@@ -60,6 +62,7 @@
         });
 
         vm.sendCommand = function () {
+            if (this.widget.ispagelink) return;
             OHService.sendCmd(this.widget.item, this.widget.command);
         }
 

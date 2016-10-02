@@ -5,6 +5,8 @@
             <h3>Knob Settings</h3>
         </div>
 
+        <div ng-if="page" class="alert alert-warning">Some options are disabled because they are controlled by the sitemap definition.</div>
+
         <div class="modal-body">
             <uib-tabset>
                 <uib-tab heading="General">
@@ -15,13 +17,13 @@
                             <div class="form-group" ng-class="{error: _form.name.$error && _form.submitted}">
                                 <label class="control-label col-lg-3 col-md-3">Name</label>
                                 <div class="col-lg-9 col-md-9">
-                                    <input name="name" type="text" ng-model="form.name" class="form-control" />
+                                    <input ng-disabled="page" name="name" type="text" ng-model="form.name" class="form-control" />
                                 </div>
                             </div>
                             <div class="form-group" ng-class="{error: _form.item.$error && _form.submitted}">
                                 <label class="control-label col-lg-3 col-md-3">OpenHAB Item</label>
                                 <div class="col-lg-9 col-md-9">
-                                    <select ng-model="form.item" ng-options="item.name as item.name for item in items" class="form-control"></select>
+                                    <select ng-disabled="page" ng-model="form.item" ng-options="item.name as item.name for item in items" class="form-control"></select>
                                 </div>
                             </div>
 
@@ -43,7 +45,7 @@
                                     <div class="form-group" ng-class="{error: _form.floor.$error && _form.submitted}">
                                         <label class="control-label col-xs-4">Min</label>
                                         <div class="col-xs-6">
-                                            <input name="min" type="number" ng-model="form.floor" class="form-control" />
+                                            <input ng-disabled="page" name="min" type="number" ng-model="form.floor" class="form-control" />
                                         </div>
                                     </div>
                                 </div>
@@ -51,7 +53,7 @@
                                     <div class="form-group" ng-class="{error: _form.ceil.$error && _form.submitted}">
                                         <label class="control-label col-xs-4">Max</label>
                                         <div class="col-xs-6">
-                                            <input name="max" type="number" ng-model="form.ceil" class="form-control" />
+                                            <input ng-disabled="page" name="max" type="number" ng-model="form.ceil" class="form-control" />
                                         </div>
                                     </div>
                                 </div>
@@ -59,7 +61,7 @@
                                     <div class="form-group" ng-class="{error: _form.step.$error && _form.submitted}">
                                         <label class="control-label col-xs-4">Step</label>
                                         <div class="col-xs-6">
-                                            <input name="step" type="number" step="any" ng-model="form.step" class="form-control" />
+                                            <input ng-disabled="page" name="step" type="number" step="any" ng-model="form.step" class="form-control" />
                                         </div>
                                     </div>
                                 </div>
@@ -406,7 +408,7 @@
 
 
         <div class="modal-footer">
-            <a ng-click="remove()" class="btn btn-danger pull-left" tabindex="-1"><i class="glyphicon glyphicon-trash"></i>&nbsp;Delete</a>
+            <a ng-if="!page" ng-click="remove()" class="btn btn-danger pull-left" tabindex="-1"><i class="glyphicon glyphicon-trash"></i>&nbsp;Delete</a>
             <a ng-click="dismiss()" class="btn btn-default" tabindex="-1"><i class="glyphicon glyphicon-remove"></i>&nbsp;Cancel</a>
             <button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-ok"></i>&nbsp;Save</button>
         </div>

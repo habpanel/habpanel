@@ -1,8 +1,18 @@
 angular.module('app')
-    .controller('DashboardEditCtrl', ['$scope', '$location', '$timeout', 'dashboard', 'Widgets', 'PersistenceService', 'OHService',
-        function($scope, $location, $timeout, dashboard, Widgets, PersistenceService, OHService) {
+    .controller('DashboardEditCtrl', ['$scope', '$location', '$timeout', 'prompt', 'dashboard', 'sitemappage', 'Widgets', 'PersistenceService', 'OHService', 'SitemapTranslationService',
+        function($scope, $location, $timeout, prompt, dashboard, sitemappage, Widgets, PersistenceService, OHService, SitemapTranslationService) {
 
             $scope.dashboard = dashboard;
+            if (sitemappage) {
+                $scope.page = sitemappage.data;
+                $scope.widgets = [];
+                if (!$scope.dashboard.pagelayouts) $scope.dashboard.pagelayouts = {};
+                var pagelayout = $scope.dashboard.pagelayouts[$scope.page.id];
+                SitemapTranslationService.buildWidgetsFromSitemapPage($scope.widgets, $scope.page.widgets, pagelayout);
+            } else {
+                $scope.widgets = $scope.dashboard.widgets;
+                $scope.widgetTypes = Widgets.getWidgetTypes();
+            }
 
             $scope.gridsterOptions = {
                 margins: [5, 5],
@@ -19,49 +29,6 @@ angular.module('app')
                 }
             };
 
-            $scope.widgetTypes = Widgets.getWidgetTypes();
-
-
-            $scope.loadScript = function(url, type, charset) {
-                if (type===undefined) type = 'text/javascript';
-                if (url) {
-                    var script = document.querySelector("script[src*='"+url+"']");
-                    if (!script) {
-                        var heads = document.getElementsByTagName("head");
-                        if (heads && heads.length) {
-                            var head = heads[0];
-                            if (head) {
-                                script = document.createElement('script');
-                                script.setAttribute('src', url);
-                                script.setAttribute('type', type);
-                                if (charset) script.setAttribute('charset', charset);
-                                head.appendChild(script);
-                            }
-                        }
-                    }
-                    return script;
-                }
-            };
-
-            $scope.loadCss = function(url) {
-                if (url) {
-                    var script = document.querySelector("link[href*='"+url+"']");
-                    if (!script) {
-                        var heads = document.getElementsByTagName("head");
-                        if (heads && heads.length) {
-                            var head = heads[0];
-                            if (head) {
-                                script = document.createElement('link');
-                                script.setAttribute('rel', 'stylesheet');
-                                script.setAttribute('href', url);
-                                head.appendChild(script);
-                                setTimeout(200);
-                            }
-                        }
-                    }
-                    return script;
-                }
-            };
 
             $scope.clear = function() {
                 $scope.dashboard.widgets = [];
@@ -78,6 +45,10 @@ angular.module('app')
             };
 
             $scope.save = function() {
+                if ($scope.page) {
+                    SitemapTranslationService.savePageLayoutToDashboard($scope.widgets, $scope.page, $scope.dashboard);
+                }
+
                 PersistenceService.saveDashboards().then(function () {
 
                 }, function (err) {
@@ -86,12 +57,36 @@ angular.module('app')
             };
 
             $scope.run = function() {
+                if ($scope.page) {
+                    SitemapTranslationService.savePageLayoutToDashboard($scope.widgets, $scope.page, $scope.dashboard);
+                }
+
                 PersistenceService.saveDashboards().then(function () {
-                    $location.url("/view/" + $scope.dashboard.id);
+                    if ($scope.page) {
+                        $location.url("/sitemap/view/" + $scope.dashboard.id + '/' + $scope.page.id);
+                    } else {
+                        $location.url("/view/" + $scope.dashboard.id);
+                    }
                 }, function (err) {
                     $scope.error = err;
                 });
                 
+            };
+
+            $scope.resetPageLayout = function() {
+                prompt({
+                    title: "Reset page Layout",
+                    message: "Please confirm you want to reset all widget layout customizations for this sitemap page: " + $scope.page.title,
+                }).then(function () {
+                    $scope.dashboard.pagelayouts[$scope.page.id] = {};
+                    PersistenceService.saveDashboards().then(function () {
+                        $scope.widgets = [];
+                        SitemapTranslationService.buildWidgetsFromSitemapPage($scope.widgets, $scope.page.widgets, {});
+
+                    }, function (err) {
+                        $scope.error = err;
+                    });
+                });
             };
 
             OHService.reloadItems();
