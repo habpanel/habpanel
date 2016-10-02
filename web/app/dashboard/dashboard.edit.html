@@ -12,7 +12,7 @@
             </li>
         </ul>
     </div>
-    <a class="btn btn-danger pull-right" ng-click="resetPageLayout()"><i class="glyphicon glyphicon-floppy-remove"></i>&nbsp;Reset layout</a>
+    <a ng-if="page" class="btn btn-danger pull-right" ng-click="resetPageLayout()"><i class="glyphicon glyphicon-floppy-remove"></i>&nbsp;Reset layout</a>
     <a class="btn" href="#/"><i class="glyphicon glyphicon-chevron-left"></i></a>
     <a class="btn btn-success" ng-click="save()"><i class="glyphicon glyphicon-save"></i>&nbsp;Save</a>
     <a class="btn btn-primary" ng-click="run()"><i class="glyphicon glyphicon-play"></i>&nbsp;Run</a>

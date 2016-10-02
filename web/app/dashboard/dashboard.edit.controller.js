@@ -10,6 +10,7 @@ angular.module('app')
                 var pagelayout = $scope.dashboard.pagelayouts[$scope.page.id];
                 SitemapTranslationService.buildWidgetsFromSitemapPage($scope.widgets, $scope.page.widgets, pagelayout);
             } else {
+                if (!$scope.dashboard.widgets) $scope.dashboard.widgets = [];
                 $scope.widgets = $scope.dashboard.widgets;
                 $scope.widgetTypes = Widgets.getWidgetTypes();
             }
@@ -31,11 +32,11 @@ angular.module('app')
 
 
             $scope.clear = function() {
-                $scope.dashboard.widgets = [];
+                $scope.widgets = [];
             };
 
             $scope.addWidget = function(type) {
-                $scope.dashboard.widgets.push({
+                $scope.widgets.push({
                     name: "New Widget",
                     sizeX: 4,
                     sizeY: 4,
