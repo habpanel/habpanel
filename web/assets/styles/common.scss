@@ -1,0 +1,137 @@
+html,
+body {
+  background: $body-bg;
+}
+
+// Adding `image-bg` class to html will result in
+// setting background image
+html.image-bg {
+  background-image: url("//source.unsplash.com/random");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+     -moz-background-size: cover;
+       -o-background-size: cover;
+          background-size: cover;
+}
+
+.main.container {
+  background: rgba($body-bg, 40%);
+  height: 100%;
+  position: absolute;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 300;
+  margin: 10px 0;
+}
+
+h1,
+h2 {
+  color: $widget-text-color;
+}
+
+h1 {
+  font-size: $font-size-base;
+  text-align: center;
+  line-height: 1.5;
+  padding-top: 6px;
+}
+
+.navbar {
+  padding: 0 20px;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+input {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  padding: 4px;
+}
+
+.container {
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  -webkit-overflow-scrolling: true;
+}
+
+.dash-buttons {
+  font-size: 30px;
+  margin-top: 16px;
+  margin-right: -15px;
+
+  &.pull-right {
+    margin-right: 5px;
+  }
+}
+
+.dash-edit {
+  position: absolute;
+  bottom: 5px;
+  left: 10px;
+}
+
+.dash-buttons em {
+  font-size: $font-size-small;
+  clear: both;
+}
+
+.handle {
+  cursor: move;
+}
+
+.dash-card {
+  margin: 0;
+  min-height: 100px !important;
+  width: 100%;
+  float: left;
+  overflow: hidden;
+}
+
+.dash-card h3 {
+  margin: 0 0 0 -15px;
+  padding: 15px;
+  height: 100%;
+  width: calc(100% + 30px);
+  cursor: pointer;
+}
+
+.dash-card .handle-se {
+  border-width: 0 0 3rem 3rem !important;
+  border-color: transparent transparent $widget-text-color !important;
+}
+
+.dash-card .backdrop {
+  right: 0;
+  margin: -5px;
+}
+
+.dash-card .backdrop.center {
+  left: 0 !important;
+  right: 0 !important;
+  text-align: center;
+}
+
+.tile-background {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1000;
+}
+
+.modal-header h3 {
+    margin: 0;
+}

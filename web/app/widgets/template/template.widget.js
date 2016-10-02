@@ -84,12 +84,12 @@
             }            
         }
     }
+
     TemplateWidgetController.$inject = ['$rootScope', '$scope', '$filter', 'OHService'];
     function TemplateWidgetController ($rootScope, $scope, $filter, OHService) {
         var vm = this;
         this.widget = this.ngModel;
         this.items = OHService.getItems();
-
     }
 
 
@@ -101,21 +101,21 @@
         $scope.items = OHService.getItems();
 
         $scope.editorOptions = {
-            lineNumbers: true,
-            matchTags: {bothTags: true},
+            lineNumbers  : true,
+            matchTags    : {bothTags: true},
             autoCloseTags: true,
             matchBrackets: true,
-            mode: 'xml',
+            mode         : 'xml'
         };
 
         $scope.form = {
-            name: widget.name,
-            sizeX: widget.sizeX,
-            sizeY: widget.sizeY,
-            col: widget.col,
-            row: widget.row,
-            template: widget.template,
-            dontwrap: widget.dontwrap,
+            name        : widget.name,
+            sizeX       : widget.sizeX,
+            sizeY       : widget.sizeY,
+            col         : widget.col,
+            row         : widget.row,
+            template    : widget.template,
+            dontwrap    : widget.dontwrap,
             nobackground: widget.nobackground
         };
 
@@ -130,15 +130,11 @@
 
         $scope.submit = function() {
             angular.extend(widget, $scope.form);
-
             $modalInstance.close(widget);
         };
 
         $timeout(function () {
             $scope.refreshEditor = new Date();
         });
-
     }
-
-
 })();

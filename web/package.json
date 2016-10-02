@@ -3,7 +3,17 @@
   "version": "1.0.0",
   "author": "Yannick Schaus",
   "description": "Dashboard user interface for openHAB",
-  "license": "EPL",
+  "license": "EPL-1.0",
+  "contributors": [
+    {
+      "name": "Yannick Schaus",
+      "email": "habpanel@schaus.net"
+    },
+    {
+      "name": "Kuba Wolanin",
+      "email": "hi@kubawolanin.com"
+    }
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/ghys/habpanel"
@@ -24,11 +34,19 @@
     "eslint-plugin-react": "^5.2.2",
     "eslint-plugin-react-native": "^1.1.0",
     "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
     "gulp-concat": "^2.6.0",
+    "gulp-cssmin": "^0.1.7",
     "gulp-eslint": "^3.0.1",
     "gulp-filter": "^4.0.0",
     "gulp-main-bower-files": "1.5.3",
-    "gulp-uglify": "^2.0.0"
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-sass-glob": "^1.0.6",
+    "gulp-uglify": "^2.0.0",
+    "gulp-watch": "^4.3.10",
+    "gulp-webserver": "^0.9.1"
   },
   "dependencies": {
     "n3-charts": "^2.0.28"

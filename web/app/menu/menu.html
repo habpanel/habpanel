@@ -1,27 +1,54 @@
 <div class="header">
-	<a class="btn pull-right" ng-click="vm.goFullscreen()"><i class="glyphicon glyphicon-resize-full"></i></a>
-    <a class="btn pull-left" ng-hide="lockEditing" ng-click="vm.toggleEditMode()" ng-class="{ 'btn-danger': vm.editMode }"><i class="glyphicon glyphicon-cog"></i></a>
+    <a class="btn btn-link pull-right" title="Toggle full screen"
+        ng-click="vm.goFullscreen()">
+        <i class="glyphicon glyphicon-resize-full"></i>
+    </a>
+    <a class="btn pull-left" 
+        title="Edit dashboards"
+        ng-hide="lockEditing" ng-click="vm.toggleEditMode()" ng-class="{ 'btn-danger': vm.editMode }">
+        <i class="glyphicon glyphicon-cog"></i>
+    </a>
     <h1>{{vm.clock | date:'EEE d MMM HH:mm:ss'}}</h1>
 </div>
-
 <!-- Tutorial part 1 -->
 <div ng-if="!vm.dashboards.length">
-    <div ng-if="lockEditing"><h2><i class="glyphicon glyphicon-alert"></i><br />Editing is disabled on the server!</h2><h3>Please go to Paper UI and unlock editing to use HABPanel on this device.</h3></div>
-    <div ng-if="!lockEditing && !vm.editMode" class="pull-left"><h3>&nbsp;<i class="glyphicon glyphicon-arrow-up"></i>&nbsp;Welcome to HABPanel! Click or tap here to begin.</h3></div>
-    <div ng-if="!lockEditing && vm.editMode" class="text-center"><h4>You're now in edit mode, where you can design dashboards.<h4></div>
+    <div ng-if="lockEditing">
+        <h2>
+            <i class="glyphicon glyphicon-alert"></i>
+            <br />Editing is disabled on the server!
+        </h2>
+        <h3>Please go to Paper UI and unlock editing to use HABPanel on this device.</h3>
+    </div>
+    <div ng-if="!lockEditing && !vm.editMode" class="pull-left">
+        <h3>
+            &nbsp;<i class="glyphicon glyphicon-arrow-up"></i>&nbsp;
+            Welcome to HABPanel! Click or tap here to begin.
+        </h3>
+    </div>
+    <div ng-if="!lockEditing && vm.editMode" class="text-center">
+        <h4>You're now in edit mode, where you can design dashboards.<h4>
+    </div>
 </div>
 
-<div class="row">
+<div class="dashboard row">
     <div gridster="vm.gridsterOptions" class="col-md-12 col-lg-12">
         <div gridster-item="dash" ng-init="tile=dash.tile" class="dash-card col-md-6 col-lg-6 col-sm-6 box" ng-repeat="dash in vm.dashboards">
             <div class="pull-left dash-buttons" ng-if="vm.editMode">
-                <span class="pull-right handle"><i class="glyphicon" ng-class="{ 'glyphicon-sort': vm.gridsterOptions.columns<2, 'glyphicon-move': vm.gridsterOptions.columns>1 }"></i></span>
+                <span class="pull-right handle">
+                    <i class="glyphicon" ng-class="{ 'glyphicon-sort': vm.gridsterOptions.columns<2, 'glyphicon-move': vm.gridsterOptions.columns>1 }"></i>
+                </span>
             </div>
-            <div class="pull-right dash-buttons" style="margin-right: 5px" ng-if="vm.editMode">
+            <div class="pull-right dash-buttons" ng-if="vm.editMode">
                 <!--<a class="pull-right" ng-click="vm.removeDashboard(dash)"><i class="glyphicon glyphicon-trash">&nbsp;</i></a>-->
-                <a class="pull-right" ng-click="vm.openDashboardSettings(dash)"><i class="glyphicon glyphicon-cog"></i></a>
+                <a class="pull-right" title="Dashboard settings" 
+                    ng-click="vm.openDashboardSettings(dash)">
+                    <i class="glyphicon glyphicon-cog"></i>
+                </a>
             </div>
-            <em style="position:absolute; bottom: 5px; left: 10px" ng-if="vm.editMode"><i class="glyphicon glyphicon-edit"></i> {{dash.name}}</em>
+            <em class="dash-edit" ng-if="vm.editMode">
+                <i class="glyphicon glyphicon-edit"></i>
+                {{dash.name}}
+            </em>
             <h3 ng-if="vm.editMode" ng-click="vm.viewDashboard(dash)" class="card-title"></h3>
 
             <h3 ng-show="!vm.editMode" ng-style="{ color:(tile.title_color && tile.title_color!='transparent')?tile.title_color:'#def' }" ng-click="vm.viewDashboard(dash)" class="card-title">
@@ -37,26 +64,73 @@
 <br />
 
 <!-- Tutorial part 2 -->
-<div ng-if="!vm.dashboards.length && vm.editMode" class="col-xs-12">
+<div ng-if="!vm.dashboards.length && vm.editMode" class="col-xs-12 text-muted">
     <div class="col-xs-4 text-center">
-        <div class="pull-left"><h4>Click or tap here to create your first dashboard...<br /><i class="glyphicon glyphicon-arrow-down"></i></h4></div>
-    </div>
-    <div class="col-xs-4 text-center"></div>
-    <div class="col-xs-4 text-center">
-        <div><h4>...or here to import a previous one<br /><i class="glyphicon glyphicon-arrow-down"></i></h4></div>
+        <div class="pull-left">
+            <h4>
+                Click or tap here to create your first dashboard...
+                <br /><i class="glyphicon glyphicon-arrow-down"></i>
+            </h4>
+        </div>
+</div>
+<div class="col-xs-4 text-center"></div>
+<div class="col-xs-4 text-center">
+    <div>
+        <h4>
+            ...or here to import a previous one<br />
+            <i class="glyphicon glyphicon-arrow-down"></i>
+        </h4>
     </div>
 </div>
-
+</div>
 <!-- Tutorial part 3 -->
-<div ng-if="vm.dashboards.length==1 && !vm.dashboards[0].widgets.length" class="col-xs-12">
-    <div class="col-xs-4 text-left"><div ng-if="vm.editMode" class="pull-left"><h4>&nbsp;<i class="glyphicon glyphicon-arrow-up"></i>&nbsp;Click or tap inside the tile to enter the dashboard designer.</h4></div></div>    
-    <div class="col-xs-4 text-center"><div ng-if="vm.editMode"><h4>Adjust the number of columns<br /><i class="glyphicon glyphicon-arrow-down"></i></h4></div></div>    
-    <div class="col-xs-4 text-right"><div ng-if="vm.editMode"><h4>Save on the openHAB 2 server when done!&nbsp;<i class="glyphicon glyphicon-arrow-down"></i></h4></div></div>    
+<div ng-if="vm.dashboards.length==1 && !vm.dashboards[0].widgets.length" class="col-xs-12 text-muted">
+    <div class="col-xs-4 text-left">
+        <div ng-if="vm.editMode" class="pull-left">
+            <h4>
+                &nbsp;<i class="glyphicon glyphicon-arrow-up"></i>
+                &nbsp;Click or tap inside the tile to enter the dashboard designer.
+            </h4>
+        </div>
+    </div>
+    <div class="col-xs-4 text-center">
+        <div ng-if="vm.editMode">
+            <h4>
+                Adjust the number of columns
+                <br /><i class="glyphicon glyphicon-arrow-down"></i>
+            </h4>
+        </div>
+    </div>
+    <div class="col-xs-4 text-right">
+        <div ng-if="vm.editMode">
+            <h4>
+                Save on the openHAB 2 server when done!
+                &nbsp;<i class="glyphicon glyphicon-arrow-down"></i>
+            </h4>
+        </div>
+    </div>
 </div>
-
-<div class="col-xs-12" ng-if="vm.editMode">
-    <div class="col-xs-4 text-center"><a ng-click="vm.addNewDashboard()"><h4><i class="glyphicon glyphicon-plus"></i><br />Add new dashboard</h4></a></div>
-    <div class="col-xs-4 text-center"><rzslider ng-if="vm.dashboards.length" rz-slider-model="vm.gridsterOptions.columns" rz-slider-options="{ floor:1, ceil:6, showTicks: true, onEnd: vm.onChangedColumns() }" /> </div>
-    <div class="col-xs-4 text-center"><a href="#/settings"><h4><i class="glyphicon glyphicon-edit"></i><br />Advanced settings</h4></a></div>
-    <br /><br /><br />
+<div class="col-xs-12 text-muted" ng-if="vm.editMode">
+    <div class="col-xs-4 text-center">
+        <a ng-click="vm.addNewDashboard()">
+            <h4>
+                <i class="glyphicon glyphicon-plus"></i>
+                <br />Add new dashboard
+            </h4>
+        </a>
+    </div>
+    <div class="col-xs-4 text-center">
+        <rzslider ng-if="vm.dashboards.length" rz-slider-model="vm.gridsterOptions.columns" rz-slider-options="{ floor:1, ceil:6, showTicks: true, onEnd: vm.onChangedColumns() }" />
+    </div>
+    <div class="col-xs-4 text-center">
+        <a href="#/settings">
+            <h4>
+                <i class="glyphicon glyphicon-edit"></i>
+                <br />Advanced settings
+            </h4>
+        </a>
+    </div>
+    <br />
+    <br />
+    <br />
 </div>

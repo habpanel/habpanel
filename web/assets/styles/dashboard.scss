@@ -1,0 +1,99 @@
+.dashboard {
+  margin: -5px;
+}
+
+.header {
+  .btn-edit-dashboard {
+    display: none;
+    padding: 0 6px;
+  }
+
+  &:hover {
+    .btn-edit-dashboard {
+      display: inline-block;
+    }
+  }
+}
+
+.controls {
+  margin-bottom: 20px;
+}
+
+.page-header {
+  margin-top: 10px;
+}
+
+ul {
+  list-style: none;
+}
+
+.box {
+  height: 100%;
+  background: rgba($box-bg, 90%);
+  color: $widget-text-color;
+}
+
+.box-design {
+  border: 1px solid $widget-design-bg;
+}
+
+.box-header {
+  display: table;
+  background-color: $widget-design-bg;
+  padding: 0 5px 0 0;
+  border-right: 1px solid $widget-design-bg;
+  border-bottom: 1px solid $widget-design-bg;
+  cursor: move;
+  position: absolute;
+  opacity: .4;
+}
+
+.box-header i {
+  font-size: 3rem;
+  vertical-align: middle;
+}
+
+.box-header h3 {
+  vertical-align: middle;
+  margin: .2em 0 0 0;
+  display: inline-block;
+  font-size: 10pt;
+}
+
+.box-content {
+  padding: 10px;
+  text-align: center;
+  height: 100%;
+}
+
+.box-header-btns {
+  top: 0;
+  right: 1rem;
+  cursor: pointer;
+  position: absolute;
+}
+
+.box-label-content {
+  display: flex;
+}
+
+.box-label {
+  margin: auto;
+}
+
+.settings-btn i {
+  font-size: 3rem;
+}
+
+form {
+  margin-bottom: 0;
+}
+
+.gridster {
+  padding: 2px;
+}
+
+.gridster .gridster-item:hover .handle-se {
+  border-width: 0 0 3rem 3rem !important;
+  border-color: transparent transparent $widget-text-color !important;
+}

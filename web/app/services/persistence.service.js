@@ -25,8 +25,6 @@
 
         ////////////////
 
-
-
         function loadDashboards() {
             var deferred = $q.defer();
             OH2StorageService.tryGetServiceConfiguration().then(function (data) {
@@ -57,7 +55,6 @@
         }
 
         function getDashboard(id) {
-            
             if (!$rootScope.dashboards) {
                 return loadDashboards().then(function () { return $filter('filter')($rootScope.dashboards, {id: id}, true)[0]; });
             }

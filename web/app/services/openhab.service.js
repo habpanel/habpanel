@@ -75,7 +75,6 @@
             loadItems();
             //longPollUpdates('');
         }
-
         
         function registerEventSource() {
             if (typeof(EventSource) !== "undefined") {
@@ -99,7 +98,6 @@
                                 });
                             }
                         }
-
                     } catch (e) {
                         console.log('SSE event issue: ' + e.message);
                     }
@@ -288,7 +286,5 @@
             localStorageService.set("currentPanelConfig", $rootScope.currentPanelConfig);
             useCurrentPanelConfig();
         }
-
     }
-
 })();

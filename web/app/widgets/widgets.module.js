@@ -45,7 +45,7 @@
             restrict: 'AE',
             replace: true,
             scope: {
-                type: '=',
+                type   : '=',
                 ngModel: '='
             },
             link: function (scope, element, attrs) {
@@ -55,12 +55,10 @@
         }
 
         return directive;
-
     }
 
-
-
     WidgetIcon.$inject = ['IconService'];
+
     function WidgetIcon(IconService) {
         var directive = {
             link: link,
@@ -71,13 +69,13 @@
                 '<img ng-if="!backdrop" ng-style="{ width: size + \'px\' }" ng-class="{ colorize: colorize, off: state==\'OFF\' }" class="icon-tile" ng-src="{{iconUrl}}" />' +
                 '</div>',
             scope: {
-                iconset: '=',
-                icon: '=',
+                iconset : '=',
+                icon    : '=',
                 backdrop: '=?',
-                center: '=?',
-                inline: '=?',
-                size: '=?',
-                state: '='
+                center  : '=?',
+                inline  : '=?',
+                size    : '=?',
+                state   : '='
             }
         };
         return directive;
@@ -88,8 +86,11 @@
             scope.iconUrl = IconService.getIconUrl(scope.iconset, scope.icon);
 
             scope.$watch('state', function (state) {
-                scope.iconUrl = IconService.getIconUrl(scope.iconset, scope.icon, (state) ? state.toString() : null);
-
+                scope.iconUrl = IconService.getIconUrl(
+                    scope.iconset,
+                    scope.icon,
+                    (state) ? state.toString() : null
+                );
             });
         }
     }

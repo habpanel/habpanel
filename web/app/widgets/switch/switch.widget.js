@@ -78,9 +78,7 @@
         vm.valueAsBool = function () {
             return vm.value == 'ON';
         }
-
     }
-
 
     // settings dialog
     WidgetSettingsCtrlSwitch.$inject = ['$scope', '$timeout', '$rootScope', '$uibModalInstance', 'widget', 'OHService'];
@@ -90,21 +88,21 @@
         $scope.items = OHService.getItems();
 
         $scope.form = {
-            name: widget.name,
-            sizeX: widget.sizeX,
-            sizeY: widget.sizeY,
-            col: widget.col,
-            row: widget.row,
-            item: widget.item,
-            hidelabel: widget.hidelabel,
-            hideicon: widget.hideicon,
-            hideonoff: widget.hideonoff,
+            name            : widget.name,
+            sizeX           : widget.sizeX,
+            sizeY           : widget.sizeY,
+            col             : widget.col,
+            row             : widget.row,
+            item            : widget.item,
+            hidelabel       : widget.hidelabel,
+            hideicon        : widget.hideicon,
+            hideonoff       : widget.hideonoff,
             backdrop_iconset: widget.backdrop_iconset,
-            backdrop_icon: widget.backdrop_icon,
-            backdrop_center: widget.backdrop_center,
-            iconset: widget.iconset,
-            icon: widget.icon,
-            icon_size: widget.icon_size
+            backdrop_icon   : widget.backdrop_icon,
+            backdrop_center : widget.backdrop_center,
+            iconset         : widget.iconset,
+            icon            : widget.icon,
+            icon_size       : widget.icon_size
         };
 
         $scope.dismiss = function() {
@@ -118,11 +116,7 @@
 
         $scope.submit = function() {
             angular.extend(widget, $scope.form);
-
             $modalInstance.close(widget);
         };
-
     }
-
-
 })();

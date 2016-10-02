@@ -1,16 +1,31 @@
 <div class="header">
-	<a class="btn pull-left" onclick="window.history.back()"><i class="glyphicon glyphicon-chevron-left"></i></a>
-	<a class="btn pull-left" href="#/"><i class="glyphicon glyphicon-home"></i></a>
-	<a class="btn pull-right" ng-click="vm.goFullscreen()"><i class="glyphicon glyphicon-resize-full"></i></a>
-	<a class="btn pull-right" ng-click="vm.refresh()"><i class="glyphicon glyphicon-refresh"></i></a>
-	<h2>&nbsp;{{vm.dashboard.name}}</h2>
+    <a class="btn pull-left" onclick="window.history.back()" title="Go back">
+        <i class="glyphicon glyphicon-chevron-left"></i>
+    </a>
+    <a class="btn pull-left" href="#/" title="Home">
+        <i class="glyphicon glyphicon-home"></i>
+    </a>
+    <a class="btn pull-right" ng-click="vm.goFullscreen()" title="Toggle full screen">
+        <i class="glyphicon glyphicon-resize-full"></i>
+    </a>
+    <a class="btn pull-right" ng-click="vm.refresh()" title="Refresh">
+        <i class="glyphicon glyphicon-refresh"></i>
+    </a>
+    <h2>&nbsp;{{vm.dashboard.name}} 
+        <a class="btn btn-link btn-edit-dashboard"
+            ng-if="!lockEditing"
+            ng-click="vm.toggleEdit()"
+            title="Edit {{vm.dashboard.name}}">
+            <i class="glyphicon glyphicon-pencil"></i>
+        </a>
+    </h2>
 </div>
 <div ng-show="vm.ready" gridster="vm.gridsterOptions">
-	<ul>
-		<li gridster-item="widget" ng-repeat="widget in vm.dashboard.widgets">
-			<div class="box">
-				<generic-widget type="widget.type" ng-model="widget"></generic-widget>
-			</div>
-		</li>
-	</ul>
+    <ul>
+        <li gridster-item="widget" ng-repeat="widget in vm.dashboard.widgets">
+            <div class="box">
+                <generic-widget type="widget.type" ng-model="widget"></generic-widget>
+            </div>
+        </li>
+    </ul>
 </div>
