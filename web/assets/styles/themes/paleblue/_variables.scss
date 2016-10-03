@@ -1,16 +1,16 @@
 // Basic HABpanel styles
 
 $body-bg:    #000;
-$body-color: #ccc;
+$body-color: rgb(100, 127, 147);
 
-$primary-color: #0db9f0;
+$primary-color: rgb(19, 115, 143);
 
-$box-bg:     #234;
+$box-bg:     rgb(0, 20, 40);
 
 // General widget styles
 
 $widget-design-bg:  #567;
-$widget-text-color: #def;
+$widget-text-color: rgb(112, 140, 157);
 
 // Chart widget
 
@@ -52,6 +52,8 @@ $brand-danger:          #d9534f;
 
 $link-color: #abc; // Bootstrap variable
 $link-hover-decoration: none;
+
+$icon-font-path: '../../../../fonts/bootstrap/';
 
 $font-family-base: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 

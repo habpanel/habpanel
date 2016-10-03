@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="app"
+	ng-class="{ 'image-bg': settings.background_image }"
+	ng-style="{ 'background-image': (settings.background_image) ? 'url(' + settings.background_image +')' : '' }">
 	<head>
 		<meta charset="utf-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -9,7 +11,7 @@
 		<meta name="apple-mobile-web-app-capable" content="yes">
 
 		<link rel="stylesheet" href="vendor/vendor.min.css" />
-		<link rel="stylesheet" href="assets/styles.min.css" />
+		<link rel="stylesheet" ng-href="assets/styles/themes/{{settings.theme || 'default'}}/{{settings.theme || 'default'}}.min.css" />
 
 	  	<script src="vendor/vendor.js"></script>
 
@@ -40,7 +42,7 @@
 		<script src="app/settings/settings.localconfig.controller.js"></script>
 
 	</head>
-	<body ng-app="app">
+	<body>
 		<div class="container" ng-view></div>
 	</body>
 </html>

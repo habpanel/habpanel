@@ -1,0 +1,10 @@
+@import "_variables.scss";
+@import "../../../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap.scss";
+
+
+@import "../../common.scss";
+@import "../../dashboard.scss";
+@import "../../widgets.scss";
+@import "../../local-config.scss";
+
+@import "../../../../app/widgets/**/*.scss";

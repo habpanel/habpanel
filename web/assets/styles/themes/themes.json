@@ -1,0 +1,22 @@
+[
+    {
+        "id": "default",
+        "name": "Default"
+    },
+    {
+        "id": "material",
+        "name": "Material"
+    },
+    {
+        "id": "material-dark",
+        "name": "Material dark"
+    },
+    {
+        "id": "paleblue",
+        "name": "Pale blue"
+    },
+    {
+        "id": "translucent",
+        "name": "Translucent"
+    }
+]

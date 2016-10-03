@@ -245,6 +245,7 @@
                 config.updatedTime = new Date().toISOString();
                 config.dashboards = angular.copy($rootScope.dashboards);
                 config.menucolumns = $rootScope.menucolumns;
+                config.settings = $rootScope.settings;
                 return saveServiceConfiguration().then(function () {
                     deferred.resolve();
                 }, function () {
@@ -276,8 +277,16 @@
             } else {
                 if ($rootScope.panelsRegistry[currentPanelConfig].dashboards)
                     $rootScope.dashboards = angular.copy($rootScope.panelsRegistry[currentPanelConfig].dashboards);
+                else
+                    $rootScope.dashboards = [];
                 if ($rootScope.panelsRegistry[currentPanelConfig].menucolumns)
                     $rootScope.menucolumns = $rootScope.panelsRegistry[currentPanelConfig].menucolumns;
+                else
+                    $rootScope.menucolumns = 1;
+                if ($rootScope.panelsRegistry[currentPanelConfig].settings)
+                    $rootScope.settings = $rootScope.panelsRegistry[currentPanelConfig].settings;
+                else
+                    $rootScope.settings = {};
             }
         }
 

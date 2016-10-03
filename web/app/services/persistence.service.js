@@ -14,6 +14,7 @@
         function loadDashboardsFromLocalStorage() {
             $rootScope.dashboards = localStorageService.get("dashboards") || [];
             $rootScope.menucolumns = localStorageService.get("menucolumns") || 1;
+            $rootScope.settings = localStorageService.get("settings") || {};
         }
 
         function saveDashboardsToLocalStorage() {
@@ -21,6 +22,7 @@
 
             localStorageService.set("dashboards", $rootScope.dashboards);
             localStorageService.set("menucolumns", $rootScope.menucolumns);
+            localStorageService.set("settings", $rootScope.settings);
         }
 
         ////////////////

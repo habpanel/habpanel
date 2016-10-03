@@ -3,7 +3,7 @@
 	<h2>Settings</h2>
 </div>
 
-<div class="box col-md-12">
+<div class="box col-md-5">
     <br />    
     <h4>Current storage configuration</h4>
 
@@ -34,6 +34,22 @@
     <br />
 </div>
 
+<div class="col-md-2"></div>
+
+
+<div class="box col-md-5">
+    <br />
+    <h4>Miscellaneous Settings</h4>
+
+    <h5>Theme</h5>
+    <select class="form-control" ng-change="vm.saveOptions()" ng-model="settings.theme" ng-options="theme.id as theme.name for theme in vm.themes"></select>
+    <br />
+    <br />
+    <h5>Background image</h5>
+    <input type="text" class="form-control" ng-blur="vm.saveOptions()" ng-model="vm.background_image" placeholder="Example: //source.unsplash.com/random" />
+    <br />
+    <br />
+</div>
+
 <br />
-
-
+<br />

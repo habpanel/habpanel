@@ -1,0 +1,33 @@
+@import "_variables.scss";
+@import "../../../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap.scss";
+
+
+@import "../../common.scss";
+@import "../../dashboard.scss";
+@import "../../widgets.scss";
+@import "../../local-config.scss";
+
+@import "../../../../app/widgets/**/*.scss";
+
+// Final overrides
+
+.box {
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.2),0 1px 1px 0 rgba(0,0,0,.14),0 2px 1px -1px rgba(0,0,0,.12);
+}
+
+.rzslider .rz-pointer {
+    background: $primary-color;
+}
+
+.rzslider .rz-bar.rz-selection {
+    background: $primary-color;
+}
+
+.rzslider .rz-ticks .rz-tick.rz-selected {
+    background: $primary-color;
+}
+
+.icon-tile.colorize {
+            filter: invert(75%) sepia(100%) hue-rotate(0deg) saturate(10000%);
+    -webkit-filter: invert(75%) sepia(100%) hue-rotate(0deg) saturate(10000%);
+}

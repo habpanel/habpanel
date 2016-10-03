@@ -69,6 +69,9 @@
                 resolve: {
                     dashboards: ['PersistenceService', function (persistenceService) {
                         return persistenceService.getDashboards();
+                    }],
+                    themes: ['$http', function ($http) {
+                        return $http.get('assets/styles/themes/themes.json');
                     }]
                 }
             })

@@ -32,7 +32,7 @@ gulp.task('web-server', function() {
 gulp.task('watch', function () {
     gulp.watch([
         './app/widgets/**/*.scss',
-        './assets/**/*.scss',
+        './assets/styles/**/*.scss',
         './vendor/**/*.scss'
     ], ['sass']);
 });
@@ -42,8 +42,8 @@ gulp.task('server', [
     'web-server'
 ], function () {});
 
-gulp.task('sass-assets', function () {
-    gulp.src('./assets/styles.scss')
+gulp.task('sass-themes', function () {
+    gulp.src('./assets/styles/themes/**/*.scss')
         .pipe(plumber())
         .pipe(sassGlob())
         .pipe(sass())
@@ -51,7 +51,7 @@ gulp.task('sass-assets', function () {
         .pipe(rename({
             suffix: '.min'
         }))
-        .pipe(gulp.dest('./assets'));
+        .pipe(gulp.dest('./assets/styles/themes'));
 });
 
 gulp.task('sass-vendor', function () {
@@ -66,7 +66,7 @@ gulp.task('sass-vendor', function () {
 });
 
 gulp.task('sass', [
-    'sass-assets',
+    'sass-themes',
     'sass-vendor'
 ], function () {});
 

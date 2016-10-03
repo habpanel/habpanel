@@ -51,7 +51,7 @@
             </em>
             <h3 ng-if="vm.editMode" ng-click="vm.viewDashboard(dash)" class="card-title"></h3>
 
-            <h3 ng-show="!vm.editMode" ng-style="{ color:(tile.title_color && tile.title_color!='transparent')?tile.title_color:'#def' }" ng-click="vm.viewDashboard(dash)" class="card-title">
+            <h3 ng-show="!vm.editMode" ng-style="{ color:(tile.title_color && tile.title_color!='transparent')?tile.title_color:'inherit' }" ng-click="vm.viewDashboard(dash)" class="card-title">
                 <img class="tile-background" ng-if="tile.background_image" ng-src="{{tile.background_image}}" />
                 <widget-icon ng-if="tile.backdrop_icon && !tile.background_image" backdrop="true" iconset="tile.backdrop_iconset" icon="tile.backdrop_icon" center="tile.backdrop_center"></widget-icon>
                 <!--<widget-icon iconset="'smarthome-set'" icon="'bulb'" backdrop="true"></widget-icon>-->

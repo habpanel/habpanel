@@ -5,8 +5,8 @@
         .module('app')
         .controller('SettingsCtrl', SettingsController);
 
-    SettingsController.$inject = ['$rootScope', '$timeout', 'OH2ServiceConfiguration', 'OH2StorageService', 'PersistenceService', 'prompt'];
-    function SettingsController($rootScope, $timeout, OH2ServiceConfiguration, OH2StorageService, PersistenceService, prompt) {
+    SettingsController.$inject = ['$rootScope', '$timeout', 'OH2ServiceConfiguration', 'OH2StorageService', 'PersistenceService', 'themes',  'prompt'];
+    function SettingsController($rootScope, $timeout, OH2ServiceConfiguration, OH2StorageService, PersistenceService, themes, prompt) {
         var vm = this;
 
         vm.editorOptions = {
@@ -17,6 +17,12 @@
             json: true,
             theme: "rubyblue"
         };
+
+        vm.themes = themes.data;
+        if (!$rootScope.settings.theme)
+            $rootScope.settings.theme = 'default';
+
+        vm.background_image = $rootScope.settings.background_image;
 
         vm.rawLocalConfig = JSON.stringify($rootScope.dashboards, null, 4);
 
@@ -63,6 +69,11 @@
                 }
             }
         };
+
+        vm.saveOptions = function () {
+            $rootScope.settings.background_image = vm.background_image;
+            PersistenceService.saveDashboards();
+        }
 
         activate();
 

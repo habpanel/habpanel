@@ -6,7 +6,7 @@ body {
 // Adding `image-bg` class to html will result in
 // setting background image
 html.image-bg {
-  background-image: url("//source.unsplash.com/random");
+  //background-image: url("//source.unsplash.com/random");
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
@@ -14,6 +14,10 @@ html.image-bg {
      -moz-background-size: cover;
        -o-background-size: cover;
           background-size: cover;
+
+  body {
+    background: inherit;
+  }
 }
 
 .main.container {
