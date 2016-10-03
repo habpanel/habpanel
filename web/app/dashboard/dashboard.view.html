@@ -11,7 +11,7 @@
     <a class="btn pull-right" ng-click="vm.refresh()" title="Refresh">
         <i class="glyphicon glyphicon-refresh"></i>
     </a>
-    <h2>&nbsp;{{vm.dashboard.name}} 
+    <h2>&nbsp;{{vm.title}} 
         <a class="btn btn-link btn-edit-dashboard"
             ng-if="!lockEditing"
             ng-click="vm.toggleEdit()"
@@ -22,9 +22,12 @@
 </div>
 <div ng-show="vm.ready" gridster="vm.gridsterOptions">
     <ul>
-        <li gridster-item="widget" ng-repeat="widget in vm.dashboard.widgets">
-            <div class="box">
+        <li gridster-item="widget" ng-repeat="widget in vm.widgets">
+            <div class="box" ng-if="!widget.ispagelink">
                 <generic-widget type="widget.type" ng-model="widget"></generic-widget>
+            </div>
+            <div class="box" ng-if="widget.ispagelink" ng-click="vm.goToPage(widget.pageid)">
+                <widget-button ng-model="widget"></widget-button>
             </div>
         </li>
     </ul>

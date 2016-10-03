@@ -5,6 +5,8 @@
             <h3>Dashboard Card Settings</h3>
         </div>
 
+        <div class="alert alert-warning" ng-if="sitemapchanged">WARNING: All current widgets and customizations will be lost if you change the sitemap link!</div>
+
         <div class="modal-body">
             <div class="form-group" ng-class="{error: _form.name.$error && _form.submitted}">
                 <label class="control-label col-lg-3 col-md-3">Name</label>
@@ -12,12 +14,17 @@
                     <input name="name" type="text" ng-model="form.name" class="form-control" />
                 </div>
             </div>
-            <!--<div class="form-group" ng-class="{error: _form.item.$error && _form.submitted}">
-                <label class="control-label col-lg-3 col-md-3">OpenHAB Item</label>
-                <div class="col-lg-9 col-md-9">
-                    <select ng-model="form.item" ng-options="item.name as item.name for item in items" class="form-control"></select>
+            <div class="form-group" ng-class="{error: _form.item.$error && _form.submitted}">
+                <label class="control-label col-lg-3 col-md-3">Link to sitemap</label>
+                <div class="col-lg-4 col-md-4">
+                    <select ng-model="form.sitemap" ng-change="sitemapchanged=true" ng-options="item.name as item.label for item in sitemaps" class="form-control">
+                        <option value=""></option>
+                    </select>
                 </div>
-            </div>-->
+                <div class="col-lg-5 col-md-5">
+                    <small ng-if="form.sitemap">If this tile is linked to a sitemap, you won't be able to add or remove widgets</small>
+                </div>
+            </div>
             <div class="form-group" ng-class="{error: _form.tile.background_image.$error && _form.submitted}">
                 <label class="control-label col-lg-3 col-md-3">Background Image URL</label>
                 <div class="col-lg-9 col-md-9">

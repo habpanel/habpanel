@@ -13,8 +13,9 @@
         'oc.lazyLoad',
         'angular-clipboard'
     ])
-    .config(['$routeProvider', 'localStorageServiceProvider', function($routeProvider, localStorageServiceProvider) {
+    .config(['$routeProvider', '$compileProvider', 'localStorageServiceProvider', function($routeProvider, $compileProvider, localStorageServiceProvider) {
         localStorageServiceProvider.setStorageType('localStorage');
+        $compileProvider.debugInfoEnabled(false);
 
         $routeProvider
             .when('/', {
@@ -24,6 +25,9 @@
                 resolve: {
                     dashboards: ['PersistenceService', function (persistenceService) {
                         return persistenceService.getDashboards();
+                    }],
+                    sitemaps: ['OHService', function (OHService) {
+                        return OHService.loadSitemaps();
                     }]
                 }
             })
@@ -35,6 +39,7 @@
                     dashboard: ['PersistenceService', '$route', function (persistenceService, $route) {
                         return persistenceService.getDashboard($route.current.params.id);
                     }],
+                    sitemappage: function () { return null; },
                     codemirror: ['$ocLazyLoad', function ($ocLazyLoad) {
                         return $ocLazyLoad.load([
                             'vendor/cm/lib/codemirror.css',
@@ -59,6 +64,58 @@
                 resolve: {
                     dashboard: ['PersistenceService', '$route', function (persistenceService, $route) {
                         return persistenceService.getDashboard($route.current.params.id);
+                    }],
+                    sitemappage: function () { return null; }
+                }
+            })
+            .when('/sitemap/view/:id/:page', {
+                templateUrl: 'app/dashboard/dashboard.view.html',
+                controller: 'DashboardViewCtrl',
+                controllerAs: 'vm',
+                resolve: {
+                    dashboard: ['PersistenceService', '$route', function (persistenceService, $route) {
+                        return persistenceService.getDashboard($route.current.params.id);
+                    }],
+                    sitemappage: ['PersistenceService', 'OHService', '$route', function (persistenceService, OHService, $route) {
+                        var dashboard = persistenceService.getDashboard($route.current.params.id);
+                        if (dashboard.id) return OHService.loadSitemapPage(dashboard.sitemap, $route.current.params.page);
+
+                        return dashboard.then(function (dashboard) {
+                            return OHService.loadSitemapPage(dashboard.sitemap, $route.current.params.page);
+                        });
+                    }]
+                }
+            })
+            .when('/sitemap/edit/:id/:page', {
+                templateUrl: 'app/dashboard/dashboard.edit.html',
+                controller: 'DashboardEditCtrl',
+                controllerAs: 'vm',
+                resolve: {
+                    dashboard: ['PersistenceService', '$route', function (persistenceService, $route) {
+                        return persistenceService.getDashboard($route.current.params.id);
+                    }],
+                    sitemappage: ['PersistenceService', 'OHService', '$route', function (persistenceService, OHService, $route) {
+                        var dashboard = persistenceService.getDashboard($route.current.params.id);
+                        if (dashboard.id) return OHService.loadSitemapPage(dashboard.sitemap, $route.current.params.page);
+
+                        return dashboard.then(function (dashboard) {
+                            return OHService.loadSitemapPage(dashboard.sitemap, $route.current.params.page);
+                        });
+                    }],
+                    codemirror: ['$ocLazyLoad', function ($ocLazyLoad) {
+                        return $ocLazyLoad.load([
+                            'vendor/cm/lib/codemirror.css',
+                            'vendor/cm/lib/codemirror.js'
+                        ]).then(function () {
+                            return $ocLazyLoad.load([
+                                'vendor/cm/addon/fold/xml-fold.js',
+                                'vendor/cm/addon/edit/matchbrackets.js',
+                                'vendor/cm/addon/edit/matchtags.js',
+                                'vendor/cm/addon/edit/closebrackets.js',
+                                'vendor/cm/addon/edit/closetag.js',
+                                'vendor/cm/mode/xml/xml.js'
+                            ]);
+                        });
                     }]
                 }
             })

@@ -49,7 +49,6 @@
                 dashboards.push({ id: name, name: name, widgets: [] });
                 PersistenceService.saveDashboards();
             });
-
         }
 
         vm.toggleEditMode = function () {
@@ -100,10 +99,11 @@
         };
 
         vm.viewDashboard = function (dash) {
-            if (vm.editMode) {
-                $location.url('/edit/' + dash.id);
+            var action = vm.editMode ? "edit" : "view";
+            if (dash.sitemap) {
+                $location.url('/sitemap/' + action + '/' + dash.id + '/' + dash.sitemap);
             } else {
-                $location.url('/view/' + dash.id);
+                $location.url('/' + action + '/' + dash.id);
             }
         }
 
@@ -143,6 +143,7 @@
 
         $scope.form = {
             name: dashboard.name,
+            sitemap: dashboard.sitemap,
             sizeX: dashboard.sizeX,
             sizeY: dashboard.sizeY,
             col: dashboard.col,
@@ -173,6 +174,11 @@
         };
 
         $scope.submit = function() {
+            // Reset if sitemap link changed
+            if ($scope.form.sitemap !== dashboard.sitemap) {
+                dashboard.widgets = undefined;
+                dashboard.pagelayouts = undefined;
+            }
             angular.extend(dashboard, $scope.form);
             PersistenceService.getDashboard(dashboard.id).tile = angular.copy(dashboard.tile);
             PersistenceService.saveDashboards().then(function () {

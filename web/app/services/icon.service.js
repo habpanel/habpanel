@@ -57,7 +57,7 @@
             template: 
                 // TODO put this template in a HTML file
                 '<div class="btn-group" uib-dropdown is-open="status.isopen2">' +
-                '<a href id="iconset-picker-btn" class="btn btn-default" uib-dropdown-toggle>' +
+                '<a href id="iconset-picker-btn" class="btn btn-default" uib-dropdown-toggle disabled="{{disabled}}">' +
                 '{{setdropdownlabel}}&nbsp;<span class="caret" /></a>' +
                 '<ul class="dropdown-menu" role="menu" aria-labelledby="iconset-picker-btn">' +
                 '<li><a ng-click="clearIcon()"><i>(none)</i></a></li>' +
@@ -65,7 +65,7 @@
                 '</ul>' +
                 '</div><br />' +
                 '<div ng-if="iconset" class="btn-group" uib-dropdown is-open="status.isopen">' +
-                '<a href id="icon-picker-btn" class="btn btn-default" uib-dropdown-toggle>' +
+                '<a href id="icon-picker-btn" class="btn btn-default" uib-dropdown-toggle disabled="{{disabled}}">' +
                 '<img width="64px" height="64px" ng-src="{{iconUrl}}" />&nbsp;{{icon}}&nbsp;<span class="caret" />' +
                 '</a>' +
                 '<ul style="width: 420px" class="dropdown-menu" role="menu" aria-labelledby="icon-picker-btn">' +
@@ -75,7 +75,8 @@
                 '<br /><small ng-if="notice"><a target="_blank" href="{{noticeUrl}}">{{notice}}</a></small><br />',
             scope: {
                 iconset: '=',
-                icon: '='
+                icon: '=',
+                disabled: '='
             }
         };
         return directive;
