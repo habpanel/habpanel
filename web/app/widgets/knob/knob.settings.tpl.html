@@ -43,7 +43,7 @@
                                     <div class="form-group" ng-class="{error: _form.floor.$error && _form.submitted}">
                                         <label class="control-label col-xs-4">Min</label>
                                         <div class="col-xs-6">
-                                            <input name="min" type="number" ng-model="form.floor" class="form-control" />
+                                            <input name="min" type="number" step="any" ng-model="form.floor" class="form-control" />
                                         </div>
                                     </div>
                                 </div>
@@ -51,7 +51,7 @@
                                     <div class="form-group" ng-class="{error: _form.ceil.$error && _form.submitted}">
                                         <label class="control-label col-xs-4">Max</label>
                                         <div class="col-xs-6">
-                                            <input name="max" type="number" ng-model="form.ceil" class="form-control" />
+                                            <input name="max" type="number" step="any" ng-model="form.ceil" class="form-control" />
                                         </div>
                                     </div>
                                 </div>
