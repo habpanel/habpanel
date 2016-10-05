@@ -5,15 +5,30 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<title>HABpanel</title>
+		<title>HABPanel</title>
 		<meta name="description" content="Dashboard user interface for openHAB" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 		<meta name="apple-mobile-web-app-capable" content="yes">
 
+		<link rel="shortcut icon" href="favicon.ico"/>
 		<link rel="stylesheet" href="vendor/vendor.min.css" />
 		<link rel="stylesheet" ng-href="assets/styles/themes/{{settings.theme || 'default'}}/{{settings.theme || 'default'}}.min.css" />
+		<link rel="manifest" href="manifest.json" />
 
-	  	<script src="vendor/vendor.js"></script>
+		<script> 
+		window.addEventListener('load', function() {
+			navigator.serviceWorker.register('service-worker.js', { scope: './' })
+			.then(function(r) {
+				console.log('Service worker registered');
+			})
+			.catch(function(what) {
+				console.error('Service worker not registered: ' + what);
+				console.error(whut);
+			});
+		});
+		</script>
+
+		<script src="vendor/vendor.js"></script>
 
 		<!-- Register widgets here -->
 		<script src="app/widgets/widgets.module.js"></script>
