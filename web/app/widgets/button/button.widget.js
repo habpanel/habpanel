@@ -9,7 +9,7 @@
             WidgetsProvider.$get().registerType({
                 type: 'button',
                 displayName: 'Button',
-                description: 'A button sending a specific value to an OpenHAB item'
+                description: 'A button sending a specific value to an openHAB item'
             });
         });
 

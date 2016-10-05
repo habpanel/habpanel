@@ -9,7 +9,7 @@
             WidgetsProvider.$get().registerType({
                 type: 'image',
                 displayName: 'Image',
-                description: 'Displays an image (not necessarily from OpenHAB)'
+                description: 'Displays an image (not necessarily from openHAB)'
             });
         });
 

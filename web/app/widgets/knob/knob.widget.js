@@ -9,7 +9,7 @@
             WidgetsProvider.$get().registerType({
                 type: 'knob',
                 displayName: 'Knob',
-                description: 'A knob for setting numerical OpenHAB items'
+                description: 'A knob for setting numerical openHAB items'
             });
         });
 

@@ -30,7 +30,7 @@
         function loadItems() {
             $http.get('/rest/items')
             .then(function (data) {
-                console.log('Loaded OpenHAB items');
+                console.log('Loaded openHAB items');
 
                 if (data.data && data.data.item) { // openHAB 1
                     $rootScope.items = data.data.item;

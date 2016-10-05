@@ -9,7 +9,7 @@
             WidgetsProvider.$get().registerType({
                 type: 'frame',
                 displayName: 'Frame',
-                description: 'A fixed label used for headers etc. (no OpenHAB item binding)'
+                description: 'A fixed label used for headers etc. (no openHAB item binding)'
             });
         });
 

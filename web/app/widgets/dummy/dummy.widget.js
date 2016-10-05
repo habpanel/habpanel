@@ -9,7 +9,7 @@
             WidgetsProvider.$get().registerType({
                 type: 'dummy',
                 displayName: 'Dummy',
-                description: 'A dummy widget - displays the value of an OpenHAB item'
+                description: 'A dummy widget - displays the value of an openHAB item'
             });
         });
 
