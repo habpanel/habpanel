@@ -42,7 +42,7 @@
         $timeout(function() {
             OHService.reloadItems();
         });
-        iNoBounce.enable();
+        if ($rootScope.settings.no_scrolling) iNoBounce.enable(); else iNoBounce.disable();
       //Fullscreen.all();
     }
 

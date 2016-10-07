@@ -7,8 +7,8 @@
         .value('OH2ServiceConfiguration', {})
         .service('OH2StorageService', OH2StorageService);
 
-    OHService.$inject = ['$rootScope', '$http', '$q', '$timeout', '$interval', '$filter', 'atmosphereService'];
-    function OHService($rootScope, $http, $q, $timeout, $interval, $filter, atmosphereService) {
+    OHService.$inject = ['$rootScope', '$http', '$q', '$timeout', '$interval', '$filter', '$location', 'atmosphereService', 'SpeechService'];
+    function OHService($rootScope, $http, $q, $timeout, $interval, $filter, $location, atmosphereService, SpeechService) {
         this.getItem = getItem;
         this.getItems = getItems;
         this.onUpdate = onUpdate;
@@ -95,6 +95,16 @@
                                     console.log("Updating " + item.name + " state from " + item.state + " to " + payload.value);
                                     item.state = payload.value;
                                     $rootScope.$emit('openhab-update');
+
+                                    if (item.state && $rootScope.settings.speech_synthesis_item === item.name) {
+                                        console.log('Speech synthesis item state changed! Speaking it now.');
+                                        SpeechService.speak($rootScope.settings.speech_synthesis_voice, item.state);
+                                    }
+                                    if (item.state && $rootScope.settings.dashboard_control_item === item.name) {
+                                        console.log('Dashboard control item state changed, attempting navigation to: ' + item.state);
+                                        $location.url('/view/' + item.state);
+                                    }
+
                                 });
                             }
                         }
@@ -143,6 +153,16 @@
                                 console.log("Received push message: Changing " + item.name + " state from " + item.state + " to " + data.state);
                                 item.state = data.state;
                                 $rootScope.$emit('openhab-update');
+
+                                if (item.state && $rootScope.settings.speech_synthesis_item === item.name) {
+                                    console.log('Speech synthesis item state changed! Speaking it now.');
+                                    SpeechService.speak($rootScope.settings.speech_synthesis_voice, item.state);
+                                }
+                                if (item.state && $rootScope.settings.dashboard_control_item === item.name) {
+                                    console.log('Dashboard control item state changed, attempting navigation to: ' + item.state);
+                                    $location.url('/view/' + item.state);
+                                }
+                                
                             });
                         }
                     }

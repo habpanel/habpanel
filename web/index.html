@@ -22,8 +22,7 @@
 				console.log('Service worker registered');
 			})
 			.catch(function(what) {
-				console.error('Service worker not registered: ' + what);
-				console.error(whut);
+				console.info('Service worker not registered (not using HTTPS?): ' + what);
 			});
 		});
 		</script>
@@ -48,6 +47,7 @@
 		<script src="app/services/persistence.service.js"></script>
 		<script src="app/services/openhab.service.js"></script>
 		<script src="app/services/icon.service.js"></script>
+		<script src="app/services/speech.service.js"></script>
 
 		<script src="app/app.js"></script>
 		<script src="app/dashboard/dashboard.view.controller.js"></script>

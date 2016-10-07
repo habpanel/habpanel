@@ -6,8 +6,8 @@
         .controller('MenuCtrl', MenuController)
         .controller('DashboardSettingsCtrl', DashboardSettingsCtrl);
 
-    MenuController.$inject = ['$rootScope', '$scope', 'dashboards', '$interval', '$location', 'PersistenceService', 'prompt', '$filter', '$uibModal', 'Fullscreen'];
-    function MenuController($rootScope, $scope, dashboards, $interval, $location, PersistenceService, prompt, $filter, $modal, Fullscreen) {
+    MenuController.$inject = ['$rootScope', '$scope', 'dashboards', '$interval', '$location', 'PersistenceService', 'OHService', 'prompt', '$filter', '$uibModal', 'Fullscreen'];
+    function MenuController($rootScope, $scope, dashboards, $interval, $location, PersistenceService, OHService, prompt, $filter, $modal, Fullscreen) {
         var vm = this;
         vm.dashboards = dashboards;
         vm.editMode = false;
@@ -22,6 +22,8 @@
                 vm.clock = Date.now();
             }
             $interval(tick, 1000);
+            if ($rootScope.settings.no_scrolling) iNoBounce.enable(); else iNoBounce.disable();
+            OHService.reloadItems();
         }
 
         if (!$rootScope.menucolumns)
@@ -58,7 +60,7 @@
             if (vm.editMode)
                 iNoBounce.disable();
             else
-                iNoBounce.enable();
+                if ($rootScope.settings.no_scrolling) iNoBounce.enable();
         }
 
         vm.removeDashboard = function (dash) {

@@ -5,20 +5,12 @@
         .module('app')
         .controller('SettingsCtrl', SettingsController);
 
-    SettingsController.$inject = ['$rootScope', '$timeout', 'OH2ServiceConfiguration', 'OH2StorageService', 'PersistenceService', 'themes',  'prompt'];
-    function SettingsController($rootScope, $timeout, OH2ServiceConfiguration, OH2StorageService, PersistenceService, themes, prompt) {
+    SettingsController.$inject = ['$rootScope', '$timeout', '$window', 'OHService', 'OH2ServiceConfiguration', 'OH2StorageService', 'PersistenceService', 'SpeechService', 'themes', 'prompt'];
+    function SettingsController($rootScope, $timeout, $window, OHService, OH2ServiceConfiguration, OH2StorageService, PersistenceService, SpeechService, themes, prompt) {
         var vm = this;
 
-        vm.editorOptions = {
-            lineNumbers: true,
-            matchBrackets: true,
-            autoCloseBrackets: true,
-            mode: "application/json",
-            json: true,
-            theme: "rubyblue"
-        };
-
         vm.themes = themes.data;
+        //vm.voices = SpeechService.getVoices();
         if (!$rootScope.settings.theme)
             $rootScope.settings.theme = 'default';
 
@@ -75,6 +67,19 @@
             PersistenceService.saveDashboards();
         }
 
+        vm.getSpeechSynthesisVoices = function () {
+            return SpeechService.getVoices();
+        }
+
+        vm.speakTestSentence = function () {
+            var voice = $rootScope.settings.speech_synthesis_voice;
+            SpeechService.speak(voice, "hab panel test 1 2 3");
+        };
+
+        vm.isStringItem = function (item) {
+            return item.type.startsWith('String');
+        }
+
         activate();
 
         ////////////////
@@ -86,8 +91,20 @@
             }
 
             $timeout(function () {
-                vm.refreshEditor = new Date();
+                vm.voices = SpeechService.getVoices();
+                OHService.reloadItems();
             }, 200);
+
+            if (window.speechSynthesis && window.speechSynthesis.addEventListener) {
+                speechSynthesis.addEventListener('voiceschanged', function onVoiceChanged() {
+                    speechSynthesis.removeEventListener('voiceschanged', onVoiceChanged);
+
+                    vm.voices = speechSynthesis.getVoices();
+                });
+            }
+    
+            iNoBounce.disable();
+            
         }
     }
 })();

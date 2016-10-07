@@ -39,16 +39,54 @@
 
 <div class="box col-md-5">
     <br />
-    <h4>Miscellaneous Settings</h4>
+    <h4>Appearance</h4>
 
-    <h5>Theme</h5>
+    <label>Theme</label>
     <select class="form-control" ng-change="vm.saveOptions()" ng-model="settings.theme" ng-options="theme.id as theme.name for theme in vm.themes"></select>
     <br />
     <br />
-    <h5>Background image</h5>
+    <label>Background image</label>
     <input type="text" class="form-control" ng-blur="vm.saveOptions()" ng-model="vm.background_image" placeholder="Example: //source.unsplash.com/random" />
     <br />
     <br />
+    <div class="input-group">
+        <input type="checkbox" ng-model="settings.no_clock" ng-change="vm.saveOptions()" id="no_clock" /><label for="no_clock">&nbsp;No clock on the home menu</label>
+    </div>
+    <div class="input-group">
+        <input type="checkbox" ng-model="settings.no_scrolling" ng-change="vm.saveOptions()" id="no_scrolling" /><label for="no_scrolling">&nbsp;Prevent scrolling (when not editing)</label>
+    </div>
+
+
+    <br />
+    <br /> 
+    <h4>Spoken Feedback</h4>
+    <label>Voice</label>
+    <div class="form-group">
+
+    <select class="form-control" ng-change="vm.saveOptions()" ng-model="settings.speech_synthesis_voice" ng-options="voice.name as voice.name + (voice.lang ? ' ('+voice.lang+')' : '') for voice in vm.voices">
+        <option value=""></option>
+    </select>
+    <small>Available voices depend on the operating system and browser environments.</small>
+    <br />
+    <button class="btn btn-primary" ng-click="vm.speakTestSentence()">Test</button>
+
+    <br />
+    <br />
+    <label>Speak the new value of the following item when it changes:</label>
+    <select ng-model="settings.speech_synthesis_item" ng-change="vm.saveOptions()" ng-options="item.name as item.name for item in items | filter: vm.isStringItem" class="form-control">
+        <option value=""></option>
+    </select>
+    <br />
+    <br />
+
+
+    <h4>Switch dashboard with item value</h4>    
+    <label>When this item changes to a dashboard's name, switch to it:</label>
+    <div class="form-group">
+        
+    <select ng-model="settings.dashboard_control_item" ng-change="vm.saveOptions()" ng-options="item.name as item.name for item in items | filter: vm.isStringItem" class="form-control">
+        <option value=""></option>
+    </select>
 </div>
 
 <br />

@@ -32,8 +32,9 @@
                 controller: 'DashboardEditCtrl',
                 controllerAs: 'vm',
                 resolve: {
-                    dashboard: ['PersistenceService', '$route', function (persistenceService, $route) {
-                        return persistenceService.getDashboard($route.current.params.id);
+                    dashboard: ['PersistenceService', '$q', '$route', function (persistenceService, $q, $route) {
+                        var dashboard = persistenceService.getDashboard($route.current.params.id);
+                        return (dashboard) || $q.defer().reject("Unknown dashboard");
                     }],
                     codemirror: ['$ocLazyLoad', function ($ocLazyLoad) {
                         return $ocLazyLoad.load([
@@ -57,8 +58,9 @@
                 controller: 'DashboardViewCtrl',
                 controllerAs: 'vm',
                 resolve: {
-                    dashboard: ['PersistenceService', '$route', function (persistenceService, $route) {
-                        return persistenceService.getDashboard($route.current.params.id);
+                    dashboard: ['PersistenceService', '$q', '$route', function (persistenceService, $q, $route) {
+                        var dashboard = persistenceService.getDashboard($route.current.params.id);
+                        return (dashboard) || $q.defer().reject("Unknown dashboard");
                     }]
                 }
             })

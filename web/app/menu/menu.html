@@ -8,7 +8,8 @@
         ng-hide="lockEditing" ng-click="vm.toggleEditMode()" ng-class="{ 'btn-danger': vm.editMode }">
         <i class="glyphicon glyphicon-cog"></i>
     </a>
-    <h1>{{vm.clock | date:'EEE d MMM HH:mm:ss'}}</h1>
+    <h1 ng-hide="settings.no_clock">{{vm.clock | date:'EEE d MMM HH:mm:ss'}}</h1>
+    <h1 ng-show="settings.no_clock">&nbsp;</h1>
 </div>
 <!-- Tutorial part 1 -->
 <div ng-if="!vm.dashboards.length">
