@@ -1,16 +1,31 @@
 .dashboard {
-  margin: -5px;
+  margin: 0 -10px;
 }
 
 .header {
+  position: fixed;
+  margin: -50px -15px -10px -15px;
+  width: 100%;
+  padding: 8px;
+  z-index: 9999;
+  background: $body-bg;
+
   .btn-edit-dashboard {
     display: none;
     padding: 0 6px;
   }
 
-  &:hover {
-    .btn-edit-dashboard {
-      display: inline-block;
+  h2 {
+    display: inline;
+
+    &.dashboard-title {
+      span {
+        &:hover {
+          .btn-edit-dashboard {
+            display: inline-block;
+          }
+        }
+      }
     }
   }
 }
