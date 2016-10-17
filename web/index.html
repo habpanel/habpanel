@@ -1,63 +1,66 @@
 <!DOCTYPE html>
-<html ng-app="app"
-	ng-class="{ 'image-bg': settings.background_image }"
-	ng-style="{ 'background-image': (settings.background_image) ? 'url(' + settings.background_image +')' : '' }">
-	<head>
-		<meta charset="utf-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<title>HABPanel</title>
-		<meta name="description" content="Dashboard user interface for openHAB" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-		<meta name="apple-mobile-web-app-capable" content="yes">
+<html ng-app="app" ng-class="{ 'image-bg': settings.background_image }" ng-style="{ 'background-image': (settings.background_image) ? 'url(' + settings.background_image +')' : '' }">
 
-		<link rel="shortcut icon" href="favicon.ico"/>
-		<link rel="stylesheet" href="vendor/vendor.min.css" />
-		<link rel="stylesheet" ng-href="assets/styles/themes/{{settings.theme || 'default'}}/{{settings.theme || 'default'}}.min.css" />
-		<link rel="manifest" href="manifest.json" />
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>HABPanel</title>
+    <meta name="description" content="Dashboard user interface for openHAB" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
 
-		<script> 
-		window.addEventListener('load', function() {
-			navigator.serviceWorker.register('service-worker.js', { scope: './' })
-			.then(function(r) {
-				console.log('Service worker registered');
-			})
-			.catch(function(what) {
-				console.info('Service worker not registered (not using HTTPS?): ' + what);
-			});
-		});
-		</script>
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" href="vendor/vendor.min.css" />
+    <link rel="stylesheet" ng-href="assets/styles/themes/{{settings.theme || 'default'}}/{{settings.theme || 'default'}}.min.css" />
+    <link rel="manifest" href="manifest.json" />
 
-		<script src="vendor/vendor.js"></script>
+    <script>
+        window.addEventListener('load', function() {
+            if (navigator.serviceWorker) {
+                navigator.serviceWorker.register('service-worker.js', { scope: './' })
+                .then(function(r) {
+                    console.log('Service worker registered');
+                })
+                .catch(function(what) {
+                    console.info('Service worker not registered (not using HTTPS?): ' + what);
+                });
+            }
+        });
+    </script>
 
-		<!-- Register widgets here -->
-		<script src="app/widgets/widgets.module.js"></script>
-		<script src="app/widgets/button/button.widget.js"></script>
-		<script src="app/widgets/chart/chart.widget.js"></script>
-		<script src="app/widgets/colorpicker/colorpicker.widget.js"></script>
-		<script src="app/widgets/dummy/dummy.widget.js"></script>
-		<script src="app/widgets/frame/frame.widget.js"></script>
-		<script src="app/widgets/image/image.widget.js"></script>
-		<script src="app/widgets/knob/knob.widget.js"></script>
-		<script src="app/widgets/label/label.widget.js"></script>
-		<script src="app/widgets/slider/slider.widget.js"></script>
-		<script src="app/widgets/switch/switch.widget.js"></script>
-		<script src="app/widgets/template/template.widget.js"></script>
+    <script src="vendor/vendor.js"></script>
 
-		<script src="app/services/services.js"></script>
-		<script src="app/services/persistence.service.js"></script>
-		<script src="app/services/openhab.service.js"></script>
-		<script src="app/services/icon.service.js"></script>
-		<script src="app/services/speech.service.js"></script>
+    <!-- Register widgets here -->
+    <script src="app/widgets/widgets.module.js"></script>
+    <script src="app/widgets/button/button.widget.js"></script>
+    <script src="app/widgets/chart/chart.widget.js"></script>
+    <script src="app/widgets/colorpicker/colorpicker.widget.js"></script>
+    <script src="app/widgets/dummy/dummy.widget.js"></script>
+    <script src="app/widgets/frame/frame.widget.js"></script>
+    <script src="app/widgets/image/image.widget.js"></script>
+    <script src="app/widgets/knob/knob.widget.js"></script>
+    <script src="app/widgets/label/label.widget.js"></script>
+    <script src="app/widgets/slider/slider.widget.js"></script>
+    <script src="app/widgets/switch/switch.widget.js"></script>
+    <script src="app/widgets/template/template.widget.js"></script>
 
-		<script src="app/app.js"></script>
-		<script src="app/dashboard/dashboard.view.controller.js"></script>
-		<script src="app/dashboard/dashboard.edit.controller.js"></script>
-		<script src="app/menu/menu.controller.js"></script>
-		<script src="app/settings/settings.controller.js"></script>
-		<script src="app/settings/settings.localconfig.controller.js"></script>
+    <script src="app/services/services.js"></script>
+    <script src="app/services/persistence.service.js"></script>
+    <script src="app/services/openhab.service.js"></script>
+    <script src="app/services/icon.service.js"></script>
+    <script src="app/services/speech.service.js"></script>
 
-	</head>
-	<body>
-		<div class="container" ng-view></div>
-	</body>
+    <script src="app/app.js"></script>
+    <script src="app/dashboard/dashboard.view.controller.js"></script>
+    <script src="app/dashboard/dashboard.edit.controller.js"></script>
+    <script src="app/menu/menu.controller.js"></script>
+    <script src="app/settings/settings.controller.js"></script>
+    <script src="app/settings/settings.localconfig.controller.js"></script>
+
+</head>
+
+<body>
+    <div class="container" ng-view></div>
+</body>
+
 </html>

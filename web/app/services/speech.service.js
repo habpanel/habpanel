@@ -37,5 +37,7 @@
 
             speechSynthesis.speak(utterance);
         }
+
+        var voices = getVoices();
     }
 })();
