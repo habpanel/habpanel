@@ -8,7 +8,8 @@
         'web.colorpicker',
         'n3-line-chart',
         'sprintf',
-        'ui.codemirror'
+        'ui.codemirror',
+        'ds.clock'
     ])
     .value('WidgetTypes', [])
     .factory('Widgets', WidgetsService)

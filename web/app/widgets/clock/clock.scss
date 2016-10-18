@@ -1,0 +1,15 @@
+.clock {
+  display: flex;
+  cursor: pointer;
+}
+
+.clock-content {
+  margin: auto;
+  text-align: center;
+  width: 100%;
+}
+
+.clock-value-right {
+  float: right;
+  text-align: right;
+}

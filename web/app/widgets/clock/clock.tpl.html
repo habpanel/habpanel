@@ -1,0 +1,19 @@
+<div class="box-content clock">
+
+    <div class="clock-content">
+
+	<div ng-switch on="vm.widget.mode">
+	    <div ng-switch-when="Analog">
+	        <span ng-if="vm.widget.mode"="Analog">
+	          <ds-widget-clock theme="vm.widget.analog_theme" show-secs="true" show-analog />
+	        </span>
+	    </div>
+	    <div ng-switch-default>
+	       <span ng-if="vm.widget.mode"="Digtal">
+	          <ds-widget-clock show-secs="true" show-digital digital-format="vm.widget.digital_format"/>
+	        </span>
+	    </div>
+	</div>
+
+    </div>
+</div>
