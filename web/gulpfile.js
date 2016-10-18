@@ -106,36 +106,12 @@ gulp.task('vendor-js', function() {
         'bower_components/ng-knob/dist/ng-knob.min.js',
         'bower_components/inobounce/inobounce.min.js',
         'bower_components/oclazyload/dist/ocLazyLoad.min.js',
+        'bower_components/angular-ui-clock/dist/angular-clock.min.js',
         'node_modules/n3-charts/build/LineChart.min.js',
         'vendor/angular-web-colorpicker.js',
-        'vendor/angular-clock.js'
     ]).pipe(concat('vendor.js')).pipe(gulp.dest('vendor'));
 
 });
-
-
-
-
-
-
-gulp.task('angular-clock-js', function () {
-    return gulp.src([
-        'bower_components/angular-ui-clock/dist/angular-clock.js'
-    ]).pipe(uglify()).pipe(gulp.dest('vendor'));
-});
-
-gulp.task('angular-clock-css', function () {
-    return gulp.src([
-        'bower_components/angular-ui-clock/dist/angular-clock.css'
-    ]).pipe(gulp.dest('vendor'));
-});
-
-gulp.task('angular-clock', [
-    'angular-clock-js',
-    'angular-clock-css'
-], function () {});
-
-
 
 
 
@@ -201,4 +177,4 @@ gulp.task('vendor', [
     'vendor-fonts'
 ], function () {});
 
-gulp.task('default', ['vendor', 'codemirror', 'angular-clock'], function () {});
+gulp.task('default', ['vendor', 'codemirror' /*, 'angular-clock' */ ], function () {});

@@ -14,7 +14,7 @@
             </div>
 
 
-            <div class="form-group" ng-class="{error: _form.item.$error && _form.submitted}">
+            <div class="form-group" ng-class="{error: _form.mode.$error && _form.submitted}">
                 <label class="control-label col-lg-3 col-md-3">Mode</label>
                 <div class="col-lg-9 col-md-9">
                     <select name="mode" ng-model="form.mode" value="Analog" ng-init="Analog" class="form-control">
@@ -25,32 +25,32 @@
             </div>
 
 
-            <div class="form-group" ng-class="{error: _form.item.$error && _form.submitted}">
+            <div class="form-group" ng-class="{error: _form.analog_theme.$error && _form.submitted}">
                 <label class="control-label col-lg-3 col-md-3">Analog Theme</label>
                 <div class="col-lg-9 col-md-9">
-                    <input name="analog_theme"  ng-disabled="form.mode == 'Digital'" ng-init="light" ng-model="form.analog_theme" class="form-control">
-<!--
-                    <select name="analog_theme"  ng-disabled="form.mode == 'Digital'" ng-model="form.analog_theme" class="form-control">
+                    <select name="analog_theme"  ng-model="form.analog_theme" class="form-control">
                         <option>light</option>
                         <option>dark</option>
                     </select>
--->
+                </div>
+            </div>
+            
+            <div class="form-group" ng-class="{error: _form.digital_format.$error && _form.submitted}">
+                <label class="control-label col-xs-3">Digital Format</label>
+                <div class="col-xs-7">
+                    <input name="digital_format" ng-model="form.digital_format" class="form-control" />
                 </div>
             </div>
 
-            <div class="form-group" ng-class="{error: _form.format.$error && _form.submitted}">
-                <label class="control-label col-xs-3">Digital Format</label>
-                <div class="col-xs-7">
-                    <input name="digital_format" ng-disabled="form.mode == 'Analog'" ng-init="HH:mm:ss" ng-model="form.digital_format" class="form-control" />
-                </div>
-            </div>
-<!--
+
             <div class="form-group" ng-class="{error: _form.font_size.$error && _form.submitted}">
-                <label class="control-label col-xs-3">Font size</label>
+                <label class="control-label col-xs-3">Digital Font Size</label>
                 <div class="col-xs-4">
                     <input name="font_size" ng-model="form.font_size" class="form-control" />
                 </div>
             </div>
+
+<!--
 
             <div class="form-group" ng-class="{error: _form.nolinebreak.$error && _form.submitted}">
                 <label class="control-label col-lg-3 col-md-3">Background</label>
@@ -63,6 +63,10 @@
                 </div>
             </div>
 -->
+
+
+
+
         </div>
 
 

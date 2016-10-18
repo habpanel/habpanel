@@ -4,16 +4,21 @@
 
 	<div ng-switch on="vm.widget.mode">
 	    <div ng-switch-when="Analog">
-	        <span ng-if="vm.widget.mode"="Analog">
+	        <div ng-if="vm.widget.mode"="Analog">
 	          <ds-widget-clock theme="vm.widget.analog_theme" show-secs="true" show-analog />
-	        </span>
+	        </div>
 	    </div>
 	    <div ng-switch-default>
-	       <span ng-if="vm.widget.mode"="Digtal">
-	          <ds-widget-clock show-secs="true" show-digital digital-format="vm.widget.digital_format"/>
-	        </span>
+               <div ng-switch-on="vm.widget.font_size">
+                  <div ng-switch-when!="">
+	            <ds-widget-clock show-secs="true" show-digital ng-style="{ 'font-size': vm.widget.font_size + 'pt' }" digital-format="vm.widget.digital_format"/>
+                  </div>
+
+                  <div ng-switch-default>
+                    <ds-widget-clock show-secs="true" show-digital digital-format="vm.widget.digital_format"/>
+                  </div>
+	       </div>
 	    </div>
 	</div>
-
     </div>
 </div>

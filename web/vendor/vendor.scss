@@ -14,4 +14,13 @@
 
 @import "../bower_components/angular-gridster/dist/angular-gridster";
 @import "../bower_components/angularjs-slider/dist/rzslider";
+@import "../bower_components/angular-ui-clock/dist/angular-clock";
 @import "node_modules/n3-charts/build/LineChart";
+
+
+// overwrite font settings for angular clock to use standard roboto font at 100% 
+.widget-clock .time {
+    font-family: Roboto;
+    font-size: 100%;
+}
+
