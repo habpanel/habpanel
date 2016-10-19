@@ -27,6 +27,21 @@
     background: $primary-color;
 }
 
+.header {
+    background: $primary-color;
+    h1, .btn {
+        color: white;
+    }
+    h2 {
+        color: white;
+        font-size: 16pt;
+        line-height: 1.5;
+    }
+    .btn-default {
+        color: black;
+    }
+}
+
 .icon-tile.colorize {
             filter: invert(75%) sepia(100%) hue-rotate(0deg) saturate(10000%);
     -webkit-filter: invert(75%) sepia(100%) hue-rotate(0deg) saturate(10000%);

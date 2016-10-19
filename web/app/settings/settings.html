@@ -3,91 +3,94 @@
 	<h2>Settings</h2>
 </div>
 
-<div class="box col-md-5">
-    <br />    
-    <h4>Current storage configuration</h4>
+<div class="scrollable">
 
-    <ul>
-        <li>
-            <input type="radio" ng-click="vm.switchToPanelConfig($event)" ng-model="vm.storageOption" value="(localStorage)" />&nbsp;<strong>Local storage</strong>
-            <br /><small>The configuration is saved for this browser and device only. It will be kept as long as you don't clean up the browser's historical data.
-            <br /><a href="#/settings/localconfig">Edit the local panel configuration (experts only)</a></small>
-            <br /><br />
-        </li>
-        <li ng-if="useRegistry" ng-repeat="(name, data) in vm.panelsRegistry">
-            <a class="pull-right" ng-if="vm.storageOption != name" ng-click="vm.deletePanelConfig(name)"><i class="glyphicon glyphicon-trash"></i></a> 
-            <input type="radio" ng-click="vm.switchToPanelConfig($event)" ng-model="vm.storageOption" value="{{name}}" />&nbsp;<strong>Panel configuration: <em>{{name}}</em></strong>
-            <br /><small>Last synced on {{data.updatedTime | date:'EEE d MMM HH:mm:ss'}}</small>
-            <div>Contains:</div>
-            <ul>
-                <li ng-repeat="dashboard in data.dashboards">
-                    {{dashboard.name}}
-                </li>
-            </ul>
-            <br /><br />
-        </li>
-    </ul>
-    <a ng-if="vm.useRegistry" ng-click="vm.saveAsNewPanelConfig()"><i class="glyphicon glyphicon-save">&nbsp;</i>Save the current configuration to a new panel configuration</a>
-    <div ng-if="!vm.useRegistry" class="alert alert-warning">Panel configurations are not available: not running openHAB 2 or service not installed?</div>
+    <div class="box col-md-5">
+        <br />    
+        <h4>Current storage configuration</h4>
+
+        <ul>
+            <li>
+                <input type="radio" ng-click="vm.switchToPanelConfig($event)" ng-model="vm.storageOption" value="(localStorage)" />&nbsp;<strong>Local storage</strong>
+                <br /><small>The configuration is saved for this browser and device only. It will be kept as long as you don't clean up the browser's historical data.
+                <br /><a href="#/settings/localconfig">Edit the local panel configuration (experts only)</a></small>
+                <br /><br />
+            </li>
+            <li ng-if="useRegistry" ng-repeat="(name, data) in vm.panelsRegistry">
+                <a class="pull-right" ng-if="vm.storageOption != name" ng-click="vm.deletePanelConfig(name)"><i class="glyphicon glyphicon-trash"></i></a> 
+                <input type="radio" ng-click="vm.switchToPanelConfig($event)" ng-model="vm.storageOption" value="{{name}}" />&nbsp;<strong>Panel configuration: <em>{{name}}</em></strong>
+                <br /><small>Last synced on {{data.updatedTime | date:'EEE d MMM HH:mm:ss'}}</small>
+                <div>Contains:</div>
+                <ul>
+                    <li ng-repeat="dashboard in data.dashboards">
+                        {{dashboard.name}}
+                    </li>
+                </ul>
+                <br /><br />
+            </li>
+        </ul>
+        <a ng-if="vm.useRegistry" ng-click="vm.saveAsNewPanelConfig()"><i class="glyphicon glyphicon-save">&nbsp;</i>Save the current configuration to a new panel configuration</a>
+        <div ng-if="!vm.useRegistry" class="alert alert-warning">Panel configurations are not available: not running openHAB 2 or service not installed?</div>
+
+        <br />
+        <br />
+    </div>
+
+    <div class="col-md-2"></div>
+
+
+    <div class="box col-md-5">
+        <br />
+        <h4>Appearance</h4>
+
+        <label>Theme</label>
+        <select class="form-control" ng-change="vm.saveOptions()" ng-model="settings.theme" ng-options="theme.id as theme.name for theme in vm.themes"></select>
+        <br />
+        <br />
+        <label>Background image</label>
+        <input type="text" class="form-control" ng-blur="vm.saveOptions()" ng-model="vm.background_image" placeholder="Example: //source.unsplash.com/random" />
+        <br />
+        <br />
+        <div class="input-group">
+            <input type="checkbox" ng-model="settings.no_clock" ng-change="vm.saveOptions()" id="no_clock" /><label for="no_clock">&nbsp;No clock on the home menu</label>
+        </div>
+        <div class="input-group">
+            <input type="checkbox" ng-model="settings.no_scrolling" ng-change="vm.saveOptions()" id="no_scrolling" /><label for="no_scrolling">&nbsp;Prevent scrolling (when not editing)</label>
+        </div>
+
+
+        <br />
+        <br /> 
+        <h4>Spoken Feedback</h4>
+        <label>Voice</label>
+        <div class="form-group">
+
+        <select class="form-control" ng-change="vm.saveOptions()" ng-model="settings.speech_synthesis_voice" ng-options="voice.name as voice.name + (voice.lang ? ' ('+voice.lang+')' : '') for voice in vm.voices">
+            <option value=""></option>
+        </select>
+        <small>Available voices depend on the operating system and browser environments.</small>
+        <br />
+        <button class="btn btn-primary" ng-click="vm.speakTestSentence()">Test</button>
+
+        <br />
+        <br />
+        <label>Speak the new value of the following item when it changes:</label>
+        <select ng-model="settings.speech_synthesis_item" ng-change="vm.saveOptions()" ng-options="item.name as item.name for item in items | filter: vm.isStringItem" class="form-control">
+            <option value=""></option>
+        </select>
+        <br />
+        <br />
+
+
+        <h4>Switch dashboard with item value</h4>    
+        <label>When this item changes to a dashboard's name, switch to it:</label>
+        <div class="form-group">
+            
+        <select ng-model="settings.dashboard_control_item" ng-change="vm.saveOptions()" ng-options="item.name as item.name for item in items | filter: vm.isStringItem" class="form-control">
+            <option value=""></option>
+        </select>
+    </div>
 
     <br />
     <br />
 </div>
-
-<div class="col-md-2"></div>
-
-
-<div class="box col-md-5">
-    <br />
-    <h4>Appearance</h4>
-
-    <label>Theme</label>
-    <select class="form-control" ng-change="vm.saveOptions()" ng-model="settings.theme" ng-options="theme.id as theme.name for theme in vm.themes"></select>
-    <br />
-    <br />
-    <label>Background image</label>
-    <input type="text" class="form-control" ng-blur="vm.saveOptions()" ng-model="vm.background_image" placeholder="Example: //source.unsplash.com/random" />
-    <br />
-    <br />
-    <div class="input-group">
-        <input type="checkbox" ng-model="settings.no_clock" ng-change="vm.saveOptions()" id="no_clock" /><label for="no_clock">&nbsp;No clock on the home menu</label>
-    </div>
-    <div class="input-group">
-        <input type="checkbox" ng-model="settings.no_scrolling" ng-change="vm.saveOptions()" id="no_scrolling" /><label for="no_scrolling">&nbsp;Prevent scrolling (when not editing)</label>
-    </div>
-
-
-    <br />
-    <br /> 
-    <h4>Spoken Feedback</h4>
-    <label>Voice</label>
-    <div class="form-group">
-
-    <select class="form-control" ng-change="vm.saveOptions()" ng-model="settings.speech_synthesis_voice" ng-options="voice.name as voice.name + (voice.lang ? ' ('+voice.lang+')' : '') for voice in vm.voices">
-        <option value=""></option>
-    </select>
-    <small>Available voices depend on the operating system and browser environments.</small>
-    <br />
-    <button class="btn btn-primary" ng-click="vm.speakTestSentence()">Test</button>
-
-    <br />
-    <br />
-    <label>Speak the new value of the following item when it changes:</label>
-    <select ng-model="settings.speech_synthesis_item" ng-change="vm.saveOptions()" ng-options="item.name as item.name for item in items | filter: vm.isStringItem" class="form-control">
-        <option value=""></option>
-    </select>
-    <br />
-    <br />
-
-
-    <h4>Switch dashboard with item value</h4>    
-    <label>When this item changes to a dashboard's name, switch to it:</label>
-    <div class="form-group">
-        
-    <select ng-model="settings.dashboard_control_item" ng-change="vm.saveOptions()" ng-options="item.name as item.name for item in items | filter: vm.isStringItem" class="form-control">
-        <option value=""></option>
-    </select>
-</div>
-
-<br />
-<br />

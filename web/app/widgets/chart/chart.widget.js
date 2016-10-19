@@ -86,7 +86,7 @@
                 case '3D': startDate.setTime(startDate.getTime() - 3*24*60*60*1000); break;
                 case 'W': startDate.setTime(startDate.getTime() - 7*24*60*60*1000); break;
                 case '2W': startDate.setTime(startDate.getTime() - 2*7*24*60*60*1000); break;
-                case '1M': startDate.setTime(startDate.getTime() - 31*24*60*60*1000); break; //Well...
+                case 'M': startDate.setTime(startDate.getTime() - 31*24*60*60*1000); break; //Well...
                 case '2M': startDate.setTime(startDate.getTime() - 2*31*24*60*60*1000); break;
                 case '4M': startDate.setTime(startDate.getTime() - 4*31*24*60*60*1000); break;
                 case 'Y': startDate.setTime(startDate.getTime() - 12*31*24*60*60*1000); break;

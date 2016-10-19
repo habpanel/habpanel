@@ -72,9 +72,9 @@
             col: widget.col,
             row: widget.row,
             mode: widget.mode,
-	    analog_theme: widget.analog_theme,
+            analog_theme: widget.analog_theme,
             font_size: widget.font_size,
-   	    nobackground: widget.nobackground,
+            nobackground: widget.nobackground,
             digital_format: widget.digital_format
         };
 

@@ -18,9 +18,4 @@
 @import "node_modules/n3-charts/build/LineChart";
 
 
-// overwrite font settings for angular clock to use standard roboto font at 100% 
-.widget-clock .time {
-    font-family: Roboto;
-    font-size: 100%;
-}
 
