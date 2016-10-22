@@ -107,6 +107,16 @@
 
                                 });
                             }
+                        } else if (evtdata.topic === "smarthome/webaudio/playurl") {
+                            try {
+                                var audioUrl = evtdata.payload;
+                                var audio = new Audio(audioUrl);
+                                audio.load();
+                                audio.play();
+                            }
+                            catch (e) {
+                                console.warn("Error while handling audio event: " + e.toString());
+                            }
                         }
                     } catch (e) {
                         console.log('SSE event issue: ' + e.message);
