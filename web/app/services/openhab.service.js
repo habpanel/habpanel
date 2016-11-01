@@ -109,7 +109,8 @@
                             }
                         } else if (evtdata.topic === "smarthome/webaudio/playurl") {
                             try {
-                                var audioUrl = evtdata.payload;
+                                var audioUrl = JSON.parse(evtdata.payload);
+                                console.log("Audio event received: playing " + audioUrl);
                                 var audio = new Audio(audioUrl);
                                 audio.load();
                                 audio.play();
