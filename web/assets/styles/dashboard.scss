@@ -64,7 +64,7 @@ ul {
 }
 
 .box-header i {
-  font-size: 3rem;
+  font-size: 2.5rem;
   vertical-align: middle;
 }
 
@@ -83,9 +83,16 @@ ul {
 
 .box-header-btns {
   top: 0;
-  right: 1rem;
+  right: 0.5rem;
   cursor: pointer;
   position: absolute;
+}
+
+.box-header-dropdown {
+  background-color: transparent;
+  border-style: none;
+  color: #abc;
+  width: 3rem;
 }
 
 .box-label-content {
@@ -97,7 +104,7 @@ ul {
 }
 
 .settings-btn i {
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 
 form {

@@ -38,8 +38,15 @@
                         {{ widget.name }}
                     </div>
                 </div>
-                <div class="box-header-btns pull-right">
-                    <a class="settings-btn" title="settings" ng-click="openSettings(widget)"><i class="glyphicon glyphicon-cog"></i></a>
+                <div class="btn-group box-header-btns dropdown" uib-dropdown dropdown-append-to-body>
+                  <button id="settingsMenu" type="button" class="box-header-dropdown settings-btn" uib-dropdown-toggle>
+                      <i class="glyphicon glyphicon-option-vertical"></i>
+                  </button>
+                  <ul class="dropdown-menu" style="min-width: 90px;" uib-dropdown-menu role="menu" aria-labelledby="settingsMenu">
+                    <li><a ng-click="openSettings(widget)" class="ng-binding"><i class="glyphicon glyphicon-edit"></i> Edit ...</a></li>
+                    <li><a ng-click="transferWidget(widget)" class="ng-binding"><i class="glyphicon glyphicon-duplicate"></i> Copy/move to ...</a></li>
+                    <li><a ng-click="remove(widget)" class="ng-binding"><i class="glyphicon glyphicon-trash"></i> Delete</a></li>
+                  </ul>
                 </div>
             </div>
         </li>

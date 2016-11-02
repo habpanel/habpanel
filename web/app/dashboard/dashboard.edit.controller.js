@@ -121,6 +121,19 @@ angular.module('app')
                 });
             };
 
+            $scope.transferWidget = function(widget) {
+                $modal.open({
+                    scope: $scope,
+                    templateUrl: 'app/dashboard/transferwidget.html',
+                    controller: 'TransferWidgetCtrl',
+                    backdrop: 'static',
+                    resolve: {
+                        widget: function() {
+                            return widget;
+                        }
+                     }
+                })
+            };
         }
     ])
 
@@ -156,6 +169,56 @@ angular.module('app')
         }
     ])
 
+
+    // transfer (copy/move) dialog
+    .controller('TransferWidgetCtrl', ['$scope', '$timeout', '$rootScope', '$uibModalInstance', 'widget',
+        function ($scope, $timeout, $rootScope, $modalInstance, widget) {
+
+            $scope.widgetName = widget.name;
+            $scope.selDashboards = [];
+
+            // build array with dashboard ids/names and pass to form
+            $rootScope.dashboards.forEach( function(arrayItem) {
+                $scope.selDashboards.push({id: arrayItem.id, name: arrayItem.name});
+            });
+
+            // make current dashboard default target
+            $scope.form = {
+                targetDashboard: $scope.dashboard.id,
+                currentDashboard: $scope.dashboard.id
+            };
+
+            $scope.dismiss = function() {
+                $modalInstance.dismiss();
+            };
+
+
+            $scope.copyWidget = function(par) {
+
+                // copy widget and reset row and column to get placed automatically
+                var copiedWidget = angular.copy(widget);
+                delete copiedWidget.col;
+                delete copiedWidget.row;
+                // get index of target dashboard first and then copy
+                var index = $rootScope.dashboards.findIndex( function(element) {return element.id == $scope.form.targetDashboard; });
+                $rootScope.dashboards[index].widgets.push(copiedWidget);
+
+                if (par.close) {
+                    $modalInstance.close(widget);
+                }
+            };
+
+            $scope.moveWidget = function() {
+                $scope.copyWidget({close: false});
+
+                // remove source widget from current dashboard
+                this.remove(widget);
+
+                $modalInstance.close(widget);
+            };
+        }
+    ])
+
     // helper code
     .filter('object2Array', function() {
         return function(input) {
@@ -166,3 +229,7 @@ angular.module('app')
             return out;
         }
     });
+
+
+
+
