@@ -32,6 +32,7 @@
     "angular-prompt": "~1.2",
     "angular-local-storage": "~0.4.0",
     "angular-route": "~1.5.8",
+    "angular-touch": "~1.5.8",
     "angularjs-slider": "~5.4.3",
     "atmosphere.js": "latest",
     "angular-atmosphere-service": "latest",

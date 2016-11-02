@@ -90,6 +90,7 @@ gulp.task('vendor-js', function() {
     return gulp.src([
         'bower_components/angular/angular.min.js',
         'bower_components/angular-route/angular-route.min.js',
+        'bower_components/angular-touch/angular-touch.min.js',
         'bower_components/d3/d3.min.js',
         'bower_components/sprintf/dist/sprintf.min.js',
         'bower_components/angular-gridster/dist/angular-gridster.min.js',
