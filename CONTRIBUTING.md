@@ -243,18 +243,24 @@ general guidelines for the community as a whole:
 HABPanel was made possible (apart from ESH and openHAB themselves, of course)
 thanks to these awesome JavaScript libraries, most notably:
 
+- [AngularJS](https://github.com/angular/angular.js)
 - [angular-atmosphere](https://github.com/spyboost/angular-atmosphere)
+- [angular-clipboard](https://github.com/omichelsen/angular-clipboard)
+- [angular-clock](https://github.com/deepu105/angular-clock)
 - [angular-fullscreen](https://github.com/fabiobiondi/angular-fullscreen)
 - [angular-gridster](https://github.com/ManifestWebDesign/angular-gridster)
 - [angular-local-storage](https://github.com/grevory/angular-local-storage)
 - [angular-prompt](https://github.com/cgross/angular-prompt)
 - [angular-slider](https://github.com/angular-slider/angularjs-slider)
 - [angular-ui-bootstrap](https://github.com/angular-ui/bootstrap)
+- [angular-ui-codemirror](https://github.com/angular-ui/ui-codemirror)
+- [angular-web-colorpicker](https://github.com/twler/angular-web-colorpicker)
 - [atmosphere.js](https://github.com/Atmosphere/atmosphere-javascript)
+- [CodeMirror](https://github.com/codemirror/codemirror)
 - [D3](https://github.com/d3/d3)
-- [ng-knob](https://github.com/RadMie/ng-knob)
-- [n3-line-chart](https://github.com/n3-charts/line-chart)
-- [sprintf.js](https://github.com/alexei/sprintf.js)
 - [iNoBounce](https://github.com/lazd/iNoBounce)
+- [n3-line-chart](https://github.com/n3-charts/line-chart)
+- [ng-knob](https://github.com/RadMie/ng-knob)
+- [sprintf.js](https://github.com/alexei/sprintf.js)
 
 Check out the ```web/bower.json``` and ```web/package.json``` files for the complete list.

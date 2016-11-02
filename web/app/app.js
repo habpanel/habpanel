@@ -5,6 +5,7 @@
         'gridster',
         'ui.bootstrap',
         'ngRoute',
+        'ngTouch',
         'app.services',
         'app.widgets',
         'cgPrompt',
