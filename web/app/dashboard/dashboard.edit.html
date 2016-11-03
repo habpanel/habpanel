@@ -42,9 +42,10 @@
                   <button id="settingsMenu" type="button" class="box-header-dropdown settings-btn" uib-dropdown-toggle>
                       <i class="glyphicon glyphicon-option-vertical"></i>
                   </button>
-                  <ul class="dropdown-menu" style="min-width: 90px;" uib-dropdown-menu role="menu" aria-labelledby="settingsMenu">
-                    <li><a ng-click="openSettings(widget)" class="ng-binding"><i class="glyphicon glyphicon-edit"></i> Edit ...</a></li>
-                    <li><a ng-click="transferWidget(widget)" class="ng-binding"><i class="glyphicon glyphicon-duplicate"></i> Copy/move to ...</a></li>
+                  <ul class="dropdown-menu-right" style="min-width: 90px;" uib-dropdown-menu role="menu" aria-labelledby="settingsMenu">
+                    <li><a ng-click="openSettings(widget)" class="ng-binding"><i class="glyphicon glyphicon-edit"></i> Edit...</a></li>
+                    <li><a ng-click="transferWidget(widget)" class="ng-binding"><i class="glyphicon glyphicon-duplicate"></i> Copy/move to...</a></li>
+                    <li class="divider"></li>
                     <li><a ng-click="remove(widget)" class="ng-binding"><i class="glyphicon glyphicon-trash"></i> Delete</a></li>
                   </ul>
                 </div>
