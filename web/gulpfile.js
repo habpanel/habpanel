@@ -108,6 +108,7 @@ gulp.task('vendor-js', function() {
         'bower_components/inobounce/inobounce.min.js',
         'bower_components/oclazyload/dist/ocLazyLoad.min.js',
         'bower_components/angular-ui-clock/dist/angular-clock.min.js',
+        'bower_components/angular-file-saver/dist/angular-file-saver.bundle.min.js',
         'node_modules/n3-charts/build/LineChart.min.js',
         'vendor/angular-web-colorpicker.js'
     ]).pipe(concat('vendor.js')).pipe(gulp.dest('vendor'));
@@ -133,6 +134,12 @@ gulp.task('codemirror-addon-fold', function () {
     return gulp.src([
         'bower_components/codemirror/addon/fold/xml-fold.js',
     ]).pipe(uglify()).pipe(gulp.dest('vendor/cm/addon/fold'));
+});
+
+gulp.task('codemirror-addon-mode', function () {
+    return gulp.src([
+        'bower_components/codemirror/addon/mode/overlay.js',
+    ]).pipe(uglify()).pipe(gulp.dest('vendor/cm/addon/mode'));
 });
 
 gulp.task('codemirror-addon-edit', function () {
@@ -167,6 +174,7 @@ gulp.task('codemirror', [
         'codemirror-lib', 
         'codemirror-css', 
         'codemirror-addon-fold',
+        'codemirror-addon-mode',
         'codemirror-addon-edit', 
         'codemirror-mode-xml', 
         'codemirror-mode-javascript',

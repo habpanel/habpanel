@@ -37,7 +37,7 @@
     "atmosphere.js": "latest",
     "angular-atmosphere-service": "latest",
     "d3": "^3.5.x",
-    "ng-knob": "https://github.com/ghys/ng-knob.git#0.1.5",
+    "ng-knob": "https://github.com/ghys/ng-knob.git#0.1.6",
     "sprintf": "~1.0.3",
     "inobounce": "iNoBounce#~0.1.2",
     "angular-ui-codemirror": "~0.3.0",
@@ -45,6 +45,7 @@
     "angular-clipboard": "~1.5.0",
     "bootstrap-sass": "^3.3.7",
     "roboto-fontface": "^0.5.0",
-    "angular-ui-clock": "latest"
+    "angular-ui-clock": "latest",
+    "angular-file-saver": "~1.1.2"
   }
 }

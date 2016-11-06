@@ -12,7 +12,8 @@
         'LocalStorageModule',
         'FBAngular',
         'oc.lazyLoad',
-        'angular-clipboard'
+        'angular-clipboard',
+        'ngFileSaver'
     ])
     .config(['$routeProvider', 'localStorageServiceProvider', function($routeProvider, localStorageServiceProvider) {
         localStorageServiceProvider.setStorageType('localStorage');
@@ -48,6 +49,7 @@
                                 'vendor/cm/addon/edit/matchtags.js',
                                 'vendor/cm/addon/edit/closebrackets.js',
                                 'vendor/cm/addon/edit/closetag.js',
+                                'vendor/cm/addon/mode/overlay.js',
                                 'vendor/cm/mode/xml/xml.js'
                             ]);
                         });

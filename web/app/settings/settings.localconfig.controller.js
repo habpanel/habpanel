@@ -5,8 +5,8 @@
         .module('app')
         .controller('SettingsLocalConfigCtrl', SettingsLocalConfigController);
 
-    SettingsLocalConfigController.$inject = ['$rootScope', '$timeout', 'OH2ServiceConfiguration', 'OH2StorageService', 'PersistenceService', 'prompt', 'clipboard'];
-    function SettingsLocalConfigController($rootScope, $timeout, OH2ServiceConfiguration, OH2StorageService, PersistenceService, prompt, clipboard) {
+    SettingsLocalConfigController.$inject = ['$rootScope', '$timeout', 'OH2ServiceConfiguration', 'OH2StorageService', 'PersistenceService', 'prompt', 'clipboard', 'Blob', 'FileSaver', 'LocalFileReader'];
+    function SettingsLocalConfigController($rootScope, $timeout, OH2ServiceConfiguration, OH2StorageService, PersistenceService, prompt, clipboard, Blob, FileSaver, LocalFileReader) {
         var vm = this;
 
         vm.editorOptions = {
@@ -25,6 +25,7 @@
         }
 
         vm.rawLocalConfig = JSON.stringify($rootScope.dashboards, null, 4);
+        vm.file = {};
 
         vm.copiedToClipboard = function (success) {
             if (success) {
@@ -35,6 +36,28 @@
                 $timeout(resetButtons, 2000);
             }
         };
+
+        vm.importFile = function (file) {
+            LocalFileReader.readFile(file, $rootScope).then(function (text) {
+                try {
+                    vm.importMode = false;
+                    var json = JSON.parse(text);
+                    vm.rawLocalConfig = text;
+                    vm.saveConfig();
+                } catch (e) {
+                    prompt({
+                        title: "Error",
+                        message: "Problem while importing: " + e,
+                        buttons: [{ label:'OK', primary: true }]
+                    });
+                }
+            });
+        }
+
+        vm.exportToFile = function () {
+            var data = new Blob([vm.rawLocalConfig], { type: 'application/json;charset=utf-8'});
+            FileSaver.saveAs(data, 'habpanel-config.json');
+        }
 
         vm.saveConfig = function () {
             try {

@@ -94,18 +94,19 @@
 
 
     // settings dialog
-    WidgetSettingsCtrlTemplate.$inject = ['$scope', '$timeout', '$rootScope', '$uibModalInstance', 'widget', 'OHService'];
+    WidgetSettingsCtrlTemplate.$inject = ['$scope', '$timeout', '$rootScope', '$uibModalInstance', 'widget', 'OHService', 'FileSaver', 'LocalFileReader'];
 
-    function WidgetSettingsCtrlTemplate($scope, $timeout, $rootScope, $modalInstance, widget, OHService) {
+    function WidgetSettingsCtrlTemplate($scope, $timeout, $rootScope, $modalInstance, widget, OHService, FileSaver, LocalFileReader) {
         $scope.widget = widget;
         $scope.items = OHService.getItems();
 
         $scope.editorOptions = {
             lineNumbers  : true,
+            tabSize      : 2,
             matchTags    : {bothTags: true},
             autoCloseTags: true,
             matchBrackets: true,
-            mode         : 'xml'
+            mode         : 'template'
         };
 
         $scope.form = {
@@ -133,8 +134,57 @@
             $modalInstance.close(widget);
         };
 
+        $scope.importFile = function(file) {
+            if (!file) return;
+            if (file.name.indexOf(".html") == -1) {
+                alert("The file must have a .html extension!");
+                delete $scope.file;
+                return;
+            }
+            LocalFileReader.readFile(file, $rootScope).then(function (text) {
+                $scope.form.template = text;
+                console.log('Template loaded from file: ' + file.name);
+                delete $scope.file;
+            });
+        };
+
+        $scope.exportToFile = function() {
+            var data = new Blob([$scope.form.template], { type: 'text/html;charset=utf-8'});
+            FileSaver.saveAs(data, $scope.form.name + '.tpl.html');
+        };
+
         $timeout(function () {
             $scope.refreshEditor = new Date();
         });
+
+        CodeMirror.defineMode("template", function(config, parserConfig) {
+            var templateOverlay = {
+                token: function(stream, state) {
+                    var ch;
+                    if (stream.match("itemValue(") || stream.match("sendCmd(")
+                     || stream.match("itemsInGroup(") || stream.match("itemsWithTag(")) {
+                         while ((ch = stream.next()) != null)
+                         if (ch == ")") {
+                             stream.eat(")");
+                             return "habpanel-function"
+                         }
+                    }
+                    if (stream.match("{{")) {
+                        while ((ch = stream.next()) != null)
+                        if (ch == "}" && stream.next() == "}") {
+                            stream.eat("}");
+                            return "template-expression";
+                        }
+                    }
+                    while (stream.next() != null
+                        && (!stream.match("{{", false)) && !stream.match("itemValue", false)
+                            && !stream.match("sendCmd", false) && !stream.match("itemsInGroup", false)
+                            && !stream.match("itemsWithTags", false)) {}
+                    return null;
+                }
+            };
+            return CodeMirror.overlayMode(CodeMirror.getMode(config, parserConfig.backdrop || "text/xml"), templateOverlay);
+        });
     }
+
 })();

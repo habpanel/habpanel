@@ -26,7 +26,17 @@
                 </div>
             </div>
             <h4>
-                <a class="pull-right" href="https://community.openhab.org/c/apps-services/habpanel" target="_blank">help?</a>
+                <input style="display: none" type="file" id="template-file-select" local-file-select="file" on-file-selected="importFile" />
+                <div class="btn-group pull-right" style="margin-top: -10px" uib-dropdown>
+                    <a id="template-actions" class="btn btn-default glyphicon glyphicon-option-vertical" uib-dropdown-toggle>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-right" uib-dropdown-menu role="menu" aria-labelledby="template-actions">
+                        <li class="menuitem"><a onclick="document.getElementById('template-file-select').click()"><i class="glyphicon glyphicon-import">&nbsp;</i>Import from file...</li></a>
+                        <li class="menuitem"><a ng-click="exportToFile()"><i class="glyphicon glyphicon-export">&nbsp;</i>Export to file</a></li>
+                        <li class="divider" />
+                        <li class="menuitem"><a href="https://community.openhab.org/c/apps-services/habpanel" target="_blank"><i class="glyphicon glyphicon-question-sign">&nbsp;</i>Community help</a>
+                    </ul>
+                </div>
                 Template
             </h4>
             <div class="form-group" ng-class="{error: _form.name.$error && _form.submitted}">

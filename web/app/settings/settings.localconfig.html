@@ -8,12 +8,20 @@
 
     <br />    
     <div class="pull-right">
-        <a clipboard text="vm.rawLocalConfig" on-copied="vm.copiedToClipboard(true)" on-copied="vm.copiedToClipboard(false)" class="btn btn-default"><i class="glyphicon glyphicon-copy"></i>&nbsp;{{vm.copyLabel}}</a>
-        <a ng-click="vm.saveConfig()" class="btn btn-danger"><i class="glyphicon glyphicon-save"></i>&nbsp;{{vm.saveLabel}}</a>
+        <a clipboard text="vm.rawLocalConfig" on-copied="vm.copiedToClipboard(true)" on-copied="vm.copiedToClipboard(false)" class="btn btn-default"  style="width: 90px; margin-bottom: 3px"><i class="glyphicon glyphicon-copy"></i>&nbsp;{{vm.copyLabel}}</a>
+        <br />
+        <a ng-click="vm.saveConfig()" class="btn btn-danger" style="width: 90px; margin-bottom: 3px"><i class="glyphicon glyphicon-save"></i>&nbsp;{{vm.saveLabel}}</a>
     </div>
-    <h4>Local panel configuration editor</h4>
-    <small>This is the raw configuration object. You can use this to backup/restore your entire config by copy-pasting the JSON to or from somewhere else.
-        Be careful though - no checks are performed here!</small>
+    <h4><span class="label" uib-tooltip="This is the raw configuration object representing your current configuration. Be careful while editing it by hand!" tooltip-placement="bottom-left"><i class="glyphicon glyphicon-alert"></i></span> Local panel configuration editor</h4>
+
+    <div ng-show="vm.importMode">
+        <input type="file" local-file-select="vm.file" on-file-selected="vm.importFile" style="display: inline"><a ng-click="vm.importMode=false">Cancel</a>
+    </div>
+
+    <div ng-show="!vm.importMode">
+        <a ng-click="vm.importMode=true" class="btn btn-primary"><i class="glyphicon glyphicon-import">&nbsp;</i>Import</a>
+        <a ng-click="vm.exportToFile()" class="btn btn-primary"><i class="glyphicon glyphicon-export">&nbsp;</i>Export</a>
+    </div>
 
     <div ui-codemirror ui-refresh='vm.refreshEditor' ui-codemirror-opts="vm.editorOptions" ng-model="vm.rawLocalConfig" />
 
