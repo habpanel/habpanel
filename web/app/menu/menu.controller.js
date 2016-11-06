@@ -6,8 +6,8 @@
         .controller('MenuCtrl', MenuController)
         .controller('DashboardSettingsCtrl', DashboardSettingsCtrl);
 
-    MenuController.$inject = ['$rootScope', '$scope', 'dashboards', '$interval', '$location', 'PersistenceService', 'OHService', 'prompt', '$filter', '$uibModal', 'Fullscreen'];
-    function MenuController($rootScope, $scope, dashboards, $interval, $location, PersistenceService, OHService, prompt, $filter, $modal, Fullscreen) {
+    MenuController.$inject = ['$rootScope', '$scope', 'dashboards', '$routeParams', '$interval', '$location', 'PersistenceService', 'OHService', 'prompt', '$filter', '$uibModal', 'Fullscreen'];
+    function MenuController($rootScope, $scope, dashboards, $routeParams, $interval, $location, PersistenceService, OHService, prompt, $filter, $modal, Fullscreen) {
         var vm = this;
         vm.dashboards = dashboards;
         vm.editMode = false;
@@ -23,6 +23,8 @@
             }
             $interval(tick, 1000);
             if ($rootScope.settings.no_scrolling) iNoBounce.enable(); else iNoBounce.disable();
+            $rootScope.kioskMode = ($routeParams.kiosk == 'on');
+
             OHService.reloadItems();
         }
 

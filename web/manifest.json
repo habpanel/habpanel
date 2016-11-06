@@ -33,7 +33,6 @@
       "type": "image/png"
     }
   ],
-  "start_url": "./index.html",
   "display": "fullscreen",
   "background_color": "black"
 }
