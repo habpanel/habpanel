@@ -77,6 +77,16 @@ angular.module('app')
                 });
             };
 
+            $scope.addCustomWidget = function(id) {
+                $scope.dashboard.widgets.push({
+                    name: "New Widget",
+                    sizeX: 4,
+                    sizeY: 4,
+                    type: "template",
+                    customwidget: id
+                })
+            }
+
             $scope.save = function() {
                 PersistenceService.saveDashboards().then(function () {
 

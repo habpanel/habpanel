@@ -103,11 +103,45 @@
                     }]
                 }
             })
+            .when('/settings/widgets', {
+                templateUrl: 'app/settings/settings.widgets.list.html',
+                controller: 'WidgetListCtrl',
+                controllerAs: 'vm',
+                resolve: {
+                    widgets: ['PersistenceService', function (persistenceService) {
+                        return persistenceService.getCustomWidgets();
+                    }]
+                }
+            })
+            .when('/settings/widgets/design/:id', {
+                templateUrl: 'app/settings/settings.widgets.designer.html',
+                controller: 'WidgetDesignerCtrl',
+                controllerAs: 'vm',
+                resolve: {
+                    widget: ['PersistenceService', '$route', function (persistenceService, $route) {
+                        return persistenceService.getCustomWidget($route.current.params.id);
+                    }],
+                    codemirror: ['$ocLazyLoad', '$timeout', function ($ocLazyLoad, $timeout) {
+                        return $ocLazyLoad.load([
+                            'vendor/cm/lib/codemirror.css',
+                            'vendor/cm/lib/codemirror.js',
+                            'vendor/cm/theme/rubyblue.css',
+                        ]).then (function () {
+                            return $ocLazyLoad.load([
+                                'vendor/cm/addon/edit/matchbrackets.js',
+                                'vendor/cm/addon/edit/matchtags.js',
+                                'vendor/cm/addon/edit/closebrackets.js',
+                                'vendor/cm/addon/edit/closetag.js',
+                                'vendor/cm/addon/mode/overlay.js',
+                                'vendor/cm/mode/xml/xml.js'
+                            ]);
+                        })
+                    }]
+                }
+            })
             .otherwise({
                 redirectTo: '/'
             });
-
-
 
     }])
 })();

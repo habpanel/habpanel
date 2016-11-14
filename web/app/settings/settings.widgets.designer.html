@@ -1,0 +1,113 @@
+<div class="header">
+	<a class="btn btn-link pull-left" onclick="window.history.back()"><i class="glyphicon glyphicon-chevron-left"></i></a>
+    <a class="btn btn-link pull-left" href="#/" title="Home"><i class="glyphicon glyphicon-home"></i></a>
+	<h2>Widget: {{vm.widgetId}}</h2>
+</div>
+
+<div class="col-md-12 widgetdesigner">
+
+    <!--<div class="col-xs-2">
+        <div>here be widgets</div>
+    </div>-->
+
+    <div class="row">
+        <div class="tab-container">
+            <uib-tabset style="height: calc(100%)">
+                <button class="btn btn-success pull-right" ng-click="vm.save()"><i class="glyphicon" ng-class="{ 'glyphicon-ok': vm.saveLabel==='Saved!', 'glyphicon-save': vm.saveLabel!=='Saved!'}"></i><span class="hidden-xs">&nbsp;{{vm.saveLabel}}</span></button>
+                <uib-tab heading="Code" class="whitebg">
+                    <div ui-codemirror ng-keydown="vm.keyDown($event)" style="height: calc(100%)" ui-refresh='vm.refreshEditor' ui-codemirror-opts="vm.editorOptions" ng-model="vm.widget.template">
+                    </div>
+                </uib-tab>
+                <uib-tab heading="Settings">
+                    <div class="whitebg modal-body" style="overflow-y: auto">
+                        <h4>General settings</h4>
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label class="control-label col-md-2">Display name</label>
+                                <div class="col-md-10">
+                                    <input name="name" type="text" ng-model="vm.widget.name" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-2">Author</label>
+                                <div class="col-md-10">
+                                    <input name="name" type="text" ng-model="vm.widget.author" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-2">Description</label>
+                                <div class="col-md-10">
+                                    <input name="name" type="text" ng-model="vm.widget.description" class="form-control" />
+                                </div>
+                            </div>
+                        </form>
+                        <hr />
+                        <h4>Configuration settings</h4>
+                        <small><i class="glyphicon glyphicon-exclamation-sign">&nbsp;</i>Beware: always bear in mind instances of this widget might be existing when altering configuration settings!</small>
+                        <br /><br />
+                        <button class="btn btn-primary" ng-click="vm.addSetting()"><i class="glyphicon glyphicon-plus">&nbsp;</i>Add setting</button>
+                        <br /><br />
+                        <div class="well" ng-repeat="setting in vm.widget.settings">
+                            <button class="btn btn-danger pull-right" ng-click="vm.deleteSetting(setting)"><i class="glyphicon glyphicon-trash"></i></button>
+                            <form class="form-horizontal">
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">Type</label>
+                                    <div class="col-md-4">
+                                        <select ng-model="setting.type" class="form-control" style="width: 100px">
+                                            <option value="string">String</option>
+                                            <option value="number">Number</option>
+                                            <option value="item">Item</option>
+                                            <option value="color">Color</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label uib-tooltip="Enter a JSON friendly key for this setting - ideally, use only lowercase letters, digits and underscores. Examples: my_setting, first_item, text_size, font_color" tooltip-placement="right" class="control-label col-md-2">ID <i class="glyphicon glyphicon-info-sign"></i></label>
+                                    <div class="col-md-10">
+                                        <input name="name" type="text" ng-model="setting.id" class="form-control" required />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">Label</label>
+                                    <div class="col-md-10">
+                                        <input name="name" type="text" ng-model="setting.label" class="form-control" required />
+                                    </div>
+                                </div>
+                                <!--<div class="form-group">
+                                    <label class="control-label col-md-2">Default value</label>
+                                    <div class="col-md-10">
+                                        <input name="name" type="text" ng-model="setting.default" class="form-control" />
+                                    </div>
+                                </div>-->
+                            </form>
+                        </div>
+
+                    </div>
+                </uib-tab>
+                <uib-tab heading="Preview" select="refreshPreview()">
+                    <div class="col-xs-2" style="height: calc(100%); padding-top: 80px; padding-bottom: 20px">
+                        <a style="position: absolute; top: 0; left: 0; font-size: 30px; padding: 20px" ng-click="vm.openPreviewSettings()"><i class="glyphicon glyphicon-cog"></i></a> 
+                        <rzslider rz-slider-model="vm.previewmodel.sizeY" rz-slider-options="{ floor:1, ceil:12, vertical: true, rightToLeft: true, hidePointerLabels: true, hideLimitLabels: true, showTicks: true, onEnd: vm.onChangedColumns() }" />
+                    </div>
+                    <div class="col-xs-10" style="height: calc(100%); padding-left: 20px; padding-right: 20px">
+                        <div>
+                            <rzslider rz-slider-model="vm.previewmodel.sizeX" rz-slider-options="{ floor:1, ceil:12, showTicks: true, hidePointerLabels: true, hideLimitLabels: true, onEnd: vm.onChangedColumns() }" />
+                        </div>
+                        <br />
+                        <div>
+                            <div gridster="vm.gridsterOptions">
+                                <ul>
+                                    <li gridster-item="vm.previewmodel">
+                                        <div class="box">
+                                            <widget-template ng-model="vm.previewmodel"></widget-template>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div> 
+                        </div>
+                    </div>
+                </uib-tab>
+            </uib-tabset>
+        </div>
+    </div>
+</div>

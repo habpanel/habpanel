@@ -9,20 +9,24 @@
     function PersistenceService($rootScope, $q, $filter, OH2StorageService, localStorageService) {
         this.getDashboards = getDashboards;
         this.getDashboard = getDashboard;
+        this.getCustomWidgets = getCustomWidgets;
+        this.getCustomWidget = getCustomWidget;
         this.saveDashboards = saveDashboards;
 
-        function loadDashboardsFromLocalStorage() {
+        function loadConfigurationFromLocalStorage() {
             $rootScope.dashboards = localStorageService.get("dashboards") || [];
             $rootScope.menucolumns = localStorageService.get("menucolumns") || 1;
             $rootScope.settings = localStorageService.get("settings") || {};
+            $rootScope.customwidgets = localStorageService.get("customwidgets") || {};
         }
 
-        function saveDashboardsToLocalStorage() {
+        function saveConfigurationToLocalStorage() {
             if (!$rootScope.dashboards) return;
 
             localStorageService.set("dashboards", $rootScope.dashboards);
             localStorageService.set("menucolumns", $rootScope.menucolumns);
             localStorageService.set("settings", $rootScope.settings);
+            localStorageService.set("customwidgets", $rootScope.customwidgets);
         }
 
         ////////////////
@@ -35,13 +39,13 @@
                 if (OH2StorageService.getCurrentPanelConfig()) {
                     OH2StorageService.useCurrentPanelConfig();
                 } else {
-                    loadDashboardsFromLocalStorage();
+                    loadConfigurationFromLocalStorage();
                 }
 
                 deferred.resolve($rootScope.dashboards);
             }, function (err) {
                 // No OH2 service, use local storage
-                loadDashboardsFromLocalStorage();
+                loadConfigurationFromLocalStorage();
                 deferred.resolve($rootScope.dashboards);
             });
 
@@ -58,16 +62,40 @@
 
         function getDashboard(id) {
             if (!$rootScope.dashboards) {
-                return loadDashboards().then(function () { return $filter('filter')($rootScope.dashboards, {id: id}, true)[0]; });
+                return loadDashboards().then(function () {
+                    return $filter('filter')($rootScope.dashboards, {id: id}, true)[0];
+                });
             }
 
             return $filter('filter')($rootScope.dashboards, {id: id}, true)[0];
         }
 
+        function getCustomWidgets() {
+            if (!$rootScope.dashboards) {
+                return loadDashboards().then(function () {
+                    return $rootScope.customwidgets;
+                }, function (err) {
+                    return err;
+                });
+            }
+
+            return $rootScope.customwidgets;
+        }
+
+        function getCustomWidget(id) {
+            if (!$rootScope.dashboards) {
+                return loadDashboards().then(function () {
+                    return $rootScope.customwidgets[id];
+                });
+            }
+
+            return $rootScope.customwidgets[id];
+        }
+
         function saveDashboards() {
             var deferred = $q.defer();
 
-            saveDashboardsToLocalStorage();
+            saveConfigurationToLocalStorage();
             if ($rootScope.useRegistry && OH2StorageService.getCurrentPanelConfig()) {
                 OH2StorageService.saveCurrentPanelConfig().then(function (data) {
                     console.log('Saved to openHAB 2 service configuration');

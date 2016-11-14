@@ -5,12 +5,17 @@
             <span class="caret"></span>
         </button>
         &nbsp;
-        <ul class="dropdown-menu" aria-labelledby="addWidgetMenu">
+        <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="addWidgetMenu">
             <li ng-repeat="type in widgetTypes">
             	<a ng-click="addWidget(type.type)">
             		{{type.displayName}}
             	</a>
             </li>
+            <li class="divider">
+            <li class="dropdown-header"><a href="#/settings/widgets" class="pull-right" style="padding: 0"><i class="glyphicon glyphicon-cog"></i></a>Custom widgets</li>
+            <li ng-repeat="(id,customwidget) in customwidgets">
+                <a ng-click="addCustomWidget(id)">{{customwidget.name || id}}</a></li>
+            <!--<li ><a href="#/settings/widgets"><i class="glyphicon glyphicon-cog">&nbsp;</i>Manage</a></li>-->
         </ul>
     </div>
     <a class="btn" href="#/"><i class="glyphicon glyphicon-chevron-left"></i></a>
@@ -31,7 +36,7 @@
             <div class="box box-design" ng-controller="CustomWidgetCtrl">
                 <div class="box-header pull-left" style="display: inline">
                     <i class="handle glyphicon glyphicon-move"></i>
-                    <h3>{{ widget.type }}</h3>
+                    <h3>{{ widget.customwidget || widget.type }}</h3>
                 </div>
                 <div class="box-content box-label-content">
                     <div class="box-label">

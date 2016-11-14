@@ -32,27 +32,34 @@
         return directive;
         
         function link(scope, element, attrs) {
-            var template = scope.ngModel.template;
-            if (scope.ngModel.dontwrap) {
-                if (scope.ngModel.nobackground) {
-                    template = "<div class=\"template-nobkg\">" + template + "</div>";
+
+            function render() {
+                var template = (scope.ngModel.customwidget) ?
+                                $rootScope.customwidgets[scope.ngModel.customwidget].template
+                                : scope.ngModel.template;
+
+                scope.config = scope.ngModel.config;
+
+                if (scope.ngModel.dontwrap) {
+                    if (scope.ngModel.nobackground) {
+                        template = "<div class=\"template-nobkg\">" + template + "</div>";
+                    }
+                } else {
+                    template = "<div class=\"box-content template-container" +
+                        ((scope.ngModel.nobackground) ? " template-nobkg" : "") +
+                        "\"><div class=\"template-contents\">" +
+                                template + "</div></div>";
                 }
-            } else {
-                template = "<div class=\"box-content template-container" +
-                    ((scope.ngModel.nobackground) ? " template-nobkg" : "") +
-                    "\"><div class=\"template-contents\">" +
-                             template + "</div></div>";
+
+                element.html(template);
+
+                $compile(element.contents())(scope);
             }
 
-            element.html(template);
-
-            $compile(element.contents())(scope);
-
-            scope.itemValue = function(item) {
-                var item = OHService.getItem(item);
-                if (!item) {
-                    return "N/A";
-                }
+            scope.itemValue = function(itemname) {
+                if (!itemname) return "N/A";
+                var item = OHService.getItem(itemname);
+                if (!item) return "N/A";
 
                 var value = item.state;
                 return value;
@@ -81,7 +88,13 @@
                 }
 
                 OHService.sendCmd(item.name, cmd);
-            }            
+            }
+
+            scope.$on("refreshTemplate", function () {
+                render();
+            });
+
+            render();
         }
     }
 
@@ -99,6 +112,19 @@
     function WidgetSettingsCtrlTemplate($scope, $timeout, $rootScope, $modalInstance, widget, OHService, FileSaver, LocalFileReader) {
         $scope.widget = widget;
         $scope.items = OHService.getItems();
+
+
+        if ($scope.widget.preview) {
+            // inline settings (used in the designer's preview)
+            $scope.widgetsettings = angular.copy($scope.widget.settings);
+            $scope.customwidget_name = $scope.widget.customwidget_name;
+        } else {
+            if ($scope.widget.customwidget) {
+                // get settings from custom widget
+                $scope.widgetsettings = angular.copy($rootScope.customwidgets[$scope.widget.customwidget].settings);
+                $scope.customwidget_name = $rootScope.customwidgets[$scope.widget.customwidget].name;
+            }
+        }
 
         $scope.editorOptions = {
             lineNumbers  : true,
@@ -119,6 +145,9 @@
             dontwrap    : widget.dontwrap,
             nobackground: widget.nobackground
         };
+        if ($scope.widget.customwidget || $scope.widget.settings || $scope.widget.preview) {
+            $scope.form.config = $scope.widget.config || {};
+        }
 
         $scope.dismiss = function() {
             $modalInstance.dismiss();

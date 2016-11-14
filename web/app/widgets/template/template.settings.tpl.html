@@ -2,7 +2,8 @@
     <form name="_form" class="form-horizontal" ng-submit="submit(_form)">
         <div class="modal-header">
             <button type="button" class="close" ng-click="dismiss()" aria-hidden="true">&times;</button>
-            <h3>Template Settings</h3>
+            <h3 ng-if="customwidget_name">{{customwidget_name}} Settings</h3>
+            <h3 ng-if="!customwidget_name">Template Settings</h3>
         </div>
         <div class="modal-body">
             <div class="form-group" ng-class="{error: _form.name.$error && _form.submitted}">
@@ -25,30 +26,48 @@
                     </div>
                 </div>
             </div>
-            <h4>
-                <input style="display: none" type="file" id="template-file-select" local-file-select="file" on-file-selected="importFile" />
-                <div class="btn-group pull-right" style="margin-top: -10px" uib-dropdown>
-                    <a id="template-actions" class="btn btn-default glyphicon glyphicon-option-vertical" uib-dropdown-toggle>
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-right" uib-dropdown-menu role="menu" aria-labelledby="template-actions">
-                        <li class="menuitem"><a onclick="document.getElementById('template-file-select').click()"><i class="glyphicon glyphicon-import">&nbsp;</i>Import from file...</li></a>
-                        <li class="menuitem"><a ng-click="exportToFile()"><i class="glyphicon glyphicon-export">&nbsp;</i>Export to file</a></li>
-                        <li class="divider" />
-                        <li class="menuitem"><a href="https://community.openhab.org/c/apps-services/habpanel" target="_blank"><i class="glyphicon glyphicon-question-sign">&nbsp;</i>Community help</a>
-                    </ul>
-                </div>
-                Template
-            </h4>
-            <div class="form-group" ng-class="{error: _form.name.$error && _form.submitted}">
-                <div class="col-lg-12 col-md-12">
-                    <div ui-codemirror ui-refresh='refreshEditor' ui-codemirror-opts="editorOptions" ng-model="form.template">
+
+            <!-- direct template editing -->
+            <div ng-if="!widgetsettings && !widget.preview">
+                <h4>
+                    <input style="display: none" type="file" id="template-file-select" local-file-select="file" on-file-selected="importFile" />
+                    <div class="btn-group pull-right" style="margin-top: -10px" uib-dropdown>
+                        <a id="template-actions" class="btn btn-default glyphicon glyphicon-option-vertical" uib-dropdown-toggle>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-right" uib-dropdown-menu role="menu" aria-labelledby="template-actions">
+                            <li class="menuitem"><a onclick="document.getElementById('template-file-select').click()"><i class="glyphicon glyphicon-import">&nbsp;</i>Import from file...</li></a>
+                            <li class="menuitem"><a ng-click="exportToFile()"><i class="glyphicon glyphicon-export">&nbsp;</i>Export to file</a></li>
+                            <li class="divider" />
+                            <li class="menuitem"><a href="https://community.openhab.org/c/apps-services/habpanel" target="_blank"><i class="glyphicon glyphicon-question-sign">&nbsp;</i>Community help</a></li>
+                        </ul>
                     </div>
-                    <!--<pre><textarea ui-codemirror style="width: 100%" ng-model="form.template" rows="15" cols="55"></textarea></pre>-->
+                    Template
+                </h4>
+                <div class="form-group" ng-class="{error: _form.name.$error && _form.submitted}">
+                    <div class="col-lg-12 col-md-12">
+                        <div ui-codemirror ui-refresh='refreshEditor' ui-codemirror-opts="editorOptions" ng-model="form.template">
+                        </div>
+                        <!--<pre><textarea ui-codemirror style="width: 100%" ng-model="form.template" rows="15" cols="55"></textarea></pre>-->
+                    </div>
+                </div>
+            </div>
+
+            <!-- custom widget settings -->
+            <div ng-if="widgetsettings || widget.preview">
+                <hr />
+                <div class="form-group" ng-repeat="setting in widgetsettings">
+                    <label class="control-label col-lg-3 col-md-3">{{setting.label || setting.id}}</label>
+                    <div class="col-lg-9 col-md-9" ng-switch="setting.type">
+                        <input ng-switch-when="string" type="text" ng-model="form.config[setting.id]" class="form-control">
+                        <input ng-switch-when="number" type="number" ng-model="form.config[setting.id]" class="form-control" step="any" style="width: 120px">
+                        <select ng-switch-when="item" ng-model="form.config[setting.id]" ng-options="item.name as item.name for item in items" class="form-control"></select>
+                        <div ng-switch-when="color" dab-model="form.config[setting.id]" web-colorpicker dab-width="20" dab-height="20" dab-radius="50" dab-vertical="4" dab-rotate="0" show-grayscale="true"></div>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="modal-footer">
-            <a ng-click="remove()" class="btn btn-danger pull-left" tabindex="-1"><i class="glyphicon glyphicon-trash"></i>&nbsp;Delete</a>
+            <a ng-click="remove()" ng-if="!widget.preview" class="btn btn-danger pull-left" tabindex="-1"><i class="glyphicon glyphicon-trash"></i>&nbsp;Delete</a>
             <a ng-click="dismiss()" class="btn btn-default" tabindex="-1"><i class="glyphicon glyphicon-remove"></i>&nbsp;Cancel</a>
             <button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-ok"></i>&nbsp;Save</button>
         </div>

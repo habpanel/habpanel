@@ -1,0 +1,48 @@
+<div class="header">
+	<a class="btn btn-link pull-left" onclick="window.history.back()"><i class="glyphicon glyphicon-chevron-left"></i></a>
+    <a class="btn btn-link pull-left" href="#/" title="Home"><i class="glyphicon glyphicon-home"></i></a>
+	<h2>Custom widgets</h2>
+</div>
+
+<br />
+
+<div class="scrollable">
+
+<div class="col-sm-12 widgetlist">
+    <div class="col-sm-4" ng-repeat="(id, widget) in customwidgets">
+        <div class="widgettile col-sm-12 box">
+            <div class="pull-right box-header-btns" uib-dropdown>
+                <a uib-dropdown-toggle class="settings-btn" ng-click><i class="glyphicon glyphicon-option-vertical"></i></a>
+                    <ul class="dropdown-menu dropdown-menu-right" uib-dropdown-menu role="menu" aria-labelledby="template-actions">
+                        <li class="menuitem"><a ng-click="vm.exportToFile(id, widget)"><i class="glyphicon glyphicon-export">&nbsp;</i>Export to file</a></li>
+                        <li class="divider" />
+                        <li class="menuitem"><a ng-click="vm.deleteWidget(id)"><i class="glyphicon glyphicon-trash">&nbsp;</i>Delete</a>
+                    </ul>
+            </div>
+            <a href="#/settings/widgets/design/{{id}}">
+                <h4>{{id}}<small ng-if="widget.author"><br />by {{widget.author}}</small></h4>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+<div class="col-sm-12">
+    <br /><br /><br />
+
+    <a class="btn btn-primary" ng-click="vm.addNewWidget()">
+        New widget...
+    </a>
+
+    <a class="btn btn-primary"  onclick="document.getElementById('widget-file-select').click()">
+        Import...
+    </a>
+    <input style="display: none" type="file" id="widget-file-select" local-file-select="file" on-file-selected="vm.importFile" />
+
+    <br /><br />
+
+
+    <a href="https://community.openhab.org/tags/c/apps-services/habpanel/widget" target="_blank">Get widgets from the openHAB community</a>
+</div>
+
+</div>

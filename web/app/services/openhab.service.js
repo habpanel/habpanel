@@ -277,6 +277,7 @@
                 config.dashboards = angular.copy($rootScope.dashboards);
                 config.menucolumns = $rootScope.menucolumns;
                 config.settings = $rootScope.settings;
+                config.customwidgets = $rootScope.customwidgets;
                 return saveServiceConfiguration().then(function () {
                     deferred.resolve();
                 }, function () {
@@ -316,6 +317,10 @@
                     $rootScope.menucolumns = 1;
                 if ($rootScope.panelsRegistry[currentPanelConfig].settings)
                     $rootScope.settings = $rootScope.panelsRegistry[currentPanelConfig].settings;
+                else
+                    $rootScope.settings = {};
+                if ($rootScope.panelsRegistry[currentPanelConfig].customwidgets)
+                    $rootScope.customwidgets = $rootScope.panelsRegistry[currentPanelConfig].customwidgets;
                 else
                     $rootScope.settings = {};
             }
