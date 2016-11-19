@@ -46,31 +46,32 @@
             });
         }
     }
-    ChartController.$inject = ['$rootScope', '$scope', '$http', '$filter', 'OHService'];
-    function ChartController ($rootScope, $scope, $http, $filter, OHService) {
+    ChartController.$inject = ['$rootScope', '$scope', '$http', '$q', '$filter', 'OHService'];
+    function ChartController ($rootScope, $scope, $http, $q, $filter, OHService) {
         var vm = this;
         this.widget = this.ngModel;
 
-        function formatValue(val) {
-            if (!vm.item)
-                vm.item = OHService.getItem(vm.widget.item);
+        function formatValue(itemname, val) {
+            var item = OHService.getItem(itemname);
                 
-            if (vm.item && vm.item.stateDescription && vm.item.stateDescription.pattern)
-                return sprintf(vm.item.stateDescription.pattern, val);
+            if (item && item.stateDescription && item.stateDescription.pattern)
+                return sprintf(item.stateDescription.pattern, val);
             else
                 return val;
         }
 
-        function tooltipHook(val) {
-            if (val)
+        function tooltipHook(values) {
+            if (values)
                 return {
-                    abscissas: $filter('date')(val[0].row.x, 'EEE d MMM HH:mm:ss'),
-                    rows: [{
-                        label: val[0].series.label,
-                        value: formatValue(val[0].row.y0 || val[0].row.y1),
-                        color: val[0].series.color,
-                        id: val[0].series.id
-                    }]
+                    abscissas: $filter('date')(values[0].row.x, 'EEE d MMM HH:mm:ss'),
+                    rows: values.map(function(val) {
+                        return {
+                            label: val.series.label,
+                            value: formatValue(val.series.id, val.row.y0 || val.row.y1),
+                            color: val.series.color,
+                            id: val.series.id
+                        }
+                    })
                 };
         };
 
@@ -93,39 +94,35 @@
                 default: startDate.setTime(startDate.getTime() - 24*60*60*1000); break;
             }
 
-            $http.get('/rest/persistence/items/' + vm.widget.item + '?serviceId=' + vm.widget.service + "&starttime=" + startDate.toISOString()).then(function (resp) {
-                console.log('datapoints=' + resp.data.datapoints);
-                if (resp.data.datapoints < 1) return;
+            if (!vm.widget.series || !vm.widget.series.length)
+                return;
 
-                var seriesname = resp.data.name;
-                var finaldata = resp.data.data;
+            vm.rawdata = [];
+            for (var i = 0; i < vm.widget.series.length; i++) {
+                vm.rawdata[i] = $http.get('/rest/persistence/items/' + vm.widget.series[i].item + '?serviceId=' + vm.widget.service + "&starttime=" + startDate.toISOString());
+            }
 
-                angular.forEach(finaldata, function (datapoint) {
-                    datapoint.time = new Date(datapoint.time);
-                    datapoint.state = parseFloat(datapoint.state);
-                });
-
+            $q.all(vm.rawdata).then(function (values) {
                 vm.datasets = {};
-                vm.datasets[seriesname] = finaldata;
+                for (var i = 0; i < values.length; i++) {
+                    if (values[i].data.datapoints < 1) continue;
+                    var seriesname = values[i].data.name;
+                    var finaldata = values[i].data.data;
+
+                    angular.forEach(finaldata, function (datapoint) {
+                        datapoint.time = new Date(datapoint.time);
+                        datapoint.state = parseFloat(datapoint.state);
+                    });
+
+                    vm.datasets[seriesname] = finaldata;
+                }
 
                 vm.interactiveChartOptions = {
                     margin: {
                         top: 20,
                         bottom: 50
                     },
-                    series: [
-                        {
-                            axis: "y",
-                            dataset: seriesname,
-                            key: "state",
-                            label: vm.widget.name,
-                            color: "#0db9f0",
-                            type: [
-                            "line", "area"
-                            ],
-                            id: seriesname
-                        }
-                    ],
+                    series: [],
                     axes: {
                         x: {
                             key: "time",
@@ -139,16 +136,52 @@
                                 }
                                 return $filter('date')(value, 'HH:mm');
                             }
-                        }
+                        },
+                        y: { padding: { min: 0, max: 8 } },
+                        y2: { padding: { min: 0, max: 8 } }
                     },
                     tooltipHook: tooltipHook,
                     zoom: {
                         x: true
                     }
-                    // grid: {
-                    //     x: true
-                    // }
                 };
+
+                if (vm.widget.axis.y.min)
+                    vm.interactiveChartOptions.axes.y.min = vm.widget.axis.y.min;
+                if (vm.widget.axis.y.max)
+                    vm.interactiveChartOptions.axes.y.max = vm.widget.axis.y.max;
+                if (vm.widget.axis.y.includeeero)
+                    vm.interactiveChartOptions.axes.y.includeZero = vm.widget.axis.y.includezero;
+                if (vm.widget.axis.y.ticks)
+                    vm.interactiveChartOptions.axes.y.ticks = vm.widget.axis.y.ticks;
+                if (vm.widget.axis.y2 && vm.widget.axis.y2.enabled) {
+                    if (vm.widget.axis.y2.min)
+                        vm.interactiveChartOptions.axes.y2.min = vm.widget.axis.y2.min;
+                    if (vm.widget.axis.y2.max)
+                        vm.interactiveChartOptions.axes.y2.max = vm.widget.axis.y2.max;
+                    if (vm.widget.axis.y2.includezero)
+                        vm.interactiveChartOptions.axes.y2.includeZero = vm.widget.axis.y2.includezero;
+                    if (vm.widget.axis.y2.ticks)
+                        vm.interactiveChartOptions.axes.y2.ticks = vm.widget.axis.y2.ticks;
+                }
+
+                for (var i = 0; i < vm.widget.series.length; i++) {
+                    var seriesoptions = {
+                        axis: vm.widget.series[i].axis,
+                        dataset: vm.widget.series[i].item,
+                        key: "state",
+                        label: vm.widget.series[i].name || vm.widget.series[i].item,
+                        color: (vm.widget.series[i].color && vm.widget.series[i].color !== "transparent") ?
+                                    vm.widget.series[i].color : '#0db9f0',
+                        type: [],
+                        id: vm.widget.series[i].item
+                    };
+                    if (vm.widget.series[i].display_line) seriesoptions.type.push("line");
+                    if (vm.widget.series[i].display_area) seriesoptions.type.push("area");
+                    if (vm.widget.series[i].display_dots) seriesoptions.type.push("dot");
+
+                    vm.interactiveChartOptions.series.push(seriesoptions);
+                }
 
             });
         }
@@ -184,12 +217,27 @@
             charttype: widget.charttype,
             service: widget.service,
             period: widget.period,
-            refresh: widget.refresh
+            refresh: widget.refresh,
+            axis: widget.axis || {y: {}, y2: {} },
+            series: widget.series || []
         };
+        if (!$scope.form.axis.y2)
+            $scope.form.axis.y2 = { enabled: false };
+        
+        $scope.accordions = [];
 
         $scope.dismiss = function() {
             $modalInstance.dismiss();
         };
+
+        $scope.addSeries = function () {
+            $scope.form.series.push({ axis: 'y', display_line: true, display_area: true });
+            $scope.accordions[$scope.form.series.length - 1] = true;
+        };
+
+        $scope.removeSeries = function (series) {
+            $scope.form.series.splice($scope.form.series.indexOf(series), 1);
+        }
 
         $scope.remove = function() {
             $scope.dashboard.widgets.splice($scope.dashboard.widgets.indexOf(widget), 1);
@@ -198,8 +246,15 @@
 
         $scope.submit = function() {
             angular.extend(widget, $scope.form);
-            var item = OHService.getItem(widget.item);
-            widget.isgroup = (item.type === "Group" || item.type === "GroupItem");
+            if (widget.charttype !== "interactive") {
+                delete widget.axis;
+                delete widget.series;
+                var item = OHService.getItem(widget.item);
+                widget.isgroup = (item && (item.type === "Group" || item.type === "GroupItem"));
+            } else {
+                if (!widget.axis.y2.enabled)
+                    delete widget.axis.y2;
+            }
 
             $modalInstance.close(widget);
         };

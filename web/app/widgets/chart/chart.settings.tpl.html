@@ -2,63 +2,248 @@
     <form name="_form" class="form-horizontal" ng-submit="submit(_form)">
         <div class="modal-header">
             <button type="button" class="close" ng-click="dismiss()" aria-hidden="true">&times;</button>
-            <h3>Image Settings</h3>
+            <h3>Chart Settings</h3>
         </div>
 
         <div class="modal-body">
-            <div class="form-group" ng-class="{error: _form.name.$error && _form.submitted}">
-                <label class="control-label col-lg-3 col-md-3">Name</label>
-                <div class="col-lg-9 col-md-9">
-                    <input name="name" type="text" ng-model="form.name" class="form-control" />
-                </div>
-            </div>
-            <div class="form-group" ng-class="{error: _form.item.$error && _form.submitted}">
-                <label class="control-label col-lg-3 col-md-3">openHAB Item</label>
-                <div class="col-lg-9 col-md-9">
-                    <select ng-model="form.item" ng-options="item.name as item.name for item in items" class="form-control"></select>
-                </div>
-            </div>
-            <div class="form-group" ng-class="{error: _form.charttype.$error && _form.submitted}">
-                <label class="control-label col-lg-3 col-md-3">Type</label>
-                <div class="col-lg-9 col-md-9">
-                    <select ng-model="form.charttype" class="form-control">
-                        <option value="default">Default</option>
-                        <option value="rrd4j">RRD4j (rrd4j persistence service only)</option>
-                        <option value="interactive">n3-line-chart (interactive; experimental; openHAB 2 only)</option>
-                    </select>
-                </div>
-            </div>
-            <div class="form-group" ng-class="{error: _form.name.$error && _form.submitted}">
-                <label class="control-label col-lg-3 col-md-3">Service provider</label>
-                <div class="col-lg-9 col-md-9">
-                    <input name="name" type="text" ng-model="form.service" class="form-control" />
-                </div>
-            </div>
-            <div class="form-group" ng-class="{error: _form.period.$error && _form.submitted}">
-                <label class="control-label col-lg-3 col-md-3">Period</label>
-                <div class="col-lg-9 col-md-9">
-                    <select ng-model="form.period" class="form-control">
-                        <option value="h">h</option>
-                        <option value="4h">4h</option>
-                        <option value="8h">8h</option>
-                        <option value="12h">12h</option>
-                        <option value="D">D</option>
-                        <option value="3D">3D</option>
-                        <option value="W">W</option>
-                        <option value="2W">2W</option>
-                        <option value="M">M</option>
-                        <option value="2M">2M</option>
-                        <option value="4M">4M</option>
-                        <option value="Y">Y</option>
-                    </select>
-                </div>
-            </div>
-            <!--<div class="form-group" ng-class="{error: _form.refresh.$error && _form.submitted}">
-                <label class="control-label col-lg-3 col-md-3">Resfresh interval</label>
-                <div class="col-lg-5 col-md-5">
-                    <input name="name" type="text" ng-model="form.refresh" class="form-control" />
-                </div>
-            </div>-->
+            <uib-tabset>
+                <uib-tab heading="General">
+                    <br />
+                    <div class="form-group" ng-class="{error: _form.name.$error && _form.submitted}">
+                        <label class="control-label col-lg-3 col-md-3">Name</label>
+                        <div class="col-lg-9 col-md-9">
+                            <input name="name" type="text" ng-model="form.name" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group" ng-class="{error: _form.charttype.$error && _form.submitted}">
+                        <label class="control-label col-lg-3 col-md-3">Type</label>
+                        <div class="col-lg-9 col-md-9">
+                            <select ng-model="form.charttype" class="form-control">
+                                <option value="default">Default</option>
+                                <option value="rrd4j">RRD4j (rrd4j persistence service only)</option>
+                                <option value="interactive">n3-line-chart (interactive; openHAB 2 only)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group" ng-class="{error: _form.item.$error && _form.submitted}" ng-if="form.charttype!='interactive'">
+                        <label class="control-label col-lg-3 col-md-3">openHAB Item or Group</label>
+                        <div class="col-lg-9 col-md-9">
+                            <select ng-model="form.item" ng-options="item.name as item.name for item in items" class="form-control"></select>
+                        </div>
+                    </div>
+                    <div class="form-group" ng-class="{error: _form.name.$error && _form.submitted}" ng-if="form.charttype=='interactive'">
+                        <label class="control-label col-lg-3 col-md-3">Service provider</label>
+                        <div class="col-lg-9 col-md-9">
+                            <input name="name" type="text" ng-model="form.service" class="form-control" placeholder="rrd4j, mysql, influxdb..." />
+                        </div>
+                    </div>
+                    <div class="form-group" ng-class="{error: _form.period.$error && _form.submitted}">
+                        <label class="control-label col-lg-3 col-md-3">Period</label>
+                        <div class="col-lg-9 col-md-9">
+                            <select ng-model="form.period" class="form-control">
+                                <option value="h">h</option>
+                                <option value="4h">4h</option>
+                                <option value="8h">8h</option>
+                                <option value="12h">12h</option>
+                                <option value="D">D</option>
+                                <option value="3D">3D</option>
+                                <option value="W">W</option>
+                                <option value="2W">2W</option>
+                                <option value="M">M</option>
+                                <option value="2M">2M</option>
+                                <option value="4M">4M</option>
+                                <option value="Y">Y</option>
+                            </select>
+                        </div>
+                    </div>
+                </uib-tab>
+                    <!--<div class="form-group" ng-class="{error: _form.refresh.$error && _form.submitted}">
+                        <label class="control-label col-lg-3 col-md-3">Resfresh interval</label>
+                        <div class="col-lg-5 col-md-5">
+                            <input name="name" type="text" ng-model="form.refresh" class="form-control" />
+                        </div>
+                    </div>-->
+                <uib-tab heading="Axis" ng-if="form.charttype=='interactive'">
+                    <br />
+                    <h4>Primary axis (y)</h4>
+                    
+                    <div class="form-group">
+                        <div class="col-xs-6">
+                            <div class="form-group">
+                                <label class="control-label col-xs-4">Min</label>
+                                <div class="col-xs-6">
+                                    <input name="min" type="number" step="any" ng-model="form.axis.y.min" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="form-group">
+                                <label class="control-label col-xs-4">Max</label>
+                                <div class="col-xs-6">
+                                    <input name="max" type="number" step="any" ng-model="form.axis.y.max" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="form-group">
+                                <label class="control-label col-xs-4"></label>
+                                <div class="col-xs-6">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="vertical" ng-model="form.axis.y.includezero" /> Include zero
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="form-group">
+                                <label class="control-label col-xs-4">Ticks</label>
+                                <div class="col-xs-6">
+                                    <input name="step" type="number" step="any" ng-model="form.axis.y.ticks" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                        <!--<div class="col-xs-6">
+                            <div class="form-group" ng-class="{error: _form.unit.$error && _form.submitted}">
+                                <label class="control-label col-xs-4">Unit</label>
+                                <div class="col-xs-6">
+                                    <input name="unit" type="text" ng-model="form.unit" class="form-control" />
+                                </div>
+                            </div>
+                        </div>-->
+                    </div>
+
+                    <h4>Secondary axis (y2)</h4>
+
+                    <div class="col-lg-12 col-md-12">
+                        <div class="form-group">
+                            <label class="control-label col-xs-2"></label>
+                            <div class="col-lg-9 col-md-9">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="vertical" ng-model="form.axis.y2.enabled" /> Enabled
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <div class="col-xs-6">
+                            <div class="form-group">
+                                <label class="control-label col-xs-4">Min</label>
+                                <div class="col-xs-6">
+                                    <input name="min" type="number" step="any" ng-model="form.axis.y2.min" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="form-group">
+                                <label class="control-label col-xs-4">Max</label>
+                                <div class="col-xs-6">
+                                    <input name="max" type="number" step="any" ng-model="form.axis.y2.max" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="form-group">
+                                <label class="control-label col-xs-4"></label>
+                                <div class="col-xs-6">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="vertical" ng-model="form.axis.y2.includezero" /> Include zero
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="form-group">
+                                <label class="control-label col-xs-4">Ticks</label>
+                                <div class="col-xs-6">
+                                    <input name="step" type="number" step="any" ng-model="form.axis.y2.ticks" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                        <!--<div class="col-xs-6">
+                            <div class="form-group" ng-class="{error: _form.unit.$error && _form.submitted}">
+                                <label class="control-label col-xs-4">Unit</label>
+                                <div class="col-xs-6">
+                                    <input name="unit" type="text" ng-model="form.unit" class="form-control" />
+                                </div>
+                            </div>
+                        </div>-->
+                    </div>
+                </uib-tab>
+                <uib-tab heading="Series" ng-if="form.charttype=='interactive'">
+                    <br />
+                    <button type="button" class="btn" ng-click="addSeries()"><i class="glyphicon glyphicon-plus"></i></button>
+                    <br /><br />
+                    <uib-accordion>
+                        <div uib-accordion-group is-open="accordions[$index]" class="panel default" heading="Item: {{series.item || 'N/A'}}" ng-repeat="series in form.series">
+                            <div class="col-lg-12 col-md-12">
+                                <button type="button" class="btn pull-right" ng-click="removeSeries(series)"><i class="glyphicon glyphicon-trash"></i></button>
+                                <div class="form-group">
+                                    <label class="control-label col-lg-3 col-md-3">Axis</label>
+                                    <div class="col-lg-9 col-md-9">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="radio" ng-model="series.axis" value="y" /> Primary
+                                            </label>
+                                            <label>
+                                                <input type="radio" ng-model="series.axis" value="y2" /> Secondary
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-lg-3 col-md-3">Name</label>
+                                <div class="col-lg-9 col-md-9">
+                                    <input name="name" type="text" ng-model="series.name" class="form-control" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-lg-3 col-md-3">openHAB Item</label>
+                                <div class="col-lg-9 col-md-9">
+                                    <select ng-model="series.item" ng-options="item.name as item.name for item in items" class="form-control"></select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-lg-2 col-md-2">Color</label>
+                                <div class="col-lg-4 col-md-4">
+                                    <div dab-model="series.color" web-colorpicker dab-width="20" dab-height="20" dab-radius="50" dab-vertical="4" dab-rotate="0" show-grayscale="true"></div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12 col-md-12">
+                                <div class="form-group">
+                                    <label class="control-label col-lg-3 col-md-3">Display</label>
+                                    <div class="col-lg-9 col-md-9">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" ng-model="series.display_line" value="line" /> Line &nbsp;
+                                            </label>
+                                            <label>
+                                                <input type="checkbox" ng-model="series.display_area" value="area" /> Area &nbsp;
+                                            </label>
+                                            <label>
+                                                <input type="checkbox" ng-model="series.display_dots" value="dot" /> Dots
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </uib-accordion>
+                </uib-tab>
+            </uib-tabset>
         </div>
 
         <div class="modal-footer">
