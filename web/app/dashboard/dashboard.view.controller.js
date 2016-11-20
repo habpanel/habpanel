@@ -2,8 +2,8 @@
         .module('app')
         .controller('DashboardViewCtrl', DashboardViewController);
 
-  DashboardViewController.$inject = ['$scope', '$location', '$rootScope', '$routeParams', '$timeout', 'dashboard', 'PersistenceService', 'OHService', 'Fullscreen'];
-  function DashboardViewController($scope, $location, $rootScope, $routeParams, $timeout, dashboard, PersistenceService, OHService, Fullscreen) {
+  DashboardViewController.$inject = ['$scope', '$location', '$rootScope', '$routeParams', '$timeout', 'dashboard', 'PersistenceService', 'OHService', 'Fullscreen', 'snapRemote'];
+  function DashboardViewController($scope, $location, $rootScope, $routeParams, $timeout, dashboard, PersistenceService, OHService, Fullscreen, snapRemote) {
     var vm = this;
     vm.dashboard = dashboard;
 
@@ -43,7 +43,12 @@
             OHService.reloadItems();
         });
         if ($rootScope.settings.no_scrolling) iNoBounce.enable(); else iNoBounce.disable();
-        $rootScope.kioskMode = ($routeParams.kiosk == 'on');
+        if ($routeParams.kiosk) $rootScope.kioskMode = ($routeParams.kiosk == 'on');
+        if ($rootScope.kioskMode) {
+            snapRemote.getSnapper().then(function (snapper) {
+                snapper.disable();
+            })
+        }
     }
 
     vm.refresh = function() {

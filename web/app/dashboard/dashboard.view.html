@@ -1,10 +1,13 @@
 <div class="header" ng-if="!kioskMode">
-    <a class="btn pull-left" onclick="window.history.back()" title="Go back">
+    <a class="btn pull-left" title="Menu" snap-toggle="left">
+        <i class="glyphicon glyphicon-menu-hamburger"></i>
+    </a>
+    <!--<a class="btn pull-left" onclick="window.history.back()" title="Go back">
         <i class="glyphicon glyphicon-chevron-left"></i>
     </a>
     <a class="btn pull-left" href="#/" title="Home">
         <i class="glyphicon glyphicon-home"></i>
-    </a>
+    </a>-->
     <a class="btn pull-right" ng-click="vm.goFullscreen()" title="Toggle full screen">
         <i class="glyphicon glyphicon-resize-full"></i>
     </a>

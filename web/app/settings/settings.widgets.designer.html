@@ -1,10 +1,13 @@
 <div class="header">
-	<a class="btn btn-link pull-left" onclick="window.history.back()"><i class="glyphicon glyphicon-chevron-left"></i></a>
-    <a class="btn btn-link pull-left" href="#/" title="Home"><i class="glyphicon glyphicon-home"></i></a>
+    <a class="btn pull-left" title="Menu" snap-toggle="left">
+        <i class="glyphicon glyphicon-menu-hamburger"></i>
+    </a>
+	<!--<a class="btn btn-link pull-left" onclick="window.history.back()"><i class="glyphicon glyphicon-chevron-left"></i></a>
+    <a class="btn btn-link pull-left" href="#/" title="Home"><i class="glyphicon glyphicon-home"></i></a>-->
 	<h2>Widget: {{vm.widgetId}}</h2>
 </div>
 
-<div class="col-md-12 widgetdesigner">
+<div class="col-md-12 widgetdesigner" data-snap-ignore="true">
 
     <!--<div class="col-xs-2">
         <div>here be widgets</div>

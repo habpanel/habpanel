@@ -47,6 +47,10 @@
     "roboto-fontface": "^0.5.0",
     "angular-ui-clock": "latest",
     "angular-file-saver": "~1.1.2",
-    "event-source-polyfill": "latest"
+    "event-source-polyfill": "latest",
+    "angular-snap": "^1.8.5"
+  },
+  "resolutions": {
+    "angular": "~1.5.8"
   }
 }

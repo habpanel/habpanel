@@ -23,7 +23,7 @@
             }
             $interval(tick, 1000);
             if ($rootScope.settings.no_scrolling) iNoBounce.enable(); else iNoBounce.disable();
-            $rootScope.kioskMode = ($routeParams.kiosk == 'on');
+            if ($routeParams.kiosk) $rootScope.kioskMode = ($routeParams.kiosk == 'on');
 
             OHService.reloadItems();
         }

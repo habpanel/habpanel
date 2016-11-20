@@ -109,6 +109,9 @@ gulp.task('vendor-js', function() {
         'bower_components/oclazyload/dist/ocLazyLoad.min.js',
         'bower_components/angular-ui-clock/dist/angular-clock.min.js',
         'bower_components/angular-file-saver/dist/angular-file-saver.bundle.min.js',
+        'bower_components/angular-file-saver/dist/angular-file-saver.bundle.min.js',
+        'bower_components/snapjs/snap.min.js',
+        'bower_components/angular-snap/angular-snap.min.js',
         'bower_components/event-source-polyfill/eventsource.min.js',
         'node_modules/n3-charts/build/LineChart.min.js',
         'vendor/angular-web-colorpicker.js'

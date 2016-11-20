@@ -18,7 +18,10 @@
             <!--<li ><a href="#/settings/widgets"><i class="glyphicon glyphicon-cog">&nbsp;</i>Manage</a></li>-->
         </ul>
     </div>
-    <a class="btn" href="#/"><i class="glyphicon glyphicon-chevron-left"></i></a>
+    <!--<a class="btn" href="#/"><i class="glyphicon glyphicon-chevron-left"></i></a>-->
+    <a class="btn pull-left" title="Menu" snap-toggle="left">
+        <i class="glyphicon glyphicon-menu-hamburger"></i>
+    </a>
     <a class="btn btn-success" ng-click="save()"><i class="glyphicon glyphicon-save"></i>&nbsp;Save</a>
     <a class="btn btn-primary" ng-click="run()"><i class="glyphicon glyphicon-play"></i>&nbsp;Run</a>
 </div>
@@ -32,7 +35,7 @@
 </div>
 <div gridster="gridsterOptions">
     <ul>
-        <li gridster-item="widget" ng-repeat="widget in dashboard.widgets">
+        <li gridster-item="widget" data-snap-ignore="true" ng-repeat="widget in dashboard.widgets">
             <div class="box box-design" ng-controller="CustomWidgetCtrl">
                 <div class="box-header pull-left" style="display: inline">
                     <i class="handle glyphicon glyphicon-move"></i>

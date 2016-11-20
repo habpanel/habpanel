@@ -1,6 +1,9 @@
 <div class="header">
-	<a class="btn btn-link pull-left" onclick="window.history.back()"><i class="glyphicon glyphicon-chevron-left"></i></a>
-	<a class="btn btn-link pull-left" href="#/"><i class="glyphicon glyphicon-home"></i></a>
+    <a class="btn pull-left" title="Menu" snap-toggle="left">
+        <i class="glyphicon glyphicon-menu-hamburger"></i>
+    </a>
+    <!--<a class="btn btn-link pull-left" onclick="window.history.back()"><i class="glyphicon glyphicon-chevron-left"></i></a>
+    <a class="btn btn-link pull-left" href="#/"><i class="glyphicon glyphicon-home"></i></a>-->
 	<h2>Settings</h2>
 </div>
 
@@ -23,6 +26,6 @@
         <a ng-click="vm.exportToFile()" class="btn btn-primary"><i class="glyphicon glyphicon-export">&nbsp;</i>Export</a>
     </div>
 
-    <div ui-codemirror ui-refresh='vm.refreshEditor' ui-codemirror-opts="vm.editorOptions" ng-model="vm.rawLocalConfig" />
+    <div ui-codemirror data-snap-ignore="true" ui-refresh='vm.refreshEditor' ui-codemirror-opts="vm.editorOptions" ng-model="vm.rawLocalConfig" />
 
 </div>

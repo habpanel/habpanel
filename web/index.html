@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="app" ng-class="{ 'image-bg': settings.background_image }" ng-style="{ 'background-image': (settings.background_image) ? 'url(' + settings.background_image +')' : '' }">
+<html ng-app="app">
 
 <head>
     <meta charset="utf-8" />
@@ -56,6 +56,7 @@
     <script src="app/dashboard/dashboard.view.controller.js"></script>
     <script src="app/dashboard/dashboard.edit.controller.js"></script>
     <script src="app/menu/menu.controller.js"></script>
+    <script src="app/menu/drawer.controller.js"></script>
     <script src="app/settings/settings.controller.js"></script>
     <script src="app/settings/settings.localconfig.controller.js"></script>
     <script src="app/settings/settings.widgets.list.controller.js"></script>
@@ -64,7 +65,17 @@
 </head>
 
 <body>
-    <div class="container" ng-view ng-style="{ 'padding-top': kioskMode ? 0 : 'auto' }"></div>
+    <aside class="drawer" snap-drawer style="display: none" ng-controller="DrawerController" ng-include="'app/menu/drawer.tpl.html'">
+    </aside>
+    <div class="container"
+         snap-content
+         snap-opt-disable="'right'"
+         snap-opt-hyperextensible="false"
+         ng-view
+         ng-class="{ 'image-bg': settings.background_image }"
+         ng-style="{ 'background-image': (settings.background_image) ? 'url(' + settings.background_image +')' : '',
+                      'padding-top': kioskMode ? 0 : 'auto' }">
+    </div>
 </body>
 
 </html>

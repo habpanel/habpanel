@@ -13,7 +13,8 @@
         'FBAngular',
         'oc.lazyLoad',
         'angular-clipboard',
-        'ngFileSaver'
+        'ngFileSaver',
+        'snap'
     ])
     .config(['$routeProvider', 'localStorageServiceProvider', function($routeProvider, localStorageServiceProvider) {
         localStorageServiceProvider.setStorageType('localStorage');

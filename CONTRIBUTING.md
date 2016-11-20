@@ -263,5 +263,9 @@ thanks to these awesome JavaScript libraries, most notably:
 - [ng-knob](https://github.com/RadMie/ng-knob)
 - [sprintf.js](https://github.com/alexei/sprintf.js)
 - [event-source-polyfill](https://github.com/Yaffle/EventSource/)
+- [FileSaver](https://github.com/eligrey/FileSaver.js)
+- [angular-file-saver](https://github.com/alferov/angular-file-saver)
+- [snap.js](https://github.com/jakiestfu/Snap.js)
+- [angular-snap](https://github.com/jtrussell/angular-snap.js)
 
 Check out the ```web/bower.json``` and ```web/package.json``` files for the complete list.
