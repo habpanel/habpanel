@@ -94,7 +94,7 @@
                                 $timeout(function () {
                                     console.log("Updating " + item.name + " state from " + item.state + " to " + payload.value);
                                     item.state = payload.value;
-                                    $rootScope.$emit('openhab-update');
+                                    $rootScope.$emit('openhab-update', item);
 
                                     if (item.state && $rootScope.settings.speech_synthesis_item === item.name) {
                                         console.log('Speech synthesis item state changed! Speaking it now.');
@@ -195,7 +195,7 @@
                             $timeout(function () {
                                 console.log("Received push message: Changing " + item.name + " state from " + item.state + " to " + data.state);
                                 item.state = data.state;
-                                $rootScope.$emit('openhab-update');
+                                $rootScope.$emit('openhab-update', item);
 
                                 if (item.state && $rootScope.settings.speech_synthesis_item === item.name) {
                                     console.log('Speech synthesis item state changed! Speaking it now.');
