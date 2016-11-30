@@ -76,23 +76,27 @@
         };
 
         if (vm.widget.charttype == 'interactive') {
-            var startDate = new Date();
-            switch (vm.widget.period)
-            {
-                case 'h': startDate.setTime(startDate.getTime() - 60*60*1000); break;
-                case '4h': startDate.setTime(startDate.getTime() - 4*60*60*1000); break;
-                case '8h': startDate.setTime(startDate.getTime() - 8*60*60*1000); break;
-                case '12h': startDate.setTime(startDate.getTime() - 12*60*60*1000); break;
-                case 'D': startDate.setTime(startDate.getTime() - 24*60*60*1000); break;
-                case '3D': startDate.setTime(startDate.getTime() - 3*24*60*60*1000); break;
-                case 'W': startDate.setTime(startDate.getTime() - 7*24*60*60*1000); break;
-                case '2W': startDate.setTime(startDate.getTime() - 2*7*24*60*60*1000); break;
-                case 'M': startDate.setTime(startDate.getTime() - 31*24*60*60*1000); break; //Well...
-                case '2M': startDate.setTime(startDate.getTime() - 2*31*24*60*60*1000); break;
-                case '4M': startDate.setTime(startDate.getTime() - 4*31*24*60*60*1000); break;
-                case 'Y': startDate.setTime(startDate.getTime() - 12*31*24*60*60*1000); break;
-                default: startDate.setTime(startDate.getTime() - 24*60*60*1000); break;
+            function startTime() {
+            	var startDate = new Date();
+                switch (vm.widget.period)
+                {
+                    case 'h': startDate.setTime(startDate.getTime() - 60*60*1000); break;
+                    case '4h': startDate.setTime(startDate.getTime() - 4*60*60*1000); break;
+                    case '8h': startDate.setTime(startDate.getTime() - 8*60*60*1000); break;
+                    case '12h': startDate.setTime(startDate.getTime() - 12*60*60*1000); break;
+                    case 'D': startDate.setTime(startDate.getTime() - 24*60*60*1000); break;
+                    case '3D': startDate.setTime(startDate.getTime() - 3*24*60*60*1000); break;
+                    case 'W': startDate.setTime(startDate.getTime() - 7*24*60*60*1000); break;
+                    case '2W': startDate.setTime(startDate.getTime() - 2*7*24*60*60*1000); break;
+                    case 'M': startDate.setTime(startDate.getTime() - 31*24*60*60*1000); break; //Well...
+                    case '2M': startDate.setTime(startDate.getTime() - 2*31*24*60*60*1000); break;
+                    case '4M': startDate.setTime(startDate.getTime() - 4*31*24*60*60*1000); break;
+                    case 'Y': startDate.setTime(startDate.getTime() - 12*31*24*60*60*1000); break;
+                    default: startDate.setTime(startDate.getTime() - 24*60*60*1000); break;
+                }
+                return startDate;
             }
+            var startDate = startTime();
 
             if (!vm.widget.series || !vm.widget.series.length)
                 return;
@@ -181,6 +185,53 @@
                     if (vm.widget.series[i].display_dots) seriesoptions.type.push("dot");
 
                     vm.interactiveChartOptions.series.push(seriesoptions);
+                }
+
+                var fillValues = true;
+                var supportLiveUpdates = true;
+                var removeOutdatedValues = true;
+
+                function updateValue(item) {
+                    var value = item.state;
+                    var data = {
+                        state: parseFloat(value),
+                        time: new Date()
+                    };
+                    var dataset = vm.datasets[item.name];
+                    if(dataset) {
+                        if(fillValues) {
+                            angular.forEach(vm.datasets, function(ds) {
+                                if(dataset !== ds) {
+                                    ds.push({
+                                        state: ds[ds.length-1].state,
+                                        time: new Date()
+                                    });
+                                }
+                            });
+                        }
+                        dataset.push(data);
+
+                        // remove old values
+                        if(removeOutdatedValues) {
+                            var startDate = startTime();
+                            angular.forEach(vm.datasets, function(ds) {
+                                // values are sorted by date
+                                for(var i = 0; i < ds.length; i++) {
+                                	if(ds[i].time > startDate) {
+                                		ds.splice(0, i);
+                                		break;
+                                	}
+                                }
+                            });
+                        }
+                    }
+                }
+
+                if(supportLiveUpdates) {
+                    OHService.onUpdate($scope, vm.widget.item, function (value, item) {
+                    	if(item)
+                    		updateValue(item);
+                    });
                 }
 
             });
