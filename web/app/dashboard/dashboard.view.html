@@ -2,20 +2,21 @@
     <a class="btn pull-left" title="Menu" snap-toggle="left">
         <i class="glyphicon glyphicon-menu-hamburger"></i>
     </a>
-    <!--<a class="btn pull-left" onclick="window.history.back()" title="Go back">
-        <i class="glyphicon glyphicon-chevron-left"></i>
-    </a>
-    <a class="btn pull-left" href="#/" title="Home">
-        <i class="glyphicon glyphicon-home"></i>
-    </a>-->
+
     <a class="btn pull-right" ng-click="vm.goFullscreen()" title="Toggle full screen">
         <i class="glyphicon glyphicon-resize-full"></i>
     </a>
     <a class="btn pull-right" ng-click="vm.refresh()" title="Refresh">
         <i class="glyphicon glyphicon-refresh"></i>
-    </a>&nbsp;
+    </a>
+    <a class="btn pull-right" 
+        ng-if="vm.supportsSpeech" 
+        ng-click="vm.isListening ? vm.stopListening() : vm.listen()" 
+        title="Speak">
+        <i class="glyphicon" ng-class="vm.isListening ? 'glyphicon-stop' : 'glyphicon-comment'"></i>
+    </a>
     <h2 class="dashboard-title">
-        <span>{{vm.dashboard.name}} 
+        <span>{{vm.dashboard.name}}
             <a class="btn btn-link btn-edit-dashboard"
                 ng-if="!lockEditing"
                 ng-click="vm.toggleEdit()"
@@ -25,6 +26,7 @@
         </span>
     </h2>
 </div>
+<span ng-if="vm.isListening" class="speech-output">{{vm.speechOutput}}</span>
 <div class="scrollable" ng-show="vm.ready" gridster="vm.gridsterOptions">
     <ul>
         <li gridster-item="widget" ng-repeat="widget in vm.dashboard.widgets">

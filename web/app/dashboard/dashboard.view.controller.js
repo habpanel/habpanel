@@ -2,8 +2,8 @@
         .module('app')
         .controller('DashboardViewCtrl', DashboardViewController);
 
-  DashboardViewController.$inject = ['$scope', '$location', '$rootScope', '$routeParams', '$timeout', 'dashboard', 'PersistenceService', 'OHService', 'Fullscreen', 'snapRemote'];
-  function DashboardViewController($scope, $location, $rootScope, $routeParams, $timeout, dashboard, PersistenceService, OHService, Fullscreen, snapRemote) {
+  DashboardViewController.$inject = ['$scope', '$location', '$rootScope', '$routeParams', '$timeout', 'dashboard', 'PersistenceService', 'OHService', 'Fullscreen', 'snapRemote', 'SpeechService'];
+  function DashboardViewController($scope, $location, $rootScope, $routeParams, $timeout, dashboard, PersistenceService, OHService, Fullscreen, snapRemote, SpeechService) {
     var vm = this;
     vm.dashboard = dashboard;
 
@@ -42,6 +42,7 @@
     function activate() {
         $timeout(function() {
             OHService.reloadItems();
+            OHService.getLocale();
         });
         if ($rootScope.settings.no_scrolling) iNoBounce.enable(); else iNoBounce.disable();
         if ($routeParams.kiosk) $rootScope.kioskMode = ($routeParams.kiosk == 'on');
@@ -63,4 +64,45 @@
     vm.toggleEdit = function() {
         $location.url("/edit/" + dashboard.id);
     };
+
+
+    // Speech recognition
+    vm.isListening = false;
+    vm.supportsSpeech = SpeechService.isSpeechRecognitionSupported();
+
+    vm.listen = function() {
+        if (!vm.supportsSpeech) {
+            console.error('No support for speech recognition on this platform!');
+            return;
+        }
+
+        vm.speechOutput = 'Speak now...';
+
+        var stopListener = $rootScope.$on('speech-recognition', function (e, args) {
+            if (args.interim_transcript) {
+                vm.speechOutput = args.interim_transcript;
+            } else if (args.final_transcript) {
+                vm.speechOutput = args.final_transcript;
+                OHService.sendVoice(vm.speechOutput);
+                SpeechService.stopSpeechRecognition();
+            } else if (args.stop_listening) {
+                stopListener();
+                $timeout(function () {
+                    vm.isListening = false;
+                }, 2000);
+            } else if (args.error) {
+                vm.speechOutput = "Error: " + args.error;
+                SpeechService.stopSpeechRecognition();
+            }
+        });
+
+        OHService.getLocale().then(function (locale) {
+            vm.isListening = true;
+            SpeechService.startSpeechRecognition(locale);
+        });
+    }
+
+    vm.stopListening = function () {
+        SpeechService.stopSpeechRecognition();
+    }
   }

@@ -11,12 +11,14 @@
     function OHService($rootScope, $http, $q, $timeout, $interval, $filter, $location, atmosphereService, SpeechService) {
         this.getItem = getItem;
         this.getItems = getItems;
+        this.getLocale = getLocale;
         this.onUpdate = onUpdate;
         this.sendCmd = sendCmd;
+        this.sendVoice = sendVoice;
         this.reloadItems = reloadItems;
         //this.clearAllLongPollings = clearAllLongPollings;
 
-        var liveUpdatesEnabled = false, prevAudioUrl = '';
+        var liveUpdatesEnabled = false, prevAudioUrl = '', locale = null;
 
         ////////////////
 
@@ -55,11 +57,16 @@
             return $rootScope.items;
         }
 
+        /**
+         * Sends command to openHAB
+         * @param  {string} item Item's id
+         * @param  {string} cmd  Command
+         */
         function sendCmd(item, cmd) {
             $http({
-                method: 'POST',
-                url: '/rest/items/' + item,
-                data: cmd,
+                method : 'POST',
+                url    : '/rest/items/' + item,
+                data   : cmd,
                 headers: { 'Content-Type': 'text/plain' }
             }).then(function (data) {
                 console.log('Command sent: ' + item + '=' + cmd);
@@ -67,6 +74,47 @@
                 // should be handled by server push messages but their delivery is erratic
                 // so perform a full refresh every time a command is sent
                 //loadItems();
+            });
+        }
+
+        /**
+         * Returns a promise with the configured locale
+         */
+        function getLocale() {
+            var deferred = $q.defer();
+
+            if (locale) {
+                deferred.resolve(locale);
+            } else {
+                $http.get('/rest/services/org.eclipse.smarthome.core.localeprovider/config')
+                .then(function (response) {
+                    locale = response.data.language + '-' + response.data.region;
+                    deferred.resolve(locale);
+                }, function(error) {
+                    console.warn('Couldn\'t retrieve locale settings. Setting default to "en-US"');
+                    locale = 'en-US';
+                    deferred.resolve(locale);
+                });
+            }
+
+            return deferred.promise;
+        }
+
+        /**
+         * Sends POST request to openHAB REST
+         * voice interpreters
+         * @param  {string} text - STT output
+         */
+        function sendVoice(text) {
+            $http({
+                method : 'POST',
+                url    : '/rest/voice/interpreters',
+                data   : text,
+                headers: { 'Content-Type': 'text/plain' }
+            }).then(function (data) {
+                console.log('Voice command sent: "' + text + '"');
+            }, function(error) {
+                console.error('Error occured while sending voice command.');
             });
         }
 
@@ -137,8 +185,9 @@
                                             });
                                         });
                                     } else {
-                                        if (!angular.element(document).find("bgsound").length)
+                                        if (!angular.element(document).find("bgsound").length) {
                                             angular.element(document).find("body").append("<bgsound loop='1' />");
+                                        }
 
                                         angular.element(document).find("bgsound").attr('src', audioUrl);
                                     }
@@ -152,11 +201,11 @@
                             }
                         }
                     } catch (e) {
-                        console.log('SSE event issue: ' + e.message);
+                        console.warn('SSE event issue: ' + e.message);
                     }
                 }
                 source.onerror = function (event) {
-                    console.log('SSE connection error, reconnecting in 5 seconds');
+                    console.error('SSE connection error, reconnecting in 5 seconds');
                     liveUpdatesEnabled = false;
                     $timeout(registerEventSource, 5000);
                 }
@@ -165,15 +214,15 @@
 
         function registerAtmosphere() {
             var request = {
-                url: '/rest/items',
-                contentType: 'application/json',
-                logLevel: 'debug',
-                transport: 'websocket',
-                fallbackTransport: 'long-polling',
-                attachHeadersAsQueryString: true,
-                reconnectInterval: 5000,
-                enableXDR: true,
-                timeout: 60000
+                url                        : '/rest/items',
+                contentType                : 'application/json',
+                logLevel                   : 'debug',
+                transport                  : 'websocket',
+                fallbackTransport          : 'long-polling',
+                attachHeadersAsQueryString : true,
+                reconnectInterval          : 5000,
+                enableXDR                  : true,
+                timeout                    : 60000
             };
 
             request.headers = { "Accept": "application/json" };
@@ -210,7 +259,7 @@
                         }
                     }
                 } catch (e) {
-                    console.log("Couldn't parse Atmosphere message: " + response);
+                    console.error("Couldn't parse Atmosphere message: " + response);
                 }
             };
 
@@ -256,7 +305,7 @@
                 deferred.resolve();
 
             }, function (err) {
-                console.log('Cannot load openHAB 2 service configuration: ' + JSON.stringify(err));
+                console.error('Cannot load openHAB 2 service configuration: ' + JSON.stringify(err));
 
                 deferred.reject();
             });
@@ -280,7 +329,7 @@
                 console.log('openHAB 2 service configuration saved');
                 deferred.resolve();
             }, function (err) {
-                console.log('Error while saving openHAB 2 service configuration: ' + JSON.stringify(err));
+                console.error('Error while saving openHAB 2 service configuration: ' + JSON.stringify(err));
                 deferred.reject();
             });
 
@@ -297,7 +346,7 @@
             tryGetServiceConfiguration().then(function () {
                 var config = $rootScope.panelsRegistry[getCurrentPanelConfig()];
                 if (!config) {
-                    console.log('Warning: creating new panel config!');
+                    console.warn('Warning: creating new panel config!');
                     config = $rootScope.panelsRegistry[getCurrentPanelConfig()] = { };
                 }
                 var currentUpdatedTime = config.updatedTime;
@@ -345,7 +394,7 @@
         function useCurrentPanelConfig() {
             var currentPanelConfig = getCurrentPanelConfig();
             if (!currentPanelConfig || !$rootScope.panelsRegistry[currentPanelConfig]) {
-                console.log("Warning: current panel config not found, falling back to local storage!");
+                console.warn("Warning: current panel config not found, falling back to local storage!");
                 useLocalStorage();
             } else {
                 if ($rootScope.panelsRegistry[currentPanelConfig].dashboards)
