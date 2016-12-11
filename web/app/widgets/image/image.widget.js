@@ -35,24 +35,24 @@
         function link(scope, element, attrs) {
         }
     }
-    ImageController.$inject = ['$rootScope', '$scope', 'OHService', '$timeout'];
-    function ImageController ($rootScope, $scope, OHService, $timeout) {
+    ImageController.$inject = ['$rootScope', '$scope', 'OHService', '$interval'];
+    function ImageController ($rootScope, $scope, OHService, $interval) {
         var vm = this;
         this.widget = this.ngModel;
         
         vm.original_url = vm.url = this.widget.url;
 
-        function refreshImage() {
-            var timestamp = (new Date()).toISOString();
-
-            vm.url = (vm.original_url.indexOf('?') === -1) ?
-                      vm.original_url + "?t=" + timestamp : vm.original_url + "&t=" + timestamp;
-
-            $timeout(refreshImage, vm.widget.refresh * 1000);
-        } 
-
         if (vm.widget.refresh && vm.widget.refresh >= 1) {
-            $timeout(refreshImage, vm.widget.refresh * 1000);
+            var imgRefresh = $interval(function () {
+                var timestamp = (new Date()).toISOString();
+
+                vm.url = (vm.original_url.indexOf('?') === -1) ?
+                        vm.original_url + "?_t=" + timestamp : vm.original_url + "&_t=" + timestamp;
+            }, this.widget.refresh * 1000, 0, true);
+
+            $scope.$on('$destroy', function (event) {
+                $interval.cancel(imgRefresh);
+            });
         }
 
     }
