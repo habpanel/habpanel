@@ -328,6 +328,15 @@
         function getCurrentPanelConfig() {
             if (!$rootScope.currentPanelConfig) {
                 $rootScope.currentPanelConfig = localStorageService.get("currentPanelConfig");
+
+                if (!$rootScope.currentPanelConfig) {
+                    // if it's still not set and we have an initial panel config, switch to it
+                    var initialPanelConfig = OH2ServiceConfiguration.initialPanelConfig;
+                    if (initialPanelConfig && $rootScope.panelsRegistry[initialPanelConfig]) {
+                        $rootScope.currentPanelConfig = initialPanelConfig;
+                        localStorageService.set("currentPanelConfig", initialPanelConfig);
+                    }
+                }
             }
 
             return $rootScope.currentPanelConfig;

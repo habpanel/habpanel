@@ -38,8 +38,9 @@
                 controllerAs: 'vm',
                 resolve: {
                     dashboard: ['PersistenceService', '$q', '$route', function (persistenceService, $q, $route) {
-                        var dashboard = persistenceService.getDashboard($route.current.params.id);
-                        return (dashboard) || $q.defer().reject("Unknown dashboard");
+                        var dashboard = persistenceService.getDashboard($route.current.params.id, true);
+                        if (persistenceService.isEditingLocked()) return $q.reject("Editing is locked");
+                        return (dashboard) || $q.reject("Unknown dashboard");
                     }],
                     codemirror: ['$ocLazyLoad', function ($ocLazyLoad) {
                         return $ocLazyLoad.load([
@@ -66,7 +67,7 @@
                 resolve: {
                     dashboard: ['PersistenceService', '$q', '$route', function (persistenceService, $q, $route) {
                         var dashboard = persistenceService.getDashboard($route.current.params.id);
-                        return (dashboard) || $q.defer().reject("Unknown dashboard");
+                        return (dashboard) || $q.reject("Unknown dashboard");
                     }]
                 }
             })
@@ -75,8 +76,10 @@
                 controller: 'SettingsCtrl',
                 controllerAs: 'vm',
                 resolve: {
-                    dashboards: ['PersistenceService', function (persistenceService) {
-                        return persistenceService.getDashboards();
+                    dashboards: ['PersistenceService', '$q', function (persistenceService, $q) {
+                        var dashboards = persistenceService.getDashboards(true);
+                        if (persistenceService.isEditingLocked()) return $q.reject("Editing is locked");
+                        return dashboards;
                     }],
                     themes: ['$http', function ($http) {
                         return $http.get('assets/styles/themes/themes.json');
@@ -88,8 +91,10 @@
                 controller: 'SettingsLocalConfigCtrl',
                 controllerAs: 'vm',
                 resolve: {
-                    dashboards: ['PersistenceService', function (persistenceService) {
-                        return persistenceService.getDashboards();
+                    dashboards: ['PersistenceService', '$q', function (persistenceService, $q) {
+                        var dashboards = persistenceService.getDashboards(true);
+                        if (persistenceService.isEditingLocked()) return $q.reject("Editing is locked");
+                        return dashboards;
                     }],
                     codemirror: ['$ocLazyLoad', '$timeout', function ($ocLazyLoad, $timeout) {
                         return $ocLazyLoad.load([
@@ -111,8 +116,10 @@
                 controller: 'WidgetListCtrl',
                 controllerAs: 'vm',
                 resolve: {
-                    widgets: ['PersistenceService', function (persistenceService) {
-                        return persistenceService.getCustomWidgets();
+                    widgets: ['PersistenceService', '$q', function (persistenceService, $q) {
+                        var widgets = persistenceService.getCustomWidgets();
+                        if (persistenceService.isEditingLocked()) return $q.reject("Editing is locked");
+                        return widgets;
                     }]
                 }
             })
@@ -121,8 +128,10 @@
                 controller: 'WidgetDesignerCtrl',
                 controllerAs: 'vm',
                 resolve: {
-                    widget: ['PersistenceService', '$route', function (persistenceService, $route) {
-                        return persistenceService.getCustomWidget($route.current.params.id);
+                    widget: ['PersistenceService', '$route', '$q', function (persistenceService, $route, $q) {
+                        var widget = persistenceService.getCustomWidget($route.current.params.id);
+                        if (persistenceService.isEditingLocked()) return $q.reject("Editing is locked");
+                        return widget;
                     }],
                     codemirror: ['$ocLazyLoad', '$timeout', function ($ocLazyLoad, $timeout) {
                         return $ocLazyLoad.load([

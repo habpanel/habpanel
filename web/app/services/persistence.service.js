@@ -12,6 +12,7 @@
         this.getCustomWidgets = getCustomWidgets;
         this.getCustomWidget = getCustomWidget;
         this.saveDashboards = saveDashboards;
+        this.isEditingLocked = isEditingLocked;
 
         function loadConfigurationFromLocalStorage() {
             $rootScope.dashboards = localStorageService.get("dashboards") || [];
@@ -31,7 +32,7 @@
 
         ////////////////
 
-        function loadDashboards() {
+        function loadDashboards(rejectIfEditingLocked) {
             var deferred = $q.defer();
             OH2StorageService.tryGetServiceConfiguration().then(function (data) {
                 $rootScope.useRegistry = true;
@@ -40,6 +41,11 @@
                     OH2StorageService.useCurrentPanelConfig();
                 } else {
                     loadConfigurationFromLocalStorage();
+                }
+
+                if (rejectIfEditingLocked && isEditingLocked()) {
+                    console.log("Rejecting loadDashboards(true) promise because editing is locked!");
+                    deferred.reject("Editing is locked");
                 }
 
                 deferred.resolve($rootScope.dashboards);
@@ -52,17 +58,17 @@
             return deferred.promise;
         }
 
-        function getDashboards() {
+        function getDashboards(rejectIfEditingLocked) {
             if (!$rootScope.dashboards) {
-                return loadDashboards();
+                return loadDashboards(rejectIfEditingLocked);
             }
             
-            return $rootScope.dashboards; 
+            return $rootScope.dashboards;
         }
 
-        function getDashboard(id) {
+        function getDashboard(id, rejectIfEditingLocked) {
             if (!$rootScope.dashboards) {
-                return loadDashboards().then(function () {
+                return loadDashboards(rejectIfEditingLocked).then(function () {
                     return $filter('filter')($rootScope.dashboards, {id: id}, true)[0];
                 });
             }
@@ -72,7 +78,7 @@
 
         function getCustomWidgets() {
             if (!$rootScope.dashboards) {
-                return loadDashboards().then(function () {
+                return loadDashboards(true).then(function () {
                     return $rootScope.customwidgets;
                 }, function (err) {
                     return err;
@@ -84,7 +90,7 @@
 
         function getCustomWidget(id) {
             if (!$rootScope.dashboards) {
-                return loadDashboards().then(function () {
+                return loadDashboards(true).then(function () {
                     return $rootScope.customwidgets[id];
                 });
             }
@@ -109,6 +115,10 @@
             }
 
             return deferred.promise;
+        }
+
+        function isEditingLocked() {
+            return $rootScope.lockEditing;
         }
     }
 })();
