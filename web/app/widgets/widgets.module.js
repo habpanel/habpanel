@@ -15,6 +15,7 @@
     .factory('Widgets', WidgetsService)
     .directive('genericWidget', GenericWidgetDirective)
     .directive('widgetIcon', WidgetIcon)
+    .directive('itemPicker', ItemPicker)
     
 
     WidgetsService.$inject = ['WidgetTypes'];
@@ -95,6 +96,51 @@
             });
         }
     }
-    
+
+    ItemPicker.$inject = ['$filter', 'OHService'];
+
+    function ItemPicker($filter, OHService) {
+        var directive = {
+            bindToController: true,
+            link: link,
+            controller: ItemPickerController,
+            controllerAs: 'vm',
+            restrict: 'AE',
+            template:
+                '<ui-select ng-model="vm.selectedItem">' +
+                '  <ui-select-match>{{$select.selected.name}}</ui-select-match>' +
+                '  <ui-select-choices repeat="item in vm.itemlist | filter: $select.search">' +
+                '    <div ng-bind-html="item.name | highlight: $select.search"></div>' +
+                '    <small ng-bind-html="item.label | highlight: $select.search"></small>' +
+                '  </ui-select-choices>' +
+                '</ui-select>',
+            scope: {
+                ngModel: '=',
+                filterType: '@'
+            }
+        };
+        return directive;
+
+        function link(scope, element, attrs) {
+        }
+    }
+    ItemPickerController.$inject = ['$scope', '$filter', 'OHService'];
+    function ItemPickerController ($scope, $filter, OHService) {
+        var vm = this;
+        vm.selectedItem = OHService.getItem(this.ngModel);
+        vm.itemlist = OHService.getItems();
+        if (this.filterType) {
+            vm.itemlist = $filter('filter')(vm.itemlist, function (item) {
+                return item.type.startsWith(vm.filterType)
+            });
+        }
+
+        $scope.$watch("vm.selectedItem", function (newitem, oldvalue) {
+            $scope.vm.ngModel = newitem.name;
+        });
+        
+    }
+
+
 
 })();

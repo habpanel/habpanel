@@ -28,7 +28,7 @@
             </div>
 
             <!-- direct template editing -->
-            <div ng-if="!widgetsettings && !widget.preview">
+            <div ng-if="!widget.customwidget && !widget.preview">
                 <h4>
                     <input style="display: none" type="file" id="template-file-select" local-file-select="file" on-file-selected="importFile" />
                     <div class="btn-group pull-right" style="margin-top: -10px" uib-dropdown>
@@ -53,14 +53,14 @@
             </div>
 
             <!-- custom widget settings -->
-            <div ng-if="widgetsettings || widget.preview">
+            <div ng-if="widget.customwidget || widget.preview">
                 <hr />
                 <div class="form-group" ng-repeat="setting in widgetsettings">
                     <label class="control-label col-lg-3 col-md-3">{{setting.label || setting.id}}</label>
                     <div class="col-lg-9 col-md-9" ng-switch="setting.type">
                         <input ng-switch-when="string" type="text" ng-model="form.config[setting.id]" class="form-control">
                         <input ng-switch-when="number" type="number" ng-model="form.config[setting.id]" class="form-control" step="any" style="width: 120px">
-                        <select ng-switch-when="item" ng-model="form.config[setting.id]" ng-options="item.name as item.name for item in items" class="form-control"></select>
+                        <item-picker ng-switch-when="item" ng-model="form.config[setting.id]"></item-picker>
                         <div ng-switch-when="color" dab-model="form.config[setting.id]" web-colorpicker dab-width="20" dab-height="20" dab-radius="50" dab-vertical="4" dab-rotate="0" show-grayscale="true"></div>
                     </div>
                 </div>
