@@ -109,7 +109,6 @@
             $q.all(vm.rawdata).then(function (values) {
                 vm.datasets = {};
                 for (var i = 0; i < values.length; i++) {
-                    if (values[i].data.datapoints < 1) continue;
                     var seriesname = values[i].data.name;
                     var finaldata = values[i].data.data;
 
@@ -157,7 +156,7 @@
                     vm.interactiveChartOptions.axes.y.min = vm.widget.axis.y.min;
                 if (vm.widget.axis.y.max)
                     vm.interactiveChartOptions.axes.y.max = vm.widget.axis.y.max;
-                if (vm.widget.axis.y.includeeero)
+                if (vm.widget.axis.y.includezero)
                     vm.interactiveChartOptions.axes.y.includeZero = vm.widget.axis.y.includezero;
                 if (vm.widget.axis.y.ticks)
                     vm.interactiveChartOptions.axes.y.ticks = vm.widget.axis.y.ticks;

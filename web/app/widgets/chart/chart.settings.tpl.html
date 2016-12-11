@@ -242,17 +242,13 @@
                         </div>
 
                     </uib-accordion>
-                </uib-tab>
-                <uib-tab heading="Live-Update" ng-if="form.charttype=='interactive'">
-                    <br />
-                    <h4>Configure live update attributes</h4>
 
                     <div class="form-group">
                         <label class="control-label col-xs-2"></label>
                         <div class="col-lg-9 col-md-9">
                             <div class="checkbox">
                                 <label>
-                                    <input type="checkbox" name="vertical" ng-model="form.liveUpdates.enabled" /> Enabled
+                                    <input type="checkbox" name="vertical" ng-model="form.liveUpdates.enabled" /> Live update
                                 </label>
                             </div>
                         </div>
@@ -263,7 +259,7 @@
                         <div class="col-lg-9 col-md-9">
                             <div class="checkbox">
                                 <label>
-                                    <input type="checkbox" name="vertical" ng-model="form.liveUpdates.fillValues" /> Fill values of other datasets on update
+                                    <input type="checkbox" name="vertical" ng-model="form.liveUpdates.fillValues" /> Repeat other series' current values on update if necessary
                                 </label>
                             </div>
                         </div>
