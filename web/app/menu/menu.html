@@ -35,27 +35,29 @@
 </div>
 
 <div class="dashboard row scrollable">
-    <div gridster="vm.gridsterOptions" class="col-md-12 col-lg-12">
-        <div gridster-item="dash" ng-init="tile=dash.tile" class="dash-card col-md-6 col-lg-6 col-sm-6 box" ng-repeat="dash in vm.dashboards">
-            <div class="pull-left dash-buttons" ng-if="vm.editMode" data-snap-ignore="true">
+    <div ng-if="vm.editMode" gridster="vm.gridsterOptions" class="col-md-12 col-lg-12">
+        <div gridster-item="dash" ng-init="tile=dash.tile" class="dash-card col-md-6 col-lg-6 col-sm-6 box" ng-repeat="dash in vm.dashboards" data-snap-ignore="true">
+            <div class="pull-left dash-buttons">
                 <span class="pull-right handle">
                     <i class="glyphicon" ng-class="{ 'glyphicon-sort': vm.gridsterOptions.columns<2, 'glyphicon-move': vm.gridsterOptions.columns>1 }"></i>
                 </span>
             </div>
-            <div class="pull-right dash-buttons" ng-if="vm.editMode">
-                <!--<a class="pull-right" ng-click="vm.removeDashboard(dash)"><i class="glyphicon glyphicon-trash">&nbsp;</i></a>-->
+            <div class="pull-right dash-buttons">
                 <a class="pull-right" title="Dashboard settings" 
                     ng-click="vm.openDashboardSettings(dash)">
                     <i class="glyphicon glyphicon-cog"></i>
                 </a>
             </div>
-            <em class="dash-edit" ng-if="vm.editMode">
+            <em class="dash-edit">
                 <i class="glyphicon glyphicon-edit"></i>
                 {{dash.name}}
             </em>
-            <h3 ng-if="vm.editMode" ng-click="vm.viewDashboard(dash)" class="card-title"></h3>
-
-            <h3 ng-show="!vm.editMode" ng-style="{ color:(tile.title_color && tile.title_color!='transparent')?tile.title_color:'inherit' }" ng-click="vm.viewDashboard(dash)" class="card-title">
+            <h3 ng-click="vm.viewDashboard(dash)" class="card-title"></h3>
+        </div>
+    </div>
+    <div ng-if="!vm.editMode" gridster="vm.gridsterOptions" class="col-md-12 col-lg-12">
+        <div gridster-item="dash" ng-init="tile=dash.tile" class="dash-card col-md-6 col-lg-6 col-sm-6 box" ng-repeat="dash in vm.dashboards">
+            <h3 ng-style="{ color:(tile.title_color && tile.title_color!='transparent')?tile.title_color:'inherit' }" ng-click="vm.viewDashboard(dash)" class="card-title">
                 <img class="tile-background" ng-if="tile.background_image" ng-src="{{tile.background_image}}" />
                 <widget-icon ng-if="tile.backdrop_icon && !tile.background_image" backdrop="true" iconset="tile.backdrop_iconset" icon="tile.backdrop_icon" center="tile.backdrop_center"></widget-icon>
                 <!--<widget-icon iconset="'smarthome-set'" icon="'bulb'" backdrop="true"></widget-icon>-->
