@@ -77,7 +77,7 @@
 
         if (vm.widget.charttype == 'interactive') {
             function startTime() {
-            	var startDate = new Date();
+                var startDate = new Date();
                 switch (vm.widget.period)
                 {
                     case 'h': startDate.setTime(startDate.getTime() - 60*60*1000); break;

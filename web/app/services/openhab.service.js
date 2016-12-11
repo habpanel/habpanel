@@ -4,11 +4,14 @@
     angular
         .module('app.services')
         .service('OHService', OHService)
+        .value('RESTConfig', {
+            host: ''
+        })
         .value('OH2ServiceConfiguration', {})
         .service('OH2StorageService', OH2StorageService);
 
-    OHService.$inject = ['$rootScope', '$http', '$q', '$timeout', '$interval', '$filter', '$location', 'atmosphereService', 'SpeechService'];
-    function OHService($rootScope, $http, $q, $timeout, $interval, $filter, $location, atmosphereService, SpeechService) {
+    OHService.$inject = ['$rootScope', '$http', '$q', '$timeout', '$interval', '$filter', '$location', 'RESTConfig', 'atmosphereService', 'SpeechService'];
+    function OHService($rootScope, $http, $q, $timeout, $interval, $filter, $location, RESTConfig, atmosphereService, SpeechService) {
         this.getItem = getItem;
         this.getItems = getItems;
         this.onUpdate = onUpdate;
@@ -28,7 +31,7 @@
         }
 
         function loadItems() {
-            $http.get('/rest/items')
+            $http.get(RESTConfig.host + '/rest/items')
             .then(function (data) {
                 console.log('Loaded openHAB items');
 
@@ -57,13 +60,14 @@
 
         function sendCmd(item, cmd) {
             $http({
-                method: 'POST',
-                url: '/rest/items/' + item,
-                data: cmd,
-                headers: { 'Content-Type': 'text/plain' }
+                method : 'POST',
+                url    : RESTConfig.host + '/rest/items/' + item,
+                data   : cmd,
+                headers: { 
+                    'Content-Type': 'text/plain'
+                }
             }).then(function (data) {
                 console.log('Command sent: ' + item + '=' + cmd);
-
                 // should be handled by server push messages but their delivery is erratic
                 // so perform a full refresh every time a command is sent
                 //loadItems();
@@ -78,7 +82,7 @@
         
         function registerEventSource() {
             if (typeof(EventSource) !== "undefined") {
-                var source = new EventSource('/rest/events');
+                var source = new EventSource(RESTConfig.host + '/rest/events');
                 liveUpdatesEnabled = true;
 
                 source.onmessage = function (event) {
@@ -165,15 +169,15 @@
 
         function registerAtmosphere() {
             var request = {
-                url: '/rest/items',
-                contentType: 'application/json',
-                logLevel: 'debug',
-                transport: 'websocket',
-                fallbackTransport: 'long-polling',
+                url                       : RESTConfig.host + '/rest/items',
+                contentType               : 'application/json',
+                logLevel                  : 'debug',
+                transport                 : 'websocket',
+                fallbackTransport         : 'long-polling',
                 attachHeadersAsQueryString: true,
-                reconnectInterval: 5000,
-                enableXDR: true,
-                timeout: 60000
+                reconnectInterval         : 5000,
+                enableXDR                 : true,
+                timeout                   : 60000
             };
 
             request.headers = { "Accept": "application/json" };
@@ -219,8 +223,8 @@
         }
     }
 
-    OH2StorageService.$inject = ['OH2ServiceConfiguration', '$rootScope', '$http', '$q', 'localStorageService'];
-    function OH2StorageService(OH2ServiceConfiguration, $rootScope, $http, $q, localStorageService) {
+    OH2StorageService.$inject = ['OH2ServiceConfiguration', '$rootScope', '$http', '$q', 'RESTConfig', 'localStorageService'];
+    function OH2StorageService(OH2ServiceConfiguration, $rootScope, $http, $q, RESTConfig, localStorageService) {
         var SERVICE_NAME = 'org.openhab.ui.habpanel';
 
         this.tryGetServiceConfiguration = tryGetServiceConfiguration;
@@ -234,7 +238,7 @@
         function tryGetServiceConfiguration() {
             var deferred = $q.defer();
 
-            $http.get('/rest/services/' + SERVICE_NAME + '/config').then(function (resp) {
+            $http.get(RESTConfig.host + '/rest/services/' + SERVICE_NAME + '/config').then(function (resp) {
                 /*if (!resp.data.hasOwnProperty('lockEditing')) {
                     console.log('Empty service configuration - service not installed?');
                     useLocalStorage();
@@ -272,10 +276,12 @@
             }
 
             $http({
-                method: 'PUT',
-                url: '/rest/services/' + SERVICE_NAME + '/config',
-                data: OH2ServiceConfiguration,
-                headers: { 'Content-Type': 'application/json' }
+                method : 'PUT',
+                url    : RESTConfig.host + '/rest/services/' + SERVICE_NAME + '/config',
+                data   : OH2ServiceConfiguration,
+                headers: { 
+                    'Content-Type': 'application/json' 
+                }
             }).then (function (resp) {
                 console.log('openHAB 2 service configuration saved');
                 deferred.resolve();

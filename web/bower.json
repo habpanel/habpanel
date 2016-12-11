@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "homepage": "https://github.com/ghys/habpanel",
   "authors": [
-    "Yannick Schaus"
+    "Yannick Schaus",
+    "Kuba Wolanin"
   ],
   "description": "Dashboard user interface for openHAB",
   "main": "",
@@ -48,7 +49,9 @@
     "angular-ui-clock": "latest",
     "angular-file-saver": "~1.1.2",
     "event-source-polyfill": "latest",
-    "angular-snap": "^1.8.5"
+    "angular-snap": "^1.8.5",
+    "angular-sanitize": "^1.5.9",
+    "angular-ui-select": "^0.19.6"
   },
   "resolutions": {
     "angular": "~1.5.8"
