@@ -4,8 +4,10 @@
     angular.module('app', [
         'gridster',
         'ui.bootstrap',
+        'ui.select',
         'ngRoute',
         'ngTouch',
+        'ngSanitize',
         'app.services',
         'app.widgets',
         'cgPrompt',

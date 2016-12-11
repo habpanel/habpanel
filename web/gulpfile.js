@@ -31,7 +31,7 @@ gulp.task('web-server', function() {
 
 gulp.task('watch', function () {
     gulp.watch([
-        './app/widgets/**/*.scss',
+        './app/widgets/**/[^_]*.scss', // omit internal styles starting with "_"
         './assets/styles/**/*.scss',
         './vendor/**/*.scss'
     ], ['sass']);
@@ -95,6 +95,7 @@ gulp.task('vendor-js', function() {
         'bower_components/sprintf/dist/sprintf.min.js',
         'bower_components/angular-gridster/dist/angular-gridster.min.js',
         'bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
+        'bower_components/angular-sanitize/angular-sanitize.min.js',
         'bower_components/angular-fullscreen/src/angular-fullscreen.js',
         'bower_components/sprintf/dist/angular-sprintf.min.js',
         'bower_components/angular-prompt/dist/angular-prompt.min.js',
@@ -108,6 +109,7 @@ gulp.task('vendor-js', function() {
         'bower_components/inobounce/inobounce.min.js',
         'bower_components/oclazyload/dist/ocLazyLoad.min.js',
         'bower_components/angular-ui-clock/dist/angular-clock.min.js',
+        'bower_components/angular-ui-select/dist/select.min.js',
         'bower_components/angular-file-saver/dist/angular-file-saver.bundle.min.js',
         'bower_components/angular-file-saver/dist/angular-file-saver.bundle.min.js',
         'bower_components/snapjs/snap.min.js',
