@@ -9,7 +9,7 @@
             <div class="form-group">
                 <div class="col-xs-9"> 
                 <uib-tabset>
-                    <uib-tab heading="Binding">
+                    <uib-tab heading="General">
                       <br />
                       <div class="form-group" ng-class="{error: _form.name.$error && _form.submitted}">
                           <label class="control-label col-lg-3 col-md-3">Name</label>
@@ -17,20 +17,41 @@
                               <input name="name" type="text" ng-model="form.name" class="form-control" />
                           </div>
                       </div>
-                      <div class="form-group" ng-class="{error: _form.item.$error && _form.submitted}">
+                      <div class="form-group" ng-class="{error: _form.action_type.$error && _form.submitted}">
+                          <label class="col-lg-3 col-md-3">Action type</label>
+                          <div class="col-lg-9 col-md-9">
+                              <select ng-model="form.action_type" class="form-control">
+                                  <option value="command">Send a fixed command to an item</option>
+                                  <option value="toggle">Alternate item between 2 states</option>
+                                  <option value="navigate">Navigate to another dashboard</option>
+                              </select>
+                          </div>
+                      </div>
+                      <div ng-if="form.action_type !== 'navigate'" class="form-group" ng-class="{error: _form.item.$error && _form.submitted}">
                           <label class="control-label col-lg-3 col-md-3">openHAB Item</label>
                           <div class="col-lg-9 col-md-9">
                                 <item-picker ng-model="form.item"></item-picker>
                           </div>
                       </div>
-                      <div class="form-group" ng-class="{error: _form.command.$error && _form.submitted}">
+                      <div ng-if="form.action_type !== 'navigate'" class="form-group" ng-class="{error: _form.command.$error && _form.submitted}">
                           <label class="control-label col-lg-3 col-md-3">Command value</label>
                           <div class="col-lg-9 col-md-9">
                               <input name="command" type="text" ng-model="form.command" class="form-control" />
                           </div>
                       </div>
+                      <div ng-if="form.action_type === 'toggle'" class="form-group" ng-class="{error: _form.command_alt.$error && _form.submitted}">
+                          <label class="control-label col-lg-3 col-md-3">Alternate command value</label>
+                          <div class="col-lg-9 col-md-9">
+                              <input name="command" type="text" ng-model="form.command_alt" class="form-control" />
+                          </div>
+                      </div>
+                      <div ng-if="form.action_type === 'navigate'" class="form-group" ng-class="{error: _form.navigate_dashboard.$error && _form.submitted}">
+                          <label class="control-label col-lg-3 col-md-3">Dashboard</label>
+                          <div class="col-lg-9 col-md-9">
+                              <select ng-model="form.navigate_dashboard" class="form-control" ng-options="dashboard.id as dashboard.name for dashboard in dashboards"></select>
+                          </div>
+                      </div>
                     </uib-tab>
-
 
                     <uib-tab heading="Inactive">
                     <br />

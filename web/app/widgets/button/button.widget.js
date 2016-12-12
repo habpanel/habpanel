@@ -35,8 +35,8 @@
         function link(scope, element, attrs) {
         }
     }
-    ButtonController.$inject = ['$rootScope', '$scope', 'OHService'];
-    function ButtonController ($rootScope, $scope, OHService) {
+    ButtonController.$inject = ['$rootScope', '$scope', '$location', 'OHService'];
+    function ButtonController ($rootScope, $scope, $location, OHService) {
         var vm = this;
         this.widget = this.ngModel;
         
@@ -60,7 +60,25 @@
         });
 
         vm.sendCommand = function () {
-            OHService.sendCmd(this.widget.item, this.widget.command);
+            switch (vm.widget.action_type) {
+                case "navigate":
+                    if (vm.widget.navigate_dashboard) {
+                        $location.url('/view/' + vm.widget.navigate_dashboard);
+                    }
+                    break;
+                case "toggle":
+                    if (vm.widget.command && vm.widget.command_alt) {
+                        if (vm.value === vm.widget.command) {
+                            OHService.sendCmd(this.widget.item, this.widget.command_alt);
+                        } else {
+                            OHService.sendCmd(this.widget.item, this.widget.command);
+                        }
+                    }
+                    break;
+                default:
+                    OHService.sendCmd(this.widget.item, this.widget.command);
+                    break;
+            }
         }
 
     }
@@ -80,7 +98,10 @@
             col: widget.col,
             row: widget.row,
             item: widget.item,
+            action_type: widget.action_type || 'command',
             command: widget.command,
+            command_alt: widget.command_alt,
+            navigate_dashboard: widget.navigate_dashboard,
             background: widget.background,
             foreground: widget.foreground,
             font_size: widget.font_size,
@@ -107,6 +128,21 @@
 
         $scope.submit = function() {
             angular.extend(widget, $scope.form);
+            switch (widget.action_type) {
+                case "navigate":
+                    delete widget.item;
+                    delete widget.command;
+                    delete widget.command_alt;
+                    break;
+                case "toggle":
+                    delete widget.navigate_dashboard;
+                    break;
+                default:
+                    delete widget.command_alt;
+                    delete widget.navigate_dashboard;
+                    delete widget.action_type;
+                    break;
+            }
 
             $modalInstance.close(widget);
         };

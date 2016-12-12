@@ -136,7 +136,8 @@
         }
 
         $scope.$watch("vm.selectedItem", function (newitem, oldvalue) {
-            $scope.vm.ngModel = newitem.name;
+            if (newitem && newitem.name)
+                $scope.vm.ngModel = newitem.name;
         });
         
     }
