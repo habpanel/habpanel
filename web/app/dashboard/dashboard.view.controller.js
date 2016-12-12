@@ -8,8 +8,9 @@
     vm.dashboard = dashboard;
 
     vm.gridsterOptions = {
-        margins: [5, 5],
-        columns: 12,
+        margins: (vm.dashboard.widget_margin) ?
+                    [vm.dashboard.widget_margin, vm.dashboard.widget_margin] : [5, 5],
+        columns: vm.dashboard.columns || 12,
         pushing: false,
         floating: false,
         mobileModeEnabled: false,

@@ -151,7 +151,8 @@
             sizeY: dashboard.sizeY,
             col: dashboard.col,
             row: dashboard.row,
-            //item: dashboard.item,
+            columns: dashboard.columns,
+            widget_margin: dashboard.widget_margin,
             tile: {
                 background_image: dashboard.tile.background_image,
                 backdrop_iconset: dashboard.tile.backdrop_iconset,

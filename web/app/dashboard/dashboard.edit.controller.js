@@ -5,8 +5,9 @@ angular.module('app')
             $scope.dashboard = dashboard;
 
             $scope.gridsterOptions = {
-                margins: [5, 5],
-                columns: 12,
+                margins: $scope.dashboard.widget_margin ?
+                            [$scope.dashboard.widget_margin, $scope.dashboard.widget_margin] : [5, 5],
+                columns: $scope.dashboard.columns || 12,
                 pushing: false,
                 floating: false,
                 mobileModeEnabled: false,
