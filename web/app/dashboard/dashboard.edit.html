@@ -1,0 +1,63 @@
+<div class="header controls">
+    <div uib-dropdown class="pull-right">
+        <button class="btn btn-default" uib-dropdown-toggle type="button" id="addWidgetMenu">
+            <i class="glyphicon glyphicon-plus"></i> Add Widget
+            <span class="caret"></span>
+        </button>
+        &nbsp;
+        <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="addWidgetMenu">
+            <li ng-repeat="type in widgetTypes">
+            	<a ng-click="addWidget(type.type)">
+            		{{type.displayName}}
+            	</a>
+            </li>
+            <li class="divider">
+            <li class="dropdown-header"><a href="#/settings/widgets" class="pull-right" style="padding: 0"><i class="glyphicon glyphicon-cog"></i></a>Custom widgets</li>
+            <li ng-repeat="(id,customwidget) in customwidgets">
+                <a ng-click="addCustomWidget(id)">{{customwidget.name || id}}</a></li>
+            <!--<li ><a href="#/settings/widgets"><i class="glyphicon glyphicon-cog">&nbsp;</i>Manage</a></li>-->
+        </ul>
+    </div>
+    <!--<a class="btn" href="#/"><i class="glyphicon glyphicon-chevron-left"></i></a>-->
+    <a class="btn pull-left" title="Menu" snap-toggle="left">
+        <i class="glyphicon glyphicon-menu-hamburger"></i>
+    </a>
+    <a class="btn btn-success" ng-click="save()"><i class="glyphicon glyphicon-save"></i>&nbsp;Save</a>
+    <a class="btn btn-primary" ng-click="run()"><i class="glyphicon glyphicon-play"></i>&nbsp;Run</a>
+</div>
+<div ng-if="!dashboard.widgets.length">
+    <div class="pull-right">
+        <h3>Add some widgets <i class="glyphicon glyphicon-arrow-up"></i></h3></div>
+</div>
+<div ng-show="error" class="alert alert-warning" role="alert">
+    <button type="button" class="close" ng-click="error=undefined"><span>&times;</span></button>
+    <strong>Server save failed!</strong> {{error}}
+</div>
+<div gridster="gridsterOptions">
+    <ul>
+        <li gridster-item="widget" data-snap-ignore="true" ng-repeat="widget in dashboard.widgets">
+            <div class="box box-design" ng-controller="CustomWidgetCtrl">
+                <div class="box-header pull-left" style="display: inline">
+                    <i class="handle glyphicon glyphicon-move"></i>
+                    <h3>{{ widget.customwidget || widget.type }}</h3>
+                </div>
+                <div class="box-content box-label-content">
+                    <div class="box-label">
+                        {{ widget.name }}
+                    </div>
+                </div>
+                <div class="btn-group box-header-btns dropdown" uib-dropdown dropdown-append-to-body>
+                  <button id="settingsMenu" type="button" class="box-header-dropdown settings-btn" uib-dropdown-toggle>
+                      <i class="glyphicon glyphicon-option-vertical"></i>
+                  </button>
+                  <ul class="dropdown-menu-right" style="min-width: 90px;" uib-dropdown-menu role="menu" aria-labelledby="settingsMenu">
+                    <li><a ng-click="openSettings(widget)" class="ng-binding"><i class="glyphicon glyphicon-edit"></i> Edit...</a></li>
+                    <li><a ng-click="transferWidget(widget)" class="ng-binding"><i class="glyphicon glyphicon-duplicate"></i> Copy/move to...</a></li>
+                    <li class="divider"></li>
+                    <li><a ng-click="remove(widget)" class="ng-binding"><i class="glyphicon glyphicon-trash"></i> Delete</a></li>
+                  </ul>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>

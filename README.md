@@ -1,67 +1,37 @@
-HABpanel
+HABPanel
 ========
 
-Another take on the dashboard-like web user interface concept for openHAB, with the following features:
+HABPanel is a lightweight dashboard interface for openHAB.
 
-- 100% client-side application, put it among your OpenHAB static files, no resources used on the server, nothing to start - if OpenHAB is up, it's up;
-- Dashboards are stored in the browser local storage, meaning they can be customized per device (a better way to backup and reuse configurations is definitely needed though);
-- Touch-friendly in-app drag-and-drop designer - OpenHAB's sitemaps are not used, it reads the items directly;
-- Uses the REST API and receives item updates via Websockets or long polling (unfortunately, this is not working reliably yet);
-- Goes fullscreen using the HTML5 Fullscreen API of the browser;
-- <a href="https://github.com/angular-slider/angularjs-slider">Sliders!</a> I like sliders.
-
-## Installation
-
-1. Copy (or clone this Git repository) into your openHAB static directory (e.g. ```/usr/share/openhab/webapps/static``` for openHAB .deb packages, or ```/opt/openhab/conf/html``` for openHAB 2, depends on your installation). 
-2. That's it.
+It notably features a quasi-WYSIWYG in-app editor allowing the user to design the dashboard directly on the target device.
 
 ## Configuration
 
-Nothing for now, it will simply try to connect to the local openHAB instance. This might change in the future.
+HABPanel stores its configuration (including sets of dashboards, called panel configurations) as openHAB 2 service configuration variables.
+This allows sharing of panel configurations between devices. You can also lock down editing globally to prevent accidental changes.
 
-## First steps
+You can access the configuration in Paper UI, _Configuration > Services > HABPanel_.
 
-- Navigate to ```http://<your-openhab-instance>:8080/static/habpanel/```
-- You should be presented with a screen with a clock, a settings icon (gears) to the left. Click on the icon.
-- You're now in edit mode, a link ("Add new dashboard") appeared, click on it and give your first dashboard a name
-- Click on the pencil icon to enter the dashboard editor (if you missed it and don't see a "Add Widget" button, go back and enter Edit mode again)
+Note: by default, HABPanel uses the local browser's storage until you save it in a new panel configuration as detailed below. 
+
+## Getting started
+
+- When accessing HABPanel for the first time on a new browser or device, you should be presented with a rather empty screen with a clock, a settings icon (gears) to the left. Click on the icon.
+- You're now in edit mode, a link (**"Add new dashboard"**) appeared, as well as an "Advanced settings" link.
+- If you previously used HABPanel, are using openHAB 2 and stored some panel configurations on the server, go to "Advanced settings" and click on your previous configuration. Otherwise, create your first dashboard: click on the "Add new dashboard" link and give it a name.
+- Click on the dashboard tile to enter the dashboard editor
 - Add your first widget: click on "Add Widget" and select the type in the menu (let's say Dummy)
-- Move the widget by drag-and-drop and resize it with the white chevron
+- Move the widget by drag-and-drop and resize it with the white chevron - it appears when you click on the widget
 - Click on the gears icon to bring up the widget's settings
-- Rename the widget, bind it to a supported openHAB item and click OK
+- Rename the widget, bind it to a supported openHAB item, adjust some settings and click OK
 - Save your configuration by clicking the Save button
 - Click Run to see your dashboard in action - use your browser's back button or the arrow to go back to the drawing board
+- When you're happy with your set of dashboards, go back to "Advanced settings" and either "Show the local configuration object" (the only available if using openHAB 1) and copy the JSON object somewhere to back it up, or click on "Save the current configuration to a new panel configuration"; this will store it on the openHAB 2 server and make it available for reuse.
 
-## Examples
+## Screenshots
 
-Here are some working dashboards for my own installation:
+_(excuse the French, will make new ones in English later)_
 
-![](http://i.imgur.com/hrkL5l7.png)
-
-![](http://i.imgur.com/eURUPuD.png)
-
-![](http://i.imgur.com/7kiG0kf.png)
-
-![](http://i.imgur.com/WuKkXmz.png)
-
-![](http://i.imgur.com/Uo8NJ62.png)
-
-![](http://i.imgur.com/v50fNnA.png)
-
-![](http://i.imgur.com/iUCsjRp.png)
-
-![](http://i.imgur.com/ZmlMlkv.png)
-
-## Disclaimer
-
-This is alpha software, at best. There are a lot of things missing. The code is not clean, there's no testing, no dependency management, few best practices are followed, it's a mess. I know.
-
-## Acknowledgments
-
-- [angular-atmosphere](https://github.com/spyboost/angular-atmosphere)
-- [angular-fullscreen](https://github.com/fabiobiondi/angular-fullscreen)
-- [angular-gridster](https://github.com/ManifestWebDesign/angular-gridster)
-- [angular-local-storage](https://github.com/grevory/angular-local-storage)
-- [angular-prompt](https://github.com/cgross/angular-prompt)
-- [angular-slider](https://github.com/angular-slider/angularjs-slider)
-- [atmosphere.js](https://github.com/Atmosphere/atmosphere-javascript)
+![](doc/Screenshot_2016-08-22-23-36-25.png) ![](doc/Screenshot_2016-08-22-23-50-24.png)
+![](doc/Screenshot_2016-08-22-23-37-07.png) ![](doc/Screenshot_2016-08-22-23-38-05.png)
+![](doc/Screenshot_2016-08-22-23-41-34.png) ![](doc/Screenshot_2016-08-22-23-41-48.png)

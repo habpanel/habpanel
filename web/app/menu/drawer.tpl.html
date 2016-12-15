@@ -1,0 +1,14 @@
+<ul class="menu">
+    <li ng-click="goHome()" ng-class="{ active: isActive('/') }" class="head">
+        <widget-icon iconset="'freepik-housethings'" icon="'house-building'" size="40"></widget-icon> HABPanel
+    </li>
+    <li ng-repeat="dash in dashboards | orderBy:['row', 'col']" ng-class="{ active: isActive(dash.id) }" ng-click="goToDashboard(dash.id)">
+        <widget-icon ng-if="dash.tile.iconset && dash.tile.icon" style="position:absolute; right: 20px" iconset="dash.tile.iconset" icon="dash.tile.icon" inline="true" size="24"></widget-icon>
+        {{dash.name}}
+    </li>
+</ul>
+<footer>
+    <a ng-hide="lockEditing || kioskMode" class="btn pull-right" ng-click="goToSettings()"><i class="glyphicon glyphicon-cog"></i></a>
+    <ds-widget-clock style="width: 100%; color: darkgray;" show-digital digital-format="'EEEE d MMMM'"></ds-widget-clock>
+    <ds-widget-clock style="width: 100%; font-size: 24px;" show-digital></ds-widget-clock>
+</footer>

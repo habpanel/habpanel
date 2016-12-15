@@ -1,0 +1,223 @@
+<div>
+    <form name="_form" class="form-horizontal" ng-submit="submit(_form)">
+        <div class="modal-header">
+            <button type="button" class="close" ng-click="dismiss()" aria-hidden="true">&times;</button>
+            <h3>Button Settings</h3>
+        </div>
+
+        <div class="modal-body">
+            <div class="form-group">
+                <div class="col-xs-9"> 
+                <uib-tabset>
+                    <uib-tab heading="General">
+                      <br />
+                      <div class="form-group" ng-class="{error: _form.name.$error && _form.submitted}">
+                          <label class="control-label col-lg-3 col-md-3">Name</label>
+                          <div class="col-lg-9 col-md-9">
+                              <input name="name" type="text" ng-model="form.name" class="form-control" />
+                          </div>
+                      </div>
+                      <div class="form-group" ng-class="{error: _form.action_type.$error && _form.submitted}">
+                          <label class="control-label col-lg-3 col-md-3">Action type</label>
+                          <div class="col-lg-9 col-md-9">
+                              <select ng-model="form.action_type" class="form-control">
+                                  <option value="command">Send a fixed command to an item</option>
+                                  <option value="toggle">Alternate item between 2 states</option>
+                                  <option value="navigate">Navigate to another dashboard</option>
+                              </select>
+                          </div>
+                      </div>
+                      <div ng-if="form.action_type !== 'navigate'" class="form-group" ng-class="{error: _form.item.$error && _form.submitted}">
+                          <label class="control-label col-lg-3 col-md-3">openHAB Item</label>
+                          <div class="col-lg-9 col-md-9">
+                                <item-picker ng-model="form.item"></item-picker>
+                          </div>
+                      </div>
+                      <div ng-if="form.action_type !== 'navigate'" class="form-group" ng-class="{error: _form.command.$error && _form.submitted}">
+                          <label class="control-label col-lg-3 col-md-3">Command value</label>
+                          <div class="col-lg-9 col-md-9">
+                              <input name="command" type="text" ng-model="form.command" class="form-control" />
+                          </div>
+                      </div>
+                      <div ng-if="form.action_type === 'toggle'" class="form-group" ng-class="{error: _form.command_alt.$error && _form.submitted}">
+                          <label class="control-label col-lg-3 col-md-3">Alternate command value</label>
+                          <div class="col-lg-9 col-md-9">
+                              <input name="command" type="text" ng-model="form.command_alt" class="form-control" />
+                          </div>
+                      </div>
+                      <div ng-if="form.action_type === 'navigate'" class="form-group" ng-class="{error: _form.navigate_dashboard.$error && _form.submitted}">
+                          <label class="control-label col-lg-3 col-md-3">Dashboard</label>
+                          <div class="col-lg-9 col-md-9">
+                              <select ng-model="form.navigate_dashboard" class="form-control" ng-options="dashboard.id as dashboard.name for dashboard in dashboards"></select>
+                          </div>
+                      </div>
+                    </uib-tab>
+
+                    <uib-tab heading="Inactive">
+                    <br />
+                            <div class="form-group" ng-class="{error: _form.font_size.$error && _form.submitted}">
+                                <label class="control-label col-xs-4">Font size</label>
+                                <div class="col-xs-4">
+                                    <input name="font_size" ng-model="form.font_size" class="form-control" />
+                                </div>
+                                <div class="col-xs-4">
+                                <!--<label class="control-label">
+                                    <input type="checkbox"  name="font_bold" ng-model="form.font_bold" />
+                                    <label for="font_bold"><i class="glyphicon glyphicon-bold"></i></label>
+                                    <input type="checkbox"  name="font_italic" ng-model="form.font_italic" />
+                                    <label for="font_italic"><i class="glyphicon glyphicon-italic"></i></label>
+                                </label>-->
+                                </div>
+                            </div>
+                        <div class="form-group" ng-class="{error: _form.background.$error && _form.submitted}">
+                            <label class="control-label col-lg-2 col-md-2">Background color</label>
+                            <div class="col-lg-4 col-md-4">
+                                <div dab-model="form.background" web-colorpicker dab-width="20" dab-height="20" dab-radius="50" dab-vertical="4" dab-rotate="0" show-grayscale="true"></div>
+                            </div>
+                        </div>
+                        <div class="form-group" ng-class="{error: _form.foreground.$error && _form.submitted}">
+                            <label class="control-label col-lg-2 col-md-2">Text color</label>
+                            <div class="col-lg-4 col-md-4">
+                                <div dab-model="form.foreground" web-colorpicker dab-width="20" dab-height="20" dab-radius="50" dab-vertical="4" dab-rotate="0" show-grayscale="true"></div>
+                            </div>
+                        </div>
+                    </uib-tab>
+
+
+                    <uib-tab heading="Active">
+                    <br />
+                        <div class="form-group" ng-class="{error: _form.font_size.$error && _form.submitted}">
+                            <label class="control-label col-xs-4">Font size</label>
+                            <div class="col-xs-4">
+                                <input name="font_size" disabled="disabled" ng-model="form.font_size" class="form-control" />
+                            </div>
+                            <div class="col-xs-4">
+                            <!--<label class="control-label">
+                                <input type="checkbox"  name="font_bold_active" ng-model="form.font_bold_active" />
+                                <label for="font_bold_active"><i class="glyphicon glyphicon-bold"></i></label>
+                                <input type="checkbox"  name="font_italic_active" ng-model="form.font_italic_active" />
+                                <label for="font_italic_active"><i class="glyphicon glyphicon-italic"></i></label>
+                            </label>-->
+                            </div>
+                        </div>
+                        <div class="form-group" ng-class="{error: _form.background_active.$error && _form.submitted}">
+                            <label class="control-label col-lg-2 col-md-2">Background color</label>
+                            <div class="col-lg-4 col-md-4">
+                                <div dab-model="form.background_active" web-colorpicker dab-width="20" dab-height="20" dab-radius="50" dab-vertical="4" dab-rotate="0" show-grayscale="true"></div>
+                            </div>
+                        </div>
+                        <div class="form-group" ng-class="{error: _form.foreground_active.$error && _form.submitted}">
+                            <label class="control-label col-lg-2 col-md-2">Text color</label>
+                            <div class="col-lg-4 col-md-4">
+                                <div dab-model="form.foreground_active" web-colorpicker dab-width="20" dab-height="20" dab-radius="50" dab-vertical="4" dab-rotate="0" show-grayscale="true"></div>
+                            </div>
+                        </div>
+                    </uib-tab>
+
+
+                    <uib-tab heading="Icons">
+                        <br />
+                        <div class="form-group" ng-class="{error: _form.backdrop_icon.$error && _form.submitted}">
+                            <label class="control-label col-lg-3 col-md-3">Backdrop Icon</label>
+                            <div class="col-lg-9 col-md-9">
+                                <icon-picker iconset="form.backdrop_iconset" icon="form.backdrop_icon"></icon-picker>
+                                <div ng-if="form.backdrop_icon" class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="vertical" ng-model="form.backdrop_center" /> Center backdrop horizontally
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group" ng-class="{error: _form.icon.$error && _form.submitted}">
+                            <label class="control-label col-lg-3 col-md-3">Icon</label>
+                            <div class="col-lg-9 col-md-9">
+                                <icon-picker iconset="form.iconset" icon="form.icon"></icon-picker>
+                                <div class="col-xs-6 input-group" ng-if="form.icon">
+                                    <div class="input-group-addon">Size</div>
+                                    <input name="icon_size" ng-model="form.icon_size" class="form-control" />
+                                    <div class="input-group-addon">px</div>
+                                </div>
+                                <div ng-if="form.icon" class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="vertical" ng-model="form.icon_nolinebreak" /> Icon left of label instead of below
+                                    </label>
+                                </div>
+                                <div ng-if="form.icon" class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="vertical" ng-model="form.icon_replacestext" /> Icon replaces text
+                                    </label>
+                                </div>
+
+                            </div>
+                        </div>
+                    </uib-tab>
+
+
+                </uib-tabset>
+                
+                </div>
+                <div class="col-xs-3" style="height: 80px">
+                    <div class="box">
+                        <div class="box-content switch" ng-style="{ 'background-color': form.background, color: form.foreground }">
+                            <div class="switch-content">
+                                <span ng-style="{ 'font-size': form.font_size + 'pt' }">Inactive</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="box-content switch" ng-style="{ 'background-color': form.background_active, color: form.foreground_active }">
+                            <div class="switch-content">
+                                <span ng-style="{ 'font-size': form.font_size + 'pt' }">Active</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <!--<div class="row">
+                <div class="col-lg-6 col-md-6">
+                    <div class="form-group" ng-class="{error: _form.sizeX.$error && _form.submitted}">
+                        <label class="control-label col-lg-6 col-md-6">Width</label>
+                        <div class="col-lg-6 col-md-6">
+                            <input name="sizeX" ng-model="form.sizeX" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="form-group">
+                        <label class="control-label col-lg-6 col-md-6">Height</label>
+                        <div class="col-lg-6 col-md-6">
+                            <input name="sizeY" ng-model="form.sizeY" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6">
+                    <div class="form-group" ng-class="{error: _form.sizeX.$error && _form.submitted}">
+                        <label class="control-label col-lg-6 col-md-6">Column</label>
+                        <div class="col-lg-6 col-md-6">
+                            <input name="col" ng-model="form.col" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="form-group">
+                        <label class="control-label col-lg-6 col-md-6">Row</label>
+                        <div class="col-lg-6 col-md-6">
+                            <input name="row" ng-model="form.row" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+            </div>-->
+        </div>
+
+        <div class="modal-footer">
+            <a ng-click="remove()" class="btn btn-danger pull-left" tabindex="-1"><i class="glyphicon glyphicon-trash"></i>&nbsp;Delete</a>
+            <a ng-click="dismiss()" class="btn btn-default" tabindex="-1"><i class="glyphicon glyphicon-remove"></i>&nbsp;Cancel</a>
+            <button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-ok"></i>&nbsp;Save</button>
+        </div>
+    </form>
+</div>

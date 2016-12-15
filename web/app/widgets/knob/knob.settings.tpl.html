@@ -1,0 +1,414 @@
+<div>
+    <form name="_form" class="form-horizontal" ng-submit="submit(_form)">
+        <div class="modal-header">
+            <button type="button" class="close" ng-click="dismiss()" aria-hidden="true">&times;</button>
+            <h3>Knob Settings</h3>
+        </div>
+
+        <div class="modal-body">
+            <uib-tabset>
+                <uib-tab heading="General">
+                    <br />
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group" ng-class="{error: _form.name.$error && _form.submitted}">
+                                <label class="control-label col-lg-3 col-md-3">Name</label>
+                                <div class="col-lg-9 col-md-9">
+                                    <input name="name" type="text" ng-model="form.name" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="form-group" ng-class="{error: _form.item.$error && _form.submitted}">
+                                <label class="control-label col-lg-3 col-md-3">openHAB Item</label>
+                                <div class="col-lg-9 col-md-9">
+                                    <item-picker ng-model="form.item"></item-picker>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12 col-md-12">
+                                <div class="form-group" ng-class="{error: _form.readOnly.$error && _form.submitted}">
+                                    <label class="control-label col-lg-3 col-md-3">Display only</label>
+                                    <div class="col-lg-9 col-md-9">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" name="readOnly" ng-model="form.readOnly" /> Read only
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-xs-6">
+                                    <div class="form-group" ng-class="{error: _form.floor.$error && _form.submitted}">
+                                        <label class="control-label col-xs-4">Min</label>
+                                        <div class="col-xs-6">
+                                            <input name="min" type="number" step="any" ng-model="form.floor" class="form-control" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6">
+                                    <div class="form-group" ng-class="{error: _form.ceil.$error && _form.submitted}">
+                                        <label class="control-label col-xs-4">Max</label>
+                                        <div class="col-xs-6">
+                                            <input name="max" type="number" step="any" ng-model="form.ceil" class="form-control" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6">
+                                    <div class="form-group" ng-class="{error: _form.step.$error && _form.submitted}">
+                                        <label class="control-label col-xs-4">Step</label>
+                                        <div class="col-xs-6">
+                                            <input name="step" type="number" step="any" ng-model="form.step" class="form-control" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6">
+                                    <div class="form-group" ng-class="{error: _form.unit.$error && _form.submitted}">
+                                        <label class="control-label col-xs-4">Unit</label>
+                                        <div class="col-xs-6">
+                                            <input name="unit" type="text" ng-model="form.unit" class="form-control" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Doesn't work
+                                <div class="col-lg-12 col-md-12">
+                                <div class="form-group" ng-class="{error: _form.displayInput.$error && _form.submitted}">
+                                    <label class="control-label col-lg-3 col-md-3">Value display</label>
+                                    <div class="col-lg-9 col-md-9">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" name="readOnly" ng-model="form.displayInput" /> Display value
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>-->
+                            <div class="col-lg-12 col-md-12">
+                                <div class="form-group" ng-class="{error: _form.subTextEnabled.$error && _form.submitted}">
+                                    <label class="control-label col-lg-3 col-md-3">Subtext display</label>
+                                    <div class="col-lg-9 col-md-9">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" name="readOnly" ng-model="form.subTextEnabled" /> Display name below value
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                    
+                </uib-tab>
+
+                <uib-tab heading="Bar &amp; Track">
+                    <br />
+
+                    <div class="row">
+
+                        <div class="col-xs-12">
+                            <div class="row">
+                                <h4 class="col-lg-12 col-md-12">Angles (°)</h4>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-xs-6">
+                                    <div class="form-group" ng-class="{error: _form.startAngle.$error && _form.submitted}">
+                                        <label class="control-label col-xs-4">Start</label>
+                                        <div class="col-xs-6">
+                                            <input name="min" type="number" ng-model="form.startAngle" class="form-control" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6">
+                                    <div class="form-group" ng-class="{error: _form.endAngle.$error && _form.submitted}">
+                                        <label class="control-label col-xs-4">End</label>
+                                        <div class="col-xs-6">
+                                            <input name="max" type="number" ng-model="form.endAngle" class="form-control" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <h4 class="col-lg-12 col-md-12">Bar</h4>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-xs-6">
+                                    <div class="form-group" ng-class="{error: _form.barWidth.$error && _form.submitted}">
+                                        <label class="control-label col-xs-4">Width</label>
+                                        <div class="col-xs-6">
+                                            <input name="min" type="number" ng-model="form.barWidth" class="form-control" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6">
+                                    <div class="form-group" ng-class="{error: _form.barCap.$error && _form.submitted}">
+                                        <label class="control-label col-xs-4">Cap</label>
+                                        <div class="col-xs-6">
+                                            <input name="max" type="number" ng-model="form.barCap" class="form-control" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12">
+                                    <div class="form-group" ng-class="{error: _form.barColor.$error && _form.submitted}">
+                                        <label class="control-label col-lg-2 col-md-2">Color</label>
+                                        <div class="col-lg-4 col-md-4">
+                                            <div dab-model="form.barColor" web-colorpicker dab-width="20" dab-height="20" dab-radius="50" dab-vertical="4" dab-rotate="0" show-grayscale="true"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <h4 class="col-lg-12 col-md-12">Track</h4>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-xs-6">
+                                    <div class="form-group" ng-class="{error: _form.trackWidth.$error && _form.submitted}">
+                                        <label class="control-label col-xs-4">Width</label>
+                                        <div class="col-xs-6">
+                                            <input name="min" type="number" ng-model="form.trackWidth" class="form-control" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6">
+                                    <div class="form-group" ng-class="{error: _form.trackCap.$error && _form.submitted}">
+                                        <label class="control-label col-xs-4">Cap</label>
+                                        <div class="col-xs-6">
+                                            <input name="max" type="number" ng-model="form.trackCap" class="form-control" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12">
+                                    <div class="form-group" ng-class="{error: _form.trackColor.$error && _form.submitted}">
+                                        <label class="control-label col-lg-2 col-md-2">Color</label>
+                                        <div class="col-lg-4 col-md-4">
+                                            <div dab-model="form.trackColor" web-colorpicker dab-width="20" dab-height="20" dab-radius="50" dab-vertical="4" dab-rotate="0" show-grayscale="true"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <h4 class="col-lg-12 col-md-12">Previous value</h4>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="displayPrevious" ng-model="form.displayPrevious" /> Display previous value when dragging
+                                        </label>
+                                    </div>
+                                    <br />
+                                </div>
+                                <div class="col-xs-12">
+                                    <div class="form-group" ng-class="{error: _form.prevBarColor.$error && _form.submitted}">
+                                        <label class="control-label col-lg-2 col-md-2">Color</label>
+                                        <div class="col-lg-4 col-md-4">
+                                            <div dab-model="form.prevBarColor" web-colorpicker dab-width="20" dab-height="20" dab-radius="50" dab-vertical="4" dab-rotate="0" show-grayscale="true"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                </uib-tab>
+
+                <uib-tab heading="Scale">
+                    <br />
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="col-lg-12 col-md-12">
+                                <div class="form-group" ng-class="{error: _form.scaleEnabled.$error && _form.submitted}">
+                                    <label class="control-label col-lg-3 col-md-3">Display scale</label>
+                                    <div class="col-lg-9 col-md-9">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" name="readOnly" ng-model="form.scaleEnabled" /> Enabled
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12 col-md-12">
+                                <div class="form-group" ng-class="{error: _form.scaleType.$error && _form.submitted}">
+                                    <label class="control-label col-lg-3 col-md-3">Scale Type</label>
+                                    <div class="col-lg-9 col-md-9">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="radio" name="scaleTypeLines" ng-model="form.scaleType" value="lines" /> Lines
+                                            </label>
+                                            <label>
+                                                <input type="radio" name="scaleTypeDots" ng-model="form.scaleType" value="dots" /> Dots
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-xs-6">
+                                    <div class="form-group" ng-class="{error: _form.scaleWidth.$error && _form.submitted}">
+                                        <label class="control-label col-xs-4">Width</label>
+                                        <div class="col-xs-6">
+                                            <input name="min" type="number" ng-model="form.scaleWidth" class="form-control" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12">
+                                    <div class="form-group" ng-class="{error: _form.scaleColor.$error && _form.submitted}">
+                                        <label class="control-label col-lg-2 col-md-2">Color</label>
+                                        <div class="col-lg-4 col-md-4">
+                                            <div dab-model="form.scaleColor" web-colorpicker dab-width="20" dab-height="20" dab-radius="50" dab-vertical="4" dab-rotate="0" show-grayscale="true"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </uib-tab>
+
+                <uib-tab heading="Skin">
+                    <br />
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="col-lg-12 col-md-12">
+                                <div class="form-group" ng-class="{error: _form.skinType.$error && _form.submitted}">
+                                    <label class="control-label col-lg-3 col-md-3">Type</label>
+                                    <div class="col-lg-9 col-md-9">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="radio" name="skinTypeSimple" ng-model="form.skinType" value="simple" /> Simple
+                                            </label>
+                                            <label>
+                                                <input type="radio" name="skinTypeTron" ng-model="form.skinType" value="tron" /> Tron
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <h4 class="col-lg-12 col-md-12">Tron skin settings</h4>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-xs-6">
+                                    <div class="form-group" ng-class="{error: _form.skinWidth.$error && _form.submitted}">
+                                        <label class="control-label col-xs-4">Width</label>
+                                        <div class="col-xs-6">
+                                            <input name="min" type="number" ng-model="form.skinWidth" class="form-control" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6">
+                                    <div class="form-group" ng-class="{error: _form.skinSpaceWidth.$error && _form.submitted}">
+                                        <label class="control-label col-xs-4">Space</label>
+                                        <div class="col-xs-6">
+                                            <input name="min" type="number" ng-model="form.skinSpaceWidth" class="form-control" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12">
+                                    <div class="form-group" ng-class="{error: _form.skinColor.$error && _form.submitted}">
+                                        <label class="control-label col-lg-2 col-md-2">Color</label>
+                                        <div class="col-lg-4 col-md-4">
+                                            <div dab-model="form.skinColor" web-colorpicker dab-width="20" dab-height="20" dab-radius="50" dab-vertical="4" dab-rotate="0" show-grayscale="true"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </uib-tab>
+
+
+                <uib-tab heading="Misc.">
+                    <br />
+                    <div class="row">
+                        <div class="col-xs-12">
+
+                            <div class="row">
+                                <h4 class="col-lg-12 col-md-12">Text</h4>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-xs-6">
+                                    <div class="form-group" ng-class="{error: _form.fontSize.$error && _form.submitted}">
+                                        <label class="control-label col-xs-4">Font size</label>
+                                        <div class="col-xs-6">
+                                            <input name="max" type="number" ng-model="form.fontSize" class="form-control" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12">
+                                    <div class="form-group" ng-class="{error: _form.textColor.$error && _form.submitted}">
+                                        <label class="control-label col-lg-2 col-md-2">Color</label>
+                                        <div class="col-lg-4 col-md-4">
+                                            <div dab-model="form.textColor" web-colorpicker dab-width="20" dab-height="20" dab-radius="50" dab-vertical="4" dab-rotate="0" show-grayscale="true"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <h4 class="col-lg-12 col-md-12">Background</h4>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    <div class="form-group" ng-class="{error: _form.bgColor.$error && _form.submitted}">
+                                        <label class="control-label col-lg-2 col-md-2">Color</label>
+                                        <div class="col-lg-4 col-md-4">
+                                            <div dab-model="form.bgColor" web-colorpicker dab-width="20" dab-height="20" dab-radius="50" dab-vertical="4" dab-rotate="0" show-grayscale="true"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <!-- Doesn't work well
+                            <div class="form-group" ng-class="{error: _form.backdrop_icon.$error && _form.submitted}">
+                                <label class="control-label col-lg-3 col-md-3">Backdrop Icon</label>
+                                <div class="col-lg-9 col-md-9">
+                                    <icon-picker iconset="form.backdrop_iconset" icon="form.backdrop_icon"></icon-picker>
+                                    <div ng-if="form.backdrop_icon" class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="vertical" ng-model="form.backdrop_center" /> Center backdrop horizontally
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>-->
+
+                        </div>
+                    </div>
+                </uib-tab>
+
+            </uib-tabset>
+        </div>
+
+
+
+        <div class="modal-footer">
+            <a ng-click="remove()" class="btn btn-danger pull-left" tabindex="-1"><i class="glyphicon glyphicon-trash"></i>&nbsp;Delete</a>
+            <a ng-click="dismiss()" class="btn btn-default" tabindex="-1"><i class="glyphicon glyphicon-remove"></i>&nbsp;Cancel</a>
+            <button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-ok"></i>&nbsp;Save</button>
+        </div>
+    </form>
+</div>

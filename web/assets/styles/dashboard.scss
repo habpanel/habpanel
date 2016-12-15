@@ -1,0 +1,125 @@
+.dashboard {
+  margin: 0 -10px;
+}
+
+.header {
+  position: fixed;
+  margin: -50px -15px -10px -15px;
+  width: 100%;
+  padding: 8px;
+  z-index: 99;
+  background: $body-bg;
+
+  .btn:hover {
+    color: $widget-text-color;
+  }
+
+  .btn-edit-dashboard {
+    display: none;
+    padding: 0 6px;
+  }
+
+  h2 {
+    display: inline;
+
+    &.dashboard-title {
+      span {
+        &:hover {
+          .btn-edit-dashboard {
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
+}
+
+.controls {
+  margin-bottom: 20px;
+}
+
+.page-header {
+  margin-top: 10px;
+}
+
+ul {
+  list-style: none;
+}
+
+.box {
+  height: 100%;
+  background: $box-bg;
+  color: $widget-text-color;
+}
+
+.box-design {
+  border: 1px solid $widget-design-bg;
+}
+
+.box-header {
+  display: table;
+  background-color: $widget-design-bg;
+  padding: 0 5px 0 0;
+  border-right: 1px solid $widget-design-bg;
+  border-bottom: 1px solid $widget-design-bg;
+  cursor: move;
+  position: absolute;
+  opacity: .4;
+}
+
+.box-header i {
+  font-size: 2.5rem;
+  vertical-align: middle;
+}
+
+.box-header h3 {
+  vertical-align: middle;
+  margin: .2em 0 0 0;
+  display: inline-block;
+  font-size: 10pt;
+}
+
+.box-content {
+  padding: 10px;
+  text-align: center;
+  height: 100%;
+}
+
+.box-header-btns {
+  top: 0;
+  right: 0.5rem;
+  cursor: pointer;
+  position: absolute;
+}
+
+.box-header-dropdown {
+  background-color: transparent;
+  border-style: none;
+  color: #abc;
+  width: 3rem;
+}
+
+.box-label-content {
+  display: flex;
+}
+
+.box-label {
+  margin: auto;
+}
+
+.settings-btn i {
+  font-size: 2.5rem;
+}
+
+form {
+  margin-bottom: 0;
+}
+
+.gridster {
+  padding: 2px;
+}
+
+.gridster .gridster-item:hover .handle-se {
+  border-width: 0 0 3rem 3rem !important;
+  border-color: transparent transparent $widget-text-color !important;
+}

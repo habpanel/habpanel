@@ -1,0 +1,21 @@
+<div>
+    <form name="_form" class="form-horizontal" ng-submit="submit(_form)">
+        <div class="modal-header">
+            <button type="button" class="close" ng-click="dismiss()" aria-hidden="true">&times;</button>
+            <h3>Copy/move {{widgetName}}</h3>
+        </div>
+        <div class="modal-body">
+            <div class="form-group" ng-class="{error: _form.targetDashboard.$error && _form.submitted}">
+                <label class="control-label col-xs-3 col-lg-3 col-md-3">to dashboard</label>
+                <div class="col-lg-5 col-md-5 col-xs-5">
+                    <select ng-model="form.targetDashboard" ng-options="dashboard.id as dashboard.name for dashboard in selDashboards" class="form-control"></select>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a ng-click="dismiss()" class="btn btn-default" tabindex="-1"><i class="glyphicon glyphicon-remove"></i>&nbsp;Cancel</a>
+            <a ng-click="moveWidget()" ng-disabled="form.targetDashboard == form.currentDashboard" class="btn btn-primary"><i class="glyphicon glyphicon-save-file"></i>&nbsp;Move</a>
+            <a ng-click="copyWidget({close: true})" class="btn btn-primary"><i class="glyphicon glyphicon-duplicate"></i>&nbsp;Copy</a>
+        </div>
+    </form>
+</div>
