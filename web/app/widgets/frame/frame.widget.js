@@ -9,7 +9,7 @@
             WidgetsProvider.$get().registerType({
                 type: 'frame',
                 displayName: 'Frame',
-                description: 'A fixed label used for headers etc. (no openHAB item binding)'
+                description: 'Embedded website from predefined URL or openHAB item.'
             });
         });
 
@@ -36,12 +36,28 @@
         function link(scope, element, attrs) {
         }
     }
+
     FrameController.$inject = ['$rootScope', '$scope', 'OHService', '$sce'];
     function FrameController ($rootScope, $scope, OHService, $sce) {
         var vm = this;
         this.widget = this.ngModel;
-        $scope.detailFrame = $sce.trustAsResourceUrl(this.widget.frameUrl);
-       
+
+        function updateValue() {
+            var item = OHService.getItem(vm.widget.item);
+            if (!item || vm.widget.url_source !== 'item') {
+                vm.value = "";
+                return;
+            }
+            $scope.detailFrame = $sce.trustAsResourceUrl(item.state);
+        }
+
+        OHService.onUpdate($scope, vm.widget.item, function () {
+            updateValue();
+        });
+
+        if (this.widget.url_source === 'static') {
+            $scope.detailFrame = $sce.trustAsResourceUrl(this.widget.frameUrl);
+        }
     };
 
 
@@ -53,14 +69,16 @@
         $scope.items = OHService.getItems();
 
         $scope.form = {
-            name: widget.name,
-            sizeX: widget.sizeX,
-            sizeY: widget.sizeY,
-            col: widget.col,
-            row: widget.row,
-            frameUrl: widget.frameUrl,
-            frameless: widget.frameless,
-            hidelabel: widget.hidelabel,
+            name      : widget.name,
+            sizeX     : widget.sizeX,
+            sizeY     : widget.sizeY,
+            col       : widget.col,
+            row       : widget.row,
+            url_source: widget.url_source || 'static',
+            item      : widget.item,
+            frameUrl  : widget.frameUrl,
+            frameless : widget.frameless,
+            hidelabel : widget.hidelabel,
             background: widget.background
         };    
 
@@ -75,11 +93,17 @@
 
         $scope.submit = function() {
             angular.extend(widget, $scope.form);
+            switch (widget.url_source) {
+                case "item":
+                    delete widget.frameUrl;
+                    break;
+                default:
+                    delete widget.item;
+                    delete widget.action_type;
+                    break;
+            }
 
             $modalInstance.close(widget);
         };
-
     }
-
-
 })();
