@@ -76,7 +76,7 @@
         };
 
         if (vm.widget.charttype == 'interactive') {
-            function startTime() {
+            var startTime = function() {
             	var startDate = new Date();
                 switch (vm.widget.period)
                 {
@@ -194,7 +194,7 @@
                     vm.interactiveChartOptions.liveUpdates.fillValues = vm.widget.liveUpdates.fillValues;
                 }
 
-                function updateValue(item) {
+                var updateValue = function(item) {
                     var dataset = vm.datasets[item.name];
                     if(dataset) {
                         var receivedUpdate = {
