@@ -56,6 +56,15 @@
                 $compile(element.contents())(scope);
             }
 
+            scope.itemGet = function(itemname) {
+                if (!itemname) return "N/A";
+                var item = OHService.getItem(itemname);
+                if (!item) return "N/A";
+
+                var value = item;
+                return value;
+            }
+
             scope.itemValue = function(itemname) {
                 if (!itemname) return "N/A";
                 var item = OHService.getItem(itemname);
@@ -191,7 +200,8 @@
                 token: function(stream, state) {
                     var ch;
                     if (stream.match("itemValue(") || stream.match("sendCmd(")
-                     || stream.match("itemsInGroup(") || stream.match("itemsWithTag(")) {
+                     || stream.match("itemsInGroup(") || stream.match("itemsWithTag(")
+										 || stream.match("itemGet(")) {
                          while ((ch = stream.next()) != null)
                          if (ch == ")") {
                              stream.eat(")");
@@ -208,7 +218,7 @@
                     while (stream.next() != null
                         && (!stream.match("{{", false)) && !stream.match("itemValue", false)
                             && !stream.match("sendCmd", false) && !stream.match("itemsInGroup", false)
-                            && !stream.match("itemsWithTags", false)) {}
+                            && !stream.match("itemsWithTags", false) && !stream.match("itemGet", false)) {}
                     return null;
                 }
             };
