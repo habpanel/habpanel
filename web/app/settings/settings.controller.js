@@ -29,8 +29,11 @@
                 input: true
             }).then(function (name) {
                 vm.panelsRegistry[name] = { 
-                    "dashboards" : $rootScope.dashboards, 
-                    "updatedTime": new Date().toISOString() 
+                    "dashboards"   : $rootScope.dashboards,
+                    "menucolumns"  : $rootScope.menucolumns,
+                    "customwidgets": $rootScope.customwidgets,
+                    "settings"     : $rootScope.settings,
+                    "updatedTime"  : new Date().toISOString()
                 };
                 vm.storageOption = name;
                 OH2StorageService.setCurrentPanelConfig(name);
