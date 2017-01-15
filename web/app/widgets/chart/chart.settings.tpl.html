@@ -21,7 +21,7 @@
                             <select ng-model="form.charttype" class="form-control">
                                 <option value="default">Default</option>
                                 <option value="rrd4j">RRD4j (rrd4j persistence service only)</option>
-                                <option value="interactive">n3-line-chart (interactive; openHAB 2 only)</option>
+                                <option value="interactive">n3-line-chart (interactive)</option>
                             </select>
                         </div>
                     </div>
@@ -248,7 +248,7 @@
                         <div class="col-lg-9 col-md-9">
                             <div class="checkbox">
                                 <label>
-                                    <input type="checkbox" name="vertical" ng-model="form.liveUpdates.enabled" /> Live update
+                                    <input type="checkbox" name="vertical" ng-model="form.liveUpdates.enabled" /> Live update (experimental)
                                 </label>
                             </div>
                         </div>

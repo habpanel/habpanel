@@ -1,9 +1,9 @@
-# Additional documentation for openHAB 1.x users
+# Additional notice for openHAB 1.x users
 
-HABPanel development is now focused on openHAB 2.
-However, there is still limited compatibility for openHAB 1.8.
+HABPanel is an official openHAB 2 UI and therefore is only supported on openHAB 2.
+However, the 'oh1' branch still contains a legacy version with limited compatibility with openHAB 1.8.
 
-If you're using OH1, copy (or clone this Git repository) into your openHAB
+If you're using OH1, download (or clone) the contents of the 'oh1' branch into your installation's
 static directory (e.g. ```/usr/share/openhab/webapps/static``` for openHAB .deb packages).
 It will be available at ```http://<your-openhab-instance:8080/static/habpanel/web/```.
 
@@ -20,4 +20,4 @@ If you're using openHAB 1 and encounter issues with HABPanel, please state so in
 title (prefix it with *[OH1]*).
 The same applies when creating threads in
 [the discussion group](https://community.openhab.org/c/apps-services/habpanel).
-
+Please understand they're not likely to be addressed as quickly as regular issues though.

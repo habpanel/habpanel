@@ -102,8 +102,6 @@ gulp.task('vendor-js', function() {
         'bower_components/angular-local-storage/dist/angular-local-storage.min.js',
         'bower_components/angular-ui-codemirror/ui-codemirror.min.js',
         'bower_components/angularjs-slider/dist/rzslider.min.js',
-        'bower_components/atmosphere.js/atmosphere.min.js',
-        'bower_components/angular-atmosphere-service/service/angular-atmosphere-service.js',
         'bower_components/angular-clipboard/angular-clipboard.js',
         'bower_components/ng-knob/dist/ng-knob.min.js',
         'bower_components/inobounce/inobounce.min.js',

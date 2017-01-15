@@ -40,16 +40,17 @@
         }
 
         function refreshMenu() {
-            PersistenceService.getDashboards().then(function (dashboards) {
-                $scope.dashlist = $filter('orderBy')(dashboards, ['row', 'col']).map(function (dash) {
+            if ($rootScope.dashboards) {
+                $scope.dashlist = $filter('orderBy')($rootScope.dashboards, ['row', 'col']).map(function (dash) {
                     return { id: dash.id, name: dash.name };
                 });
-                snapRemote.getSnapper().then(function (snapper) {
-                    var drawer = angular.element(window.document).find("aside")[0];
-                    drawer.style.display = '';
-                    if ($rootScope.kioskMode)
-                        snapper.disable();
-                });
+            };
+
+            snapRemote.getSnapper().then(function (snapper) {
+                var drawer = angular.element(window.document).find("aside")[0];
+                drawer.style.display = '';
+                if ($rootScope.kioskMode)
+                    snapper.disable();
             });
         }
     }

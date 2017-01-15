@@ -7,8 +7,8 @@
         .value('OH2ServiceConfiguration', {})
         .service('OH2StorageService', OH2StorageService);
 
-    OHService.$inject = ['$rootScope', '$http', '$q', '$timeout', '$interval', '$filter', '$location', 'atmosphereService', 'SpeechService'];
-    function OHService($rootScope, $http, $q, $timeout, $interval, $filter, $location, atmosphereService, SpeechService) {
+    OHService.$inject = ['$rootScope', '$http', '$q', '$timeout', '$interval', '$filter', '$location', 'SpeechService'];
+    function OHService($rootScope, $http, $q, $timeout, $interval, $filter, $location, SpeechService) {
         this.getItem = getItem;
         this.getItems = getItems;
         this.getLocale = getLocale;
@@ -16,9 +16,8 @@
         this.sendCmd = sendCmd;
         this.sendVoice = sendVoice;
         this.reloadItems = reloadItems;
-        //this.clearAllLongPollings = clearAllLongPollings;
 
-        var liveUpdatesEnabled = false, prevAudioUrl = '', locale = null;
+        var liveUpdatesEnabled = false, prevAudioUrl = '', locale = null, eventSource = null;
 
         ////////////////
 
@@ -32,19 +31,23 @@
         function loadItems() {
             $http.get('/rest/items')
             .then(function (data) {
-                console.log('Loaded openHAB items');
-
-                if (data.data && data.data.item) { // openHAB 1
-                    $rootScope.items = data.data.item;
-                    if (!liveUpdatesEnabled) registerAtmosphere();
-                } else if (angular.isArray(data.data)) { // openHAB 2
+                if (angular.isArray(data.data)) {
+                    console.log("Loaded " + data.data.length + " openHAB items");
+                    $rootScope.reconnecting = false;
                     $rootScope.items = data.data;
                     if (!liveUpdatesEnabled) registerEventSource();
                 } else {
-                    console.log("Items not found?");
+                    console.warn("Items not found? Retrying in 5 seconds");
+                    $rootScope.reconnecting = true;
                     $rootScope.items = [];
+                    $timeout(loadItems, 5000);
                 }
                 $rootScope.$emit('openhab-update');
+            },
+            function (err) {
+                console.warn("Error loading openHAB items... retrying in 5 seconds");
+                $rootScope.reconnecting = true;
+                $timeout(loadItems, 5000);
             });
         }
 
@@ -119,9 +122,7 @@
         }
 
         function reloadItems() {
-            //clearAllLongPollings();
             loadItems();
-            //longPollUpdates('');
         }
         
         function registerEventSource() {
@@ -139,7 +140,7 @@
                             var newstate = payload.value;
                             var item = $filter('filter')($rootScope.items, {name: topicparts[2]}, true)[0];
                             if (item && item.state !== payload.value) {
-                                $timeout(function () {
+                                $rootScope.$apply(function () {
                                     console.log("Updating " + item.name + " state from " + item.state + " to " + payload.value);
                                     item.state = payload.value;
                                     $rootScope.$emit('openhab-update', item);
@@ -205,67 +206,14 @@
                     }
                 }
                 source.onerror = function (event) {
-                    console.error('SSE connection error, reconnecting in 5 seconds');
+                    console.error('SSE error, closing EventSource');
                     liveUpdatesEnabled = false;
-                    $timeout(registerEventSource, 5000);
+                    this.close();
+                    $timeout(loadItems, 5000);
                 }
             }
         }
 
-        function registerAtmosphere() {
-            var request = {
-                url                        : '/rest/items',
-                contentType                : 'application/json',
-                logLevel                   : 'debug',
-                transport                  : 'websocket',
-                fallbackTransport          : 'long-polling',
-                attachHeadersAsQueryString : true,
-                reconnectInterval          : 5000,
-                enableXDR                  : true,
-                timeout                    : 60000
-            };
-
-            request.headers = { "Accept": "application/json" };
-
-            request.onClientTimeout = function(response){
-                $timeout(function () {
-                        socket = atmosphereService.subscribe(request);
-                        liveUpdatesEnabled = true;
-                }, request.reconnectInterval);
-            };
-
-            request.onMessage = function (response) {
-                try
-                {
-                    var data = atmosphere.util.parseJSON(response.responseBody);
-                    if ($rootScope.items && data && data != "") {
-                        var item = $filter('filter')($rootScope.items, {name: data.name}, true)[0];
-                        if (item) {
-                            $timeout(function () {
-                                console.log("Received push message: Changing " + item.name + " state from " + item.state + " to " + data.state);
-                                item.state = data.state;
-                                $rootScope.$emit('openhab-update', item);
-
-                                if (item.state && $rootScope.settings.speech_synthesis_item === item.name) {
-                                    console.log('Speech synthesis item state changed! Speaking it now.');
-                                    SpeechService.speak($rootScope.settings.speech_synthesis_voice, item.state);
-                                }
-                                if (item.state && $rootScope.settings.dashboard_control_item === item.name) {
-                                    console.log('Dashboard control item state changed, attempting navigation to: ' + item.state);
-                                    $location.url('/view/' + item.state);
-                                }
-                                
-                            });
-                        }
-                    }
-                } catch (e) {
-                    console.error("Couldn't parse Atmosphere message: " + response);
-                }
-            };
-
-            var socket = atmosphere.subscribe(request);
-            liveUpdatesEnabled = true;
-        }
     }
 
     OH2StorageService.$inject = ['OH2ServiceConfiguration', '$rootScope', '$http', '$q', 'localStorageService'];
