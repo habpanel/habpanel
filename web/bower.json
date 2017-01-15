@@ -49,7 +49,8 @@
     "angular-file-saver": "~1.1.2",
     "event-source-polyfill": "latest",
     "angular-snap": "^1.8.5",
-    "angular-ui-select": "^0.19.6"
+    "angular-ui-select": "^0.19.6",
+    "selectize": "~0.12.4"
   },
   "resolutions": {
     "angular": "~1.5.9"

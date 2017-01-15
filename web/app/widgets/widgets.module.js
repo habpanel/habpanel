@@ -107,8 +107,8 @@
             controllerAs: 'vm',
             restrict: 'AE',
             template:
-                '<ui-select ng-model="vm.selectedItem">' +
-                '  <ui-select-match>{{$select.selected.name}}</ui-select-match>' +
+                '<ui-select ng-model="vm.selectedItem" theme="selectize" title="Choose an openHAB item">' +
+                '  <ui-select-match placeholder="Search or select an openHAB item">{{$select.selected.name}}</ui-select-match>' +
                 '  <ui-select-choices repeat="item in vm.itemlist | filter: $select.search">' +
                 '    <div ng-bind-html="item.name | highlight: $select.search"></div>' +
                 '    <small ng-bind-html="item.label | highlight: $select.search"></small>' +
