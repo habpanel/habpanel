@@ -23,6 +23,8 @@
     display: inline;
 
     &.dashboard-title {
+      user-select: none;
+
       span {
         &:hover {
           .btn-edit-dashboard {
