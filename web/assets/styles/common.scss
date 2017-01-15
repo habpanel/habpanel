@@ -153,6 +153,7 @@ input {
 
 .drawer {
   background-color: $box-bg;
+  bottom: 80px;
 
   ul.menu {
     padding-left: 0;
@@ -184,10 +185,11 @@ input {
   }
 
   footer {
-    position: absolute;
+    position: fixed;
     left: 0;
-    right: 0;
     bottom: 0;
+    width: 265px;
+    height: 80px;
     font-size: 18px;
     color: white;
     background: black;
