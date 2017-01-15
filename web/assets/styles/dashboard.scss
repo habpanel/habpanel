@@ -24,6 +24,9 @@
 
     &.dashboard-title {
       user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
 
       span {
         &:hover {
@@ -101,6 +104,9 @@ ul {
   text-align: center;
   height: 100%;
   user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 .box-header-btns {
