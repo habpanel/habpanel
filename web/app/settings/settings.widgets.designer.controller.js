@@ -125,7 +125,7 @@
                     var ch;
                     if (stream.match("itemValue(") || stream.match("sendCmd(")
                      || stream.match("itemsInGroup(") || stream.match("itemsWithTag(")
-                     || stream.match("itemGet(")) {
+                     || stream.match("item(")) {
                          while ((ch = stream.next()) != null)
                          if (ch == ")") {
                              stream.eat(")");
@@ -142,7 +142,7 @@
                     while (stream.next() != null
                         && (!stream.match("{{", false)) && !stream.match("itemValue", false)
                             && !stream.match("sendCmd", false) && !stream.match("itemsInGroup", false)
-                            && !stream.match("itemsWithTags", false) && !stream.match("itemGet", false)) {}
+                            && !stream.match("itemsWithTags", false) && !stream.match("item", false)) {}
                     return null;
                 }
             };
