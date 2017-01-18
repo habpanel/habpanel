@@ -1,0 +1,31 @@
+.timeline-content {
+    .timeline-status {
+        position: absolute;
+        color: $widget-text-color;
+        top: 3px;
+        font-size: 11px;
+        background-color: $chart-tooltip;
+        padding: 5px;
+    }
+
+    .timeline-status .dates {
+        font-size: 9px;
+    }
+
+    .axis path,
+    .axis line {
+        fill: none;
+        stroke: $chart-stroke;
+        shape-rendering: crispEdges;
+    }
+    .axis text {
+        font-family: sans-serif;
+        fill: $chart-fill;
+        font-size: 10px;
+    }
+    .timeline-label {
+        font-family: sans-serif;
+        fill: $widget-text-color;
+        font-size: 14px;
+    }
+}

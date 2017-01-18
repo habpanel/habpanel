@@ -50,9 +50,11 @@
     "event-source-polyfill": "latest",
     "angular-snap": "^1.8.5",
     "angular-ui-select": "^0.19.6",
-    "selectize": "~0.12.4"
+    "selectize": "~0.12.4",
+    "d3-timeline": "master"
   },
   "resolutions": {
-    "angular": "~1.5.9"
+    "angular": "~1.5.9",
+    "d3-timeline": "master"
   }
 }
