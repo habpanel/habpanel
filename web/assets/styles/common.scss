@@ -153,10 +153,10 @@ input {
 
 .drawer {
   background-color: $box-bg;
-  bottom: 80px;
 
   ul.menu {
     padding-left: 0;
+    margin-bottom: 80px;
 
     li {
       width: 100%;
