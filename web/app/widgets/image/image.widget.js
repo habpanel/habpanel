@@ -41,14 +41,16 @@
         this.widget = this.ngModel;
         
         vm.original_url = vm.url = this.widget.url;
-
-        if (vm.widget.refresh && vm.widget.refresh >= 1) {
+        var intervaltype = vm.intervaltype = this.widget.intervaltype || 'seconds';
+        
+        if (vm.widget.refresh) {
+            var _interval = intervaltype === 'seconds' ? this.widget.refresh * 1000 : this.widget.refresh;
             var imgRefresh = $interval(function () {
                 var timestamp = (new Date()).toISOString();
 
                 vm.url = (vm.original_url.indexOf('?') === -1) ?
                         vm.original_url + "?_t=" + timestamp : vm.original_url + "&_t=" + timestamp;
-            }, this.widget.refresh * 1000, 0, true);
+            }, _interval, 0, true);
 
             $scope.$on('$destroy', function (event) {
                 $interval.cancel(imgRefresh);
@@ -72,7 +74,8 @@
             col: widget.col,
             row: widget.row,
             url: widget.url,
-            refresh: widget.refresh
+            refresh: widget.refresh,
+            intervaltype: widget.intervaltype || 'seconds',
         };
 
         $scope.dismiss = function() {
