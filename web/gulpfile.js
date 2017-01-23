@@ -77,7 +77,13 @@ gulp.task('vendor-fonts', function() {
     ]).pipe(gulp.dest('fonts'));
 });
 
-gulp.task('vendor-js', function() {
+gulp.task('uglify-timeline', function () {
+  return gulp.src('bower_components/d3-timeline/src/d3-timeline.js')
+             .pipe(uglify())
+             .pipe(gulp.dest('bower_components/d3-timeline/dist'));
+});
+
+gulp.task('vendor-js', ['uglify-timeline'], function() {
     // var filterJS = gulpFilter('**/*.js', { restore: true });
     // return gulp.src('./bower.json')
     //            .pipe(mainBowerFiles({debugging: true}))
@@ -113,7 +119,7 @@ gulp.task('vendor-js', function() {
         'bower_components/snapjs/snap.min.js',
         'bower_components/angular-snap/angular-snap.min.js',
         'bower_components/event-source-polyfill/eventsource.min.js',
-        'bower_components/d3-timeline/src/d3-timeline.js',
+        'bower_components/d3-timeline/dist/d3-timeline.js',
         'node_modules/n3-charts/build/LineChart.min.js',
         'vendor/angular-web-colorpicker.js'
     ]).pipe(concat('vendor.js')).pipe(gulp.dest('vendor'));
