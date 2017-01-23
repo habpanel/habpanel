@@ -39,8 +39,10 @@
 
                 var el = element[0].firstElementChild.firstElementChild;
 
-                var width = element[0].parentNode.parentNode.parentNode.style.width.replace('px', '') - 20;
-                var height = element[0].parentNode.parentNode.parentNode.style.height.replace('px', '') - 20;
+                var parentElement = element[0].parentNode.parentNode.parentNode;
+
+                var width = parentElement.style.width.replace('px', '') - 20;
+                var height = parentElement.style.height.replace('px', '') - 20;
 
                 var colorScale = d3.scale.ordinal().range(scope.colorScale.colors)
                 .domain(scope.colorScale.states);
