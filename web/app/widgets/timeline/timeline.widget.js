@@ -59,11 +59,16 @@
                 .mouseover(function (d, i, datum) {
                     scope.$apply(function () {
                         scope.item = datum.label;
-                        scope.state = d.state;
                         scope.starting_time = d.starting_time;
                         scope.ending_time = d.ending_time;
                         var colorIndex = scope.colorScale.states.indexOf(d.state);
                         scope.state_color = scope.colorScale.colors[colorIndex];
+
+                        var item = OHService.getItem(scope.item);
+                        if (item && item.stateDescription && item.stateDescription.pattern)
+                            scope.state = sprintf(item.stateDescription.pattern, d.state);
+                        else
+                            scope.state = d.state;
                     });
                 }).mouseout(function (d, i, datum) {
                     scope.$apply(function () {
