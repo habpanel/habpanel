@@ -170,7 +170,7 @@
         
         vm.rawdata = [];
         for (var i = 0; i < vm.widget.series.length; i++) {
-            vm.rawdata[i] = $http.get('/rest/persistence/items/' + vm.widget.series[i].item + '?serviceId=' + vm.widget.service + "&boundaries=true&starttime=" + startDate.toISOString());
+            vm.rawdata[i] = $http.get('/rest/persistence/items/' + vm.widget.series[i].item + '?serviceId=' + vm.widget.service + "&boundary=true&starttime=" + startDate.toISOString());
         }
 
         $scope.colorScale = { states: [], colors: [] };
