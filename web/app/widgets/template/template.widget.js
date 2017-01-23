@@ -55,13 +55,6 @@
 
                 $compile(element.contents())(scope);
             }
-            
-            // Returns the item object itself.
-            scope.getItem = function(itemname) {
-                if (!itemname) return "N/A";
-                var item = OHService.getItem(itemname) || "N/A";
-                return angular.copy(item);
-            } 
 
             scope.itemValue = function(itemname) {
                 if (!itemname) return "N/A";
