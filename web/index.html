@@ -67,8 +67,7 @@
 <body>
     <aside class="drawer" snap-drawer style="display: none" ng-controller="DrawerController" ng-include="'app/menu/drawer.tpl.html'">
     </aside>
-    <div style="background-color: maroon; color: white; text-align: center; font-weight: bold; position: absolute; bottom: 0; z-index: 10000;"
-         ng-if="reconnecting">
+    <div class="reconnecting" ng-if="reconnecting">
         &nbsp;<i class="glyphicon glyphicon-ban-circle"></i>&nbsp;Connection lost! Trying to reconnect...&nbsp;
     </div>
     <div class="container"

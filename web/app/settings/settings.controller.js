@@ -83,6 +83,8 @@
             return item.type.startsWith('String');
         }
 
+        vm.supportsSpeech = SpeechService.isSpeechRecognitionSupported();
+
         activate();
 
         ////////////////

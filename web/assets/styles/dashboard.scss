@@ -39,6 +39,30 @@
   }
 }
 
+.fab {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: $primary-color;
+  color: #fff !important;
+  font-size: 1.25em;
+  width: 56px;
+  line-height: 47px;
+  padding: 5px 10px;
+  height: 56px;
+  vertical-align: middle;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+  border-radius: 50%;
+  background-clip: padding-box;
+  overflow: hidden;
+  transition: all .3s cubic-bezier(.55,0,.55,.2);
+  z-index: 410;
+
+  &:hover {
+    color: rgba(255, 255, 255, .8) !important;
+  }
+}
+
 .speech-output {
   font-size: 1.625em;
   color: rgba(255,255,255,.7);

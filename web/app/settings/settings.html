@@ -89,6 +89,11 @@
             <option value=""></option>
         </select>
         <br />
+        <div class="input-group" ng-if="vm.supportsSpeech">
+            <input type="checkbox" ng-model="settings.floating_speech" ng-change="vm.saveOptions()" id="floating_speech" />
+            <label for="floating_speech">&nbsp;Display a floating speech button at the bottom of the screen</label>
+        </div>
+        <br />
         <br />
 
         <h4>Switch dashboard with item value</h4>    

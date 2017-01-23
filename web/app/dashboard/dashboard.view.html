@@ -10,7 +10,7 @@
         <i class="glyphicon glyphicon-refresh"></i>
     </a>
     <a class="btn pull-right" 
-        ng-if="vm.supportsSpeech" 
+        ng-if="vm.supportsSpeech && !settings.floating_speech" 
         ng-click="vm.isListening ? vm.stopListening() : vm.listen()" 
         title="Speak">
         <i class="glyphicon" ng-class="vm.isListening ? 'glyphicon-stop' : 'glyphicon-comment'"></i>
@@ -27,6 +27,13 @@
     </h2>
 </div>
 <span ng-if="vm.isListening" class="speech-output">{{vm.speechOutput}}</span>
+<a class="btn fab" 
+    ng-if="vm.supportsSpeech && settings.floating_speech" 
+    ng-click="vm.isListening ? vm.stopListening() : vm.listen()" 
+    uib-tooltip="Speak"
+    tooltip-placement="top">
+    <i class="glyphicon" ng-class="vm.isListening ? 'glyphicon-stop' : 'glyphicon-comment'"></i>
+</a>
 <div class="scrollable" ng-show="vm.ready" gridster="vm.gridsterOptions">
     <ul>
         <li gridster-item="widget" ng-repeat="widget in vm.dashboard.widgets">

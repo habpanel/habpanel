@@ -1,7 +1,7 @@
 html,
 body {
   background: $body-bg;
-  height: 100%,
+  height: 100%;
 }
 
 .snap-content.image-bg {
@@ -71,12 +71,22 @@ input {
   width: 100%;
   height: 100%;
   padding-top: 48px;
-
   box-shadow: 0 0 20px $body-bg;
 }
 
 .scrollable {
   -webkit-overflow-scrolling: touch;
+}
+
+.reconnecting {
+  background-color: maroon;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  position: absolute;
+  bottom: 0;
+  z-index: 10000;
+  padding: 5px;
 }
 
 .dash-buttons {
@@ -148,7 +158,7 @@ input {
 }
 
 .modal-header h3 {
-    margin: 0;
+  margin: 0;
 }
 
 .drawer {
@@ -170,7 +180,7 @@ input {
 
       &.head {
         text-align: center;
-        background: rgba(0,0,0,0.3);
+        background: rgba(0,0,0,.3);
         text-transform: none;
       }
 
