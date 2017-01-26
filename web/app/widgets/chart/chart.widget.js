@@ -140,8 +140,7 @@
                                 return $filter('date')(value, 'HH:mm');
                             }
                         },
-                        y: { padding: { min: 0, max: 8 } },
-                        y2: { padding: { min: 0, max: 8 } }
+                        y: { padding: { min: 0, max: 8 } }
                     },
                     tooltipHook: tooltipHook,
                     zoom: {
@@ -161,6 +160,7 @@
                 if (vm.widget.axis.y.ticks)
                     vm.interactiveChartOptions.axes.y.ticks = vm.widget.axis.y.ticks;
                 if (vm.widget.axis.y2 && vm.widget.axis.y2.enabled) {
+                    vm.interactiveChartOptions.axes.y2 = { padding: { min: 0, max: 8 } };
                     if (vm.widget.axis.y2.min)
                         vm.interactiveChartOptions.axes.y2.min = vm.widget.axis.y2.min;
                     if (vm.widget.axis.y2.max)
