@@ -35,7 +35,7 @@
                         <a id="template-actions" class="btn btn-default glyphicon glyphicon-option-vertical" uib-dropdown-toggle>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-right" uib-dropdown-menu role="menu" aria-labelledby="template-actions">
-                            <li class="menuitem"><a onclick="document.getElementById('template-file-select').click()"><i class="glyphicon glyphicon-import">&nbsp;</i>Import from file...</li></a>
+                            <li class="menuitem"><a ng-click="showImportDialog()"><i class="glyphicon glyphicon-import">&nbsp;</i>Import from file...</li></a>
                             <li class="menuitem"><a ng-click="exportToFile()"><i class="glyphicon glyphicon-export">&nbsp;</i>Export to file</a></li>
                             <li class="divider" />
                             <li class="menuitem"><a href="https://community.openhab.org/c/apps-services/habpanel" target="_blank"><i class="glyphicon glyphicon-question-sign">&nbsp;</i>Community help</a></li>

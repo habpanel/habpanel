@@ -37,7 +37,7 @@
         New widget...
     </a>
 
-    <a class="btn btn-primary"  onclick="document.getElementById('widget-file-select').click()">
+    <a class="btn btn-primary" ng-click="vm.showImportDialog()">
         Import...
     </a>
     <input style="display: none" type="file" id="widget-file-select" local-file-select="file" on-file-selected="vm.importFile" />

@@ -163,6 +163,10 @@
             $modalInstance.close(widget);
         };
 
+        $scope.showImportDialog = function () {
+            document.getElementById('template-file-select').click();
+        }
+
         $scope.importFile = function(file) {
             if (!file) return;
             if (file.name.indexOf(".html") == -1) {

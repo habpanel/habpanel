@@ -21,6 +21,9 @@
             });
         };
 
+        vm.showImportDialog = function () {
+            document.getElementById('widget-file-select').click();
+        }
 
         vm.importFile = function (file) {
             if (!file) return;
