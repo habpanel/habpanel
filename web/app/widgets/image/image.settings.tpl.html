@@ -12,10 +12,25 @@
                     <input name="name" type="text" ng-model="form.name" class="form-control" />
                 </div>
             </div>
-            <div class="form-group" ng-class="{error: _form.url.$error && _form.submitted}">
+            <div class="form-group" ng-class="{error: _form.image_source.$error && _form.submitted}">
+                <label class="control-label col-lg-3 col-md-3">Image source</label>
+                <div class="col-lg-9 col-md-9">
+                    <select ng-model="form.image_source" class="form-control">
+                        <option value="static">Static image URL</option>
+                        <option value="item">openHAB String Item</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group" ng-if="form.image_source === 'static'" ng-class="{error: _form.url.$error && _form.submitted}">
                 <label class="control-label col-lg-3 col-md-3">Image URL</label>
                 <div class="col-lg-9 col-md-9">
                     <input name="url" type="text" ng-model="form.url" class="form-control" />
+                </div>
+            </div>
+            <div ng-if="form.image_source === 'item'" class="form-group" ng-class="{error: _form.item.$error && _form.submitted}">
+                <label class="control-label col-lg-3 col-md-3">openHAB String Item</label>
+                <div class="col-lg-9 col-md-9">
+                    <item-picker ng-model="form.item" filter-type="String"></item-picker>
                 </div>
             </div>
             <div class="form-group" ng-class="{error: _form.interval.$error && _form.submitted}">

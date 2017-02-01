@@ -39,9 +39,24 @@
     function ImageController ($rootScope, $scope, OHService, $interval) {
         var vm = this;
         this.widget = this.ngModel;
+
+        function updateValue() {
+            var item = OHService.getItem(vm.widget.item);
+            if (!item || vm.widget.image_source !== 'item' || item.type !== "String") {
+                vm.value = "";
+                return;
+            }
+            vm.url = $sce.trustAsResourceUrl(item.state);
+        }
+
+        OHService.onUpdate($scope, vm.widget.item, function () {
+            updateValue();
+        });
         
-        vm.original_url = vm.url = this.widget.url;
-        var intervaltype = vm.intervaltype = this.widget.intervaltype || 'seconds';
+        if (this.widget.image_source === 'static') {
+            vm.original_url = vm.url = this.widget.url;
+            var intervaltype = vm.intervaltype = this.widget.intervaltype || 'seconds';
+        }
         
         if (vm.widget.refresh) {
             var _interval = intervaltype === 'seconds' ? this.widget.refresh * 1000 : this.widget.refresh;
@@ -68,14 +83,16 @@
         $scope.items = OHService.getItems();
 
         $scope.form = {
-            name: widget.name,
-            sizeX: widget.sizeX,
-            sizeY: widget.sizeY,
-            col: widget.col,
-            row: widget.row,
-            url: widget.url,
-            refresh: widget.refresh,
-            intervaltype: widget.intervaltype || 'seconds',
+            name        : widget.name,
+            sizeX       : widget.sizeX,
+            sizeY       : widget.sizeY,
+            col         : widget.col,
+            row         : widget.row,
+            image_source: widget.image_source || 'static',
+            url         : widget.url,
+            item        : widget.item,
+            refresh     : widget.refresh,
+            intervaltype: widget.intervaltype || 'seconds'
         };
 
         $scope.dismiss = function() {
@@ -89,6 +106,15 @@
 
         $scope.submit = function() {
             angular.extend(widget, $scope.form);
+            switch (widget.image_source) {
+                case "item":
+                    delete widget.action_type;
+                    break;
+                default:
+                    delete widget.item;
+                    delete widget.action_type;
+                    break;
+            }
 
             $modalInstance.close(widget);
         };
