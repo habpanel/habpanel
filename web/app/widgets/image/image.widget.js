@@ -35,8 +35,8 @@
         function link(scope, element, attrs) {
         }
     }
-    ImageController.$inject = ['$rootScope', '$scope', 'OHService', '$interval'];
-    function ImageController ($rootScope, $scope, OHService, $interval) {
+    ImageController.$inject = ['$rootScope', '$scope', 'OHService', '$interval', '$sce'];
+    function ImageController ($rootScope, $scope, OHService, $interval, $sce) {
         var vm = this;
         this.widget = this.ngModel;
 
@@ -53,10 +53,11 @@
             updateValue();
         });
         
-        if (this.widget.image_source === 'static') {
+        if (!this.widget.image_source || this.widget.image_source === 'static') {
             vm.original_url = vm.url = this.widget.url;
-            var intervaltype = vm.intervaltype = this.widget.intervaltype || 'seconds';
         }
+
+        var intervaltype = vm.intervaltype = this.widget.intervaltype || 'seconds';
         
         if (vm.widget.refresh) {
             var _interval = intervaltype === 'seconds' ? this.widget.refresh * 1000 : this.widget.refresh;
