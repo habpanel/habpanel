@@ -10,7 +10,7 @@
   z-index: 99;
   background: $body-bg;
 
-  .btn:hover {
+  .btn:not(.btn-default):not(.btn-primary):not(.btn-success):hover {
     color: $widget-text-color;
   }
 
@@ -92,8 +92,16 @@ ul {
 
 .box {
   height: 100%;
-  background: $box-bg;
   color: $widget-text-color;
+}
+
+.box:not(.no-bkg) {
+  background: $box-bg;
+}
+
+.box.activefeedback:active {
+          filter: brightness(130%);
+  -webkit-filter: brightness(130%);
 }
 
 .box-design {

@@ -56,7 +56,7 @@
         </div>
     </div>
     <div ng-if="!vm.editMode" gridster="vm.gridsterOptions" class="col-md-12 col-lg-12">
-        <div gridster-item="dash" ng-init="tile=dash.tile" class="dash-card col-md-6 col-lg-6 col-sm-6 box" ng-repeat="dash in vm.dashboards">
+        <div gridster-item="dash" ng-init="tile=dash.tile" class="dash-card col-md-6 col-lg-6 col-sm-6 box activefeedback" ng-repeat="dash in vm.dashboards">
             <h3 ng-style="{ color:(tile.title_color && tile.title_color!='transparent')?tile.title_color:'inherit' }" ng-click="vm.viewDashboard(dash)" class="card-title">
                 <img class="tile-background" ng-if="tile.background_image" ng-src="{{tile.background_image}}" />
                 <widget-icon ng-if="tile.backdrop_icon && !tile.background_image" backdrop="true" iconset="tile.backdrop_iconset" icon="tile.backdrop_icon" center="tile.backdrop_center"></widget-icon>

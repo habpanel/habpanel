@@ -33,6 +33,7 @@
         return directive;
         
         function link(scope, element, attrs) {
+            element[0].parentElement.parentElement.className += " activefeedback";
         }
     }
     SwitchController.$inject = ['$rootScope', '$scope', 'OHService'];

@@ -9,3 +9,11 @@
 @import "../../widgetdesigner.scss";
 
 @import "../../../../app/widgets/**/*.scss";
+
+.header {
+    background: inherit;
+
+    h2, .btn.btn:not(.btn-default):not(.btn-primary):not(.btn-success) {
+        text-shadow: 0 0 6px $body-bg;
+    }
+}

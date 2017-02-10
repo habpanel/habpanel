@@ -36,7 +36,8 @@ h5 {
 }
 
 h1,
-h2 {
+h2,
+h3 {
   color: $widget-text-color;
 }
 
@@ -205,5 +206,9 @@ input {
     background: black;
     text-align: center;
     padding: 10px;
+
+    a:hover, a:active {
+      color: white;
+    }
   }
 }

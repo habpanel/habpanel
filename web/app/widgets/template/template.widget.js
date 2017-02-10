@@ -40,14 +40,13 @@
 
                 scope.config = scope.ngModel.config;
 
-                if (scope.ngModel.dontwrap) {
-                    if (scope.ngModel.nobackground) {
-                        template = "<div class=\"template-nobkg\">" + template + "</div>";
-                    }
-                } else {
-                    template = "<div class=\"box-content template-container" +
-                        ((scope.ngModel.nobackground) ? " template-nobkg" : "") +
-                        "\"><div class=\"template-contents\">" +
+                if (scope.ngModel.nobackground) {
+                    element[0].parentElement.parentElement.className += " no-bkg";
+                }
+
+                if (!scope.ngModel.dontwrap) {
+                    template = "<div class=\"box-content template-container\">" +
+                               "<div class=\"template-contents\">" +
                                 template + "</div></div>";
                 }
 
