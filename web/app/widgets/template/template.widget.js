@@ -156,6 +156,12 @@
         };
         if ($scope.widget.customwidget || $scope.widget.settings || $scope.widget.preview) {
             $scope.form.config = $scope.widget.config || {};
+            angular.forEach($scope.widgetsettings, function (setting) {
+                if (setting.type !== 'icon' && setting.type !== 'heading'
+                && setting.default && ($scope.form.config[setting.id] === undefined)) {
+                    $scope.form.config[setting.id] = setting.default;
+                }
+            });
         }
 
         $scope.dismiss = function() {

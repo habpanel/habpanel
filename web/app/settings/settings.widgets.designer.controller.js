@@ -45,11 +45,17 @@
                 vm.widget.settings = [];
 
             vm.widget.settings.push({ type: 'string'});
-        }
+        };
 
         vm.deleteSetting = function (setting) {
             vm.widget.settings.splice(vm.widget.settings.indexOf(setting), 1);
-        }
+        };
+
+        vm.swapSettings = function (indexsrc, indexdest) {
+            var tmp = angular.copy(vm.widget.settings[indexdest]);
+            vm.widget.settings[indexdest] = angular.copy(vm.widget.settings[indexsrc]);
+            vm.widget.settings[indexsrc] = tmp;
+        };
 
         $scope.refreshPreview = function () {
             OHService.reloadItems();
@@ -83,7 +89,7 @@
                 delete vm.previewmodel.settings;
                 $scope.$broadcast('refreshTemplate');
             });
-        }
+        };
 
         vm.save = function () {
             $rootScope.customwidgets[vm.widgetId] = angular.copy(vm.widget);

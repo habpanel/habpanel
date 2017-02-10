@@ -52,15 +52,21 @@
                         <br /><br />
                         <div class="well" ng-repeat="setting in vm.widget.settings">
                             <button class="btn btn-danger pull-right" ng-click="vm.deleteSetting(setting)"><i class="glyphicon glyphicon-trash"></i></button>
+                            <button class="btn btn-default pull-right" ng-if="$index > 0" ng-click="vm.swapSettings($index, $index-1)"><i class="glyphicon glyphicon-arrow-up"></i></button>
+                            <button class="btn btn-default pull-right" ng-if="$index < vm.widget.settings.length - 1" ng-click="vm.swapSettings($index, $index+1)"><i class="glyphicon glyphicon-arrow-down"></i></button>
                             <form class="form-horizontal">
                                 <div class="form-group">
                                     <label class="control-label col-md-2">Type</label>
                                     <div class="col-md-4">
-                                        <select ng-model="setting.type" class="form-control" style="width: 100px">
+                                        <select ng-model="setting.type" class="form-control" style="width: 110px">
                                             <option value="string">String</option>
                                             <option value="number">Number</option>
+                                            <option value="checkbox">Checkbox</option>
                                             <option value="item">Item</option>
                                             <option value="color">Color</option>
+                                            <option value="choice">Choices</option>
+                                            <option value="icon">Icon</option>
+                                            <option value="heading">Heading</option>
                                         </select>
                                     </div>
                                 </div>
@@ -76,13 +82,33 @@
                                         <input name="name" type="text" ng-model="setting.label" class="form-control" required />
                                     </div>
                                 </div>
-                                <!--<div class="form-group">
+                                <div class="form-group" ng-if="setting.type !== 'heading' && setting.type !== 'icon' && setting.type !== 'checkbox'">
                                     <label class="control-label col-md-2">Default value</label>
                                     <div class="col-md-10">
-                                        <input name="name" type="text" ng-model="setting.default" class="form-control" />
+                                        <input name="default" type="text" ng-model="setting.default" class="form-control" />
                                     </div>
-                                </div>-->
+                                </div>
+                                <div class="form-group" ng-if="setting.type === 'checkbox'">
+                                    <label class="control-label col-md-2">Default value</label>
+                                    <div class="col-md-10">
+                                        <div style="padding-top: 7px"><input name="default_check" type="checkbox" ng-model="setting.default" /></div>
+                                    </div>
+                                </div>
+                                <div class="form-group" ng-if="setting.type === 'choice'">
+                                    <label class="control-label col-md-2">Choices</label>
+                                    <div class="col-md-10">
+                                        <input name="name" type="text" ng-model="setting.choices" class="form-control" />
+                                        <small>Comma-separated possible values</small>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">Description</label>
+                                    <div class="col-md-10">
+                                        <input name="description" type="text" ng-model="setting.description" class="form-control" />
+                                    </div>
+                                </div>
                             </form>
+                            <div ng-if="setting.type === 'icon' && setting.id" class="alert alert-info">This will define 2 config elements, <code>config.{{setting.id}}_iconset</code> and <code>config.{{setting.id}}_icon</code></div>
                         </div>
 
                     </div>
