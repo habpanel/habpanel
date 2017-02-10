@@ -97,7 +97,7 @@
                     enabled: vm.widget.scaleEnabled,
                     type: vm.widget.scaleType,
                     color: (vm.widget.scaleColor) ? vm.widget.scaleColor : '#567',
-                    width: (vm.widget.scaleWidth) ? vm.widget.scaleWidth : 2,
+                    width: (vm.widget.scaleWidth) ? vm.widget.scaleWidth : 2
                 },
                 displayPrevious: (vm.widget.displayPrevious) ? vm.widget.displayPrevious : true,
                 skin: {
@@ -117,6 +117,8 @@
                 ranges: []
             }
         };
+        if (vm.widget.scaleQuantity) vm.knob.options.scale.quantity = vm.widget.scaleQuantity;
+        if (vm.widget.scaleSpaceWidth) vm.knob.options.scale.spaceWidth = vm.widget.scaleSpaceWidth;
 
 
         // if ranges are enabled update knob setings
@@ -200,6 +202,8 @@
             scaleType: widget.scaleType,
             scaleColor: widget.scaleColor,
             scaleWidth: widget.scaleWidth,
+            scaleQuantity: widget.scaleQuantity,
+            scaleSpaceWidth: widget.scaleSpaceWidth,
             displayPrevious: widget.displayPrevious,
             skinType: widget.skinType,
             skinWidth: widget.skinWidth,

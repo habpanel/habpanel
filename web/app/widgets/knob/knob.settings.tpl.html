@@ -260,11 +260,27 @@
                             </div>
 
                             <div class="form-group">
-                                <div class="col-xs-6">
+                                <div class="col-xs-4">
                                     <div class="form-group" ng-class="{error: _form.scaleWidth.$error && _form.submitted}">
                                         <label class="control-label col-xs-4">Width</label>
                                         <div class="col-xs-6">
                                             <input name="min" type="number" ng-model="form.scaleWidth" class="form-control" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-4">
+                                    <div class="form-group" ng-class="{error: _form.scaleQuantity.$error && _form.submitted}">
+                                        <label class="control-label col-xs-4">Qty.</label>
+                                        <div class="col-xs-6">
+                                            <input name="min" type="number" ng-model="form.scaleQuantity" class="form-control" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-4">
+                                    <div class="form-group" ng-class="{error: _form.scaleSpaceWidth.$error && _form.submitted}">
+                                        <label class="control-label col-xs-4">Space</label>
+                                        <div class="col-xs-6">
+                                            <input name="min" type="number" ng-model="form.scaleSpaceWidth" class="form-control" />
                                         </div>
                                     </div>
                                 </div>
