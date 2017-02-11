@@ -195,7 +195,7 @@
                 }
 
                 var label = vm.widget.series[i].name || vm.widget.series[i].item;
-                var textWidth = getTextWidth(label, "normal 14px Roboto");
+                var textWidth = getTextWidth(label, "normal 1.5em Roboto");
                 if ($scope.margin_left < textWidth) {
                     $scope.margin_left = textWidth;
                 }

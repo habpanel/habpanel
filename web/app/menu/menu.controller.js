@@ -153,6 +153,7 @@
             row: dashboard.row,
             columns: dashboard.columns,
             widget_margin: dashboard.widget_margin,
+            font_scale: dashboard.font_scale,
             tile: {
                 background_image: dashboard.tile.background_image,
                 backdrop_iconset: dashboard.tile.backdrop_iconset,

@@ -1,15 +1,16 @@
 .timeline-content {
+    margin-top: 1em;
     .timeline-status {
         position: absolute;
         color: $widget-text-color;
         top: 3px;
-        font-size: 11px;
+        font-size: 0.85em;
         background-color: $chart-tooltip;
         padding: 5px;
     }
 
     .timeline-status .dates {
-        font-size: 9px;
+        font-size: 0.8em;
     }
 
     .axis path,
@@ -21,11 +22,11 @@
     .axis text {
         font-family: sans-serif;
         fill: $chart-fill;
-        font-size: 10px;
+        font-size: 0.72em;
     }
     .timeline-label {
         font-family: sans-serif;
         fill: $widget-text-color;
-        font-size: 14px;
+        font-size: 1em;
     }
 }

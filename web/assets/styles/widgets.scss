@@ -3,6 +3,12 @@
   padding-bottom: 0;
 }
 
+.value {
+  color: $primary-color;
+  // font-size: 16px;
+  text-align: center;
+}
+
 .icon.backdrop {
   position: absolute;
   top: 10%;
