@@ -1,6 +1,6 @@
 <ul class="menu">
     <li ng-click="goHome()" ng-class="{ active: isActive('/') }" class="head">
-        <widget-icon iconset="'freepik-housethings'" icon="'house-building'" size="40"></widget-icon> HABPanel
+        <widget-icon iconset="'freepik-housethings'" icon="'house-building'" size="40"></widget-icon> {{settings.panel_name || 'HABPanel'}}
     </li>
     <li ng-repeat="dash in dashboards | orderBy:['row', 'col']" ng-class="{ active: isActive(dash.id) }" ng-click="goToDashboard(dash.id)">
         <widget-icon ng-if="dash.tile.iconset && dash.tile.icon" style="position:absolute; right: 20px" iconset="dash.tile.iconset" icon="dash.tile.icon" inline="true" size="24"></widget-icon>
