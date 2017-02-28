@@ -1,5 +1,4 @@
-HABPanel
-========
+# HABPanel
 
 HABPanel is a lightweight dashboard interface for openHAB.
 
