@@ -131,10 +131,10 @@
                             key: "time",
                             type: "date",
                             tickFormat: function (value) {
-                                if (value.getDate() === 1) {
-                                    return $filter('date')(value, 'MMM');
-                                }
                                 if (value.getHours() === 0) {
+                                    if (value.getDate() === 1) {
+                                        return $filter('date')(value, 'MMM d');
+                                    }
                                     return $filter('date')(value, 'EEE d');
                                 }
                                 return $filter('date')(value, 'HH:mm');
