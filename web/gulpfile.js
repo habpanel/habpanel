@@ -120,6 +120,7 @@ gulp.task('vendor-js', ['uglify-timeline'], function() {
         'bower_components/angular-snap/angular-snap.min.js',
         'bower_components/event-source-polyfill/eventsource.min.js',
         'bower_components/d3-timeline/dist/d3-timeline.js',
+        'bower_components/aCKolor/dist/js/aCKolor.min.js',
         'node_modules/n3-charts/build/LineChart.min.js',
         'vendor/angular-web-colorpicker.js'
     ]).pipe(concat('vendor.js')).pipe(gulp.dest('vendor'));

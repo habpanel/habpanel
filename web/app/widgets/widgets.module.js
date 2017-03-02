@@ -9,7 +9,8 @@
         'n3-line-chart',
         'sprintf',
         'ui.codemirror',
-        'ds.clock'
+        'ds.clock',
+        'aCKolor'
     ])
     .value('WidgetTypes', [])
     .factory('Widgets', WidgetsService)
@@ -116,7 +117,8 @@
                 '</ui-select>',
             scope: {
                 ngModel: '=',
-                filterType: '@'
+                filterType: '@',
+                includeGroups: '=?'
             }
         };
         return directive;
@@ -131,7 +133,11 @@
         vm.itemlist = OHService.getItems();
         if (this.filterType) {
             vm.itemlist = $filter('filter')(vm.itemlist, function (item) {
-                return item.type.startsWith(vm.filterType)
+                if (vm.includeGroups) {
+                    return item.type.startsWith(vm.filterType) || item.type.startsWith('Group');
+                } else {
+                    return item.type.startsWith(vm.filterType);
+                }
             });
         }
 

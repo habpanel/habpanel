@@ -1,5 +1,5 @@
 <div class="box-content colorpicker">
-    <div class="colorpicker-content">
+    <div class="colorpicker-content" ng-show="!vm.widget.style || vm.widget.style === 'default'">
 
         <span>{{vm.widget.name}}</span>
 
@@ -16,5 +16,12 @@
         <svg height="20"><g class="axis" transform="translate(30,.5)"></g></svg>
         </div>
 
+    </div>
+    <div class="colorpicker-content-flex" ng-show="vm.widget.style === 'aCKolor'">
+
+        <span>{{vm.widget.name}}</span>
+        <br /><br />
+
+        <a-ckolor model="vm.aCKolorModel" blur="vm.widget.blur_background || false" type="hidden" on-change="vm.onACkolorModelChanged"></a-ckolor>
     </div>
 </div>

@@ -189,7 +189,13 @@
             if (splitted.length === 3)
                 vm.value = splitted;
 
-            $scope.renderNewValue(hsv2hsl(splitted));
+            if (!vm.widget.style || vm.widget.style === 'default') {
+                $scope.renderNewValue(hsv2hsl(splitted));
+            } else if (vm.widget.style === 'aCKolor') {
+                var hsl = hsv2hsl(splitted);
+                vm.aCKolorModel = vm.value = 'hsl(' + hsl[0] + ', ' + hsl[1] + '%, ' + hsl[2] + '%)';
+                console.log(vm.aCKolorModel);
+            }
         }
 
         OHService.onUpdate($scope, vm.widget.item, function () {
@@ -213,6 +219,13 @@
             OHService.sendCmd(vm.widget.item, vm.value);
         };
 
+        vm.onACkolorModelChanged = function (val) {
+            var hsl = val.replace('hsl(','').replace(')','').replace('%','').replace('%','').split(',');
+            var hsv = hsl2hsv([parseInt(hsl[0]), parseInt(hsl[1]), parseInt(hsl[2])]);
+            vm.value = [Math.round(hsv[0]), Math.round(hsv[1]), Math.round(hsv[2])].join(',');
+
+            OHService.sendCmd(vm.widget.item, vm.value);
+        }
     }
 
 
@@ -230,7 +243,9 @@
             col: widget.col,
             row: widget.row,
             url: widget.url,
-            item: widget.item
+            item: widget.item,
+            style: widget.style,
+            blur_background: widget.blur_background
         };
 
         $scope.isColorItem = function(item) {

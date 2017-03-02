@@ -1,3 +1,7 @@
+.colorpicker {
+  display: flex;
+}
+
 .color-picker-swatch {
   border: $colorpicker-border 1px dotted;
 }
@@ -33,4 +37,20 @@
   height: 90px;
   float: left;
   margin: 0 30px;
+}
+
+.colorpicker-content-flex {
+  margin: auto;
+  
+  .c-ckolor__picker {
+    cursor: pointer;
+    margin-bottom: 5px;
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+  }
+}
+
+.c-ckolor__save-btn, .c-ckolor__close-btn {
+  height: 65px;
 }

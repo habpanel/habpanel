@@ -51,7 +51,8 @@
     "angular-snap": "^1.8.5",
     "angular-ui-select": "^0.19.6",
     "selectize": "~0.12.4",
-    "d3-timeline": "master"
+    "d3-timeline": "master",
+    "aCKolor": "https://github.com/ghys/aCKolor.git#3.0.2-habpanel"
   },
   "resolutions": {
     "angular": "~1.5.9",
