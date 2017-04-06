@@ -2,7 +2,7 @@
 
 The [HABPanel]({{base}}/addons/ui/habpanel/readme.html) user interface is installed by default when choosing any initial setup package, and allows the creation of user-friendly dashboards, particularly suited for (e.g. wall-mounted) tablets. These dashboards can be designed interactively in the embedded designer, rather than using configuration files.
 
-Despite being similar, dashboards are not related to sitemaps, and can be designed independently; however, they rely and act on [items]({{base}}/concepts/items.html) which must therefore be [defined]({{base}}/configuration/items.html) first. The [demo setup package]({{base}}/configuration/packages.html#demo-package-sample-setup), available for installing when starting openHAB for the first time, defines a series of sample items and configures HABPanel with a comprehensive set of dashboards to showcase a possible end result (the same as the one installed on the [openHAB Demo Server](https://demo.openhab.org/){:target="_blank"}, which can be modified without risk of breaking anything: it's the best way to discover HABPanel's features.
+Despite being similar, HABPanel's dashboards and [sitemaps]({{base}}/configuration/sitemaps.html) are separate concepts, and can be designed independently as they aren't related to each other; however, they rely and act on [items]({{base}}/concepts/items.html) which must therefore be [defined]({{base}}/configuration/items.html) first. The [demo setup package]({{base}}/configuration/packages.html#demo-package-sample-setup), available for installation when starting openHAB for the first time, defines a series of sample items and configures HABPanel with a comprehensive set of dashboards to showcase a possible end result. It's the same as the one installed on the [openHAB Demo Server](https://demo.openhab.org/){:target="_blank"}, and it may be modified without risk of breaking anything: it's the best playground to discover HABPanel's features.
 
 ## Concepts
 
@@ -19,9 +19,9 @@ HABPanel has its own terminology of entities presented below:
 
 By default, when running HABPanel on a new browser or device, a tutorial will be displayed allowing the user to start from scratch, or switch to an previously defined panel configuration. **Until a panel configuration is created (or chosen), HABPanel will run in "local storage" mode for this device: the settings will be retained in the browser's local storage only and nothing will be persisted on the server.** By contrast, when an active panel configuration is set, each change performed on the device will update the panel configuration on the server. This allows the sharing of panel configuration among devices, because other browsers and devices using this panel configuration will pick up the changes with a page refresh - this is useful for instance to design a panel comfortably on a computer, then use it on a tablet.
 
-To switch from the local storage to a server-hosted panel configuration, go to the Settings page from the main menu or the side drawer (see below). A list of panel configurations will be presented in the _Current storage configuration_ section; if only the _"Local storage"_ option is available, click on the **Save the current configuration to a new panel configuration** link, give it a technical name (no spaces or special characters), and it should be added to the list. The radio button is also automatically checked, meaning it is now the active panel configuration.
+To switch from the local storage to a server-hosted panel configuration, go to the Settings page from the main menu or the side drawer (see below). A list of panel configurations will be presented in the _Current storage configuration_ section; if only the _"Local storage"_ option is available, click on the **Save the current configuration to a new panel configuration** link, give it a name to identify it (avoid spaces or special characters), and it should be added to the list. The radio button is also automatically checked, meaning it is now the active panel configuration.
 
-Even when there is an active panel configuration, HABPanel uses the browser's storage to sync a locally-managed copy. With the **Edit the local panel configuration (experts only)** link under the _"Local storage"_ storage configuration option in the settings screen, the raw structure of the panel configuration can be inspected, modified, and exported or imported from/to a .json file. It is also an alternative way to backup and restore and share the configuration.
+Even when there is an active panel configuration, HABPanel uses the browser's storage to sync a locally-managed copy. With the **Edit the local panel configuration (experts only)** link under the _"Local storage"_ storage configuration option in the settings screen, the raw structure of the panel configuration can be inspected, modified, and exported or imported from/to a .json file. It is also an alternative way to backup, restore and share the configuration.
 
 HABPanel uses service configuration variables to store its data on the openHAB server. They can be accessed using Paper UI (_Configuration > Services > UI > HABPanel > Configure_) or in the openHAB Karaf console:
 
@@ -31,9 +31,9 @@ openhab> config:property-get <property>
 ```
 The following properties are defined:
 
-- `panelsRegistry`: the entire registry serialized in JSON, it is maintained by the application and shouldn't be modified (editing it by hand is possible but it is strongly discouraged);
+- `panelsRegistry`: contains the entire registry serialized in JSON, it is maintained by the application and shouldn't be modified directly (editing it by hand, while possible, is strongly discouraged);
 - `lockEditing`: when enabled, all HABPanel instances will hide their editing features (a page refresh is necessary). When panels are complete and stable, it is advisable to turn on this setting so they cannot be easily modified by end users;
-- `initialPanelConfig`: by default, when running HABPanel on a new browser or device, when no local configuration is detected, a tutorial will be displayed allowing the user to start from scratch or switch to an existing panel configuration. This setting allows to bypass the tutorial and directly switch to a pre-configured panel configuration.
+- `initialPanelConfig`: if this option is unset and no prior local configuration is detected, the tutorial will be displayed until some dashboards are added or a panel configuration is selected. This setting allows to bypass the tutorial and switch directly to the existing panel configuration with the given name.
 
 ## Major interface elements and features
 
@@ -48,13 +48,13 @@ Use the gears icon in the top-right corner to switch between the two modes.
 ![Main menu - edit mode](main-menu-edit.png)
 
 When in edit mode, several features are available:
-* Adding a new empty dashboard with the **Add new dashboard** link;
-* Going to the settings screen (for instance, to switch the panel configuration) by clicking on the **Advanced settings** link;
-* Adjusting the number of columns for the grid of tiles with the slider, from 1 (the default) to 6;
-* Dragging and moving tiles with the arrow icons in the top-left corner of each tile;
-* Resizing tiles with the chevron (triangle) in the bottom-right corner of each tile;
-* Configuring tiles themselves with the gears icons in the top-right corner of each tile;
-* Entering the dashboard designer for a dashboard by clicking inside the tile.
+* Add a new empty dashboard with the **Add new dashboard** link;
+* Go to the settings screen (for instance, to switch from local storage to a server-managed panel configuration) by clicking on the **Advanced settings** link;
+* Adjust the number of columns for the grid of main menu tiles with the slider, from 1 (the default) to 6;
+* Drag the arrow icons in the top-left corner of each tile to move it;
+* Resize tiles with the chevron (triangle) in the bottom-right corner of each tile;
+* Configure the tiles and the dashboards themselves with the gears icons in the top-right corner of each tile;
+* Enter the dashboard designer by clicking inside a tile.
 
 The configuration dialog when clicking on a tile's gear icon contains the following settings:
 
@@ -65,11 +65,11 @@ The configuration dialog when clicking on a tile's gear icon contains the follow
 | Backdrop Icon | Iconset and icon displayed on the tile as a Backdrop
 | Center backdrop horizontally | When unchecked, the backdrop is aligned to the right of the tile; when checked, it is centered
 | Icon | Icon associated with the dashboard, currently only used in the side drawer
-| Size (icon) | _(Unused)_
+| Size (icon) | _(currently unused)_
 | Title Text Color | Color for the name of the dashboard on the tile
 | Advanced tab | Contains settings currently unstable or buggy, for advanced users only
 
-It also contains a **Delete** button which will delete the entire dashboard - this cannot be undone!
+It also contains a **Delete** button which will delete the entire dashboard and its contents - this happens immediately and cannot be undone!
 
 ### The side drawer
 
@@ -89,7 +89,7 @@ It is comprised of three parts:
 
 The dashboard designer is where widgets can be added, positioned, resized and configured. Placeholders are displayed where actual widgets would be on the running dashboard.
 
-To add a widget, use the **Add widget** button and choose among the list of standard widgets, or eventual custom widgets previously defined.
+To add a widget, use the **Add widget** button and choose among the list of standard widgets, or eventual custom widgets in the panel configuration.
 See below for a description of the standard widgets.
 
 ![Add widget menu](add-widget.png)
@@ -112,7 +112,7 @@ Modifications to the dashboard are not saved automatically, use the **Save** but
 
 ![A running dashboard](running-dashboard.png)
 
-When a dashboard is running, widgets can be interacted with, and server-sent events are received when items' states are updated, so widgets update automatically in HABPanel. Please refer to the *Troubleshooting* section below if items don't seem to update.
+When a dashboard is running, widgets can be interacted with, and server-sent events are received when items' states are updated, so widgets update automatically in HABPanel.
 
 The icons in the top-right corner perform the following:
 - the **speech balloon** activates the speech recognition feature and send the results as text to openHAB's default human language interpreter. This implies [some configuration on the server]({{base}}/configuration/multimedia.html#human-language-interpreter), and this icon might not be displayed if the browser doesn't support voice recognition ([currently only in Chrome on desktops and Android](http://caniuse.com/#feat=speech-recognition){:target="_blank"}). It can also be configured in the panel configuration to appear on the bottom of the screen;
@@ -121,7 +121,7 @@ The icons in the top-right corner perform the following:
 
 ## Additional features and settings
 
-Apart from the storage configuration discussed above, the settings screen contains several settings kept as part of the panel configuration (meaning they are set separately and can differ):
+Apart from the storage configuration discussed above, the settings screen contains several settings kept as part of the panel configuration (meaning they are set separately):
 
 
 | Setting | Description
@@ -262,7 +262,8 @@ Don't forget to save the changes with the **Save** button.
 
 ## Developing templates and custom widgets
 
-TODO
+_This chapter will cover in detail how to write templates to build custom widgets. It is not yet written, in the meantime use the resources below:_
+
 
 [Main thread in the community forums](https://community.openhab.org/t/template-widget-tutorial-examples-make-your-own-widget/14211/1)
 
