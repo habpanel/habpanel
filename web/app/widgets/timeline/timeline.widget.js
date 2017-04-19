@@ -9,6 +9,7 @@
             WidgetsProvider.$get().registerType({
                 type: 'timeline',
                 displayName: 'Timeline',
+                icon: 'tasks',
                 description: 'Displays a timeline of several items'
             });
         });

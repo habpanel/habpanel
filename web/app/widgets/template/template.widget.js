@@ -9,6 +9,7 @@
             WidgetsProvider.$get().registerType({
                 type: 'template',
                 displayName: 'Template',
+                icon: 'edit',
                 description: 'A template widget - displays a custom dynamic template'
             });
         });
@@ -34,9 +35,13 @@
         function link(scope, element, attrs) {
 
             function render() {
-                var template = (scope.ngModel.customwidget) ?
-                                $rootScope.customwidgets[scope.ngModel.customwidget].template
-                                : scope.ngModel.template;
+                var template;
+                if ($rootScope.configWidgets[scope.ngModel.customwidget])
+                    template = $rootScope.configWidgets[scope.ngModel.customwidget].template;
+                else if ($rootScope.customwidgets[scope.ngModel.customwidget])
+                    template = $rootScope.customwidgets[scope.ngModel.customwidget].template;
+                else
+                    template = scope.ngModel.template;
 
                 scope.config = scope.ngModel.config;
 
@@ -130,8 +135,13 @@
         } else {
             if ($scope.widget.customwidget) {
                 // get settings from custom widget
-                $scope.widgetsettings = angular.copy($rootScope.customwidgets[$scope.widget.customwidget].settings);
-                $scope.customwidget_name = $rootScope.customwidgets[$scope.widget.customwidget].name;
+                if ($rootScope.configWidgets[$scope.widget.customwidget]) {
+                    $scope.widgetsettings = angular.copy($rootScope.configWidgets[$scope.widget.customwidget].settings);
+                    $scope.customwidget_name = $rootScope.configWidgets[$scope.widget.customwidget].name;
+                } else {
+                    $scope.widgetsettings = angular.copy($rootScope.customwidgets[$scope.widget.customwidget].settings);
+                    $scope.customwidget_name = $rootScope.customwidgets[$scope.widget.customwidget].name;
+                }
             }
         }
 

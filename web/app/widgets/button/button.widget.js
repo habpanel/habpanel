@@ -9,6 +9,7 @@
             WidgetsProvider.$get().registerType({
                 type: 'button',
                 displayName: 'Button',
+                icon: 'download-alt',
                 description: 'A button sending a specific value to an openHAB item'
             });
         });

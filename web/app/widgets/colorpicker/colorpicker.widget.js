@@ -9,6 +9,7 @@
             WidgetsProvider.$get().registerType({
                 type: 'colorpicker',
                 displayName: 'Color Picker',
+                icon: 'tint',
                 description: 'Displays an color picker'
             });
         });

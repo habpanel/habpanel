@@ -9,6 +9,7 @@
             WidgetsProvider.$get().registerType({
                 type: 'chart',
                 displayName: 'Chart',
+                icon: 'stats',
                 description: 'Displays a chart'
             });
         });

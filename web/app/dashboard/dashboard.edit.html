@@ -5,17 +5,24 @@
             <span class="caret"></span>
         </button>
         &nbsp;
-        <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="addWidgetMenu">
+        <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="addWidgetMenu" style="max-height: 600px; overflow: hidden; overflow-y: auto;">
             <li ng-repeat="type in widgetTypes">
-            	<a ng-click="addWidget(type.type)">
-            		{{type.displayName}}
-            	</a>
+                <a ng-click="addWidget(type.type)" title="{{type.description}}">
+                    <small><i class="glyphicon glyphicon-{{type.icon}}"></i></small>&nbsp;{{type.displayName}}
+                </a>
             </li>
             <li class="divider">
             <li class="dropdown-header"><a href="#/settings/widgets" class="pull-right" style="padding: 0"><i class="glyphicon glyphicon-cog"></i></a>Custom widgets</li>
+            <li ng-repeat="(id,configwidget) in configWidgets">
+                <a ng-click="addCustomWidget(id)" title="{{configwidget.description}}">
+                    <small><i class="glyphicon glyphicon-check"></i></small>&nbsp;{{configwidget.name || id}}
+                </a>
+            </li>
             <li ng-repeat="(id,customwidget) in customwidgets">
-                <a ng-click="addCustomWidget(id)">{{customwidget.name || id}}</a></li>
-            <!--<li ><a href="#/settings/widgets"><i class="glyphicon glyphicon-cog">&nbsp;</i>Manage</a></li>-->
+                <a ng-click="addCustomWidget(id)" title="{{customwidget.description}}">
+                    <small><i class="glyphicon glyphicon-expand"></i></small>&nbsp;{{customwidget.name || id}}
+                </a>
+            </li>
         </ul>
     </div>
     <!--<a class="btn" href="#/"><i class="glyphicon glyphicon-chevron-left"></i></a>-->

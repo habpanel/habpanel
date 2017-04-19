@@ -9,6 +9,7 @@
             WidgetsProvider.$get().registerType({
                 type: 'frame',
                 displayName: 'Frame',
+                icon: 'globe',
                 description: 'Embedded website from predefined URL or openHAB item.'
             });
         });

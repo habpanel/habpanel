@@ -9,6 +9,7 @@
             WidgetsProvider.$get().registerType({
                 type: 'clock',
                 displayName: 'Clock',
+                icon: 'time',
                 description: 'A clock widget - displays an analog or digital clock'
             });
         });

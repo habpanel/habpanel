@@ -9,6 +9,7 @@
             WidgetsProvider.$get().registerType({
                 type: 'switch',
                 displayName: 'Switch',
+                icon: 'off',
                 description: 'A ON/OFF toggle for openHAB switches'
             });
         });

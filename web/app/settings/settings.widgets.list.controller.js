@@ -71,6 +71,18 @@
             });
         };
 
+        vm.cloneConfigWidget = function (originalId) {
+            prompt({
+                title: "Clone widget",
+                message: "This will clone the globally provisioned widget: " + originalId + " to be modified as part of the panel configuration. Enter an unique identifier below - it must be different from the widget being cloned, and should avoid spaces and special chars. If an user-defined widget with the same identifier already exists, it will be replaced!",
+                input: true,
+                value: originalId + '-clone'
+            }).then(function (id) {
+                $rootScope.customwidgets[id] = angular.copy($rootScope.configWidgets[originalId]);
+                PersistenceService.saveDashboards();
+            })
+        }
+
         activate();
 
         ////////////////

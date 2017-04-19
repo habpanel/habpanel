@@ -232,13 +232,6 @@
             var deferred = $q.defer();
 
             $http.get('/rest/services/' + SERVICE_NAME + '/config').then(function (resp) {
-                /*if (!resp.data.hasOwnProperty('lockEditing')) {
-                    console.log('Empty service configuration - service not installed?');
-                    useLocalStorage();
-                    deferred.reject();
-                    return;
-                }*/
-
                 console.log('openHAB 2 service configuration loaded');
                 OH2ServiceConfiguration = resp.data;
                 if (!OH2ServiceConfiguration.panelsRegistry) {
@@ -249,6 +242,15 @@
                 if (OH2ServiceConfiguration.lockEditing === true) {
                     $rootScope.lockEditing = true;
                 }
+                // iterate over the config to find widgets added there
+                $rootScope.configWidgets = {};
+                angular.forEach(OH2ServiceConfiguration, function (value, key) {
+                    if (key.indexOf("widget.") === 0) {
+                        var widgetname = key.replace("widget.", "");
+                        console.log("Adding widget from configuration: " + widgetname);
+                        $rootScope.configWidgets[widgetname] = JSON.parse(value);
+                    }
+                });
 
                 deferred.resolve();
 

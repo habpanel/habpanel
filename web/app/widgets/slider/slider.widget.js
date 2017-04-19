@@ -9,6 +9,7 @@
             WidgetsProvider.$get().registerType({
                 type: 'slider',
                 displayName: 'Slider',
+                icon: 'resize-horizontal',
                 description: 'A slider for setting numerical openHAB items'
             });
         });

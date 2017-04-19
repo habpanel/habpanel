@@ -9,6 +9,7 @@
             WidgetsProvider.$get().registerType({
                 type: 'label',
                 displayName: 'Label',
+                icon: 'font',
                 description: 'A fixed label used for headers etc. (no openHAB item binding)'
             });
         });
