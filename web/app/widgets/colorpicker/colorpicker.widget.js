@@ -186,10 +186,10 @@
 
         function updateValue() {
             var value = OHService.getItem(vm.widget.item).state;
-            if (value === 'NULL')
-                vm.value = '0,0,0';
             var splitted = value.split(',');
-            if (splitted.length === 3)
+            if (value === 'NULL')
+                vm.value = splitted = ['0','0','0'];
+            else if (splitted.length === 3)
                 vm.value = splitted;
 
             if (!vm.widget.style || vm.widget.style === 'default') {
