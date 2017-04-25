@@ -19,8 +19,7 @@
     </div>
     <div class="colorpicker-content-flex" ng-show="vm.widget.style === 'aCKolor'">
 
-        <span>{{vm.widget.name}}</span>
-        <br /><br />
+        <span ng-if="vm.widget.name">{{vm.widget.name}}<br /><br /></span>
 
         <a-ckolor model="vm.aCKolorModel" blur="vm.widget.blur_background || false" type="hidden" on-change="vm.onACkolorModelChanged"></a-ckolor>
     </div>
