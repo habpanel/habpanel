@@ -104,9 +104,8 @@
          snap-opt-disable="'right'"
          snap-opt-hyperextensible="false"
          ng-view
-         ng-class="{ 'image-bg': settings.background_image }"
-         ng-style="{ 'background-image': (settings.background_image) ? 'url(' + settings.background_image +')' : '',
-                      'padding-top': kioskMode ? 0 : 'auto' }">
+         ng-class="{ 'image-bg': settings.background_image, kiosk: kioskMode }"
+         ng-style="{ 'background-image': (settings.background_image) ? 'url(' + settings.background_image +')' : '' }">
     </div>
 </body>
 

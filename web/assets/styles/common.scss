@@ -74,6 +74,9 @@ input {
   padding-top: 48px;
   box-shadow: 0 0 20px $body-bg;
 }
+.container.kiosk {
+  padding-top: 15px;
+}
 
 .scrollable {
   -webkit-overflow-scrolling: touch;
