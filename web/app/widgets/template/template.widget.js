@@ -68,12 +68,12 @@
                 return item;
             }
 
-            scope.itemState = function(itemname) {
+            scope.itemState = function(itemname, ignoreTransform = false) {
                 if (!itemname) return "N/A";
                 var item = OHService.getItem(itemname);
                 if (!item) return "N/A";
 
-                var value = item.state;
+                var value = (item.transformedState && !ignoreTransform) ? item.transformedState : item.state;
                 return value;
             }
  

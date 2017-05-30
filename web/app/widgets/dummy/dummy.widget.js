@@ -47,7 +47,7 @@
                 vm.value = "N/A";
                 return;
             }
-            var value = item.state;
+            var value = item.transformedState || item.state;
             if (vm.widget.format) {
                 if (item.type === "DateTime" || item.type === "DateTimeItem") {
                     value = $filter('date')(value, vm.widget.format);

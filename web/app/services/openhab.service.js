@@ -143,16 +143,33 @@
                                 $rootScope.$apply(function () {
                                     console.log("Updating " + item.name + " state from " + item.state + " to " + payload.value);
                                     item.state = payload.value;
-                                    $rootScope.$emit('openhab-update', item);
 
-                                    if (item.state && $rootScope.settings.speech_synthesis_item === item.name) {
-                                        console.log('Speech synthesis item state changed! Speaking it now.');
-                                        SpeechService.speak($rootScope.settings.speech_synthesis_voice, item.state);
+                                    if (!item.transformedState) {
+                                        // no transformation on state
+                                        $rootScope.$emit('openhab-update', item);
+
+                                        if (item.state && $rootScope.settings.speech_synthesis_item === item.name) {
+                                            console.log('Speech synthesis item state changed! Speaking it now.');
+                                            SpeechService.speak($rootScope.settings.speech_synthesis_voice, item.state);
+                                        }
+                                        if (item.state && $rootScope.settings.dashboard_control_item === item.name) {
+                                            console.log('Dashboard control item state changed, attempting navigation to: ' + item.state);
+                                            $location.url('/view/' + item.state);
+                                        }
+                                    } else {
+                                        // fetch the new transformed state
+                                        $http.get('/rest/items/' + item.name).then(function (response) {
+                                            if (response.data && response.data.transformedState) {
+                                                item.transformedState = response.data.transformedState;
+                                                $rootScope.$emit('openhab-update', item);
+                                            } else {
+                                                console.error("Failed to retrieve the new transformedState of item: " + item.name);
+                                                item.transformedState = null;
+                                                $rootScope.$emit('openhab-update', item);
+                                            }
+                                        });
                                     }
-                                    if (item.state && $rootScope.settings.dashboard_control_item === item.name) {
-                                        console.log('Dashboard control item state changed, attempting navigation to: ' + item.state);
-                                        $location.url('/view/' + item.state);
-                                    }
+
 
                                 });
                             }

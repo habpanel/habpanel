@@ -60,7 +60,8 @@
                     vm.value = 'OFF';
                 }
             } else {
-                vm.value = OHService.getItem(vm.widget.item).state;
+                vm.value = item.state;
+                vm.label = item.transformedState || item.state;
             }
             
         }
