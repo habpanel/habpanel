@@ -2,31 +2,29 @@
     margin-top: 1em;
     .timeline-status {
         position: absolute;
-        color: $widget-text-color;
+        color: var(--widget-text-color);
         top: 3px;
         font-size: 0.85em;
-        background-color: $chart-tooltip;
+        background-color: var(--chart-tooltip);
         padding: 5px;
     }
-
     .timeline-status .dates {
         font-size: 0.8em;
     }
-
     .axis path,
     .axis line {
         fill: none;
-        stroke: $chart-stroke;
+        stroke: var(--chart-stroke);
         shape-rendering: crispEdges;
     }
     .axis text {
         font-family: sans-serif;
-        fill: $chart-fill;
+        fill: var(--chart-fill);
         font-size: 0.72em;
     }
     .timeline-label {
         font-family: sans-serif;
-        fill: $widget-text-color;
+        fill: var(--widget-text-color);
         font-size: 1em;
     }
 }

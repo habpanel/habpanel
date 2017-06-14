@@ -1,20 +1,20 @@
-.chart-content .chart .grid .tick > line {
-  stroke: $chart-stroke;
+.chart-content .chart .grid .tick>line {
+    stroke: var(--chart-stroke);
 }
 
-.chart-content .chart .axis > .tick > text {
-  fill: $chart-fill;
-  font-family: $font-family-base;
+.chart-content .chart .axis>.tick>text {
+    fill: var(--chart-fill);
+    font-family: $font-family-base;
 }
 
 .chart-content .legend-label {
-  color: $widget-text-color;
+    color: var(--widget-text-color);
 }
 
 .chart-content .chart-tooltip {
-  background-color: $chart-tooltip;
+    background-color: var(--chart-tooltip);
 }
 
 .chart .axis {
-  font-size: 0.72em;
+    font-size: 0.72em;
 }

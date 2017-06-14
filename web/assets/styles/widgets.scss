@@ -1,48 +1,60 @@
 .box-content.switch {
-  padding-top: 0;
-  padding-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
 .value {
-  color: $primary-color;
-  // font-size: 16px;
-  text-align: center;
+    color: var(--primary-color);
+    // font-size: 16px;
+    text-align: center;
 }
 
 .icon.backdrop {
-  position: absolute;
-  top: 10%;
-  bottom: 10%;
+    position: absolute;
+    top: 10%;
+    bottom: 10%;
 }
 
 .icon.backdrop.center {
-  left: 10%;
-  right: 10%;
+    left: 10%;
+    right: 10%;
 }
 
 .icon.inline {
-  display: inline;
+    display: inline;
 }
 
 .icon-tile-backdrop {
-  margin: auto;
-          filter: opacity(15%);
-  -webkit-filter: opacity(15%);
-  max-width: calc(100% - 20px);
-  /*max-height: calc(100% - 20px);*/
+    margin: auto;
+    filter: opacity(15%);
+    -webkit-filter: opacity(15%);
+    max-width: calc(100% - 20px);
+    /*max-height: calc(100% - 20px);*/
 }
 
 .icon-tile-backdrop.colorize {
-          filter: invert(60%) sepia(100%) hue-rotate(165deg) opacity(15%);
-  -webkit-filter: invert(60%) sepia(100%) hue-rotate(165deg) opacity(15%);
+    filter: var(--icon-backdrop-filter);
+    -webkit-filter: var(--icon-backdrop-filter)
 }
 
 .icon-tile.colorize.off {
-          filter: invert(45%) sepia(80%) hue-rotate(170deg);
-  -webkit-filter: invert(45%) sepia(80%) hue-rotate(170deg);
+    filter: var(--icon-color-off-filter);
+    -webkit-filter: var(--icon-color-off-filter);
 }
 
 .icon-tile.colorize {
-          filter: invert(60%) sepia(100%) hue-rotate(185deg) saturate(1000%);
-  -webkit-filter: invert(60%) sepia(100%) hue-rotate(185deg) saturate(1000%);
+    filter: var(--icon-color-filter);
+    -webkit-filter: var(--icon-color-filter);
+}
+
+.rzslider .rz-pointer {
+    background: var(--primary-color);
+}
+
+.rzslider .rz-bar.rz-selection {
+    background: var(--primary-color);
+}
+
+.rzslider .rz-ticks .rz-tick.rz-selected {
+    background: var(--primary-color);
 }

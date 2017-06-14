@@ -1,56 +1,56 @@
 .colorpicker {
-  display: flex;
+    display: flex;
 }
 
 .color-picker-swatch {
-  border: $colorpicker-border 1px dotted;
+    border: 1px var(--colorpicker-border) dotted;
 }
 
 .transparent-swatch-arrow {
-  padding-left: 3px;
-  padding-top: 8px;
+    padding-left: 3px;
+    padding-top: 8px;
 }
 
 .colorpicker canvas {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .colorpicker-content .axis path,
 .colorpicker-content .axis line {
-  fill: none;
-  stroke: $colorpicker-stroke;
-  shape-rendering: crispEdges;
+    fill: none;
+    stroke: var(--colorpicker-stroke);
+    shape-rendering: crispEdges;
 }
 
 .colorpicker-content .axis text {
-  fill: $colorpicker-fill;
-  font: 10px $font-family-base;
+    fill: var(--colorpicker-fill);
+    font: 10px $font-family-base;
 }
 
 .colorpicker-content .s .tick:last-of-type text,
 .colorpicker-content .l .tick:last-of-type text {
-  display: none;
+    display: none;
 }
 
 .colorpicker-content .channel canvas {
-  width: 900px;
-  height: 90px;
-  float: left;
-  margin: 0 30px;
+    width: 900px;
+    height: 90px;
+    float: left;
+    margin: 0 30px;
 }
 
 .colorpicker-content-flex {
-  margin: auto;
-  
-  .c-ckolor__picker {
-    cursor: pointer;
-    margin-bottom: 5px;
-    width: 60px;
-    height: 60px;
-    border-radius: 30px;
-  }
+    margin: auto;
+    .c-ckolor__picker {
+        cursor: pointer;
+        margin-bottom: 5px;
+        width: 60px;
+        height: 60px;
+        border-radius: 30px;
+    }
 }
 
-.c-ckolor__save-btn, .c-ckolor__close-btn {
-  height: 65px;
+.c-ckolor__save-btn,
+.c-ckolor__close-btn {
+    height: 65px;
 }

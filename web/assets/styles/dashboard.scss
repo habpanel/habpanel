@@ -1,181 +1,177 @@
 .dashboard {
-  margin: 0 -10px;
+    margin: 0 -10px;
 }
 
 .header {
-  position: fixed;
-  margin: -50px -15px -10px -15px;
-  width: 100%;
-  padding: 8px;
-  z-index: 99;
-  background: $body-bg;
-
-  .btn:not(.btn-default):not(.btn-primary):not(.btn-success):hover {
-    color: $widget-text-color;
-  }
-
-  .btn-edit-dashboard {
-    display: none;
-    padding: 0 6px;
-  }
-
-  h2 {
-    display: inline;
-
-    &.dashboard-title {
-      user-select: none;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-
-      span {
-        &:hover {
-          .btn-edit-dashboard {
-            display: inline-block;
-          }
-        }
-      }
+    position: fixed;
+    margin: -50px -15px -10px -15px;
+    width: 100%;
+    padding: 8px;
+    z-index: 99;
+    background: var(--header-bg);
+    .btn:not(.btn-default):not(.btn-primary):not(.btn-success):hover {
+        color: var(--widget-text-color);
     }
-  }
+    .btn-edit-dashboard {
+        display: none;
+        padding: 0 6px;
+    }
+    h2 {
+        display: inline;
+        &.dashboard-title {
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            span {
+                &:hover {
+                    .btn-edit-dashboard {
+                        display: inline-block;
+                    }
+                }
+            }
+        }
+    }
 }
 
 .fab {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: $primary-color;
-  color: #fff !important;
-  font-size: 1.25em;
-  width: 56px;
-  line-height: 47px;
-  padding: 5px 10px;
-  height: 56px;
-  vertical-align: middle;
-  box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
-  border-radius: 50%;
-  background-clip: padding-box;
-  overflow: hidden;
-  transition: all .3s cubic-bezier(.55,0,.55,.2);
-  z-index: 410;
-
-  &:hover {
-    color: rgba(255, 255, 255, .8) !important;
-  }
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--primary-color);
+    color: #fff !important;
+    font-size: 1.25em;
+    width: 56px;
+    line-height: 47px;
+    padding: 5px 10px;
+    height: 56px;
+    vertical-align: middle;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .26);
+    border-radius: 50%;
+    background-clip: padding-box;
+    overflow: hidden;
+    transition: all .3s cubic-bezier(.55, 0, .55, .2);
+    z-index: 410;
+    &:hover {
+        color: rgba(255, 255, 255, .8) !important;
+    }
 }
 
 .speech-output {
-  font-size: 1.625em;
-  color: rgba(255,255,255,.7);
-  margin: 0 auto;
-  text-align: center;
-  position: absolute;
-  font-weight: 300;
-  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 100%);
-  width: 100%;
-  bottom: 0;
-  z-index: 400;
-  padding: 15px 0;
-  margin-left: -15px;
+    font-size: 1.625em;
+    color: rgba(255, 255, 255, .7);
+    margin: 0 auto;
+    text-align: center;
+    position: absolute;
+    font-weight: 300;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+    width: 100%;
+    bottom: 0;
+    z-index: 400;
+    padding: 15px 0;
+    margin-left: -15px;
 }
 
 .controls {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 .page-header {
-  margin-top: 10px;
+    margin-top: 10px;
 }
 
 ul {
-  list-style: none;
+    list-style: none;
 }
 
 .box {
-  height: 100%;
-  color: $widget-text-color;
+    height: 100%;
+    color: var(--widget-text-color);
+    border-radius: var(--widget-border-radius);
+    box-shadow: var(--widget-box-shadow);
 }
 
 .box:not(.no-bkg) {
-  background: $box-bg;
+    background: var(--box-bg);
 }
 
 .box.activefeedback:active {
-          filter: brightness(130%);
-  -webkit-filter: brightness(130%);
+    filter: brightness(130%);
+    -webkit-filter: brightness(130%);
 }
 
 .box-design {
-  border: 1px solid $widget-design-bg;
+    border: 1px solid var(--widget-design-bg);
 }
 
 .box-header {
-  display: table;
-  background-color: $widget-design-bg;
-  padding: 0 5px 0 0;
-  border-right: 1px solid $widget-design-bg;
-  border-bottom: 1px solid $widget-design-bg;
-  cursor: move;
-  position: absolute;
-  opacity: .4;
+    display: table;
+    background-color: var(--widget-design-bg);
+    padding: 0 5px 0 0;
+    border-right: 1px solid var(--widget-design-bg);
+    border-bottom: 1px solid var(--widget-design-bg);
+    cursor: move;
+    position: absolute;
+    opacity: .4;
 }
 
 .box-header i {
-  font-size: 2.5rem;
-  vertical-align: middle;
+    font-size: 2.5rem;
+    vertical-align: middle;
 }
 
 .box-header h3 {
-  vertical-align: middle;
-  margin: .2em 0 0 0;
-  display: inline-block;
-  font-size: 10pt;
+    vertical-align: middle;
+    margin: .2em 0 0 0;
+    display: inline-block;
+    font-size: 10pt;
 }
 
 .box-content {
-  padding: 10px;
-  text-align: center;
-  height: 100%;
-  user-select: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
+    padding: 10px;
+    text-align: center;
+    height: 100%;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
 .box-header-btns {
-  top: 0;
-  right: .5rem;
-  cursor: pointer;
-  position: absolute;
+    top: 0;
+    right: .5rem;
+    cursor: pointer;
+    position: absolute;
 }
 
 .box-header-dropdown {
-  background-color: transparent;
-  border-style: none;
-  color: #abc;
-  width: 3rem;
+    background-color: transparent;
+    border-style: none;
+    color: $link-color;
+    width: 3rem;
 }
 
 .box-label-content {
-  display: flex;
+    display: flex;
 }
 
 .box-label {
-  margin: auto;
+    margin: auto;
 }
 
 .settings-btn i {
-  font-size: 2.5rem;
+    font-size: 2.5rem;
 }
 
 form {
-  margin-bottom: 0;
+    margin-bottom: 0;
 }
 
 .gridster {
-  padding: 2px;
+    padding: 2px;
 }
 
 .gridster .gridster-item:hover .handle-se {
-  border-width: 0 0 3rem 3rem !important;
-  border-color: transparent transparent $widget-text-color !important;
+    border-width: 0 0 3rem 3rem !important;
+    border-color: transparent transparent var(--widget-text-color) !important;
 }

@@ -18,5 +18,13 @@
     {
         "id": "translucent",
         "name": "Translucent"
+    },
+    {
+        "id": "madras",
+        "name": "Madras"
+    },
+    {
+        "id": "orange-tree",
+        "name": "Orange Tree"
     }
 ]

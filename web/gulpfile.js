@@ -14,22 +14,22 @@ var uglify = require('gulp-uglify');
 var watch = require('gulp-watch');
 var webserver = require('gulp-webserver');
 
-gulp.task('lint', function () {
+gulp.task('lint', function() {
     return gulp.src(['app/**/*.js'])
         .pipe(eslint())
         .pipe(eslint.format());
 });
 
 gulp.task('web-server', function() {
-  gulp.src('./')
-    .pipe(webserver({
-      livereload: true,
-      directoryListing: false,
-      open: true
-    }));
+    gulp.src('./')
+        .pipe(webserver({
+            livereload: true,
+            directoryListing: false,
+            open: true
+        }));
 });
 
-gulp.task('watch', function () {
+gulp.task('watch', function() {
     gulp.watch([
         './app/widgets/**/[^_]*.scss', // omit internal styles starting with "_"
         './assets/styles/**/*.scss',
@@ -40,23 +40,12 @@ gulp.task('watch', function () {
 gulp.task('server', [
     'watch',
     'web-server'
-], function () {});
+], function() {});
 
-gulp.task('sass-themes', function () {
-    gulp.src('./assets/styles/themes/**/*.scss')
+gulp.task('sass-vendor', function() {
+    gulp.src('./vendor/styles.scss')
         .pipe(plumber())
         .pipe(sassGlob())
-        .pipe(sass())
-        .pipe(cssmin())
-        .pipe(rename({
-            suffix: '.min'
-        }))
-        .pipe(gulp.dest('./assets/styles/themes'));
-});
-
-gulp.task('sass-vendor', function () {
-    gulp.src('./vendor/vendor.scss')
-        .pipe(plumber())
         .pipe(sass())
         .pipe(cssmin())
         .pipe(rename({
@@ -66,9 +55,8 @@ gulp.task('sass-vendor', function () {
 });
 
 gulp.task('sass', [
-    'sass-themes',
     'sass-vendor'
-], function () {});
+], function() {});
 
 gulp.task('vendor-fonts', function() {
     return gulp.src([
@@ -77,10 +65,10 @@ gulp.task('vendor-fonts', function() {
     ]).pipe(gulp.dest('fonts'));
 });
 
-gulp.task('uglify-timeline', function () {
-  return gulp.src('bower_components/d3-timeline/src/d3-timeline.js')
-             .pipe(uglify())
-             .pipe(gulp.dest('bower_components/d3-timeline/dist'));
+gulp.task('uglify-timeline', function() {
+    return gulp.src('bower_components/d3-timeline/src/d3-timeline.js')
+        .pipe(uglify())
+        .pipe(gulp.dest('bower_components/d3-timeline/dist'));
 });
 
 gulp.task('vendor-js', ['uglify-timeline'], function() {
@@ -130,31 +118,31 @@ gulp.task('vendor-js', ['uglify-timeline'], function() {
 
 
 
-gulp.task('codemirror-lib', function () {
+gulp.task('codemirror-lib', function() {
     return gulp.src([
         'bower_components/codemirror/lib/codemirror.js'
     ]).pipe(uglify()).pipe(gulp.dest('vendor/cm/lib'));
 });
 
-gulp.task('codemirror-css', function () {
+gulp.task('codemirror-css', function() {
     return gulp.src([
         'bower_components/codemirror/lib/codemirror.css'
     ]).pipe(gulp.dest('vendor/cm/lib'));
 });
 
-gulp.task('codemirror-addon-fold', function () {
+gulp.task('codemirror-addon-fold', function() {
     return gulp.src([
         'bower_components/codemirror/addon/fold/xml-fold.js',
     ]).pipe(uglify()).pipe(gulp.dest('vendor/cm/addon/fold'));
 });
 
-gulp.task('codemirror-addon-mode', function () {
+gulp.task('codemirror-addon-mode', function() {
     return gulp.src([
         'bower_components/codemirror/addon/mode/overlay.js',
     ]).pipe(uglify()).pipe(gulp.dest('vendor/cm/addon/mode'));
 });
 
-gulp.task('codemirror-addon-edit', function () {
+gulp.task('codemirror-addon-edit', function() {
     return gulp.src([
         'bower_components/codemirror/addon/edit/matchbrackets.js',
         'bower_components/codemirror/addon/edit/matchtags.js',
@@ -164,38 +152,38 @@ gulp.task('codemirror-addon-edit', function () {
     ]).pipe(uglify()).pipe(gulp.dest('vendor/cm/addon/edit'));
 });
 
-gulp.task('codemirror-mode-xml', function () {
+gulp.task('codemirror-mode-xml', function() {
     return gulp.src([
         'bower_components/codemirror/mode/xml/xml.js'
     ]).pipe(uglify()).pipe(gulp.dest('vendor/cm/mode/xml'));
 });
 
-gulp.task('codemirror-mode-javascript', function () {
+gulp.task('codemirror-mode-javascript', function() {
     return gulp.src([
         'bower_components/codemirror/mode/javascript/javascript.js'
     ]).pipe(uglify()).pipe(gulp.dest('vendor/cm/mode/javascript'));
 });
 
-gulp.task('codemirror-theme', function () {
+gulp.task('codemirror-theme', function() {
     return gulp.src([
         'bower_components/codemirror/theme/rubyblue.css'
     ]).pipe(gulp.dest('vendor/cm/theme'));
 });
 
 gulp.task('codemirror', [
-        'codemirror-lib', 
-        'codemirror-css', 
-        'codemirror-addon-fold',
-        'codemirror-addon-mode',
-        'codemirror-addon-edit', 
-        'codemirror-mode-xml', 
-        'codemirror-mode-javascript',
-        'codemirror-theme'
-    ], function () {});
+    'codemirror-lib',
+    'codemirror-css',
+    'codemirror-addon-fold',
+    'codemirror-addon-mode',
+    'codemirror-addon-edit',
+    'codemirror-mode-xml',
+    'codemirror-mode-javascript',
+    'codemirror-theme'
+], function() {});
 
 gulp.task('vendor', [
     'vendor-js',
     'vendor-fonts'
-], function () {});
+], function() {});
 
-gulp.task('default', ['vendor', 'codemirror' ], function () {});
+gulp.task('default', ['vendor', 'codemirror'], function() {});
