@@ -15,7 +15,7 @@
   --widget-text-color: #a4a4a4;
   --widget-border-radius: 3px;
   --widget-box-shadow: 0 1px 8px 0 rgba(0, 0, 0, .8), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 2px 1px -1px rgba(0, 0, 0, .12);
-  --icon-color-filter: invert(263%) sepia(100%) hue-rotate(-42deg) saturate(100000%);
+  --icon-color-filter: invert(1003%) sepia(100%) hue-rotate(-67deg) saturate(10000%);
   --icon-color-off-filter: invert(60%) sepia(80%) hue-rotate(180deg);
   --icon-backdrop-filter: invert(60%) sepia(100%) hue-rotate(165deg) opacity(15%);
   --chart-stroke: #456;
@@ -46,7 +46,7 @@
   text-shadow: none;
 }
 
-.drawer ul.menu li.active {
+.drawer ul.menu li.active:not(.head) {
   background: var(--primary-color);
   color: #000;
   border-bottom: 1px solid #070d0b !important;
@@ -54,7 +54,7 @@
   width: calc(100% - 15px);
 }
 
-.drawer ul.menu li.active:after {
+.drawer ul.menu li.active:not(.head):after {
   left: 100%;
   top: 50%;
   border: solid transparent;
@@ -67,4 +67,9 @@
   border-left-color: var(--primary-color);
   border-width: 15px;
   margin-top: -15px;
+}
+
+.drawer ul.menu li.active .icon-tile.colorize {
+    filter: none;
+    -webkit-filter: none;
 }

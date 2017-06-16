@@ -18,9 +18,9 @@
     /* Chart widget */
     --chart-stroke: #456;
     --chart-fill: #89a;
-    --chart-tooltip: #123;
+    --chart-tooltip: #fff;
     /* Color picker widget */
-    --colorpicker-border: #3960FF;
+    --colorpicker-border: #3960ff;
     --colorpicker-stroke: #456;
     --colorpicker-fill: #89a;
     /* Image widget */
@@ -39,18 +39,17 @@
 
 
 /* Final overrides */
+.header h1,
+.header .btn {
+    color: #000;
+}
 
-.header {
-    h1,
-    .btn {
-        color: white;
-    }
-    h2 {
-        color: white;
-        font-size: 16pt;
-        line-height: 1.5;
-    }
-    .btn-default {
-        color: black;
-    }
+.header h2 {
+    color: #000;
+    font-size: 16pt;
+    line-height: 1.5;
+}
+
+.header .btn-default {
+    color: #000;
 }

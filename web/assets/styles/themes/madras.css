@@ -10,7 +10,7 @@
   --primary-color: hsl(29, 100%, 50%);
   --box-bg: rgba(255, 255, 255, .9);
   --header-bg: var(--body-bg);
-  --widget-design-bg: hsl(0, 0%, 0%);
+  --widget-design-bg: #fff;
   --widget-text-color: #191716;
   --widget-border-radius: 3px;
   --widget-box-shadow: 0 1px 8px 0 rgba(0, 0, 0, .8), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 2px 1px -1px rgba(0, 0, 0, .12);
@@ -38,4 +38,8 @@ body,
 .container {
   background-color: hsl(34, 53%, 82%);
   background-image: repeating-linear-gradient(45deg, transparent 5px, hsla(197, 62%, 11%, .5) 5px, hsla(197, 62%, 11%, .5) 10px, hsla(5, 53%, 63%, 0) 10px, hsla(5, 53%, 63%, 0) 35px, hsla(5, 53%, 63%, .5) 35px, hsla(5, 53%, 63%, .5) 40px, hsla(197, 62%, 11%, .5) 40px, hsla(197, 62%, 11%, .5) 50px, hsla(197, 62%, 11%, 0) 50px, hsla(197, 62%, 11%, 0) 60px, hsla(5, 53%, 63%, .5) 60px, hsla(5, 53%, 63%, .5) 70px, hsla(35, 91%, 65%, .5) 70px, hsla(35, 91%, 65%, .5) 80px, hsla(35, 91%, 65%, 0) 80px, hsla(35, 91%, 65%, 0) 90px, hsla(5, 53%, 63%, .5) 90px, hsla(5, 53%, 63%, .5) 110px, hsla(5, 53%, 63%, 0) 110px, hsla(5, 53%, 63%, 0) 120px, hsla(197, 62%, 11%, .5) 120px, hsla(197, 62%, 11%, .5) 140px ), repeating-linear-gradient(135deg, transparent 5px, hsla(197, 62%, 11%, .5) 5px, hsla(197, 62%, 11%, .5) 10px, hsla(5, 53%, 63%, 0) 10px, hsla(5, 53%, 63%, 0) 35px, hsla(5, 53%, 63%, .5) 35px, hsla(5, 53%, 63%, .5) 40px, hsla(197, 62%, 11%, .5) 40px, hsla(197, 62%, 11%, .5) 50px, hsla(197, 62%, 11%, 0) 50px, hsla(197, 62%, 11%, 0) 60px, hsla(5, 53%, 63%, .5) 60px, hsla(5, 53%, 63%, .5) 70px, hsla(35, 91%, 65%, .5) 70px, hsla(35, 91%, 65%, .5) 80px, hsla(35, 91%, 65%, 0) 80px, hsla(35, 91%, 65%, 0) 90px, hsla(5, 53%, 63%, .5) 90px, hsla(5, 53%, 63%, .5) 110px, hsla(5, 53%, 63%, 0) 110px, hsla(5, 53%, 63%, 0) 140px, hsla(197, 62%, 11%, .5) 140px, hsla(197, 62%, 11%, .5) 160px );
+}
+
+.header .btn:not(.btn-default):not(.btn-primary):not(.btn-success) {
+    color: var(--body-color);
 }
