@@ -17,6 +17,7 @@
     .directive('genericWidget', GenericWidgetDirective)
     .directive('widgetIcon', WidgetIcon)
     .directive('itemPicker', ItemPicker)
+    .filter('themeValue', ThemeValueFilter)
     
 
     WidgetsService.$inject = ['WidgetTypes'];
@@ -148,6 +149,18 @@
         
     }
 
+    ThemeValueFilter.$inject = ['$window'];
+    function ThemeValueFilter($window) {
+        return fallbackToThemeValue;
 
+        ////////////////
 
+        function fallbackToThemeValue(value, themePropertyName) {
+            if (value) return value;
+
+            var themeStyles = window.getComputedStyle(document.body);
+            var themeValue = themeStyles.getPropertyValue('--' + themePropertyName);
+            return (themeValue) ? themeValue.trim() : null;
+        }
+    }
 })();

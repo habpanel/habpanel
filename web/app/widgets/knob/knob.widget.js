@@ -44,8 +44,8 @@
             });
         }
     }
-    KnobController.$inject = ['$rootScope', '$scope', 'OHService', '$timeout'];
-    function KnobController ($rootScope, $scope, OHService, $timeout) {
+    KnobController.$inject = ['$rootScope', '$scope', 'OHService', '$timeout', 'themeValueFilter'];
+    function KnobController ($rootScope, $scope, OHService, $timeout, themeValueFilter) {
         var vm = this;
         this.widget = this.ngModel;
 
@@ -85,14 +85,14 @@
                 readOnly: (vm.widget.readOnly) ? vm.widget.readOnly : false,
                 barWidth: (vm.widget.barWidth) ? vm.widget.barWidth : 50,
                 trackWidth: (vm.widget.trackWidth) ? vm.widget.trackWidth : undefined,
-                barColor: (vm.widget.barColor) ? vm.widget.barColor : '#0db9f0',
+                barColor: themeValueFilter(vm.widget.barColor, 'primary-color'),
                 prevBarColor: (vm.widget.prevBarColor) ? vm.widget.prevBarColor: '#789',
                 trackColor: (vm.widget.trackColor) ? vm.widget.trackColor : '#567',
-                textColor: (vm.widget.textColor) ? vm.widget.textColor : '#0db9f0',
+                textColor: themeValueFilter(vm.widget.textColor, 'primary-color'),
                 barCap: (vm.widget.barCap) ? vm.widget.barCap : 0,
                 trackCap: (vm.widget.trackCap) ? vm.widget.trackCap : 0,
                 fontSize: (vm.widget.fontSize) ? vm.widget.fontSize : 'auto',
-                subText: { enabled: vm.widget.subTextEnabled, text: vm.widget.name, color: '#def', font:'auto' },
+                subText: { enabled: vm.widget.subTextEnabled, text: vm.widget.name, color: themeValueFilter(null, 'widget-text-color'), font:'auto' },
                 bgColor: (vm.widget.bgColor) ? vm.widget.bgColor : '',
                 scale: {
                     enabled: vm.widget.scaleEnabled,

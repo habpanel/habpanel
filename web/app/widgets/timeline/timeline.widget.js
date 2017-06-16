@@ -215,9 +215,9 @@
 
 
     // settings dialog
-    WidgetSettingsCtrlTimeline.$inject = ['$scope', '$timeout', '$rootScope', '$uibModalInstance', 'widget', 'OHService'];
+    WidgetSettingsCtrlTimeline.$inject = ['$scope', '$timeout', '$rootScope', '$uibModalInstance', 'widget', 'OHService', 'themeValueFilter'];
 
-    function WidgetSettingsCtrlTimeline($scope, $timeout, $rootScope, $modalInstance, widget, OHService) {
+    function WidgetSettingsCtrlTimeline($scope, $timeout, $rootScope, $modalInstance, widget, OHService, themeValueFilter) {
         $scope.widget = widget;
         $scope.items = OHService.getItems();
 
@@ -230,8 +230,8 @@
             service: widget.service,
             period: widget.period || 'D',
             colorMaps: widget.colorMaps || [
-                { state: 'ON', color: '#0DB9F0' },
-                { state: 'OFF', color: '#89A' },
+                { state: 'ON', color: themeValueFilter(null, 'primary-color') },
+                { state: 'OFF', color: themeValueFilter(null, 'switch-off-color') },
                 { state: 'OPEN', color: '#CCCC00' },
                 { state: 'CLOSED', color: '#CC99FF' },
                 { state: 'UP', color: '#FFCC66' },

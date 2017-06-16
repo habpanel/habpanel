@@ -47,8 +47,8 @@
             });
         }
     }
-    ChartController.$inject = ['$rootScope', '$scope', '$http', '$q', '$filter', 'OHService'];
-    function ChartController ($rootScope, $scope, $http, $q, $filter, OHService) {
+    ChartController.$inject = ['$rootScope', '$scope', '$http', '$q', '$filter', 'OHService', 'themeValueFilter'];
+    function ChartController ($rootScope, $scope, $http, $q, $filter, OHService, themeValueFilter) {
         var vm = this;
         this.widget = this.ngModel;
 
@@ -178,8 +178,7 @@
                         dataset: vm.widget.series[i].item,
                         key: "state",
                         label: vm.widget.series[i].name || vm.widget.series[i].item,
-                        color: (vm.widget.series[i].color && vm.widget.series[i].color !== "transparent") ?
-                                    vm.widget.series[i].color : '#0db9f0',
+                        color: themeValueFilter(vm.widget.series[i].color, 'primary-color'),
                         type: [],
                         id: vm.widget.series[i].item
                     };
