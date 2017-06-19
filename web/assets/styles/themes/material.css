@@ -39,17 +39,17 @@
 
 
 /* Final overrides */
-.header h1,
-.header .btn {
-    color: #000;
-}
-
-.header h2 {
-    color: #000;
-    font-size: 16pt;
+.header i {
+    color: white;
     line-height: 1.5;
 }
 
-.header .btn-default {
-    color: #000;
+.header h2 {
+    color: white;
+    font-size: 18pt;
+    line-height: 1.5;
+}
+
+.header .dropdown i {
+    color: black;
 }
