@@ -8,9 +8,11 @@
     width: 100%;
     padding: 8px;
     z-index: 99;
-    background: var(--header-bg);
+    background: #000;
+    background: var(--header-bg, #000);
     .btn:not(.btn-default):not(.btn-primary):not(.btn-success):hover {
-        color: var(--widget-text-color);
+        color: #def;
+        color: var(--widget-text-color, #def);
     }
     .btn-edit-dashboard {
         display: none;
@@ -38,7 +40,8 @@
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background: var(--primary-color);
+    background: #0db9f0;
+    background: var(--primary-color, #0db9f0);
     color: #fff !important;
     font-size: 1.25em;
     width: 56px;
@@ -86,13 +89,15 @@ ul {
 
 .box {
     height: 100%;
-    color: var(--widget-text-color);
-    border-radius: var(--widget-border-radius);
-    box-shadow: var(--widget-box-shadow);
+    color: #def;
+    color: var(--widget-text-color, #def);
+    border-radius: var(--widget-border-radius, 0px);
+    box-shadow: var(--widget-box-shadow, none);
 }
 
 .box:not(.no-bkg) {
-    background: var(--box-bg);
+    background: #234;
+    background: var(--box-bg, #234);
 }
 
 .box.activefeedback:active {
@@ -101,15 +106,15 @@ ul {
 }
 
 .box-design {
-    border: 1px solid var(--widget-design-bg);
+    border: 1px solid var(--widget-design-bg, #567);
 }
 
 .box-header {
     display: table;
-    background-color: var(--widget-design-bg);
+    background-color: var(--widget-design-bg, #567);
     padding: 0 5px 0 0;
-    border-right: 1px solid var(--widget-design-bg);
-    border-bottom: 1px solid var(--widget-design-bg);
+    border-right: 1px solid var(--widget-design-bg, #567);
+    border-bottom: 1px solid var(--widget-design-bg, #567);
     cursor: move;
     position: absolute;
     opacity: .4;
@@ -173,5 +178,5 @@ form {
 
 .gridster .gridster-item:hover .handle-se {
     border-width: 0 0 3rem 3rem !important;
-    border-color: transparent transparent var(--widget-text-color) !important;
+    border-color: transparent transparent var(--widget-text-color, #def) !important;
 }

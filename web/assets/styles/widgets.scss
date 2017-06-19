@@ -4,7 +4,8 @@
 }
 
 .value {
-    color: var(--primary-color);
+    color: #0db9f0;
+    color: var(--primary-color, #0db9f0);
     // font-size: 16px;
     text-align: center;
 }
@@ -33,28 +34,34 @@
 }
 
 .icon-tile-backdrop.colorize {
-    filter: var(--icon-backdrop-filter);
-    -webkit-filter: var(--icon-backdrop-filter)
+    filter: invert(60%) sepia(100%) hue-rotate(165deg) opacity(15%);
+    filter: var(--icon-backdrop-filter, invert(60%) sepia(100%) hue-rotate(165deg) opacity(15%));
+    -webkit-filter: var(--icon-backdrop-filter, invert(60%) sepia(100%) hue-rotate(165deg) opacity(15%));
 }
 
 .icon-tile.colorize.off {
-    filter: var(--icon-color-off-filter);
-    -webkit-filter: var(--icon-color-off-filter);
+    filter: invert(45%) sepia(80%) hue-rotate(170deg);
+    filter: var(--icon-color-off-filter, invert(45%) sepia(80%) hue-rotate(170deg));
+    -webkit-filter: var(--icon-color-off-filter, invert(45%) sepia(80%) hue-rotate(170deg));
 }
 
 .icon-tile.colorize {
-    filter: var(--icon-color-filter);
-    -webkit-filter: var(--icon-color-filter);
+    filter: invert(60%) sepia(100%) hue-rotate(185deg) saturate(1000%);
+    filter: var(--icon-color-filter, invert(60%) sepia(100%) hue-rotate(185deg) saturate(1000%));
+    -webkit-filter: var(--icon-color-filter, invert(60%) sepia(100%) hue-rotate(185deg) saturate(1000%));
 }
 
 .rzslider .rz-pointer {
-    background: var(--primary-color);
+    background: #0db9f0;
+    background: var(--primary-color, #0db9f0);
 }
 
 .rzslider .rz-bar.rz-selection {
-    background: var(--primary-color);
+    background: #0db9f0;
+    background: var(--primary-color, #0db9f0);
 }
 
 .rzslider .rz-ticks .rz-tick.rz-selected {
-    background: var(--primary-color);
+    background: #0db9f0;
+    background: var(--primary-color, #0db9f0);
 }

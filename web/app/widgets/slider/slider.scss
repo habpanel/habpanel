@@ -34,7 +34,8 @@
 }
 
 :not(.bigslider).rz-bubble {
-    color: var(--primary-color);
+    color: #0db9f0;
+    color: var(--primary-color, #0db9f0);
 }
 
 .rz-floor,
@@ -71,15 +72,16 @@ see http://www.makeuseof.com/wp-content/uploads/2016/07/mr-robot-heating.jpg */
 .bigslider .rz-pointer:after {
     top: 0;
     height: 128px;
-    background-color: var(--slider-pointer-bg-color);
+    background-color: #def;
+    background-color: var(--slider-pointer-bg-color, #def);
     border-radius: 0;
     width: 8px;
-    border-left: 3px solid var(--slider-pointer-color);
-    border-right: 3px solid var(--slider-pointer-color);
+    border-left: 3px solid var(--slider-pointer-color, #234);
+    border-right: 3px solid var(--slider-pointer-color, #234);
 }
 
 .bigslider .rz-pointer.rz-active:after {
-    background-color: var(--slider-pointer-bg-color) !important;
+    background-color: var(--slider-pointer-bg-color, #def) !important;
 }
 
 .bigslider .rz-ticks .rz-tick {
@@ -95,21 +97,23 @@ see http://www.makeuseof.com/wp-content/uploads/2016/07/mr-robot-heating.jpg */
 
 .bigslider .rz-floor {
     font-size: 18pt;
-    color: var(--slider-ceil-color) !important;
+    color: var(--slider-ceil-color, #def) !important;
 }
 
 .bigslider .rz-ceil {
     font-size: 18pt;
-    color: var(--slider-ceil-color) !important;
+    color: var(--slider-ceil-color, #def) !important;
 }
 
 .bigslider .rz-bubble:not(.rz-floor):not(.rz-ceil) {
-    background-color: var(--slider-bubble-bg-color);
+    background-color: #123;
+    background-color: var(--slider-bubble-bg-color, #123);
     font-size: 32pt;
     width: 120px;
     border-radius: 10px;
-    border: 2px solid var(--slider-bubble-border-color);
-    color: var(--slider-bubble-color);
+    border: 2px solid var(--slider-bubble-border-color, #456);
+    color: #aa7;
+    color: var(--slider-bubble-color, #aa7);
     z-index: 1000;
 }
 

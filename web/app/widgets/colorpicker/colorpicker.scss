@@ -3,7 +3,8 @@
 }
 
 .color-picker-swatch {
-    border: 1px var(--colorpicker-border) dotted;
+    border: 1px solid #3960ff;
+    border: 1px var(--colorpicker-border, #3960ff) dotted;
 }
 
 .transparent-swatch-arrow {
@@ -18,12 +19,14 @@
 .colorpicker-content .axis path,
 .colorpicker-content .axis line {
     fill: none;
-    stroke: var(--colorpicker-stroke);
+    stroke: #456;
+    stroke: var(--colorpicker-stroke, #456);
     shape-rendering: crispEdges;
 }
 
 .colorpicker-content .axis text {
-    fill: var(--colorpicker-fill);
+    fill: #89a;
+    fill: var(--colorpicker-fill, #89a);
     font: 10px $font-family-base;
 }
 

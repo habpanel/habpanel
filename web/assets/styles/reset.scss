@@ -21,4 +21,4 @@ $nav-tabs-active-link-hover-bg: #fff;
 $border-radius-base: 0;
 $border-radius-large: $border-radius-base;
 $border-radius-small: $border-radius-base;
-$text-muted: var(--body-color);
+$text-muted: var(--body-color, #ccc);

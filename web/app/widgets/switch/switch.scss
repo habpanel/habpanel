@@ -9,7 +9,8 @@
 }
 
 .switch-off {
-    color: var(--switch-off-color);
+    color: #89a;
+    color: var(--switch-off-color, #89a);
 }
 
 .switch-icon {
