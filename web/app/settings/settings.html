@@ -57,7 +57,11 @@
         <div class="alert alert-warning" ng-if="!vm.supportsTheming">Themes are not compatible with this browser.</div>
         <br />
         <br />
-        <label>Background image</label>
+        <label>Additional stylesheet (optional)</label>
+        <input type="text" class="form-control" ng-blur="vm.saveOptions()" ng-model="vm.additional_stylesheet_url" placeholder="Relative URL only; example: /static/example.css" />
+        <br />
+        <br />
+        <label>Background image (optional)</label>
         <input type="text" class="form-control" ng-blur="vm.saveOptions()" ng-model="vm.background_image" placeholder="Example: //source.unsplash.com/random" />
         <br />
         <br />

@@ -15,6 +15,7 @@
             $rootScope.settings.theme = 'default';
 
         vm.background_image = $rootScope.settings.background_image;
+        vm.additional_stylesheet_url = $rootScope.settings.additional_stylesheet_url;
 
         vm.rawLocalConfig = JSON.stringify($rootScope.dashboards, null, 4);
 
@@ -66,6 +67,7 @@
         };
 
         vm.saveOptions = function () {
+            $rootScope.settings.additional_stylesheet_url = vm.additional_stylesheet_url;
             $rootScope.settings.background_image = vm.background_image;
             PersistenceService.saveDashboards();
         }
