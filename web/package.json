@@ -16,7 +16,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/ghys/habpanel"
+    "url": "https://github.com/openhab/org.openhab.ui.habpanel"
   },
   "keywords": [
     "dashboard",
@@ -35,8 +35,8 @@
     "eslint-plugin-react-native": "^1.1.0",
     "gulp": "^3.9.1",
     "gulp-clean": "^0.3.2",
+    "gulp-clean-css": "^3.4.2",
     "gulp-concat": "^2.6.0",
-    "gulp-cssmin": "^0.1.7",
     "gulp-eslint": "^3.0.1",
     "gulp-filter": "^4.0.0",
     "gulp-main-bower-files": "1.5.3",

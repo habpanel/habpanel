@@ -1,6 +1,6 @@
 var clean = require('gulp-clean');
 var concat = require('gulp-concat');
-var cssmin = require('gulp-cssmin');
+var cleanCSS = require('gulp-clean-css');
 var eslint = require('gulp-eslint');
 var gulp = require('gulp');
 var gulpFilter = require('gulp-filter');
@@ -47,7 +47,9 @@ gulp.task('sass-vendor', function() {
         .pipe(plumber())
         .pipe(sassGlob())
         .pipe(sass())
-        .pipe(cssmin())
+        .pipe(cleanCSS({
+            compatibility: '*,-properties.merging'
+        }))
         .pipe(rename({
             suffix: '.min'
         }))

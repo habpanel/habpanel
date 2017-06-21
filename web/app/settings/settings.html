@@ -53,7 +53,8 @@
         <h4>Appearance</h4>
 
         <label>Theme</label>
-        <select class="form-control" ng-change="vm.saveOptions()" ng-model="settings.theme" ng-options="theme.id as theme.name for theme in vm.themes"></select>
+        <select ng-if="vm.supportsTheming" class="form-control" ng-change="vm.saveOptions()" ng-model="settings.theme" ng-options="theme.id as theme.name for theme in vm.themes"></select>
+        <div class="alert alert-warning" ng-if="!vm.supportsTheming">Themes are not compatible with this browser.</div>
         <br />
         <br />
         <label>Background image</label>

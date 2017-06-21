@@ -85,6 +85,8 @@
 
         vm.supportsSpeech = SpeechService.isSpeechRecognitionSupported();
 
+        vm.supportsTheming = ($window.CSS && $window.CSS.supports && $window.CSS.supports('--a', 0));
+
         activate();
 
         ////////////////
