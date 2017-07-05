@@ -48,12 +48,19 @@
                 var colorScale = d3.scale.ordinal().range(scope.colorScale.colors)
                 .domain(scope.colorScale.states);
 
+                var customTimeFormat = d3.time.format.multi([
+                    ["%H:%M", function(d) { return d.getMinutes(); }],
+                    ["%H:00", function(d) { return d.getHours(); }],
+                    ["%a %d", function(d) { return d.getDate() != 1 }],
+                    ["%B 1", function(d) { return d.getDate() == 1 }]
+                ]);
+
                 var chart = d3.timeline()
                 .colors(colorScale)
                 .colorProperty('state')
                 .width(0)
                 .tickFormat({
-                    format: d3.time.format("%H:%M"),
+                    format: customTimeFormat,
                     tickSize: 6
                 })
                 .showTimeAxisTick()
