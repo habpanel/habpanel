@@ -58,6 +58,7 @@
             if (vm.widget.useserverformat && item.stateDescription && item.stateDescription.pattern)
                 value = sprintf(item.stateDescription.pattern, value);
             vm.value = value;
+            vm.state = item.state;
         }
 
         OHService.onUpdate($scope, vm.widget.item, function () {
