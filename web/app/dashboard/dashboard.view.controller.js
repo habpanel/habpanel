@@ -11,9 +11,11 @@
         margins: (vm.dashboard.widget_margin) ?
                     [vm.dashboard.widget_margin, vm.dashboard.widget_margin] : [5, 5],
         columns: vm.dashboard.columns || 12,
+        rowHeight: vm.dashboard.row_height || 'match',
         pushing: false,
         floating: false,
-        mobileModeEnabled: false,
+        mobileModeEnabled: (vm.dashboard.mobile_mode_enabled || false),
+        mobileBreakpoint: (vm.dashboard.mobile_mode_enabled && vm.dashboard.mobile_breakpoint || undefined),
         draggable: { enabled: false },
         resizable: { enabled: false }
     };

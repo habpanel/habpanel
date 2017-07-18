@@ -8,6 +8,7 @@ angular.module('app')
                 margins: $scope.dashboard.widget_margin ?
                             [$scope.dashboard.widget_margin, $scope.dashboard.widget_margin] : [5, 5],
                 columns: $scope.dashboard.columns || 12,
+                rowHeight: $scope.dashboard.row_height || 'match',
                 pushing: false,
                 floating: false,
                 mobileModeEnabled: false,

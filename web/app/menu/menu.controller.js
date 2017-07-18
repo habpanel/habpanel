@@ -152,8 +152,11 @@
             col: dashboard.col,
             row: dashboard.row,
             columns: dashboard.columns,
+            row_height: dashboard.row_height,
             widget_margin: dashboard.widget_margin,
             font_scale: dashboard.font_scale,
+            mobile_breakpoint: dashboard.mobile_breakpoint,
+            mobile_mode_enabled: dashboard.mobile_mode_enabled,
             tile: {
                 background_image: dashboard.tile.background_image,
                 backdrop_iconset: dashboard.tile.backdrop_iconset,

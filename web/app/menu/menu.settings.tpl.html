@@ -73,23 +73,46 @@
                     <br />
                     <div class="alert alert-warning">These options are currently experimental, unstable or targeted at advanced users! Use at your own risk.</div>
                     <br />
-                    <div class="form-group" ng-class="{error: _form.tile.background_image.$error && _form.submitted}">
+                    <div class="form-group" ng-class="{error: _form.columns.$error && _form.submitted}">
                         <label class="control-label col-lg-3 col-md-3">Nb. of columns (default 12)</label>
                         <div class="col-lg-3 col-md-3">
                             <input name="name" type="number" ng-model="form.columns" class="form-control" />
                         </div>
                     </div>
-                    <div class="form-group" ng-class="{error: _form.tile.background_image.$error && _form.submitted}">
+                    <div class="form-group" ng-class="{error: _form.row_height.$error && _form.submitted}">
+                        <label class="control-label col-lg-3 col-md-3">Row height (%)</label>
+                        <div class="col-lg-3 col-md-3">
+                            <input name="name" type="number" ng-model="form.row_height" class="form-control" />
+                            <small>Leave blank to match the column width (square grid)</small>
+                        </div>
+                    </div>
+                    <div class="form-group" ng-class="{error: _form.widget_margin.$error && _form.submitted}">
                         <label class="control-label col-lg-3 col-md-3">Margin between widgets (default 5)</label>
                         <div class="col-lg-3 col-md-3">
                             <input name="name" type="number" ng-model="form.widget_margin" class="form-control" />
                         </div>
                     </div>
-                    <div class="form-group" ng-class="{error: _form.tile.background_image.$error && _form.submitted}">
+                    <div class="form-group" ng-class="{error: _form.font_scale.$error && _form.submitted}">
                         <label class="control-label col-lg-3 col-md-3">Font scaling (%)</label>
                         <div class="col-lg-3 col-md-3">
                             <input name="name" type="number" ng-model="form.font_scale" class="form-control" />
                             <small>This will increase font sizes unless they are explicitely defined in pixels</small>
+                        </div>
+                    </div>
+                    <div class="form-group" ng-class="{error: _form.mobile_mode_enabled.$error && _form.submitted}">
+                        <label class="control-label col-lg-3 col-md-3">Allow mobile mode</label>
+                        <div class="col-lg-9 col-md-9">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" name="vertical" ng-model="form.mobile_mode_enabled" /> Stack widgets when screen width is below breakpoint
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group" ng-if="form.mobile_mode_enabled" ng-class="{error: _form.mobile_breakpoint.$error && _form.submitted}">
+                        <label class="control-label col-lg-3 col-md-3">Mobile breakpoint (px)</label>
+                        <div class="col-lg-3 col-md-3">
+                            <input name="name" type="number" ng-model="form.mobile_breakpoint" class="form-control" />
                         </div>
                     </div>
                 </uib-tab>
