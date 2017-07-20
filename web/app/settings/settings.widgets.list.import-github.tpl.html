@@ -98,6 +98,7 @@
                 </div>
             </div>
             <hr class="row" />
+            <uib-progressbar max="vm.progressMax" value="vm.progressCurrent" class="progress-striped active" ng-show="vm.loadingRepo"></uib-progressbar>
             <div>
                 <div ng-if="!vm.loadingRepo && vm.repoDetails" class="panel panel-default">
                     <div class="panel-heading repo-header">

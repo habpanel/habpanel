@@ -25,6 +25,8 @@
             vm.loadingRepo = true;
             vm.error = null;
             vm.importableWidgets = vm.updatableWidgets = 0;
+            vm.progressMax = 4;
+            vm.progressCurrent = 0;
 
             try {
                 if (vm.repoId.indexOf('/') < 0 || vm.repoId.indexOf('/') !== vm.repoId.lastIndexOf('/')) return;
@@ -32,9 +34,11 @@
                 .then(function (resp) {
                     if (resp.data) {
                         vm.repoDetails = resp.data;
+                        vm.progressCurrent = 1;
                         $http.get('https://api.github.com/repos/' + vm.repoId + '/readme',
                         { headers: { 'Accept': 'application/vnd.github.v3.html' } }
                         ).then(function (readme) {
+                            vm.progressCurrent = 2;
                             if (readme.data) {
                                 vm.readme = readme.data;
                             }
@@ -42,6 +46,7 @@
                             $http.get('https://api.github.com/repos/' + vm.repoId + '/contents')
                             .then(function (resp) {
                                 if (resp.data) {
+                                    vm.progressCurrent = 3;
                                     var widgetrequests = [];
                                     angular.forEach(resp.data, function (file) {
                                         if (file.name.indexOf('.widget.json') > 0) {
@@ -50,6 +55,7 @@
                                     });
 
                                     $q.all(widgetrequests).then(function (widgets) {
+                                        vm.progressCurrent = 4;
                                         angular.forEach(widgets, function (widget) {
                                             if (!vm.widgets) vm.widgets = {};
 
