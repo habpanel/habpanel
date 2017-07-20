@@ -56,13 +56,17 @@
         </div>
     </div>
     <div ng-if="!vm.editMode" gridster="vm.gridsterOptions" class="col-md-12 col-lg-12">
-        <div gridster-item="dash" ng-init="tile=dash.tile" class="dash-card col-md-6 col-lg-6 col-sm-6 box activefeedback" ng-repeat="dash in vm.dashboards">
-            <h3 ng-style="{ color:(tile.title_color && tile.title_color!='transparent')?tile.title_color:'inherit' }" ng-click="vm.viewDashboard(dash)" class="card-title">
+        <div gridster-item="dash" ng-init="tile=dash.tile" class="dash-card col-md-6 col-lg-6 col-sm-6 box" ng-class="{ activefeedback: !tile.no_click_feedback }" ng-repeat="dash in vm.dashboards">
+            <h3 ng-if="!tile.use_custom_widget" ng-style="{ color:(tile.title_color && tile.title_color!='transparent')?tile.title_color:'inherit' }" ng-click="vm.viewDashboard(dash)" class="card-title">
                 <img class="tile-background" ng-if="tile.background_image" ng-src="{{tile.background_image}}" />
                 <widget-icon ng-if="tile.backdrop_icon && !tile.background_image" backdrop="true" iconset="tile.backdrop_iconset" icon="tile.backdrop_icon" center="tile.backdrop_center"></widget-icon>
                 <!--<widget-icon iconset="'smarthome-set'" icon="'bulb'" backdrop="true"></widget-icon>-->
                 <div>{{dash.name}}</div>
             </h3>
+            <div ng-if="tile.use_custom_widget" ng-click="vm.viewDashboard(dash)" class="card-title" style="cursor: pointer; height: 100%"
+                 ng-init="customWidgetsModels[dash.id] = { id: dash.id, name: dash.name, nobackground: tile.custom_widget_nobackground, customwidget: tile.custom_widget, dontwrap: tile.custom_widget_dontwrap, config: tile.custom_widget_config }">
+            <widget-template ng-model="customWidgetsModels[dash.id]">
+            </widget-template>
         </div>
     </div>       
 </div>

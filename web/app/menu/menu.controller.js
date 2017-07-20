@@ -11,17 +11,14 @@
         var vm = this;
         vm.dashboards = dashboards;
         vm.editMode = false;
-        vm.clock = new Date();
+        vm.customWidgetsModels = {};
+
 
         activate();
 
         ////////////////
 
         function activate() {
-            var tick = function () {
-                vm.clock = Date.now();
-            }
-            $interval(tick, 1000);
             if ($rootScope.settings.no_scrolling) iNoBounce.enable(); else iNoBounce.disable();
             if ($routeParams.kiosk) $rootScope.kioskMode = ($routeParams.kiosk == 'on');
 
@@ -166,7 +163,13 @@
                 icon: dashboard.tile.icon,
                 icon_size: dashboard.tile.icon_size,
                 icon_nolinebreak: dashboard.tile.icon_nolinebreak,
-                icon_replacestext: dashboard.tile.icon_replacestext
+                icon_replacestext: dashboard.tile.icon_replacestext,
+                no_click_feedback: dashboard.tile.no_click_feedback,
+                use_custom_widget: dashboard.tile.use_custom_widget,
+                custom_widget: dashboard.tile.custom_widget,
+                custom_widget_dontwrap: dashboard.tile.custom_widget_dontwrap,
+                custom_widget_nobackground: dashboard.tile.custom_widget_nobackground,
+                custom_widget_config: dashboard.tile.custom_widget_config || {},
             }
         };
 
@@ -181,9 +184,34 @@
             });
         };
 
+        $scope.updateCustomWidgetSettings = function(erase_config) {
+            delete $scope.widgetsettings;
+            if ($scope.form.tile && $scope.form.tile.use_custom_widget && $scope.form.tile.custom_widget) {
+                if ($rootScope.configWidgets[$scope.form.tile.custom_widget]) {
+                    $scope.widgetsettings = $rootScope.configWidgets[$scope.form.tile.custom_widget].settings;
+                } else if ($rootScope.customwidgets[$scope.form.tile.custom_widget]) {
+                    $scope.widgetsettings = $rootScope.customwidgets[$scope.form.tile.custom_widget].settings;
+                }
+            }
+            if (erase_config && $scope.form.tile.custom_widget_config) {
+                $scope.form.tile.custom_widget_config = {};
+            }
+        };
+
         $scope.submit = function() {
             angular.extend(dashboard, $scope.form);
             PersistenceService.getDashboard(dashboard.id).tile = angular.copy(dashboard.tile);
+            if (!dashboard.tile.use_custom_widget) {
+                delete dashboard.tile.custom_widget;
+            }
+            if (!dashboard.tile.custom_widget) {
+                delete dashboard.tile.use_custom_widget;
+                delete dashboard.tile.custom_widget;
+                delete dashboard.tile.custom_widget_config;
+                delete dashboard.tile.custom_widget_dontwrap;
+                delete dashboard.tile.custom_widget_nobackground;
+            }
+
             PersistenceService.saveDashboards().then(function () {
                 $rootScope.dashboards = null;
                 PersistenceService.getDashboards().then (function (dashboards) {
@@ -192,6 +220,7 @@
             });
         };
 
+        $scope.updateCustomWidgetSettings(false);
     }
     
 })();

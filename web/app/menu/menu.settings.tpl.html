@@ -68,6 +68,16 @@
                             <div dab-model="form.tile.title_color" web-colorpicker dab-width="20" dab-height="20" dab-radius="50" dab-vertical="4" dab-rotate="0" show-grayscale="true"></div>
                         </div>
                     </div>
+                    <div class="form-group" ng-class="{error: _form.tile.no_click_feedback.$error && _form.submitted}">
+                        <label class="control-label col-lg-3 col-md-3">Click feedback</label>
+                        <div class="col-lg-9 col-md-9">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" name="vertical" ng-model="form.tile.no_click_feedback" /> Don't brighten tile on click/tap
+                                </label>
+                            </div>
+                        </div>
+                    </div>
                 </uib-tab>
                 <uib-tab heading="Advanced">
                     <br />
@@ -115,6 +125,65 @@
                             <input name="name" type="number" ng-model="form.mobile_breakpoint" class="form-control" />
                         </div>
                     </div>
+                </uib-tab>
+                <uib-tab heading="Custom widget">
+                    <br />
+                    <div class="alert alert-warning">This feature is currently experimental, and targeted at advanced users! Use at your own risk.</div>
+
+                    <div class="form-group" ng-class="{error: _form.mobile_mode_enabled.$error && _form.submitted}">
+                        <label class="control-label col-lg-3 col-md-3">Use a custom widget</label>
+                        <div class="col-lg-9 col-md-9">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" name="vertical" ng-model="form.tile.use_custom_widget" /> Replace the tile contents by a custom widget
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group" ng-if="form.tile.use_custom_widget" ng-class="{error: _form.tile.use_custom_widget.$error && _form.submitted}">
+                        <label class="control-label col-lg-3 col-md-3">Custom Widget</label>
+                        <div class="col-lg-9 col-md-9">
+                            <select ng-model="form.tile.custom_widget" ng-change="updateCustomWidgetSettings(true)" class="form-control">
+                                <option value=""></option>
+                                <option ng-repeat="(id, widget) in configWidgets" value="{{id}}">{{id}}</option>
+                                <option ng-repeat="(id, widget) in customwidgets" value="{{id}}">{{id}}</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div ng-if="form.tile.use_custom_widget && form.tile.custom_widget">
+                        <div class="form-group" ng-class="{error: _form.tile.custom_widget_nolinebreak.$error && _form.submitted}">
+                            <!--<label class="control-label col-lg-3 col-md-3"></label>-->
+                            <div class="col-lg-8 col-md-8">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="vertical" ng-model="form.tile.custom_widget_dontwrap" /> Don't wrap in container
+                                    </label>
+                                    &nbsp;&nbsp;
+                                    <label>
+                                        <input type="checkbox" name="vertical" ng-model="form.tile.custom_widget_nobackground" /> No background
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="form-group" ng-repeat="setting in widgetsettings">
+                            <label ng-if="setting.type !== 'heading'" class="control-label col-lg-3 col-md-3">{{setting.label || setting.id}}</label>
+                            <div class="col-lg-9 col-md-9" ng-switch="setting.type">
+                                <h4 ng-if="setting.type === 'heading'">{{setting.label}}</h4>
+                                <input ng-switch-when="string" type="text" ng-model="form.tile.custom_widget_config[setting.id]" class="form-control">
+                                <input ng-switch-when="number" type="number" ng-model="form.tile.custom_widget_config[setting.id]" class="form-control" step="any" style="width: 120px">
+                                <div ng-switch-when="checkbox" style="padding-top: 7px"><input type="checkbox" ng-model="form.tile.custom_widget_config[setting.id]"> {{setting.description}}</div>
+                                <item-picker ng-switch-when="item" ng-model="form.tile.custom_widget_config[setting.id]"></item-picker>
+                                <select ng-switch-when="choice" ng-options="choice for choice in setting.choices.split(',')" ng-model="form.tile.custom_widget_config[setting.id]" class="form-control"></select>
+                                <icon-picker ng-switch-when="icon" iconset="form.tile.custom_widget_config[setting.id + '_iconset']" icon="form.tile.custom_widget_config[setting.id]"></icon-picker>
+                                <div ng-switch-when="color" dab-model="form.tile.custom_widget_config[setting.id]" web-colorpicker dab-width="20" dab-height="20" dab-radius="50" dab-vertical="4" dab-rotate="0" show-grayscale="true"></div>
+                                <div ng-if="setting.type !== 'checkbox'"><small>{{setting.description}}</small></div>
+                            </div>
+                        </div>
+                    </div>
+
                 </uib-tab>
             </uib-tabset>
 
