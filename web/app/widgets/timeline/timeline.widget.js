@@ -51,8 +51,9 @@
                 var customTimeFormat = d3.time.format.multi([
                     ["%H:%M", function(d) { return d.getMinutes(); }],
                     ["%H:00", function(d) { return d.getHours(); }],
+                    ["%d %b", function (d) { return scope.vm.widget.period === '2M' || scope.vm.widget.period === '4M'; }],
                     ["%a %d", function(d) { return d.getDate() != 1 }],
-                    ["%B 1", function(d) { return d.getDate() == 1 }]
+                    ["1 %b", function(d) { return d.getDate() == 1 }]
                 ]);
 
                 var chart = d3.timeline()
@@ -145,7 +146,7 @@
             partitions.push({
                 state: currentState,
                 starting_time: currentStartTime,
-                ending_time: raw.data[raw.data.length-1].time
+                ending_time: Date.now()
             });
 
             return partitions;
