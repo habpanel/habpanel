@@ -5,8 +5,8 @@
         .module('app')
         .controller('WidgetListCtrl', WidgetListController);
 
-    WidgetListController.$inject = ['$rootScope', '$scope', 'widgets', 'PersistenceService', 'prompt', 'FileSaver', 'LocalFileReader'];
-    function WidgetListController($rootScope, $scope, widgets, PersistenceService, prompt, FileSaver, LocalFileReader) {
+    WidgetListController.$inject = ['$rootScope', '$scope', '$http', 'widgets', 'PersistenceService', 'prompt', 'FileSaver', 'LocalFileReader', '$uibModal', '$ocLazyLoad'];
+    function WidgetListController($rootScope, $scope, $http, widgets, PersistenceService, prompt, FileSaver, LocalFileReader, $modal, $ocLazyLoad) {
         var vm = this;
 
         vm.addNewWidget = function () {
@@ -56,9 +56,57 @@
             });
         };
 
+        vm.showImportGitHubDialog = function () {
+            $ocLazyLoad.load('app/settings/settings.widgets.list.import-github.js').then(function () {
+                $modal.open({
+                    scope: $scope,
+                    templateUrl: 'app/settings/settings.widgets.list.import-github.tpl.html',
+                    controller: 'WidgetImportGitHubCtrl',
+                    controllerAs: 'vm',
+                    backdrop: 'static',
+                    size: 'lg',
+                }).result.then(function (widgets) {
+                    angular.forEach(widgets, function (widget, id) {
+                        delete widget.is_update;
+                        $rootScope.customwidgets[id] = angular.copy(widget);
+                    });
+                    PersistenceService.saveDashboards();
+                });
+            });
+        };
+
         vm.exportToFile = function (id, widget) {
             var data = new Blob([JSON.stringify(widget, null, 4)], { type: 'application/json;charset=utf-8'});
             FileSaver.saveAs(data, id + '.widget.json');
+        };
+
+        vm.updateWidget = function (id) {
+            var widget = $rootScope.customwidgets[id];
+            if (widget.source_url) {
+                var source_url = widget.source_url;
+                var readme_url = widget.readme_url;
+
+                prompt({
+                    title: "Update widget",
+                    message: "This will update widget " + id + " from " + source_url + ". Any changes you made will be overwritten! Continue?",
+                }).then(function () {
+                    $http.get(widget.source_url).then(function (resp) {
+                        if (resp.data) {
+                            if (!resp.data.template) {
+                                vm.updateErrorMessage = "Couldn't update widget " + id + " from " + widget.source_url + ": no template found";
+                            } else {
+                                resp.data.source_url = source_url;
+                                resp.data.readme_url = readme_url;
+                                $rootScope.customwidgets[id] = resp.data;
+                                PersistenceService.saveDashboards();
+                                vm.updatedMessage = "Widget " + id + " updated successfully from " + source_url;
+                            }
+                        } else {
+                            vm.updateErrorMessage = "Couldn't update widget " + id + " from " + widget.source_url + ": " + resp.statusText;
+                        }
+                    });
+                });
+            }
         };
 
         vm.deleteWidget = function (id) {

@@ -9,18 +9,21 @@
 
 <br />
 
+<div uib-alert ng-if="vm.updatedMessage" type="info" close="vm.updatedMessage = null">{{vm.updatedMessage}}</div>
+<div uib-alert ng-if="vm.updateErrorMessage" type="danger" close="vm.updateErrorMessage = null">{{vm.updateErrorMessage}}</div>
+
 <div class="scrollable">
 
 <div class="col-sm-12 widgetlist">
     <div class="col-sm-4" ng-repeat="(id, widget) in configWidgets">
         <div class="widgettile col-sm-12 box">
-            <div class="pull-right box-header-btns" uib-dropdown>
+            <div class="pull-right box-header-btns" uib-dropdown dropdown-append-to-body="true">
                 <i class="glyphicon glyphicon-check"
                    uib-tooltip="This widget was provisioned globally via a bundle. It cannot be modified, but may be cloned to an user-defined widget with another name."
                    tooltip-placement="bottom-right"></i>
                 <a uib-dropdown-toggle class="settings-btn" ng-click><i class="glyphicon glyphicon-option-vertical"></i></a>
                     <ul class="dropdown-menu dropdown-menu-right" uib-dropdown-menu role="menu" aria-labelledby="template-actions">
-                        <li class="menuitem"><a ng-click="vm.cloneConfigWidget(id, widget)"><i class="glyphicon glyphicon-export">&nbsp;</i>Clone widget...</a></li>
+                        <li class="menuitem"><a ng-click="vm.cloneConfigWidget(id, widget)"><i class="glyphicon glyphicon-duplicate">&nbsp;</i>Clone widget...</a></li>
                     </ul>
             </div>
             <div>
@@ -31,14 +34,17 @@
 
     <div class="col-sm-4" ng-repeat="(id, widget) in customwidgets">
         <div class="widgettile col-sm-12 box activefeedback">
-            <div class="pull-right box-header-btns" uib-dropdown>
+            <div class="pull-right box-header-btns" uib-dropdown dropdown-append-to-body="true">
                 <i class="glyphicon glyphicon-expand"
                    uib-tooltip="This widget has been defined manually in this panel configuration and can be modified."
                    tooltip-placement="bottom-right"></i>
                 <a uib-dropdown-toggle class="settings-btn" ng-click><i class="glyphicon glyphicon-option-vertical"></i></a>
                     <ul class="dropdown-menu dropdown-menu-right" uib-dropdown-menu role="menu" aria-labelledby="template-actions">
                         <li class="menuitem"><a ng-click="vm.exportToFile(id, widget)"><i class="glyphicon glyphicon-export">&nbsp;</i>Export to file</a></li>
-                        <li class="divider" />
+                        <li class="divider" ng-if="widget.source_url || widget.readme_url"></li>
+                        <li class="menuitem" ng-if="widget.readme_url"><a href="{{widget.readme_url}}" target="_blank"><i class="glyphicon glyphicon-question-sign">&nbsp;</i>Open Readme</a>
+                        <li class="menuitem" ng-if="widget.source_url"><a ng-click="vm.updateWidget(id)"><i class="glyphicon glyphicon-retweet">&nbsp;</i>Update...</a>
+                        <li class="divider"></li>
                         <li class="menuitem"><a ng-click="vm.deleteWidget(id)"><i class="glyphicon glyphicon-trash">&nbsp;</i>Delete</a>
                     </ul>
             </div>
@@ -49,23 +55,28 @@
     </div>
 </div>
 
-
 <div class="col-sm-12">
     <br /><br /><br />
 
-    <a class="btn btn-primary" ng-click="vm.addNewWidget()">
+    <button class="btn btn-primary" ng-click="vm.addNewWidget()">
         New widget...
-    </a>
+    </button>
 
-    <a class="btn btn-primary" ng-click="vm.showImportDialog()">
-        Import...
-    </a>
+    <span class="btn-group" uib-dropdown is-open="import-dropdown-open">
+        <button id="import-button" class="btn btn-primary" uib-dropdown-toggle>
+            Import widget <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="import-button">
+            <li role="menuitem"><a ng-click="vm.showImportDialog()">Import from file...</a></li>
+            <li role="menuitem"><a ng-click="vm.showImportGitHubDialog()">Import from GitHub...</a></li>
+        </ul>
+    </span>
+
     <input style="display: none" type="file" id="widget-file-select" local-file-select="file" on-file-selected="vm.importFile" />
 
     <br /><br />
-
-
     <a href="https://community.openhab.org/tags/c/apps-services/habpanel/widget" target="_blank">Get widgets from the openHAB community</a>
 </div>
+
 
 </div>
