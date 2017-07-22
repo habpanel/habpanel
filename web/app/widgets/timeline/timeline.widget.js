@@ -14,8 +14,8 @@
             });
         });
 
-    widgetTimeline.$inject = ['$rootScope', '$uibModal', 'OHService'];
-    function widgetTimeline($rootScope, $modal, OHService) {
+    widgetTimeline.$inject = ['$rootScope', '$interval', 'OHService'];
+    function widgetTimeline($rootScope, $interval, OHService) {
         // Usage: <widget-timeline ng-model="widget" />
         //
         // Creates: A timeline widget
@@ -39,6 +39,10 @@
                 if (!data) return;
 
                 var el = element[0].firstElementChild.firstElementChild;
+
+                if (el.getElementsByTagName('svg').length) {
+                    el.removeChild(el.getElementsByTagName('svg')[0]);
+                }
 
                 var parentElement = element[0].parentNode.parentNode.parentNode;
 
@@ -95,12 +99,16 @@
 
             });
 
-
+            if (scope.vm.refreshInterval) {
+                element.on('$destroy', function () {
+                    $interval.cancel(scope.vm.refreshInterval);
+                });
+            }
 
         }
     }
-    TimelineController.$inject = ['$rootScope', '$scope', '$timeout', '$http', '$q', 'OHService'];
-    function TimelineController ($rootScope, $scope, $timeout, $http, $q, OHService) {
+    TimelineController.$inject = ['$rootScope', '$scope', '$timeout', '$interval', '$http', '$q', 'OHService'];
+    function TimelineController ($rootScope, $scope, $timeout, $interval, $http, $q, OHService) {
         var vm = this;
         this.widget = this.ngModel;
 
@@ -172,15 +180,9 @@
             }
             return startDate;
         }
-        var startDate = startTime();
 
         if (!vm.widget.series || !vm.widget.series.length)
             return;
-        
-        vm.rawdata = [];
-        for (var i = 0; i < vm.widget.series.length; i++) {
-            vm.rawdata[i] = $http.get('/rest/persistence/items/' + vm.widget.series[i].item + '?serviceId=' + vm.widget.service + "&boundary=true&starttime=" + startDate.toISOString());
-        }
 
         $scope.colorScale = { states: [], colors: [] };
         for (var i = 0; i < vm.widget.colorMaps.length; i++) {
@@ -188,37 +190,51 @@
             $scope.colorScale.colors.push(vm.widget.colorMaps[i].color);
         }
 
-        $q.all(vm.rawdata).then(function (values) {
-            var partitioned = {};
-            var data = [];
+        function getData() {
+            var startDate = startTime();
 
-            for (var i = 0; i < values.length; i++) {
-                partitioned[values[i].data.name] = partitionData(values[i].data);
-            }
-
-            $scope.margin_left = 20;
-
+            vm.rawdata = [];
             for (var i = 0; i < vm.widget.series.length; i++) {
-                if (!partitioned[vm.widget.series[i].item]) {
-                    continue;
-                }
-
-                var label = vm.widget.series[i].name || vm.widget.series[i].item;
-                var textWidth = getTextWidth(label, "normal 1.5em Roboto");
-                if ($scope.margin_left < textWidth) {
-                    $scope.margin_left = textWidth;
-                }
-
-                data.push({
-                    label: label,
-                    times: partitioned[vm.widget.series[i].item]
-                });
+                vm.rawdata[i] = $http.get('/rest/persistence/items/' + vm.widget.series[i].item + '?serviceId=' + vm.widget.service + "&boundary=true&starttime=" + startDate.toISOString());
             }
 
-            $timeout(function () {
-                $scope.data = data;
+
+            $q.all(vm.rawdata).then(function (values) {
+                var partitioned = {};
+                var data = [];
+
+                for (var i = 0; i < values.length; i++) {
+                    partitioned[values[i].data.name] = partitionData(values[i].data);
+                }
+
+                $scope.margin_left = 20;
+
+                for (var i = 0; i < vm.widget.series.length; i++) {
+                    if (!partitioned[vm.widget.series[i].item]) {
+                        continue;
+                    }
+
+                    var label = vm.widget.series[i].name || vm.widget.series[i].item;
+                    var textWidth = getTextWidth(label, "normal 1.5em Roboto");
+                    if ($scope.margin_left < textWidth) {
+                        $scope.margin_left = textWidth;
+                    }
+
+                    data.push({
+                        label: label,
+                        times: partitioned[vm.widget.series[i].item]
+                    });
+                }
+
+                $timeout(function () {
+                    $scope.data = data;
+                });
             });
-        });
+
+        }
+
+        vm.refreshInterval = $interval(getData, ((new Date).getTime() - startTime()) / 60 / 2);
+        getData();
     }
 
 
