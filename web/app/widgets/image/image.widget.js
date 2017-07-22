@@ -43,7 +43,7 @@
 
         function updateValue() {
             var item = OHService.getItem(vm.widget.item);
-            if (!item || vm.widget.image_source !== 'item' || item.type !== "String") {
+            if (!item || vm.widget.image_source.indexOf('item') || (item.type !== "String" && item.type !== "Image")) {
                 vm.value = "";
                 return;
             }
@@ -92,10 +92,11 @@
             row         : widget.row,
             image_source: widget.image_source || 'static',
             url         : widget.url,
-            item        : widget.item,
             refresh     : widget.refresh,
             intervaltype: widget.intervaltype || 'seconds'
         };
+        if (widget.image_source === 'item-string') $scope.form.item_string = widget.item;
+        if (widget.image_source === 'item-image') $scope.form.item_image = widget.item;
 
         $scope.dismiss = function() {
             $modalInstance.dismiss();
@@ -109,14 +110,19 @@
         $scope.submit = function() {
             angular.extend(widget, $scope.form);
             switch (widget.image_source) {
-                case "item":
-                    delete widget.action_type;
+                case "item-string":
+                    widget.item = widget.item_string;
+                    break;
+                case "item-image":
+                    widget.item = widget.item_image;
                     break;
                 default:
                     delete widget.item;
-                    delete widget.action_type;
                     break;
             }
+
+            delete widget.item_string;
+            delete widget.item_image;
 
             $modalInstance.close(widget);
         };
