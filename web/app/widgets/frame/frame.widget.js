@@ -14,8 +14,8 @@
             });
         });
 
-    widgetFrame.$inject = ['$rootScope', '$uibModal', 'OHService', '$sce'];
-    function widgetFrame($rootScope, $modal, OHService, $sce) {
+    widgetFrame.$inject = ['$rootScope', '$interval', 'OHService', '$sce'];
+    function widgetFrame($rootScope, $interval, OHService, $sce) {
         // Usage: <widget-label ng-model="widget" />
         //
         // Creates: A label widget
@@ -35,30 +35,46 @@
         return directive;
         
         function link(scope, element, attrs) {
+            if (scope.vm.refreshInterval) {
+                element.on('$destroy', function () {
+                    $interval.cancel(scope.vm.refreshInterval);
+                });
+            }
         }
     }
 
-    FrameController.$inject = ['$rootScope', '$scope', 'OHService', '$sce'];
-    function FrameController ($rootScope, $scope, OHService, $sce) {
+    FrameController.$inject = ['$rootScope', '$scope', '$interval', 'OHService', '$sce'];
+    function FrameController ($rootScope, $scope, $interval, OHService, $sce) {
         var vm = this;
-        this.widget = this.ngModel;
+        vm.widget = this.ngModel;
 
         function updateValue() {
-            var item = OHService.getItem(vm.widget.item);
-            if (!item || vm.widget.url_source !== 'item') {
-                vm.value = "";
-                return;
+            if (vm.widget.url_source === 'static') {
+                vm.value = vm.widget.frameUrl;
+            } else {
+                var item = OHService.getItem(vm.widget.item);
+                if (!item || vm.widget.url_source !== 'item') {
+                    vm.value = "";
+                    return;
+                }
+                vm.value = item.state;
             }
-            $scope.detailFrame = $sce.trustAsResourceUrl(item.state);
+
+            if (vm.widget.refresh) {
+                vm.value += '?_t='+ (new Date()).getTime();
+            }
+
+            vm.detailFrame = $sce.trustAsResourceUrl(vm.value);
         }
 
         OHService.onUpdate($scope, vm.widget.item, function () {
             updateValue();
         });
 
-        if (this.widget.url_source === 'static') {
-            $scope.detailFrame = $sce.trustAsResourceUrl(this.widget.frameUrl);
+        if (vm.widget.refresh) {
+            vm.refreshInterval = $interval(updateValue, vm.widget.refresh * 1000);
         }
+        updateValue();
     };
 
 
@@ -80,7 +96,8 @@
             frameUrl  : widget.frameUrl,
             frameless : widget.frameless,
             hidelabel : widget.hidelabel,
-            background: widget.background
+            background: widget.background,
+            refresh   : widget.refresh
         };    
 
         $scope.dismiss = function() {
