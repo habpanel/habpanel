@@ -14,8 +14,8 @@
             });
         });
 
-    widgetTemplate.$inject = ['$rootScope', '$compile', '$filter', 'OHService'];
-    function widgetTemplate($rootScope, $compile, $filter, OHService) {
+    widgetTemplate.$inject = ['$rootScope', '$compile', '$filter', 'OHService', '$uibModal'];
+    function widgetTemplate($rootScope, $compile, $filter, OHService, $uibModal) {
         // Usage: <widget-template ng-model="widget" />
         //
         // Creates: A template widget
@@ -102,6 +102,15 @@
                 }
 
                 OHService.sendCmd(item.name, cmd);
+            }
+
+            scope.openModal = function(templateUrl, noAnimation, size) {
+                scope.currentModalInstance = $uibModal.open({
+                    templateUrl: templateUrl,
+                    size: size,
+                    animation: !noAnimation,
+                    scope: scope
+                });
             }
 
             scope.$on("refreshTemplate", function () {
