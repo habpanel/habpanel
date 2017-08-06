@@ -27,11 +27,11 @@
 
                             <div class="col-lg-12 col-md-12">
                                 <div class="form-group" ng-class="{error: _form.readOnly.$error && _form.submitted}">
-                                    <label class="control-label col-lg-3 col-md-3">Display only</label>
+                                    <label class="control-label col-lg-3 col-md-3">Read only</label>
                                     <div class="col-lg-9 col-md-9">
                                         <div class="checkbox">
                                             <label>
-                                                <input type="checkbox" name="readOnly" ng-model="form.readOnly" /> Read only
+                                                <input type="checkbox" name="readOnly" ng-model="form.readOnly" /> Disable interaction
                                             </label>
                                         </div>
                                     </div>
@@ -73,26 +73,18 @@
                                 </div>
                             </div>
 
-                            <!-- Doesn't work
-                                <div class="col-lg-12 col-md-12">
-                                <div class="form-group" ng-class="{error: _form.displayInput.$error && _form.submitted}">
-                                    <label class="control-label col-lg-3 col-md-3">Value display</label>
+                            <div class="col-lg-12 col-md-12">
+                                <div class="form-group">
+                                    <label class="control-label col-lg-3 col-md-3">Display in center</label>
                                     <div class="col-lg-9 col-md-9">
                                         <div class="checkbox">
                                             <label>
-                                                <input type="checkbox" name="readOnly" ng-model="form.displayInput" /> Display value
+                                                <input type="checkbox" name="readOnly" ng-model="form.displayInput" /> Show value
                                             </label>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>-->
-                            <div class="col-lg-12 col-md-12">
-                                <div class="form-group" ng-class="{error: _form.subTextEnabled.$error && _form.submitted}">
-                                    <label class="control-label col-lg-3 col-md-3">Subtext display</label>
-                                    <div class="col-lg-9 col-md-9">
-                                        <div class="checkbox">
+                                        <div class="checkbox" ng-show="form.displayInput">
                                             <label>
-                                                <input type="checkbox" name="readOnly" ng-model="form.subTextEnabled" /> Display name below value
+                                                <input type="checkbox" name="readOnly" ng-model="form.subTextEnabled" /> Show name (below value)
                                             </label>
                                         </div>
                                     </div>

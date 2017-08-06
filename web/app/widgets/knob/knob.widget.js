@@ -81,16 +81,16 @@
                 size: (vm.widget.size) ? vm.widget.size : 300,
                 startAngle: (vm.widget.startAngle) ? vm.widget.startAngle : 0,
                 endAngle: (vm.widget.endAngle) ? vm.widget.endAngle : 360,
-                displayInput: (vm.widget.displayInput) ? vm.widget.displayInput : true,
-                readOnly: (vm.widget.readOnly) ? vm.widget.readOnly : false,
-                barWidth: (vm.widget.barWidth) ? vm.widget.barWidth : 50,
-                trackWidth: (vm.widget.trackWidth) ? vm.widget.trackWidth : undefined,
+                displayInput: (angular.isDefined(vm.widget.displayInput)) ? vm.widget.displayInput : true,
+                readOnly: (angular.isDefined(vm.widget.readOnly)) ? vm.widget.readOnly : false,
+                barWidth: (angular.isDefined(vm.widget.barWidth)) ? vm.widget.barWidth : 50,
+                trackWidth: (angular.isDefined(vm.widget.trackWidth)) ? vm.widget.trackWidth : undefined,
                 barColor: themeValueFilter(vm.widget.barColor, 'primary-color'),
                 prevBarColor: (vm.widget.prevBarColor) ? vm.widget.prevBarColor: '#789',
                 trackColor: (vm.widget.trackColor) ? vm.widget.trackColor : '#567',
                 textColor: themeValueFilter(vm.widget.textColor, 'primary-color'),
-                barCap: (vm.widget.barCap) ? vm.widget.barCap : 0,
-                trackCap: (vm.widget.trackCap) ? vm.widget.trackCap : 0,
+                barCap: (angular.isDefined(vm.widget.barCap)) ? vm.widget.barCap : 0,
+                trackCap: (angular.isDefined(vm.widget.trackCap)) ? vm.widget.trackCap : 0,
                 fontSize: (vm.widget.fontSize) ? vm.widget.fontSize : 'auto',
                 subText: { enabled: vm.widget.subTextEnabled, text: vm.widget.name, color: themeValueFilter(null, 'widget-text-color'), font:'auto' },
                 bgColor: (vm.widget.bgColor) ? vm.widget.bgColor : '',
@@ -100,10 +100,10 @@
                     color: (vm.widget.scaleColor) ? vm.widget.scaleColor : '#567',
                     width: (vm.widget.scaleWidth) ? vm.widget.scaleWidth : 2
                 },
-                displayPrevious: (vm.widget.displayPrevious) ? vm.widget.displayPrevious : true,
+                displayPrevious: (angular.isDefined(vm.widget.displayPrevious)) ? vm.widget.displayPrevious : true,
                 skin: {
                     type: (vm.widget.skinType) ? vm.widget.skinType : 'simple',
-                    width: (vm.widget.skinWidth) ? vm.widget.skinWidth : 10,
+                    width: (angular.isDefined(vm.widget.skinWidth)) ? vm.widget.skinWidth : 10,
                     color: (vm.widget.skinColor) ? vm.widget.skinColor : '#abc',
                     spaceWidth: (vm.widget.skinSpaceWidth) ? vm.widget.skinSpaceWidth : 5
                 },
@@ -114,7 +114,7 @@
                         OHService.sendCmd(vm.widget.item, vm.value.toString());
                     }
                 },
-                rangesEnabled: (vm.widget.rangesEnabled) ? vm.widget.rangesEnabled : false,
+                rangesEnabled: (angular.isDefined(vm.widget.rangesEnabled)) ? vm.widget.rangesEnabled : false,
                 ranges: []
             }
         };
@@ -187,7 +187,7 @@
             size: widget.size,
             startAngle: widget.startAngle,
             endAngle: widget.endAngle,
-            displayInput: widget.displayInput,
+            displayInput: angular.isDefined(widget.displayInput) ? widget.displayInput : true,
             readOnly: widget.readOnly,
             barWidth: widget.barWidth,
             trackWidth: widget.trackWidth,
@@ -205,7 +205,7 @@
             scaleWidth: widget.scaleWidth,
             scaleQuantity: widget.scaleQuantity,
             scaleSpaceWidth: widget.scaleSpaceWidth,
-            displayPrevious: widget.displayPrevious,
+            displayPrevious: angular.isDefined(widget.displayPrevious) ? widget.displayPrevious : true,
             skinType: widget.skinType,
             skinWidth: widget.skinWidth,
             skinColor: widget.skinColor,
@@ -246,6 +246,8 @@
 
         $scope.submit = function() {
             angular.extend(widget, $scope.form);
+            if (!!widget.displayInput) delete widget.displayInput;
+            if (!!widget.displayPrevious) delete widget.displayPrevious;
 
             $modalInstance.close(widget);
         };
