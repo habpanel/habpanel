@@ -14,8 +14,8 @@
             });
         });
 
-    widgetTemplate.$inject = ['$rootScope', '$compile', '$filter', 'OHService', '$uibModal'];
-    function widgetTemplate($rootScope, $compile, $filter, OHService, $uibModal) {
+    widgetTemplate.$inject = ['$rootScope', '$compile', '$timeout', '$filter', 'OHService', '$uibModal'];
+    function widgetTemplate($rootScope, $compile, $timeout, $filter, OHService, $uibModal) {
         // Usage: <widget-template ng-model="widget" />
         //
         // Creates: A template widget
@@ -111,6 +111,11 @@
                     animation: !noAnimation,
                     scope: scope
                 });
+
+                // hack to give widgets a chance to refresh themselves
+                $timeout(function () {
+                    $rootScope.$broadcast('openhab-update');
+                })
             }
 
             scope.$on("refreshTemplate", function () {

@@ -88,19 +88,13 @@
             }
         };
 
-        var initialValue = getValue();
-        vm.value = vm.slider.value = angular.isDefined(getValue()) ? getValue() : 0;
-        $timeout(function() {
-            $scope.$broadcast('rzSliderForceRender');
-        })
-
         function updateValue() {
             var value = getValue();
 
             if (!isNaN(value) && value != vm.slider.value) {
                 $timeout(function () {
                     vm.value = vm.slider.value = value;
-                    $scope.$broadcast('rzSliderForceRender');
+                    vm.ready = true;
                 });
             }
 

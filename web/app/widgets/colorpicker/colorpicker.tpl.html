@@ -1,5 +1,5 @@
 <div class="box-content colorpicker">
-    <div class="colorpicker-content" ng-show="!vm.widget.style || vm.widget.style === 'default'">
+    <div class="colorpicker-content" ng-show="(!vm.widget.style || vm.widget.style === 'default') && vm.ready">
 
         <span>{{vm.widget.name}}</span>
 

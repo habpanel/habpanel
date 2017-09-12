@@ -47,8 +47,8 @@
             });
         }
     }
-    ChartController.$inject = ['$rootScope', '$scope', '$http', '$q', '$filter', 'OHService', 'themeValueFilter'];
-    function ChartController ($rootScope, $scope, $http, $q, $filter, OHService, themeValueFilter) {
+    ChartController.$inject = ['$rootScope', '$scope', '$timeout', '$http', '$q', '$filter', 'OHService', 'themeValueFilter'];
+    function ChartController ($rootScope, $scope, $timeout, $http, $q, $filter, OHService, themeValueFilter) {
         var vm = this;
         this.widget = this.ngModel;
 
@@ -102,137 +102,144 @@
             if (!vm.widget.series || !vm.widget.series.length)
                 return;
 
-            vm.rawdata = [];
-            for (var i = 0; i < vm.widget.series.length; i++) {
-                vm.rawdata[i] = $http.get('/rest/persistence/items/' + vm.widget.series[i].item + '?serviceId=' + vm.widget.service + "&starttime=" + startDate.toISOString());
-            }
+            var getData = function () {
 
-            $q.all(vm.rawdata).then(function (values) {
-                vm.datasets = {};
-                for (var i = 0; i < values.length; i++) {
-                    var seriesname = values[i].data.name;
-                    var finaldata = values[i].data.data;
-
-                    angular.forEach(finaldata, function (datapoint) {
-                        datapoint.time = new Date(datapoint.time);
-                        datapoint.state = parseFloat(datapoint.state);
-                    });
-
-                    vm.datasets[seriesname] = finaldata;
-                }
-
-                vm.interactiveChartOptions = {
-                    margin: {
-                        top: 20,
-                        bottom: 50
-                    },
-                    series: [],
-                    axes: {
-                        x: {
-                            key: "time",
-                            type: "date",
-                            tickFormat: function (value) {
-                                if (value.getHours() === 0) {
-                                    if (value.getDate() === 1) {
-                                        return $filter('date')(value, 'MMM d');
-                                    }
-                                    return $filter('date')(value, 'EEE d');
-                                }
-                                return $filter('date')(value, 'HH:mm');
-                            }
-                        },
-                        y: { padding: { min: 0, max: 8 } }
-                    },
-                    tooltipHook: tooltipHook,
-                    zoom: {
-                        x: true
-                    },
-                    liveUpdates: {
-                        enabled: false
-                    }
-                };
-
-                if (vm.widget.axis.y.min)
-                    vm.interactiveChartOptions.axes.y.min = vm.widget.axis.y.min;
-                if (vm.widget.axis.y.max)
-                    vm.interactiveChartOptions.axes.y.max = vm.widget.axis.y.max;
-                if (vm.widget.axis.y.includezero)
-                    vm.interactiveChartOptions.axes.y.includeZero = vm.widget.axis.y.includezero;
-                if (vm.widget.axis.y.ticks)
-                    vm.interactiveChartOptions.axes.y.ticks = vm.widget.axis.y.ticks;
-                if (vm.widget.axis.y2 && vm.widget.axis.y2.enabled) {
-                    vm.interactiveChartOptions.axes.y2 = { padding: { min: 0, max: 8 } };
-                    if (vm.widget.axis.y2.min)
-                        vm.interactiveChartOptions.axes.y2.min = vm.widget.axis.y2.min;
-                    if (vm.widget.axis.y2.max)
-                        vm.interactiveChartOptions.axes.y2.max = vm.widget.axis.y2.max;
-                    if (vm.widget.axis.y2.includezero)
-                        vm.interactiveChartOptions.axes.y2.includeZero = vm.widget.axis.y2.includezero;
-                    if (vm.widget.axis.y2.ticks)
-                        vm.interactiveChartOptions.axes.y2.ticks = vm.widget.axis.y2.ticks;
-                }
-
+                vm.rawdata = [];
                 for (var i = 0; i < vm.widget.series.length; i++) {
-                    var seriesoptions = {
-                        axis: vm.widget.series[i].axis,
-                        dataset: vm.widget.series[i].item,
-                        key: "state",
-                        label: vm.widget.series[i].name || vm.widget.series[i].item,
-                        color: themeValueFilter(vm.widget.series[i].color, 'primary-color'),
-                        type: [],
-                        id: vm.widget.series[i].item
-                    };
-                    if (vm.widget.series[i].display_line) seriesoptions.type.push("line");
-                    if (vm.widget.series[i].display_area) seriesoptions.type.push("area");
-                    if (vm.widget.series[i].display_dots) seriesoptions.type.push("dot");
-
-                    vm.interactiveChartOptions.series.push(seriesoptions);
+                    vm.rawdata[i] = $http.get('/rest/persistence/items/' + vm.widget.series[i].item + '?serviceId=' + vm.widget.service + "&starttime=" + startDate.toISOString());
                 }
 
-                if(vm.widget.liveUpdates && vm.widget.liveUpdates.enabled){
-                    vm.interactiveChartOptions.liveUpdates.enabled = true;
-                    vm.interactiveChartOptions.liveUpdates.fillValues = vm.widget.liveUpdates.fillValues;
-                }
+                $q.all(vm.rawdata).then(function (values) {
+                    vm.datasets = {};
+                    for (var i = 0; i < values.length; i++) {
+                        var seriesname = values[i].data.name;
+                        var finaldata = values[i].data.data;
 
-                var updateValue = function(item) {
-                    var dataset = vm.datasets[item.name];
-                    if(dataset) {
-                        var receivedUpdate = {
-                            state: parseFloat(item.state),
-                            time: new Date()
-                        };
-                        var startDate = startTime();
-                        angular.forEach(vm.datasets, function(ds) {
-                            // push last value of other datasets to get nicer looking graphs 
-                            if(vm.interactiveChartOptions.liveUpdates.fillValues && dataset !== ds) {
-                                ds.push({
-                                    state: ds[ds.length-1].state,
-                                    time: new Date()
-                                });
-                            }
-
-                            // remove old values
-                            for(var i = 0; i < ds.length; i++) {
-                                if(ds[i].time > startDate) {
-                                    ds.splice(0, i);
-                                    break;
-                                }
-                            }
+                        angular.forEach(finaldata, function (datapoint) {
+                            datapoint.time = new Date(datapoint.time);
+                            datapoint.state = parseFloat(datapoint.state);
                         });
 
-                        // add the received update
-                        dataset.push(receivedUpdate);
+                        vm.datasets[seriesname] = finaldata;
                     }
-                }
 
-                if(vm.interactiveChartOptions.liveUpdates.enabled) {
-                    OHService.onUpdate($scope, vm.widget.item, function (value, item) {
-                        if(item) {
-                            updateValue(item);
+                    vm.interactiveChartOptions = {
+                        margin: {
+                            top: 20,
+                            bottom: 50
+                        },
+                        series: [],
+                        axes: {
+                            x: {
+                                key: "time",
+                                type: "date",
+                                tickFormat: function (value) {
+                                    if (value.getHours() === 0) {
+                                        if (value.getDate() === 1) {
+                                            return $filter('date')(value, 'MMM d');
+                                        }
+                                        return $filter('date')(value, 'EEE d');
+                                    }
+                                    return $filter('date')(value, 'HH:mm');
+                                }
+                            },
+                            y: { padding: { min: 0, max: 8 } }
+                        },
+                        tooltipHook: tooltipHook,
+                        zoom: {
+                            x: true
+                        },
+                        liveUpdates: {
+                            enabled: false
+                        }
+                    };
+
+                    if (vm.widget.axis.y.min)
+                        vm.interactiveChartOptions.axes.y.min = vm.widget.axis.y.min;
+                    if (vm.widget.axis.y.max)
+                        vm.interactiveChartOptions.axes.y.max = vm.widget.axis.y.max;
+                    if (vm.widget.axis.y.includezero)
+                        vm.interactiveChartOptions.axes.y.includeZero = vm.widget.axis.y.includezero;
+                    if (vm.widget.axis.y.ticks)
+                        vm.interactiveChartOptions.axes.y.ticks = vm.widget.axis.y.ticks;
+                    if (vm.widget.axis.y2 && vm.widget.axis.y2.enabled) {
+                        vm.interactiveChartOptions.axes.y2 = { padding: { min: 0, max: 8 } };
+                        if (vm.widget.axis.y2.min)
+                            vm.interactiveChartOptions.axes.y2.min = vm.widget.axis.y2.min;
+                        if (vm.widget.axis.y2.max)
+                            vm.interactiveChartOptions.axes.y2.max = vm.widget.axis.y2.max;
+                        if (vm.widget.axis.y2.includezero)
+                            vm.interactiveChartOptions.axes.y2.includeZero = vm.widget.axis.y2.includezero;
+                        if (vm.widget.axis.y2.ticks)
+                            vm.interactiveChartOptions.axes.y2.ticks = vm.widget.axis.y2.ticks;
+                    }
+
+                    for (var i = 0; i < vm.widget.series.length; i++) {
+                        var seriesoptions = {
+                            axis: vm.widget.series[i].axis,
+                            dataset: vm.widget.series[i].item,
+                            key: "state",
+                            label: vm.widget.series[i].name || vm.widget.series[i].item,
+                            color: themeValueFilter(vm.widget.series[i].color, 'primary-color'),
+                            type: [],
+                            id: vm.widget.series[i].item
+                        };
+                        if (vm.widget.series[i].display_line) seriesoptions.type.push("line");
+                        if (vm.widget.series[i].display_area) seriesoptions.type.push("area");
+                        if (vm.widget.series[i].display_dots) seriesoptions.type.push("dot");
+
+                        vm.interactiveChartOptions.series.push(seriesoptions);
+                    }
+
+                    if(vm.widget.liveUpdates && vm.widget.liveUpdates.enabled){
+                        vm.interactiveChartOptions.liveUpdates.enabled = true;
+                        vm.interactiveChartOptions.liveUpdates.fillValues = vm.widget.liveUpdates.fillValues;
+                    }
+
+                });
+
+                vm.interactiveChartReady = true;
+            };
+
+            var updateValue = function(item) {
+                var dataset = vm.datasets[item.name];
+                if(dataset) {
+                    var receivedUpdate = {
+                        state: parseFloat(item.state),
+                        time: new Date()
+                    };
+                    var startDate = startTime();
+                    angular.forEach(vm.datasets, function(ds) {
+                        // push last value of other datasets to get nicer looking graphs 
+                        if(vm.interactiveChartOptions.liveUpdates.fillValues && dataset !== ds) {
+                            ds.push({
+                                state: ds[ds.length-1].state,
+                                time: new Date()
+                            });
+                        }
+
+                        // remove old values
+                        for(var i = 0; i < ds.length; i++) {
+                            if(ds[i].time > startDate) {
+                                ds.splice(0, i);
+                                break;
+                            }
                         }
                     });
-                }
 
+                    // add the received update
+                    dataset.push(receivedUpdate);
+                }
+            };
+
+            OHService.onUpdate($scope, vm.widget.item, function (value, item) {
+                if (!vm.interactiveChartReady) {
+                    $timeout(function () {
+                        getData();
+                    })
+                } else if (item && vm.interactiveChartOptions.liveUpdates.enabled) {
+                    updateValue(item);
+                }
             });
         }
 

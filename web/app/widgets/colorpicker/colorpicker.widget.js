@@ -199,12 +199,12 @@
                 vm.aCKolorModel = vm.value = 'hsl(' + hsl[0] + ', ' + hsl[1] + '%, ' + hsl[2] + '%)';
                 console.log(vm.aCKolorModel);
             }
+
+            vm.ready = true;
         }
 
         OHService.onUpdate($scope, vm.widget.item, function () {
-            $timeout(function() {
-                updateValue();
-            }, 0);
+            updateValue();
         });
 
         vm.valueChanged = function(val) {

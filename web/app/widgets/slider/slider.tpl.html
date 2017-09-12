@@ -3,7 +3,7 @@
     <div ng-class="{ 'slider-content': !vm.widget.vertical, 'slider-content-vertical': vm.widget.vertical }">
         <div class="slider-label" ng-hide="vm.widget.hidelabel">{{vm.widget.name}}</div>
         <div class="slider-container" ng-class="{ bigslider: vm.widget.bigslider }">
-            <rzslider rz-slider-model="vm.slider.value" rz-slider-options="vm.slider.options" data-snap-ignore="true"></rzslider>
+            <rzslider rz-slider-model="vm.slider.value" rz-slider-options="vm.slider.options" data-snap-ignore="true" ng-if="vm.ready"></rzslider>
         </div>
     </div>
 </div>
