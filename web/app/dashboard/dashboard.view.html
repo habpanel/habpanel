@@ -3,19 +3,19 @@
         <i class="glyphicon glyphicon-menu-hamburger"></i>
     </a>
 
-    <a class="btn pull-right" ng-click="vm.goFullscreen()" title="Toggle full screen" ng-if="!settings.hide_fullscreen_button">
+    <a class="btn pull-right" ng-click="vm.goFullscreen()" title="Toggle full screen" ng-if="!settings.hide_fullscreen_button && !vm.dashboard.header.use_custom_widget">
         <i class="glyphicon glyphicon-resize-full"></i>
     </a>
-    <a class="btn pull-right" ng-click="vm.refresh()" title="Refresh" ng-if="!settings.hide_refresh_button">
+    <a class="btn pull-right" ng-click="vm.refresh()" title="Refresh" ng-if="!settings.hide_refresh_button && !vm.dashboard.header.use_custom_widget">
         <i class="glyphicon glyphicon-refresh"></i>
     </a>
     <a class="btn pull-right" 
-        ng-if="vm.supportsSpeech && !settings.floating_speech && !settings.hide_speak_button" 
+        ng-if="vm.supportsSpeech && !settings.floating_speech && !settings.hide_speak_button && !vm.dashboard.header.use_custom_widget" 
         ng-click="vm.isListening ? vm.stopListening() : vm.listen()" 
         title="Speak">
         <i class="glyphicon" ng-class="vm.isListening ? 'glyphicon-stop' : 'glyphicon-comment'"></i>
     </a>
-    <h2 class="dashboard-title">
+    <h2 class="dashboard-title" ng-if="!vm.dashboard.header.use_custom_widget">
         <small class="header-clock" ng-if="settings.show_header_clock"><ds-widget-clock show-digital digital-format="settings.header_clock_format || 'HH:mm'"></ds-widget-clock></small>
         <span>{{vm.dashboard.name}}
             <a class="btn btn-link btn-edit-dashboard"
@@ -26,6 +26,11 @@
             </a>
         </span>
     </h2>
+    <div ng-if="vm.dashboard.header.use_custom_widget"
+         ng-init="customHeaderWidgetModel = { id: vm.dashboard.id, name: vm.dashboard.name, nobackground: true, customwidget: vm.dashboard.header.custom_widget, dontwrap: true, config: vm.dashboard.header.custom_widget_config }">>
+        <widget-template ng-model="customHeaderWidgetModel">
+        </widget-template>
+    </div>
 </div>
 <span ng-if="vm.isListening" class="speech-output">{{vm.speechOutput}}</span>
 <a class="btn fab" 

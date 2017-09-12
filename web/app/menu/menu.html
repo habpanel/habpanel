@@ -66,8 +66,9 @@
             </h3>
             <div ng-if="tile.use_custom_widget" ng-click="vm.viewDashboard(dash)" class="card-title" style="cursor: pointer; height: 100%"
                  ng-init="customWidgetsModels[dash.id] = { id: dash.id, name: dash.name, nobackground: tile.custom_widget_nobackground, customwidget: tile.custom_widget, dontwrap: tile.custom_widget_dontwrap, config: tile.custom_widget_config }">
-            <widget-template ng-model="customWidgetsModels[dash.id]">
-            </widget-template>
+                <widget-template ng-model="customWidgetsModels[dash.id]">
+                </widget-template>
+            </div>
         </div>
     </div>       
 </div>

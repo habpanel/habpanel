@@ -12,7 +12,7 @@
         vm.dashboards = dashboards;
         vm.editMode = false;
         vm.customWidgetsModels = {};
-
+        vm.customDrawerWidgetsModels = {};
 
         activate();
 
@@ -140,6 +140,8 @@
     function DashboardSettingsCtrl($scope, $timeout, $rootScope, $modalInstance, dashboard, OHService, PersistenceService) {
         $scope.dashboard = dashboard;
         if (!$scope.dashboard.tile) $scope.dashboard.tile = {};
+        if (!$scope.dashboard.drawer) $scope.dashboard.drawer = {};
+        if (!$scope.dashboard.header) $scope.dashboard.header = {};
         //$scope.items = OHService.getItems();
 
         $scope.form = {
@@ -169,7 +171,17 @@
                 custom_widget: dashboard.tile.custom_widget,
                 custom_widget_dontwrap: dashboard.tile.custom_widget_dontwrap,
                 custom_widget_nobackground: dashboard.tile.custom_widget_nobackground,
-                custom_widget_config: dashboard.tile.custom_widget_config || {},
+                custom_widget_config: dashboard.tile.custom_widget_config || {}
+            },
+            drawer: {
+                use_custom_widget: dashboard.drawer.use_custom_widget,
+                custom_widget: dashboard.drawer.custom_widget,
+                custom_widget_config: dashboard.drawer.custom_widget_config || {}
+            },
+            header: {
+                use_custom_widget: dashboard.header.use_custom_widget,
+                custom_widget: dashboard.header.custom_widget,
+                custom_widget_config: dashboard.header.custom_widget_config || {}
             }
         };
 
@@ -184,17 +196,19 @@
             });
         };
 
-        $scope.updateCustomWidgetSettings = function(erase_config) {
-            delete $scope.widgetsettings;
-            if ($scope.form.tile && $scope.form.tile.use_custom_widget && $scope.form.tile.custom_widget) {
-                if ($rootScope.configWidgets[$scope.form.tile.custom_widget]) {
-                    $scope.widgetsettings = $rootScope.configWidgets[$scope.form.tile.custom_widget].settings;
-                } else if ($rootScope.customwidgets[$scope.form.tile.custom_widget]) {
-                    $scope.widgetsettings = $rootScope.customwidgets[$scope.form.tile.custom_widget].settings;
+        $scope.updateCustomWidgetSettings = function(erase_config, type) {
+            if (!$scope.widgetsettings)
+                $scope.widgetsettings = {};
+            delete $scope.widgetsettings[type];
+            if ($scope.form[type] && $scope.form[type].use_custom_widget && $scope.form[type].custom_widget) {
+                if ($rootScope.configWidgets[$scope.form[type].custom_widget]) {
+                    $scope.widgetsettings[type] = $rootScope.configWidgets[$scope.form[type].custom_widget].settings;
+                } else if ($rootScope.customwidgets[$scope.form[type].custom_widget]) {
+                    $scope.widgetsettings[type] = $rootScope.customwidgets[$scope.form[type].custom_widget].settings;
                 }
             }
-            if (erase_config && $scope.form.tile.custom_widget_config) {
-                $scope.form.tile.custom_widget_config = {};
+            if (erase_config && $scope.form[type].custom_widget_config) {
+                $scope.form[type].custom_widget_config = {};
             }
         };
 
@@ -211,6 +225,12 @@
                 delete dashboard.tile.custom_widget_dontwrap;
                 delete dashboard.tile.custom_widget_nobackground;
             }
+            if (!dashboard.drawer.use_custom_widget) {
+                delete dashboard.drawer;
+            }
+            if (!dashboard.header.use_custom_widget) {
+                delete dashboard.header;
+            }
 
             PersistenceService.saveDashboards().then(function () {
                 $rootScope.dashboards = null;
@@ -220,7 +240,9 @@
             });
         };
 
-        $scope.updateCustomWidgetSettings(false);
+        $scope.updateCustomWidgetSettings(false, 'tile');
+        $scope.updateCustomWidgetSettings(false, 'drawer');
+        $scope.updateCustomWidgetSettings(false, 'header');
     }
     
 })();
