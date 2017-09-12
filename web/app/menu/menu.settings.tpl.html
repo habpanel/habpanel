@@ -221,7 +221,7 @@
 
                         </div>
 
-                        <div uib-accordion-group class="panel-default" heading="Dashboard header{{(form.header.use_custom_widget && form.header.custom_widget) ? ': ' + form.drawer.custom_widget : ''}}">
+                        <div uib-accordion-group class="panel-default" heading="Dashboard header{{(form.header.use_custom_widget && form.header.custom_widget) ? ': ' + form.header.custom_widget : ''}}">
 
                             <br />
                             <div class="form-group" ng-class="{error: _form.header.use_custom_widget.$error && _form.submitted}">
@@ -246,7 +246,7 @@
                                 </div>
                             </div>
 
-                            <div ng-if="form.drawer.use_custom_widget && form.header.custom_widget">
+                            <div ng-if="form.header.use_custom_widget && form.header.custom_widget">
                                 <hr />
                                 <div ng-repeat="type in ['header']" ng-include="'app/menu/custom_widget_form.html'"></div>
                             </div>
