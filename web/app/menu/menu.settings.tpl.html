@@ -2,7 +2,7 @@
     <div class="form-group" ng-repeat="setting in widgetsettings[type]">
         <label ng-if="setting.type !== 'heading'" class="control-label col-lg-3 col-md-3">{{setting.label || setting.id}}</label>
         <div class="col-lg-9 col-md-9" ng-switch="setting.type">
-            <h5 ng-if="setting.type === 'heading'">{{setting.label}}</h5>
+            <h4 ng-if="setting.type === 'heading'">{{setting.label}}</h4>
             <input ng-switch-when="string" type="text" ng-model="form[type].custom_widget_config[setting.id]" class="form-control">
             <input ng-switch-when="number" type="number" ng-model="form[type].custom_widget_config[setting.id]" class="form-control" step="any" style="width: 120px">
             <div ng-switch-when="checkbox" style="padding-top: 7px"><input type="checkbox" ng-model="form[type].custom_widget_config[setting.id]"> {{setting.description}}</div>
