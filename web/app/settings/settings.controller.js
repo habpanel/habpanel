@@ -15,7 +15,9 @@
             $rootScope.settings.theme = 'default';
 
         vm.background_image = $rootScope.settings.background_image;
+        vm.drawer_heading_image = $rootScope.settings.drawer_heading_image;
         vm.additional_stylesheet_url = $rootScope.settings.additional_stylesheet_url;
+        vm.header_clock_format = $rootScope.settings.header_clock_format;
 
         vm.rawLocalConfig = JSON.stringify($rootScope.dashboards, null, 4);
 
@@ -69,6 +71,8 @@
         vm.saveOptions = function () {
             $rootScope.settings.additional_stylesheet_url = vm.additional_stylesheet_url;
             $rootScope.settings.background_image = vm.background_image;
+            $rootScope.settings.drawer_heading_image = vm.drawer_heading_image;
+            $rootScope.settings.header_clock_format = vm.header_clock_format;
             PersistenceService.saveDashboards();
         }
 

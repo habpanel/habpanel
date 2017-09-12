@@ -25,12 +25,20 @@
             -webkit-user-select: none;
             -moz-user-select: none;
             -ms-user-select: none;
+
             span {
                 &:hover {
                     .btn-edit-dashboard {
                         display: inline-block;
                     }
                 }
+            }
+
+            .header-clock {
+                float: right;
+                line-height: 1.6;
+                margin-right: 10px;
+                color: var(--body-color);
             }
         }
     }

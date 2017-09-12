@@ -3,19 +3,20 @@
         <i class="glyphicon glyphicon-menu-hamburger"></i>
     </a>
 
-    <a class="btn pull-right" ng-click="vm.goFullscreen()" title="Toggle full screen">
+    <a class="btn pull-right" ng-click="vm.goFullscreen()" title="Toggle full screen" ng-if="!settings.hide_fullscreen_button">
         <i class="glyphicon glyphicon-resize-full"></i>
     </a>
-    <a class="btn pull-right" ng-click="vm.refresh()" title="Refresh">
+    <a class="btn pull-right" ng-click="vm.refresh()" title="Refresh" ng-if="!settings.hide_refresh_button">
         <i class="glyphicon glyphicon-refresh"></i>
     </a>
     <a class="btn pull-right" 
-        ng-if="vm.supportsSpeech && !settings.floating_speech" 
+        ng-if="vm.supportsSpeech && !settings.floating_speech && !settings.hide_speak_button" 
         ng-click="vm.isListening ? vm.stopListening() : vm.listen()" 
         title="Speak">
         <i class="glyphicon" ng-class="vm.isListening ? 'glyphicon-stop' : 'glyphicon-comment'"></i>
     </a>
     <h2 class="dashboard-title">
+        <small class="header-clock" ng-if="settings.show_header_clock"><ds-widget-clock show-digital digital-format="settings.header_clock_format || 'HH:mm'"></ds-widget-clock></small>
         <span>{{vm.dashboard.name}}
             <a class="btn btn-link btn-edit-dashboard"
                 ng-if="!lockEditing"

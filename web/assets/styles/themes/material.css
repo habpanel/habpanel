@@ -49,6 +49,11 @@
     line-height: 1.5;
 }
 
+.header h2 .header-clock {
+    color: white !important;
+    margin-top: 5px;
+}
+
 .header .dropdown i {
     color: black;
 }
