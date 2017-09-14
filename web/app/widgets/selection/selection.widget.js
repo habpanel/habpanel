@@ -38,8 +38,8 @@
             element[0].parentElement.parentElement.className += " activefeedback";
         }
     }
-    SelectionController.$inject = ['$rootScope', '$scope', '$uibModal', 'OHService'];
-    function SelectionController ($rootScope, $scope, $uibModal, OHService) {
+    SelectionController.$inject = ['$rootScope', '$scope', '$filter', '$uibModal', 'OHService'];
+    function SelectionController ($rootScope, $scope, $filter, $uibModal, OHService) {
         var vm = this;
         this.widget = this.ngModel;
 
@@ -69,6 +69,12 @@
                     default:
                         vm.choices = vm.widget.choices;
                 }
+            }
+
+            if ($filter('filter')(vm.choices, { cmd: vm.state }).length > 0) {
+                vm.currentChoice = $filter('filter')(vm.choices, { cmd: vm.state })[0];
+                if (vm.currentChoice.label)
+                    vm.value = vm.currentChoice.label;
             }
         }
 
