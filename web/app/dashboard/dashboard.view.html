@@ -27,7 +27,7 @@
         </span>
     </h2>
     <div ng-if="vm.dashboard.header.use_custom_widget"
-         ng-init="customHeaderWidgetModel = { id: vm.dashboard.id, name: vm.dashboard.name, nobackground: true, customwidget: vm.dashboard.header.custom_widget, dontwrap: true, config: vm.dashboard.header.custom_widget_config }">>
+         ng-init="customHeaderWidgetModel = { id: vm.dashboard.id, name: vm.dashboard.name, nobackground: true, customwidget: vm.dashboard.header.custom_widget, dontwrap: true, config: vm.dashboard.header.custom_widget_config }">
         <widget-template ng-model="customHeaderWidgetModel">
         </widget-template>
     </div>

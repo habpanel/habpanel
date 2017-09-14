@@ -91,13 +91,10 @@
         function updateValue() {
             var value = getValue();
 
-            if (!isNaN(value) && value != vm.slider.value) {
-                $timeout(function () {
-                    vm.value = vm.slider.value = value;
-                    vm.ready = true;
-                });
-            }
-
+            $timeout(function () {
+                vm.value = vm.slider.value = value;
+                vm.ready = true;
+            });
         }
 
         OHService.onUpdate($scope, vm.widget.item, function () {
