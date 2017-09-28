@@ -79,7 +79,7 @@ The configuration dialog when clicking on a tile's gear icon contains the follow
 | Size (icon) | _(currently unused)_
 | Title Text Color | Color for the name of the dashboard on the tile
 | Advanced tab | Contains settings currently unstable or unsupported, for advanced users only
-| Custom widgets tab | This [experimental feature](https://community.openhab.org/t/new-display-options-incl-experimental-custom-widgets-everywhere/34140/1) allows certain parts of a dashboard to be replaced by a custom widget (see _Custom Widgets below_): the main menu tile, the drawer menu and the dashboard item - use with caution
+| Custom widgets tab | This [experimental feature](https://community.openhab.org/t/new-display-options-incl-experimental-custom-widgets-everywhere/34140/1) allows certain parts of a dashboard to be replaced by a custom widget (see _Custom Widgets_ below): the main menu tile, the drawer menu and the dashboard item - use with caution
 
 It also contains a **Delete** button which will delete the entire dashboard and its contents - this happens immediately and cannot be undone!
 
@@ -207,7 +207,7 @@ The knob widget is similar in essence to the slider, but in a rotary fashion. It
 
 ![Selection widget](images/habpanel_widget-selection.png)
 
-The selection widget displays the current state of an item, much like a dummy widget, except it opens and a menu or a grid of automatically or manually configured choices for sending commands to this item. Various display options are available.
+The selection widget displays the current state of an item, much like a dummy widget, except it opens a menu or a grid of automatically or manually configured choices for sending commands to this item. Various display options are available.
 
 #### Color picker (colorpicker)
 
