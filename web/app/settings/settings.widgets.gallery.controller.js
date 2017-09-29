@@ -24,7 +24,10 @@
             .then(function (resp) {
                 vm.busy = false;
                 if (resp.data) {
-                    vm.gallery = resp.data;
+                    vm.gallery = resp.data.map(function (item) {
+                        item.title = item.title.replace(/^(Custom)? ?Widgets?\s*(:|-)\s*/gi, '');
+                        return item;
+                    });
                 }
             });
         }
@@ -53,6 +56,7 @@
                     vm.galleryItemDetails.authorAvatarUrl = vm.galleryItemDetails.authorAvatarUrl.replace('{{size}}', '60');
                 vm.readme = vm.galleryItemDetails.description.replace(/<a href=/g, '<a target="_blank" href=');
                 vm.busy = false;
+                vm.galleryItemDetails.title = vm.galleryItemDetails.title.replace(/^(Custom)? ?Widgets?\s*(:|-)\s*/gi, '');
 
                 angular.forEach(resp.data.widgets, function (galleryWidget) {
                     if (!vm.widgets) vm.widgets = {};
