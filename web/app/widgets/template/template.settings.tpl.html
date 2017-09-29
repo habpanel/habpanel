@@ -73,6 +73,7 @@
         </div>
         <div class="modal-footer">
             <a ng-click="remove()" ng-if="!widget.preview" class="btn btn-danger pull-left" tabindex="-1"><i class="glyphicon glyphicon-trash"></i>&nbsp;Delete</a>
+            <a class="btn btn-info pull-left" ng-if="customwidget_helpUrl" href="{{customwidget_helpUrl}}" target="_blank"><i class="glyphicon glyphicon-question-sign"></i>&nbsp;Help</a>
             <a ng-click="dismiss()" class="btn btn-default" tabindex="-1"><i class="glyphicon glyphicon-remove"></i>&nbsp;Cancel</a>
             <button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-ok"></i>&nbsp;Save</button>
         </div>

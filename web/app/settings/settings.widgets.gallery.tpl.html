@@ -1,0 +1,255 @@
+<style>
+    /* Inline styles are sort of OK here since this template is lazy-loaded... */
+
+    .readme h1 {
+        color: black;
+        font-size: 18pt;
+        margin: inherit;
+        text-align: inherit;
+        position: inherit;
+        width: inherit;
+        padding-bottom: 10px;
+    }
+
+    .readme h2 {
+        color: black;
+        font-size: 16pt;
+        padding-bottom: 6px;
+    }
+
+    .readme h3 {
+        color: black;
+        font-size: 14pt;
+    }
+
+    .readme h4 {
+        color: black;
+        font-size: 12pt;
+    }
+
+    .readme ul {
+        list-style: inherit;
+    }
+
+    .readme .emoji {
+        height: 1.3em;
+    }
+
+    .readme blockquote {
+        font-size: small;
+    }
+
+    .gallery-details-header .avatar {
+        height: 4.2em;
+        width: 4.2em;
+        margin-right: 15px;
+        position: absolute;
+        left: 2em;
+    }
+
+    .gallery-details-header .gallery-details-title {
+        color: black;
+    }
+
+    .gallery-details-header .gallery-details-info {
+        padding-left: 5em;
+    }
+
+    .gallery-details-header .import-btn {
+        margin-left: 3em;
+        margin-top: 8px;
+    }
+
+    .gallery-item.thumbnail {
+        height: 220px;
+    }
+
+    .gallery-item.thumbnail .caption .title {
+        height: 1.2em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        white-space: nowrap;
+    }
+
+    .gallery-item.thumbnail .caption .description {
+        height: 100px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 5;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+    }
+
+    .gallery-item.thumbnail .caption .gallery-item-image {
+        height: 120px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 5;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        text-align: center;
+    }
+
+    .gallery-item.thumbnail .caption .gallery-item-image img {
+        height: 120px;
+    }
+    .gallery-item.gallery-item-link {
+        cursor:pointer;
+    }
+    .gallery-item.gallery-item-link:hover {
+        background-color: #dddddd;
+    }
+
+</style>
+
+<div>
+    <form name="_form" class="form-horizontal" ng-submit="submit(_form)">
+        <div class="modal-header">
+            <button type="button" class="close" ng-click="dismiss()" aria-hidden="true">&times;</button>
+            <h3><a ng-show="vm.repoDetails || vm.galleryItemDetails" ng-click="vm.returnToGallery()" class="btn btn-default"><i class="glyphicon glyphicon-chevron-left"></i></a>
+                <span ng-if="!vm.repoDetails && !vm.galleryItemDetails">Widget Gallery</span>
+                <span ng-if="vm.repoDetails">Import GitHub Repository</span>
+                <span ng-if="vm.galleryItemDetails">Import Gallery Item</span>
+            </h3>
+        </div>
+
+        <div class="modal-body">
+            <div ng-if="vm.rateLimit.remaining < 3" uib-alert type="danger">Warning: rate limiting on the GitHub API will temporarily block further requests!
+                Wait until {{vm.rateLimit.reset*1000 | date:'HH:mm:ss'}} and try again.
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="input-group">
+                        <input name="name" type="text" ng-model="vm.repoId" class="form-control" placeholder="GitHub repository full name (owner/name) or URL"
+                        />
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" style="padding-bottom: 7px" type="button" ng-click="vm.fetchRepo()">Go</button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <hr class="row" />
+            <uib-progressbar max="vm.progressMax" value="vm.progressCurrent" class="progress-striped active" ng-show="vm.busy"></uib-progressbar>
+            <div>
+                <div ng-if="!vm.busy && (vm.galleryItemDetails || vm.repoDetails)" class="panel panel-default">
+
+                    <!-- header for gallery details -->
+                    <div class="panel-heading gallery-details-header" ng-if="vm.galleryItemDetails">
+                        <img ng-src="{{vm.galleryItemDetails.authorAvatarUrl.replace('{size}', '60')}}" class="avatar" />
+                        <div class="col-md-8 gallery-details-info">
+                            <h4><a class="gallery-details-title" href="https://community.openhab.org/t/{{vm.galleryItemDetails.id}}" target="_blank">{{vm.galleryItemDetails.title}}</a><br /><small>by <strong><a href="https://community.openhab.org/u/{{vm.galleryItemDetails.author}}" target="_blank">{{vm.galleryItemDetails.authorName}}</a></strong></a>&nbsp;|&nbsp;<i class="glyphicon glyphicon-heart"></i>&nbsp;{{vm.galleryItemDetails.likes}}&nbsp;|&nbsp;<i class="glyphicon glyphicon-eye-open"></i>&nbsp;{{vm.galleryItemDetails.views}}</small></h4>
+                            <small><a href="https://community.openhab.org/t/{{vm.galleryItemDetails.id}}" target="_blank"><i class="glyphicon glyphicon-globe"></i>&nbsp;{{vm.galleryItemDetails.posts}} post(s) on this topic - Discuss on community.openhab.org</a></small>
+                        </div>
+                        <div class="col-md-4">
+                            <button type="button" class="btn btn-lg btn-success import-btn" ng-click="submit()" ng-disabled="vm.importableWidgets < 1" ng-if="vm.importableWidgets > 0 || !vm.galleryItemDetails.githubLink">
+                                <ng-pluralize count="vm.importableWidgets"
+                                    when="{'0': 'No widgets to import.',
+                                           'one': 'Import Widget',
+                                           'other': 'Import {} Widgets'}">
+                                </ng-pluralize>
+                                <span class="label label-warning show" ng-if="vm.updatableWidgets">{{vm.updatableWidgets}} to update</span>
+                            </button>
+                            <button type="button" class="btn btn-lg btn-primary import-btn" ng-click="vm.fetchRepo(vm.galleryItemDetails.githubLink)" ng-if="vm.galleryItemDetails.githubLink">
+                                Go to the repository
+                            </button>
+                            <br /><br />
+                        </div>
+                        <div style="clear:both">
+                            <br />
+                            <span ng-hide="vm.expandWidgets"><a ng-click="vm.expandWidgets = true" class="btn btn-default btn-sm">Show details <span class="caret"></span></a></span>
+                            <span ng-show="vm.expandWidgets"><a ng-click="vm.expandWidgets = false" class="btn btn-default btn-sm">Hide details <span class="caret" style="transform: rotate(180deg);"></span></a></span>
+                            <!-- &nbsp;<a class="btn btn-default btn-sm" href="{{vm.repoDetails.archive_url.replace('{archive_format}', 'zipball').replace('{/ref}', '')}}" target="_blank">Download ZIP</a> -->
+                        </div>
+                    </div>
+
+                    <!-- header for repo details -->
+                    <div class="panel-heading gallery-details-header" ng-if="vm.repoDetails">
+                        <img ng-src="{{vm.repoDetails.owner.avatar_url}}" class="avatar" />
+                        <div class="col-md-8 gallery-details-info">
+                            <h4><a class="gallery-details-title" href="{{vm.repoDetails.html_url}}" target="_blank">{{vm.repoDetails.name}}</a><br /><small>by <a href="{{vm.repoDetails.owner.html_url}}" target="_blank">{{vm.repoDetails.owner.login}}</a>&nbsp;|&nbsp;<i class="glyphicon glyphicon-star"></i>&nbsp;{{vm.repoDetails.stargazers_count}}</small></h4>
+                            <div>{{vm.repoDetails.description}}</div>
+                            <small><a ng-if="vm.repoDetails.homepage" href="{{vm.repoDetails.homepage}}" target="_blank"><i class="glyphicon glyphicon-globe"></i>&nbsp;{{vm.repoDetails.homepage}}</a></small>
+                        </div>
+                        <div class="col-md-4">
+                            <button type="button" class="btn btn-lg btn-success import-btn" ng-click="submit()" ng-disabled="vm.importableWidgets < 1">
+                                <ng-pluralize count="vm.importableWidgets"
+                                    when="{'0': 'No widgets to import.',
+                                           'one': 'Import Widget',
+                                           'other': 'Import {} Widgets'}">
+                                </ng-pluralize>
+                                <span class="label label-warning show" ng-if="vm.updatableWidgets">{{vm.updatableWidgets}} to update</span>
+                            </button>
+                            <br /><br />
+                        </div>
+                        <div style="clear:both">
+                            <br />
+                            <span ng-hide="vm.expandWidgets"><a ng-click="vm.expandWidgets = true" class="btn btn-default btn-sm">Show details <span class="caret"></span></a></span>
+                            <span ng-show="vm.expandWidgets"><a ng-click="vm.expandWidgets = false" class="btn btn-default btn-sm">Hide details <span class="caret" style="transform: rotate(180deg);"></span></a></span>
+                            &nbsp;<a class="btn btn-default btn-sm" href="{{vm.repoDetails.archive_url.replace('{archive_format}', 'zipball').replace('{/ref}', '')}}" target="_blank">Download ZIP</a>
+                        </div>
+                    </div>
+
+                    <!-- widget details & readme -->
+                    <div class="panel-body">
+                        <div class="col-xs-12" ng-show="vm.expandWidgets">
+                            <br />
+                            <p class="col-xs-12">
+                                <strong ng-if="vm.widgets">This community contribution contains the following widgets; you can import them individually:</strong>
+                                <strong ng-if="!vm.widgets" class="text-danger">No widgets were found (*.widget.json files)!</strong>
+                            </p>
+                            <div class="col-xs-6 col-sm-4" ng-repeat="(id,widget) in vm.widgets">
+                                <div class="thumbnail gallery-item">
+                                    <div class="caption">
+                                        <h4 class="title">{{id}}</h4>
+                                        <p class="description"><small>{{widget.description}}</small></p>
+                                        <p>
+                                            <button type="button" ng-if="!widget.imported && !widget.is_update" ng-click="vm.importWidget(id)" class="btn btn-sm btn-success">Import widget</button>
+                                            <button type="button" ng-if="!widget.imported && widget.is_update" ng-click="vm.importWidget(id, true)" class="btn btn-sm btn-warning">Update widget</button>
+                                            <button type="button" ng-if="widget.imported" class="btn btn-sm btn-primary" disabled="disabled">Widget imported!</button>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr style="clear:both" />
+                        </div>
+                        <div ng-bind-html="vm.readme" class="readme"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div ng-if="!vm.busy && !vm.repoDetails && !vm.galleryItemDetails && vm.gallery">
+                <div ng-if="vm.gallery">
+                    <div class="pull-right">sort by:
+                        <a ng-style="{ 'font-weight': (!vm.gallerySortOrder) ? 'bold' : '' }" ng-click="vm.gallerySortOrder=null">most recent</a> &nbsp;
+                        <a ng-style="{ 'font-weight': (vm.gallerySortOrder === '-likes') ? 'bold' : '' }" ng-click="vm.gallerySortOrder='-likes'">most liked</a> &nbsp;
+                        <a ng-style="{ 'font-weight': (vm.gallerySortOrder === '-views') ? 'bold' : '' }" ng-click="vm.gallerySortOrder='-views'">most popular</a> &nbsp;
+                        <a ng-style="{ 'font-weight': (vm.gallerySortOrder === '-posts') ? 'bold' : '' }" ng-click="vm.gallerySortOrder='-posts'">most discussed</a></div>
+                    {{vm.gallery.length}} widgets
+                </div>
+                <br />
+                <div class="col-xs-6 col-sm-4" ng-repeat="item in vm.gallery | orderBy:vm.gallerySortOrder">
+                    <div class="thumbnail gallery-item gallery-item-link" ng-click="vm.fetchGalleryItem(item.id)">
+                        <div class="caption">
+                            <h4 class="title">{{item.title}}</h4>
+                            <p class="gallery-item-image"><img ng-src="{{item.imageUrl}}"></p>
+                            <small class="gallery-item-stats">
+                                <i class="glyphicon glyphicon-heart"></i> {{item.likes}} &nbsp; 
+                                <i class="glyphicon glyphicon-eye-open"></i> {{item.views}} &nbsp;
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div ng-if="!vm.busy && vm.error" class="alert alert-danger">Error: {{vm.error}}</div>
+
+        <!-- <div ng-if="!vm.busy && !vm.repoDetails" class="alert alert-warning">Caution: Always be careful when importing widgets from unknown sources!</div> -->
+
+        <div class="modal-footer" style="clear: both">
+            <a ng-click="dismiss()" class="btn btn-default" tabindex="-1"><i class="glyphicon glyphicon-remove"></i>&nbsp;Cancel</a>
+        </div>
+    </form>
+</div>

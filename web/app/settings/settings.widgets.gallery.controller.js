@@ -3,10 +3,10 @@
 
     angular
         .module('app')
-        .controller('WidgetImportGitHubCtrl', WidgetImportGitHubController);
+        .controller('WidgetGalleryCtrl', WidgetGalleryController);
 
-    WidgetImportGitHubController.$inject = ['$scope', '$rootScope', '$http', '$q', '$uibModalInstance', 'prompt', 'PersistenceService'];
-    function WidgetImportGitHubController($scope, $rootScope, $http, $q, $modalInstance, prompt, PersistenceService) {
+    WidgetGalleryController.$inject = ['$scope', '$rootScope', '$http', '$q', '$uibModalInstance', 'prompt', 'PersistenceService'];
+    function WidgetGalleryController($scope, $rootScope, $http, $q, $modalInstance, prompt, PersistenceService) {
         var vm = this;
 
         vm.getRateLimits = function () {
@@ -15,14 +15,79 @@
             });
         }
 
-        vm.fetchRepo = function () {
+        vm.fetchGallery = function () {
+            vm.busy = true;
+            vm.progressMax = 1;
+            vm.progressCurrent = 1;
+
+            $http.get('/rest/habpanel/gallery/community/widgets')
+            .then(function (resp) {
+                vm.busy = false;
+                if (resp.data) {
+                    vm.gallery = resp.data;
+                }
+            });
+        }
+
+        vm.returnToGallery = function () {
+            vm.repoDetails = null;
+            vm.galleryItemDetails = null;
+        }
+
+        vm.fetchGalleryItem = function (id) {
+            vm.widgets = null;
+            vm.busy = true;
+            vm.repoDetails = null;
+            vm.repoId = null;
+            vm.galleryItemDetails = null;
+            vm.progressCurrent = 0;
+            vm.error = null;
+            vm.importableWidgets = vm.updatableWidgets = 0;
+            vm.progressMax = 1;
+            vm.progressCurrent = 1;
+
+            $http.get('/rest/habpanel/gallery/community/widgets/' + id)
+            .then(function (resp) {
+                vm.galleryItemDetails = resp.data;
+                if (vm.galleryItemDetails.authorAvatarUrl)
+                    vm.galleryItemDetails.authorAvatarUrl = vm.galleryItemDetails.authorAvatarUrl.replace('{{size}}', '60');
+                vm.readme = vm.galleryItemDetails.description.replace(/<a href=/g, '<a target="_blank" href=');
+                vm.busy = false;
+
+                angular.forEach(resp.data.widgets, function (galleryWidget) {
+                    if (!vm.widgets) vm.widgets = {};
+
+                    if (galleryWidget.id && galleryWidget.contents) {
+                        var widget = JSON.parse(galleryWidget.contents);
+                        if (widget.template) {
+                            if (PersistenceService.getCustomWidget(galleryWidget.id)) {
+                                widget.is_update = true;
+                                vm.updatableWidgets += 1;
+                            }
+                            vm.importableWidgets += 1;
+                            //widget.data.source_url = widget.config.url;
+                            widget.readme_url = "https://community.openhab.org/t/" + vm.galleryItemDetails.id;
+                            vm.widgets[galleryWidget.id] = widget;
+                        }
+                    }
+
+                });
+
+            });
+        }
+
+        vm.fetchRepo = function (newRepoUrl) {
+            if (newRepoUrl)
+                vm.repoId = newRepoUrl;
             if (!vm.repoId) return;
             if (vm.repoId.indexOf('https://github.com/') === 0) {
                 vm.repoId = vm.repoId.replace('https://github.com/', '');
             }
 
             vm.widgets = null;
-            vm.loadingRepo = true;
+            vm.repoDetails = null;
+            vm.galleryItemDetails = null;
+            vm.busy = true;
             vm.error = null;
             vm.importableWidgets = vm.updatableWidgets = 0;
             vm.progressMax = 4;
@@ -71,7 +136,7 @@
                                             }
                                         });
 
-                                        vm.loadingRepo = false;
+                                        vm.busy = false;
                                     });
                                 }
                             });
@@ -80,7 +145,7 @@
                 });
             } catch (e) {
                 vm.error = JSON.stringify(e);
-                vm.loadingRepo = false;
+                vm.busy = false;
                 vm.repoDetails = undefined;
             } finally {
                 vm.getRateLimits();
@@ -115,6 +180,8 @@
         };
 
         vm.getRateLimits();
+
+        vm.fetchGallery();
 
     }
 })();

@@ -56,12 +56,12 @@
             });
         };
 
-        vm.showImportGitHubDialog = function () {
-            $ocLazyLoad.load('app/settings/settings.widgets.list.import-github.js').then(function () {
+        vm.showImportGalleryDialog = function () {
+            $ocLazyLoad.load('app/settings/settings.widgets.gallery.controller.js').then(function () {
                 $modal.open({
                     scope: $scope,
-                    templateUrl: 'app/settings/settings.widgets.list.import-github.tpl.html',
-                    controller: 'WidgetImportGitHubCtrl',
+                    templateUrl: 'app/settings/settings.widgets.gallery.tpl.html',
+                    controller: 'WidgetGalleryCtrl',
                     controllerAs: 'vm',
                     backdrop: 'static',
                     size: 'lg',

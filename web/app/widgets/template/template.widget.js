@@ -152,9 +152,11 @@
                 if ($rootScope.configWidgets[$scope.widget.customwidget]) {
                     $scope.widgetsettings = angular.copy($rootScope.configWidgets[$scope.widget.customwidget].settings);
                     $scope.customwidget_name = $rootScope.configWidgets[$scope.widget.customwidget].name;
+                    $scope.customwidget_helpUrl = $rootScope.configWidgets[$scope.widget.customwidget].readme_url;
                 } else {
                     $scope.widgetsettings = angular.copy($rootScope.customwidgets[$scope.widget.customwidget].settings);
                     $scope.customwidget_name = $rootScope.customwidgets[$scope.widget.customwidget].name;
+                    $scope.customwidget_helpUrl = $rootScope.customwidgets[$scope.widget.customwidget].readme_url;
                 }
             }
         }

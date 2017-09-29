@@ -42,7 +42,7 @@
                     <ul class="dropdown-menu dropdown-menu-right" uib-dropdown-menu role="menu" aria-labelledby="template-actions">
                         <li class="menuitem"><a ng-click="vm.exportToFile(id, widget)"><i class="glyphicon glyphicon-export">&nbsp;</i>Export to file</a></li>
                         <li class="divider" ng-if="widget.source_url || widget.readme_url"></li>
-                        <li class="menuitem" ng-if="widget.readme_url"><a href="{{widget.readme_url}}" target="_blank"><i class="glyphicon glyphicon-question-sign">&nbsp;</i>Open Readme</a>
+                        <li class="menuitem" ng-if="widget.readme_url"><a href="{{widget.readme_url}}" target="_blank"><i class="glyphicon glyphicon-question-sign">&nbsp;</i>Open Help</a>
                         <li class="menuitem" ng-if="widget.source_url"><a ng-click="vm.updateWidget(id)"><i class="glyphicon glyphicon-retweet">&nbsp;</i>Update...</a>
                         <li class="divider"></li>
                         <li class="menuitem"><a ng-click="vm.deleteWidget(id)"><i class="glyphicon glyphicon-trash">&nbsp;</i>Delete</a>
@@ -68,14 +68,14 @@
         </button>
         <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="import-button">
             <li role="menuitem"><a ng-click="vm.showImportDialog()">Import from file...</a></li>
-            <li role="menuitem"><a ng-click="vm.showImportGitHubDialog()">Import from GitHub...</a></li>
+            <li role="menuitem"><a ng-click="vm.showImportGalleryDialog()">Import from gallery...</a></li>
         </ul>
     </span>
 
     <input style="display: none" type="file" id="widget-file-select" local-file-select="file" on-file-selected="vm.importFile" />
 
-    <br /><br />
-    <a href="https://community.openhab.org/tags/c/apps-services/habpanel/widget" target="_blank">Get widgets from the openHAB community</a>
+    <!-- <br /><br />
+    <a href="https://community.openhab.org/tags/c/apps-services/habpanel/widget" target="_blank">Get widgets from the openHAB community</a> -->
 </div>
 
 

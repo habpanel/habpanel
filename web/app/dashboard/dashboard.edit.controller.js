@@ -1,6 +1,6 @@
 angular.module('app')
-    .controller('DashboardEditCtrl', ['$scope', '$location', '$timeout', 'dashboard', 'Widgets', 'PersistenceService', 'OHService',
-        function($scope, $location, $timeout, dashboard, Widgets, PersistenceService, OHService) {
+    .controller('DashboardEditCtrl', ['$scope', '$rootScope', '$location', '$timeout', 'dashboard', 'Widgets', 'PersistenceService', 'OHService', '$ocLazyLoad', '$uibModal',
+        function($scope, $rootScope, $location, $timeout, dashboard, Widgets, PersistenceService, OHService, $ocLazyLoad, $modal) {
 
             $scope.dashboard = dashboard;
 
@@ -22,48 +22,6 @@ angular.module('app')
             };
 
             $scope.widgetTypes = Widgets.getWidgetTypes();
-
-
-            $scope.loadScript = function(url, type, charset) {
-                if (type===undefined) type = 'text/javascript';
-                if (url) {
-                    var script = document.querySelector("script[src*='"+url+"']");
-                    if (!script) {
-                        var heads = document.getElementsByTagName("head");
-                        if (heads && heads.length) {
-                            var head = heads[0];
-                            if (head) {
-                                script = document.createElement('script');
-                                script.setAttribute('src', url);
-                                script.setAttribute('type', type);
-                                if (charset) script.setAttribute('charset', charset);
-                                head.appendChild(script);
-                            }
-                        }
-                    }
-                    return script;
-                }
-            };
-
-            $scope.loadCss = function(url) {
-                if (url) {
-                    var script = document.querySelector("link[href*='"+url+"']");
-                    if (!script) {
-                        var heads = document.getElementsByTagName("head");
-                        if (heads && heads.length) {
-                            var head = heads[0];
-                            if (head) {
-                                script = document.createElement('link');
-                                script.setAttribute('rel', 'stylesheet');
-                                script.setAttribute('href', url);
-                                head.appendChild(script);
-                                setTimeout(200);
-                            }
-                        }
-                    }
-                    return script;
-                }
-            };
 
             $scope.clear = function() {
                 $scope.dashboard.widgets = [];
@@ -104,6 +62,26 @@ angular.module('app')
                     $scope.error = err;
                 });
                 
+            };
+
+            $scope.openWidgetGallery = function () {
+                $ocLazyLoad.load('app/settings/settings.widgets.gallery.controller.js').then(function () {
+                    $modal.open({
+                        scope: $scope,
+                        templateUrl: 'app/settings/settings.widgets.gallery.tpl.html',
+                        controller: 'WidgetGalleryCtrl',
+                        controllerAs: 'vm',
+                        backdrop: 'static',
+                        size: 'lg',
+                    }).result.then(function (widgets) {
+                        angular.forEach(widgets, function (widget, id) {
+                            delete widget.is_update;
+                            $rootScope.customwidgets[id] = angular.copy(widget);
+                            $scope.addCustomWidget(id);
+                        });
+                        PersistenceService.saveDashboards();
+                    });
+                });
             };
 
             OHService.reloadItems();
@@ -241,7 +219,3 @@ angular.module('app')
             return out;
         }
     });
-
-
-
-
