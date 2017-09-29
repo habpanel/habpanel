@@ -78,7 +78,10 @@ public class CommunityWidgetGalleryProvider implements GalleryWidgetProvider {
 
     @Override
     public GalleryWidgetsItem getGalleryItem(String id) throws Exception {
-        URL url = new URL(COMMUNITY_TOPIC_URL + id + ".json");
+        if (Integer.parseInt(id) < 1) {
+            throw new IllegalArgumentException("invalid community gallery id");
+        }
+        URL url = new URL(String.format("%s%s.json", COMMUNITY_TOPIC_URL, id));
         URLConnection connection = url.openConnection();
 
         try {
@@ -123,7 +126,7 @@ public class CommunityWidgetGalleryProvider implements GalleryWidgetProvider {
                                 item.widgets.add(widget);
                             }
                         } finally {
-                            IOUtils.closeQuietly(connection.getInputStream());
+                            IOUtils.closeQuietly(widgetDownload.getInputStream());
                         }
 
                     }
