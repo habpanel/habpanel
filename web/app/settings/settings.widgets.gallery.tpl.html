@@ -52,11 +52,17 @@
     }
 
     .gallery-details-header .gallery-details-title {
-        color: black;
+        color: #444;
+        font-weight: bold;
     }
 
     .gallery-details-header .gallery-details-info {
         padding-left: 5em;
+    }
+
+    .gallery-details-header .gallery-details-author {
+        color: #555;
+        font-weight: bold;
     }
 
     .gallery-details-header .import-btn {
@@ -144,8 +150,8 @@
                     <div class="panel-heading gallery-details-header" ng-if="vm.galleryItemDetails">
                         <img ng-src="{{vm.galleryItemDetails.authorAvatarUrl.replace('{size}', '60')}}" class="avatar" />
                         <div class="col-md-8 gallery-details-info">
-                            <h4><a class="gallery-details-title" href="https://community.openhab.org/t/{{vm.galleryItemDetails.id}}" target="_blank">{{vm.galleryItemDetails.title}}</a><br /><small>by <strong><a href="https://community.openhab.org/u/{{vm.galleryItemDetails.author}}" target="_blank">{{vm.galleryItemDetails.authorName}}</a></strong></a>&nbsp;|&nbsp;<i class="glyphicon glyphicon-heart"></i>&nbsp;{{vm.galleryItemDetails.likes}}&nbsp;|&nbsp;<i class="glyphicon glyphicon-eye-open"></i>&nbsp;{{vm.galleryItemDetails.views}}</small></h4>
-                            <small><a href="https://community.openhab.org/t/{{vm.galleryItemDetails.id}}" target="_blank"><i class="glyphicon glyphicon-globe"></i>&nbsp;{{vm.galleryItemDetails.posts}} post(s) on this topic - Discuss on community.openhab.org</a></small>
+                            <h4><a class="gallery-details-title" href="https://community.openhab.org/t/{{vm.galleryItemDetails.id}}" target="_blank">{{vm.galleryItemDetails.title}}</a><br /><small>by <a class="gallery-details-author" href="https://community.openhab.org/u/{{vm.galleryItemDetails.author}}" target="_blank">{{vm.galleryItemDetails.authorName}}</a>&nbsp;&nbsp;|&nbsp;&nbsp;<i class="glyphicon glyphicon-heart"></i>&nbsp;{{vm.galleryItemDetails.likes}}&nbsp;&nbsp;|&nbsp;&nbsp;<i class="glyphicon glyphicon-eye-open"></i>&nbsp;{{vm.galleryItemDetails.views}}</small></h4>
+                            <a href="https://community.openhab.org/t/{{vm.galleryItemDetails.id}}" target="_blank"><i class="glyphicon glyphicon-comment"></i>&nbsp;{{vm.galleryItemDetails.posts}} post(s) on this topic - discuss on community.openhab.org</a>
                         </div>
                         <div class="col-md-4">
                             <button type="button" class="btn btn-lg btn-success import-btn" ng-click="submit()" ng-disabled="vm.importableWidgets < 1" ng-if="vm.importableWidgets > 0 || !vm.galleryItemDetails.githubLink">
@@ -173,7 +179,7 @@
                     <div class="panel-heading gallery-details-header" ng-if="vm.repoDetails">
                         <img ng-src="{{vm.repoDetails.owner.avatar_url}}" class="avatar" />
                         <div class="col-md-8 gallery-details-info">
-                            <h4><a class="gallery-details-title" href="{{vm.repoDetails.html_url}}" target="_blank">{{vm.repoDetails.name}}</a><br /><small>by <a href="{{vm.repoDetails.owner.html_url}}" target="_blank">{{vm.repoDetails.owner.login}}</a>&nbsp;|&nbsp;<i class="glyphicon glyphicon-star"></i>&nbsp;{{vm.repoDetails.stargazers_count}}</small></h4>
+                            <h4><a class="gallery-details-title" href="{{vm.repoDetails.html_url}}" target="_blank">{{vm.repoDetails.name}}</a><br /><small>by <a class="gallery-details-author" href="{{vm.repoDetails.owner.html_url}}" target="_blank">{{vm.repoDetails.owner.login}}</a>&nbsp;&nbsp;|&nbsp;&nbsp;<i class="glyphicon glyphicon-star"></i>&nbsp;{{vm.repoDetails.stargazers_count}}</small></h4>
                             <div>{{vm.repoDetails.description}}</div>
                             <small><a ng-if="vm.repoDetails.homepage" href="{{vm.repoDetails.homepage}}" target="_blank"><i class="glyphicon glyphicon-globe"></i>&nbsp;{{vm.repoDetails.homepage}}</a></small>
                         </div>
@@ -228,11 +234,11 @@
             <div ng-if="!vm.busy && !vm.repoDetails && !vm.galleryItemDetails && vm.gallery">
                 <div ng-if="vm.gallery">
                     <div class="pull-right">sort by:
-                        <a ng-style="{ 'font-weight': (!vm.gallerySortOrder) ? 'bold' : '' }" ng-click="vm.gallerySortOrder=null">most recent</a> &nbsp;
-                        <a ng-style="{ 'font-weight': (vm.gallerySortOrder === '-likes') ? 'bold' : '' }" ng-click="vm.gallerySortOrder='-likes'">most liked</a> &nbsp;
-                        <a ng-style="{ 'font-weight': (vm.gallerySortOrder === '-views') ? 'bold' : '' }" ng-click="vm.gallerySortOrder='-views'">most popular</a> &nbsp;
-                        <a ng-style="{ 'font-weight': (vm.gallerySortOrder === '-posts') ? 'bold' : '' }" ng-click="vm.gallerySortOrder='-posts'">most discussed</a></div>
-                    {{vm.gallery.length}} widgets
+                        <a ng-style="{ 'font-weight': (!vm.gallerySortOrder) ? 'bold' : '' }" ng-click="vm.gallerySortOrder=null">most&nbsp;recent</a> &nbsp;
+                        <a ng-style="{ 'font-weight': (vm.gallerySortOrder === '-likes') ? 'bold' : '' }" ng-click="vm.gallerySortOrder='-likes'">most&nbsp;liked</a> &nbsp;
+                        <a ng-style="{ 'font-weight': (vm.gallerySortOrder === '-views') ? 'bold' : '' }" ng-click="vm.gallerySortOrder='-views'">most&nbsp;popular</a> &nbsp;
+                        <a ng-style="{ 'font-weight': (vm.gallerySortOrder === '-posts') ? 'bold' : '' }" ng-click="vm.gallerySortOrder='-posts'">most&nbsp;discussed</a></div>
+                    <strong>{{vm.gallery.length}}&nbsp;community&nbsp;contributions</strong>
                 </div>
                 <br />
                 <div class="col-xs-6 col-sm-4" ng-repeat="item in vm.gallery | orderBy:vm.gallerySortOrder">
@@ -243,6 +249,7 @@
                             <small class="gallery-item-stats">
                                 <i class="glyphicon glyphicon-heart"></i> {{item.likes}} &nbsp; 
                                 <i class="glyphicon glyphicon-eye-open"></i> {{item.views}} &nbsp;
+                                <span ng-if="item.posts > 1"><i class="glyphicon glyphicon-comment"></i> {{item.posts-1}}</span>
                             </small>
                         </div>
                     </div>
