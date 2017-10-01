@@ -73,13 +73,13 @@
 
     .gallery-item.thumbnail {
         height: 220px;
+        text-align: left;
     }
 
     .gallery-item.thumbnail .caption .title {
         height: 1.2em;
         overflow: hidden;
         text-overflow: ellipsis;
-        display: -webkit-box;
         -webkit-box-orient: vertical;
         white-space: nowrap;
     }
@@ -89,7 +89,6 @@
         overflow: hidden;
         text-overflow: ellipsis;
         -webkit-line-clamp: 5;
-        display: -webkit-box;
         -webkit-box-orient: vertical;
     }
 
@@ -98,19 +97,12 @@
         overflow: hidden;
         text-overflow: ellipsis;
         -webkit-line-clamp: 5;
-        display: -webkit-box;
         -webkit-box-orient: vertical;
         text-align: center;
     }
 
     .gallery-item.thumbnail .caption .gallery-item-image img {
         height: 120px;
-    }
-    .gallery-item.gallery-item-link {
-        cursor:pointer;
-    }
-    .gallery-item.gallery-item-link:hover {
-        background-color: #dddddd;
     }
 
 </style>
@@ -156,7 +148,7 @@
                         <div class="col-md-4">
                             <button type="button" class="btn btn-lg btn-success import-btn" ng-click="submit()" ng-disabled="vm.importableWidgets < 1" ng-if="vm.importableWidgets > 0 || !vm.galleryItemDetails.githubLink">
                                 <ng-pluralize count="vm.importableWidgets"
-                                    when="{'0': 'No widgets found',
+                                    when="{'0': 'Nothing to import',
                                            'one': 'Import Widget',
                                            'other': 'Import {} Widgets'}">
                                 </ng-pluralize>
@@ -186,7 +178,7 @@
                         <div class="col-md-4">
                             <button type="button" class="btn btn-lg btn-success import-btn" ng-click="submit()" ng-disabled="vm.importableWidgets < 1">
                                 <ng-pluralize count="vm.importableWidgets"
-                                    when="{'0': 'No widgets found',
+                                    when="{'0': 'Nothing to import',
                                            'one': 'Import Widget',
                                            'other': 'Import {} Widgets'}">
                                 </ng-pluralize>
@@ -242,7 +234,7 @@
                 </div>
                 <br />
                 <div class="col-xs-6 col-sm-4" ng-repeat="item in vm.gallery | orderBy:vm.gallerySortOrder">
-                    <div class="thumbnail gallery-item gallery-item-link" ng-click="vm.fetchGalleryItem(item.id)">
+                    <div class="thumbnail btn btn-default gallery-item gallery-item-link" ng-click="vm.fetchGalleryItem(item.id)">
                         <div class="caption">
                             <h4 class="title">{{item.title}}</h4>
                             <p class="gallery-item-image"><img ng-src="{{item.imageUrl}}"></p>

@@ -29,6 +29,9 @@
                         return item;
                     });
                 }
+            }, function (err) {
+                vm.busy = false;
+                vm.error = (err.data && err.data.error && err.data.error.message) ? err.data.error.message : JSON.stringify(err);
             });
         }
 
@@ -75,6 +78,9 @@
                         }
                     }
 
+                }, function (err) {
+                    vm.busy = false;
+                    vm.error = (err.data && err.data.error && err.data.error.message) ? err.data.error.message : JSON.stringify(err);
                 });
 
             });
