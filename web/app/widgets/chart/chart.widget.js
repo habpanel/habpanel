@@ -246,11 +246,14 @@
 
         vm.imageQueryString = function(val) {
             var ret = "";
+            var chartTheme = themeValueFilter(vm.widget.theme, 'chart-default-theme');
             if (vm.widget.isgroup)
                 ret = "groups=" + vm.widget.item;
             else
                 ret = "items=" + vm.widget.item;
-
+            if (chartTheme) {
+                ret += '&theme=' + chartTheme.replace(/"/g, '');
+            }
             return ret + "&period=" + vm.widget.period;
         }
 

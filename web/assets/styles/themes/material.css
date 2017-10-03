@@ -19,6 +19,7 @@
     --chart-stroke: #456;
     --chart-fill: #89a;
     --chart-tooltip: #fff;
+    --chart-default-theme: "white";
     /* Color picker widget */
     --colorpicker-border: #3960ff;
     --colorpicker-stroke: #456;
