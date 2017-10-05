@@ -246,13 +246,29 @@
 
         vm.imageQueryString = function(val) {
             var ret = "";
-            var chartTheme = themeValueFilter(vm.widget.theme, 'chart-default-theme');
             if (vm.widget.isgroup)
                 ret = "groups=" + vm.widget.item;
             else
                 ret = "items=" + vm.widget.item;
+            // if chartTheme is given, append the theme parameter.
+            // empty theme parameter renders the default theme.
+            var chartTheme = themeValueFilter(vm.widget.theme, 'chart-default-theme');
             if (chartTheme) {
                 ret += '&theme=' + chartTheme.replace(/"/g, '');
+            }
+            // append legend parameter
+            if (vm.widget.showlegend) {
+                switch (vm.widget.showlegend) {
+                    case "auto":
+                        // do not append anything, as 'automatic' is the default
+                        break;
+                    case "always":
+                        ret += "&legend=true";
+                        break;
+                    case "never":
+                        ret += "&legend=false";
+                        break;
+                }
             }
             return ret + "&period=" + vm.widget.period;
         }
@@ -277,6 +293,7 @@
             charttype: widget.charttype,
             service: widget.service,
             period: widget.period,
+            showlegend: widget.showlegend,
             refresh: widget.refresh,
             axis: widget.axis || {y: {}, y2: {} },
             series: widget.series || [],
@@ -315,6 +332,9 @@
             } else {
                 if (!widget.axis.y2.enabled)
                     delete widget.axis.y2;
+            }
+            if (widget.charttype !== "default") {
+                delete widget.showlegend;
             }
 
             $modalInstance.close(widget);

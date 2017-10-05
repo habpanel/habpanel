@@ -56,6 +56,16 @@
                             </select>
                         </div>
                     </div>
+                    <div class="form-group" ng-class="{error: _form.showlegend.$error && _form.submitted}" ng-if="form.charttype=='default'">
+                        <label class="control-label col-lg-3 col-md-3">Show legend</label>
+                        <div class="col-lg-9 col-md-9">
+                            <select ng-model="form.showlegend" class="form-control">
+                                <option value="auto">Automatic</option>
+                                <option value="always">Always</option>
+                                <option value="never">Never</option>
+                            </select>
+                        </div>
+                    </div>
                 </uib-tab>
                     <!--<div class="form-group" ng-class="{error: _form.refresh.$error && _form.submitted}">
                         <label class="control-label col-lg-3 col-md-3">Resfresh interval</label>
