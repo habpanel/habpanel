@@ -74,6 +74,7 @@
             });
         }
 
+        vm.background = this.widget.background || 'rgb(0, 0, 0)';
     }
 
 
@@ -93,7 +94,8 @@
             image_source: widget.image_source || 'static',
             url         : widget.url,
             refresh     : widget.refresh,
-            intervaltype: widget.intervaltype || 'seconds'
+            intervaltype: widget.intervaltype || 'seconds',
+            background  : widget.background || 'rgb(0, 0, 0)'
         };
         if (widget.image_source === 'item-string') $scope.form.item_string = widget.item;
         if (widget.image_source === 'item-image') $scope.form.item_image = widget.item;

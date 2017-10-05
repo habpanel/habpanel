@@ -56,6 +56,12 @@
                     </div>
                 </div>
             </div>
+            <div class="form-group" ng-class="{error: _form.background.$error && _form.submitted}">
+                <label class="control-label col-lg-3 col-md-3">Background color</label>
+                <div class="col-lg-9 col-md-9">
+                    <div dab-model="form.background" web-colorpicker dab-width="20" dab-height="20" dab-radius="50" dab-vertical="4" dab-rotate="0" show-grayscale="true"></div>
+                </div>
+            </div>
         </div>
         <div class="modal-footer">
             <a ng-click="remove()" class="btn btn-danger pull-left" tabindex="-1"><i class="glyphicon glyphicon-trash"></i>&nbsp;Delete</a>
