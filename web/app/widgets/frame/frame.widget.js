@@ -61,7 +61,7 @@
             }
 
             if (vm.widget.refresh) {
-                vm.value += '?_t='+ (new Date()).getTime();
+                vm.value += (vm.value.match(/\?/) ? '&' : '?') + '_t='+ (new Date()).getTime();
             }
 
             vm.detailFrame = $sce.trustAsResourceUrl(vm.value);
