@@ -38,8 +38,8 @@
         }
     }
 
-    SymbolController.$inject = ['$rootScope', '$scope', '$location', 'OHService'];
-    function SymbolController ($rootScope, $scope, $location, OHService) {
+    SymbolController.$inject = ['$rootScope', '$scope', '$location', '$interval', 'OHService'];
+    function SymbolController($rootScope, $scope, $location, $interval, OHService) {
         var vm = this;
         this.widget = this.ngModel;
         
@@ -116,11 +116,16 @@
             return false;
         }
 
-        OHService.onUpdate($scope, vm.widget.item, function () {
+        OHService.onUpdate($scope, vm.widget.item, function() {
             update();
         });
 
-        this.timer = setInterval(update, 1000);
+        // todo: only if a time condition is configured
+        var timer = $interval(update, 1000);
+
+        $scope.$on('$destroy', function(event) {
+            $interval.cancel(timer);
+        });
     }
 
     // settings dialog
