@@ -1,5 +1,5 @@
-<div class="box-content symbol" ng-style="{ 'background-color': vm.currentStyle.background, color: vm.currentStyle.foreground }">
-    <div class="symbol-content">
+<div class="box-content symbol" ng-class="[vm.currentStyle.backgroundAnimation]" ng-style="{ 'background-color': vm.currentStyle.background, color: vm.currentStyle.foreground }">
+    <div class="symbol-content" ng-class="[vm.currentStyle.iconRotation, vm.currentStyle.iconAnimation]">
         <widget-icon size="vm.currentStyle.iconSize" iconset="vm.currentStyle.iconSet" icon="vm.currentStyle.icon"></widget-icon>
     </div>
 </div>

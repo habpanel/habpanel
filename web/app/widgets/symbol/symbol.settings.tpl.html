@@ -46,13 +46,11 @@
                                 <div class="form-group" ng-repeat="condition in rule.conditions">
                                     <div class="col-xs-3"></div>
                                     <div class="col-xs-3">
-                                        <select ng-options="operand as operand.name for operand in operands" ng-model="condition.operand" class="form-control">
-                                            <option style="display:none" value="">Select an operand</option>
+                                        <select ng-options="operand.code as operand.name for operand in operands" ng-model="condition.operand" class="form-control">
                                         </select>
                                     </div>
                                     <div class="col-xs-3">
-                                        <select ng-options="operator as operator.name for operator in operators" ng-model="condition.operator" class="form-control">
-                                            <option style="display:none" value="">Select an operator</option>
+                                        <select ng-options="operator.code as operator.name for operator in operators" ng-model="condition.operator" class="form-control">
                                         </select>
                                     </div>
                                     <div class="col-xs-2">
@@ -107,23 +105,21 @@
                             <div class="form-group" ng-class="{error: _form.action_type.$error && _form.submitted}">
                                 <label class="control-label col-lg-3 col-md-3">Icon Rotation</label>
                                 <div class="col-lg-9 col-md-9">
-                                    <select ng-model="rule.style.rotation" class="form-control">
-                                        <option value="symbol-rotation-none">None</option>
-                                        <option value="symbol-rotation-45">45°</option>
-                                        <option value="symbol-rotation-90">90°</option>
-                                        <option value="symbol-rotation-135">135°</option>
-                                        <option value="symbol-rotation-180">180°</option>
-                                        <option value="symbol-rotation-225">225°</option>
-                                        <option value="symbol-rotation-270">270°</option>
-                                        <option value="symbol-rotation-315">315°</option>
+                                    <select ng-options="rotation.code as rotation.name for rotation in rotations" ng-model="rule.style.iconRotation" class="form-control">
                                     </select>
                                 </div>
                             </div>
                             <div class="form-group" ng-class="{error: _form.action_type.$error && _form.submitted}">
-                                <label class="control-label col-lg-3 col-md-3">Animation</label>
+                                <label class="control-label col-lg-3 col-md-3">Icon Animation</label>
                                 <div class="col-lg-9 col-md-9">
-                                    <select ng-model="rule.style.animation" class="form-control">
-                                        <option value="symbol-animation-none">None</option>
+                                    <select ng-options="animation.code as animation.name for animation in animations" ng-model="rule.style.iconAnimation" class="form-control">
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group" ng-class="{error: _form.action_type.$error && _form.submitted}">
+                                <label class="control-label col-lg-3 col-md-3">Background Animation</label>
+                                <div class="col-lg-9 col-md-9">
+                                    <select ng-options="animation.code as animation.name for animation in animations" ng-model="rule.style.backgroundAnimation" class="form-control">
                                     </select>
                                 </div>
                             </div>

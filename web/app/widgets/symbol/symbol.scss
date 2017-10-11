@@ -1,3 +1,6 @@
+// -----------------------------------
+// generic classes
+
 .switch {
     display: flex;
 }
@@ -6,6 +9,9 @@
     margin: auto;
     text-align: center;
 }
+
+// -----------------------------------
+// rotation classes
 
 .symbol-rotation-45 {
     transform: rotate(45deg);
@@ -33,4 +39,53 @@
 
 .symbol-rotation-315 {
     transform: rotate(315deg);
+}
+
+// -----------------------------------
+// animation classes
+
+.symbol-animation-duration-0-5s {
+    animation-duration: 500ms;
+}
+
+.symbol-animation-duration-1-0s {
+    animation-duration: 1000ms;
+}
+
+.symbol-animation-duration-1-5s {
+    animation-duration: 1500ms;
+}
+
+.symbol-animation-duration-2-0s {
+    animation-duration: 2000ms;
+}
+
+// spin animation
+@keyframes spin {
+    from { transform:rotate(0deg); }
+    to { transform:rotate(360deg); }
+}
+
+.symbol-animation-spin {
+    animation-name: spin;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+// flash animation
+@-webkit-keyframes flash {
+    0% { opacity: 1; } 
+    50% { opacity: .1; } 
+    100% { opacity: 1; }
+}
+@keyframes flash {
+    0% { opacity: 1; } 
+    50% { opacity: .1; } 
+    100% { opacity: 1; }
+}
+
+.symbol-animation-flash {
+    animation-name: flash;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
 }
