@@ -119,6 +119,8 @@
         OHService.onUpdate($scope, vm.widget.item, function () {
             update();
         });
+
+        this.timer = setInterval(update, 1000);
     }
 
     // settings dialog
@@ -128,6 +130,7 @@
         $scope.widget = widget;
         $scope.items = OHService.getItems();
 
+        // define available operands
         $scope.operands = [{
             code: "item-state",
             name: "Item state"
@@ -139,6 +142,7 @@
             name: "Current date"
         }];
 
+        // define available operators
         $scope.operators = [{
             code: "equal-to",
             name: "equal to"
@@ -168,6 +172,7 @@
             name: "does not match"        
         }];
 
+        // define available rotations
         $scope.rotations = [{
             code: "symbol-rotation-none", 
             name: "None"
@@ -194,33 +199,58 @@
             name: "315°" 
         }];
 
+        // define available animations
         $scope.animations = [{
             code: "symbol-animation-none", 
             name: "None"
         }, {
             code: "symbol-animation-spin symbol-animation-duration-0-5s",
-            name: "Spin 0,5s" 
+            name: "Spin right 0.5s" 
         }, {
             code: "symbol-animation-spin symbol-animation-duration-1-0s",
-            name: "Spin 1,0s" 
+            name: "Spin right 1.0s" 
         }, {
             code: "symbol-animation-spin symbol-animation-duration-1-5s",
-            name: "Spin 1,5s" 
+            name: "Spin right 1.5s" 
         }, {
             code: "symbol-animation-spin symbol-animation-duration-2-0s",
-            name: "Spin 2,0s" 
+            name: "Spin right 2.0s" 
+        }, {
+            code: "symbol-animation-spin-ccw symbol-animation-duration-0-5s",
+            name: "Spin left 0.5s" 
+        }, {
+            code: "symbol-animation-spin-ccw symbol-animation-duration-1-0s",
+            name: "Spin left 1.0s" 
+        }, {
+            code: "symbol-animation-spin-ccw symbol-animation-duration-1-5s",
+            name: "Spin left 1.5s" 
+        }, {
+            code: "symbol-animation-spin-ccw symbol-animation-duration-2-0s",
+            name: "Spin left 2.0s" 
         }, {
             code: "symbol-animation-flash symbol-animation-duration-0-5s",
-            name: "Flash 0,5s" 
+            name: "Flash 0.5s" 
         }, {
             code: "symbol-animation-flash symbol-animation-duration-1-0s",
-            name: "Flash 1,0s" 
+            name: "Flash 1.0s" 
         }, {
             code: "symbol-animation-flash symbol-animation-duration-1-5s",
-            name: "Flash 1,5s" 
+            name: "Flash 1.5s" 
         }, {
             code: "symbol-animation-flash symbol-animation-duration-2-0s",
-            name: "Flash 2,0s" 
+            name: "Flash 2.0s" 
+        }, {
+            code: "symbol-animation-blink symbol-animation-duration-0-5s",
+            name: "Blink 0.5s" 
+        }, {
+            code: "symbol-animation-blink symbol-animation-duration-1-0s",
+            name: "Blink 1.0s" 
+        }, {
+            code: "symbol-animation-blink symbol-animation-duration-1-5s",
+            name: "Blink 1.5s" 
+        }, {
+            code: "symbol-animation-blink symbol-animation-duration-2-0s",
+            name: "Blink 2.0s" 
         }];
 
         $scope.form = {
@@ -256,8 +286,7 @@
                     iconAnimation: "symbol-animation-none",
                     iconRotation: "symbol-rotation-none",
                     background: "transparent",
-                    backgroundAnimation: "symbol-animation-none",
-                    foreground: "#ffffff"
+                    backgroundAnimation: "symbol-animation-none"
                 }
             });
         };

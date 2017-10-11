@@ -72,12 +72,19 @@
     animation-timing-function: linear;
 }
 
-// flash animation
-@-webkit-keyframes flash {
-    0% { opacity: 1; } 
-    50% { opacity: .1; } 
-    100% { opacity: 1; }
+// spin-ccw animation
+@keyframes spin-ccw {
+    from { transform:rotate(360deg); }
+    to { transform:rotate(0deg); }
 }
+
+.symbol-animation-spin-ccw {
+    animation-name: spin-ccw;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+// flash animation
 @keyframes flash {
     0% { opacity: 1; } 
     50% { opacity: .1; } 
@@ -88,4 +95,17 @@
     animation-name: flash;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
+}
+
+// blink animation
+@keyframes blink {
+    0% { opacity: 1; }
+    49% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+.symbol-animation-blink {
+    animation-name: blink;
+    animation-iteration-count: infinite;
 }
