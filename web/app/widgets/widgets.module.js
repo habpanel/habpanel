@@ -90,12 +90,36 @@
             scope.colorize = IconService.getIconSet(scope.iconset).colorize;
             scope.iconUrl = IconService.getIconUrl(scope.iconset, scope.icon);
 
-            scope.$watch('state', function (state) {
+            scope.$watch('state', function(state) {
+                scope.state = (state) ? state.toString() : null;
                 scope.iconUrl = IconService.getIconUrl(
                     scope.iconset,
                     scope.icon,
-                    (state) ? state.toString() : null
+                    scope.state
                 );
+            });
+
+            scope.$watch('iconset', function updateUrl(iconset) {
+                scope.iconset = iconset;
+                scope.colorize = IconService.getIconSet(scope.iconset).colorize;
+                scope.iconUrl = IconService.getIconUrl(
+                    scope.iconset,
+                    scope.icon,
+                    scope.state
+                );
+            });
+
+            scope.$watch('icon', function updateUrl(icon) {
+                scope.icon = icon;
+                scope.iconUrl = IconService.getIconUrl(
+                    scope.iconset,
+                    scope.icon,
+                    scope.state
+                );
+            });
+
+            scope.$watch('size', function updateUrl(size) {
+                scope.size = size;
             });
         }
     }
@@ -129,6 +153,7 @@
                     case 'Image': return 'picture';
                     case 'Location': return 'map-marker';
                     case 'Call': return 'earphone';
+                    case 'Symbol': return 'sort-by-attributes';
                     default: return 'asterisk';
                 }
             };

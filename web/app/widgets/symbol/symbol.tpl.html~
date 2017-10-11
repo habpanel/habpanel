@@ -1,0 +1,10 @@
+<div class="box-content switch" ng-style="{ 'background-color': vm.background, color: vm.foreground }" ng-click="vm.sendCommand()">
+    <widget-icon ng-if="vm.widget.backdrop_icon" backdrop="true" iconset="vm.widget.backdrop_iconset" icon="vm.widget.backdrop_icon" center="vm.widget.backdrop_center"></widget-icon>
+    <div class="switch-content">
+        <widget-icon ng-if="vm.widget.icon && vm.widget.icon_nolinebreak" size="vm.widget.icon_size" iconset="vm.widget.iconset" icon="vm.widget.icon" inline="vm.widget.icon_nolinebreak" state="vm.value"></widget-icon>
+        <!--<span ng-if="!vm.widget.nolinebreak">{{vm.widget.name}}</span>-->
+        <widget-icon ng-if="vm.widget.icon && !vm.widget.icon_nolinebreak" size="vm.widget.icon_size" iconset="vm.widget.iconset" icon="vm.widget.icon" inline="vm.widget.icon_nolinebreak" state="vm.value"></widget-icon>
+        <!--<br ng-if="!vm.widget.nolinebreak" />-->
+        <span ng-hide="vm.widget.icon && vm.widget.icon_replacestext" ng-style="{ 'font-size': vm.font_size + 'pt' }">{{vm.ngModel.name}}</span>
+    </div>
+</div>
