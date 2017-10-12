@@ -83,4 +83,5 @@
 .symbol-animation-blink {
     animation-name: blink;
     animation-iteration-count: infinite;
+    animation-timing-function: step-end;
 }
