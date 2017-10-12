@@ -100,6 +100,8 @@
             });
 
             scope.$watch('iconset', function updateUrl(iconset) {
+                if (!iconset || iconset == "")
+                    return;
                 scope.iconset = iconset;
                 scope.colorize = IconService.getIconSet(scope.iconset).colorize;
                 scope.iconUrl = IconService.getIconUrl(
@@ -110,6 +112,8 @@
             });
 
             scope.$watch('icon', function updateUrl(icon) {
+                if (!icon || icon == "")
+                    return;
                 scope.icon = icon;
                 scope.iconUrl = IconService.getIconUrl(
                     scope.iconset,
