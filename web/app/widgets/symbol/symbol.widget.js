@@ -177,33 +177,6 @@
             name: "does not match"        
         }];
 
-        // define available rotations
-        $scope.rotations = [{
-            code: "symbol-rotation-none", 
-            name: "None"
-        }, {
-            code: "symbol-rotation-45",
-            name: "45°" 
-        }, {
-            code: "symbol-rotation-90",
-            name: "90°" 
-        }, {
-            code: "symbol-rotation-135",
-            name: "135°" 
-        }, {
-            code: "symbol-rotation-180",
-            name: "180°" 
-        }, {
-            code: "symbol-rotation-225",
-            name: "225°" 
-        }, {
-            code: "symbol-rotation-270",
-            name: "270°" 
-        }, {
-            code: "symbol-rotation-315",
-            name: "315°" 
-        }];
-
         // define available animations
         $scope.animations = [{
             code: "symbol-animation-none", 

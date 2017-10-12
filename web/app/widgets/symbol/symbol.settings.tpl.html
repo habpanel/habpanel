@@ -42,7 +42,7 @@
                             <uib-accordion-heading>
                                 <div class="row">
                                     <div class="col-xs-8">
-                                            Rule {{$index+1}}
+                                        Rule {{$index+1}}
                                     </div>
                                     <div class="col-xs-4">
                                         <button type="button" class="btn pull-right" title="Delete rule" ng-click="removeRule($index)"><i class="glyphicon glyphicon-trash"></i></button>
@@ -95,8 +95,10 @@
                             <div class="form-group row" ng-class="{error: _form.action_type.$error && _form.submitted}">
                                 <label class="control-label col-xs-3">Icon Rotation</label>
                                 <div class="col-xs-9">
-                                    <select ng-options="rotation.code as rotation.name for rotation in rotations" ng-model="rule.style.iconRotation" class="form-control">
-                                    </select>
+                                    <div class="input-group">
+                                        <input name="iconsize" ng-model="rule.style.iconRotation" class="form-control" />
+                                        <div class="input-group-addon">°</div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="form-group" ng-class="{error: _form.action_type.$error && _form.submitted}">
