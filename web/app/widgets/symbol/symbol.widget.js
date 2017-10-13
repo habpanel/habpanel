@@ -116,16 +116,30 @@
             return false;
         }
 
+        function timeConditionConfigured() {
+            for (var r = 0; r < vm.widget.rules.length; ++r) {
+                var rule = vm.widget.rules[r];
+                for (var c = 0; c < rule.conditions.length; ++c) {
+                    var operand = rule .conditions[c].operand;
+                    if (operand == "current-time" || operand == "current-date")
+                        return true;
+                }
+            }
+
+            return false;
+        }
+
         OHService.onUpdate($scope, vm.widget.item, function() {
             update();
         });
 
-        // todo: only if a time condition is configured
-        var timer = $interval(update, 1000);
+        if (timeConditionConfigured()) {
+            var timer = $interval(update, 1000);
 
-        $scope.$on('$destroy', function(event) {
-            $interval.cancel(timer);
-        });
+            $scope.$on('$destroy', function(event) {
+                $interval.cancel(timer);
+            });
+        }
     }
 
     // settings dialog
@@ -141,10 +155,10 @@
             name: "Item state"
         }, {
             code: "current-time",
-            name: "Current time"
+            name: "Current time (HH:MM)"
         }, {
             code: "current-date",
-            name: "Current date"
+            name: "Current date (YYYY-MM-DD)"
         }];
 
         // define available operators
