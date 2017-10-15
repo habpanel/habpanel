@@ -8,9 +8,13 @@
     <meta name="description" content="Dashboard user interface for openHAB" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="HABPanel">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'sha256-5hvlzGKhlKhafFjW6G/cRVpM/e+JewYxe/pLpQ5Kj9M='; style-src 'self' 'unsafe-inline';">
 
-    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="icon" type="image/png" href="assets/manifest/logo36.png">
+    <link rel="apple-touch-icon" type="image/png" href="assets/manifest/apple-icon.png">
+    <link rel="apple-touch-startup-image" href="assets/manifest/logo340.png">
     <link rel="stylesheet" href="vendor/styles.min.css" />
     <link rel="stylesheet" ng-href="assets/styles/themes/{{settings.theme || 'default'}}.css" />
     <link rel="stylesheet" ng-if="settings.additional_stylesheet_url" ng-href="{{settings.additional_stylesheet_url}}" />
