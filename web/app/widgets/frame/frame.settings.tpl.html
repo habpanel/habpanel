@@ -49,6 +49,17 @@
                                     <input name="refresh" type="number" ng-model="form.refresh" class="form-control" />
                                 </div>
                             </div>
+                            <div class="form-group" ng-class="{error: _form.nosuffix.$error && _form.submitted}" ng-if="form.refresh > 0">
+                                <label class="control-label col-lg-3 col-md-3">No cache busting (advanced)</label>
+                                <div class="col-lg-9 col-md-9">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="nosuffix" ng-model="form.nosuffix" />
+                                            Don't add URL suffixes to prevent reusing cached pages
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </uib-tab>

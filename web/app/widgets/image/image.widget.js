@@ -50,10 +50,11 @@
             vm.url = $sce.trustAsResourceUrl(item.state);
         }
 
-        OHService.onUpdate($scope, vm.widget.item, function () {
+        OHService.onUpdate($scope, vm.widget.item, function ($event, item) {
+            if (!item || (vm.widget.image_source !== 'static' && vm.widget.item === item.name))
             updateValue();
         });
-        
+
         if (!this.widget.image_source || this.widget.image_source === 'static') {
             vm.original_url = vm.url = this.widget.url;
         }
@@ -63,10 +64,14 @@
         if (vm.widget.refresh) {
             var _interval = intervaltype === 'seconds' ? this.widget.refresh * 1000 : this.widget.refresh;
             var imgRefresh = $interval(function () {
-                var timestamp = (new Date()).toISOString();
+                if (!vm.widget.nosuffix) {
+                    var timestamp = (new Date()).toISOString();
 
-                vm.url = (vm.original_url.indexOf('?') === -1) ?
+                    vm.url = (vm.original_url.indexOf('?') === -1) ?
                         vm.original_url + "?_t=" + timestamp : vm.original_url + "&_t=" + timestamp;
+                } else {
+                    vm.url = vm.original_url;
+                }
             }, _interval, 0, true);
 
             $scope.$on('$destroy', function (event) {
@@ -95,6 +100,7 @@
             url         : widget.url,
             refresh     : widget.refresh,
             intervaltype: widget.intervaltype || 'seconds',
+            nosuffix    : widget.nosuffix,
             background  : widget.background || 'rgb(0, 0, 0)'
         };
         if (widget.image_source === 'item-string') $scope.form.item_string = widget.item;
@@ -125,6 +131,10 @@
 
             delete widget.item_string;
             delete widget.item_image;
+
+            if (!widget.refresh) {
+                delete widget.nosuffix;
+            }
 
             $modalInstance.close(widget);
         };

@@ -1,5 +1,5 @@
 <div class="box-content image" ng-style="{ 'background-color': vm.background }">
-    <div class="image-content">
-        <img src="{{vm.url}}" />
+    <div class="image-content" ng-repeat="url in [vm.url]">
+        <img ng-src="{{url}}" />
     </div>
 </div>

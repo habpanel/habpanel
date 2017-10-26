@@ -35,11 +35,6 @@
         return directive;
         
         function link(scope, element, attrs) {
-            if (scope.vm.refreshInterval) {
-                element.on('$destroy', function () {
-                    $interval.cancel(scope.vm.refreshInterval);
-                });
-            }
         }
     }
 
@@ -60,21 +55,29 @@
                 vm.value = item.state;
             }
 
-            if (vm.widget.refresh) {
+            if (!vm.value) return;
+
+            if (vm.widget.refresh && !vm.widget.nosuffix) {
                 vm.value += (vm.value.match(/\?/) ? '&' : '?') + '_t='+ (new Date()).getTime();
             }
 
             vm.detailFrame = $sce.trustAsResourceUrl(vm.value);
         }
 
-        OHService.onUpdate($scope, vm.widget.item, function () {
-            updateValue();
+        OHService.onUpdate($scope, vm.widget.item, function ($event, item) {
+            if (!item || (vm.widget.url_source !== 'static' && vm.widget.item === item.name)) {
+                updateValue();
+            }
         });
 
         if (vm.widget.refresh) {
             vm.refreshInterval = $interval(updateValue, vm.widget.refresh * 1000);
+
+            $scope.$on('$destroy', function () {
+                $interval.cancel(vm.refreshInterval);
+            });
         }
-        updateValue();
+        //updateValue();
     };
 
 
@@ -97,7 +100,8 @@
             frameless : widget.frameless,
             hidelabel : widget.hidelabel,
             background: widget.background,
-            refresh   : widget.refresh
+            refresh   : widget.refresh,
+            nosuffix  : widget.nosuffix
         };    
 
         $scope.dismiss = function() {
@@ -119,6 +123,9 @@
                     delete widget.item;
                     delete widget.action_type;
                     break;
+            }
+            if (!widget.refresh) {
+                delete widget.nosuffix;
             }
 
             $modalInstance.close(widget);
