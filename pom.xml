@@ -24,6 +24,7 @@
         <connection>scm:git:${scm.gitBaseUrl}/org.openhab.ui.habpanel.git</connection>
         <developerConnection>scm:git:${scm.gitBaseUrl}/org.openhab.ui.habpanel.git</developerConnection>
         <url>https://github.com/openhab/org.openhab.ui.habpanel</url>
+        <tag>HEAD</tag>
     </scm>
 
     <dependencies>
