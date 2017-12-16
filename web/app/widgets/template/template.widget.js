@@ -110,12 +110,12 @@
                     size: size,
                     animation: !noAnimation,
                     scope: scope
+                }).rendered.then(function () {
+                    $timeout(function () {
+                        $rootScope.$broadcast('openhab-update');
+                        OHService.reloadItems();
+                    });
                 });
-
-                // hack to give widgets a chance to refresh themselves
-                $timeout(function () {
-                    $rootScope.$broadcast('openhab-update');
-                })
             }
 
             scope.$on("refreshTemplate", function () {
