@@ -24,6 +24,21 @@
             vm.copyLabel = "Copy";
         }
 
+        function checkFormat(config) {
+            // handle legacy save files with the dashboards array only
+            if (angular.isArray(config)) {
+                config = {
+                    dashboards: config,
+                    menucolumns: 1,
+                    settings: {},
+                    customwidgets: {}
+                };
+            }
+
+            vm.rawLocalConfig = JSON.stringify(config, null, 4);
+            return config;
+        }
+
         vm.rawLocalConfig = JSON.stringify({
             dashboards: $rootScope.dashboards,
             menucolumns: $rootScope.menucolumns,
@@ -48,17 +63,7 @@
                     vm.importMode = false;
                     var json = JSON.parse(text);
 
-                    // handle legacy save files
-                    if (angular.isArray(json)) {
-                        text = JSON.stringify({
-                            dashboards: json,
-                            menucolumns: 1,
-                            settings: {},
-                            customwidgets: {}
-                        }, null, 4);
-                    }
-
-                    vm.rawLocalConfig = text;
+                    checkFormat(json);
                     vm.saveConfig();
                 } catch (e) {
                     prompt({
@@ -77,7 +82,7 @@
 
         vm.saveConfig = function () {
             try {
-                var newconf = JSON.parse(vm.rawLocalConfig);
+                var newconf = checkFormat(JSON.parse(vm.rawLocalConfig));
 
                 if (!newconf.dashboards) {
                     throw 'No dashboards found!';
