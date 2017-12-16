@@ -126,7 +126,7 @@
         if ( vm.widget.rangesEnabled) {
           vm.widget.ranges.forEach(function(rangeItem) {
               if (rangeItem.min != 0 || rangeItem.max != 0) {
-                  var textColor = vm.widget.textColor;
+                  var textColor = themeValueFilter(vm.widget.textColor, 'primary-color');
                   if (vm.widget.rangesTextColorMatching == true) {
                     textColor = rangeItem.barColor;
                   }

@@ -367,10 +367,13 @@
                         </div>
                     </div>
                     <button type="button" class="btn" ng-click="addRange()"><i class="glyphicon glyphicon-plus"></i></button>
+                    <br /><br />
                     <uib-accordion>
                         <div uib-accordion-group is-open="accordions[$index]" class="panel default" ng-repeat="range in form.ranges">
                             <uib-accordion-heading>
-                                <span class="badge" style="width: 50px; margin-right: 10px; background-color :{{range.barColor}};">&nbsp</span>{{range.min + ' - ' + range.max  || 'N/A'}}
+                                <span ng-style="{ 'background-color': range.barColor }" style="border: 1px solid black">&nbsp;&nbsp;&nbsp;</span>
+                                &nbsp;
+                                {{range.min + ' - ' + range.max  || 'N/A'}}
                             </uib-accordion-heading>
                             <div class="col-lg-12 col-md-12">
                                 <button type="button" class="btn pull-right" ng-click="removeRange($index)"><i class="glyphicon glyphicon-trash"></i></button>
@@ -380,7 +383,7 @@
                                     <div class="form-group">
                                         <label class="control-label col-xs-2">from</label>
                                         <div class="col-xs-6">
-                                            <input name="name" type="number" ng-model="range.min" class="form-control" />
+                                            <input name="name" type="number" step="any" ng-model="range.min" class="form-control" />
                                         </div>
                                     </div>
                                 </div>
@@ -388,7 +391,7 @@
                                     <div class="form-group">
                                         <label class="control-label col-xs-2">to</label>
                                         <div class="col-xs-6">
-                                            <input name="name" type="number" ng-model="range.max" class="form-control" />
+                                            <input name="name" type="number" step="any" ng-model="range.max" class="form-control" />
                                         </div>
                                     </div>
                                 </div>
