@@ -24,7 +24,12 @@
             vm.copyLabel = "Copy";
         }
 
-        vm.rawLocalConfig = JSON.stringify($rootScope.dashboards, null, 4);
+        vm.rawLocalConfig = JSON.stringify({
+            dashboards: $rootScope.dashboards,
+            menucolumns: $rootScope.menucolumns,
+            settings: $rootScope.settings,
+            customwidgets: $rootScope.customwidgets
+        }, null, 4);
         vm.file = {};
 
         vm.copiedToClipboard = function (success) {
@@ -42,6 +47,17 @@
                 try {
                     vm.importMode = false;
                     var json = JSON.parse(text);
+
+                    // handle legacy save files
+                    if (angular.isArray(json)) {
+                        text = JSON.stringify({
+                            dashboards: json,
+                            menucolumns: 1,
+                            settings: {},
+                            customwidgets: {}
+                        }, null, 4);
+                    }
+
                     vm.rawLocalConfig = text;
                     vm.saveConfig();
                 } catch (e) {
@@ -62,8 +78,16 @@
         vm.saveConfig = function () {
             try {
                 var newconf = JSON.parse(vm.rawLocalConfig);
-                // maybe add some checks here eventually
-                angular.copy(newconf, $rootScope.dashboards);
+
+                if (!newconf.dashboards) {
+                    throw 'No dashboards found!';
+                }
+
+                angular.copy(newconf.dashboards, $rootScope.dashboards);
+                angular.copy(newconf.settings, $rootScope.settings);
+                angular.copy(newconf.customwidgets, $rootScope.customwidgets);
+                $rootScope.menucolumns = newconf.menucolumns;
+
                 PersistenceService.saveDashboards();
                 PersistenceService.getDashboards();
                 vm.saveLabel = "Saved!";
