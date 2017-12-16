@@ -174,6 +174,7 @@
                 custom_widget_config: dashboard.tile.custom_widget_config || {}
             },
             drawer: {
+                hide: dashboard.drawer.hide,
                 use_custom_widget: dashboard.drawer.use_custom_widget,
                 custom_widget: dashboard.drawer.custom_widget,
                 custom_widget_config: dashboard.drawer.custom_widget_config || {}
@@ -225,7 +226,7 @@
                 delete dashboard.tile.custom_widget_dontwrap;
                 delete dashboard.tile.custom_widget_nobackground;
             }
-            if (!dashboard.drawer.use_custom_widget) {
+            if (!dashboard.drawer.use_custom_widget && !dashboard.drawer.hide) {
                 delete dashboard.drawer;
             }
             if (!dashboard.header.use_custom_widget) {

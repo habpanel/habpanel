@@ -27,6 +27,10 @@
             return ($location.url() === '/view/' + encodeURI(name) || $location.url() === '/edit/' + encodeURI(name));
         }
 
+        $scope.isShown = function (dash) {
+            return (!dash.drawer || !dash.drawer.hide);
+        }
+
         activate();
 
         $scope.$on("refreshMenu", function (evt) {
