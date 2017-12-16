@@ -125,10 +125,6 @@
                         return dashboard;
                     }
                 }
-            }).result.then(function (dashboards) {
-                var newdashboard = PersistenceService.getDashboard(dashboard.id);
-                var idx = vm.dashboards.indexOf(dashboard);
-                vm.dashboards[idx] = newdashboard; 
             });
         };
 
@@ -166,6 +162,7 @@
                 icon_size: dashboard.tile.icon_size,
                 icon_nolinebreak: dashboard.tile.icon_nolinebreak,
                 icon_replacestext: dashboard.tile.icon_replacestext,
+                title_color: dashboard.tile.title_color,
                 no_click_feedback: dashboard.tile.no_click_feedback,
                 use_custom_widget: dashboard.tile.use_custom_widget,
                 custom_widget: dashboard.tile.custom_widget,
@@ -234,10 +231,9 @@
             }
 
             PersistenceService.saveDashboards().then(function () {
-                $rootScope.dashboards = null;
-                PersistenceService.getDashboards().then (function (dashboards) {
-                    $modalInstance.close(dashboards);
-                });
+                $modalInstance.close();
+            }, function (err) {
+                alert('Error while saving dashboards:' + err);
             });
         };
 
