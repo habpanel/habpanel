@@ -22,7 +22,7 @@
             <li ng-if="useRegistry" ng-repeat="(name, data) in vm.panelsRegistry">
                 <a class="pull-right" ng-if="vm.storageOption != name" ng-click="vm.deletePanelConfig(name)"><i class="glyphicon glyphicon-trash"></i></a> 
                 <input type="radio" ng-click="vm.switchToPanelConfig($event)" ng-model="vm.storageOption" value="{{name}}" />&nbsp;<strong>Panel configuration: <em>{{name}}</em></strong>
-                <br /><small>Last synced on {{data.updatedTime | date:'EEE d MMM HH:mm:ss'}}</small>
+                <br /><small>Last synced on {{data.updatedTime | date:'medium'}}</small>
                 <div>Contains:</div>
                 <ul>
                     <li ng-repeat="dashboard in data.dashboards">

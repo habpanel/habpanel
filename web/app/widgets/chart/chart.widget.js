@@ -64,7 +64,7 @@
         function tooltipHook(values) {
             if (values)
                 return {
-                    abscissas: $filter('date')(values[0].row.x, 'EEE d MMM HH:mm:ss'),
+                    abscissas: $filter('date')(values[0].row.x, 'EEE') + ' ' + $filter('date')(values[0].row.x, 'medium'),
                     rows: values.map(function(val) {
                         return {
                             label: val.series.label,
@@ -136,8 +136,8 @@
                                 type: "date",
                                 tickFormat: function (value) {
                                     if (value.getHours() === 0) {
-                                        if (value.getDate() === 1) {
-                                            return $filter('date')(value, 'MMM d');
+                                        if (value.getDate() === 1 || vm.widget.period === '2M' || vm.widget.period === '4M') {
+                                            return $filter('date')(value, 'd MMM');
                                         }
                                         return $filter('date')(value, 'EEE d');
                                     }

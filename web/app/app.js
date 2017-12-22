@@ -16,10 +16,12 @@
         'oc.lazyLoad',
         'angular-clipboard',
         'ngFileSaver',
-        'snap'
+        'snap',
+        'tmh.dynamicLocale'
     ])
-    .config(['$routeProvider', 'localStorageServiceProvider', function($routeProvider, localStorageServiceProvider) {
+    .config(['$routeProvider', 'localStorageServiceProvider', 'tmhDynamicLocaleProvider', function($routeProvider, localStorageServiceProvider, tmhDynamicLocaleProvider) {
         localStorageServiceProvider.setStorageType('localStorage');
+        tmhDynamicLocaleProvider.localeLocationPattern('vendor/i18n/angular-locale_{{locale}}.js');
 
         $routeProvider
             .when('/', {

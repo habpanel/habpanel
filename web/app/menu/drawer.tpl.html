@@ -16,7 +16,7 @@
     </li>
 </ul>
 <footer ng-if="!settings.hide_drawer_footer">
-    <a ng-hide="lockEditing || kioskMode" class="btn pull-right" ng-click="goToSettings()"><i class="glyphicon glyphicon-cog"></i></a>
-    <ds-widget-clock style="width: 100%; color: darkgray; white-space: nowrap;" show-digital digital-format="'EEEE d MMMM'"></ds-widget-clock>
-    <ds-widget-clock style="width: 100%; font-size: 24px;" show-digital></ds-widget-clock>
+    <ds-widget-clock style="width: 100%; color: darkgray; white-space: nowrap;" show-digital digital-format="dateFormat"></ds-widget-clock>
+    <a ng-hide="lockEditing || kioskMode" class="btn" style="position: absolute; right: 0; font-size: 18px;" ng-click="goToSettings()"><i class="glyphicon glyphicon-cog"></i></a>
+    <ds-widget-clock style="width: 100%; font-size: 24px;" show-digital digital-format="'mediumTime'"></ds-widget-clock>
 </footer>

@@ -5,8 +5,8 @@
         .module('app')
         .controller('DrawerController', DrawerController);
 
-    DrawerController.$inject = ['$scope', '$rootScope', '$timeout', '$filter', '$location', 'OHService', 'PersistenceService', 'snapRemote'];
-    function DrawerController($scope, $rootScope, $timeout, $filter, $location, OHService, PersistenceService, snapRemote) {
+    DrawerController.$inject = ['$scope', '$rootScope', '$timeout', '$filter', '$location', 'OHService', 'PersistenceService', 'tmhDynamicLocaleCache', 'snapRemote'];
+    function DrawerController($scope, $rootScope, $timeout, $filter, $location, OHService, PersistenceService, tmhDynamicLocaleCache, snapRemote) {
         $scope.goHome = function () {
             $location.url('/');
         }
@@ -57,5 +57,15 @@
                     snapper.disable();
             });
         }
+
+        $scope.dateFormat = 'EEEE d MMMM';
+        OHService.getLocale().then(function (locale) {
+            $scope.$on('$localeChangeSuccess', function () {
+                var nglocale = tmhDynamicLocaleCache.get(locale.toLowerCase());
+                if (nglocale) {
+                    $scope.dateFormat = nglocale.DATETIME_FORMATS.fullDate.replace(/('de'|\u060c|,)?\s?y.?/g, '').trim();
+                }
+            });
+        });
     }
 })();

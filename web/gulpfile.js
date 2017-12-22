@@ -104,6 +104,7 @@ gulp.task('vendor-js', ['uglify-timeline'], function() {
         'bower_components/oclazyload/dist/ocLazyLoad.min.js',
         'bower_components/angular-ui-clock/dist/angular-clock.min.js',
         'bower_components/angular-ui-select/dist/select.min.js',
+        'bower_components/angular-dynamic-locale/dist/tmhDynamicLocale.min.js',
         'bower_components/angular-file-saver/dist/angular-file-saver.bundle.min.js',
         'bower_components/angular-file-saver/dist/angular-file-saver.bundle.min.js',
         'bower_components/snapjs/snap.min.js',
@@ -117,8 +118,36 @@ gulp.task('vendor-js', ['uglify-timeline'], function() {
 
 });
 
-
-
+gulp.task('vendor-angular-i18n', function () {
+    /* don't copy regional-specific except for selected common particular cases -
+       add exceptions to app/services/openhab.service.js too */
+    return gulp.src([
+        'bower_components/angular-i18n/angular-locale_??.js',
+        'bower_components/angular-i18n/angular-locale_es-ar.js',
+        'bower_components/angular-i18n/angular-locale_de-at.js',
+        'bower_components/angular-i18n/angular-locale_en-au.js',
+        'bower_components/angular-i18n/angular-locale_fr-be.js',
+        'bower_components/angular-i18n/angular-locale_es-bo.js',
+        'bower_components/angular-i18n/angular-locale_pt-br.js',
+        'bower_components/angular-i18n/angular-locale_en-ca.js',
+        'bower_components/angular-i18n/angular-locale_fr-ca.js',
+        'bower_components/angular-i18n/angular-locale_fr-ch.js',
+        'bower_components/angular-i18n/angular-locale_es-co.js',
+        'bower_components/angular-i18n/angular-locale_en-gb.js',
+        'bower_components/angular-i18n/angular-locale_en-hk.js',
+        'bower_components/angular-i18n/angular-locale_zh-hk.js',
+        'bower_components/angular-i18n/angular-locale_en-ie.js',
+        'bower_components/angular-i18n/angular-locale_en-in.js',
+        'bower_components/angular-i18n/angular-locale_fr-lu.js',
+        'bower_components/angular-i18n/angular-locale_es-mx.js',
+        'bower_components/angular-i18n/angular-locale_en-nz.js',
+        'bower_components/angular-i18n/angular-locale_en-sg.js',
+        'bower_components/angular-i18n/angular-locale_zh-sg.js',
+        'bower_components/angular-i18n/angular-locale_es-us.js',
+        'bower_components/angular-i18n/angular-locale_zh-tw.js',
+        'bower_components/angular-i18n/angular-locale_en-za.js'
+    ]).pipe(gulp.dest('vendor/i18n'));
+});
 
 gulp.task('codemirror-lib', function() {
     return gulp.src([

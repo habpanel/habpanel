@@ -14,8 +14,8 @@
             });
         });
 
-    widgetTimeline.$inject = ['$rootScope', '$interval', 'OHService'];
-    function widgetTimeline($rootScope, $interval, OHService) {
+    widgetTimeline.$inject = ['$rootScope', '$interval', 'OHService', 'tmhDynamicLocaleCache'];
+    function widgetTimeline($rootScope, $interval, OHService, tmhDynamicLocaleCache) {
         // Usage: <widget-timeline ng-model="widget" />
         //
         // Creates: A timeline widget
@@ -49,10 +49,27 @@
                 var width = parentElement.style.width.replace('px', '') - 20;
                 var height = parentElement.style.height.replace('px', '') - 20;
 
-                var colorScale = d3.scale.ordinal().range(scope.colorScale.colors)
-                .domain(scope.colorScale.states);
+                var colorScale = d3.scale.ordinal().range(scope.colorScale.colors).domain(scope.colorScale.states);
 
-                var customTimeFormat = d3.time.format.multi([
+                var nglocale = tmhDynamicLocaleCache.get(scope.locale.toLowerCase());
+                var d3timeformat = (!nglocale) ? d3.time.format :
+                    d3.locale({
+                        "decimal": nglocale.NUMBER_FORMATS.DECIMAL_SEP,
+                        "thousands": nglocale.NUMBER_FORMATS.GROUP_SEP,
+                        "grouping": [3],
+                        "currency": [nglocale.NUMBER_FORMATS.CURRENCY_SYM, ""],
+                        "dateTime": "%a %b %e %X %Y",
+                        "date": "%d/%M/%Y",
+                        "time": "%H:%M:%S",
+                        "periods": nglocale.DATETIME_FORMATS.AMPMS,
+                        "days": nglocale.DATETIME_FORMATS.DAY,
+                        "shortDays": nglocale.DATETIME_FORMATS.SHORTDAY,
+                        "months": nglocale.DATETIME_FORMATS.MONTH,
+                        "shortMonths": nglocale.DATETIME_FORMATS.SHORTMONTH
+                    }).timeFormat;
+
+
+                var customTimeFormat = d3timeformat.multi([
                     ["%H:%M", function(d) { return d.getMinutes(); }],
                     ["%H:00", function(d) { return d.getHours(); }],
                     ["%d %b", function (d) { return scope.vm.widget.period === '2M' || scope.vm.widget.period === '4M'; }],
@@ -234,8 +251,11 @@
 
         }
 
-        vm.refreshInterval = $interval(getData, ((new Date).getTime() - startTime()) / 60 / 2);
-        getData();
+        OHService.getLocale().then(function (locale) {
+            $scope.locale = locale;
+            vm.refreshInterval = $interval(getData, ((new Date).getTime() - startTime()) / 60 / 2);
+            getData();
+        });
     }
 
 

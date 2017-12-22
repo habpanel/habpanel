@@ -2,7 +2,7 @@
     <div class="timeline-content" style="height: 100%; padding-left: 10px;">
         <span ng-if="vm.widget.name" style="position: absolute; top: 10px; left: 0; width: 100%;">{{vm.widget.name}}</span>
         <div class="timeline-status" ng-if="item">
-            <span class="dates">{{starting_time | date: 'EEE d MMM HH:mm:ss'}} - {{ending_time | date:'EEE d MMM HH:mm:ss'}}</span>
+            <span class="dates">{{starting_time | date: 'EEE'}} {{starting_time | date: 'medium'}} - {{ending_time | date: 'EEE'}} {{ending_time | date:'medium'}}</span>
             &nbsp; <span ng-style="{'background-color': state_color }">&nbsp;&nbsp;&nbsp;&nbsp;</span> &nbsp; {{item}} &nbsp;&nbsp; {{state}}
         </div>
     </div>

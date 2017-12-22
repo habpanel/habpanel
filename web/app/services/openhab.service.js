@@ -7,8 +7,8 @@
         .value('OH2ServiceConfiguration', {})
         .service('OH2StorageService', OH2StorageService);
 
-    OHService.$inject = ['$rootScope', '$http', '$q', '$timeout', '$interval', '$filter', '$location', 'SpeechService'];
-    function OHService($rootScope, $http, $q, $timeout, $interval, $filter, $location, SpeechService) {
+    OHService.$inject = ['$rootScope', '$http', '$q', '$timeout', '$interval', '$filter', '$location', 'SpeechService', 'tmhDynamicLocale'];
+    function OHService($rootScope, $http, $q, $timeout, $interval, $filter, $location, SpeechService, tmhDynamicLocale) {
         this.getItem = getItem;
         this.getItems = getItems;
         this.getLocale = getLocale;
@@ -89,9 +89,26 @@
             if (locale) {
                 deferred.resolve(locale);
             } else {
-                $http.get('/rest/services/org.eclipse.smarthome.core.localeprovider/config')
+                $http.get('/rest/services/org.eclipse.smarthome.core.i18nprovider/config')
                 .then(function (response) {
-                    locale = response.data.language + '-' + response.data.region;
+                    if (!response.data.language) {
+                        locale = "en-US";
+                    } else {
+                        locale = response.data.language + ((response.data.region) ? '-' + response.data.region : '');
+
+                        /* consider the region only for selected common exceptions where the date/number formats
+                           are significantly different than the language's default.
+                           If more are needed change the gulpfile.js too and run the 'vendor-angular-i18n' gulp task */
+                        if (['es-ar', 'de-at', 'en-au', 'fr-be', 'es-bo', 'pt-br', 'en-ca',
+                             'fr-ca', 'fr-ch', 'es-co', 'en-gb', 'en-hk', 'zh-hk', 'en-ie',
+                             'en-in', 'fr-lu', 'es-mx', 'en-nz', 'en-sg', 'zh-sg',
+                             'es-us', 'zh-tw', 'en-za'].indexOf(locale.toLowerCase()) < 0) {
+                            locale = response.data.language;
+                        }
+
+                        console.log('Setting locale to: ' + locale);
+                        tmhDynamicLocale.set(locale.toLowerCase());
+                    }
                     deferred.resolve(locale);
                 }, function(error) {
                     console.warn('Couldn\'t retrieve locale settings. Setting default to "en-US"');
