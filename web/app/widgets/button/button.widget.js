@@ -1,11 +1,11 @@
-(function() {
+(function () {
     'use strict';
 
     angular
         .module('app.widgets')
         .directive('widgetButton', widgetButton)
         .controller('WidgetSettingsCtrl-button', WidgetSettingsCtrlButton)
-        .config(function (WidgetsProvider) { 
+        .config(function (WidgetsProvider) {
             WidgetsProvider.$get().registerType({
                 type: 'button',
                 displayName: 'Button',
@@ -32,16 +32,16 @@
             }
         };
         return directive;
-        
+
         function link(scope, element, attrs) {
             element[0].parentElement.parentElement.className += " activefeedback";
         }
     }
     ButtonController.$inject = ['$rootScope', '$scope', '$location', 'OHService'];
-    function ButtonController ($rootScope, $scope, $location, OHService) {
+    function ButtonController($rootScope, $scope, $location, OHService) {
         var vm = this;
         this.widget = this.ngModel;
-        
+
         vm.background = this.widget.background;
         vm.foreground = this.widget.foreground;
         vm.font_size = this.widget.font_size;
@@ -111,7 +111,7 @@
             foreground_active: widget.foreground_active,
             backdrop_iconset: widget.backdrop_iconset,
             backdrop_icon: widget.backdrop_icon,
-            backdrop_center : widget.backdrop_center,
+            backdrop_center: widget.backdrop_center,
             iconset: widget.iconset,
             icon: widget.icon,
             icon_size: widget.icon_size,
@@ -119,16 +119,16 @@
             icon_replacestext: widget.icon_replacestext
         };
 
-        $scope.dismiss = function() {
+        $scope.dismiss = function () {
             $modalInstance.dismiss();
         };
 
-        $scope.remove = function() {
+        $scope.remove = function () {
             $scope.dashboard.widgets.splice($scope.dashboard.widgets.indexOf(widget), 1);
             $modalInstance.close();
         };
 
-        $scope.submit = function() {
+        $scope.submit = function () {
             angular.extend(widget, $scope.form);
             switch (widget.action_type) {
                 case "navigate":
