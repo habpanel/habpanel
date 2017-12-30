@@ -48,7 +48,8 @@
 
         function updateValue() {
             vm.value = OHService.getItem(vm.widget.item).state;
-            if (vm.value === vm.widget.command) {
+            if (vm.value === vm.widget.command
+                || (vm.widget.action_type === 'navigate' && vm.widget.show_item_value && vm.value == vm.widget.navigate_item_active_value)) {
                 vm.background = vm.widget.background_active;
                 vm.foreground = vm.widget.foreground_active;
             } else {
@@ -149,6 +150,8 @@
             navigate_url: widget.navigate_url,
             navigate_dashboard: widget.navigate_dashboard,
             navigate_target: widget.navigate_target || 'self',
+            navigate_item_active_value: widget.navigate_item_active_value,
+            navigate_item_inactive_value: widget.navigate_item_inactive_value
         };
 
         $scope.dismiss = function () {
@@ -174,8 +177,11 @@
                         delete widget.navigate_dashboard;
                     }
 
-                    if (!$scope.form.show_item_value)
+                    if (!$scope.form.show_item_value) {
                         delete widget.item;
+                        delete widget.navigate_item_active_value;
+                        delete widget.navigate_item_inactive_value;
+                    }
 
                     break;
 
@@ -184,6 +190,8 @@
                     delete widget.navigate_dashboard;
                     delete widget.navigate_type;
                     delete widget.navigate_target;
+                    delete widget.navigate_item_active_value;
+                    delete widget.navigate_item_inactive_value;
                     break;
 
                 default:
@@ -192,6 +200,8 @@
                     delete widget.navigate_dashboard;
                     delete widget.navigate_type;
                     delete widget.navigate_target;
+                    delete widget.navigate_item_active_value;
+                    delete widget.navigate_item_inactive_value;
                     delete widget.action_type;
                     break;
             }

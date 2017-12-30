@@ -246,6 +246,16 @@
                             </div>
                         </div>
                     </div>
+                    <div ng-if="form.action_type=='navigate' && form.show_item_value">
+                        <div>
+                            <label class="control-label">Active value:</label>
+                            <input name="font_size" ng-model="form.navigate_item_active_value" class="form-control" />
+                        </div>
+                        <div>
+                            <label class="control-label">Inactive value:</label>
+                            <input name="font_size" ng-model="form.navigate_item_inactive_value" class="form-control" />
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
