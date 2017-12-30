@@ -62,15 +62,7 @@
                                 <div class="form-group" ng-if="form.navigate_type=='dashboard'" ng-class="{error: _form.navigate_dashboard.$error && _form.submitted}">
                                     <label class="control-label col-lg-3 col-md-3">Dashboard</label>
                                     <div class="col-lg-9 col-md-9">
-                                        <ui-select ng-required="true" ng-model="form.navigate_url" theme="selectize" title="Choose a HABPanel dashboard">
-                                            <ui-select-match placeholder="Search or select an HABPanel dashboard">{{$select.selected.name}}</ui-select-match>
-                                            <ui-select-choices repeat="dashboard.id as dashboard in dashboards | filter: $select.search">
-                                                <div>
-                                                    <span ng-bind-html="dashboard.name | highlight: $select.search">
-                                                </div>
-                                                <small ng-bind-html="dashboard.label | highlight: $select.search"></small>
-                                            </ui-select-choices>
-                                        </ui-select>
+                                        <select ng-model="form.navigate_dashboard" class="form-control" ng-options="dashboard.id as dashboard.name for dashboard in dashboards"></select>
                                     </div>
                                 </div>
                                 <section ng-if="form.navigate_type=='url'">
@@ -81,16 +73,16 @@
                                         </div>
                                     </div>
                                     <div class="form-group" ng-if="form.navigate_url && form.navigate_type=='url'" ng-class="{error: _form.navigate_target.$error && _form.submitted}">
-                                        <label class="control-label col-lg-3 col-md-3">Link Target</label>
+                                        <label class="control-label col-lg-3 col-md-3">Open in</label>
                                         <div class="col-lg-9 col-md-9">
                                             <label class="radio-inline">
-                                                <input type="radio" ng-model="form.navigate_target" value="self" name="navigate_target" checked/> self
+                                                <input type="radio" ng-model="form.navigate_target" value="self" name="navigate_target" checked/> Current tab
                                             </label>
                                             <label class="radio-inline">
-                                                <input type="radio" ng-model="form.navigate_target" value="new_tab" name="navigate_target" /> new tab
+                                                <input type="radio" ng-model="form.navigate_target" value="new_tab" name="navigate_target" /> New tab
                                             </label>
                                             <label class="radio-inline">
-                                                <input type="radio" ng-model="form.navigate_target" value="new_window" name="navigate_target" /> new window
+                                                <input type="radio" ng-model="form.navigate_target" value="new_window" name="navigate_target" /> New window
                                             </label>
                                         </div>
                                     </div>
@@ -239,7 +231,7 @@
                         </uib-tab>
                     </uib-tabset>
                 </div>
-                <div class="col-xs-3" style="height: 80px" ng-if="form.action_type !== 'navigate'">
+                <div class="col-xs-3" style="height: 80px">
                     <div class="box">
                         <div class="box-content switch" ng-style="{ 'background-color': form.background, color: form.foreground }">
                             <div class="switch-content">

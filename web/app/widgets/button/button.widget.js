@@ -58,13 +58,13 @@
         }
 
         function onNavigate() {
-            if (!vm.widget.navigate_url)
-                return;
-
-            if (vm.widget.navigate_type === 'dashboard') {
-                $location.url('/view/' + vm.widget.navigate_url);
+            if (vm.widget.navigate_dashboard) {
+                $location.url('/view/' + vm.widget.navigate_dashboard);
                 return;
             }
+
+            if (!vm.widget.navigate_url)
+                return;
 
             switch (vm.widget.navigate_target || 'self') {
                 case 'new_tab':
@@ -145,9 +145,10 @@
             icon_nolinebreak: widget.icon_nolinebreak,
             icon_replacestext: widget.icon_replacestext,
             show_item_value: widget.show_item_value || false,
-            navigate_type: widget.navigate_type || 'dashboard',
+            navigate_type: (widget.navigate_url) ? 'url' : 'dashboard',
             navigate_url: widget.navigate_url,
-            navigate_target: widget.navigate_target || 'self'
+            navigate_dashboard: widget.navigate_dashboard,
+            navigate_target: widget.navigate_target || 'self',
         };
 
         $scope.dismiss = function () {
@@ -165,15 +166,30 @@
                 case "navigate":
                     delete widget.command;
                     delete widget.command_alt;
+
+                    if ($scope.form.navigate_type === 'dashboard') {
+                        delete widget.navigate_url;
+                        delete widget.navigate_target;
+                    } else {
+                        delete widget.navigate_dashboard;
+                    }
+
+                    if (!$scope.form.show_item_value)
+                        delete widget.item;
+
                     break;
+
                 case "toggle":
                     delete widget.navigate_url;
+                    delete widget.navigate_dashboard;
                     delete widget.navigate_type;
                     delete widget.navigate_target;
                     break;
+
                 default:
                     delete widget.command_alt;
                     delete widget.navigate_url;
+                    delete widget.navigate_dashboard;
                     delete widget.navigate_type;
                     delete widget.navigate_target;
                     delete widget.action_type;
