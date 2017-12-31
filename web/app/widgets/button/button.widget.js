@@ -37,8 +37,8 @@
             element[0].parentElement.parentElement.className += " activefeedback";
         }
     }
-    ButtonController.$inject = ['$rootScope', '$scope', '$location', 'OHService', '$window'];
-    function ButtonController($rootScope, $scope, $location, OHService, $window) {
+    ButtonController.$inject = ['$rootScope', '$scope', '$location', 'OHService', '$window', 'themeValueFilter'];
+    function ButtonController($rootScope, $scope, $location, OHService, $window, themeValueFilter) {
         var vm = this;
         this.widget = this.ngModel;
 
@@ -49,12 +49,18 @@
         function updateValue() {
             vm.value = OHService.getItem(vm.widget.item).state;
             if (vm.value === vm.widget.command
-                || (vm.widget.action_type === 'navigate' && vm.widget.show_item_value && vm.value == vm.widget.navigate_item_active_value)) {
+                || (vm.widget.action_type === 'navigate' && vm.widget.show_item_value && vm.value == vm.widget.navigate_active_state)) {
                 vm.background = vm.widget.background_active;
                 vm.foreground = vm.widget.foreground_active;
+                if (vm.widget.show_item_value) {
+                    vm.value_color = themeValueFilter(vm.widget.value_color_active, 'primary-color');
+                }
             } else {
                 vm.background = vm.widget.background;
                 vm.foreground = vm.widget.foreground;
+                if (vm.widget.show_item_value) {
+                    vm.value_color = themeValueFilter(vm.widget.value_color, 'primary-color');
+                }
             }
         }
 
@@ -134,9 +140,11 @@
             command_alt: widget.command_alt,
             background: widget.background,
             foreground: widget.foreground,
+            value_color: widget.value_color,
             font_size: widget.font_size,
             background_active: widget.background_active,
             foreground_active: widget.foreground_active,
+            value_color_active: widget.value_color_active,
             backdrop_iconset: widget.backdrop_iconset,
             backdrop_icon: widget.backdrop_icon,
             backdrop_center: widget.backdrop_center,
@@ -145,13 +153,17 @@
             icon_size: widget.icon_size,
             icon_nolinebreak: widget.icon_nolinebreak,
             icon_replacestext: widget.icon_replacestext,
-            show_item_value: widget.show_item_value || false,
             navigate_type: (widget.navigate_url) ? 'url' : 'dashboard',
             navigate_url: widget.navigate_url,
             navigate_dashboard: widget.navigate_dashboard,
             navigate_target: widget.navigate_target || 'self',
-            navigate_item_active_value: widget.navigate_item_active_value,
-            navigate_item_inactive_value: widget.navigate_item_inactive_value
+            navigate_active_state: widget.navigate_active_state,
+            show_item_value: widget.show_item_value,
+            value_unit: widget.value_unit,
+            value_font_size: widget.value_font_size,
+            value_format: widget.value_format,
+            value_useserverformat: widget.value_useserverformat,
+            value_nolinebreak: widget.value_nolinebreak
         };
 
         $scope.dismiss = function () {
@@ -179,8 +191,7 @@
 
                     if (!$scope.form.show_item_value) {
                         delete widget.item;
-                        delete widget.navigate_item_active_value;
-                        delete widget.navigate_item_inactive_value;
+                        delete widget.navigate_active_state;
                     }
 
                     break;
@@ -190,8 +201,7 @@
                     delete widget.navigate_dashboard;
                     delete widget.navigate_type;
                     delete widget.navigate_target;
-                    delete widget.navigate_item_active_value;
-                    delete widget.navigate_item_inactive_value;
+                    delete widget.navigate_active_state;
                     break;
 
                 default:
@@ -200,10 +210,20 @@
                     delete widget.navigate_dashboard;
                     delete widget.navigate_type;
                     delete widget.navigate_target;
-                    delete widget.navigate_item_active_value;
-                    delete widget.navigate_item_inactive_value;
+                    delete widget.navigate_active_state;
                     delete widget.action_type;
                     break;
+            }
+
+            if (!widget.show_item_value) {
+                delete widget.show_item_value;
+                delete widget.value_unit;
+                delete widget.value_font_size;
+                delete widget.value_format;
+                delete widget.value_useserverformat;
+                delete widget.value_nolinebreak;
+                delete widget.value_color;
+                delete widget.value_color_active;
             }
 
             $modalInstance.close(widget);
