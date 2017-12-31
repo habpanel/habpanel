@@ -192,6 +192,10 @@
                     if (!$scope.form.show_item_value) {
                         delete widget.item;
                         delete widget.navigate_active_state;
+                    } else {
+                        delete widget.background_active;
+                        delete widget.foreground_active;
+                        delete widget.value_color_active;
                     }
 
                     break;
