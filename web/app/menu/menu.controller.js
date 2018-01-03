@@ -131,9 +131,9 @@
     }
 
     // settings dialog
-    DashboardSettingsCtrl.$inject = ['$scope', '$timeout', '$rootScope', '$uibModalInstance', 'dashboard', 'OHService', 'PersistenceService'];
+    DashboardSettingsCtrl.$inject = ['$scope', '$timeout', '$rootScope', '$uibModalInstance', 'dashboard', 'OHService', 'PersistenceService', 'prompt'];
 
-    function DashboardSettingsCtrl($scope, $timeout, $rootScope, $modalInstance, dashboard, OHService, PersistenceService) {
+    function DashboardSettingsCtrl($scope, $timeout, $rootScope, $modalInstance, dashboard, OHService, PersistenceService, prompt) {
         $scope.dashboard = dashboard;
         if (!$scope.dashboard.tile) $scope.dashboard.tile = {};
         if (!$scope.dashboard.drawer) $scope.dashboard.drawer = {};
@@ -188,9 +188,14 @@
         };
 
         $scope.remove = function() {
-            $rootScope.dashboards.splice($rootScope.dashboards.indexOf(dashboard), 1);
-            PersistenceService.saveDashboards().then(function () {
-                $modalInstance.dismiss();
+            prompt({
+                title: "Remove dashboard",
+                message: "Please confirm you want to delete this dashboard: " + dashboard.name,
+            }).then(function () {
+                $rootScope.dashboards.splice($rootScope.dashboards.indexOf(dashboard), 1);
+                PersistenceService.saveDashboards().then(function () {
+                    $modalInstance.dismiss();
+                });
             });
         };
 
