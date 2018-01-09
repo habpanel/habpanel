@@ -54,7 +54,8 @@
     "angular-dynamic-locale": "^0.1.32",
     "selectize": "~0.12.4",
     "d3-timeline": "master",
-    "aCKolor": "https://github.com/ghys/aCKolor.git#3.0.2-habpanel"
+    "aCKolor": "https://github.com/ghys/aCKolor.git#3.0.2-habpanel",
+    "angular-translate": "^2.17.0"
   },
   "resolutions": {
     "angular": "~1.5.9"
