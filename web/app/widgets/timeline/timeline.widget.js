@@ -169,13 +169,14 @@
                 case '8h': startDate.setTime(startDate.getTime() - 8*60*60*1000); break;
                 case '12h': startDate.setTime(startDate.getTime() - 12*60*60*1000); break;
                 case 'D': startDate.setTime(startDate.getTime() - 24*60*60*1000); break;
+                case '2D': startDate.setTime(startDate.getTime() - 2*24*60*60*1000); break;
                 case '3D': startDate.setTime(startDate.getTime() - 3*24*60*60*1000); break;
                 case 'W': startDate.setTime(startDate.getTime() - 7*24*60*60*1000); break;
                 case '2W': startDate.setTime(startDate.getTime() - 2*7*24*60*60*1000); break;
-                case 'M': startDate.setTime(startDate.getTime() - 31*24*60*60*1000); break; //Well...
-                case '2M': startDate.setTime(startDate.getTime() - 2*31*24*60*60*1000); break;
-                case '4M': startDate.setTime(startDate.getTime() - 4*31*24*60*60*1000); break;
-                case 'Y': startDate.setTime(startDate.getTime() - 12*31*24*60*60*1000); break;
+                case 'M': startDate.setMonth(startDate.getMonth() - 1); break;
+                case '2M': startDate.setMonth(startDate.getMonth() - 2); break;
+                case '4M': startDate.setMonth(startDate.getMonth() - 4); break;
+                case 'Y': startDate.setFullYear(startDate.getFullYear() - 1); break;
                 default: startDate.setTime(startDate.getTime() - 24*60*60*1000); break;
             }
             return startDate;
@@ -195,7 +196,7 @@
 
             vm.rawdata = [];
             for (var i = 0; i < vm.widget.series.length; i++) {
-                vm.rawdata[i] = $http.get('/rest/persistence/items/' + vm.widget.series[i].item + '?serviceId=' + vm.widget.service + "&boundary=true&starttime=" + startDate.toISOString());
+                vm.rawdata[i] = $http.get('/rest/persistence/items/' + vm.widget.series[i].item + "?boundary=true&starttime=" + startDate.toISOString() + (vm.widget.service ? '&serviceId=' + vm.widget.service : ''));
             }
 
 
