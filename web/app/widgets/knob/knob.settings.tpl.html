@@ -2,24 +2,24 @@
     <form name="_form" class="form-horizontal" ng-submit="submit(_form)">
         <div class="modal-header">
             <button type="button" class="close" ng-click="dismiss()" aria-hidden="true">&times;</button>
-            <h3>Knob Settings</h3>
+            <h3 translate-keep-content translate="widget.knob.settings.header">Knob Settings</h3>
         </div>
 
         <div class="modal-body">
             <uib-tabset>
-                <uib-tab heading="General">
+                <uib-tab heading="{{'General' | translation:'widget.common.general'}}">
                     <br />
 
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group" ng-class="{error: _form.name.$error && _form.submitted}">
-                                <label class="control-label col-lg-3 col-md-3">Name</label>
+                                <label class="control-label col-lg-3 col-md-3" translate>Name</label>
                                 <div class="col-lg-9 col-md-9">
                                     <input name="name" type="text" ng-model="form.name" class="form-control" />
                                 </div>
                             </div>
                             <div class="form-group" ng-class="{error: _form.item.$error && _form.submitted}">
-                                <label class="control-label col-lg-3 col-md-3">openHAB Item</label>
+                                <label class="control-label col-lg-3 col-md-3" translate>openHAB Item</label>
                                 <div class="col-lg-9 col-md-9">
                                     <item-picker ng-model="form.item"></item-picker>
                                 </div>
@@ -27,11 +27,11 @@
 
                             <div class="col-lg-12 col-md-12">
                                 <div class="form-group" ng-class="{error: _form.readOnly.$error && _form.submitted}">
-                                    <label class="control-label col-lg-3 col-md-3">Read only</label>
+                                    <label class="control-label col-lg-3 col-md-3" translate-keep-content translate="widget.knob.general.readonly">Read only</label>
                                     <div class="col-lg-9 col-md-9">
                                         <div class="checkbox">
                                             <label>
-                                                <input type="checkbox" name="readOnly" ng-model="form.readOnly" /> Disable interaction
+                                                <input type="checkbox" name="readOnly" ng-model="form.readOnly" /> <span translate-keep-content translate="widget.knob.general.readonly.description">Disable interaction</span>
                                             </label>
                                         </div>
                                     </div>
@@ -41,7 +41,7 @@
                             <div class="form-group">
                                 <div class="col-xs-6">
                                     <div class="form-group" ng-class="{error: _form.floor.$error && _form.submitted}">
-                                        <label class="control-label col-xs-4">Min</label>
+                                        <label class="control-label col-xs-4" translate-keep-content translate="widget.common.min">Min</label>
                                         <div class="col-xs-6">
                                             <input name="min" type="number" step="any" ng-model="form.floor" class="form-control" />
                                         </div>
@@ -49,7 +49,7 @@
                                 </div>
                                 <div class="col-xs-6">
                                     <div class="form-group" ng-class="{error: _form.ceil.$error && _form.submitted}">
-                                        <label class="control-label col-xs-4">Max</label>
+                                        <label class="control-label col-xs-4" translate-keep-content translate="widget.common.max">Max</label>
                                         <div class="col-xs-6">
                                             <input name="max" type="number" step="any" ng-model="form.ceil" class="form-control" />
                                         </div>
@@ -57,7 +57,7 @@
                                 </div>
                                 <div class="col-xs-6">
                                     <div class="form-group" ng-class="{error: _form.step.$error && _form.submitted}">
-                                        <label class="control-label col-xs-4">Step</label>
+                                        <label class="control-label col-xs-4" translate-keep-content translate="widget.common.step">Step</label>
                                         <div class="col-xs-6">
                                             <input name="step" type="number" step="any" ng-model="form.step" class="form-control" />
                                         </div>
@@ -65,7 +65,7 @@
                                 </div>
                                 <div class="col-xs-6">
                                     <div class="form-group" ng-class="{error: _form.unit.$error && _form.submitted}">
-                                        <label class="control-label col-xs-4">Unit</label>
+                                        <label class="control-label col-xs-4" translate-keep-content translate="widget.common.unit">Unit</label>
                                         <div class="col-xs-6">
                                             <input name="unit" type="text" ng-model="form.unit" class="form-control" />
                                         </div>
@@ -75,16 +75,16 @@
 
                             <div class="col-lg-12 col-md-12">
                                 <div class="form-group">
-                                    <label class="control-label col-lg-3 col-md-3">Display in center</label>
+                                    <label class="control-label col-lg-3 col-md-3" translate-keep-content translate="widget.knob.general.centraldisplay">Central display</label>
                                     <div class="col-lg-9 col-md-9">
                                         <div class="checkbox">
                                             <label>
-                                                <input type="checkbox" name="readOnly" ng-model="form.displayInput" /> Show value
+                                                <input type="checkbox" name="readOnly" ng-model="form.displayInput" /> <span translate-keep-content translate="widget.knob.general.centraldisplay.showvalue">Show value</span>
                                             </label>
                                         </div>
                                         <div class="checkbox" ng-show="form.displayInput">
                                             <label>
-                                                <input type="checkbox" name="readOnly" ng-model="form.subTextEnabled" /> Show name (below value)
+                                                <input type="checkbox" name="readOnly" ng-model="form.subTextEnabled" /> <span translate-keep-content translate="widget.knob.general.centraldisplay.showlabel">Show name (below value)</span>
                                             </label>
                                         </div>
                                     </div>
@@ -98,20 +98,20 @@
                     
                 </uib-tab>
 
-                <uib-tab heading="Bar &amp; Track">
+                <uib-tab heading="{{'Bar & Track' | translation:'widget.knob.bartrack'}}">
                     <br />
 
                     <div class="row">
 
                         <div class="col-xs-12">
                             <div class="row">
-                                <h4 class="col-lg-12 col-md-12">Angles (°)</h4>
+                                <h4 class="col-lg-12 col-md-12" translate-keep-content translate="widget.knob.bartrack.angles">Angles (°)</h4>
                             </div>
 
                             <div class="form-group">
                                 <div class="col-xs-6">
                                     <div class="form-group" ng-class="{error: _form.startAngle.$error && _form.submitted}">
-                                        <label class="control-label col-xs-4">Start</label>
+                                        <label class="control-label col-xs-4" translate-keep-content translate="widget.knob.bartrack.angles.start">Start</label>
                                         <div class="col-xs-6">
                                             <input name="min" type="number" ng-model="form.startAngle" class="form-control" />
                                         </div>
@@ -119,7 +119,7 @@
                                 </div>
                                 <div class="col-xs-6">
                                     <div class="form-group" ng-class="{error: _form.endAngle.$error && _form.submitted}">
-                                        <label class="control-label col-xs-4">End</label>
+                                        <label class="control-label col-xs-4" translate-keep-content translate="widget.knob.bartrack.angles.end">End</label>
                                         <div class="col-xs-6">
                                             <input name="max" type="number" ng-model="form.endAngle" class="form-control" />
                                         </div>
@@ -128,13 +128,13 @@
                             </div>
                             
                             <div class="row">
-                                <h4 class="col-lg-12 col-md-12">Bar</h4>
+                                <h4 class="col-lg-12 col-md-12" translate-keep-content translate="widget.knob.bartrack.bar">Bar</h4>
                             </div>
 
                             <div class="form-group">
                                 <div class="col-xs-6">
                                     <div class="form-group" ng-class="{error: _form.barWidth.$error && _form.submitted}">
-                                        <label class="control-label col-xs-4">Width</label>
+                                        <label class="control-label col-xs-4" translate-keep-content translate="widget.knob.bartrack.width">Width</label>
                                         <div class="col-xs-6">
                                             <input name="min" type="number" ng-model="form.barWidth" class="form-control" />
                                         </div>
@@ -142,7 +142,7 @@
                                 </div>
                                 <div class="col-xs-6">
                                     <div class="form-group" ng-class="{error: _form.barCap.$error && _form.submitted}">
-                                        <label class="control-label col-xs-4">Cap</label>
+                                        <label class="control-label col-xs-4" translate-keep-content translate="widget.knob.bartrack.cap">Cap</label>
                                         <div class="col-xs-6">
                                             <input name="max" type="number" ng-model="form.barCap" class="form-control" />
                                         </div>
@@ -150,7 +150,7 @@
                                 </div>
                                 <div class="col-xs-12">
                                     <div class="form-group" ng-class="{error: _form.barColor.$error && _form.submitted}">
-                                        <label class="control-label col-lg-2 col-md-2">Color</label>
+                                        <label class="control-label col-lg-2 col-md-2" translate>Color</label>
                                         <div class="col-lg-4 col-md-4">
                                             <div dab-model="form.barColor" web-colorpicker dab-width="20" dab-height="20" dab-radius="50" dab-vertical="4" dab-rotate="0" show-grayscale="true"></div>
                                         </div>
@@ -159,13 +159,13 @@
                             </div>
 
                             <div class="row">
-                                <h4 class="col-lg-12 col-md-12">Track</h4>
+                                <h4 class="col-lg-12 col-md-12" translate-keep-content translate="widget.knob.bartrack.track">Track</h4>
                             </div>
 
                             <div class="form-group">
                                 <div class="col-xs-6">
                                     <div class="form-group" ng-class="{error: _form.trackWidth.$error && _form.submitted}">
-                                        <label class="control-label col-xs-4">Width</label>
+                                        <label class="control-label col-xs-4" translate-keep-content translate="widget.knob.bartrack.width">Width</label>
                                         <div class="col-xs-6">
                                             <input name="min" type="number" ng-model="form.trackWidth" class="form-control" />
                                         </div>
@@ -173,7 +173,7 @@
                                 </div>
                                 <div class="col-xs-6">
                                     <div class="form-group" ng-class="{error: _form.trackCap.$error && _form.submitted}">
-                                        <label class="control-label col-xs-4">Cap</label>
+                                        <label class="control-label col-xs-4" translate-keep-content translate="widget.knob.bartrack.cap">Cap</label>
                                         <div class="col-xs-6">
                                             <input name="max" type="number" ng-model="form.trackCap" class="form-control" />
                                         </div>
@@ -181,7 +181,7 @@
                                 </div>
                                 <div class="col-xs-12">
                                     <div class="form-group" ng-class="{error: _form.trackColor.$error && _form.submitted}">
-                                        <label class="control-label col-lg-2 col-md-2">Color</label>
+                                        <label class="control-label col-lg-2 col-md-2" translate>Color</label>
                                         <div class="col-lg-4 col-md-4">
                                             <div dab-model="form.trackColor" web-colorpicker dab-width="20" dab-height="20" dab-radius="50" dab-vertical="4" dab-rotate="0" show-grayscale="true"></div>
                                         </div>
@@ -190,21 +190,21 @@
                             </div>
 
                             <div class="row">
-                                <h4 class="col-lg-12 col-md-12">Previous value</h4>
+                                <h4 class="col-lg-12 col-md-12" translate-keep-content translate="widget.knob.bartrack.previousvalue">Previous value</h4>
                             </div>
 
                             <div class="form-group">
                                 <div class="col-xs-12">
                                     <div class="checkbox">
                                         <label>
-                                            <input type="checkbox" name="displayPrevious" ng-model="form.displayPrevious" /> Display previous value when dragging
+                                            <input type="checkbox" name="displayPrevious" ng-model="form.displayPrevious" /> <span translate-keep-content translate="widget.knob.bartrack.previousvalue.description">Display previous value when dragging</span>
                                         </label>
                                     </div>
                                     <br />
                                 </div>
                                 <div class="col-xs-12">
                                     <div class="form-group" ng-class="{error: _form.prevBarColor.$error && _form.submitted}">
-                                        <label class="control-label col-lg-2 col-md-2">Color</label>
+                                        <label class="control-label col-lg-2 col-md-2" translate>Color</label>
                                         <div class="col-lg-4 col-md-4">
                                             <div dab-model="form.prevBarColor" web-colorpicker dab-width="20" dab-height="20" dab-radius="50" dab-vertical="4" dab-rotate="0" show-grayscale="true"></div>
                                         </div>
@@ -218,17 +218,17 @@
                     </div>
                 </uib-tab>
 
-                <uib-tab heading="Scale">
+                <uib-tab heading="{{'Scale' | translation:'widget.knob.scale'}}">
                     <br />
                     <div class="row">
                         <div class="col-xs-12">
                             <div class="col-lg-12 col-md-12">
                                 <div class="form-group" ng-class="{error: _form.scaleEnabled.$error && _form.submitted}">
-                                    <label class="control-label col-lg-3 col-md-3">Display scale</label>
+                                    <label class="control-label col-lg-3 col-md-3" translate-keep-content translate="widget.knob.scale.display">Display scale</label>
                                     <div class="col-lg-9 col-md-9">
                                         <div class="checkbox">
                                             <label>
-                                                <input type="checkbox" name="readOnly" ng-model="form.scaleEnabled" /> Enabled
+                                                <input type="checkbox" name="readOnly" ng-model="form.scaleEnabled" /> <span translate-keep-content translate="widget.knob.scale.display.enabled">Enabled</span>
                                             </label>
                                         </div>
                                     </div>
@@ -237,14 +237,14 @@
 
                             <div class="col-lg-12 col-md-12">
                                 <div class="form-group" ng-class="{error: _form.scaleType.$error && _form.submitted}">
-                                    <label class="control-label col-lg-3 col-md-3">Scale Type</label>
+                                    <label class="control-label col-lg-3 col-md-3" translate-keep-content translate="widget.knob.scale.type">Scale Type</label>
                                     <div class="col-lg-9 col-md-9">
                                         <div class="checkbox">
                                             <label>
-                                                <input type="radio" name="scaleTypeLines" ng-model="form.scaleType" value="lines" /> Lines
+                                                <input type="radio" name="scaleTypeLines" ng-model="form.scaleType" value="lines" /> <span translate-keep-content translate="widget.knob.scale.type.lines">Lines</span>
                                             </label>
                                             <label>
-                                                <input type="radio" name="scaleTypeDots" ng-model="form.scaleType" value="dots" /> Dots
+                                                <input type="radio" name="scaleTypeDots" ng-model="form.scaleType" value="dots" /> <span translate-keep-content translate="widget.knob.scale.type.dots">Dots</span>
                                             </label>
                                         </div>
                                     </div>
@@ -254,7 +254,7 @@
                             <div class="form-group">
                                 <div class="col-xs-4">
                                     <div class="form-group" ng-class="{error: _form.scaleWidth.$error && _form.submitted}">
-                                        <label class="control-label col-xs-4">Width</label>
+                                        <label class="control-label col-xs-4" translate-keep-content translate="widget.knob.scale.width">Width</label>
                                         <div class="col-xs-6">
                                             <input name="min" type="number" ng-model="form.scaleWidth" class="form-control" />
                                         </div>
@@ -262,7 +262,7 @@
                                 </div>
                                 <div class="col-xs-4">
                                     <div class="form-group" ng-class="{error: _form.scaleQuantity.$error && _form.submitted}">
-                                        <label class="control-label col-xs-4">Qty.</label>
+                                        <label class="control-label col-xs-4" translate-keep-content translate="widget.knob.scale.qty">Qty.</label>
                                         <div class="col-xs-6">
                                             <input name="min" type="number" ng-model="form.scaleQuantity" class="form-control" />
                                         </div>
@@ -270,7 +270,7 @@
                                 </div>
                                 <div class="col-xs-4">
                                     <div class="form-group" ng-class="{error: _form.scaleSpaceWidth.$error && _form.submitted}">
-                                        <label class="control-label col-xs-4">Space</label>
+                                        <label class="control-label col-xs-4" translate-keep-content translate="widget.knob.scale.space">Space</label>
                                         <div class="col-xs-6">
                                             <input name="min" type="number" ng-model="form.scaleSpaceWidth" class="form-control" />
                                         </div>
@@ -278,7 +278,7 @@
                                 </div>
                                 <div class="col-xs-12">
                                     <div class="form-group" ng-class="{error: _form.scaleColor.$error && _form.submitted}">
-                                        <label class="control-label col-lg-2 col-md-2">Color</label>
+                                        <label class="control-label col-lg-2 col-md-2" translate>Color</label>
                                         <div class="col-lg-4 col-md-4">
                                             <div dab-model="form.scaleColor" web-colorpicker dab-width="20" dab-height="20" dab-radius="50" dab-vertical="4" dab-rotate="0" show-grayscale="true"></div>
                                         </div>
@@ -290,20 +290,20 @@
                     </div>
                 </uib-tab>
 
-                <uib-tab heading="Skin">
+                <uib-tab heading="{{'Skin' | translation:'widget.knob.skin'}}">
                     <br />
                     <div class="row">
                         <div class="col-xs-12">
                             <div class="col-lg-12 col-md-12">
                                 <div class="form-group" ng-class="{error: _form.skinType.$error && _form.submitted}">
-                                    <label class="control-label col-lg-3 col-md-3">Type</label>
+                                    <label class="control-label col-lg-3 col-md-3" translate-keep-content translate="widget.knob.skin.type">Type</label>
                                     <div class="col-lg-9 col-md-9">
                                         <div class="checkbox">
                                             <label>
-                                                <input type="radio" name="skinTypeSimple" ng-model="form.skinType" value="simple" /> Simple
+                                                <input type="radio" name="skinTypeSimple" ng-model="form.skinType" value="simple" /> <span translate-keep-content translate="widget.knob.skin.type.simple">Simple</span>
                                             </label>
                                             <label>
-                                                <input type="radio" name="skinTypeTron" ng-model="form.skinType" value="tron" /> Tron
+                                                <input type="radio" name="skinTypeTron" ng-model="form.skinType" value="tron" /> <span translate-keep-content translate="widget.knob.type.tron">Tron</span>
                                             </label>
                                         </div>
                                     </div>
@@ -312,13 +312,13 @@
 
 
                             <div class="row">
-                                <h4 class="col-lg-12 col-md-12">Tron skin settings</h4>
+                                <h4 class="col-lg-12 col-md-12" translate-keep-content translate="widget.knob.skin.tronsettings">Tron skin settings</h4>
                             </div>
 
                             <div class="form-group">
                                 <div class="col-xs-6">
                                     <div class="form-group" ng-class="{error: _form.skinWidth.$error && _form.submitted}">
-                                        <label class="control-label col-xs-4">Width</label>
+                                        <label class="control-label col-xs-4" translate-keep-content translate="widget.knob.skin.tronsettings.width">Width</label>
                                         <div class="col-xs-6">
                                             <input name="min" type="number" ng-model="form.skinWidth" class="form-control" />
                                         </div>
@@ -326,7 +326,7 @@
                                 </div>
                                 <div class="col-xs-6">
                                     <div class="form-group" ng-class="{error: _form.skinSpaceWidth.$error && _form.submitted}">
-                                        <label class="control-label col-xs-4">Space</label>
+                                        <label class="control-label col-xs-4" translate-keep-content translate="widget.knob.skin.tronsettings.space">Space</label>
                                         <div class="col-xs-6">
                                             <input name="min" type="number" ng-model="form.skinSpaceWidth" class="form-control" />
                                         </div>
@@ -334,7 +334,7 @@
                                 </div>
                                 <div class="col-xs-12">
                                     <div class="form-group" ng-class="{error: _form.skinColor.$error && _form.submitted}">
-                                        <label class="control-label col-lg-2 col-md-2">Color</label>
+                                        <label class="control-label col-lg-2 col-md-2" translate>Color</label>
                                         <div class="col-lg-4 col-md-4">
                                             <div dab-model="form.skinColor" web-colorpicker dab-width="20" dab-height="20" dab-radius="50" dab-vertical="4" dab-rotate="0" show-grayscale="true"></div>
                                         </div>
@@ -346,21 +346,21 @@
                     </div>
                 </uib-tab>
 
-                <uib-tab heading="Ranges">
+                <uib-tab heading="{{'Ranges' | translation:'widget.knob.ranges'}}">
                     <br />
                     <div class="col-lg-12 col-md-12">
                         <div class="form-group" ng-class="{error: _form.rangesEnabled.$error && _form.submitted}">
                             <div class="col-lg-9 col-md-9">
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" name="enabled" ng-model="form.rangesEnabled" /> Enable Ranges
+                                        <input type="checkbox" name="enabled" ng-model="form.rangesEnabled" /> <span translate-keep-content translate="widget.knob.ranges.enable">Enable Ranges</span>
                                     </label>
                                 </div>
                             </div>
                             <div class="col-lg-9 col-md-9">
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" name="textColorMatching" ng-model="form.rangesTextColorMatching" /> Match Text Color to Range
+                                        <input type="checkbox" name="textColorMatching" ng-model="form.rangesTextColorMatching" /> <span translate-keep-content translate="widget.knob.ranges.match_text_color">Match Text Color to Range</span>
                                     </label>
                                 </div>
                             </div>
@@ -381,7 +381,7 @@
                             <div class="col-xs-12">
                                 <div class="col-xs-6">
                                     <div class="form-group">
-                                        <label class="control-label col-xs-2">from</label>
+                                        <label class="control-label col-xs-2" translate-keep-content translate="widget.knob.ranges.from">from</label>
                                         <div class="col-xs-6">
                                             <input name="name" type="number" step="any" ng-model="range.min" class="form-control" />
                                         </div>
@@ -389,7 +389,7 @@
                                 </div>
                                 <div class="col-xs-6">
                                     <div class="form-group">
-                                        <label class="control-label col-xs-2">to</label>
+                                        <label class="control-label col-xs-2" translate-keep-content translate="widget.knob.ranges.to">to</label>
                                         <div class="col-xs-6">
                                             <input name="name" type="number" step="any" ng-model="range.max" class="form-control" />
                                         </div>
@@ -399,7 +399,7 @@
                             <div class="col-xs-12">
                                 <div class="col-xs-6">
                                     <div class="form-group">
-                                        <label class="control-label col-xs-2">Bar</label>
+                                        <label class="control-label col-xs-2" translate-keep-content translate="widget.knob.ranges.bar">Bar</label>
                                         <div class="col-xs-6">
                                             <input name="name" type="text" ng-model="range.barColor" class="form-control" />
                                         </div>
@@ -415,19 +415,19 @@
                     </uib-accordion>
                 </uib-tab>
 
-                <uib-tab heading="Misc.">
+                <uib-tab heading="{{'Misc.' | translation:'widget.knob.misc'}}">
                     <br />
                     <div class="row">
                         <div class="col-xs-12">
 
                             <div class="row">
-                                <h4 class="col-lg-12 col-md-12">Text</h4>
+                                <h4 class="col-lg-12 col-md-12" translate-keep-content translate="widget.knob.misc.text">Text</h4>
                             </div>
 
                             <div class="form-group">
                                 <div class="col-xs-6">
                                     <div class="form-group" ng-class="{error: _form.fontSize.$error && _form.submitted}">
-                                        <label class="control-label col-xs-4">Font size</label>
+                                        <label class="control-label col-xs-4" translate>Font size</label>
                                         <div class="col-xs-6">
                                             <input name="max" type="number" ng-model="form.fontSize" class="form-control" />
                                         </div>
@@ -435,7 +435,7 @@
                                 </div>
                                 <div class="col-xs-12">
                                     <div class="form-group" ng-class="{error: _form.textColor.$error && _form.submitted}">
-                                        <label class="control-label col-lg-2 col-md-2">Color</label>
+                                        <label class="control-label col-lg-2 col-md-2" translate>Color</label>
                                         <div class="col-lg-4 col-md-4">
                                             <div dab-model="form.textColor" web-colorpicker dab-width="20" dab-height="20" dab-radius="50" dab-vertical="4" dab-rotate="0" show-grayscale="true"></div>
                                         </div>
@@ -444,13 +444,13 @@
                             </div>
 
                             <div class="row">
-                                <h4 class="col-lg-12 col-md-12">Background</h4>
+                                <h4 class="col-lg-12 col-md-12" translate-keep-content translate="widget.knob.misc.background">Background</h4>
                             </div>
 
                             <div class="form-group">
                                 <div class="col-xs-12">
                                     <div class="form-group" ng-class="{error: _form.bgColor.$error && _form.submitted}">
-                                        <label class="control-label col-lg-2 col-md-2">Color</label>
+                                        <label class="control-label col-lg-2 col-md-2" translate>Color</label>
                                         <div class="col-lg-4 col-md-4">
                                             <div dab-model="form.bgColor" web-colorpicker dab-width="20" dab-height="20" dab-radius="50" dab-vertical="4" dab-rotate="0" show-grayscale="true"></div>
                                         </div>
@@ -482,9 +482,9 @@
 
 
         <div class="modal-footer">
-            <a ng-click="remove()" class="btn btn-danger pull-left" tabindex="-1"><i class="glyphicon glyphicon-trash"></i>&nbsp;Delete</a>
-            <a ng-click="dismiss()" class="btn btn-default" tabindex="-1"><i class="glyphicon glyphicon-remove"></i>&nbsp;Cancel</a>
-            <button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-ok"></i>&nbsp;Save</button>
+            <a ng-click="remove()" class="btn btn-danger pull-left" tabindex="-1"><i class="glyphicon glyphicon-trash"></i>&nbsp;<span translate>Delete</span></a>
+            <a ng-click="dismiss()" class="btn btn-default" tabindex="-1"><i class="glyphicon glyphicon-remove"></i>&nbsp;<span translate>Cancel</span></a>
+            <button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-ok"></i>&nbsp;<span translate>Save</span></button>
         </div>
     </form>
 </div>

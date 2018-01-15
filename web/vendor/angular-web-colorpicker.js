@@ -8,7 +8,7 @@ angular.module('web.colorpicker').directive('webColorpicker', function() {
       '</div>' +
       '</div>' +
       '</div>' +
-      '<div class="transparent-swatch-arrow"><i class="glyphicon glyphicon-arrow-up"></i> Transparent</div>',
+      '<div class="transparent-swatch-arrow"><i class="glyphicon glyphicon-arrow-up"></i> <span translate>Transparent</span></div>',
     restrict: 'EA',
     scope: {
       dabModel: '=',

@@ -17,11 +17,18 @@
         'angular-clipboard',
         'ngFileSaver',
         'snap',
-        'tmh.dynamicLocale'
+        'tmh.dynamicLocale',
+        'pascalprecht.translate'
     ])
-    .config(['$routeProvider', 'localStorageServiceProvider', 'tmhDynamicLocaleProvider', function($routeProvider, localStorageServiceProvider, tmhDynamicLocaleProvider) {
+    .config(['$routeProvider', 'localStorageServiceProvider', 'tmhDynamicLocaleProvider', '$translateProvider', '$translatePartialLoaderProvider', function($routeProvider, localStorageServiceProvider, tmhDynamicLocaleProvider, $translateProvider, $translatePartialLoaderProvider) {
         localStorageServiceProvider.setStorageType('localStorage');
         tmhDynamicLocaleProvider.localeLocationPattern('vendor/i18n/angular-locale_{{locale}}.js');
+        $translatePartialLoaderProvider.addPart('main');
+        $translateProvider.useLoader('$translatePartialLoader', {
+            urlTemplate: 'assets/i18n/{part}/{lang}.json'
+        });
+        $translateProvider.preferredLanguage('en');
+        $translateProvider.useSanitizeValueStrategy(null);
 
         $routeProvider
             .when('/', {
@@ -59,6 +66,12 @@
                                 'vendor/cm/mode/xml/xml.js'
                             ]);
                         });
+                    }],
+                    translations: ['TranslationService', function (TranslationService) {
+                        return TranslationService.enterPart('admin');
+                    }],
+                    translations_widgets: ['TranslationService', function (TranslationService) {
+                        return TranslationService.enterPart('widgets');
                     }]
                 }
             })
@@ -85,6 +98,9 @@
                     }],
                     themes: ['$http', function ($http) {
                         return $http.get('assets/styles/themes/themes.json');
+                    }],
+                    translations: ['TranslationService', function (TranslationService) {
+                        return TranslationService.enterPart('admin');
                     }]
                 }
             })
@@ -110,6 +126,9 @@
                                 'vendor/cm/mode/javascript/javascript.js'
                             ]);
                         })
+                    }],
+                    translations: ['TranslationService', function (TranslationService) {
+                        return TranslationService.enterPart('admin');
                     }]
                 }
             })
@@ -122,6 +141,9 @@
                         var widgets = persistenceService.getCustomWidgets();
                         if (persistenceService.isEditingLocked()) return $q.reject("Editing is locked");
                         return widgets;
+                    }],
+                    translations: ['TranslationService', function (TranslationService) {
+                        return TranslationService.enterPart('admin');
                     }]
                 }
             })
@@ -150,6 +172,12 @@
                                 'vendor/cm/mode/xml/xml.js'
                             ]);
                         })
+                    }],
+                    translations: ['TranslationService', function (TranslationService) {
+                        return TranslationService.enterPart('admin');
+                    }],
+                    translations_widgets: ['TranslationService', function (TranslationService) {
+                        return TranslationService.enterPart('widgets');
                     }]
                 }
             })

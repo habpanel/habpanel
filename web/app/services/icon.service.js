@@ -58,8 +58,8 @@
 
 
     // TODO: Move this directive elsewhere
-    IconPicker.$inject = ['IconService'];
-    function IconPicker(IconService) {
+    IconPicker.$inject = ['IconService', 'TranslationService'];
+    function IconPicker(IconService, TranslationService) {
         var directive = {
             link: link,
             restrict: 'AE',
@@ -70,11 +70,11 @@
                 '<a href id="iconset-picker-btn" class="btn btn-default" uib-dropdown-toggle>' +
                 '{{setdropdownlabel}}&nbsp;<span class="caret" /></a>' +
                 '<ul class="dropdown-menu" role="menu" aria-labelledby="iconset-picker-btn">' +
-                '<li><a ng-click="clearIcon()"><i>(none)</i></a></li>' +
+                '<li><a ng-click="clearIcon()"><em translate-keep-content translate="iconpicker.none">(none)</em></a></li>' +
                 '<li ng-repeat="iconset in iconsets"><a ng-click="selectIconset(iconset.id)">{{iconset.name}}</a></li>' +
                 '<li class="divider"></li>' +
-                '<li><a ng-click="selectCustomIcon()">Custom icon</li>' +
-                '<li><a ng-click="selectCustomURL()">Custom URL</li>' +
+                '<li><a ng-click="selectCustomIcon()" translate-keep-content translate="iconpicker.customicon">Custom icon</a></li>' +
+                '<li><a ng-click="selectCustomURL()" translate-keep-content translate="iconpicker.customurl">Custom URL</a></li>' +
                 '</ul>' +
                 '</div><br /><br />' +
                 '<div ng-if="iconset && iconset !== \'custom-icon\' && iconset !== \'custom-url\'" class="btn-group" uib-dropdown is-open="status.isopen">' +
@@ -86,7 +86,7 @@
                 '</ul>' +
                 '<br /><br /><small ng-if="notice" style="display:inherit"><a target="_blank" href="{{noticeUrl}}">{{notice}}</a></small><br />' +
                 '</div>' +
-                '<div ng-show="iconset === \'custom-icon\'">Name:&nbsp;<input type="text" ng-model="icon" ng-model-options="{ updateOn: \'blur\' }" uib-tooltip-html="customIconTooltip" tooltip-trigger="focus" tooltip-placement="right" /><br /><br /></div>' +
+                '<div ng-show="iconset === \'custom-icon\'"><span translate>Name</span>:&nbsp;<input type="text" ng-model="icon" ng-model-options="{ updateOn: \'blur\' }" uib-tooltip-html="customIconTooltip" tooltip-trigger="focus" tooltip-placement="right" /><br /><br /></div>' +
                 '<div ng-show="iconset === \'custom-url\'">URL:&nbsp;<input type="text" ng-model="icon" ng-model-options="{ updateOn: \'blur\' }" /><br /><br /></div>',
             scope: {
                 iconset: '=',
@@ -131,13 +131,13 @@
 
             scope.$watch('iconset', function (iconset) {
                 if (!iconset) {
-                    scope.setdropdownlabel = 'Select icon set';
+                    scope.setdropdownlabel = TranslationService.translate('iconpicker.selecticonset', 'Select icon set');
                     return;
                 } else if (iconset === 'custom-icon') {
-                    scope.setdropdownlabel = 'Custom icon';
+                    scope.setdropdownlabel = TranslationService.translate('iconpicker.customicon', 'Custom icon');
                     return;
                 } else if (iconset === 'custom-url') {
-                    scope.setdropdownlabel = 'Custom URL';
+                    scope.setdropdownlabel = TranslationService.translate('iconpicker.customurl', 'Custom URL');
                     return;
                 }
                 var set = IconService.getIconSet(iconset);
@@ -156,7 +156,7 @@
                 scope.iconUrl = IconService.getIconUrl(scope.iconset, scope.icon);
             });
 
-            scope.customIconTooltip = 'Type the name of a <a href="http://docs.openhab.org/configuration/items.html#icons" target="_blank">registered icon</a> (only SVG supported)<br />Examples: <em>switch</em>, <em>temperature</em> or an additional icon in your configuration\'s <code>icons/classic</code> folder';
+            scope.customIconTooltip = TranslationService.translate('iconpicker.customicontooltip', 'Type the name of a <a href="http://docs.openhab.org/configuration/items.html#icons" target="_blank">registered icon</a> (only SVG supported)<br />Examples: <em>switch</em>, <em>temperature</em> or an additional icon in your configuration\'s <code>icons/classic</code> folder');
 
         }
     }

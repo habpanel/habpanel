@@ -3,16 +3,16 @@
         <i class="glyphicon glyphicon-menu-hamburger"></i>
     </a>
 
-    <a class="btn pull-right" ng-click="vm.goFullscreen()" title="Toggle full screen" ng-if="!settings.hide_fullscreen_button && !vm.dashboard.header.use_custom_widget">
+    <a class="btn pull-right" ng-click="vm.goFullscreen()" title="{{vm.fullscreenTooltip}}" ng-if="!settings.hide_fullscreen_button && !vm.dashboard.header.use_custom_widget">
         <i class="glyphicon glyphicon-resize-full"></i>
     </a>
-    <a class="btn pull-right" ng-click="vm.refresh()" title="Refresh" ng-if="!settings.hide_refresh_button && !vm.dashboard.header.use_custom_widget">
+    <a class="btn pull-right" ng-click="vm.refresh()" title="{{vm.refreshTooltip}}" ng-if="!settings.hide_refresh_button && !vm.dashboard.header.use_custom_widget">
         <i class="glyphicon glyphicon-refresh"></i>
     </a>
     <a class="btn pull-right" 
         ng-if="vm.supportsSpeech && !settings.floating_speech && !settings.hide_speak_button && !vm.dashboard.header.use_custom_widget" 
         ng-click="vm.isListening ? vm.stopListening() : vm.listen()" 
-        title="Speak">
+        title="{{vm.speakTooltip}}">
         <i class="glyphicon" ng-class="vm.isListening ? 'glyphicon-stop' : 'glyphicon-comment'"></i>
     </a>
     <h2 class="dashboard-title" ng-if="!vm.dashboard.header.use_custom_widget">

@@ -4,7 +4,7 @@
     </a>
     <!--<a class="btn btn-link pull-left" onclick="window.history.back()"><i class="glyphicon glyphicon-chevron-left"></i></a>
     <a class="btn btn-link pull-left" href="#/"><i class="glyphicon glyphicon-home"></i></a>-->
-	<h2>Settings</h2>
+	<h2 translate-keep-content translate="settings.header">Settings</h2>
 </div>
 
 <div class="box col-md-12 localconfig">
@@ -15,15 +15,15 @@
         <br />
         <a ng-click="vm.saveConfig()" class="btn btn-danger" style="width: 90px; margin-bottom: 3px"><i class="glyphicon glyphicon-save"></i>&nbsp;{{vm.saveLabel}}</a>
     </div>
-    <h4><span class="label" uib-tooltip="This is the raw configuration object representing your current configuration. Be careful while editing it by hand!" tooltip-placement="bottom-left"><i class="glyphicon glyphicon-alert"></i></span> Local panel configuration editor</h4>
+    <h4><span class="label" uib-tooltip="{{'This is the raw configuration object representing your current configuration. Be careful while editing it by hand!' | translation:'settings.localconfig.warning'}}" tooltip-placement="bottom-left"><i class="glyphicon glyphicon-alert"></i></span> <span translate-keep-content translate="settings.localconfig.title">Local panel configuration editor</span></h4>
 
     <div ng-show="vm.importMode">
-        <input type="file" local-file-select="vm.file" on-file-selected="vm.importFile" style="display: inline"><a ng-click="vm.importMode=false">Cancel</a>
+        <input type="file" local-file-select="vm.file" on-file-selected="vm.importFile" style="display: inline"><a ng-click="vm.importMode=false" translate>Cancel</a>
     </div>
 
     <div ng-show="!vm.importMode">
-        <a ng-click="vm.importMode=true" class="btn btn-primary"><i class="glyphicon glyphicon-import">&nbsp;</i>Import</a>
-        <a ng-click="vm.exportToFile()" class="btn btn-primary"><i class="glyphicon glyphicon-export">&nbsp;</i>Export</a>
+        <a ng-click="vm.importMode=true" class="btn btn-primary"><i class="glyphicon glyphicon-import">&nbsp;</i><span translate-keep-content translate="settings.localconfig.import">Import</span></a>
+        <a ng-click="vm.exportToFile()" class="btn btn-primary"><i class="glyphicon glyphicon-export">&nbsp;</i><span translate-keep-content translate="settings.localconfig.export">Export</span></a>
     </div>
 
     <div ui-codemirror data-snap-ignore="true" ui-refresh='vm.refreshEditor' ui-codemirror-opts="vm.editorOptions" ng-model="vm.rawLocalConfig" />

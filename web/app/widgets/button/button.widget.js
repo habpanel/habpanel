@@ -10,7 +10,7 @@
                 type: 'button',
                 displayName: 'Button',
                 icon: 'download-alt',
-                description: 'A button sending a specific value to an openHAB item'
+                description: 'A button performing a certain action, like sending a command to an openHAB item'
             });
         });
 

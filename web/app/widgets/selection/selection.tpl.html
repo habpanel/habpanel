@@ -1,6 +1,6 @@
 <script type="text/ng-template" id="selectionChoiceWindow.html">
     <div class="container" id="modal-body" style="padding: 30px">
-        <div ng-if="!vm.choices || !vm.choices.length" class="box selection-choice col-xs-12">No choices available - check widget config</div>
+        <div ng-if="!vm.choices || !vm.choices.length" class="box selection-choice col-xs-12" translate-keep-content translate="widget.selection.nochoices">No choices available - check widget config</div>
         <ul style="padding-left: 0">
             <li ng-repeat="choice in vm.choices" class="{{vm.gridClass}}">
                 <div href="#" class="box switch selection-choice activefeedback col-xs-12 {{vm.gridClassMode}}"

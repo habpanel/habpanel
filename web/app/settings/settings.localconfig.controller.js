@@ -5,8 +5,8 @@
         .module('app')
         .controller('SettingsLocalConfigCtrl', SettingsLocalConfigController);
 
-    SettingsLocalConfigController.$inject = ['$rootScope', '$timeout', 'OH2ServiceConfiguration', 'OH2StorageService', 'PersistenceService', 'prompt', 'clipboard', 'Blob', 'FileSaver', 'LocalFileReader'];
-    function SettingsLocalConfigController($rootScope, $timeout, OH2ServiceConfiguration, OH2StorageService, PersistenceService, prompt, clipboard, Blob, FileSaver, LocalFileReader) {
+    SettingsLocalConfigController.$inject = ['$rootScope', '$timeout', 'OH2ServiceConfiguration', 'OH2StorageService', 'PersistenceService', 'prompt', 'clipboard', 'Blob', 'FileSaver', 'LocalFileReader', 'TranslationService'];
+    function SettingsLocalConfigController($rootScope, $timeout, OH2ServiceConfiguration, OH2StorageService, PersistenceService, prompt, clipboard, Blob, FileSaver, LocalFileReader, TranslationService) {
         var vm = this;
 
         vm.editorOptions = {
@@ -20,8 +20,8 @@
         };
 
         function resetButtons() {
-            vm.saveLabel = "Save";
-            vm.copyLabel = "Copy";
+            vm.saveLabel = TranslationService.translate("settings.localconfig.save", "Save");
+            vm.copyLabel = TranslationService.translate("settings.localconfig.copy", "Copy");
         }
 
         function checkFormat(config) {
@@ -49,10 +49,10 @@
 
         vm.copiedToClipboard = function (success) {
             if (success) {
-                vm.copyLabel = "Copied!";
+                vm.copyLabel = TranslationService.translate("settings.localconfig.copied", "Copied!");;
                 $timeout(resetButtons, 2000);
             } else {
-                vm.copyLabel = "FAILED!";
+                vm.copyLabel = TranslationService.translate("settings.localconfig.failed", "FAILED!");;
                 $timeout(resetButtons, 2000);
             }
         };
@@ -67,8 +67,8 @@
                     vm.saveConfig();
                 } catch (e) {
                     prompt({
-                        title: "Error",
-                        message: "Problem while importing: " + e,
+                        title: TranslationService.translate("settings.localconfig.importerror.dialog.title", "Error"),
+                        message: TranslationService.translate("settings.localconfig.importerror.dialog.message", "Problem while importing: ") + e,
                         buttons: [{ label:'OK', primary: true }]
                     });
                 }
@@ -85,7 +85,7 @@
                 var newconf = checkFormat(JSON.parse(vm.rawLocalConfig));
 
                 if (!newconf.dashboards) {
-                    throw 'No dashboards found!';
+                    throw TranslationService.translate("settings.localconfig.error.nodashboardsfound", "'No dashboards found!");
                 }
 
                 angular.copy(newconf.dashboards, $rootScope.dashboards);
@@ -95,12 +95,12 @@
 
                 PersistenceService.saveDashboards();
                 PersistenceService.getDashboards();
-                vm.saveLabel = "Saved!";
+                vm.saveLabel = TranslationService.translate("settings.localconfig.saved", "Saved!");;
                 $timeout(resetButtons, 2000);
             } catch (e) {
                 prompt({
-                    title: "Error",
-                    message: "Configuration parsing error, nothing has been modified: " + e,
+                    title: TranslationService.translate("settings.localconfig.parsingerror.dialog.title", "Error"),
+                    message: TranslationService.translate("settings.localconfig.parsingerror.dialog.message", "Configuration parsing error, nothing has been modified: ") + e,
                     buttons: [{ label:'OK', primary: true }]
                 });
             }

@@ -5,14 +5,14 @@
         .module('app')
         .controller('WidgetListCtrl', WidgetListController);
 
-    WidgetListController.$inject = ['$rootScope', '$scope', '$http', 'widgets', 'PersistenceService', 'prompt', 'FileSaver', 'LocalFileReader', '$uibModal', '$ocLazyLoad'];
-    function WidgetListController($rootScope, $scope, $http, widgets, PersistenceService, prompt, FileSaver, LocalFileReader, $modal, $ocLazyLoad) {
+    WidgetListController.$inject = ['$rootScope', '$scope', '$http', 'widgets', 'PersistenceService', 'prompt', 'FileSaver', 'LocalFileReader', '$uibModal', '$ocLazyLoad', 'TranslationService'];
+    function WidgetListController($rootScope, $scope, $http, widgets, PersistenceService, prompt, FileSaver, LocalFileReader, $modal, $ocLazyLoad, TranslationService) {
         var vm = this;
 
         vm.addNewWidget = function () {
             prompt({
-                title: "New custom widget",
-                message: "Please choose a short name as an identifier for your widget (for example, 'window-shutter', 'up-down-button, 'weather-forecast' etc.). If a widget with the same identifier already exists, it will be replaced!",
+                title: TranslationService.translate("customwidgets.list.add.dialog.title", "New custom widget"),
+                message: TranslationService.translate("customwidgets.list.add.dialog.message", "Please choose a short name as an identifier for your widget (for example, 'window-shutter', 'up-down-button, 'weather-forecast' etc.). If a widget with the same identifier already exists, it will be replaced!"),
                 input: true
             }).then(function (id) {
                 $rootScope.customwidgets[id] = { 
@@ -28,13 +28,13 @@
         vm.importFile = function (file) {
             if (!file) return;
             if (file.name.indexOf(".json") == -1) {
-                alert("The file must have a .json extension!");
+                alert(TranslationService("customwidgets.list.import.nojson", "The file must have a .json extension!"));
                 delete $scope.file;
                 return;
             }
             prompt({
-                title: "Import widget",
-                message: "Please confirm or change the identifier of your widget (avoid spaces and special chars!). If a widget with the same identifier already exists, it will be replaced!",
+                title: TranslationService.translate("customwidgets.list.import.dialog.title", "Import widget"),
+                message: TranslationService.translate("customwidgets.list.import.dialog.message", "Please confirm or change the identifier of your widget (avoid spaces and special chars!). If a widget with the same identifier already exists, it will be replaced!"),
                 input: true,
                 value: file.name.replace(".widget", "").replace(".json", "")
             }).then(function (id) {
@@ -87,22 +87,27 @@
                 var readme_url = widget.readme_url;
 
                 prompt({
-                    title: "Update widget",
-                    message: "This will update widget " + id + " from " + source_url + ". Any changes you made will be overwritten! Continue?",
+                    title: TranslationService.translate("customwidgets.list.update.dialog.title", "Update widget"),
+                    message: TranslationService.translate("customwidgets.list.update.dialog.message", "This will update widget <id> from <source_url>. Any changes you made will be overwritten! Continue?")
+                                               .replace('<id>', id).replace('<source_url>', source_url),
                 }).then(function () {
                     $http.get(widget.source_url).then(function (resp) {
                         if (resp.data) {
                             if (!resp.data.template) {
-                                vm.updateErrorMessage = "Couldn't update widget " + id + " from " + widget.source_url + ": no template found";
+                                vm.updateErrorMessage = TranslationService.translate("customwidgets.list.update.error.notemplatefound", "Couldn't update widget <id> from <source_url>: no template found")
+                                                                          .replace('<id>', id).replace('<source_url>', source_url);
                             } else {
                                 resp.data.source_url = source_url;
                                 resp.data.readme_url = readme_url;
                                 $rootScope.customwidgets[id] = resp.data;
                                 PersistenceService.saveDashboards();
-                                vm.updatedMessage = "Widget " + id + " updated successfully from " + source_url;
+                                vm.updatedMessage = TranslationService.translate("customwidgets.list.update.success", "Widget <id> updated successfully from <source_url>")
+                                                                      .replace('<id>', id).replace('<source_url>', source_url);
                             }
                         } else {
-                            vm.updateErrorMessage = "Couldn't update widget " + id + " from " + widget.source_url + ": " + resp.statusText;
+                            vm.updateErrorMessage = TranslationService.translate("customwidgets.list.update.error.unknown", "Couldn't update widget <id> from <source_url>: ")
+                                                                      .replace('<id>', id).replace('<source_url>', source_url)
+                                                                      + resp.statusText;
                         }
                     });
                 });
@@ -111,8 +116,8 @@
 
         vm.deleteWidget = function (id) {
             prompt({
-                title: "Remove widget",
-                message: "Please confirm you want to delete this widget: " + id,
+                title: TranslationService.translate("customwidgets.list.delete.dialog.title", "Remove widget"),
+                message: TranslationService.translate("customwidgets.list.delete.dialog.message", "Please confirm you want to delete this widget: ") + id,
             }).then(function () {
                 delete $rootScope.customwidgets[id];
                 PersistenceService.saveDashboards();
@@ -121,8 +126,9 @@
 
         vm.cloneConfigWidget = function (originalId) {
             prompt({
-                title: "Clone widget",
-                message: "This will clone the globally provisioned widget: " + originalId + " to be modified as part of the panel configuration. Enter an unique identifier below - it must be different from the widget being cloned, and should avoid spaces and special chars. If an user-defined widget with the same identifier already exists, it will be replaced!",
+                title: TranslationService.translate("customwidgets.list.clone.dialog.title", "Clone widget"),
+                message: TranslationService.translate("customwidgets.list.clone.dialog.message", "This will clone the globally provisioned widget: <id> to be modified as part of the panel configuration. Enter an unique identifier below - it must be different from the widget being cloned, and should avoid spaces and special chars. If an user-defined widget with the same identifier already exists, it will be replaced!")
+                                           .replace('<id>', originalId),
                 input: true,
                 value: originalId + '-clone'
             }).then(function (id) {

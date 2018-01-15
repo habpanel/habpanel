@@ -7,8 +7,8 @@
         .value('OH2ServiceConfiguration', {})
         .service('OH2StorageService', OH2StorageService);
 
-    OHService.$inject = ['$rootScope', '$http', '$q', '$timeout', '$interval', '$filter', '$location', 'SpeechService', 'tmhDynamicLocale'];
-    function OHService($rootScope, $http, $q, $timeout, $interval, $filter, $location, SpeechService, tmhDynamicLocale) {
+    OHService.$inject = ['$rootScope', '$http', '$q', '$timeout', '$interval', '$filter', '$location', 'SpeechService', 'tmhDynamicLocale', '$translate'];
+    function OHService($rootScope, $http, $q, $timeout, $interval, $filter, $location, SpeechService, tmhDynamicLocale, $translate) {
         this.getItem = getItem;
         this.getItems = getItems;
         this.getLocale = getLocale;
@@ -104,6 +104,10 @@
                              'en-in', 'fr-lu', 'es-mx', 'en-nz', 'en-sg', 'zh-sg',
                              'es-us', 'zh-tw', 'en-za'].indexOf(locale.toLowerCase()) < 0) {
                             locale = response.data.language;
+                        }
+
+                        if (response.data.language && response.data.language !== "en") {
+                            $translate.use(response.data.language);
                         }
 
                         console.log('Setting locale to: ' + locale);

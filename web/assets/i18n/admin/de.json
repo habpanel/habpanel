@@ -1,0 +1,9 @@
+{
+    "designer.save": "Speichern",
+    "designer.run": "Laufen",
+    "designer.addwidget": "Hinzufügen",
+    "designer.addwidget.hint": "Fügen Sie einige Widgets hinzu",
+    "designer.addwidget.customwidgets": "Persönliche",
+    "designer.addwidget.getmore": "Mehr bekommen...",
+    "designer.addwidget.getmore.tooltip": "Öffnet die Widget-Galerie, um mehr zu importieren"
+}

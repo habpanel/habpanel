@@ -19,80 +19,80 @@
     <form name="_form" class="form-horizontal" ng-submit="submit(_form)">
         <div class="modal-header">
             <button type="button" class="close" ng-click="dismiss()" aria-hidden="true">&times;</button>
-            <h3>Dashboard Settings</h3>
+            <h3 translate-keep-content translate="dashboard.settings.dialog.title">Dashboard Settings</h3>
         </div>
 
         <div class="modal-body">
             <uib-tabset>
-                <uib-tab heading="Menu tile">
+                <uib-tab heading="{{'Menu tile' | translation:'dashboard.settings.tile'}}">
                     <br />
                     <div class="form-group" ng-class="{error: _form.name.$error && _form.submitted}">
-                        <label class="control-label col-lg-3 col-md-3">Name</label>
+                        <label class="control-label col-lg-3 col-md-3" translate>Name</label>
                         <div class="col-lg-9 col-md-9">
                             <input name="name" type="text" ng-model="form.name" class="form-control" />
                         </div>
                     </div>
                     <div class="form-group" ng-class="{error: _form.tile.background_image.$error && _form.submitted}">
-                        <label class="control-label col-lg-3 col-md-3">Background Image URL</label>
+                        <label class="control-label col-lg-3 col-md-3" translate-keep-content translate="dashboard.settings.tile.background_image_url">Background Image URL</label>
                         <div class="col-lg-9 col-md-9">
                             <input name="name" type="text" ng-model="form.tile.background_image" class="form-control" />
                         </div>
                     </div>
 
                     <div class="form-group" ng-class="{error: _form.tile.backdrop_icon.$error && _form.submitted}">
-                        <label class="control-label col-lg-3 col-md-3">Backdrop Icon</label>
+                        <label class="control-label col-lg-3 col-md-3" translate>Backdrop Icon</label>
                         <div class="col-lg-9 col-md-9">
                             <icon-picker iconset="form.tile.backdrop_iconset" icon="form.tile.backdrop_icon"></icon-picker>
                             <div ng-if="form.tile.backdrop_icon" class="checkbox">
                                 <label>
-                                    <input type="checkbox" name="vertical" ng-model="form.tile.backdrop_center" /> Center backdrop horizontally
+                                    <input type="checkbox" name="vertical" ng-model="form.tile.backdrop_center" /> <span translate-keep-content translate="widget.common.backdrop_center">Center backdrop horizontally</span>
                                 </label>
                             </div>
                         </div>
                     </div>
 
                     <div class="form-group" ng-class="{error: _form.icon.$error && _form.submitted}">
-                        <label class="control-label col-lg-3 col-md-3">Icon</label>
+                        <label class="control-label col-lg-3 col-md-3" translate>Icon</label>
                         <div class="col-lg-9 col-md-9">
                             <icon-picker iconset="form.tile.iconset" icon="form.tile.icon"></icon-picker>
                             <div class="col-xs-5 input-group" ng-if="form.tile.icon">
-                                <div class="input-group-addon">Size</div>
+                                <div class="input-group-addon" translate>Size</div>
                                 <input name="icon_size" ng-model="form.tile.icon_size" class="form-control" />
                                 <div class="input-group-addon">px</div>
                             </div>
                             <div ng-if="form.icon" class="checkbox">
                                 <label>
-                                    <input type="checkbox" name="vertical" ng-model="form.tile.icon_nolinebreak" /> Icon left of label instead of below
+                                    <input type="checkbox" name="vertical" ng-model="form.tile.icon_nolinebreak" /> <span translate-keep-content translate="widget.common.icon_nolinebreak">Icon left of label instead of below</span>
                                 </label>
                             </div>
                             <div ng-if="form.icon" class="checkbox">
                                 <label>
-                                    <input type="checkbox" name="vertical" ng-model="form.tile.icon_replacestext" /> Icon replaces textual value display
+                                    <input type="checkbox" name="vertical" ng-model="form.tile.icon_replacestext" /> <span translate-keep-content translate="widget.common.icon_replacestext">Icon replaces textual value display</span>
                                 </label>
                             </div>
                         </div>
                     </div>
 
                     <div class="form-group" ng-class="{error: _form.tile.title_color.$error && _form.submitted}">
-                        <label class="control-label col-lg-3 col-md-3">Title Text color</label>
+                        <label class="control-label col-lg-3 col-md-3" translate-keep-content translate="dashboard.settings.tile.title_text_color">Title Text color</label>
                         <div class="col-lg-4 col-md-4">
                             <div dab-model="form.tile.title_color" web-colorpicker dab-width="20" dab-height="20" dab-radius="50" dab-vertical="4" dab-rotate="0" show-grayscale="true"></div>
                         </div>
                     </div>
                     <div class="form-group" ng-class="{error: _form.tile.no_click_feedback.$error && _form.submitted}">
-                        <label class="control-label col-lg-3 col-md-3">Click feedback</label>
+                        <label class="control-label col-lg-3 col-md-3" translate-keep-content translate="dashboard.settings.tile.click_feedback">Click feedback</label>
                         <div class="col-lg-9 col-md-9">
                             <div class="checkbox">
                                 <label>
-                                    <input type="checkbox" name="vertical" ng-model="form.tile.no_click_feedback" /> Don't brighten tile on click/tap
+                                    <input type="checkbox" name="vertical" ng-model="form.tile.no_click_feedback" /> <span translate-keep-content translate="dashboard.settings.tile.click_feedback.description">Don't brighten tile on click/tap</span>
                                 </label>
                             </div>
                         </div>
                     </div>
                 </uib-tab>
-                <uib-tab heading="Advanced">
+                <uib-tab heading="{{'Advanced' | translation:'dashboard.settings.advanced'}}">
                     <br />
-                    <div class="alert alert-warning">These options are currently experimental, unstable or targeted at advanced users! Use at your own risk.</div>
+                    <div class="alert alert-warning" translate-keep-content translate="dashboard.settings.advanced.warning">These options are currently experimental, unstable or targeted at advanced users! Use at your own risk.</div>
                     <br />
                     <div class="form-group" ng-class="{error: _form.columns.$error && _form.submitted}">
                         <label class="control-label col-lg-3 col-md-3">Nb. of columns (default 12)</label>
@@ -147,27 +147,27 @@
                         </div>
                     </div>
                 </uib-tab>
-                <uib-tab heading="Custom widgets">
+                <uib-tab heading="{{'Custom widgets' | translation:'dashboard.settings.customwidgets'}}">
                     <br />
-                    <div class="alert alert-warning">These features are currently experimental, and targeted at advanced users! Use at your own risk.</div>
+                    <div class="alert alert-warning" translate-keep-content translate="dashboard.settings.customwidgets.warning">This feature is currently experimental, and targeted at advanced users! Use at your own risk.</div>
 
                     <uib-accordion close-others="true">
-                        <div uib-accordion-group class="panel-default" heading="Main menu tile{{(form.tile.use_custom_widget && form.tile.custom_widget) ? ': ' + form.tile.custom_widget : ''}}">
+                        <div uib-accordion-group class="panel-default" heading="{{'Main menu tile' | translation:'dashboard.settings.customwidgets.tile'}}{{(form.tile.use_custom_widget && form.tile.custom_widget) ? ': ' + form.tile.custom_widget : ''}}">
 
                             <br />
                             <div class="form-group" ng-class="{error: _form.tile.use_custom_widget.$error && _form.submitted}">
-                                <label class="control-label col-lg-3 col-md-3">Use a custom widget</label>
+                                <label class="control-label col-lg-3 col-md-3" translate-keep-content translate="dashboard.settings.customwidgets.usecustomwidget">Use a custom widget</label>
                                 <div class="col-lg-9 col-md-9">
                                     <div class="checkbox">
                                         <label>
-                                            <input type="checkbox" name="vertical" ng-model="form.tile.use_custom_widget" /> Replace the tile contents by a custom widget
+                                            <input type="checkbox" name="vertical" ng-model="form.tile.use_custom_widget" /> <span translate-keep-content translate="dashboard.settings.customwidgets.tile.description">Replace the tile contents by a custom widget</span>
                                         </label>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="form-group" ng-if="form.tile.use_custom_widget" ng-class="{error: _form.tile.use_custom_widget.$error && _form.submitted}">
-                                <label class="control-label col-lg-3 col-md-3">Custom Widget</label>
+                                <label class="control-label col-lg-3 col-md-3" translate-keep-content translate="dashboard.settings.customwidgets.customwidget">Custom Widget</label>
                                 <div class="col-lg-9 col-md-9">
                                     <select ng-model="form.tile.custom_widget" ng-change="updateCustomWidgetSettings(true, 'tile')" class="form-control">
                                         <option value=""></option>
@@ -183,11 +183,11 @@
                                     <div class="col-lg-8 col-md-8">
                                         <div class="checkbox">
                                             <label>
-                                                <input type="checkbox" name="vertical" ng-model="form.tile.custom_widget_dontwrap" /> Don't wrap in container
+                                                <input type="checkbox" name="vertical" ng-model="form.tile.custom_widget_dontwrap" /> <span translate-keep-content translate="widget.template.dontwrap">Don't wrap in container</span>
                                             </label>
                                             &nbsp;&nbsp;
                                             <label>
-                                                <input type="checkbox" name="vertical" ng-model="form.tile.custom_widget_nobackground" /> No background
+                                                <input type="checkbox" name="vertical" ng-model="form.tile.custom_widget_nobackground" /> <span translate-keep-content translate="widget.template.nobackground">No background</span>
                                             </label>
                                         </div>
                                     </div>
@@ -199,22 +199,22 @@
                         </div>
 
 
-                        <div uib-accordion-group class="panel-default" heading="Drawer{{(form.drawer.use_custom_widget && form.drawer.custom_widget) ? ': ' + form.drawer.custom_widget : ''}}">
+                        <div uib-accordion-group class="panel-default" heading="{{'Drawer' | translation: 'dashboard.settings.customwidgets.drawer'}}{{(form.drawer.use_custom_widget && form.drawer.custom_widget) ? ': ' + form.drawer.custom_widget : ''}}">
 
                             <br />
                             <div class="form-group" ng-class="{error: _form.drawer.use_custom_widget.$error && _form.submitted}">
-                                <label class="control-label col-lg-3 col-md-3">Use a custom widget</label>
+                                <label class="control-label col-lg-3 col-md-3" translate-keep-content translate="dashboard.settings.customwidgets.usecustomwidget">Use a custom widget</label>
                                 <div class="col-lg-9 col-md-9">
                                     <div class="checkbox">
                                         <label>
-                                            <input type="checkbox" name="vertical" ng-model="form.drawer.use_custom_widget" /> Replace the contents of the drawer menu by a custom widget
+                                            <input type="checkbox" name="vertical" ng-model="form.drawer.use_custom_widget" /> <span translate-keep-content translate="dashboard.settings.customwidgets.drawer.description">Replace the contents of the drawer menu by a custom widget</span>
                                         </label>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="form-group" ng-if="form.drawer.use_custom_widget" ng-class="{error: _form.drawer.use_custom_widget.$error && _form.submitted}">
-                                <label class="control-label col-lg-3 col-md-3">Custom Widget</label>
+                                <label class="control-label col-lg-3 col-md-3" translate-keep-content translate="dashboard.settings.customwidgets.customwidget">Custom Widget</label>
                                 <div class="col-lg-9 col-md-9">
                                     <select ng-model="form.drawer.custom_widget" ng-change="updateCustomWidgetSettings(true, 'drawer')" class="form-control">
                                         <option value=""></option>
@@ -231,22 +231,22 @@
 
                         </div>
 
-                        <div uib-accordion-group class="panel-default" heading="Dashboard header{{(form.header.use_custom_widget && form.header.custom_widget) ? ': ' + form.header.custom_widget : ''}}">
+                        <div uib-accordion-group class="panel-default" heading="{{'Dashboard header' | translation:'dashboard.settings.customwidgets.header'}}{{(form.header.use_custom_widget && form.header.custom_widget) ? ': ' + form.header.custom_widget : ''}}">
 
                             <br />
                             <div class="form-group" ng-class="{error: _form.header.use_custom_widget.$error && _form.submitted}">
-                                <label class="control-label col-lg-3 col-md-3">Use a custom widget</label>
+                                <label class="control-label col-lg-3 col-md-3" translate-keep-content translate="dashboard.settings.customwidgets.usecustomwidget">Use a custom widget</label>
                                 <div class="col-lg-9 col-md-9">
                                     <div class="checkbox">
                                         <label>
-                                            <input type="checkbox" name="vertical" ng-model="form.header.use_custom_widget" /> Replace the contents of the dashboard header by a custom widget
+                                            <input type="checkbox" name="vertical" ng-model="form.header.use_custom_widget" /> <span translate-keep-content translate="dashboard.settings.customwidgets.header.description">Replace the contents of the dashboard header by a custom widget</span>
                                         </label>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="form-group" ng-if="form.header.use_custom_widget" ng-class="{error: _form.header.use_custom_widget.$error && _form.submitted}">
-                                <label class="control-label col-lg-3 col-md-3">Custom Widget</label>
+                                <label class="control-label col-lg-3 col-md-3" translate-keep-content translate="dashboard.settings.customwidgets.usecustomwidget">Custom Widget</label>
                                 <div class="col-lg-9 col-md-9">
                                     <select ng-model="form.header.custom_widget" ng-change="updateCustomWidgetSettings(true, 'header')" class="form-control">
                                         <option value=""></option>
@@ -272,9 +272,9 @@
         
 
         <div class="modal-footer">
-            <a ng-click="remove()" class="btn btn-danger pull-left" tabindex="-1"><i class="glyphicon glyphicon-trash"></i>&nbsp;Delete</a>
-            <a ng-click="dismiss()" class="btn btn-default" tabindex="-1"><i class="glyphicon glyphicon-remove"></i>&nbsp;Cancel</a>
-            <button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-ok"></i>&nbsp;Save</button>
+            <a ng-click="remove()" class="btn btn-danger pull-left" tabindex="-1"><i class="glyphicon glyphicon-trash"></i>&nbsp;<span translate>Delete</span></a>
+            <a ng-click="dismiss()" class="btn btn-default" tabindex="-1"><i class="glyphicon glyphicon-remove"></i>&nbsp;<span translate>Cancel</span></a>
+            <button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-ok"></i>&nbsp;<span translate>Save</span></button>
         </div>
     </form>
 </div>

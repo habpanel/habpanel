@@ -2,35 +2,35 @@
     <form name="_form" class="form-horizontal" ng-submit="submit(_form)">
         <div class="modal-header">
             <button type="button" class="close" ng-click="dismiss()" aria-hidden="true">&times;</button>
-            <h3>iFrame Settings</h3>
+            <h3 translate-keep-content translate="widget.frame.settings.header">Frame Settings</h3>
         </div>
 
         <div class="modal-body">
             <uib-tabset>
-                <uib-tab heading="General">
+                <uib-tab heading="{{'General' | translation:'widget.common.general'}}">
                     <br />
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group" ng-class="{error: _form.name.$error && _form.submitted}">
-                                <label class="control-label col-lg-3 col-md-3">Name</label>
+                                <label class="control-label col-lg-3 col-md-3" translate>Name</label>
                                 <div class="col-lg-9 col-md-9">
                                     <input name="name" type="text" ng-model="form.name" class="form-control" />
                                 </div>
                             </div>
 
                             <div class="form-group" ng-class="{error: _form.url_source.$error && _form.submitted}">
-                                <label class="control-label col-lg-3 col-md-3">URL Source</label>
+                                <label class="control-label col-lg-3 col-md-3" translate-keep-content translate="widget.frame.url_source">URL Source</label>
                                 <div class="col-lg-9 col-md-9">
                                     <select ng-model="form.url_source" class="form-control">
-                                        <option value="static">Static URL</option>
-                                        <option value="item">openHAB String Item</option>
+                                        <option value="static" translate-keep-content translate="widget.frame.url_source.static">Static URL</option>
+                                        <option value="item" translate-keep-content translate="widget.frame.url_source.item">openHAB String Item</option>
                                     </select>
                                 </div>
                             </div>
 
                             <div class="form-group" ng-if="form.url_source === 'item'"
                                 ng-class="{error: _form.item.$error && _form.submitted}">
-                                <label class="control-label col-lg-3 col-md-3">openHAB Item</label>
+                                <label class="control-label col-lg-3 col-md-3" translate>openHAB Item</label>
                                 <div class="col-lg-9 col-md-9">
                                     <item-picker ng-model="form.item" filter-type="String"></item-picker>
                                 </div>
@@ -38,24 +38,24 @@
 
                             <div class="form-group" ng-if="form.url_source === 'static'"
                                 ng-class="{error: _form.frameUrl.$error && _form.submitted}">
-                                <label class="control-label col-lg-3 col-md-3">Url</label>
+                                <label class="control-label col-lg-3 col-md-3">URL</label>
                                 <div class="col-lg-9 col-md-9">
                                     <input type="url" name="frameUrl" ng-model="form.frameUrl" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group" ng-class="{error: _form.refresh.$error && _form.submitted}">
-                                <label class="control-label col-lg-3 col-md-3">Refresh interval (seconds)</label>
+                                <label class="control-label col-lg-3 col-md-3" translate-keep-content translate="widget.frame.refresh_interval">Refresh interval (seconds)</label>
                                 <div class="col-lg-3 col-md-3">
                                     <input name="refresh" type="number" ng-model="form.refresh" class="form-control" />
                                 </div>
                             </div>
                             <div class="form-group" ng-class="{error: _form.nosuffix.$error && _form.submitted}" ng-if="form.refresh > 0">
-                                <label class="control-label col-lg-3 col-md-3">No cache busting (advanced)</label>
+                                <label class="control-label col-lg-3 col-md-3" translate-keep-content translate="widget.frame.nosuffix">No cache busting (advanced)</label>
                                 <div class="col-lg-9 col-md-9">
                                     <div class="checkbox">
                                         <label>
                                             <input type="checkbox" name="nosuffix" ng-model="form.nosuffix" />
-                                            Don't add URL suffixes to prevent reusing cached pages
+                                            <span translate-keep-content translate="widget.frame.nosuffix.description">Don't add URL suffixes to prevent reusing cached pages</span>
                                         </label>
                                     </div>
                                 </div>
@@ -63,32 +63,32 @@
                         </div>
                     </div>
                 </uib-tab>
-                <uib-tab heading="Advanced">
+                <uib-tab heading="{{'Advanced' | translation:'widget.common.advanced'}}">
                     <br />
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group" ng-class="{error: _form.background.$error && _form.submitted}">
-                                <label class="control-label col-lg-3 col-md-3">iFrame background color</label>
+                                <label class="control-label col-lg-3 col-md-3" translate-keep-content translate="widget.frame.background_color">Frame background color</label>
                                 <div class="col-lg-9 col-md-9">
                                     <div dab-model="form.background" web-colorpicker dab-width="20" dab-height="20" dab-radius="50" dab-vertical="4" dab-rotate="0" show-grayscale="true"></div>
                                 </div>
                             </div>
                             <div class="form-group" ng-class="{error: _form.frameless.$error && _form.submitted}">
-                                <label class="control-label col-lg-3 col-md-3">Frameless</label>
+                                <label class="control-label col-lg-3 col-md-3" translate-keep-content translate="widget.frame.frameless">Frameless</label>
                                 <div class="col-lg-9 col-md-9">
                                     <div class="checkbox">
                                         <label>
-                                            <input type="checkbox" name="frameless" ng-model="form.frameless" /> Fill to edges
+                                            <input type="checkbox" name="frameless" ng-model="form.frameless" /> <span translate-keep-content translate="widget.frame.frameless.description">Fill to edges</span>
                                         </label>
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group" ng-class="{error: _form.hidelabels.$error && _form.submitted}">
-                                <label class="control-label col-lg-3 col-md-3">Label</label>
+                                <label class="control-label col-lg-3 col-md-3" translate-keep-content translate="widget.frame.label">Label</label>
                                 <div class="col-lg-9 col-md-9">
                                     <div class="checkbox">
                                         <label>
-                                            <input type="checkbox" name="hidelabel" ng-model="form.hidelabel" /> Hide title label
+                                            <input type="checkbox" name="hidelabel" ng-model="form.hidelabel" /> <span translate-keep-content translate="widget.frame.label.description">Hide title label</span>
                                         </label>
                                     </div>
                                 </div>
@@ -100,9 +100,9 @@
         </div>
 
         <div class="modal-footer">
-            <a ng-click="remove()" class="btn btn-danger pull-left" tabindex="-1"><i class="glyphicon glyphicon-trash"></i>&nbsp;Delete</a>
-            <a ng-click="dismiss()" class="btn btn-default" tabindex="-1"><i class="glyphicon glyphicon-remove"></i>&nbsp;Cancel</a>
-            <button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-ok"></i>&nbsp;Save</button>
+            <a ng-click="remove()" class="btn btn-danger pull-left" tabindex="-1"><i class="glyphicon glyphicon-trash"></i>&nbsp;<span translate>Delete</span></a>
+            <a ng-click="dismiss()" class="btn btn-default" tabindex="-1"><i class="glyphicon glyphicon-remove"></i>&nbsp;<span translate>Cancel</span></a>
+            <button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-ok"></i>&nbsp;<span translate>Save</span></button>
         </div>
     </form>
 </div>

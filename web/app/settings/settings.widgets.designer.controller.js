@@ -5,8 +5,8 @@
         .module('app')
         .controller('WidgetDesignerCtrl', WidgetDesignerController);
 
-    WidgetDesignerController.$inject = ['$rootScope', '$scope', '$timeout', '$routeParams', '$uibModal', 'widget', 'OHService', 'PersistenceService'];
-    function WidgetDesignerController($rootScope, $scope, $timeout, $routeParams, $modal, widget, OHService, PersistenceService) {
+    WidgetDesignerController.$inject = ['$rootScope', '$scope', '$timeout', '$routeParams', '$uibModal', 'widget', 'OHService', 'PersistenceService', 'TranslationService'];
+    function WidgetDesignerController($rootScope, $scope, $timeout, $routeParams, $modal, widget, OHService, PersistenceService, TranslationService) {
         var vm = this;
         vm.widgetId = $routeParams.id;
         vm.widget = angular.copy(widget);
@@ -36,7 +36,7 @@
         vm.previewmodel = {
             sizeX: 4,
             sizeY: 4,
-            name: "Preview widget",
+            name: TranslationService.translate("customwidgets.designer.preview", "Preview"),
             template: "<h4>here</h4>"
         };
 
@@ -76,6 +76,7 @@
                 //scope: $scope,
                 templateUrl: 'app/widgets/template/template.settings.tpl.html',
                 controller: 'WidgetSettingsCtrl-template',
+                size: 'lg',
                 backdrop: 'static',
                 resolve: {
                     widget: function() {
@@ -94,7 +95,7 @@
         vm.save = function () {
             $rootScope.customwidgets[vm.widgetId] = angular.copy(vm.widget);
             PersistenceService.saveDashboards().then(function () {
-                vm.saveLabel = "Saved!";
+                vm.saveLabel = TranslationService.translate("customwidgets.designer.saved", "Saved!");
                 $timeout(resetButtons, 2000);
             })
         };
@@ -114,7 +115,7 @@
         ////////////////
 
         function resetButtons() {
-            vm.saveLabel = "Save";
+            vm.saveLabel = TranslationService.translate("customwidgets.designer.save", "Save");
         }
 
         function activate() {

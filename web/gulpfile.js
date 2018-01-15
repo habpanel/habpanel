@@ -93,6 +93,7 @@ gulp.task('vendor-js', ['uglify-timeline'], function() {
         'bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
         'bower_components/angular-sanitize/angular-sanitize.min.js',
         'bower_components/angular-translate/angular-translate.min.js',
+        'bower_components/angular-translate-loader-partial/angular-translate-loader-partial.min.js',
         'bower_components/angular-fullscreen/src/angular-fullscreen.js',
         'bower_components/sprintf/dist/angular-sprintf.min.js',
         'bower_components/angular-prompt/dist/angular-prompt.min.js',

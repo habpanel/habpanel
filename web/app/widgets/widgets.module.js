@@ -147,7 +147,7 @@
             restrict: 'AE',
             template:
                 '<ui-select ng-model="vm.selectedItem" theme="selectize" title="Choose an openHAB item">' +
-                '  <ui-select-match placeholder="Search or select an openHAB item"><item-type-icon type="$select.selected.type"></item-type-icon>&nbsp;{{$select.selected.name}}</ui-select-match>' +
+                '  <ui-select-match placeholder="{{vm.placeholderText}}"><item-type-icon type="$select.selected.type"></item-type-icon>&nbsp;{{$select.selected.name}}</ui-select-match>' +
                 '  <ui-select-choices repeat="item in vm.itemlist | filter: $select.search">' +
                 '    <div><item-type-icon type="item.type"></item-type-icon>&nbsp;<span ng-bind-html="item.name | highlight: $select.search"></div>' +
                 '    <small ng-bind-html="item.label | highlight: $select.search"></small>' +
@@ -164,8 +164,8 @@
         function link(scope, element, attrs) {
         }
     }
-    ItemPickerController.$inject = ['$scope', '$filter', 'OHService'];
-    function ItemPickerController ($scope, $filter, OHService) {
+    ItemPickerController.$inject = ['$scope', '$filter', 'OHService', 'TranslationService'];
+    function ItemPickerController ($scope, $filter, OHService, TranslationService) {
         var vm = this;
         vm.selectedItem = OHService.getItem(this.ngModel);
         vm.itemlist = OHService.getItems();
@@ -183,7 +183,8 @@
             if (newitem && newitem.name)
                 $scope.vm.ngModel = newitem.name;
         });
-        
+
+        vm.placeholderText = TranslationService.translate('itempicker.placeholder', 'Search or select an openHAB item');
     }
 
     ThemeValueFilter.$inject = ['$window'];

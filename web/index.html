@@ -86,7 +86,8 @@
     <script src="app/services/icon.service.js"></script>
     <script src="app/services/localfile.service.js"></script>
     <script src="app/services/speech.service.js"></script>
-
+    <script src="app/services/translation.service.js"></script>
+    
     <script src="app/app.js"></script>
     <script src="app/dashboard/dashboard.view.controller.js"></script>
     <script src="app/dashboard/dashboard.edit.controller.js"></script>
@@ -103,7 +104,7 @@
     <aside class="drawer" snap-drawer style="display: none" ng-controller="DrawerController" ng-include="'app/menu/drawer.tpl.html'">
     </aside>
     <div class="reconnecting" ng-if="reconnecting">
-        &nbsp;<i class="glyphicon glyphicon-ban-circle"></i>&nbsp;Connection lost! Trying to reconnect...&nbsp;
+        &nbsp;<i class="glyphicon glyphicon-ban-circle"></i>&nbsp;<span translate-keep-content translate="error.connectionlost">Connection lost! Trying to reconnect...</span>&nbsp;
     </div>
     <div class="container"
          snap-content

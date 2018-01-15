@@ -1,7 +1,6 @@
 angular.module('app')
-    .controller('DashboardEditCtrl', ['$scope', '$rootScope', '$location', '$timeout', 'dashboard', 'Widgets', 'PersistenceService', 'OHService', '$ocLazyLoad', '$uibModal',
-        function($scope, $rootScope, $location, $timeout, dashboard, Widgets, PersistenceService, OHService, $ocLazyLoad, $modal) {
-
+    .controller('DashboardEditCtrl', ['$scope', '$rootScope', '$location', '$timeout', 'dashboard', 'Widgets', 'PersistenceService', 'OHService', '$ocLazyLoad', '$uibModal', 'TranslationService',
+        function($scope, $rootScope, $location, $timeout, dashboard, Widgets, PersistenceService, OHService, $ocLazyLoad, $modal, TranslationService) {
             $scope.dashboard = dashboard;
 
             $scope.gridsterOptions = {
@@ -29,7 +28,7 @@ angular.module('app')
 
             $scope.addWidget = function(type) {
                 $scope.dashboard.widgets.push({
-                    name: "New Widget",
+                    name: TranslationService.translate('designer.newwidget.defaultname', 'New Widget'),
                     sizeX: 4,
                     sizeY: 4,
                     item: null,
@@ -39,10 +38,10 @@ angular.module('app')
 
             $scope.addCustomWidget = function(id) {
                 $scope.dashboard.widgets.push({
-                    name: "New Widget",
+                    name: TranslationService.translate('designer.newwidget.defaultname', 'New Widget'),
                     sizeX: 4,
                     sizeY: 4,
-                    type: "template",
+                    type: 'template',
                     customwidget: id
                 })
             }
@@ -57,7 +56,7 @@ angular.module('app')
 
             $scope.run = function() {
                 PersistenceService.saveDashboards().then(function () {
-                    $location.url("/view/" + $scope.dashboard.id);
+                    $location.url('/view/' + $scope.dashboard.id);
                 }, function (err) {
                     $scope.error = err;
                 });
@@ -84,8 +83,11 @@ angular.module('app')
                 });
             };
 
+
             OHService.reloadItems();
             iNoBounce.disable();
+
+            $scope.widgetGalleryTooltip = TranslationService.translate('designer.addwidget.getmore.tooltip', 'Open the widget gallery to import more widgets');
         }
     ])
 
@@ -106,7 +108,10 @@ angular.module('app')
                     resolve: {
                         widget: function() {
                             return widget;
-                        }
+                        },
+                        translations: ['TranslationService', function (TranslationService) {
+                            return TranslationService.enterPart('widgets');
+                        }]
                     }
                 });
             };

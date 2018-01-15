@@ -5,8 +5,8 @@
         .module('app')
         .controller('WidgetGalleryCtrl', WidgetGalleryController);
 
-    WidgetGalleryController.$inject = ['$scope', '$rootScope', '$http', '$q', '$uibModalInstance', 'prompt', 'PersistenceService'];
-    function WidgetGalleryController($scope, $rootScope, $http, $q, $modalInstance, prompt, PersistenceService) {
+    WidgetGalleryController.$inject = ['$scope', '$rootScope', '$http', '$q', '$uibModalInstance', 'prompt', 'PersistenceService', 'TranslationService'];
+    function WidgetGalleryController($scope, $rootScope, $http, $q, $modalInstance, prompt, PersistenceService, TranslationService) {
         var vm = this;
 
         vm.getRateLimits = function () {
@@ -179,8 +179,9 @@
         $scope.submit = function () {
             if (vm.updatableWidgets > 0) {
                 prompt({
-                    title: "Existing widgets detected",
-                    message: "Warning: please confirm you wish to update " + vm.updatableWidgets + " existing widgets, overwriting any eventual changes made locally! If unsure, cancel and click Show details to review the list of affected widgets.",
+                    title: TranslationService.translate("widgetgallery.widgetsdetected.dialog.title","Existing widgets detected"),
+                    message: TranslationService.translate("widgetgallery.widgetsdetected.dialog.message", "Warning: please confirm you wish to update <nbexisting> existing widgets, overwriting any eventual changes made locally! If unsure, cancel and click Show details to review the list of affected widgets.")
+                                               .replace('<nbexisting>', vm.updatableWidgets),
                 }).then(function () {
                     $modalInstance.close(vm.widgets);
                 });

@@ -5,8 +5,8 @@
         .module('app')
         .controller('SettingsCtrl', SettingsController);
 
-    SettingsController.$inject = ['$rootScope', '$timeout', '$window', 'OHService', 'OH2ServiceConfiguration', 'OH2StorageService', 'PersistenceService', 'SpeechService', 'themes', 'prompt'];
-    function SettingsController($rootScope, $timeout, $window, OHService, OH2ServiceConfiguration, OH2StorageService, PersistenceService, SpeechService, themes, prompt) {
+    SettingsController.$inject = ['$rootScope', '$timeout', '$window', 'OHService', 'OH2ServiceConfiguration', 'OH2StorageService', 'PersistenceService', 'SpeechService', 'themes', 'prompt', 'TranslationService'];
+    function SettingsController($rootScope, $timeout, $window, OHService, OH2ServiceConfiguration, OH2StorageService, PersistenceService, SpeechService, themes, prompt, TranslationService) {
         var vm = this;
 
         vm.themes = themes.data;
@@ -27,8 +27,8 @@
 
         vm.saveAsNewPanelConfig = function () {
             prompt({
-                title: "New panel configuration",
-                message: "Please choose a name for the new panel configuration (letters and digits only please):",
+                title: TranslationService.translate("settings.storage.panelconfiguration.dialog.title", "New panel configuration"),
+                message: TranslationService.translate("settings.storage.panelconfiguration.dialog.message", "Please choose a name for the new panel configuration (letters and digits only please):"),
                 input: true
             }).then(function (name) {
                 vm.panelsRegistry[name] = { 
@@ -92,6 +92,14 @@
         vm.supportsSpeech = SpeechService.isSpeechRecognitionSupported();
 
         vm.supportsTheming = ($window.CSS && $window.CSS.supports && $window.CSS.supports('--a', 0));
+
+        vm.textboxPlaceholders = {
+            panel_name: TranslationService.translate('settings.panel.name.hint', 'Replaces \'HABPanel\' in the side drawer when set'),
+            additional_stylesheet: TranslationService.translate('settings.panel.appearance.additional_stylesheet.hint', 'Relative URL only; example: /static/example.css'),
+            background_image: TranslationService.translate('settings.panel.appearance.background_image.hint', 'Example: //source.unsplash.com/random'),
+            drawer_heading_image: TranslationService.translate('settings.panel.appearance.drawer_heading_image.hint', 'Example: //via.placeholder.com/265x95'),
+            clock_format: TranslationService.translate('settings.panel.appearance.show_clock.header_format.hint', 'Default: shortTime, use AngularJS date format')
+        };
 
         activate();
 
