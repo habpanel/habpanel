@@ -1,0 +1,953 @@
+msgid=""
+# HABPanel translation PO file - must be converted to .json
+# run `gulp i18n-po2json`
+
+msgid ""
+msgstr ""
+"HABPanel - widgets\n"
+"Project-Id-Version: habpanel\n"
+"Report-Msgid-Bugs-To: https://github.com/openhab/org.openhab.ui.habpanel/issues\n"
+
+
+msgctxt "widget.common.min"
+msgid "Min"
+msgstr "Min"
+
+msgctxt "widget.common.max"
+msgid "Max"
+msgstr "Max"
+
+msgctxt "widget.common.step"
+msgid "Step"
+msgstr "Step"
+
+msgctxt "widget.common.unit"
+msgid "Unit"
+msgstr "Unit"
+
+msgctxt "widget.common.format"
+msgid "Format"
+msgstr "Format"
+
+msgctxt "widget.common.format.useserverprovided"
+msgid "Use server-provided format if available"
+msgstr "Use server-provided format if available"
+
+msgctxt "widget.common.dontwrap"
+msgid "Value right of label"
+msgstr "Value right of label"
+
+msgctxt "widget.common.backdrop_center"
+msgid "Center backdrop horizontally"
+msgstr "Center backdrop horizontally"
+
+msgctxt "widget.common.icon_nolinebreak"
+msgid "Icon left of label instead of below"
+msgstr "Icon left of label instead of below"
+
+msgctxt "widget.common.icon_replacestext"
+msgid "Icon replaces textual value display"
+msgstr "Icon replaces textual value display"
+
+msgctxt "widget.common.general"
+msgid "General"
+msgstr "General"
+
+msgctxt "widget.common.advanced"
+msgid "Advanced"
+msgstr "Advanced"
+
+msgctxt "widget.button"
+msgid "Button"
+msgstr "Button"
+
+msgctxt "widget.button.description"
+msgid "A button performing a certain action, like sending a command to an openHAB item"
+msgstr "A button performing a certain action, like sending a command to an openHAB item"
+
+msgctxt "widget.button.settings.header"
+msgid "Button Settings"
+msgstr "Button Settings"
+
+msgctxt "widget.button.general"
+msgid "General"
+msgstr "General"
+
+msgctxt "widget.button.general.action_type"
+msgid "Action type"
+msgstr "Action type"
+
+msgctxt "widget.button.general.action_type.command"
+msgid "Send a fixed command to an item"
+msgstr "Send a fixed command to an item"
+
+msgctxt "widget.button.general.action_type.toggle"
+msgid "Alternate item between 2 states"
+msgstr "Alternate item between 2 states"
+
+msgctxt "widget.button.general.action_type.navigate"
+msgid "Navigate"
+msgstr "Navigate"
+
+msgctxt "widget.button.general.command"
+msgid "Command value"
+msgstr "Command value"
+
+msgctxt "widget.button.general.command_alt"
+msgid "Alternate command value"
+msgstr "Alternate command value"
+
+msgctxt "widget.button.general.navigation_type"
+msgid "Navigation type"
+msgstr "Navigation type"
+
+msgctxt "widget.button.general.navigation_type.dashboard"
+msgid "Dashboard"
+msgstr "Dashboard"
+
+msgctxt "widget.button.general.navigation_target"
+msgid "Open in"
+msgstr "Open in"
+
+msgctxt "widget.button.general.navigation_target.self"
+msgid "Current tab"
+msgstr "Current tab"
+
+msgctxt "widget.button.general.navigation_target.new_tab"
+msgid "New tab"
+msgstr "New tab"
+
+msgctxt "widget.button.general.navigation_target.new_window"
+msgid "New window"
+msgstr "New window"
+
+msgctxt "widget.button.display"
+msgid "Display"
+msgstr "Display"
+
+msgctxt "widget.button.display.label"
+msgid "Label"
+msgstr "Label"
+
+msgctxt "widget.button.display.value"
+msgid "Value"
+msgstr "Value"
+
+msgctxt "widget.button.display.value.showitemvalue"
+msgid "Show the item's state value"
+msgstr "Show the item's state value"
+
+msgctxt "widget.button.display.value.showitemvalue_noitem"
+msgid "Show an item's state value"
+msgstr "Show an item's state value"
+
+msgctxt "widget.button.display.value.active_state"
+msgid "Active state"
+msgstr "Active state"
+
+msgctxt "widget.button.display.value.layout"
+msgid "Layout"
+msgstr "Layout"
+
+msgctxt "widget.button.inactive"
+msgid "Inactive"
+msgstr "Inactive"
+
+msgctxt "widget.button.active"
+msgid "Active"
+msgstr "Active"
+
+msgctxt "widget.button.colors"
+msgid "Colors"
+msgstr "Colors"
+
+msgctxt "widget.button.background_color"
+msgid "Background color"
+msgstr "Background color"
+
+msgctxt "widget.button.foreground_color"
+msgid "Label color"
+msgstr "Label color"
+
+msgctxt "widget.button.value_color"
+msgid "Value color"
+msgstr "Value color"
+
+msgctxt "widget.button.preview.state"
+msgid "State"
+msgstr "State"
+
+msgctxt "widget.chart"
+msgid "Chart"
+msgstr "Chart"
+
+msgctxt "widget.chart.description"
+msgid "Displays a chart"
+msgstr "Displays a chart"
+
+msgctxt "widget.chart.settings.header"
+msgid "Chart Settings"
+msgstr "Chart Settings"
+
+msgctxt "widget.chart.general"
+msgid "General"
+msgstr "General"
+
+msgctxt "widget.chart.general.type"
+msgid "Type"
+msgstr "Type"
+
+msgctxt "widget.chart.general.type.default"
+msgid "Default"
+msgstr "Default"
+
+msgctxt "widget.chart.general.type.rrd4j"
+msgid "RRD4j (rrd4j persistence service only)"
+msgstr "RRD4j (rrd4j persistence service only)"
+
+msgctxt "widget.chart.general.type.interactive"
+msgid "n3-line-chart (interactive)"
+msgstr "n3-line-chart (interactive)"
+
+msgctxt "widget.chart.general.service"
+msgid "Persistence service"
+msgstr "Persistence service"
+
+msgctxt "widget.chart.general.service.hint"
+msgid "rrd4j, mysql, influxdb... Leave blank for default"
+msgstr "rrd4j, mysql, influxdb... Leave blank for default"
+
+msgctxt "widget.chart.general.itemgroup"
+msgid "openHAB Item or Group"
+msgstr "openHAB Item or Group"
+
+msgctxt "widget.chart.general.period"
+msgid "Period"
+msgstr "Period"
+
+msgctxt "widget.chart.axis"
+msgid "Axis"
+msgstr "Axis"
+
+msgctxt "widget.chart.axis.primary"
+msgid "Primary axis (y)"
+msgstr "Primary axis (y)"
+
+msgctxt "widget.chart.axis.secondary"
+msgid "Secondary axis (y2)"
+msgstr "Secondary axis (y2)"
+
+msgctxt "widget.chart.axis.enabled"
+msgid "Enabled"
+msgstr "Enabled"
+
+msgctxt "widget.chart.axis.includezero"
+msgid "Include zero"
+msgstr "Include zero"
+
+msgctxt "widget.chart.series"
+msgid "Series"
+msgstr "Series"
+
+msgctxt "widget.chart.series.axis"
+msgid "Axis"
+msgstr "Axis"
+
+msgctxt "widget.chart.series.axis.primary"
+msgid "Primary"
+msgstr "Primary"
+
+msgctxt "widget.chart.series.axis.secondary"
+msgid "Secondary"
+msgstr "Secondary"
+
+msgctxt "widget.chart.series.display"
+msgid "Display"
+msgstr "Display"
+
+msgctxt "widget.chart.series.display.line"
+msgid "Line"
+msgstr "Line"
+
+msgctxt "widget.chart.series.display.area"
+msgid "Area"
+msgstr "Area"
+
+msgctxt "widget.chart.series.display.dots"
+msgid "Dots"
+msgstr "Dots"
+
+msgctxt "widget.chart.series.liveupdate"
+msgid "Live update (experimental)"
+msgstr "Live update (experimental)"
+
+msgctxt "widget.chart.series.liveupdate.fillvalues"
+msgid "Repeat other series' current values on update if necessary"
+msgstr "Repeat other series' current values on update if necessary"
+
+
+###
+
+msgctxt "widget.clock"
+msgid "Clock"
+msgstr "Clock"
+
+msgctxt "widget.clock.description"
+msgid "A clock widget - displays an analog or digital clock"
+msgstr "A clock widget - displays an analog or digital clock"
+
+msgctxt "widget.clock.settings.header"
+msgid "Clock Settings"
+msgstr "Clock Settings"
+
+msgctxt "widget.clock.mode"
+msgid "Mode"
+msgstr "Mode"
+
+msgctxt "widget.clock.mode.analog"
+msgid "Analog"
+msgstr "Analog"
+
+msgctxt "widget.clock.mode.digital"
+msgid "Digital"
+msgstr "Digital"
+
+msgctxt "widget.clock.theme"
+msgid "Analog Theme"
+msgstr "Analog Theme"
+
+msgctxt "widget.clock.theme.light"
+msgid "light"
+msgstr "light"
+
+msgctxt "widget.clock.theme.dark"
+msgid "dark"
+msgstr "dark"
+
+msgctxt "widget.clock.digital_format"
+msgid "Digital Format"
+msgstr "Digital Format"
+
+msgctxt "widget.clock.font_size"
+msgid "Digital Font Size"
+msgstr "Digital Font Size"
+
+
+###
+
+msgctxt "widget.colorpicker"
+msgid "Color Picker"
+msgstr "Color Picker"
+
+msgctxt "widget.colorpicker.description"
+msgid "Displays an color picker"
+msgstr "Displays an color picker"
+
+msgctxt "widget.colorpicker.settings.header"
+msgid "Color Picker Settings"
+msgstr "Color Picker Settings"
+
+msgctxt "widget.colorpicker.type"
+msgid "Type"
+msgstr "Type"
+
+msgctxt "widget.colorpicker.type.hsl"
+msgid "HSL Sliders"
+msgstr "HSL Sliders"
+
+msgctxt "widget.colorpicker.type.ackolor"
+msgid "aCKolor style (modal picker)"
+msgstr "aCKolor style (modal picker)"
+
+msgctxt "widget.colorpicker.blur_background"
+msgid "Apply blurring effect to background"
+msgstr "Apply blurring effect to background"
+
+msgctxt "widget.colorpicker.blur_background.warning"
+msgid "Warning: This can cause performance problems on tablets"
+msgstr "Warning: This can cause performance problems on tablets"
+
+msgctxt "widget.dummy"
+msgid "Dummy"
+msgstr "Dummy"
+
+msgctxt "widget.dummy.description"
+msgid "A dummy widget - displays the value of an openHAB item"
+msgstr "A dummy widget - displays the value of an openHAB item"
+
+msgctxt "widget.dummy.settings.header"
+msgid "Dummy Settings"
+msgstr "Dummy Settings"
+
+msgctxt "widget.dummy.layout"
+msgid "Layout"
+msgstr "Layout"
+
+
+###
+
+msgctxt "widget.frame"
+msgid "Frame"
+msgstr "Frame"
+
+msgctxt "widget.frame.description"
+msgid "Embedded website from predefined URL or openHAB item."
+msgstr "Embedded website from predefined URL or openHAB item."
+
+msgctxt "widget.frame.settings.header"
+msgid "Frame Settings"
+msgstr "Frame Settings"
+
+msgctxt "widget.frame.url_source"
+msgid "URL Source"
+msgstr "URL Source"
+
+msgctxt "widget.frame.url_source.static"
+msgid "Static URL"
+msgstr "Static URL"
+
+msgctxt "widget.frame.url_source.item"
+msgid "openHAB String Item"
+msgstr "openHAB String Item"
+
+msgctxt "widget.frame.refresh_interval"
+msgid "Refresh interval (seconds)"
+msgstr "Refresh interval (seconds)"
+
+msgctxt "widget.frame.nosuffix"
+msgid "No cache busting (advanced)"
+msgstr "No cache busting (advanced)"
+
+msgctxt "widget.frame.nosuffix.description"
+msgid "Don't add URL suffixes to prevent reusing cached pages"
+msgstr "Don't add URL suffixes to prevent reusing cached pages"
+
+msgctxt "widget.frame.background_color"
+msgid "Frame background color"
+msgstr "Frame background color"
+
+msgctxt "widget.frame.frameless"
+msgid "Frameless"
+msgstr "Frameless"
+
+msgctxt "widget.frame.frameless.description"
+msgid "Fill to edges"
+msgstr "Fill to edges"
+
+msgctxt "widget.frame.label"
+msgid "Label"
+msgstr "Label"
+
+msgctxt "widget.frame.label.description"
+msgid "Hide title label"
+msgstr "Hide title label"
+
+
+###
+
+msgctxt "widget.image"
+msgid "Image"
+msgstr "Image"
+
+msgctxt "widget.image.description"
+msgid "Displays an image (not necessarily from openHAB)"
+msgstr "Displays an image (not necessarily from openHAB)"
+
+msgctxt "widget.image.settings.header"
+msgid "Image Settings"
+msgstr "Image Settings"
+
+msgctxt "widget.image.image_source"
+msgid "Image source"
+msgstr "Image source"
+
+msgctxt "widget.image.image_source.static"
+msgid "Static image URL"
+msgstr "Static image URL"
+
+msgctxt "widget.image.image_source.item-string"
+msgid "openHAB String Item"
+msgstr "openHAB String Item"
+
+msgctxt "widget.image.image_source.item-image"
+msgid "openHAB Image Item"
+msgstr "openHAB Image Item"
+
+msgctxt "widget.image.refresh_interval"
+msgid "Refresh interval"
+msgstr "Refresh interval"
+
+msgctxt "widget.image.refresh_interval.seconds"
+msgid "seconds"
+msgstr "seconds"
+
+msgctxt "widget.image.refresh_interval.milliseconds"
+msgid "milliseconds"
+msgstr "milliseconds"
+
+msgctxt "widget.image.nosuffix"
+msgid "No cache busting (advanced)"
+msgstr "No cache busting (advanced)"
+
+msgctxt "widget.image.nosuffix.description"
+msgid "Don't add URL suffixes to prevent reusing cached images"
+msgstr "Don't add URL suffixes to prevent reusing cached images"
+
+msgctxt "widget.image.background_color"
+msgid "Background color"
+msgstr "Background color"
+
+
+###
+
+msgctxt "widget.knob"
+msgid "Knob"
+msgstr "Knob"
+
+msgctxt "widget.knob.description"
+msgid "A knob for setting numerical openHAB items"
+msgstr "A knob for setting numerical openHAB items"
+
+msgctxt "widget.knob.settings.header"
+msgid "Knob Settings"
+msgstr "Knob Settings"
+
+msgctxt "widget.knob.general.readonly"
+msgid "Read only"
+msgstr "Read only"
+
+msgctxt "widget.knob.general.readonly.description"
+msgid "Disable interaction"
+msgstr "Disable interaction"
+
+msgctxt "widget.knob.general.centraldisplay"
+msgid "Central display"
+msgstr "Central display"
+
+msgctxt "widget.knob.general.centraldisplay.showvalue"
+msgid "Show value"
+msgstr "Show value"
+
+msgctxt "widget.knob.general.centraldisplay.showlabel"
+msgid "Show name (below value)"
+msgstr "Show name (below value)"
+
+msgctxt "widget.knob.bartrack"
+msgid "Bar & Track"
+msgstr "Bar & Track"
+
+msgctxt "widget.knob.bartrack.angles"
+msgid "Angles (°)"
+msgstr "Angles (°)"
+
+msgctxt "widget.knob.bartrack.angles.start"
+msgid "Start"
+msgstr "Start"
+
+msgctxt "widget.knob.bartrack.angles.end"
+msgid "End"
+msgstr "End"
+
+msgctxt "widget.knob.bartrack.width"
+msgid "Width"
+msgstr "Width"
+
+msgctxt "widget.knob.bartrack.cap"
+msgid "Cap"
+msgstr "Cap"
+
+msgctxt "widget.knob.bartrack.bar"
+msgid "Bar"
+msgstr "Bar"
+
+msgctxt "widget.knob.bartrack.track"
+msgid "Track"
+msgstr "Track"
+
+msgctxt "widget.knob.bartrack.previousvalue"
+msgid "Previous value"
+msgstr "Previous value"
+
+msgctxt "widget.knob.bartrack.previousvalue.description"
+msgid "Display previous value when dragging"
+msgstr "Display previous value when dragging"
+
+msgctxt "widget.knob.scale"
+msgid "Scale"
+msgstr "Scale"
+
+msgctxt "widget.knob.scale.display"
+msgid "Display scale"
+msgstr "Display scale"
+
+msgctxt "widget.knob.scale.display.enabled"
+msgid "Enabled"
+msgstr "Enabled"
+
+msgctxt "widget.knob.scale.type"
+msgid "Scale Type"
+msgstr "Scale Type"
+
+msgctxt "widget.knob.scale.type.lines"
+msgid "Lines"
+msgstr "Lines"
+
+msgctxt "widget.knob.scale.type.dots"
+msgid "Dots"
+msgstr "Dots"
+
+msgctxt "widget.knob.scale.width"
+msgid "Width"
+msgstr "Width"
+
+msgctxt "widget.knob.scale.qty"
+msgid "Qty."
+msgstr "Qty."
+
+msgctxt "widget.knob.scale.space"
+msgid "Space"
+msgstr "Space"
+
+msgctxt "widget.knob.skin"
+msgid "Skin"
+msgstr "Skin"
+
+msgctxt "widget.knob.skin.type"
+msgid "Type"
+msgstr "Type"
+
+msgctxt "widget.knob.skin.type.simple"
+msgid "Simple"
+msgstr "Simple"
+
+msgctxt "widget.knob.skin.type.tron"
+msgid "Tron"
+msgstr "Tron"
+
+msgctxt "widget.knob.skin.tronsettings"
+msgid "Tron skin settings"
+msgstr "Tron skin settings"
+
+msgctxt "widget.knob.skin.tronsettings.width"
+msgid "Width"
+msgstr "Width"
+
+msgctxt "widget.knob.skin.tronsettings.space"
+msgid "Space"
+msgstr "Space"
+
+msgctxt "widget.knob.ranges"
+msgid "Ranges"
+msgstr "Ranges"
+
+msgctxt "widget.knob.ranges.enable"
+msgid "Enable Ranges"
+msgstr "Enable Ranges"
+
+msgctxt "widget.knob.ranges.match_text_color"
+msgid "Match Text Color to Range"
+msgstr "Match Text Color to Range"
+
+msgctxt "widget.knob.ranges.from"
+msgid "from"
+msgstr "from"
+
+msgctxt "widget.knob.ranges.to"
+msgid "to"
+msgstr "to"
+
+msgctxt "widget.knob.ranges.bar"
+msgid "Bar"
+msgstr "Bar"
+
+msgctxt "widget.knob.misc"
+msgid "Misc."
+msgstr "Misc."
+
+msgctxt "widget.knob.misc.text"
+msgid "Text"
+msgstr "Text"
+
+msgctxt "widget.knob.misc.background"
+msgid "Background"
+msgstr "Background"
+
+
+###
+
+msgctxt "widget.label"
+msgid "Label"
+msgstr "Label"
+
+msgctxt "widget.label.description"
+msgid "A fixed label used for headers etc. (no openHAB item binding)"
+msgstr "A fixed label used for headers etc. (no openHAB item binding)"
+
+msgctxt "widget.label.settings.header"
+msgid "Label Settings"
+msgstr "Label Settings"
+
+msgctxt "widget.label.preview"
+msgid "Preview"
+msgstr "Preview"
+
+msgctxt "widget.label.background_color"
+msgid "Background color"
+msgstr "Background color"
+
+msgctxt "widget.label.foreground_color"
+msgid "Text color"
+msgstr "Text color"
+
+
+###
+
+msgctxt "widget.selection"
+msgid "Selection"
+msgstr "Selection"
+
+msgctxt "widget.selection.description"
+msgid "A widget allowing a selection between multiple choices"
+msgstr "A widget allowing a selection between multiple choices"
+
+msgctxt "widget.selection.settings.header"
+msgid "Selection Settings"
+msgstr "Selection Settings"
+
+msgctxt "widget.selection.choices_source"
+msgid "Choices source"
+msgstr "Choices source"
+
+msgctxt "widget.selection.choices_source.server"
+msgid "Server-provided item options"
+msgstr "Server-provided item options"
+
+msgctxt "widget.selection.choices_source.csv"
+msgid "Comma-separated list"
+msgstr "Comma-separated list"
+
+msgctxt "widget.selection.choices"
+msgid "List of comma-separated choices"
+msgstr "List of comma-separated choices"
+
+msgctxt "widget.selection.choices.hint"
+msgid "You can optionally use the syntax: 'cmd=label' for each choice<br />Example: 18=Cold,20,22,24,26,28=Warm"
+msgstr "You can optionally use the syntax: 'cmd=label' for each choice<br />Example: 18=Cold,20,22,24,26,28=Warm"
+
+msgctxt "widget.selection.display"
+msgid "Display options"
+msgstr "Display options"
+
+msgctxt "widget.selection.display.hidelabel"
+msgid "Hide name"
+msgstr "Hide name"
+
+msgctxt "widget.selection.display.hideicon"
+msgid "Hide icon"
+msgstr "Hide icon"
+
+msgctxt "widget.selection.display.hidestate"
+msgid "Hide current value"
+msgstr "Hide current value"
+
+msgctxt "widget.selection.choices_window"
+msgid "Choices window"
+msgstr "Choices window"
+
+msgctxt "widget.selection.choices_window.columns"
+msgid "Columns"
+msgstr "Columns"
+
+msgctxt "widget.selection.choices_window.disable_mobile"
+msgid "Disable mobile mode"
+msgstr "Disable mobile mode"
+
+msgctxt "widget.selection.choices_window.no_squares"
+msgid "No square tiles"
+msgstr "No square tiles"
+
+msgctxt "widget.selection.selection_options"
+msgid "Selection options"
+msgstr "Selection options"
+
+msgctxt "widget.selection.selection_options.no_highlight"
+msgid "Don't highlight current selection"
+msgstr "Don't highlight current selection"
+
+msgctxt "widget.selection.selection_options.keep_open"
+msgid "Keep window open upon selection"
+msgstr "Keep window open upon selection"
+
+msgctxt "widget.selection.nochoices"
+msgid "No choices available - check widget config"
+msgstr "No choices available - check widget config"
+
+msgctxt "widget.slider"
+msgid "Slider"
+msgstr "Slider"
+
+msgctxt "widget.slider.description"
+msgid "A slider for setting numerical openHAB items"
+msgstr "A slider for setting numerical openHAB items"
+
+msgctxt "widget.slider.settings.header"
+msgid "Slider Settings"
+msgstr "Slider Settings"
+
+msgctxt "widget.slider.general.orientation"
+msgid "Orientation"
+msgstr "Orientation"
+
+msgctxt "widget.slider.general.orientation.vertical"
+msgid "Vertical slider"
+msgstr "Vertical slider"
+
+msgctxt "widget.slider.advanced.hidelabel"
+msgid "Hide title label"
+msgstr "Hide title label"
+
+msgctxt "widget.slider.advanced.hidelimits"
+msgid "Hide limits labels"
+msgstr "Hide limits labels"
+
+msgctxt "widget.slider.advanced.hidepointer"
+msgid "Hide current value label"
+msgstr "Hide current value label"
+
+msgctxt "widget.slider.advanced.showticks"
+msgid "Show ticks"
+msgstr "Show ticks"
+
+msgctxt "widget.slider.advanced.showticksvalues"
+msgid "Show ticks labels"
+msgstr "Show ticks labels"
+
+msgctxt "widget.slider.advanced.inverted"
+msgid "Reverse direction"
+msgstr "Reverse direction"
+
+msgctxt "widget.slider.advanced.bigslider"
+msgid "Big slider (horizontal only)"
+msgstr "Big slider (horizontal only)"
+
+msgctxt "widget.slider.backdrop"
+msgid "Backdrop"
+msgstr "Backdrop"
+
+
+###
+
+msgctxt "widget.switch"
+msgid "Switch"
+msgstr "Switch"
+
+msgctxt "widget.switch.description"
+msgid "A ON/OFF toggle for openHAB switches"
+msgstr "A ON/OFF toggle for openHAB switches"
+
+msgctxt "widget.switch.settings.header"
+msgid "Switch Settings"
+msgstr "Switch Settings"
+
+msgctxt "widget.switch.display"
+msgid "Display options"
+msgstr "Display options"
+
+msgctxt "widget.switch.display.hidelabel"
+msgid "Hide name"
+msgstr "Hide name"
+
+msgctxt "widget.switch.display.hideicon"
+msgid "Hide icon"
+msgstr "Hide icon"
+
+msgctxt "widget.switch.display.hideonoff"
+msgid "Hide ON/OFF"
+msgstr "Hide ON/OFF"
+
+
+###
+
+msgctxt "widget.template"
+msgid "Template"
+msgstr "Template"
+
+msgctxt "widget.template.description"
+msgid "A template widget - displays a custom dynamic template"
+msgstr "A template widget - displays a custom dynamic template"
+
+msgctxt "widget.template.settings.header"
+msgid "Template Settings"
+msgstr "Template Settings"
+
+msgctxt "widget.template.settings.header.customwidget"
+msgid "{{customwidget_name}} Settings"
+msgstr "{{customwidget_name}} Settings"
+
+msgctxt "widget.template.dontwrap"
+msgid "Don't wrap in container"
+msgstr "Don't wrap in container"
+
+msgctxt "widget.template.nobackground"
+msgid "No background"
+msgstr "No background"
+
+msgctxt "widget.template.template"
+msgid "Template"
+msgstr "Template"
+
+msgctxt "widget.template.importfromfile"
+msgid "Import from file..."
+msgstr "Import from file..."
+
+msgctxt "widget.template.exporttofile"
+msgid "Export to file"
+msgstr "Export to file"
+
+msgctxt "widget.template.communitysupport"
+msgid "Community support"
+msgstr "Community support"
+
+msgctxt "widget.template.knowledgebase"
+msgid "Knowledge base"
+msgstr "Knowledge base"
+
+
+###
+
+msgctxt "widget.timeline"
+msgid "Timeline"
+msgstr "Timeline"
+
+msgctxt "widget.timeline.description"
+msgid "Displays a timeline of several items"
+msgstr "Displays a timeline of several items"
+
+msgctxt "widget.timeline.settings.header"
+msgid "Timeline Settings"
+msgstr "Timeline Settings"
+
+msgctxt "widget.timeline.general.service"
+msgid "Persistence service"
+msgstr "Persistence service"
+
+msgctxt "widget.timeline.general.service.hint"
+msgid "rrd4j, mysql, influxdb... Leave blank for default"
+msgstr "rrd4j, mysql, influxdb... Leave blank for default"
+
+msgctxt "widget.timeline.general.period"
+msgid "Period"
+msgstr "Period"
+
+msgctxt "widget.timeline.colors"
+msgid "Colors"
+msgstr "Colors"
+
+msgctxt "widget.timeline.colors.state"
+msgid "State"
+msgstr "State"
+
+msgctxt "widget.timeline.series"
+msgid "Series"
+msgstr "Series"
+

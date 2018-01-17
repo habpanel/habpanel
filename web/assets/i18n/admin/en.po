@@ -1,0 +1,758 @@
+msgid=""
+# HABPanel translation PO file - must be converted to .json
+# run `gulp i18n-po2json`
+
+msgid ""
+msgstr ""
+"HABPanel - admin\n"
+"Project-Id-Version: habpanel\n"
+"Report-Msgid-Bugs-To: https://github.com/openhab/org.openhab.ui.habpanel/issues\n"
+
+
+msgctxt "designer.save"
+msgid "Save"
+msgstr "Save"
+
+msgctxt "designer.run"
+msgid "Run"
+msgstr "Run"
+
+msgctxt "designer.addwidget"
+msgid "Add Widget"
+msgstr "Add Widget"
+
+msgctxt "designer.addwidget.hint"
+msgid "Add some widgets"
+msgstr "Add some widgets"
+
+msgctxt "designer.addwidget.customwidgets"
+msgid "Custom widgets"
+msgstr "Custom widgets"
+
+msgctxt "designer.addwidget.getmore"
+msgid "Get more..."
+msgstr "Get more..."
+
+msgctxt "designer.addwidget.getmore.tooltip"
+msgid "Open the widget gallery to import more widgets"
+msgstr "Open the widget gallery to import more widgets"
+
+msgctxt "designer.contextmenu.edit"
+msgid "Edit..."
+msgstr "Edit..."
+
+msgctxt "designer.contextmenu.copymove"
+msgid "Copy/move to..."
+msgstr "Copy/move to..."
+
+msgctxt "designer.contextmenu.delete"
+msgid "Delete"
+msgstr "Delete"
+
+msgctxt "designer.copymove.header"
+msgid "Copy/move {{widgetName}}"
+msgstr "Copy/move {{widgetName}}"
+
+msgctxt "designer.copymove.todashboard"
+msgid "To dashboard"
+msgstr "To dashboard"
+
+msgctxt "designer.copymove.move"
+msgid "Move"
+msgstr "Move"
+
+msgctxt "designer.copymove.copy"
+msgid "Copy"
+msgstr "Copy"
+
+msgctxt "designer.newwidget.defaultname"
+msgid "New Widget"
+msgstr "New Widget"
+
+msgctxt "designer.serversavefailed"
+msgid "Server save failed!"
+msgstr "Server save failed!"
+
+msgctxt "dashboard.settings.dialog.title"
+msgid "Dashboard Settings"
+msgstr "Dashboard Settings"
+
+msgctxt "dashboard.settings.tile"
+msgid "Menu tile"
+msgstr "Menu tile"
+
+msgctxt "dashboard.settings.tile.background_image_url"
+msgid "Background Image URL"
+msgstr "Background Image URL"
+
+msgctxt "dashboard.settings.tile.title_text_color"
+msgid "Title Text color"
+msgstr "Title Text color"
+
+msgctxt "dashboard.settings.tile.click_feedback"
+msgid "Click feedback"
+msgstr "Click feedback"
+
+msgctxt "dashboard.settings.tile.click_feedback.description"
+msgid "Don't brighten tile on click/tap"
+msgstr "Don't brighten tile on click/tap"
+
+msgctxt "dashboard.settings.advanced"
+msgid "Advanced"
+msgstr "Advanced"
+
+msgctxt "dashboard.settings.advanced.warning"
+msgid "These options are currently experimental, unstable or targeted at advanced users! Use at your own risk."
+msgstr "These options are currently experimental, unstable or targeted at advanced users! Use at your own risk."
+
+msgctxt "dashboard.settings.customwidgets"
+msgid "Custom widgets"
+msgstr "Custom widgets"
+
+msgctxt "dashboard.settings.customwidgets.warning"
+msgid "This feature is currently experimental, and targeted at advanced users! Use at your own risk."
+msgstr "This feature is currently experimental, and targeted at advanced users! Use at your own risk."
+
+msgctxt "dashboard.settings.customwidgets.usecustomwidget"
+msgid "Use a custom widget"
+msgstr "Use a custom widget"
+
+msgctxt "dashboard.settings.customwidgets.customwidget"
+msgid "Custom Widget"
+msgstr "Custom Widget"
+
+msgctxt "dashboard.settings.customwidgets.tile"
+msgid "Main menu tile"
+msgstr "Main menu tile"
+
+msgctxt "dashboard.settings.customwidgets.tile.description"
+msgid "Replace the tile contents by a custom widget"
+msgstr "Replace the tile contents by a custom widget"
+
+msgctxt "dashboard.settings.customwidgets.drawer"
+msgid "Drawer"
+msgstr "Drawer"
+
+msgctxt "dashboard.settings.customwidgets.drawer.description"
+msgid "Replace the contents of the drawer menu by a custom widget"
+msgstr "Replace the contents of the drawer menu by a custom widget"
+
+msgctxt "dashboard.settings.customwidgets.header"
+msgid "Dashboard header"
+msgstr "Dashboard header"
+
+msgctxt "dashboard.settings.customwidgets.header.description"
+msgid "Replace the contents of the dashboard header by a custom widget"
+msgstr "Replace the contents of the dashboard header by a custom widget"
+
+
+###
+
+msgctxt "itempicker.placeholder"
+msgid "Search or select an openHAB item"
+msgstr "Search or select an openHAB item"
+
+msgctxt "iconpicker.selecticonset"
+msgid "Select icon set"
+msgstr "Select icon set"
+
+msgctxt "iconpicker.customicon"
+msgid "Custom icon"
+msgstr "Custom icon"
+
+msgctxt "iconpicker.customurl"
+msgid "Custom URL"
+msgstr "Custom URL"
+
+msgctxt "iconpicker.none"
+msgid "(none)"
+msgstr "(none)"
+
+msgctxt "iconpicker.customicontooltip"
+msgid "Type the name of a <a href="http://docs.openhab.org/configuration/items.html#icons" target="_blank">registered icon</a> (only SVG supported)<br />Examples: <em>switch</em>, <em>temperature</em> or an additional icon in your configuration\'s <code>icons/classic</code> folder"
+msgstr "Type the name of a <a href="http://docs.openhab.org/configuration/items.html#icons" target="_blank">registered icon</a> (only SVG supported)<br />Examples: <em>switch</em>, <em>temperature</em> or an additional icon in your configuration\'s <code>icons/classic</code> folder"
+
+
+###
+
+msgctxt "settings.header"
+msgid "Settings"
+msgstr "Settings"
+
+msgctxt "settings.storage.header"
+msgid "Current storage configuration"
+msgstr "Current storage configuration"
+
+msgctxt "settings.storage.localstorage"
+msgid "Local storage"
+msgstr "Local storage"
+
+msgctxt "settings.storage.localstorage.hint"
+msgid "The configuration is saved for this browser and device only. It will be kept as long as you don't clean up the browser's historical data."
+msgstr "The configuration is saved for this browser and device only. It will be kept as long as you don't clean up the browser's historical data."
+
+msgctxt "settings.storage.localstorage.edit"
+msgid "Edit the local panel configuration (experts only)"
+msgstr "Edit the local panel configuration (experts only)"
+
+msgctxt "settings.storage.panelconfiguration"
+msgid "Panel configuration:"
+msgstr "Panel configuration:"
+
+msgctxt "settings.storage.panelconfiguration.lastsynced"
+msgid "Last synced on"
+msgstr "Last synced on"
+
+msgctxt "settings.storage.panelconfiguration.contains"
+msgid "Contains:"
+msgstr "Contains:"
+
+msgctxt "settings.storage.panelconfiguration.save"
+msgid "Save the current configuration to a new panel configuration</span>"
+msgstr "Save the current configuration to a new panel configuration</span>"
+
+msgctxt "settings.storage.panelconfiguration.dialog.title"
+msgid "New panel configuration"
+msgstr "New panel configuration"
+
+msgctxt "settings.storage.panelconfiguration.dialog.message"
+msgid "Please choose a name for the new panel configuration (letters and digits only please):"
+msgstr "Please choose a name for the new panel configuration (letters and digits only please):"
+
+msgctxt "settings.panel.name"
+msgid "Panel name"
+msgstr "Panel name"
+
+msgctxt "settings.panel.name.hint"
+msgid "Replaces 'HABPanel' in the side drawer when set"
+msgstr "Replaces 'HABPanel' in the side drawer when set"
+
+msgctxt "settings.panel.appearance.header"
+msgid "Appearance"
+msgstr "Appearance"
+
+msgctxt "settings.panel.appearance.theme"
+msgid "Theme"
+msgstr "Theme"
+
+msgctxt "settings.panel.appearance.theme.not_supported"
+msgid "Themes are not compatible with this browser."
+msgstr "Themes are not compatible with this browser."
+
+msgctxt "settings.panel.appearance.additional_stylesheet"
+msgid "Additional stylesheet (optional)"
+msgstr "Additional stylesheet (optional)"
+
+msgctxt "settings.panel.appearance.additional_stylesheet.hint"
+msgid "Relative URL only; example: /static/example.css"
+msgstr "Relative URL only; example: /static/example.css"
+
+msgctxt "settings.panel.appearance.background_image"
+msgid "Background image (optional)"
+msgstr "Background image (optional)"
+
+msgctxt "settings.panel.appearance.background_image.hint"
+msgid "Example: //source.unsplash.com/random"
+msgstr "Example: //source.unsplash.com/random"
+
+msgctxt "settings.panel.appearance.drawer_heading_image"
+msgid "Drawer heading image (optional)"
+msgstr "Drawer heading image (optional)"
+
+msgctxt "settings.panel.appearance.drawer_heading_image.hint"
+msgid "Example: //via.placeholder.com/265x95"
+msgstr "Example: //via.placeholder.com/265x95"
+
+msgctxt "settings.panel.appearance.prevent_scrolling"
+msgid "Prevent scrolling (when not editing)"
+msgstr "Prevent scrolling (when not editing)"
+
+msgctxt "settings.panel.appearance.hide_drawer_footer"
+msgid "Hide the drawer's footer"
+msgstr "Hide the drawer's footer"
+
+msgctxt "settings.panel.appearance.hide_toolbar_buttons"
+msgid "Hide toolbar buttons:"
+msgstr "Hide toolbar buttons:"
+
+msgctxt "settings.panel.appearance.show_clock"
+msgid "Show a clock on the header"
+msgstr "Show a clock on the header"
+
+msgctxt "settings.panel.appearance.show_clock.header_format"
+msgid "Header clock format"
+msgstr "Header clock format"
+
+msgctxt "settings.panel.appearance.show_clock.header_format.hint"
+msgid "Default: shortTime, use AngularJS date format"
+msgstr "Default: shortTime, use AngularJS date format"
+
+msgctxt "settings.panel.customwidgets.header"
+msgid "Custom Widgets"
+msgstr "Custom Widgets"
+
+msgctxt "settings.panel.customwidgets.manage"
+msgid "Manage"
+msgstr "Manage"
+
+msgctxt "settings.panel.voicesupport.header"
+msgid "Voice Support"
+msgstr "Voice Support"
+
+msgctxt "settings.panel.voicesupport.speech_synthesis_voice"
+msgid "Speech synthesis voice"
+msgstr "Speech synthesis voice"
+
+msgctxt "settings.panel.voicesupport.speech_synthesis_voice.hint"
+msgid "Available voices depend on the operating system and browser environments."
+msgstr "Available voices depend on the operating system and browser environments."
+
+msgctxt "settings.panel.voicesupport.speech_synthesis_voice.test"
+msgid "Test"
+msgstr "Test"
+
+msgctxt "settings.panel.voicesupport.floating_speech_button"
+msgid "Display a floating speech button at the bottom of the screen</span>"
+msgstr "Display a floating speech button at the bottom of the screen</span>"
+
+msgctxt "settings.panel.voicesupport.speech_synthesis_item"
+msgid "Speak the new value of the following item when it changes:"
+msgstr "Speak the new value of the following item when it changes:"
+
+msgctxt "settings.panel.dashboard_control.header"
+msgid "Switch dashboard with item value"
+msgstr "Switch dashboard with item value"
+
+msgctxt "settings.panel.dashboard_control.item"
+msgid "When this item changes to a dashboard's name, switch to it:"
+msgstr "When this item changes to a dashboard's name, switch to it:"
+
+msgctxt "settings.localconfig.title"
+msgid "Local panel configuration editor"
+msgstr "Local panel configuration editor"
+
+msgctxt "settings.localconfig.warning"
+msgid "This is the raw configuration object representing your current configuration. Be careful while editing it by hand!"
+msgstr "This is the raw configuration object representing your current configuration. Be careful while editing it by hand!"
+
+msgctxt "settings.localconfig.import"
+msgid "Import"
+msgstr "Import"
+
+msgctxt "settings.localconfig.export"
+msgid "Export"
+msgstr "Export"
+
+msgctxt "settings.localconfig.copy"
+msgid "Copy"
+msgstr "Copy"
+
+msgctxt "settings.localconfig.copied"
+msgid "Copied!"
+msgstr "Copied!"
+
+msgctxt "settings.localconfig.save"
+msgid "Save"
+msgstr "Save"
+
+msgctxt "settings.localconfig.saved"
+msgid "Saved!"
+msgstr "Saved!"
+
+msgctxt "settings.localconfig.failed"
+msgid "FAILED!"
+msgstr "FAILED!"
+
+msgctxt "settings.localconfig.error.nodashboardsfound"
+msgid "No dashboards found!"
+msgstr "No dashboards found!"
+
+msgctxt "settings.localconfig.parsingerror.dialog.title"
+msgid "Error"
+msgstr "Error"
+
+msgctxt "settings.localconfig.parsingerror.dialog.message"
+msgid "Configuration parsing error, nothing has been modified: "
+msgstr "Configuration parsing error, nothing has been modified: "
+
+msgctxt "settings.localconfig.importerror.dialog.title"
+msgid "Error"
+msgstr "Error"
+
+msgctxt "settings.localconfig.importerror.dialog.message"
+msgid "Problem while importing: "
+msgstr "Problem while importing: "
+
+
+###
+
+msgctxt "customwidgets.list.header"
+msgid "Custom widgets"
+msgstr "Custom widgets"
+
+msgctxt "customwidgets.list.byauthor"
+msgid "by"
+msgstr "by"
+
+msgctxt "customwidgets.list.globallyprovisioned.hint"
+msgid "This widget was provisioned globally via a bundle. It cannot be modified, but may be cloned to an user-defined widget with another name."
+msgstr "This widget was provisioned globally via a bundle. It cannot be modified, but may be cloned to an user-defined widget with another name."
+
+msgctxt "customwidgets.list.userdefined.hint"
+msgid "This widget has been defined manually in this panel configuration and can be modified."
+msgstr "This widget has been defined manually in this panel configuration and can be modified."
+
+msgctxt "customwidgets.list.contextmenu.clone"
+msgid "Clone widget..."
+msgstr "Clone widget..."
+
+msgctxt "customwidgets.list.contextmenu.exporttofile"
+msgid "Export to file"
+msgstr "Export to file"
+
+msgctxt "customwidgets.list.contextmenu.openhelp"
+msgid "Open Help"
+msgstr "Open Help"
+
+msgctxt "customwidgets.list.contextmenu.update"
+msgid "Update..."
+msgstr "Update..."
+
+msgctxt "customwidgets.list.newwidget"
+msgid "New widget"
+msgstr "New widget"
+
+msgctxt "customwidgets.list.importwidget"
+msgid "Import widget"
+msgstr "Import widget"
+
+msgctxt "customwidgets.list.importwidget.fromfile"
+msgid "Import from file..."
+msgstr "Import from file..."
+
+msgctxt "customwidgets.list.importwidget.fromgallery"
+msgid "Import from gallery..."
+msgstr "Import from gallery..."
+
+msgctxt "customwidgets.list.add.dialog.title"
+msgid "New custom widget"
+msgstr "New custom widget"
+
+msgctxt "customwidgets.list.add.dialog.message"
+msgid "Please choose a short name as an identifier for your widget (for example, 'window-shutter=up-down-button, 'weather-forecast' etc.). If a widget with the same identifier already exists, it will be replaced!"
+msgstr "Please choose a short name as an identifier for your widget (for example, 'window-shutter=up-down-button, 'weather-forecast' etc.). If a widget with the same identifier already exists, it will be replaced!"
+
+msgctxt "customwidgets.list.import.nojson"
+msgid "The file must have a .json extension!"
+msgstr "The file must have a .json extension!"
+
+msgctxt "customwidgets.list.import.dialog.title"
+msgid "Import widget"
+msgstr "Import widget"
+
+msgctxt "customwidgets.list.import.dialog.message"
+msgid "Please confirm or change the identifier of your widget (avoid spaces and special chars!). If a widget with the same identifier already exists, it will be replaced!"
+msgstr "Please confirm or change the identifier of your widget (avoid spaces and special chars!). If a widget with the same identifier already exists, it will be replaced!"
+
+msgctxt "customwidgets.list.import.error"
+msgid "Widget import error: "
+msgstr "Widget import error: "
+
+msgctxt "customwidgets.list.update.dialog.title"
+msgid "Update widget"
+msgstr "Update widget"
+
+msgctxt "customwidgets.list.update.dialog.message"
+msgid "This will update widget <id> from <source_url>. Any changes you made will be overwritten! Continue?"
+msgstr "This will update widget <id> from <source_url>. Any changes you made will be overwritten! Continue?"
+
+msgctxt "customwidgets.list.update.error.notemplatefound"
+msgid "Couldn't update widget <id> from <source_url>: no template found"
+msgstr "Couldn't update widget <id> from <source_url>: no template found"
+
+msgctxt "customwidgets.list.update.error.unknown"
+msgid "Couldn't update widget <id> from <source_url>: "
+msgstr "Couldn't update widget <id> from <source_url>: "
+
+msgctxt "customwidgets.list.update.success"
+msgid "Widget <id> updated successfully from <source_url>"
+msgstr "Widget <id> updated successfully from <source_url>"
+
+msgctxt "customwidgets.list.delete.dialog.title"
+msgid "Remove widget"
+msgstr "Remove widget"
+
+msgctxt "customwidgets.list.delete.dialog.message"
+msgid "Please confirm you want to delete this widget: "
+msgstr "Please confirm you want to delete this widget: "
+
+msgctxt "customwidgets.list.clone.dialog.title"
+msgid "Clone widget"
+msgstr "Clone widget"
+
+msgctxt "customwidgets.list.clone.dialog.message"
+msgid "This will clone the globally provisioned widget: <id> to be modified as part of the panel configuration. Enter an unique identifier below - it must be different from the widget being cloned, and should avoid spaces and special chars. If an user-defined widget with the same identifier already exists, it will be replaced!"
+msgstr "This will clone the globally provisioned widget: <id> to be modified as part of the panel configuration. Enter an unique identifier below - it must be different from the widget being cloned, and should avoid spaces and special chars. If an user-defined widget with the same identifier already exists, it will be replaced!"
+
+
+###
+
+msgctxt "customwidgets.designer.heading"
+msgid "Widget:"
+msgstr "Widget:"
+
+msgctxt "customwidgets.designer.save"
+msgid "Save"
+msgstr "Save"
+
+msgctxt "customwidgets.designer.saved"
+msgid "Saved!"
+msgstr "Saved!"
+
+msgctxt "customwidgets.designer.code"
+msgid "Code"
+msgstr "Code"
+
+msgctxt "customwidgets.designer.settings"
+msgid "Settings"
+msgstr "Settings"
+
+msgctxt "customwidgets.designer.settings.general"
+msgid "General settings"
+msgstr "General settings"
+
+msgctxt "customwidgets.designer.settings.general.display_name"
+msgid "Display name"
+msgstr "Display name"
+
+msgctxt "customwidgets.designer.settings.general.author"
+msgid "Author"
+msgstr "Author"
+
+msgctxt "customwidgets.designer.settings.general.description"
+msgid "Description"
+msgstr "Description"
+
+msgctxt "customwidgets.designer.settings.config"
+msgid "Configuration settings"
+msgstr "Configuration settings"
+
+msgctxt "customwidgets.designer.settings.config.warning"
+msgid "Beware: always bear in mind instances of this widget might be existing when altering configuration settings!"
+msgstr "Beware: always bear in mind instances of this widget might be existing when altering configuration settings!"
+
+msgctxt "customwidgets.designer.settings.config.add"
+msgid "Add setting"
+msgstr "Add setting"
+
+msgctxt "customwidgets.designer.settings.config.type"
+msgid "Type"
+msgstr "Type"
+
+msgctxt "customwidgets.designer.settings.config.type.string"
+msgid "String"
+msgstr "String"
+
+msgctxt "customwidgets.designer.settings.config.type.number"
+msgid "Number"
+msgstr "Number"
+
+msgctxt "customwidgets.designer.settings.config.type.checkbox"
+msgid "Checkbox"
+msgstr "Checkbox"
+
+msgctxt "customwidgets.designer.settings.config.type.item"
+msgid "Item"
+msgstr "Item"
+
+msgctxt "customwidgets.designer.settings.config.type.color"
+msgid "Color"
+msgstr "Color"
+
+msgctxt "customwidgets.designer.settings.config.type.choices"
+msgid "Choices"
+msgstr "Choices"
+
+msgctxt "customwidgets.designer.settings.config.type.icon"
+msgid "Icon"
+msgstr "Icon"
+
+msgctxt "customwidgets.designer.settings.config.type.heading"
+msgid "Heading"
+msgstr "Heading"
+
+msgctxt "customwidgets.designer.settings.config.id.hint"
+msgid "Enter a JSON friendly key for this setting - ideally, use only lowercase letters, digits and underscores. Examples: my_setting, first_item, text_size, font_color"
+msgstr "Enter a JSON friendly key for this setting - ideally, use only lowercase letters, digits and underscores. Examples: my_setting, first_item, text_size, font_color"
+
+msgctxt "customwidgets.designer.settings.config.label"
+msgid "Label"
+msgstr "Label"
+
+msgctxt "customwidgets.designer.settings.config.default"
+msgid "Default value"
+msgstr "Default value"
+
+msgctxt "customwidgets.designer.settings.config.choices"
+msgid "Choices"
+msgstr "Choices"
+
+msgctxt "customwidgets.designer.settings.config.choices.hint"
+msgid "Comma-separated possible values"
+msgstr "Comma-separated possible values"
+
+msgctxt "customwidgets.designer.settings.config.description"
+msgid "Description"
+msgstr "Description"
+
+msgctxt "customwidgets.designer.settings.config.icon.hint"
+msgid "This will define 2 config elements:"
+msgstr "This will define 2 config elements:"
+
+msgctxt "customwidgets.designer.preview"
+msgid "Preview"
+msgstr "Preview"
+
+
+###
+
+msgctxt "widgetgallery.heading"
+msgid "Widget Gallery"
+msgstr "Widget Gallery"
+
+msgctxt "widgetgallery.heading.importrepo"
+msgid "Import GitHub Repository"
+msgstr "Import GitHub Repository"
+
+msgctxt "widgetgallery.heading.importgallery"
+msgid "Import Gallery Item"
+msgstr "Import Gallery Item"
+
+msgctxt "widgetgallery.warning.githubratelimit"
+msgid "Warning: rate limiting on the GitHub API will temporarily block further requests!"
+msgstr "Warning: rate limiting on the GitHub API will temporarily block further requests!"
+
+msgctxt "widgetgallery.warning.githubratelimit.wait"
+msgid "Wait until this time and try again:"
+msgstr "Wait until this time and try again:"
+
+msgctxt "widgetgallery.addressbar.hint"
+msgid "GitHub repository full name (owner/name) or URL"
+msgstr "GitHub repository full name (owner/name) or URL"
+
+msgctxt "widgetgallery.addressbar.go"
+msgid "Go"
+msgstr "Go"
+
+msgctxt "widgetgallery.toolbar.communitycontributions"
+msgid "community&nbsp;contributions"
+msgstr "community&nbsp;contributions"
+
+msgctxt "widgetgallery.toolbar.sortby"
+msgid "sort by:"
+msgstr "sort by:"
+
+msgctxt "widgetgallery.toolbar.sortby.mostrecent"
+msgid "most&nbsp;recent"
+msgstr "most&nbsp;recent"
+
+msgctxt "widgetgallery.toolbar.sortby.mostliked"
+msgid "most&nbsp;liked"
+msgstr "most&nbsp;liked"
+
+msgctxt "widgetgallery.toolbar.sortby.mostpopular"
+msgid "most&nbsp;popular"
+msgstr "most&nbsp;popular"
+
+msgctxt "widgetgallery.toolbar.sortby.mostdiscussed"
+msgid "most&nbsp;discussed"
+msgstr "most&nbsp;discussed"
+
+msgctxt "widgetgallery.details.authorby"
+msgid "by"
+msgstr "by"
+
+msgctxt "widgetgallery.details.forumposts"
+msgid "post(s) on this topic - discuss on community.openhab.org"
+msgstr "post(s) on this topic - discuss on community.openhab.org"
+
+msgctxt "widgetgallery.details.nothingtoimport"
+msgid "Nothing to import"
+msgstr "Nothing to import"
+
+msgctxt "widgetgallery.details.importwidget"
+msgid "Import Widget"
+msgstr "Import Widget"
+
+msgctxt "widgetgallery.details.importwidgets"
+msgid "Import {} Widgets"
+msgstr "Import {} Widgets"
+
+msgctxt "widgetgallery.details.gotorepository"
+msgid "Go to the repository"
+msgstr "Go to the repository"
+
+msgctxt "widgetgallery.details.toupdate"
+msgid "to update"
+msgstr "to update"
+
+msgctxt "widgetgallery.details.showdetails"
+msgid "Show details"
+msgstr "Show details"
+
+msgctxt "widgetgallery.details.hidedetails"
+msgid "Hide details"
+msgstr "Hide details"
+
+msgctxt "widgetgallery.details.downloadzip"
+msgid "Download ZIP"
+msgstr "Download ZIP"
+
+msgctxt "widgetgallery.details.widget.hint.prefix"
+msgid "This"
+msgstr "This"
+
+msgctxt "widgetgallery.details.widget.hint.communitycontribution"
+msgid "community contribution"
+msgstr "community contribution"
+
+msgctxt "widgetgallery.details.widget.hint.repository"
+msgid "repository"
+msgstr "repository"
+
+msgctxt "widgetgallery.details.widget.hint.suffix"
+msgid "contains the following widgets; you can import them individually:"
+msgstr "contains the following widgets; you can import them individually:"
+
+msgctxt "widgetgallery.details.widget.hint.nowidgets"
+msgid "No widgets were found (*.widget.json files)! Please report this."
+msgstr "No widgets were found (*.widget.json files)! Please report this."
+
+msgctxt "widgetgallery.details.widget.hint.checkrepo"
+msgid "The widgets are likely in the referenced GitHub repository. Click the "Go to the repository" button to open it."
+msgstr "The widgets are likely in the referenced GitHub repository. Click the "Go to the repository" button to open it."
+
+msgctxt "widgetgallery.details.widget.import"
+msgid "Import widget"
+msgstr "Import widget"
+
+msgctxt "widgetgallery.details.widget.update"
+msgid "Update widget"
+msgstr "Update widget"
+
+msgctxt "widgetgallery.details.widget.imported"
+msgid "Widget imported!"
+msgstr "Widget imported!"
+
+msgctxt "widgetgallery.error"
+msgid "Error:"
+msgstr "Error:"
+
+msgctxt "widgetgallery.widgetsdetected.dialog.title"
+msgid "Existing widgets detected"
+msgstr "Existing widgets detected"
+
+msgctxt "widgetgallery.widgetsdetected.dialog.message"
+msgid "Warning: please confirm you wish to update <nbexisting> existing widgets, overwriting any eventual changes made locally! If unsure, cancel and click Show details to review the list of affected widgets."
+msgstr "Warning: please confirm you wish to update <nbexisting> existing widgets, overwriting any eventual changes made locally! If unsure, cancel and click Show details to review the list of affected widgets."
+
