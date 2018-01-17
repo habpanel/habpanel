@@ -40,6 +40,7 @@
     "iconpicker.customicon": "Icône personnalisée",
     "iconpicker.customurl": "URL personnalisée",
     "iconpicker.none": "(Aucune)",
+    "iconpicker.customicontooltip": "Entrez le nom d'une <a href='http://docs.openhab.org/configuration/items.html#icons' target='_blank'>icône enregistrée</a> (SVG supporté uniquement)<br />Exemples : <em>switch</em>, <em>temperature</em> or une icône additionnelle placée dans le répertoire <code>icons/classic</code> de votre configuration",
 
     "settings.header": "Paramètres",
     "settings.storage.header": "Configuration de stockage actuelle",

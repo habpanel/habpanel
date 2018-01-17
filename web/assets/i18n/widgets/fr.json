@@ -64,7 +64,6 @@
     "widget.chart.series.axis": "Axe",
     "widget.chart.series.axis.primary": "Principal",
     "widget.chart.series.axis.secondary": "Secondaire",
-    "widget.chart.series.color": "Couleur",
     "widget.chart.series.display": "Afficher",
     "widget.chart.series.display.line": "Ligne",
     "widget.chart.series.display.area": "Aire",
@@ -229,7 +228,7 @@
     "widget.template.nobackground": "Pas d'arrière-plan",
     "widget.template.template": "Template",
     "widget.template.importfromfile": "Importer un fichier...",
-    "widget.template.importtofile": "Exporter vers un fichier",
+    "widget.template.exporttofile": "Exporter vers un fichier",
     "widget.template.communitysupport": "Support communautaire",
     "widget.template.knowledgebase": "Base de connaissances",
 

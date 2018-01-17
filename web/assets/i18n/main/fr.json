@@ -28,6 +28,8 @@
     "tutorial.enterdesigner": "Appuyez dans la tuile pour concevoir le tableau de bord.",
     "tutorial.adjustnbcolumns": "Ajustez le nombre de colonnes",
     "tutorial.saveonserver": "Puis sauvez sur le serveur openHAB!",
+    "tutorial.editingdisabled": "L'édition est désactivée sur le serveur !",
+    "tutorial.unlockedit": "Veuillez aller dans Paper UI et déverrouiller l'édition pour utiliser HABPanel sur cet appareil.'",
 
     "menu.addnewdashboard": "Nouveau tableau de bord",
     "menu.panelsettings": "Paramètres panneau",
