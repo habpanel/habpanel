@@ -168,7 +168,7 @@ msgid "(none)"
 msgstr "(Aucune)"
 
 msgctxt "iconpicker.customicontooltip"
-msgid "Type the name of a <a href='http://docs.openhab.org/configuration/items.html#icons' target='_blank'>registered icon</a> (only SVG supported)<br />Examples: <em>switch</em>, <em>temperature</em> or an additional icon in your configuration\'s <code>icons/classic</code> folder"
+msgid "Type the name of a <a href='http://docs.openhab.org/configuration/items.html#icons' target='_blank'>registered icon</a> (only SVG supported)<br />Examples: <em>switch</em>, <em>temperature</em> or an additional icon in your configuration's <code>icons/classic</code> folder"
 msgstr "Entrez le nom d'une <a href='http://docs.openhab.org/configuration/items.html#icons' target='_blank'>icône enregistrée</a> (SVG supporté uniquement)<br />Exemples : <em>switch</em>, <em>temperature</em> or une icône additionnelle placée dans le répertoire <code>icons/classic</code> de votre configuration"
 
 
@@ -728,7 +728,7 @@ msgid "No widgets were found (*.widget.json files)! Please report this."
 msgstr "Aucun widget trouvé (fichiers *.widget.json) ! Merci de le signaler."
 
 msgctxt "widgetgallery.details.widget.hint.checkrepo"
-msgid "The widgets are likely in the referenced GitHub repository. Click the "Go to the repository" button to open it."
+msgid "The widgets are likely in the referenced GitHub repository. Click the 'Go to the repository' button to open it."
 msgstr "Les widgets se trouvent probablement dans le repository GitHub référencé. Cliquer sur 'Aller au repository' pour l'ouvrir."
 
 msgctxt "widgetgallery.details.widget.import"
