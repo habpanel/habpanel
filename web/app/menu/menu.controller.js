@@ -62,29 +62,6 @@
                 if ($rootScope.settings.no_scrolling) iNoBounce.enable();
         }
 
-        vm.removeDashboard = function (dash) {
-            prompt({
-                title: TranslationService.translate("menu.dialog.removedashboard.title", "Remove dashboard"),
-                message: TranslationService.translate("menu.dialog.removedashboard.message", "Please confirm you want to delete this dashboard: ") + dash.name,
-            }).then(function () {
-                dashboards.splice(dashboards.indexOf(dash), 1);
-                PersistenceService.saveDashboards();
-            });
-        };
-
-        vm.renameDashboard = function (dash) {
-            prompt({
-                title: TranslationService.translate("menu.dialog.renamedashboard.title", "Rename dashboard"),
-                message: TranslationService.translate("menu.dialog.removedashboard.message", "New name:"),
-                value: dash.name,
-                input: true
-            }).then(function (name) {
-                dash.id = dash.name = name;
-                PersistenceService.saveDashboards();
-            })
-
-        };
-
         vm.onChangedColumns = function () {
             if ($rootScope.menucolumns !== vm.gridsterOptions.columns) {
                 console.log('columns from ' + $rootScope.menucolumns + " to " + vm.gridsterOptions.columns);

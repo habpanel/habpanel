@@ -28,7 +28,7 @@
         vm.importFile = function (file) {
             if (!file) return;
             if (file.name.indexOf(".json") == -1) {
-                alert(TranslationService("customwidgets.list.import.nojson", "The file must have a .json extension!"));
+                alert(TranslationService.translate("customwidgets.list.import.nojson", "The file must have a .json extension!"));
                 delete $scope.file;
                 return;
             }
@@ -48,7 +48,7 @@
                     } catch (e) {
                         prompt({
                             title: "Error",
-                            message: "Widget import error: " + e,
+                            message: TranslationService.translate("customwidgets.list.import.error", "Widget import error: ") + e,
                             buttons: [{ label:'OK', primary: true }]
                         });
                     }
