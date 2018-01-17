@@ -1,4 +1,3 @@
-msgid=""
 # HABPanel translation PO file - must be converted to .json
 # run `gulp i18n-po2json`
 
