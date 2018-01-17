@@ -168,7 +168,7 @@ msgid "(none)"
 msgstr "(Aucune)"
 
 msgctxt "iconpicker.customicontooltip"
-msgid "Type the name of a <a href="http://docs.openhab.org/configuration/items.html#icons" target="_blank">registered icon</a> (only SVG supported)<br />Examples: <em>switch</em>, <em>temperature</em> or an additional icon in your configuration\'s <code>icons/classic</code> folder"
+msgid "Type the name of a <a href='http://docs.openhab.org/configuration/items.html#icons' target='_blank'>registered icon</a> (only SVG supported)<br />Examples: <em>switch</em>, <em>temperature</em> or an additional icon in your configuration\'s <code>icons/classic</code> folder"
 msgstr "Entrez le nom d'une <a href='http://docs.openhab.org/configuration/items.html#icons' target='_blank'>icône enregistrée</a> (SVG supporté uniquement)<br />Exemples : <em>switch</em>, <em>temperature</em> or une icône additionnelle placée dans le répertoire <code>icons/classic</code> de votre configuration"
 
 

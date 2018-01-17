@@ -168,8 +168,8 @@ msgid "(none)"
 msgstr "(none)"
 
 msgctxt "iconpicker.customicontooltip"
-msgid "Type the name of a <a href="http://docs.openhab.org/configuration/items.html#icons" target="_blank">registered icon</a> (only SVG supported)<br />Examples: <em>switch</em>, <em>temperature</em> or an additional icon in your configuration\'s <code>icons/classic</code> folder"
-msgstr "Type the name of a <a href="http://docs.openhab.org/configuration/items.html#icons" target="_blank">registered icon</a> (only SVG supported)<br />Examples: <em>switch</em>, <em>temperature</em> or an additional icon in your configuration\'s <code>icons/classic</code> folder"
+msgid "Type the name of a <a href='http://docs.openhab.org/configuration/items.html#icons' target='_blank'>registered icon</a> (only SVG supported)<br />Examples: <em>switch</em>, <em>temperature</em> or an additional icon in your configuration\'s <code>icons/classic</code> folder"
+msgstr "Type the name of a <a href='http://docs.openhab.org/configuration/items.html#icons' target='_blank'>registered icon</a> (only SVG supported)<br />Examples: <em>switch</em>, <em>temperature</em> or an additional icon in your configuration\'s <code>icons/classic</code> folder"
 
 
 ###
