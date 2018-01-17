@@ -1,7 +1,10 @@
 #.Displayed below the arrow when starting
-msgid "tutorial.welcome"
+msgctxt "tutorial.welcome"
+msgid "Welcome to HABPanel!"
 msgstr "Welcome to HABPanel!"
 
-msgid "tutorial.clickheretobegin"
+#.Second line displayed below the arrow when starting
+msgctxt "tutorial.clickheretobegin"
+msgid "Click or tap here to begin."
 msgstr "Click or tap here to begin."
 
