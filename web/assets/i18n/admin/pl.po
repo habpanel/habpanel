@@ -11,176 +11,176 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Polish\n"
 "Language: pl_PL\n"
-"PO-Revision-Date: 2018-01-18 13:31-0500\n"
+"PO-Revision-Date: 2018-01-18 14:09-0500\n"
 
 #. Save button in the dashboard designer
 msgctxt "designer.save"
 msgid "Save"
-msgstr "Zapisz"
+msgstr ""
 
 #. Run button in the dashboard designer
 msgctxt "designer.run"
 msgid "Run"
-msgstr "Uruchom"
+msgstr ""
 
 #. Add widget button in the dashboard designer
 msgctxt "designer.addwidget"
 msgid "Add Widget"
-msgstr "Dodaj Widget"
+msgstr ""
 
 #. Tutorial text with arrow when on an empty dashboard
 msgctxt "designer.addwidget.hint"
 msgid "Add some widgets"
-msgstr "Dodaj widgety"
+msgstr ""
 
 #. Header of the custom widget section (beware, it might overlap the cogs icon on the right)
 msgctxt "designer.addwidget.customwidgets"
 msgid "Custom widgets"
-msgstr "Widgety użytkownika"
+msgstr ""
 
 #. Open widget gallery
 msgctxt "designer.addwidget.getmore"
 msgid "Get more..."
-msgstr "Pobierz więcej..."
+msgstr ""
 
 #. Tooltip when hovering the "Get more" menu entry
 msgctxt "designer.addwidget.getmore.tooltip"
 msgid "Open the widget gallery to import more widgets"
-msgstr "Otwórz galerię by zaimprtować więcej widgetów"
+msgstr ""
 
 #. Edit option in a widget placeholder context menu (3-dot icon)
 msgctxt "designer.contextmenu.edit"
 msgid "Edit..."
-msgstr "Edycja..."
+msgstr ""
 
 #. Copy/move option in a widget placeholder context menu (3-dot icon)
 msgctxt "designer.contextmenu.copymove"
 msgid "Copy/move to..."
-msgstr "Kopiuj/Przenieś do..."
+msgstr ""
 
 #. Delete option in a widget placeholder context menu (3-dot icon)
 msgctxt "designer.contextmenu.delete"
 msgid "Delete"
-msgstr "Usuń"
+msgstr ""
 
 #. Title of copy/move widget dialog
 msgctxt "designer.copymove.header"
 msgid "Copy/move {{widgetName}}"
-msgstr "Kopiuj/Przenieś {{widgetName}}"
+msgstr ""
 
 #. Alongside the dropdown dashboard selection
 msgctxt "designer.copymove.todashboard"
 msgid "To dashboard"
-msgstr "Do panelu"
+msgstr ""
 
 #. Move button
 msgctxt "designer.copymove.move"
 msgid "Move"
-msgstr "Przenieś"
+msgstr ""
 
 #. Copy button
 msgctxt "designer.copymove.copy"
 msgid "Copy"
-msgstr "Kopiuj"
+msgstr ""
 
 #. Default name of a newly created widget
 msgctxt "designer.newwidget.defaultname"
 msgid "New Widget"
-msgstr "Nowy widget"
+msgstr ""
 
 msgctxt "designer.serversavefailed"
 msgid "Server save failed!"
-msgstr "Zapis na serwerze nie powiódł się!"
+msgstr ""
 
 #. Title of the dashboard settings dialog
 msgctxt "dashboard.settings.dialog.title"
 msgid "Dashboard Settings"
-msgstr "Ustawienia Panelu"
+msgstr ""
 
 #. Tab header
 msgctxt "dashboard.settings.tile"
 msgid "Menu tile"
-msgstr "Kafelka menu"
+msgstr ""
 
 #. Textbox header
 msgctxt "dashboard.settings.tile.background_image_url"
 msgid "Background Image URL"
-msgstr "Adres URL obrazu tła"
+msgstr ""
 
 #. Color picker header
 msgctxt "dashboard.settings.tile.title_text_color"
 msgid "Title Text color"
-msgstr "Kolor tekstu tytułu"
+msgstr ""
 
 #. Checkbox header
 msgctxt "dashboard.settings.tile.click_feedback"
 msgid "Click feedback"
-msgstr "Informacja zwrotna kliknięcia"
+msgstr ""
 
 #. Checkbox label
 msgctxt "dashboard.settings.tile.click_feedback.description"
 msgid "Don't brighten tile on click/tap"
-msgstr "Nie rozjaśniaj kafelek przy kliknięciu"
+msgstr ""
 
 #. Tab header
 msgctxt "dashboard.settings.advanced"
 msgid "Advanced"
-msgstr "Zaawansowane"
+msgstr ""
 
 #. Alert display at the top
 msgctxt "dashboard.settings.advanced.warning"
 msgid "These options are currently experimental, unstable or targeted at advanced users! Use at your own risk."
-msgstr "Opcje te są obecnie eksperymentalne, niestabilne lub kierowane do użytkowników zaawansowanych! Używaj na własne ryzyko."
+msgstr ""
 
 #. Tab header
 msgctxt "dashboard.settings.customwidgets"
 msgid "Custom widgets"
-msgstr "Widgety użytkownika"
+msgstr ""
 
 #. Alert displayed at the top
 msgctxt "dashboard.settings.customwidgets.warning"
 msgid "This feature is currently experimental, and targeted at advanced users! Use at your own risk."
-msgstr "Opcje te są obecnie eksperymentalne, niestabilne lub kierowane do użytkowników zaawansowanych! Używaj na własne ryzyko."
+msgstr ""
 
 #. Checkbox header
 msgctxt "dashboard.settings.customwidgets.usecustomwidget"
 msgid "Use a custom widget"
-msgstr "Użyj widgetów użytkownika"
+msgstr ""
 
 #. Dropdown header
 msgctxt "dashboard.settings.customwidgets.customwidget"
 msgid "Custom Widget"
-msgstr "Widget użytkownika"
+msgstr ""
 
 #. Accordion header
 msgctxt "dashboard.settings.customwidgets.tile"
 msgid "Main menu tile"
-msgstr "Kafelka Menu głównego"
+msgstr ""
 
 #. Checkbox label
 msgctxt "dashboard.settings.customwidgets.tile.description"
 msgid "Replace the tile contents by a custom widget"
-msgstr "Zamień zawartość kafelki z widgetem użytkownika"
+msgstr ""
 
 #. Accordion header
 msgctxt "dashboard.settings.customwidgets.drawer"
 msgid "Drawer"
-msgstr "Szuflada"
+msgstr ""
 
 #. Checkbox label
 msgctxt "dashboard.settings.customwidgets.drawer.description"
 msgid "Replace the contents of the drawer menu by a custom widget"
-msgstr "Zamień zawartość menu szuflady z widgetem użytkownika"
+msgstr ""
 
 #. Accordion header
 msgctxt "dashboard.settings.customwidgets.header"
 msgid "Dashboard header"
-msgstr "Nagłówek panelu"
+msgstr ""
 
 #. Checkbox label
 msgctxt "dashboard.settings.customwidgets.header.description"
 msgid "Replace the contents of the dashboard header by a custom widget"
-msgstr "Zamień zawartość nagłówka panelu z widgetem użytkownika"
+msgstr ""
 
 #. Displayed in the item picker when no item selected
 msgctxt "itempicker.placeholder"
@@ -190,27 +190,27 @@ msgstr ""
 #. Icon picker dropdown placeholder
 msgctxt "iconpicker.selecticonset"
 msgid "Select icon set"
-msgstr "Wybierz zestaw ikon"
+msgstr ""
 
 #. Icon picker dropdown entry
 msgctxt "iconpicker.customicon"
 msgid "Custom icon"
-msgstr "Niestandardowa ikona"
+msgstr ""
 
 #. Icon picker dropdown entry
 msgctxt "iconpicker.customurl"
 msgid "Custom URL"
-msgstr "Niestandardowy adres URL"
+msgstr ""
 
 #. Icon picker dropdown entry
 msgctxt "iconpicker.none"
 msgid "(none)"
-msgstr "(brak)"
+msgstr ""
 
 #. Appears when focusing the icon textbox when the "Custom icon" iconset is selected
 msgctxt "iconpicker.customicontooltip"
 msgid "Type the name of a <a href='http://docs.openhab.org/configuration/items.html#icons' target='_blank'>registered icon</a> (only SVG supported)<br />Examples: <em>switch</em>, <em>temperature</em> or an additional icon in your configuration's <code>icons/classic</code> folder"
-msgstr "Wpisz nazwę <a href='http://docs.openhab.org/configuration/items.html#icons' target='_blank'> zarejestrowanej ikony</a> (obsługiwane są tylko pliki SVG) <br />, np: <em>switch</em>, <em>temperature</em> lub dodatkowe ikony w Twojej konfiguracji z katalogu <code>icons/classic</code>"
+msgstr ""
 
 #. Screen title
 msgctxt "settings.header"
