@@ -12,917 +12,917 @@ msgstr ""
 "Last-Translator: ghys <github@schaus.net>\n"
 "Language-Team: French\n"
 "Language: fr_FR\n"
-"PO-Revision-Date: 2018-01-18 07:48-0500\n"
+"PO-Revision-Date: 2018-01-18 08:20-0500\n"
 
 msgctxt "widget.common.min"
 msgid "Min"
-msgstr ""
+msgstr "Min"
 
 msgctxt "widget.common.max"
 msgid "Max"
-msgstr ""
+msgstr "Max"
 
 msgctxt "widget.common.step"
 msgid "Step"
-msgstr ""
+msgstr "Précision"
 
 msgctxt "widget.common.unit"
 msgid "Unit"
-msgstr ""
+msgstr "Unité (suffixe)"
 
 msgctxt "widget.common.format"
 msgid "Format"
-msgstr ""
+msgstr "Format"
 
 msgctxt "widget.common.format.useserverprovided"
 msgid "Use server-provided format if available"
-msgstr ""
+msgstr "Utiliser le format fourni par le serveur si applicable"
 
 msgctxt "widget.common.dontwrap"
 msgid "Value right of label"
-msgstr ""
+msgstr "Valeur à droite du titre au lieu d'en-dessous"
 
 msgctxt "widget.common.backdrop_center"
 msgid "Center backdrop horizontally"
-msgstr ""
+msgstr "Centrer l'icône de fond horizontalement"
 
 msgctxt "widget.common.icon_nolinebreak"
 msgid "Icon left of label instead of below"
-msgstr ""
+msgstr "Placer l'icône à gauche du texte au lieu d'en-dessous"
 
 msgctxt "widget.common.icon_replacestext"
 msgid "Icon replaces textual value display"
-msgstr ""
+msgstr "L'icône remplace la représentation textuelle"
 
 msgctxt "widget.common.general"
 msgid "General"
-msgstr ""
+msgstr "Général"
 
 msgctxt "widget.common.advanced"
 msgid "Advanced"
-msgstr ""
+msgstr "Avancé"
 
 msgctxt "widget.button"
 msgid "Button"
-msgstr ""
+msgstr "Bouton"
 
 msgctxt "widget.button.description"
 msgid "A button performing a certain action, like sending a command to an openHAB item"
-msgstr ""
+msgstr "Un bouton effectuant une certaine action, par exemple envoyer une commande à un item openHAB"
 
 msgctxt "widget.button.settings.header"
 msgid "Button Settings"
-msgstr ""
+msgstr "Paramètres du bouton"
 
 msgctxt "widget.button.general"
 msgid "General"
-msgstr ""
+msgstr "Général"
 
 msgctxt "widget.button.general.action_type"
 msgid "Action type"
-msgstr ""
+msgstr "Type d'action"
 
 msgctxt "widget.button.general.action_type.command"
 msgid "Send a fixed command to an item"
-msgstr ""
+msgstr "Envoyer une commande fixe à un item"
 
 msgctxt "widget.button.general.action_type.toggle"
 msgid "Alternate item between 2 states"
-msgstr ""
+msgstr "Alterner un item entre 2 états"
 
 msgctxt "widget.button.general.action_type.navigate"
 msgid "Navigate"
-msgstr ""
+msgstr "Naviguer"
 
 msgctxt "widget.button.general.command"
 msgid "Command value"
-msgstr ""
+msgstr "Commande"
 
 msgctxt "widget.button.general.command_alt"
 msgid "Alternate command value"
-msgstr ""
+msgstr "Commande alternative"
 
 msgctxt "widget.button.general.navigation_type"
 msgid "Navigation type"
-msgstr ""
+msgstr "Type de navigation"
 
 msgctxt "widget.button.general.navigation_type.dashboard"
 msgid "Dashboard"
-msgstr ""
+msgstr "Tableau de bord"
 
 msgctxt "widget.button.general.navigation_target"
 msgid "Open in"
-msgstr ""
+msgstr "Ouvrir dans"
 
 msgctxt "widget.button.general.navigation_target.self"
 msgid "Current tab"
-msgstr ""
+msgstr "Onglet courant"
 
 msgctxt "widget.button.general.navigation_target.new_tab"
 msgid "New tab"
-msgstr ""
+msgstr "Nouvel onglet"
 
 msgctxt "widget.button.general.navigation_target.new_window"
 msgid "New window"
-msgstr ""
+msgstr "Nouvelle fenêtre"
 
 msgctxt "widget.button.display"
 msgid "Display"
-msgstr ""
+msgstr "Affichage"
 
 msgctxt "widget.button.display.label"
 msgid "Label"
-msgstr ""
+msgstr "Texte"
 
 msgctxt "widget.button.display.value"
 msgid "Value"
-msgstr ""
+msgstr "Valeur"
 
 msgctxt "widget.button.display.value.showitemvalue"
 msgid "Show the item's state value"
-msgstr ""
+msgstr "Afficher la valeur de l'état de l'item"
 
 msgctxt "widget.button.display.value.showitemvalue_noitem"
 msgid "Show an item's state value"
-msgstr ""
+msgstr "Afficher la valeur de l'état d'un item"
 
 msgctxt "widget.button.display.value.active_state"
 msgid "Active state"
-msgstr ""
+msgstr "État actif"
 
 msgctxt "widget.button.display.value.layout"
 msgid "Layout"
-msgstr ""
+msgstr "Agencement"
 
 msgctxt "widget.button.inactive"
 msgid "Inactive"
-msgstr ""
+msgstr "Inactif"
 
 msgctxt "widget.button.active"
 msgid "Active"
-msgstr ""
+msgstr "Actif"
 
 msgctxt "widget.button.colors"
 msgid "Colors"
-msgstr ""
+msgstr "Couleurs"
 
 msgctxt "widget.button.background_color"
 msgid "Background color"
-msgstr ""
+msgstr "Couleur de fond"
 
 msgctxt "widget.button.foreground_color"
 msgid "Label color"
-msgstr ""
+msgstr "Couleur du texte"
 
 msgctxt "widget.button.value_color"
 msgid "Value color"
-msgstr ""
+msgstr "Couleur de la valeur"
 
 msgctxt "widget.button.preview.state"
 msgid "State"
-msgstr ""
+msgstr "État"
 
 msgctxt "widget.chart"
 msgid "Chart"
-msgstr ""
+msgstr "Graphique"
 
 msgctxt "widget.chart.description"
 msgid "Displays a chart"
-msgstr ""
+msgstr "Affiche un graphique"
 
 msgctxt "widget.chart.settings.header"
 msgid "Chart Settings"
-msgstr ""
+msgstr "Paramètre du graphique"
 
 msgctxt "widget.chart.general"
 msgid "General"
-msgstr ""
+msgstr "Général"
 
 msgctxt "widget.chart.general.type"
 msgid "Type"
-msgstr ""
+msgstr "Type"
 
 msgctxt "widget.chart.general.type.default"
 msgid "Default"
-msgstr ""
+msgstr "Défaut"
 
 msgctxt "widget.chart.general.type.rrd4j"
 msgid "RRD4j (rrd4j persistence service only)"
-msgstr ""
+msgstr "RRD4j (persistence rrd4j uniquement)"
 
 msgctxt "widget.chart.general.type.interactive"
 msgid "n3-line-chart (interactive)"
-msgstr ""
+msgstr "n3-line-chart (interactif)"
 
 msgctxt "widget.chart.general.service"
 msgid "Persistence service"
-msgstr ""
+msgstr "Service de persistence"
 
 msgctxt "widget.chart.general.service.hint"
 msgid "rrd4j, mysql, influxdb... Leave blank for default"
-msgstr ""
+msgstr "rrd4j, influxdb, mysql... Laisser à blanc pour celui par défaut"
 
 msgctxt "widget.chart.general.itemgroup"
 msgid "openHAB Item or Group"
-msgstr ""
+msgstr "Item ou groupe openHAB"
 
 msgctxt "widget.chart.general.period"
 msgid "Period"
-msgstr ""
+msgstr "Période"
 
 msgctxt "widget.chart.axis"
 msgid "Axis"
-msgstr ""
+msgstr "Axes"
 
 msgctxt "widget.chart.axis.primary"
 msgid "Primary axis (y)"
-msgstr ""
+msgstr "Axe principal (y)"
 
 msgctxt "widget.chart.axis.secondary"
 msgid "Secondary axis (y2)"
-msgstr ""
+msgstr "Axe secondaire (y2)"
 
 msgctxt "widget.chart.axis.enabled"
 msgid "Enabled"
-msgstr ""
+msgstr "Activé"
 
 msgctxt "widget.chart.axis.includezero"
 msgid "Include zero"
-msgstr ""
+msgstr "Inclure le zéro"
 
 msgctxt "widget.chart.series"
 msgid "Series"
-msgstr ""
+msgstr "Séries"
 
 msgctxt "widget.chart.series.axis"
 msgid "Axis"
-msgstr ""
+msgstr "Axe"
 
 msgctxt "widget.chart.series.axis.primary"
 msgid "Primary"
-msgstr ""
+msgstr "Principal"
 
 msgctxt "widget.chart.series.axis.secondary"
 msgid "Secondary"
-msgstr ""
+msgstr "Secondaire"
 
 msgctxt "widget.chart.series.display"
 msgid "Display"
-msgstr ""
+msgstr "Afficher"
 
 msgctxt "widget.chart.series.display.line"
 msgid "Line"
-msgstr ""
+msgstr "Ligne"
 
 msgctxt "widget.chart.series.display.area"
 msgid "Area"
-msgstr ""
+msgstr "Aire"
 
 msgctxt "widget.chart.series.display.dots"
 msgid "Dots"
-msgstr ""
+msgstr "Points"
 
 msgctxt "widget.chart.series.liveupdate"
 msgid "Live update (experimental)"
-msgstr ""
+msgstr "Mise à jour en temps réel (expérimental)"
 
 msgctxt "widget.chart.series.liveupdate.fillvalues"
 msgid "Repeat other series' current values on update if necessary"
-msgstr ""
+msgstr "Compléter les valeurs des autres séries si nécessaire"
 
 msgctxt "widget.clock"
 msgid "Clock"
-msgstr ""
+msgstr "Horloge"
 
 msgctxt "widget.clock.description"
 msgid "A clock widget - displays an analog or digital clock"
-msgstr ""
+msgstr "Une horloge, analogue ou digitale"
 
 msgctxt "widget.clock.settings.header"
 msgid "Clock Settings"
-msgstr ""
+msgstr "Paramètres de l'horloge"
 
 msgctxt "widget.clock.mode"
 msgid "Mode"
-msgstr ""
+msgstr "Mode"
 
 msgctxt "widget.clock.mode.analog"
 msgid "Analog"
-msgstr ""
+msgstr "Analogue"
 
 msgctxt "widget.clock.mode.digital"
 msgid "Digital"
-msgstr ""
+msgstr "Digital"
 
 msgctxt "widget.clock.theme"
 msgid "Analog Theme"
-msgstr ""
+msgstr "Thème (analogue)"
 
 msgctxt "widget.clock.theme.light"
 msgid "light"
-msgstr ""
+msgstr "clair"
 
 msgctxt "widget.clock.theme.dark"
 msgid "dark"
-msgstr ""
+msgstr "sombre"
 
 msgctxt "widget.clock.digital_format"
 msgid "Digital Format"
-msgstr ""
+msgstr "Format (digital)"
 
 msgctxt "widget.clock.font_size"
 msgid "Digital Font Size"
-msgstr ""
+msgstr "Taille de police (digital)"
 
 msgctxt "widget.colorpicker"
 msgid "Color Picker"
-msgstr ""
+msgstr "Contrôle de couleur"
 
 msgctxt "widget.colorpicker.description"
 msgid "Displays an color picker"
-msgstr ""
+msgstr "Permet de contrôler un item de type Couleur"
 
 msgctxt "widget.colorpicker.settings.header"
 msgid "Color Picker Settings"
-msgstr ""
+msgstr "Paramètres du contrôle de couleur"
 
 msgctxt "widget.colorpicker.type"
 msgid "Type"
-msgstr ""
+msgstr "Type"
 
 msgctxt "widget.colorpicker.type.hsl"
 msgid "HSL Sliders"
-msgstr ""
+msgstr "Sliders HSL"
 
 msgctxt "widget.colorpicker.type.ackolor"
 msgid "aCKolor style (modal picker)"
-msgstr ""
+msgstr "Style aCKolor (contrôle modal)"
 
 msgctxt "widget.colorpicker.blur_background"
 msgid "Apply blurring effect to background"
-msgstr ""
+msgstr "Appliquer un effet de flou au fond"
 
 msgctxt "widget.colorpicker.blur_background.warning"
 msgid "Warning: This can cause performance problems on tablets"
-msgstr ""
+msgstr "Attention : cela peut entraîner des problèmes de performance sur les tablettes"
 
 msgctxt "widget.dummy"
 msgid "Dummy"
-msgstr ""
+msgstr "Valeur (dummy)"
 
 msgctxt "widget.dummy.description"
 msgid "A dummy widget - displays the value of an openHAB item"
-msgstr ""
+msgstr "Afficher l'état d'un item openHAB"
 
 msgctxt "widget.dummy.settings.header"
 msgid "Dummy Settings"
-msgstr ""
+msgstr "Paramètres du widget dummy"
 
 msgctxt "widget.dummy.layout"
 msgid "Layout"
-msgstr ""
+msgstr "Apparence"
 
 msgctxt "widget.frame"
 msgid "Frame"
-msgstr ""
+msgstr "Cadre Web"
 
 msgctxt "widget.frame.description"
 msgid "Embedded website from predefined URL or openHAB item."
-msgstr ""
+msgstr "Affiche une page Web prédéfini ou selon un item"
 
 msgctxt "widget.frame.settings.header"
 msgid "Frame Settings"
-msgstr ""
+msgstr "Paramètres du cadre (frame)"
 
 msgctxt "widget.frame.url_source"
 msgid "URL Source"
-msgstr ""
+msgstr "Source de l'URL"
 
 msgctxt "widget.frame.url_source.static"
 msgid "Static URL"
-msgstr ""
+msgstr "URL statique"
 
 msgctxt "widget.frame.url_source.item"
 msgid "openHAB String Item"
-msgstr ""
+msgstr "Item openHAB de type String"
 
 msgctxt "widget.frame.refresh_interval"
 msgid "Refresh interval (seconds)"
-msgstr ""
+msgstr "Intervalle de rafraîchissement (secondes)"
 
 msgctxt "widget.frame.nosuffix"
 msgid "No cache busting (advanced)"
-msgstr ""
+msgstr "Empêcher l'invalidation du cache (avancé)"
 
 msgctxt "widget.frame.nosuffix.description"
 msgid "Don't add URL suffixes to prevent reusing cached pages"
-msgstr ""
+msgstr "Ne pas ajouter de suffixe aux URL pour empêcher la réutilisation de données en cache"
 
 msgctxt "widget.frame.background_color"
 msgid "Frame background color"
-msgstr ""
+msgstr "Couleur de fond du cadre"
 
 msgctxt "widget.frame.frameless"
 msgid "Frameless"
-msgstr ""
+msgstr "Sans bordure"
 
 msgctxt "widget.frame.frameless.description"
 msgid "Fill to edges"
-msgstr ""
+msgstr "Remplir jusqu'aux coins"
 
 msgctxt "widget.frame.label"
 msgid "Label"
-msgstr ""
+msgstr "Titre"
 
 msgctxt "widget.frame.label.description"
 msgid "Hide title label"
-msgstr ""
+msgstr "Ne pas afficher le titre"
 
 msgctxt "widget.image"
 msgid "Image"
-msgstr ""
+msgstr "Image"
 
 msgctxt "widget.image.description"
 msgid "Displays an image (not necessarily from openHAB)"
-msgstr ""
+msgstr "Affiche une image prédéfinie ou selon un item"
 
 msgctxt "widget.image.settings.header"
 msgid "Image Settings"
-msgstr ""
+msgstr "Paramètres de l'image"
 
 msgctxt "widget.image.image_source"
 msgid "Image source"
-msgstr ""
+msgstr "Source de l'image"
 
 msgctxt "widget.image.image_source.static"
 msgid "Static image URL"
-msgstr ""
+msgstr "URL statique"
 
 msgctxt "widget.image.image_source.item-string"
 msgid "openHAB String Item"
-msgstr ""
+msgstr "Item openHAB de type String"
 
 msgctxt "widget.image.image_source.item-image"
 msgid "openHAB Image Item"
-msgstr ""
+msgstr "Item openHAB de type Image"
 
 msgctxt "widget.image.refresh_interval"
 msgid "Refresh interval"
-msgstr ""
+msgstr "Intervalle de rafraîchissement (secondes)"
 
 msgctxt "widget.image.refresh_interval.seconds"
 msgid "seconds"
-msgstr ""
+msgstr "secondes"
 
 msgctxt "widget.image.refresh_interval.milliseconds"
 msgid "milliseconds"
-msgstr ""
+msgstr "millisecondes"
 
 msgctxt "widget.image.nosuffix"
 msgid "No cache busting (advanced)"
-msgstr ""
+msgstr "Empêcher l'invalidation du cache (avancé)"
 
 msgctxt "widget.image.nosuffix.description"
 msgid "Don't add URL suffixes to prevent reusing cached images"
-msgstr ""
+msgstr "Ne pas ajouter de suffixe aux URL pour empêcher la réutilisation d'images en cache"
 
 msgctxt "widget.image.background_color"
 msgid "Background color"
-msgstr ""
+msgstr "Couleur de fond"
 
 msgctxt "widget.knob"
 msgid "Knob"
-msgstr ""
+msgstr "Curseur circulaire (knob)"
 
 msgctxt "widget.knob.description"
 msgid "A knob for setting numerical openHAB items"
-msgstr ""
+msgstr "Un curseur circulaire pour régler des valeurs numériques"
 
 msgctxt "widget.knob.settings.header"
 msgid "Knob Settings"
-msgstr ""
+msgstr "Paramètres du curseur circulaire (knob)"
 
 msgctxt "widget.knob.general.readonly"
 msgid "Read only"
-msgstr ""
+msgstr "Lecture seule"
 
 msgctxt "widget.knob.general.readonly.description"
 msgid "Disable interaction"
-msgstr ""
+msgstr "Désactiver l'interaction"
 
 msgctxt "widget.knob.general.centraldisplay"
 msgid "Central display"
-msgstr ""
+msgstr "Affichage central"
 
 msgctxt "widget.knob.general.centraldisplay.showvalue"
 msgid "Show value"
-msgstr ""
+msgstr "Afficher la valeur"
 
 msgctxt "widget.knob.general.centraldisplay.showlabel"
 msgid "Show name (below value)"
-msgstr ""
+msgstr "Afficher le titre"
 
 msgctxt "widget.knob.bartrack"
 msgid "Bar & Track"
-msgstr ""
+msgstr "Curseur"
 
 msgctxt "widget.knob.bartrack.angles"
 msgid "Angles (°)"
-msgstr ""
+msgstr "Angles (°)"
 
 msgctxt "widget.knob.bartrack.angles.start"
 msgid "Start"
-msgstr ""
+msgstr "Départ"
 
 msgctxt "widget.knob.bartrack.angles.end"
 msgid "End"
-msgstr ""
+msgstr "Arrivée"
 
 msgctxt "widget.knob.bartrack.width"
 msgid "Width"
-msgstr ""
+msgstr "Epaisseur"
 
 msgctxt "widget.knob.bartrack.cap"
 msgid "Cap"
-msgstr ""
+msgstr "Arrondi"
 
 msgctxt "widget.knob.bartrack.bar"
 msgid "Bar"
-msgstr ""
+msgstr "Curseur"
 
 msgctxt "widget.knob.bartrack.track"
 msgid "Track"
-msgstr ""
+msgstr "Fond du curseur"
 
 msgctxt "widget.knob.bartrack.previousvalue"
 msgid "Previous value"
-msgstr ""
+msgstr "Valeur précédente"
 
 msgctxt "widget.knob.bartrack.previousvalue.description"
 msgid "Display previous value when dragging"
-msgstr ""
+msgstr "Afficher la valeur précédente pendant la manipulation"
 
 msgctxt "widget.knob.scale"
 msgid "Scale"
-msgstr ""
+msgstr "Graduations"
 
 msgctxt "widget.knob.scale.display"
 msgid "Display scale"
-msgstr ""
+msgstr "Afficher les graduations"
 
 msgctxt "widget.knob.scale.display.enabled"
 msgid "Enabled"
-msgstr ""
+msgstr "Activé"
 
 msgctxt "widget.knob.scale.type"
 msgid "Scale Type"
-msgstr ""
+msgstr "Type"
 
 msgctxt "widget.knob.scale.type.lines"
 msgid "Lines"
-msgstr ""
+msgstr "Traits"
 
 msgctxt "widget.knob.scale.type.dots"
 msgid "Dots"
-msgstr ""
+msgstr "Points"
 
 msgctxt "widget.knob.scale.width"
 msgid "Width"
-msgstr ""
+msgstr "Epaisseur"
 
 msgctxt "widget.knob.scale.qty"
 msgid "Qty."
-msgstr ""
+msgstr "Qté"
 
 msgctxt "widget.knob.scale.space"
 msgid "Space"
-msgstr ""
+msgstr "Espace"
 
 msgctxt "widget.knob.skin"
 msgid "Skin"
-msgstr ""
+msgstr "Thème"
 
 msgctxt "widget.knob.skin.type"
 msgid "Type"
-msgstr ""
+msgstr "Type"
 
 msgctxt "widget.knob.skin.type.simple"
 msgid "Simple"
-msgstr ""
+msgstr "Simple"
 
 msgctxt "widget.knob.skin.type.tron"
 msgid "Tron"
-msgstr ""
+msgstr "Tron"
 
 msgctxt "widget.knob.skin.tronsettings"
 msgid "Tron skin settings"
-msgstr ""
+msgstr "Paramètres du thème Tron"
 
 msgctxt "widget.knob.skin.tronsettings.width"
 msgid "Width"
-msgstr ""
+msgstr "Epaisseur"
 
 msgctxt "widget.knob.skin.tronsettings.space"
 msgid "Space"
-msgstr ""
+msgstr "Espace"
 
 msgctxt "widget.knob.ranges"
 msgid "Ranges"
-msgstr ""
+msgstr "Intervalles"
 
 msgctxt "widget.knob.ranges.enable"
 msgid "Enable Ranges"
-msgstr ""
+msgstr "Activer les intervalles"
 
 msgctxt "widget.knob.ranges.match_text_color"
 msgid "Match Text Color to Range"
-msgstr ""
+msgstr "Afficher le texte dans la couleur de l'intervalle"
 
 msgctxt "widget.knob.ranges.from"
 msgid "from"
-msgstr ""
+msgstr "De"
 
 msgctxt "widget.knob.ranges.to"
 msgid "to"
-msgstr ""
+msgstr "À"
 
 msgctxt "widget.knob.ranges.bar"
 msgid "Bar"
-msgstr ""
+msgstr "Barre"
 
 msgctxt "widget.knob.misc"
 msgid "Misc."
-msgstr ""
+msgstr "Divers"
 
 msgctxt "widget.knob.misc.text"
 msgid "Text"
-msgstr ""
+msgstr "Texte"
 
 msgctxt "widget.knob.misc.background"
 msgid "Background"
-msgstr ""
+msgstr "Arrière-plan"
 
 msgctxt "widget.label"
 msgid "Label"
-msgstr ""
+msgstr "Étiquette (label)"
 
 msgctxt "widget.label.description"
 msgid "A fixed label used for headers etc. (no openHAB item binding)"
-msgstr ""
+msgstr "Un texte fixe pour faire office d'en-tête etc. (pas d'item openHAB associé)"
 
 msgctxt "widget.label.settings.header"
 msgid "Label Settings"
-msgstr ""
+msgstr "Paramètres de l'étiquette (label)"
 
 msgctxt "widget.label.preview"
 msgid "Preview"
-msgstr ""
+msgstr "Aperçu"
 
 msgctxt "widget.label.background_color"
 msgid "Background color"
-msgstr ""
+msgstr "Couleur de fond"
 
 msgctxt "widget.label.foreground_color"
 msgid "Text color"
-msgstr ""
+msgstr "Couleur du texte"
 
 msgctxt "widget.selection"
 msgid "Selection"
-msgstr ""
+msgstr "Sélection"
 
 msgctxt "widget.selection.description"
 msgid "A widget allowing a selection between multiple choices"
-msgstr ""
+msgstr "Un widget permettant le choix entre plusieurs options"
 
 msgctxt "widget.selection.settings.header"
 msgid "Selection Settings"
-msgstr ""
+msgstr "Paramètres de la sélection"
 
 msgctxt "widget.selection.choices_source"
 msgid "Choices source"
-msgstr ""
+msgstr "Source des choix"
 
 msgctxt "widget.selection.choices_source.server"
 msgid "Server-provided item options"
-msgstr ""
+msgstr "Options fournies par le serveur"
 
 msgctxt "widget.selection.choices_source.csv"
 msgid "Comma-separated list"
-msgstr ""
+msgstr "Liste séparée par des virgules"
 
 msgctxt "widget.selection.choices"
 msgid "List of comma-separated choices"
-msgstr ""
+msgstr "Liste de choix séparés par des virgules"
 
 msgctxt "widget.selection.choices.hint"
 msgid "You can optionally use the syntax: 'cmd=label' for each choice<br />Example: 18=Cold,20,22,24,26,28=Warm"
-msgstr ""
+msgstr "Vous pouvez utilisez la syntaxe: 'cmd=label' pour chaque choix<br />Exemple : 18=Froid,20,22,24,26,28=Chaud"
 
 msgctxt "widget.selection.display"
 msgid "Display options"
-msgstr ""
+msgstr "Options d'affichage"
 
 msgctxt "widget.selection.display.hidelabel"
 msgid "Hide name"
-msgstr ""
+msgstr "Cacher le titre"
 
 msgctxt "widget.selection.display.hideicon"
 msgid "Hide icon"
-msgstr ""
+msgstr "Cacher l'icône"
 
 msgctxt "widget.selection.display.hidestate"
 msgid "Hide current value"
-msgstr ""
+msgstr "Cacher la valeur courante"
 
 msgctxt "widget.selection.choices_window"
 msgid "Choices window"
-msgstr ""
+msgstr "Fenêtre de choix"
 
 msgctxt "widget.selection.choices_window.columns"
 msgid "Columns"
-msgstr ""
+msgstr "Colonnes"
 
 msgctxt "widget.selection.choices_window.disable_mobile"
 msgid "Disable mobile mode"
-msgstr ""
+msgstr "Désactiver le mode mobile"
 
 msgctxt "widget.selection.choices_window.no_squares"
 msgid "No square tiles"
-msgstr ""
+msgstr "Pas de tuiles carrées"
 
 msgctxt "widget.selection.selection_options"
 msgid "Selection options"
-msgstr ""
+msgstr "Options de la sélection"
 
 msgctxt "widget.selection.selection_options.no_highlight"
 msgid "Don't highlight current selection"
-msgstr ""
+msgstr "Ne pas mettre en surbrillance la sélection"
 
 msgctxt "widget.selection.selection_options.keep_open"
 msgid "Keep window open upon selection"
-msgstr ""
+msgstr "Garder la fenêtre ouverte après la sélection"
 
 msgctxt "widget.selection.nochoices"
 msgid "No choices available - check widget config"
-msgstr ""
+msgstr "Pas de choix disponibles - vérifier la config du widget"
 
 msgctxt "widget.slider"
 msgid "Slider"
-msgstr ""
+msgstr "Curseur linéaire (slider)"
 
 msgctxt "widget.slider.description"
 msgid "A slider for setting numerical openHAB items"
-msgstr ""
+msgstr "Un curseur pour régler des valeurs numériques"
 
 msgctxt "widget.slider.settings.header"
 msgid "Slider Settings"
-msgstr ""
+msgstr "Paramètres du curseur linéaire (slider)"
 
 msgctxt "widget.slider.general.orientation"
 msgid "Orientation"
-msgstr ""
+msgstr "Orientation"
 
 msgctxt "widget.slider.general.orientation.vertical"
 msgid "Vertical slider"
-msgstr ""
+msgstr "Curseur vertical"
 
 msgctxt "widget.slider.advanced.hidelabel"
 msgid "Hide title label"
-msgstr ""
+msgstr "Cacher le titre"
 
 msgctxt "widget.slider.advanced.hidelimits"
 msgid "Hide limits labels"
-msgstr ""
+msgstr "Cacher les valeurs des limites"
 
 msgctxt "widget.slider.advanced.hidepointer"
 msgid "Hide current value label"
-msgstr ""
+msgstr "Cacher la valeur courante"
 
 msgctxt "widget.slider.advanced.showticks"
 msgid "Show ticks"
-msgstr ""
+msgstr "Afficher les graduations"
 
 msgctxt "widget.slider.advanced.showticksvalues"
 msgid "Show ticks labels"
-msgstr ""
+msgstr "Afficher les valeurs des graduations"
 
 msgctxt "widget.slider.advanced.inverted"
 msgid "Reverse direction"
-msgstr ""
+msgstr "Inverser la direction"
 
 msgctxt "widget.slider.advanced.bigslider"
 msgid "Big slider (horizontal only)"
-msgstr ""
+msgstr "Style agrandi (horizontal uniquement)"
 
 msgctxt "widget.slider.backdrop"
 msgid "Backdrop"
-msgstr ""
+msgstr "Arrière-plan"
 
 msgctxt "widget.switch"
 msgid "Switch"
-msgstr ""
+msgstr "Interrupteur (switch)"
 
 msgctxt "widget.switch.description"
 msgid "A ON/OFF toggle for openHAB switches"
-msgstr ""
+msgstr "Un interrupteur ON/OFF pour les switches openHAB"
 
 msgctxt "widget.switch.settings.header"
 msgid "Switch Settings"
-msgstr ""
+msgstr "Paramètres de l'interrupteur (switch)"
 
 msgctxt "widget.switch.display"
 msgid "Display options"
-msgstr ""
+msgstr "Options d'affichage"
 
 msgctxt "widget.switch.display.hidelabel"
 msgid "Hide name"
-msgstr ""
+msgstr "Cacher le titre"
 
 msgctxt "widget.switch.display.hideicon"
 msgid "Hide icon"
-msgstr ""
+msgstr "Cacher l'icône"
 
 msgctxt "widget.switch.display.hideonoff"
 msgid "Hide ON/OFF"
-msgstr ""
+msgstr "Cacher ON/OFF"
 
 msgctxt "widget.template"
 msgid "Template"
-msgstr ""
+msgstr "Template"
 
 msgctxt "widget.template.description"
 msgid "A template widget - displays a custom dynamic template"
-msgstr ""
+msgstr "Affiche un template personnalisé dynamique"
 
 msgctxt "widget.template.settings.header"
 msgid "Template Settings"
-msgstr ""
+msgstr "Paramètres du template"
 
 msgctxt "widget.template.settings.header.customwidget"
 msgid "{{customwidget_name}} Settings"
-msgstr ""
+msgstr "Paramètres de {{widget}}"
 
 msgctxt "widget.template.dontwrap"
 msgid "Don't wrap in container"
-msgstr ""
+msgstr "Ne pas envelopper dans un conteneur"
 
 msgctxt "widget.template.nobackground"
 msgid "No background"
-msgstr ""
+msgstr "Pas d'arrière-plan"
 
 msgctxt "widget.template.template"
 msgid "Template"
-msgstr ""
+msgstr "Template"
 
 msgctxt "widget.template.importfromfile"
 msgid "Import from file..."
-msgstr ""
+msgstr "Importer un fichier..."
 
 msgctxt "widget.template.exporttofile"
 msgid "Export to file"
-msgstr ""
+msgstr "Exporter vers un fichier"
 
 msgctxt "widget.template.communitysupport"
 msgid "Community support"
-msgstr ""
+msgstr "Support communautaire"
 
 msgctxt "widget.template.knowledgebase"
 msgid "Knowledge base"
-msgstr ""
+msgstr "Base de connaissances"
 
 msgctxt "widget.timeline"
 msgid "Timeline"
-msgstr ""
+msgstr "Ligne de temps"
 
 msgctxt "widget.timeline.description"
 msgid "Displays a timeline of several items"
-msgstr ""
+msgstr "Affiche des barres de couleur représentant l'historique de plusieurs items"
 
 msgctxt "widget.timeline.settings.header"
 msgid "Timeline Settings"
-msgstr ""
+msgstr "Paramètres de la ligne de temps (timeline)"
 
 msgctxt "widget.timeline.general.service"
 msgid "Persistence service"
-msgstr ""
+msgstr "Service de persistence"
 
 msgctxt "widget.timeline.general.service.hint"
 msgid "rrd4j, mysql, influxdb... Leave blank for default"
-msgstr ""
+msgstr "rrd4j, influxdb, mysql... Laisser à blanc pour celui par défaut"
 
 msgctxt "widget.timeline.general.period"
 msgid "Period"
-msgstr ""
+msgstr "Période"
 
 msgctxt "widget.timeline.colors"
 msgid "Colors"
-msgstr ""
+msgstr "Couleurs"
 
 msgctxt "widget.timeline.colors.state"
 msgid "State"
-msgstr ""
+msgstr "État"
 
 msgctxt "widget.timeline.series"
 msgid "Series"
-msgstr ""
+msgstr "Séries"
 
