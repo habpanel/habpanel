@@ -13,12 +13,21 @@ var sassGlob = require('gulp-sass-glob');
 var uglify = require('gulp-uglify');
 var watch = require('gulp-watch');
 var webserver = require('gulp-webserver');
+var through = require('through2');
+var pofile = require('pofile');
+
+
+
+// linting (not used)
 
 gulp.task('lint', function() {
     return gulp.src(['app/**/*.js'])
         .pipe(eslint())
         .pipe(eslint.format());
 });
+
+
+// live reload for SASS development
 
 gulp.task('web-server', function() {
     gulp.src('./')
@@ -42,6 +51,9 @@ gulp.task('server', [
     'web-server'
 ], function() {});
 
+
+// SASS processing
+
 gulp.task('sass-vendor', function() {
     gulp.src('./vendor/styles.scss')
         .pipe(plumber())
@@ -59,6 +71,71 @@ gulp.task('sass-vendor', function() {
 gulp.task('sass', [
     'sass-vendor'
 ], function() {});
+
+
+// i18n PO files to JSON conversion
+
+gulp.task('i18n-po2json', function() {
+    return gulp.src('./assets/i18n/*/*.po')
+        .pipe((function () {
+            // Borrowed from the gulp-po-json package
+            // https://github.com/Ulflander/gulp-po-json/
+            // with the following changes:
+            // use pofile instead of node-po (which doesn't support msgctxt lines),
+            // use msgctxt as key instead of msgid, ignore empty lines, prettify the output
+            function write(f, enc, cb) {
+                // console.log('Processing ' + f.path);
+
+                if (f.isNull()) {
+                    this.push(f);
+                    return cb();
+                }
+
+                if (f.path.indexOf('en.po') >= 0) {
+                    this.push(f);
+                    return cb();
+                }
+
+                if (f.isStream()) {
+                    this.emit('error', 'po2json: Streaming not supported');
+                    return cb();
+                }
+
+                var po = pofile.parse(f.contents.toString('utf-8'));
+                if (!po) {
+                    this.emit('error', 'po2json: Unable to parse file ' + f.path);
+                    return cb();
+                }
+
+                var res = {};
+                res._meta = po.headers;
+
+                for (var i = 0, l = po.items.length; i < l; i += 1) {
+                    if (po.items[i].msgstr[0]) {
+                        res[po.items[i].msgctxt] = po.items[i].msgstr[0];
+                    }
+                }
+
+                f.path = f.path.replace(/\.po$/gi, '.json');
+                f.contents = new Buffer(JSON.stringify(res, null, 4));
+                this.push(f);
+                cb();
+            }
+
+            function end(cb) {
+                cb();
+            }
+
+            return through.obj(write, end);
+        })()).pipe(gulp.dest('./assets/i18n'));
+});
+
+gulp.task('i18n', [
+    'i18n-po2json'
+], function() {});
+
+
+// vendor resources processing
 
 gulp.task('vendor-fonts', function() {
     return gulp.src([

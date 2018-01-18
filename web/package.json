@@ -46,7 +46,9 @@
     "gulp-sass-glob": "^1.0.6",
     "gulp-uglify": "^2.0.0",
     "gulp-watch": "^4.3.10",
-    "gulp-webserver": "^0.9.1"
+    "gulp-webserver": "^0.9.1",
+    "pofile": "^1.0.10",
+    "through2": "^2.0.3"
   },
   "dependencies": {
     "n3-charts": "^2.0.28"
