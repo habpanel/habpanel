@@ -3,15 +3,15 @@ msgstr ""
 "HABPanel - admin\n"
 "Project-Id-Version: ghys-habpanel\n"
 "Report-Msgid-Bugs-To: https://github.com/openhab/org.openhab.ui.habpanel/issues\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: crowdin.com\n"
 "X-Crowdin-Project: ghys-habpanel\n"
-"X-Crowdin-Language: fr\n"
+"X-Crowdin-Language: de\n"
 "X-Crowdin-File: /i18n/web/assets/i18n/admin/en.po\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Last-Translator: ghys <github@schaus.net>\n"
-"Language-Team: French\n"
-"Language: fr_FR\n"
+"Language-Team: German\n"
+"Language: de_DE\n"
 "PO-Revision-Date: 2018-01-18 07:48-0500\n"
 
 #. Save button in the dashboard designer
@@ -445,7 +445,7 @@ msgstr ""
 #. Message in a dialog box
 msgctxt "settings.localconfig.parsingerror.dialog.message"
 msgid "Configuration parsing error, nothing has been modified: "
-msgstr "Configuration erronée, rien n'a été modifié : "
+msgstr ""
 
 #. Title of a a dialog box
 msgctxt "settings.localconfig.importerror.dialog.title"
@@ -455,7 +455,7 @@ msgstr ""
 #. Message in a dialog box
 msgctxt "settings.localconfig.importerror.dialog.message"
 msgid "Problem while importing: "
-msgstr "Problème pendant l'import : "
+msgstr ""
 
 #. Screen title
 msgctxt "customwidgets.list.header"
@@ -470,12 +470,12 @@ msgstr ""
 #. Displayed in a tooltip when hovering the icon indicating a globally provisioned widget
 msgctxt "customwidgets.list.globallyprovisioned.hint"
 msgid "This widget was provisioned globally via a bundle. It cannot be modified, but may be cloned to an user-defined widget with another name."
-msgstr "Ce widget a été provisionné globalement par un bundle. Il ne peut pas être modifié, mais peut être cloné en un widget défini par l'utilisateur avec un autre nom."
+msgstr ""
 
 #. Displayed in a tooltip when hovering the icon indicating a user defined widget
 msgctxt "customwidgets.list.userdefined.hint"
 msgid "This widget has been defined manually in this panel configuration and can be modified."
-msgstr "Ce widget a été défini manuellement dans cette configuration de panneau et peut être modifié."
+msgstr ""
 
 #. Custom widget context menu entry - clone a globally-provisioned widget
 msgctxt "customwidgets.list.contextmenu.clone"
@@ -540,12 +540,12 @@ msgstr ""
 #. Dialog box message
 msgctxt "customwidgets.list.import.dialog.message"
 msgid "Please confirm or change the identifier of your widget (avoid spaces and special chars!). If a widget with the same identifier already exists, it will be replaced!"
-msgstr "Veuillez confirmer ou changer l'identifiant de votre widget (évitez les espaces et les caractères spéciaux). Si un widget avec le même identifiant existe déjà, il sera remplacé !"
+msgstr ""
 
 #. Prefix of an error message - followed by a technical exception message
 msgctxt "customwidgets.list.import.error"
 msgid "Widget import error: "
-msgstr "Erreur : "
+msgstr ""
 
 #. Dialog box title
 msgctxt "customwidgets.list.update.dialog.title"
@@ -730,7 +730,7 @@ msgstr ""
 #. Banner displayed when selecting the Icon type for the settings, followed by the defined settings themselves
 msgctxt "customwidgets.designer.settings.config.icon.hint"
 msgid "This will define 2 config elements:"
-msgstr "Ceci définira 2 éléments de configuration :"
+msgstr ""
 
 #. Tab header
 msgctxt "customwidgets.designer.preview"
@@ -775,7 +775,7 @@ msgstr ""
 #. Suffix displayed after a number, i.e. "24 community contributions"
 msgctxt "widgetgallery.toolbar.communitycontributions"
 msgid "community&nbsp;contributions"
-msgstr "contributions&nbsp;communautaires"
+msgstr ""
 
 #. On the right with the sort options
 msgctxt "widgetgallery.toolbar.sortby"
@@ -810,7 +810,7 @@ msgstr ""
 #. Suffix displayed after a number, i.e. "24 posts on this topic"
 msgctxt "widgetgallery.details.forumposts"
 msgid "post(s) on this topic - discuss on community.openhab.org"
-msgstr "commentaire(s) - voir sur community.openhab.org"
+msgstr ""
 
 #. Label of the big green button when nothing to import
 msgctxt "widgetgallery.details.nothingtoimport"
