@@ -19,7 +19,13 @@
         function enterPart(part) {
             var deferred = $q.defer();
             $translatePartialLoader.addPart(part);
-            return $translate.refresh();
+            $translate.refresh().then(function () {
+                deferred.resolve();
+            }, function () {
+                deferred.resolve();
+            })
+
+            return deferred.promise;
         }
     }
 

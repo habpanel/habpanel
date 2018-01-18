@@ -27,7 +27,6 @@
         $translateProvider.useLoader('$translatePartialLoader', {
             urlTemplate: 'assets/i18n/{part}/{lang}.json'
         });
-        $translateProvider.preferredLanguage('en');
         $translateProvider.useSanitizeValueStrategy(null);
 
         $routeProvider
