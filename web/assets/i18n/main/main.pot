@@ -3,83 +3,102 @@
 
 msgid ""
 msgstr ""
-"HABPanel - main\n"
 "Project-Id-Version: habpanel\n"
 "Report-Msgid-Bugs-To: https://github.com/openhab/org.openhab.ui.habpanel/issues\n"
 
+# COMMON TERMS
 
+#. Common term
 msgctxt "OK"
 msgid "OK"
 msgstr ""
 
+#. Common term
 msgctxt "Cancel"
 msgid "Cancel"
 msgstr ""
 
+#. Common term
 msgctxt "Delete"
 msgid "Delete"
 msgstr ""
 
+#. Common term
 msgctxt "Save"
 msgid "Save"
 msgstr ""
 
+#. Common term
 msgctxt "Name"
 msgid "Name"
 msgstr ""
 
+#. Common term
 msgctxt "Icon"
 msgid "Icon"
 msgstr ""
 
+#. Common term (plural)
 msgctxt "Icons"
 msgid "Icons"
 msgstr ""
 
+#. Common term
 msgctxt "Backdrop Icon"
 msgid "Backdrop Icon"
 msgstr ""
 
+#. Common term
 msgctxt "Size"
 msgid "Size"
 msgstr ""
 
+#. Common term
 msgctxt "Font size"
 msgid "Font Size"
 msgstr ""
 
+#. Common term
 msgctxt "Color"
 msgid "Color"
 msgstr ""
 
+#. Common term (plural)
 msgctxt "Colors"
 msgid "Colors"
 msgstr ""
 
+#. Common term
 msgctxt "Transparent"
 msgid "Transparent"
 msgstr ""
 
+#. Common term
 msgctxt "openHAB Item"
 msgid "openHAB Item"
 msgstr ""
 
+#. Common term (e.g. tooltip in the dashboard header toolbar)
 msgctxt "Speak"
 msgid "Speak"
 msgstr ""
 
+#. Common term (e.g. tooltip in the dashboard header toolbar)
 msgctxt "Refresh"
 msgid "Refresh"
 msgstr ""
 
+#. Common term (e.g. tooltip in the dashboard header toolbar)
 msgctxt "Fullscreen"
 msgid "Fullscreen"
 msgstr ""
 
+#. Common term
 msgctxt "Help"
 msgid "Help"
 msgstr ""
 
+#. Appears in a red background in the bottom of the screen when openHAB is not responding
 msgctxt "error.connectionlost"
 msgid "Connection lost! Trying to reconnect..."
 msgstr ""
@@ -128,49 +147,59 @@ msgid "Please go to Paper UI and unlock editing to use HABPanel on this device."
 msgstr ""
 
 
-###
+# MAIN MENU
 
+#. Label of the bottom-left link in edit mode - please also test with phone resolutions!
 msgctxt "menu.addnewdashboard"
 msgid "Add new dashboard"
 msgstr ""
 
+#. Label of the bottom-right link in edit mode - please also test with phone resolutions!
 msgctxt "menu.panelsettings"
 msgid "Panel settings"
 msgstr ""
 
+#. New dashboard dialog box title
 msgctxt "menu.dialog.newdashboard.title"
 msgid "New dashboard"
 msgstr ""
 
+#. New dashboard dialog box message
 msgctxt "menu.dialog.newdashboard.message"
 msgid "Name of your new dashboard:"
 msgstr ""
 
+#. Remove dashboard dialog box title
 msgctxt "menu.dialog.removedashboard.title"
 msgid "Remove dashboard"
 msgstr ""
 
+#. Remove dashboard dialog box message, followed by the dashboard id
 msgctxt "menu.dialog.removedashboard.message"
 msgid "Please confirm you want to delete this dashboard: "
 msgstr ""
 
+#. Dashboard toolbar Speak button tooltip
 msgctxt "dashboard.toolbar.speak"
 msgid "Speak"
 msgstr ""
 
+#. Dashboard toolbar Refresh button tooltip
 msgctxt "dashboard.toolbar.refresh"
 msgid "Refresh"
 msgstr ""
 
+#. Dashboard toolbar Fullscreen button tooltip
 msgctxt "dashboard.toolbar.fullscreen"
 msgid "Fullscreen"
 msgstr ""
 
+#. Displayed at the bottom after clicking on the Speak button
 msgctxt "dashboard.speaknow"
 msgid "Speak now..."
 msgstr ""
 
+#. Prefix of an error message, displayed at the bottom after clicking on the Speak button
 msgctxt "dashboard.speakerror"
 msgid "Error: "
 msgstr ""
-
