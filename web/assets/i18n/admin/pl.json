@@ -1,0 +1,19 @@
+{
+    "_meta": {
+        "Project-Id-Version": "ghys-habpanel",
+        "Report-Msgid-Bugs-To": "https://github.com/openhab/org.openhab.ui.habpanel/issues",
+        "POT-Creation-Date": "",
+        "PO-Revision-Date": "2018-01-18 09:05-0500",
+        "Last-Translator": "ghys <github@schaus.net>",
+        "Language": "pl_PL",
+        "Language-Team": "Polish",
+        "Content-Type": "text/plain; charset=UTF-8",
+        "Content-Transfer-Encoding": "",
+        "Plural-Forms": "nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);",
+        "HABPanel - admin": "",
+        "X-Generator": "crowdin.com",
+        "X-Crowdin-Project": "ghys-habpanel",
+        "X-Crowdin-Language": "pl",
+        "X-Crowdin-File": "/i18n/web/assets/i18n/admin/admin.pot"
+    }
+}
