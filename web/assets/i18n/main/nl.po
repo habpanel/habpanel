@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Dutch\n"
 "Language: nl_NL\n"
-"PO-Revision-Date: 2018-01-18 13:31-0500\n"
+"PO-Revision-Date: 2018-01-19 12:42-0500\n"
 
 #. Common term
 msgctxt "OK"
@@ -21,97 +21,97 @@ msgstr ""
 #. Common term
 msgctxt "Cancel"
 msgid "Cancel"
-msgstr ""
+msgstr "Annuleren"
 
 #. Common term
 msgctxt "Delete"
 msgid "Delete"
-msgstr ""
+msgstr "Verwijderen"
 
 #. Common term
 msgctxt "Save"
 msgid "Save"
-msgstr ""
+msgstr "Opslaan"
 
 #. Common term
 msgctxt "Name"
 msgid "Name"
-msgstr ""
+msgstr "Naam"
 
 #. Common term
 msgctxt "Icon"
 msgid "Icon"
-msgstr ""
+msgstr "Pictogram"
 
 #. Common term (plural)
 msgctxt "Icons"
 msgid "Icons"
-msgstr ""
+msgstr "Pictogrammen"
 
 #. Common term
 msgctxt "Backdrop Icon"
 msgid "Backdrop Icon"
-msgstr ""
+msgstr "Achtergrond pictogram"
 
 #. Common term
 msgctxt "Size"
 msgid "Size"
-msgstr ""
+msgstr "Grootte"
 
 #. Common term
 msgctxt "Font size"
 msgid "Font Size"
-msgstr ""
+msgstr "Lettertypegrootte"
 
 #. Common term
 msgctxt "Color"
 msgid "Color"
-msgstr ""
+msgstr "Kleur"
 
 #. Common term (plural)
 msgctxt "Colors"
 msgid "Colors"
-msgstr ""
+msgstr "Kleuren"
 
 #. Common term
 msgctxt "Transparent"
 msgid "Transparent"
-msgstr ""
+msgstr "Doorzichtig"
 
 #. Common term
 msgctxt "openHAB Item"
 msgid "openHAB Item"
-msgstr ""
+msgstr "openHAB Item"
 
 #. Common term (e.g. tooltip in the dashboard header toolbar)
 msgctxt "Speak"
 msgid "Speak"
-msgstr ""
+msgstr "Spreek"
 
 #. Common term (e.g. tooltip in the dashboard header toolbar)
 msgctxt "Refresh"
 msgid "Refresh"
-msgstr ""
+msgstr "Vernieuwen"
 
 #. Common term (e.g. tooltip in the dashboard header toolbar)
 msgctxt "Fullscreen"
 msgid "Fullscreen"
-msgstr ""
+msgstr "Volledig scherm"
 
 #. Common term
 msgctxt "Help"
 msgid "Help"
-msgstr ""
+msgstr "Help"
 
 #. Appears in a red background in the bottom of the screen when openHAB is not responding
 msgctxt "error.connectionlost"
 msgid "Connection lost! Trying to reconnect..."
-msgstr ""
+msgstr "Verbinding verbroken! Bezig met verbinding maken..."
 
 #. Appears below the edit mode button when there's no dashboard - please use the Chrome developer tools and check with phone resolutions: iPhone 6, Nexus 5 etc.!
 msgctxt "tutorial.welcome"
 msgid "Welcome to HABPanel!"
-msgstr ""
+msgstr "Welkom bij HABPanel!"
 
 #. Appears below the edit mode button when there's no dashboard - please use the Chrome developer tools and check with phone resolutions: iPhone 6, Nexus 5 etc.!
 msgctxt "tutorial.clickheretobegin"
@@ -191,25 +191,25 @@ msgstr ""
 #. Dashboard toolbar Speak button tooltip
 msgctxt "dashboard.toolbar.speak"
 msgid "Speak"
-msgstr ""
+msgstr "Spreek"
 
 #. Dashboard toolbar Refresh button tooltip
 msgctxt "dashboard.toolbar.refresh"
 msgid "Refresh"
-msgstr ""
+msgstr "Vernieuwen"
 
 #. Dashboard toolbar Fullscreen button tooltip
 msgctxt "dashboard.toolbar.fullscreen"
 msgid "Fullscreen"
-msgstr ""
+msgstr "Volledig scherm"
 
 #. Displayed at the bottom after clicking on the Speak button
 msgctxt "dashboard.speaknow"
 msgid "Speak now..."
-msgstr ""
+msgstr "Spreek nu..."
 
 #. Prefix of an error message, displayed at the bottom after clicking on the Speak button
 msgctxt "dashboard.speakerror"
 msgid "Error: "
-msgstr ""
+msgstr "Fout: "
 
