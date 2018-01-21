@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Turkish\n"
 "Language: tr_TR\n"
-"PO-Revision-Date: 2018-01-21 05:11-0500\n"
+"PO-Revision-Date: 2018-01-21 05:41-0500\n"
 
 #. Common term
 msgctxt "OK"
@@ -76,7 +76,7 @@ msgstr "Renkler"
 #. Common term
 msgctxt "Transparent"
 msgid "Transparent"
-msgstr "Saydamlık"
+msgstr "Saydam"
 
 #. Common term
 msgctxt "openHAB Item"
