@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: German\n"
 "Language: de_DE\n"
-"PO-Revision-Date: 2018-01-21 13:02-0500\n"
+"PO-Revision-Date: 2018-01-21 13:12-0500\n"
 
 #. Common term in widget settings dialogs
 msgctxt "widget.common.min"
@@ -480,7 +480,7 @@ msgstr "Rahmen"
 #. Description of the widget, displayed in a tooltip when hovering the option in the Add Widget dropdown menu in the designer
 msgctxt "widget.frame.description"
 msgid "Embedded website from predefined URL or openHAB item."
-msgstr ""
+msgstr "Eingebettete Website aus vordefinierter URL oder einem openHAB Item."
 
 #. Settings dialog title
 msgctxt "widget.frame.settings.header"
@@ -860,7 +860,7 @@ msgstr "Auswahl"
 #. Description of the widget, displayed in a tooltip when hovering the option in the Add Widget dropdown menu in the designer
 msgctxt "widget.selection.description"
 msgid "A widget allowing a selection between multiple choices"
-msgstr ""
+msgstr "Ein Widget zur Auswahl aus mehreren Möglichkeiten"
 
 #. Settings dialog title
 msgctxt "widget.selection.settings.header"
@@ -870,7 +870,7 @@ msgstr "Auswahleinstellungen"
 #. Dropdown header
 msgctxt "widget.selection.choices_source"
 msgid "Choices source"
-msgstr ""
+msgstr "Quelle der Auswahlliste"
 
 #. Dropdown option
 msgctxt "widget.selection.choices_source.server"
