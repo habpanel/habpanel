@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Polish\n"
 "Language: pl_PL\n"
-"PO-Revision-Date: 2018-01-21 09:22-0500\n"
+"PO-Revision-Date: 2018-01-21 11:32-0500\n"
 
 #. Common term
 msgctxt "OK"
@@ -151,7 +151,7 @@ msgstr "Zapisz na serwerze openHAB po zakończeniu!"
 #. Displayed when no dashboard is present and editing is locked in the service configuration
 msgctxt "tutorial.editingdisabled"
 msgid "Editing is disabled on the server!"
-msgstr "Edycji jest wyłączona na serwerze!"
+msgstr "Edycja jest wyłączona na serwerze!"
 
 #. Displayed when no dashboard is present and editing is locked in the service configuration
 msgctxt "tutorial.unlockedit"
