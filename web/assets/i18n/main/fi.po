@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Finnish\n"
 "Language: fi_FI\n"
-"PO-Revision-Date: 2018-01-21 10:11-0500\n"
+"PO-Revision-Date: 2018-01-21 10:22-0500\n"
 
 #. Common term
 msgctxt "OK"
@@ -96,7 +96,7 @@ msgstr "Päivitä"
 #. Common term (e.g. tooltip in the dashboard header toolbar)
 msgctxt "Fullscreen"
 msgid "Fullscreen"
-msgstr ""
+msgstr "Kokoruututila"
 
 #. Common term
 msgctxt "Help"
@@ -201,7 +201,7 @@ msgstr "Päivitä"
 #. Dashboard toolbar Fullscreen button tooltip
 msgctxt "dashboard.toolbar.fullscreen"
 msgid "Fullscreen"
-msgstr ""
+msgstr "Kokoruututila"
 
 #. Displayed at the bottom after clicking on the Speak button
 msgctxt "dashboard.speaknow"
