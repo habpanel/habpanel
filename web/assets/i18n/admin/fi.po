@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Finnish\n"
 "Language: fi_FI\n"
-"PO-Revision-Date: 2018-01-21 10:41-0500\n"
+"PO-Revision-Date: 2018-01-21 11:32-0500\n"
 
 #. Save button in the dashboard designer
 msgctxt "designer.save"
@@ -925,5 +925,5 @@ msgstr "Olemassa olevia widgettejä havaittu"
 #. Dialog box message
 msgctxt "widgetgallery.widgetsdetected.dialog.message"
 msgid "Warning: please confirm you wish to update <nbexisting> existing widgets, overwriting any eventual changes made locally! If unsure, cancel and click Show details to review the list of affected widgets."
-msgstr ""
+msgstr "Varoitus: Ole hyvä ja varmista että haluat päivittää <nbexisting> olemassa olevat widgetit tallentamalla yli paikalliset muutokset. Jos olet epävarma, peruuta ja klikkaa näytä yksityiskohdat tarkistaaksesi widgetit joita tämä koskee."
 
