@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: German\n"
 "Language: de_DE\n"
-"PO-Revision-Date: 2018-01-21 11:32-0500\n"
+"PO-Revision-Date: 2018-01-21 11:41-0500\n"
 
 #. Save button in the dashboard designer
 msgctxt "designer.save"
@@ -170,7 +170,7 @@ msgstr "Seitliches Menü"
 #. Checkbox label
 msgctxt "dashboard.settings.customwidgets.drawer.description"
 msgid "Replace the contents of the drawer menu by a custom widget"
-msgstr ""
+msgstr "Ersetze den Inhalt des seitlichen Menüs durch ein benutzerdefiniertes Widget"
 
 #. Accordion header
 msgctxt "dashboard.settings.customwidgets.header"
@@ -220,12 +220,12 @@ msgstr "Einstellungen"
 #. Header of the storage section
 msgctxt "settings.storage.header"
 msgid "Current storage configuration"
-msgstr ""
+msgstr "Konfigurationen Speichern oder Laden"
 
 #. Radio button for local storage
 msgctxt "settings.storage.localstorage"
 msgid "Local storage"
-msgstr ""
+msgstr "Lokaler Speicher"
 
 #. Explanation of the "local storage only" option
 msgctxt "settings.storage.localstorage.hint"
@@ -235,7 +235,7 @@ msgstr ""
 #. Link below the "local storage" option
 msgctxt "settings.storage.localstorage.edit"
 msgid "Edit the local panel configuration (experts only)"
-msgstr ""
+msgstr "Bearbeite die lokale Panel-Konfiguration (nur für Experten)"
 
 #. Prefix of a panel configuration before its name
 msgctxt "settings.storage.panelconfiguration"
@@ -255,7 +255,7 @@ msgstr "Enthält:"
 #. Link to create a panel configuration from the current configuration
 msgctxt "settings.storage.panelconfiguration.save"
 msgid "Save the current configuration to a new panel configuration"
-msgstr ""
+msgstr "Speichere die aktuelle Konfiguration in eine neue Panel-Konfiguration"
 
 #. Title of the dialog box when creating a new panel configuration
 msgctxt "settings.storage.panelconfiguration.dialog.title"
@@ -285,7 +285,7 @@ msgstr "Darstellung"
 #. Dropown menu header
 msgctxt "settings.panel.appearance.theme"
 msgid "Theme"
-msgstr ""
+msgstr "Theme"
 
 #. Alert banner displayed when the browsers doesn't support themes (CSS variables)
 msgctxt "settings.panel.appearance.theme.not_supported"
@@ -365,12 +365,12 @@ msgstr "Verwalten"
 #. Voice support (section header) - formerly (<=2.2.0) : "Voice feedback"
 msgctxt "settings.panel.voicesupport.header"
 msgid "Voice Support"
-msgstr ""
+msgstr "Sprachunterstützung"
 
 #. Dropdown header - formerly (<=2.2.0) : "Voice"
 msgctxt "settings.panel.voicesupport.speech_synthesis_voice"
 msgid "Speech synthesis voice"
-msgstr ""
+msgstr "Stimme der Sprachwiedergabe"
 
 #. Displayed below the voice dropdown
 msgctxt "settings.panel.voicesupport.speech_synthesis_voice.hint"
@@ -405,7 +405,7 @@ msgstr "Wenn sich der Wert dieses Items ändert, springe zum Dashboard welches d
 #. Local panel configuration editor header
 msgctxt "settings.localconfig.title"
 msgid "Local panel configuration editor"
-msgstr ""
+msgstr "Lokaler Panel Konfigurations-Editor"
 
 #. Displayed in a tooltip when hovering the exclamation mark in the local panel config editor
 msgctxt "settings.localconfig.warning"
@@ -805,7 +805,7 @@ msgstr "neuste"
 #. Link to change the sort criteria - keep the non breaking spaces (&nbsp;)
 msgctxt "widgetgallery.toolbar.sortby.mostliked"
 msgid "most&nbsp;liked"
-msgstr ""
+msgstr "meist&nbsp;geliked"
 
 #. Link to change the sort criteria - keep the non breaking spaces (&nbsp;)
 msgctxt "widgetgallery.toolbar.sortby.mostpopular"
@@ -815,7 +815,7 @@ msgstr "beliebteste"
 #. Link to change the sort criteria - keep the non breaking spaces (&nbsp;)
 msgctxt "widgetgallery.toolbar.sortby.mostdiscussed"
 msgid "most&nbsp;discussed"
-msgstr ""
+msgstr "meist&nbsp;diskutiert"
 
 #. Prefix before the author's name
 msgctxt "widgetgallery.details.authorby"
@@ -870,7 +870,7 @@ msgstr "ZIP herunterladen"
 #. 1. Prefix of the explanation in the expanded details section
 msgctxt "widgetgallery.details.widget.hint.prefix"
 msgid "This"
-msgstr ""
+msgstr "Dies"
 
 #. 2a. Name of a community contribution
 msgctxt "widgetgallery.details.widget.hint.communitycontribution"
@@ -925,5 +925,5 @@ msgstr "Vorhandene Widgets gefunden"
 #. Dialog box message
 msgctxt "widgetgallery.widgetsdetected.dialog.message"
 msgid "Warning: please confirm you wish to update <nbexisting> existing widgets, overwriting any eventual changes made locally! If unsure, cancel and click Show details to review the list of affected widgets."
-msgstr ""
+msgstr "Achtung: Bitte bestätige, wenn du <nbexisting> existierende Widgets aktualisieren willst. Dies wird eventuelle lokale Änderungen überschreiben! Wenn du unsicher bist, breche ab und klicke \"Details anzeigen\" um die Liste der betroffenen Widgets zu kontrollieren."
 
