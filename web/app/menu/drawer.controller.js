@@ -63,7 +63,7 @@
             $scope.$on('$localeChangeSuccess', function () {
                 var nglocale = tmhDynamicLocaleCache.get(locale.toLowerCase());
                 if (nglocale) {
-                    $scope.dateFormat = nglocale.DATETIME_FORMATS.fullDate.replace(/('de'|\u060c|,)?\s?y.?\s?('\u0433'|('\u0440'))?\.?/g, '').trim();
+                    $scope.dateFormat = nglocale.DATETIME_FORMATS.fullDate.replace(/('de'\s|\u060c\s|,\s)?y\.?(\s'\u0433'|(\s'\u0440'))?\.?/g, '').trim();
                 }
             });
         });
