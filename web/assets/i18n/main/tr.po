@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Turkish\n"
 "Language: tr_TR\n"
-"PO-Revision-Date: 2018-01-20 19:50-0500\n"
+"PO-Revision-Date: 2018-01-21 05:11-0500\n"
 
 #. Common term
 msgctxt "OK"
@@ -81,7 +81,7 @@ msgstr "Saydamlık"
 #. Common term
 msgctxt "openHAB Item"
 msgid "openHAB Item"
-msgstr ""
+msgstr "openHAB Öğesi"
 
 #. Common term (e.g. tooltip in the dashboard header toolbar)
 msgctxt "Speak"
