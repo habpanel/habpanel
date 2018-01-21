@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: German\n"
 "Language: de_DE\n"
-"PO-Revision-Date: 2018-01-21 12:01-0500\n"
+"PO-Revision-Date: 2018-01-21 12:21-0500\n"
 
 #. Common term in widget settings dialogs
 msgctxt "widget.common.min"
@@ -1055,22 +1055,22 @@ msgstr "EIN-/AUS ausblenden"
 #. Display name of the widget (appears in the Add Widget dropdown menu in the designer)
 msgctxt "widget.template"
 msgid "Template"
-msgstr ""
+msgstr "Vorlage"
 
 #. Description of the widget, displayed in a tooltip when hovering the option in the Add Widget dropdown menu in the designer
 msgctxt "widget.template.description"
 msgid "A template widget - displays a custom dynamic template"
-msgstr ""
+msgstr "Eine Vorlage-Widget - zeigt eine benutzerdefinierte dynamische Vorlage an"
 
 #. Settings dialog title
 msgctxt "widget.template.settings.header"
 msgid "Template Settings"
-msgstr ""
+msgstr "Vorlage-Einstellungen"
 
 #. Settings dialog title for a custom widget (don't translate the variable)
 msgctxt "widget.template.settings.header.customwidget"
 msgid "{{customwidget_name}} Settings"
-msgstr ""
+msgstr "{{customwidget_name}} Einstellungen"
 
 #. Checkbox label (small)
 msgctxt "widget.template.dontwrap"
@@ -1115,12 +1115,12 @@ msgstr ""
 #. Description of the widget, displayed in a tooltip when hovering the option in the Add Widget dropdown menu in the designer
 msgctxt "widget.timeline.description"
 msgid "Displays a timeline of several items"
-msgstr ""
+msgstr "Zeigt eine Zeitleiste aus mehreren Elementen"
 
 #. Settings dialog title
 msgctxt "widget.timeline.settings.header"
 msgid "Timeline Settings"
-msgstr ""
+msgstr "Einstellungen der Zeitleiste"
 
 #. Textbox header
 msgctxt "widget.timeline.general.service"
