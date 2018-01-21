@@ -1,7 +1,7 @@
 <div class="header controls">
     <div uib-dropdown class="pull-right">
         <button class="btn btn-default" uib-dropdown-toggle type="button" id="addWidgetMenu">
-            <i class="glyphicon glyphicon-plus"></i> <span translate-keep-content translate="designer.addwidget">Add Widget</span>
+            <i class="glyphicon glyphicon-plus"></i> <span class="hidden-xs" translate-keep-content translate="designer.addwidget">Add Widget</span>
             <span class="caret"></span>
         </button>
         &nbsp;
@@ -12,7 +12,7 @@
                 </a>
             </li>
             <li class="divider">
-            <li class="dropdown-header"><a href="#/settings/widgets" class="pull-right" style="padding: 0"><i class="glyphicon glyphicon-cog"></i></a><span translate-keep-content translate="designer.addwidget.customwidgets">Custom widgets</span></li>
+            <li class="dropdown-header"><a href="#/settings/widgets" class="pull-right" style="padding: 0;"><i class="glyphicon glyphicon-cog"></i></a><span style="white-space: normal;" translate-keep-content translate="designer.addwidget.customwidgets">Custom widgets</span></li>
             <li ng-repeat="(id,configwidget) in configWidgets">
                 <a ng-click="addCustomWidget(id)" title="{{configwidget.description}}">
                     <small><i class="glyphicon glyphicon-check"></i></small>&nbsp;{{configwidget.name || id}}
@@ -30,8 +30,8 @@
     <a class="btn pull-left" title="Menu" snap-toggle="left">
         <i class="glyphicon glyphicon-menu-hamburger"></i>
     </a>
-    <a class="btn btn-success" ng-click="save()"><i class="glyphicon glyphicon-save"></i>&nbsp;<span translate-keep-content translate="designer.save">Save</span></a>
-    <a class="btn btn-primary" ng-click="run()"><i class="glyphicon glyphicon-play"></i>&nbsp;<span translate-keep-content translate="designer.run">Run</span></a>
+    <a class="btn btn-success" ng-click="save()"><i class="glyphicon glyphicon-save"></i><span class="hidden-xs">&nbsp;</span><span class="hidden-xs" translate-keep-content translate="designer.save">Save</span></a>
+    <a class="btn btn-primary" ng-click="run()"><i class="glyphicon glyphicon-play"></i><span class="hidden-xs">&nbsp;</span><span class="hidden-xs" translate-keep-content translate="designer.run">Run</span></a>
 </div>
 <div ng-if="!dashboard.widgets.length">
     <div class="pull-right">
@@ -58,7 +58,7 @@
                   <button id="settingsMenu" type="button" class="box-header-dropdown settings-btn" uib-dropdown-toggle>
                       <i class="glyphicon glyphicon-option-vertical"></i>
                   </button>
-                  <ul class="dropdown-menu-right" style="min-width: 90px;" uib-dropdown-menu role="menu" aria-labelledby="settingsMenu">
+                  <ul ng-class="{ 'dropdown-menu-right': widget.col + widget.sizeX > 6 }" style="min-width: 90px;" uib-dropdown-menu role="menu" aria-labelledby="settingsMenu">
                     <li><a ng-click="openSettings(widget)" class="ng-binding"><i class="glyphicon glyphicon-edit"></i> <span translate-keep-content translate="designer.contextmenu.edit">Edit...</span></a></li>
                     <li><a ng-click="transferWidget(widget)" class="ng-binding"><i class="glyphicon glyphicon-duplicate"></i> <span translate-keep-content translate="designer.contextmenu.copymove">Copy/move to...</span></a></li>
                     <li class="divider"></li>
