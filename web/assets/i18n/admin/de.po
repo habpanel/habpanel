@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: German\n"
 "Language: de_DE\n"
-"PO-Revision-Date: 2018-01-21 12:01-0500\n"
+"PO-Revision-Date: 2018-01-21 12:12-0500\n"
 
 #. Save button in the dashboard designer
 msgctxt "designer.save"
@@ -210,7 +210,7 @@ msgstr "(Keins)"
 #. Appears when focusing the icon textbox when the "Custom icon" iconset is selected
 msgctxt "iconpicker.customicontooltip"
 msgid "Type the name of a <a href='http://docs.openhab.org/configuration/items.html#icons' target='_blank'>registered icon</a> (only SVG supported)<br />Examples: <em>switch</em>, <em>temperature</em> or an additional icon in your configuration's <code>icons/classic</code> folder"
-msgstr ""
+msgstr "Tippe den Namen eines <a href='http://docs.openhab.org/configuration/items.html#icons' target='_blank'>verfügbaren Icons</a> (nur SVG unterstützt)<br />Beispiele: <em>switch</em>, <em>temperature</em> oder eines zusätzlichen Icons aus deinem Konfigurationsordner <code>icons/classic</code>"
 
 #. Screen title
 msgctxt "settings.header"
@@ -230,7 +230,7 @@ msgstr "Lokaler Speicher"
 #. Explanation of the "local storage only" option
 msgctxt "settings.storage.localstorage.hint"
 msgid "The configuration is saved for this browser and device only. It will be kept as long as you don't clean up the browser's historical data."
-msgstr ""
+msgstr "Die Konfiguration wird nur für diesen Browser und dieses Gerät gespeichert. Es wird so lange der Browser-Cache/Verlauf nicht gelöscht wird verfügbar sein."
 
 #. Link below the "local storage" option
 msgctxt "settings.storage.localstorage.edit"
@@ -780,7 +780,7 @@ msgstr "Bis zu diesem Zeitpunkt warten und erneut versuchen:"
 #. Textbox placeholder
 msgctxt "widgetgallery.addressbar.hint"
 msgid "GitHub repository full name (owner/name) or URL"
-msgstr ""
+msgstr "GitHub Repository vollständiger Name (Besitzer/Name) oder URL"
 
 #. Button on the right of the addressbar
 msgctxt "widgetgallery.addressbar.go"
