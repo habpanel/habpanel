@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Turkish\n"
 "Language: tr_TR\n"
-"PO-Revision-Date: 2018-01-21 05:11-0500\n"
+"PO-Revision-Date: 2018-01-21 05:21-0500\n"
 
 #. Common term in widget settings dialogs
 msgctxt "widget.common.min"
@@ -61,22 +61,22 @@ msgstr ""
 #. Common option label in widget settings dialogs
 msgctxt "widget.common.icon_replacestext"
 msgid "Icon replaces textual value display"
-msgstr ""
+msgstr "Simge, metin değeri gösteriminin yerini alıyor"
 
 #. Common tab header label
 msgctxt "widget.common.general"
 msgid "General"
-msgstr ""
+msgstr "Genel"
 
 #. Common tab header label
 msgctxt "widget.common.advanced"
 msgid "Advanced"
-msgstr ""
+msgstr "Gelişmiş"
 
 #. Display name of the widget (appears in the Add Widget dropdown menu in the designer)
 msgctxt "widget.button"
 msgid "Button"
-msgstr ""
+msgstr "Buton"
 
 #. Description of the widget, displayed in a tooltip when hovering the option in the Add Widget dropdown menu in the designer
 msgctxt "widget.button.description"
@@ -86,17 +86,17 @@ msgstr ""
 #. Settings dialog title
 msgctxt "widget.button.settings.header"
 msgid "Button Settings"
-msgstr ""
+msgstr "Buton Ayarları"
 
 #. Tab header
 msgctxt "widget.button.general"
 msgid "General"
-msgstr ""
+msgstr "Genel"
 
 #. Dropdown header
 msgctxt "widget.button.general.action_type"
 msgid "Action type"
-msgstr ""
+msgstr "Eylem Türü"
 
 #. Dropdown option
 msgctxt "widget.button.general.action_type.command"
@@ -111,62 +111,62 @@ msgstr ""
 #. Dropdown option
 msgctxt "widget.button.general.action_type.navigate"
 msgid "Navigate"
-msgstr ""
+msgstr "Gezin"
 
 #. Textbox header
 msgctxt "widget.button.general.command"
 msgid "Command value"
-msgstr ""
+msgstr "Komut değeri"
 
 #. Textbox header
 msgctxt "widget.button.general.command_alt"
 msgid "Alternate command value"
-msgstr ""
+msgstr "Alternatif komut değeri"
 
 #. Radio buttons header
 msgctxt "widget.button.general.navigation_type"
 msgid "Navigation type"
-msgstr ""
+msgstr "Gezinti türü"
 
 #. Radio button label
 msgctxt "widget.button.general.navigation_type.dashboard"
 msgid "Dashboard"
-msgstr ""
+msgstr "Kontrol paneli"
 
 #. Radio buttons header
 msgctxt "widget.button.general.navigation_target"
 msgid "Open in"
-msgstr ""
+msgstr "Aç"
 
 #. Radio button label
 msgctxt "widget.button.general.navigation_target.self"
 msgid "Current tab"
-msgstr ""
+msgstr "Geçerli sekme"
 
 #. Radio button label
 msgctxt "widget.button.general.navigation_target.new_tab"
 msgid "New tab"
-msgstr ""
+msgstr "Yeni sekme"
 
 #. Radio button label
 msgctxt "widget.button.general.navigation_target.new_window"
 msgid "New window"
-msgstr ""
+msgstr "Yeni pencere"
 
 #. Tab header
 msgctxt "widget.button.display"
 msgid "Display"
-msgstr ""
+msgstr "Görüntüle"
 
 #. Section header
 msgctxt "widget.button.display.label"
 msgid "Label"
-msgstr ""
+msgstr "Etiket"
 
 #. Section header
 msgctxt "widget.button.display.value"
 msgid "Value"
-msgstr ""
+msgstr "Değer"
 
 #. Checkbox label (when there's an item configured in the General tab)
 msgctxt "widget.button.display.value.showitemvalue"
@@ -176,47 +176,47 @@ msgstr ""
 #. Checkbox label (when there's no item configured in the General tab)
 msgctxt "widget.button.display.value.showitemvalue_noitem"
 msgid "Show an item's state value"
-msgstr ""
+msgstr "Bir öğenin durum değerini göster"
 
 #. Textbox header
 msgctxt "widget.button.display.value.active_state"
 msgid "Active state"
-msgstr ""
+msgstr "Aktif durum"
 
 #. Checkboxes header
 msgctxt "widget.button.display.value.layout"
 msgid "Layout"
-msgstr ""
+msgstr "Düzen"
 
 #. Tab header
 msgctxt "widget.button.inactive"
 msgid "Inactive"
-msgstr ""
+msgstr "Aktif değil"
 
 #. Tab header
 msgctxt "widget.button.active"
 msgid "Active"
-msgstr ""
+msgstr "Aktif"
 
 #. Tab header (when there's no item configured in the General tab)
 msgctxt "widget.button.colors"
 msgid "Colors"
-msgstr ""
+msgstr "Renkler"
 
 #. Color picker header
 msgctxt "widget.button.background_color"
 msgid "Background color"
-msgstr ""
+msgstr "Arka plan rengi"
 
 #. Color picker header
 msgctxt "widget.button.foreground_color"
 msgid "Label color"
-msgstr ""
+msgstr "Etiket rengi"
 
 #. Color picker header
 msgctxt "widget.button.value_color"
 msgid "Value color"
-msgstr ""
+msgstr "Değer rengi"
 
 msgctxt "widget.button.preview.state"
 msgid "State"
@@ -225,42 +225,42 @@ msgstr ""
 #. Display name of the widget (appears in the Add Widget dropdown menu in the designer)
 msgctxt "widget.chart"
 msgid "Chart"
-msgstr ""
+msgstr "Grafik"
 
 #. Description of the widget, displayed in a tooltip when hovering the option in the Add Widget dropdown menu in the designer
 msgctxt "widget.chart.description"
 msgid "Displays a chart"
-msgstr ""
+msgstr "Bir grafik görüntüler"
 
 #. Settings dialog title
 msgctxt "widget.chart.settings.header"
 msgid "Chart Settings"
-msgstr ""
+msgstr "Grafik Ayarları"
 
 #. Tab header
 msgctxt "widget.chart.general"
 msgid "General"
-msgstr ""
+msgstr "Genel"
 
 #. Dropdown header
 msgctxt "widget.chart.general.type"
 msgid "Type"
-msgstr ""
+msgstr "Tip"
 
 #. Dropdown option
 msgctxt "widget.chart.general.type.default"
 msgid "Default"
-msgstr ""
+msgstr "Varsayılan"
 
 #. Dropdown option
 msgctxt "widget.chart.general.type.rrd4j"
 msgid "RRD4j (rrd4j persistence service only)"
-msgstr ""
+msgstr "RRD4j (yalnızca rrd4j sürekli servisi)"
 
 #. Dropdown option
 msgctxt "widget.chart.general.type.interactive"
 msgid "n3-line-chart (interactive)"
-msgstr ""
+msgstr "n3-line-chart (etkileşimli)"
 
 #. Textbox header
 msgctxt "widget.chart.general.service"
@@ -485,17 +485,17 @@ msgstr ""
 #. Settings dialog title
 msgctxt "widget.frame.settings.header"
 msgid "Frame Settings"
-msgstr ""
+msgstr "Çerçeve Ayarları"
 
 #. Dropdown header
 msgctxt "widget.frame.url_source"
 msgid "URL Source"
-msgstr ""
+msgstr "URL Kaynağı"
 
 #. Dropdown option
 msgctxt "widget.frame.url_source.static"
 msgid "Static URL"
-msgstr ""
+msgstr "Statik URL"
 
 #. Dropdown option
 msgctxt "widget.frame.url_source.item"
@@ -505,67 +505,67 @@ msgstr ""
 #. Textbox header
 msgctxt "widget.frame.refresh_interval"
 msgid "Refresh interval (seconds)"
-msgstr ""
+msgstr "Yenileme aralığı (saniye)"
 
 #. Checkbox header - appears only if the refresh interval is set
 msgctxt "widget.frame.nosuffix"
 msgid "No cache busting (advanced)"
-msgstr ""
+msgstr "Önbellek yoklaması yok (gelişmiş)"
 
 #. Checkbox label - appears only if the refresh interval is set
 msgctxt "widget.frame.nosuffix.description"
 msgid "Don't add URL suffixes to prevent reusing cached pages"
-msgstr ""
+msgstr "Önbelleklenen sayfaların tekrar kullanılmasını önlemek için URL son eklerini eklemeyin"
 
 #. Color picker header
 msgctxt "widget.frame.background_color"
 msgid "Frame background color"
-msgstr ""
+msgstr "Çerçeve arka plan rengi"
 
 #. Checkbox header
 msgctxt "widget.frame.frameless"
 msgid "Frameless"
-msgstr ""
+msgstr "Çerçevesiz"
 
 #. Checkbox label
 msgctxt "widget.frame.frameless.description"
 msgid "Fill to edges"
-msgstr ""
+msgstr "Kenarlara yaz"
 
 #. Checkbox header
 msgctxt "widget.frame.label"
 msgid "Label"
-msgstr ""
+msgstr "Etiket"
 
 #. Checkbox label
 msgctxt "widget.frame.label.description"
 msgid "Hide title label"
-msgstr ""
+msgstr "Başlık etiketini gizle"
 
 #. Display name of the widget (appears in the Add Widget dropdown menu in the designer)
 msgctxt "widget.image"
 msgid "Image"
-msgstr ""
+msgstr "Görsel"
 
 #. Description of the widget, displayed in a tooltip when hovering the option in the Add Widget dropdown menu in the designer
 msgctxt "widget.image.description"
 msgid "Displays an image (not necessarily from openHAB)"
-msgstr ""
+msgstr "Bir resmi görüntüler (openHAB'den olmak zorunda değil)"
 
 #. Settings dialog title
 msgctxt "widget.image.settings.header"
 msgid "Image Settings"
-msgstr ""
+msgstr "Görüntü ayarları"
 
 #. Dropdown header
 msgctxt "widget.image.image_source"
 msgid "Image source"
-msgstr ""
+msgstr "Görüntü Kaynağı"
 
 #. Dropdown option
 msgctxt "widget.image.image_source.static"
 msgid "Static image URL"
-msgstr ""
+msgstr "Statik resim URL'si"
 
 #. Dropdown option
 msgctxt "widget.image.image_source.item-string"
@@ -575,157 +575,157 @@ msgstr ""
 #. Dropdown option
 msgctxt "widget.image.image_source.item-image"
 msgid "openHAB Image Item"
-msgstr ""
+msgstr "openHAB Resim Öğesi"
 
 #. Textbox header
 msgctxt "widget.image.refresh_interval"
 msgid "Refresh interval"
-msgstr ""
+msgstr "Yenileme aralığı"
 
 #. Radio button label
 msgctxt "widget.image.refresh_interval.seconds"
 msgid "seconds"
-msgstr ""
+msgstr "saniye"
 
 #. Radio button label
 msgctxt "widget.image.refresh_interval.milliseconds"
 msgid "milliseconds"
-msgstr ""
+msgstr "milisaniye"
 
 #. Checkbox header - appears only if the refresh interval is set
 msgctxt "widget.image.nosuffix"
 msgid "No cache busting (advanced)"
-msgstr ""
+msgstr "Önbellek yoklaması yok (gelişmiş)"
 
 #. Checkbox label - appears only if the refresh interval is set
 msgctxt "widget.image.nosuffix.description"
 msgid "Don't add URL suffixes to prevent reusing cached images"
-msgstr ""
+msgstr "Önbelleklenen resimlerin tekrar kullanılmasını önlemek için URL sonekleri eklemeyin"
 
 #. Color picker header
 msgctxt "widget.image.background_color"
 msgid "Background color"
-msgstr ""
+msgstr "Arka plan rengi"
 
 #. Display name of the widget (appears in the Add Widget dropdown menu in the designer)
 msgctxt "widget.knob"
 msgid "Knob"
-msgstr ""
+msgstr "Düğme"
 
 #. Description of the widget, displayed in a tooltip when hovering the option in the Add Widget dropdown menu in the designer
 msgctxt "widget.knob.description"
 msgid "A knob for setting numerical openHAB items"
-msgstr ""
+msgstr "Sayısal openHAB öğelerini ayarlamak için bir düğme"
 
 #. Settings dialog title
 msgctxt "widget.knob.settings.header"
 msgid "Knob Settings"
-msgstr ""
+msgstr "Düğme Ayarları"
 
 #. Checkbox header
 msgctxt "widget.knob.general.readonly"
 msgid "Read only"
-msgstr ""
+msgstr "Sadece oku"
 
 #. Checkbox label
 msgctxt "widget.knob.general.readonly.description"
 msgid "Disable interaction"
-msgstr ""
+msgstr "Etkileşimi devre dışı bırak"
 
 #. Checkboxes header
 msgctxt "widget.knob.general.centraldisplay"
 msgid "Central display"
-msgstr ""
+msgstr "Merkezi ekran"
 
 #. Checkbox label
 msgctxt "widget.knob.general.centraldisplay.showvalue"
 msgid "Show value"
-msgstr ""
+msgstr "Değeri göster"
 
 #. Checkbox label
 msgctxt "widget.knob.general.centraldisplay.showlabel"
 msgid "Show name (below value)"
-msgstr ""
+msgstr "Adı göster (değerin altında)"
 
 #. Tab header
 msgctxt "widget.knob.bartrack"
 msgid "Bar & Track"
-msgstr ""
+msgstr "Çizgi & İz"
 
 #. Section header
 msgctxt "widget.knob.bartrack.angles"
 msgid "Angles (°)"
-msgstr ""
+msgstr "Açılar (°)"
 
 #. Textbox header (small)
 msgctxt "widget.knob.bartrack.angles.start"
 msgid "Start"
-msgstr ""
+msgstr "Başlangıç"
 
 #. Textbox header (small)
 msgctxt "widget.knob.bartrack.angles.end"
 msgid "End"
-msgstr ""
+msgstr "Son"
 
 #. Textbox header (small)
 msgctxt "widget.knob.bartrack.width"
 msgid "Width"
-msgstr ""
+msgstr "Genişlik"
 
 #. Textbox header (small)
 msgctxt "widget.knob.bartrack.cap"
 msgid "Cap"
-msgstr ""
+msgstr "Kapak"
 
 #. Section header
 msgctxt "widget.knob.bartrack.bar"
 msgid "Bar"
-msgstr ""
+msgstr "Çizgi"
 
 #. Section header
 msgctxt "widget.knob.bartrack.track"
 msgid "Track"
-msgstr ""
+msgstr "İz"
 
 #. Section header
 msgctxt "widget.knob.bartrack.previousvalue"
 msgid "Previous value"
-msgstr ""
+msgstr "Önceki değer"
 
 #. Checkbox label
 msgctxt "widget.knob.bartrack.previousvalue.description"
 msgid "Display previous value when dragging"
-msgstr ""
+msgstr "Sürüklerken önceki değeri göster"
 
 #. Tab header
 msgctxt "widget.knob.scale"
 msgid "Scale"
-msgstr ""
+msgstr "Ölçek"
 
 #. Checkbox header
 msgctxt "widget.knob.scale.display"
 msgid "Display scale"
-msgstr ""
+msgstr "Gösterge ölçeği"
 
 #. Checkbox label
 msgctxt "widget.knob.scale.display.enabled"
 msgid "Enabled"
-msgstr ""
+msgstr "Etkin"
 
 #. Radio buttons header
 msgctxt "widget.knob.scale.type"
 msgid "Scale Type"
-msgstr ""
+msgstr "Ölçek Tipi"
 
 #. Radio button label
 msgctxt "widget.knob.scale.type.lines"
 msgid "Lines"
-msgstr ""
+msgstr "Çizgiler"
 
 #. Checkbox label
 msgctxt "widget.knob.scale.type.dots"
 msgid "Dots"
-msgstr ""
+msgstr "Noktalar"
 
 #. Textbox header (small)
 msgctxt "widget.knob.scale.width"
@@ -965,147 +965,147 @@ msgstr ""
 #. Settings dialog title
 msgctxt "widget.slider.settings.header"
 msgid "Slider Settings"
-msgstr ""
+msgstr "Kaydırıcı ayarları"
 
 #. Checkbox header
 msgctxt "widget.slider.general.orientation"
 msgid "Orientation"
-msgstr ""
+msgstr "Yönlendirme"
 
 #. Checkbox label
 msgctxt "widget.slider.general.orientation.vertical"
 msgid "Vertical slider"
-msgstr ""
+msgstr "Dikey kaydırma"
 
 #. Checkbox label
 msgctxt "widget.slider.advanced.hidelabel"
 msgid "Hide title label"
-msgstr ""
+msgstr "Başlık etiketini gizle"
 
 #. Checkbox label
 msgctxt "widget.slider.advanced.hidelimits"
 msgid "Hide limits labels"
-msgstr ""
+msgstr "Sınır etiketleri gizle"
 
 #. Checkbox label
 msgctxt "widget.slider.advanced.hidepointer"
 msgid "Hide current value label"
-msgstr ""
+msgstr "Geçerli değer etiketini gizle"
 
 #. Checkbox label
 msgctxt "widget.slider.advanced.showticks"
 msgid "Show ticks"
-msgstr ""
+msgstr "İşaretleri göster"
 
 #. Checkbox label
 msgctxt "widget.slider.advanced.showticksvalues"
 msgid "Show ticks labels"
-msgstr ""
+msgstr "Kenar etiketlerini göster"
 
 #. Checkbox label
 msgctxt "widget.slider.advanced.inverted"
 msgid "Reverse direction"
-msgstr ""
+msgstr "Ters yön"
 
 #. Checkbox label
 msgctxt "widget.slider.advanced.bigslider"
 msgid "Big slider (horizontal only)"
-msgstr ""
+msgstr "Büyük kaydırıcı (yalnızca yatay)"
 
 #. Tab header
 msgctxt "widget.slider.backdrop"
 msgid "Backdrop"
-msgstr ""
+msgstr "Zemin"
 
 #. Display name of the widget (appears in the Add Widget dropdown menu in the designer)
 msgctxt "widget.switch"
 msgid "Switch"
-msgstr ""
+msgstr "Değiştir"
 
 #. Description of the widget, displayed in a tooltip when hovering the option in the Add Widget dropdown menu in the designer
 msgctxt "widget.switch.description"
 msgid "A ON/OFF toggle for openHAB switches"
-msgstr ""
+msgstr "OpenHAB anahtarları için AÇIK/KAPALI geçiş"
 
 #. Settings dialog title
 msgctxt "widget.switch.settings.header"
 msgid "Switch Settings"
-msgstr ""
+msgstr "Anahtar Ayarları"
 
 #. Header
 msgctxt "widget.switch.display"
 msgid "Display options"
-msgstr ""
+msgstr "Görüntüleme seçenekleri"
 
 #. Checkbox label (very small)
 msgctxt "widget.switch.display.hidelabel"
 msgid "Hide name"
-msgstr ""
+msgstr "Adı gizle"
 
 #. Checkbox label (very small)
 msgctxt "widget.switch.display.hideicon"
 msgid "Hide icon"
-msgstr ""
+msgstr "Simgeyi gizle"
 
 #. Checkbox label (very small)
 msgctxt "widget.switch.display.hideonoff"
 msgid "Hide ON/OFF"
-msgstr ""
+msgstr "AÇIK/KAPALI gizle"
 
 #. Display name of the widget (appears in the Add Widget dropdown menu in the designer)
 msgctxt "widget.template"
 msgid "Template"
-msgstr ""
+msgstr "Şablon"
 
 #. Description of the widget, displayed in a tooltip when hovering the option in the Add Widget dropdown menu in the designer
 msgctxt "widget.template.description"
 msgid "A template widget - displays a custom dynamic template"
-msgstr ""
+msgstr "Şablon bir araç - özel bir dinamik şablon görüntüler"
 
 #. Settings dialog title
 msgctxt "widget.template.settings.header"
 msgid "Template Settings"
-msgstr ""
+msgstr "Şablon Ayarları"
 
 #. Settings dialog title for a custom widget (don't translate the variable)
 msgctxt "widget.template.settings.header.customwidget"
 msgid "{{customwidget_name}} Settings"
-msgstr ""
+msgstr "{{customwidget_name}} Ayarları"
 
 #. Checkbox label (small)
 msgctxt "widget.template.dontwrap"
 msgid "Don't wrap in container"
-msgstr ""
+msgstr "Kap içine sarılmamalıdır"
 
 #. Checkbox label (small)
 msgctxt "widget.template.nobackground"
 msgid "No background"
-msgstr ""
+msgstr "Arkaplan yok"
 
 #. Section header (displayed above the code editor)
 msgctxt "widget.template.template"
 msgid "Template"
-msgstr ""
+msgstr "Şablon"
 
 #. Menu entry (top-right above the code editor)
 msgctxt "widget.template.importfromfile"
 msgid "Import from file..."
-msgstr ""
+msgstr "Dosyadan içe aktar..."
 
 #. Menu entry (top-right above the code editor)
 msgctxt "widget.template.exporttofile"
 msgid "Export to file"
-msgstr ""
+msgstr "Dosyayı dışa aktar"
 
 #. Menu entry (top-right above the code editor)
 msgctxt "widget.template.communitysupport"
 msgid "Community support"
-msgstr ""
+msgstr "Topluluk desteği"
 
 #. Menu entry (top-right above the code editor)
 msgctxt "widget.template.knowledgebase"
 msgid "Knowledge base"
-msgstr ""
+msgstr "Bilgi tabanı"
 
 #. Display name of the widget (appears in the Add Widget dropdown menu in the designer)
 msgctxt "widget.timeline"
@@ -1115,17 +1115,17 @@ msgstr ""
 #. Description of the widget, displayed in a tooltip when hovering the option in the Add Widget dropdown menu in the designer
 msgctxt "widget.timeline.description"
 msgid "Displays a timeline of several items"
-msgstr ""
+msgstr "Birkaç öğenin zaman çizelgesini görüntüler"
 
 #. Settings dialog title
 msgctxt "widget.timeline.settings.header"
 msgid "Timeline Settings"
-msgstr ""
+msgstr "Zaman Çizelgesi Ayarları"
 
 #. Textbox header
 msgctxt "widget.timeline.general.service"
 msgid "Persistence service"
-msgstr ""
+msgstr "Süreklilik servisi"
 
 #. Textbox placeholder
 msgctxt "widget.timeline.general.service.hint"
@@ -1135,12 +1135,12 @@ msgstr ""
 #. Dropdown placeholder
 msgctxt "widget.timeline.general.period"
 msgid "Period"
-msgstr ""
+msgstr "Dönem"
 
 #. Tab header
 msgctxt "widget.timeline.colors"
 msgid "Colors"
-msgstr ""
+msgstr "Renkler"
 
 #. Accordion header (followed by the state value)
 msgctxt "widget.timeline.colors.state"
