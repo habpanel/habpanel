@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Finnish\n"
 "Language: fi_FI\n"
-"PO-Revision-Date: 2018-01-21 10:02-0500\n"
+"PO-Revision-Date: 2018-01-21 10:11-0500\n"
 
 #. Common term
 msgctxt "OK"
@@ -111,7 +111,7 @@ msgstr "Yhteys katkesi! Yritetään uudelleen..."
 #. Appears below the edit mode button when there's no dashboard - please use the Chrome developer tools and check with phone resolutions: iPhone 6, Nexus 5 etc.!
 msgctxt "tutorial.welcome"
 msgid "Welcome to HABPanel!"
-msgstr ""
+msgstr "Tervetuloa HABPaneliin!"
 
 #. Appears below the edit mode button when there's no dashboard - please use the Chrome developer tools and check with phone resolutions: iPhone 6, Nexus 5 etc.!
 msgctxt "tutorial.clickheretobegin"
@@ -121,7 +121,7 @@ msgstr "Klikkaa tai napauta tästä aloittaaksesi."
 #. Appears at the top of the screen when in edit mode and no dashboards are present
 msgctxt "tutorial.editmode"
 msgid "You're now in edit mode, where you can design dashboards."
-msgstr ""
+msgstr "Olet nyt muokkaustilassa, jossa voit suunnitella näkymiä."
 
 #. Hint for the bottom left link when in edit mode and no dashboards are present - please use the Chrome developer tools and check with phone resolutions: iPhone 6, Nexus 5 etc.!
 msgctxt "tutorial.createfirstdashboard"
@@ -151,7 +151,7 @@ msgstr "Tallenna openHAB palvelimelle kun olet valmis!"
 #. Displayed when no dashboard is present and editing is locked in the service configuration
 msgctxt "tutorial.editingdisabled"
 msgid "Editing is disabled on the server!"
-msgstr ""
+msgstr "Muokkaus on poistettu käytöstä palvelimen asetuksissa!"
 
 #. Displayed when no dashboard is present and editing is locked in the service configuration
 msgctxt "tutorial.unlockedit"
@@ -206,10 +206,10 @@ msgstr ""
 #. Displayed at the bottom after clicking on the Speak button
 msgctxt "dashboard.speaknow"
 msgid "Speak now..."
-msgstr ""
+msgstr "Puhu nyt..."
 
 #. Prefix of an error message, displayed at the bottom after clicking on the Speak button
 msgctxt "dashboard.speakerror"
 msgid "Error: "
-msgstr ""
+msgstr "Virhe: "
 
