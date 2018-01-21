@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: German\n"
 "Language: de_DE\n"
-"PO-Revision-Date: 2018-01-21 11:41-0500\n"
+"PO-Revision-Date: 2018-01-21 12:01-0500\n"
 
 #. Save button in the dashboard designer
 msgctxt "designer.save"
@@ -160,7 +160,7 @@ msgstr "Hauptmenü-Kachel"
 #. Checkbox label
 msgctxt "dashboard.settings.customwidgets.tile.description"
 msgid "Replace the tile contents by a custom widget"
-msgstr ""
+msgstr "Ersetze den Inhalt der Kachel durch ein eigenes Widget"
 
 #. Accordion header
 msgctxt "dashboard.settings.customwidgets.drawer"
@@ -180,7 +180,7 @@ msgstr "Dashboard Überschrift"
 #. Checkbox label
 msgctxt "dashboard.settings.customwidgets.header.description"
 msgid "Replace the contents of the dashboard header by a custom widget"
-msgstr ""
+msgstr "Ersetze den Inhalt der Dashboard Überschrift durch ein eigenes Widget"
 
 #. Displayed in the item picker when no item selected
 msgctxt "itempicker.placeholder"
@@ -475,7 +475,7 @@ msgstr "Problem beim Importieren: "
 #. Screen title
 msgctxt "customwidgets.list.header"
 msgid "Custom widgets"
-msgstr ""
+msgstr "Eigene Widgets"
 
 #. Prefix displayed before the author's name
 msgctxt "customwidgets.list.byauthor"
@@ -535,7 +535,7 @@ msgstr "Aus Galerie importieren..."
 #. Dialog box title
 msgctxt "customwidgets.list.add.dialog.title"
 msgid "New custom widget"
-msgstr ""
+msgstr "Neues eigenes Widget"
 
 #. Dialog box message
 msgctxt "customwidgets.list.add.dialog.message"
