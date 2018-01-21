@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: German\n"
 "Language: de_DE\n"
-"PO-Revision-Date: 2018-01-21 12:21-0500\n"
+"PO-Revision-Date: 2018-01-21 12:32-0500\n"
 
 #. Save button in the dashboard designer
 msgctxt "designer.save"
@@ -36,7 +36,7 @@ msgstr "Widgets hinzufügen"
 #. Header of the custom widget section (beware, it might overlap the cogs icon on the right)
 msgctxt "designer.addwidget.customwidgets"
 msgid "Custom widgets"
-msgstr "Benutzerdefiniert"
+msgstr "Benutzerdefinierte Widgets"
 
 #. Open widget gallery
 msgctxt "designer.addwidget.getmore"
