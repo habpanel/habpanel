@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Finnish\n"
 "Language: fi_FI\n"
-"PO-Revision-Date: 2018-01-21 15:22-0500\n"
+"PO-Revision-Date: 2018-01-21 15:32-0500\n"
 
 #. Common term in widget settings dialogs
 msgctxt "widget.common.min"
@@ -700,7 +700,7 @@ msgstr "Näyttä edellinen arvo vedettäessä"
 #. Tab header
 msgctxt "widget.knob.scale"
 msgid "Scale"
-msgstr ""
+msgstr "Skaala"
 
 #. Checkbox header
 msgctxt "widget.knob.scale.display"
