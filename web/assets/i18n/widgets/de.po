@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: German\n"
 "Language: de_DE\n"
-"PO-Revision-Date: 2018-01-21 15:41-0500\n"
+"PO-Revision-Date: 2018-01-21 16:21-0500\n"
 
 #. Common term in widget settings dialogs
 msgctxt "widget.common.min"
@@ -610,12 +610,12 @@ msgstr "Hintergrundfarbe"
 #. Display name of the widget (appears in the Add Widget dropdown menu in the designer)
 msgctxt "widget.knob"
 msgid "Knob"
-msgstr ""
+msgstr "Drehknopf"
 
 #. Description of the widget, displayed in a tooltip when hovering the option in the Add Widget dropdown menu in the designer
 msgctxt "widget.knob.description"
 msgid "A knob for setting numerical openHAB items"
-msgstr ""
+msgstr "Ein Drehknopf für numerische openHAB-Items"
 
 #. Settings dialog title
 msgctxt "widget.knob.settings.header"
@@ -780,17 +780,17 @@ msgstr "Abstand"
 #. Tab header
 msgctxt "widget.knob.ranges"
 msgid "Ranges"
-msgstr ""
+msgstr "Bereiche"
 
 #. Checkbox label
 msgctxt "widget.knob.ranges.enable"
 msgid "Enable Ranges"
-msgstr ""
+msgstr "Bereiche erlauben"
 
 #. Checkbox label
 msgctxt "widget.knob.ranges.match_text_color"
 msgid "Match Text Color to Range"
-msgstr ""
+msgstr "Textfarbe zu Bereich zuweisen"
 
 #. Textbox header (small)
 msgctxt "widget.knob.ranges.from"
@@ -875,17 +875,17 @@ msgstr "Quelle der Auswahlliste"
 #. Dropdown option
 msgctxt "widget.selection.choices_source.server"
 msgid "Server-provided item options"
-msgstr ""
+msgstr "Vom Server bereitgestellte Item-Optionen"
 
 #. Dropdown option
 msgctxt "widget.selection.choices_source.csv"
 msgid "Comma-separated list"
-msgstr ""
+msgstr "Durch Komma getrennte Liste"
 
 #. Textbox header - appears only when the "comma-separated list" choice source is selected
 msgctxt "widget.selection.choices"
 msgid "List of comma-separated choices"
-msgstr ""
+msgstr "Liste der durch Komma getrennten Auswahlmöglichkeiten"
 
 #. Displayed in small text below the textbox
 msgctxt "widget.selection.choices.hint"
@@ -1015,7 +1015,7 @@ msgstr "Großer Schieberegler (horizontal)"
 #. Tab header
 msgctxt "widget.slider.backdrop"
 msgid "Backdrop"
-msgstr ""
+msgstr "Hintergrund"
 
 #. Display name of the widget (appears in the Add Widget dropdown menu in the designer)
 msgctxt "widget.switch"
@@ -1050,7 +1050,7 @@ msgstr "Symbol ausblenden"
 #. Checkbox label (very small)
 msgctxt "widget.switch.display.hideonoff"
 msgid "Hide ON/OFF"
-msgstr "EIN-/AUS ausblenden"
+msgstr "ON/OFF ausblenden"
 
 #. Display name of the widget (appears in the Add Widget dropdown menu in the designer)
 msgctxt "widget.template"
