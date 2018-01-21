@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: German\n"
 "Language: de_DE\n"
-"PO-Revision-Date: 2018-01-21 13:22-0500\n"
+"PO-Revision-Date: 2018-01-21 15:32-0500\n"
 
 #. Common term in widget settings dialogs
 msgctxt "widget.common.min"
@@ -235,7 +235,7 @@ msgstr "Diagramm anzeigen"
 #. Settings dialog title
 msgctxt "widget.chart.settings.header"
 msgid "Chart Settings"
-msgstr "Diagramm-Einstellungen"
+msgstr "Diagrammeinstellungen"
 
 #. Tab header
 msgctxt "widget.chart.general"
@@ -370,7 +370,7 @@ msgstr "Ein Uhr-Widget - zeigt eine analoge oder digitale Uhr"
 #. Settings dialog title
 msgctxt "widget.clock.settings.header"
 msgid "Clock Settings"
-msgstr "Uhr-Einstellungen"
+msgstr "Uhreinstellungen"
 
 #. Dropdown header
 msgctxt "widget.clock.mode"
@@ -465,7 +465,7 @@ msgstr "Ein Dummy-Widget - zeigt den Wert eines openHAB Items"
 #. Settings dialog title
 msgctxt "widget.dummy.settings.header"
 msgid "Dummy Settings"
-msgstr "Dummy-Einstellungen"
+msgstr "Dummyeinstellungen"
 
 #. Checkboxes header
 msgctxt "widget.dummy.layout"
@@ -620,7 +620,7 @@ msgstr ""
 #. Settings dialog title
 msgctxt "widget.knob.settings.header"
 msgid "Knob Settings"
-msgstr ""
+msgstr "Drehknopfeinstellungen"
 
 #. Checkbox header
 msgctxt "widget.knob.general.readonly"
@@ -965,7 +965,7 @@ msgstr "Ein Schieberegler für numerische openHAB Items"
 #. Settings dialog title
 msgctxt "widget.slider.settings.header"
 msgid "Slider Settings"
-msgstr "Slider-Einstellungen"
+msgstr "Slidereinstellungen"
 
 #. Checkbox header
 msgctxt "widget.slider.general.orientation"
@@ -1030,7 +1030,7 @@ msgstr "Ein ON/OFF Schalter für openHAB Schalter-Items"
 #. Settings dialog title
 msgctxt "widget.switch.settings.header"
 msgid "Switch Settings"
-msgstr "Schalter-Einstellungen"
+msgstr "Schaltereinstellungen"
 
 #. Header
 msgctxt "widget.switch.display"
@@ -1065,12 +1065,12 @@ msgstr "Eine Vorlage-Widget - zeigt eine benutzerdefinierte dynamische Vorlage a
 #. Settings dialog title
 msgctxt "widget.template.settings.header"
 msgid "Template Settings"
-msgstr "Vorlage-Einstellungen"
+msgstr "Vorlageeinstellungen"
 
 #. Settings dialog title for a custom widget (don't translate the variable)
 msgctxt "widget.template.settings.header.customwidget"
 msgid "{{customwidget_name}} Settings"
-msgstr "{{customwidget_name}} Einstellungen"
+msgstr "{{customwidget_name}}-Einstellungen"
 
 #. Checkbox label (small)
 msgctxt "widget.template.dontwrap"
