@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Turkish\n"
 "Language: tr_TR\n"
-"PO-Revision-Date: 2018-01-20 19:40-0500\n"
+"PO-Revision-Date: 2018-01-20 19:50-0500\n"
 
 #. Save button in the dashboard designer
 msgctxt "designer.save"
@@ -385,7 +385,7 @@ msgstr "Test"
 #. Checkbox
 msgctxt "settings.panel.voicesupport.floating_speech_button"
 msgid "Display a floating speech button at the bottom of the screen"
-msgstr ""
+msgstr "Ekranın alt kısmında kayan konuşma düğmesini görüntüleme"
 
 #. Dropdown header
 msgctxt "settings.panel.voicesupport.speech_synthesis_item"
@@ -395,87 +395,87 @@ msgstr ""
 #. Section header
 msgctxt "settings.panel.dashboard_control.header"
 msgid "Switch dashboard with item value"
-msgstr ""
+msgstr "Gösterge tablosunu öge değeri ile değiştir"
 
 #. Dropdown header
 msgctxt "settings.panel.dashboard_control.item"
 msgid "When this item changes to a dashboard's name, switch to it:"
-msgstr ""
+msgstr "Bu öge bir gösterge tablosu adı olarak değiştiğinde, ona geçiş yapın:"
 
 #. Local panel configuration editor header
 msgctxt "settings.localconfig.title"
 msgid "Local panel configuration editor"
-msgstr ""
+msgstr "Yerel panel yapılandırma editörü"
 
 #. Displayed in a tooltip when hovering the exclamation mark in the local panel config editor
 msgctxt "settings.localconfig.warning"
 msgid "This is the raw configuration object representing your current configuration. Be careful while editing it by hand!"
-msgstr ""
+msgstr "Bu, geçerli yapılandırmanızı gösteren ham yapılandırma nesnesidir. Elle düzenleme yaparken dikkatli olun!"
 
 #. Blue button
 msgctxt "settings.localconfig.import"
 msgid "Import"
-msgstr ""
+msgstr "İçe aktar"
 
 #. Blue button
 msgctxt "settings.localconfig.export"
 msgid "Export"
-msgstr ""
+msgstr "Dışa Aktar"
 
 #. Default label for the white button on the right
 msgctxt "settings.localconfig.copy"
 msgid "Copy"
-msgstr ""
+msgstr "Kopyala"
 
 #. Label displayed on the button for a few seconds after a successful copy to clipboard
 msgctxt "settings.localconfig.copied"
 msgid "Copied!"
-msgstr ""
+msgstr "Kopyalandı!"
 
 #. Default label for the red button on the right
 msgctxt "settings.localconfig.save"
 msgid "Save"
-msgstr ""
+msgstr "Kaydet"
 
 #. Label displayed on the button for a few seconds after a successful save
 msgctxt "settings.localconfig.saved"
 msgid "Saved!"
-msgstr ""
+msgstr "Kaydedildi!"
 
 #. Label displayed for a few seconds on the copy or save button if an error occurred
 msgctxt "settings.localconfig.failed"
 msgid "FAILED!"
-msgstr ""
+msgstr "BAŞARISIZ OLDU!"
 
 #. Displayed in a dialog box
 msgctxt "settings.localconfig.error.nodashboardsfound"
 msgid "No dashboards found!"
-msgstr ""
+msgstr "Gösterge tablosu bulunamadı!"
 
 #. Title of a a dialog box
 msgctxt "settings.localconfig.parsingerror.dialog.title"
 msgid "Error"
-msgstr ""
+msgstr "Hata"
 
 #. Message in a dialog box
 msgctxt "settings.localconfig.parsingerror.dialog.message"
 msgid "Configuration parsing error, nothing has been modified: "
-msgstr ""
+msgstr "Yapılandırma ayrıştırma hatası, hiçbir şey değiştirilmedi: "
 
 #. Title of a a dialog box
 msgctxt "settings.localconfig.importerror.dialog.title"
 msgid "Error"
-msgstr ""
+msgstr "Hata"
 
 #. Message in a dialog box
 msgctxt "settings.localconfig.importerror.dialog.message"
 msgid "Problem while importing: "
-msgstr ""
+msgstr "İçe aktarma işlemi sırasında sorun: "
 
 #. Screen title
 msgctxt "customwidgets.list.header"
 msgid "Custom widgets"
-msgstr ""
+msgstr "Özel araçlar"
 
 #. Prefix displayed before the author's name
 msgctxt "customwidgets.list.byauthor"
@@ -725,22 +725,22 @@ msgstr ""
 #. Textbox header
 msgctxt "customwidgets.designer.settings.config.default"
 msgid "Default value"
-msgstr ""
+msgstr "Varsayılan değer"
 
 #. Textbox header
 msgctxt "customwidgets.designer.settings.config.choices"
 msgid "Choices"
-msgstr ""
+msgstr "Seçimler"
 
 #. Textbox placeholder
 msgctxt "customwidgets.designer.settings.config.choices.hint"
 msgid "Comma-separated possible values"
-msgstr ""
+msgstr "Virgülle ayrılmış olası değerler"
 
 #. Textbox header
 msgctxt "customwidgets.designer.settings.config.description"
 msgid "Description"
-msgstr ""
+msgstr "Açıklama"
 
 #. Banner displayed when selecting the Icon type for the settings, followed by the defined settings themselves
 msgctxt "customwidgets.designer.settings.config.icon.hint"
@@ -750,12 +750,12 @@ msgstr ""
 #. Tab header
 msgctxt "customwidgets.designer.preview"
 msgid "Preview"
-msgstr ""
+msgstr "Önizleme"
 
 #. Dialog box title
 msgctxt "widgetgallery.heading"
 msgid "Widget Gallery"
-msgstr ""
+msgstr "Araç Galerisi"
 
 #. Dialog box title (when displaying a repository)
 msgctxt "widgetgallery.heading.importrepo"
@@ -770,160 +770,160 @@ msgstr ""
 #. Alert banner message
 msgctxt "widgetgallery.warning.githubratelimit"
 msgid "Warning: rate limiting on the GitHub API will temporarily block further requests!"
-msgstr ""
+msgstr "Uyarı: GitHub API'sındaki hız sınırlaması geçici olarak diğer istekleri engelliyor!"
 
 #. Alert banner message (2nd part)
 msgctxt "widgetgallery.warning.githubratelimit.wait"
 msgid "Wait until this time and try again:"
-msgstr ""
+msgstr "Bu zamana kadar bekleyin ve tekrar deneyin:"
 
 #. Textbox placeholder
 msgctxt "widgetgallery.addressbar.hint"
 msgid "GitHub repository full name (owner/name) or URL"
-msgstr ""
+msgstr "GitHub deposunun tam adı (sahip/adı) veya URL"
 
 #. Button on the right of the addressbar
 msgctxt "widgetgallery.addressbar.go"
 msgid "Go"
-msgstr ""
+msgstr "Başla"
 
 #. Suffix displayed after a number, i.e. "24 community contributions"
 msgctxt "widgetgallery.toolbar.communitycontributions"
 msgid "community&nbsp;contributions"
-msgstr ""
+msgstr "topluluk&&nbsp;katkıları"
 
 #. On the right with the sort options
 msgctxt "widgetgallery.toolbar.sortby"
 msgid "sort by:"
-msgstr ""
+msgstr "göre sırala:"
 
 #. Link to change the sort criteria - keep the non breaking spaces (&nbsp;)
 msgctxt "widgetgallery.toolbar.sortby.mostrecent"
 msgid "most&nbsp;recent"
-msgstr ""
+msgstr "en&nbsp;son"
 
 #. Link to change the sort criteria - keep the non breaking spaces (&nbsp;)
 msgctxt "widgetgallery.toolbar.sortby.mostliked"
 msgid "most&nbsp;liked"
-msgstr ""
+msgstr "en&nbsp;sevilen"
 
 #. Link to change the sort criteria - keep the non breaking spaces (&nbsp;)
 msgctxt "widgetgallery.toolbar.sortby.mostpopular"
 msgid "most&nbsp;popular"
-msgstr ""
+msgstr "en&nbsp;popüler"
 
 #. Link to change the sort criteria - keep the non breaking spaces (&nbsp;)
 msgctxt "widgetgallery.toolbar.sortby.mostdiscussed"
 msgid "most&nbsp;discussed"
-msgstr ""
+msgstr "en&nbsp;tartışılan"
 
 #. Prefix before the author's name
 msgctxt "widgetgallery.details.authorby"
 msgid "by"
-msgstr ""
+msgstr "tarafından"
 
 #. Suffix displayed after a number, i.e. "24 posts on this topic"
 msgctxt "widgetgallery.details.forumposts"
 msgid "post(s) on this topic - discuss on community.openhab.org"
-msgstr ""
+msgstr "bu konudaki mesajları - community.openhab.org üzerinde tartışın"
 
 #. Label of the big green button when nothing to import
 msgctxt "widgetgallery.details.nothingtoimport"
 msgid "Nothing to import"
-msgstr ""
+msgstr "İçe aktarılacak hiçbir şey yok"
 
 #. Label of the big green button when 1 widget was found
 msgctxt "widgetgallery.details.importwidget"
 msgid "Import Widget"
-msgstr ""
+msgstr "Aracı İçe Aktar"
 
 #. Label of the big green button when 2 or more widgets were found
 msgctxt "widgetgallery.details.importwidgets"
 msgid "Import {} Widgets"
-msgstr ""
+msgstr "Araçları {} İçe Aktar"
 
 #. Label of the big blue button when there is a referenced GitHub repo
 msgctxt "widgetgallery.details.gotorepository"
 msgid "Go to the repository"
-msgstr ""
+msgstr "Depoya git"
 
 #. Displyed in orange inside the big green button after a number, when some widgets are already present
 msgctxt "widgetgallery.details.toupdate"
 msgid "to update"
-msgstr ""
+msgstr "güncellemek için"
 
 #. Little white button label with a down caret
 msgctxt "widgetgallery.details.showdetails"
 msgid "Show details"
-msgstr ""
+msgstr "Detayları göster"
 
 #. Little white button label with a up caret
 msgctxt "widgetgallery.details.hidedetails"
 msgid "Hide details"
-msgstr ""
+msgstr "Detayları gizle"
 
 #. Little white button label
 msgctxt "widgetgallery.details.downloadzip"
 msgid "Download ZIP"
-msgstr ""
+msgstr "ZIP dosyasını indir"
 
 #. 1. Prefix of the explanation in the expanded details section
 msgctxt "widgetgallery.details.widget.hint.prefix"
 msgid "This"
-msgstr ""
+msgstr "Bu"
 
 #. 2a. Name of a community contribution
 msgctxt "widgetgallery.details.widget.hint.communitycontribution"
 msgid "community contribution"
-msgstr ""
+msgstr "topluluk katkısı"
 
 #. 2b. Name of a community contribution
 msgctxt "widgetgallery.details.widget.hint.repository"
 msgid "repository"
-msgstr ""
+msgstr "depo"
 
 #. 3. Suffix of the explanation in the expanded details section
 msgctxt "widgetgallery.details.widget.hint.suffix"
 msgid "contains the following widgets; you can import them individually:"
-msgstr ""
+msgstr "aşağıdaki araçları içerir; bunları ayrı ayrı içe aktarabilirsiniz:"
 
 #. Explanation in the expanded details section
 msgctxt "widgetgallery.details.widget.hint.nowidgets"
 msgid "No widgets were found (*.widget.json files)! Please report this."
-msgstr ""
+msgstr "Herhangi bir araç bulunamadı (*.widget.json dosyaları)! Lütfen bunu bildirin."
 
 #. Explanation in the expanded details section
 msgctxt "widgetgallery.details.widget.hint.checkrepo"
 msgid "The widgets are likely in the referenced GitHub repository. Click the 'Go to the repository' button to open it."
-msgstr ""
+msgstr "Araçlar muhtemelen başvurulan GitHub deposunda. Açmak için 'Depoya git' düğmesine tıklayın."
 
 #. Green button in the expanded details section
 msgctxt "widgetgallery.details.widget.import"
 msgid "Import widget"
-msgstr ""
+msgstr "İçe araç aktar"
 
 #. Orange button in the expanded details section
 msgctxt "widgetgallery.details.widget.update"
 msgid "Update widget"
-msgstr ""
+msgstr "Aracı güncelle"
 
 #. Disabled button in the expanded details section after a widget was imported/updated
 msgctxt "widgetgallery.details.widget.imported"
 msgid "Widget imported!"
-msgstr ""
+msgstr "Araçlar içe aktarıldı!"
 
 #. Alert banner, followed by a technical exception message
 msgctxt "widgetgallery.error"
 msgid "Error:"
-msgstr ""
+msgstr "Hata:"
 
 #. Dialog box title
 msgctxt "widgetgallery.widgetsdetected.dialog.title"
 msgid "Existing widgets detected"
-msgstr ""
+msgstr "Bulunan mevcut araçlar tespit edildi"
 
 #. Dialog box message
 msgctxt "widgetgallery.widgetsdetected.dialog.message"
 msgid "Warning: please confirm you wish to update <nbexisting> existing widgets, overwriting any eventual changes made locally! If unsure, cancel and click Show details to review the list of affected widgets."
-msgstr ""
+msgstr "Uyarı: Lütfen mevcut araçları <nbexisting> güncellemek, yerel olarak yapılacak nihai değişikliklerin üzerine yazmak istediğinizi onaylayın! Emin değilseniz, iptal edin ve etkilenen araçların listesini incelemek için Ayrıntıları göster'i tıklayın."
 
