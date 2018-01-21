@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: German\n"
 "Language: de_DE\n"
-"PO-Revision-Date: 2018-01-21 11:11-0500\n"
+"PO-Revision-Date: 2018-01-21 11:21-0500\n"
 
 #. Common term in widget settings dialogs
 msgctxt "widget.common.min"
@@ -535,32 +535,32 @@ msgstr ""
 #. Checkbox header
 msgctxt "widget.frame.label"
 msgid "Label"
-msgstr ""
+msgstr "Label"
 
 #. Checkbox label
 msgctxt "widget.frame.label.description"
 msgid "Hide title label"
-msgstr ""
+msgstr "Titel ausblenden"
 
 #. Display name of the widget (appears in the Add Widget dropdown menu in the designer)
 msgctxt "widget.image"
 msgid "Image"
-msgstr ""
+msgstr "Bild"
 
 #. Description of the widget, displayed in a tooltip when hovering the option in the Add Widget dropdown menu in the designer
 msgctxt "widget.image.description"
 msgid "Displays an image (not necessarily from openHAB)"
-msgstr ""
+msgstr "Zeigt ein Bild (nicht unbedingt von OpenHAB)"
 
 #. Settings dialog title
 msgctxt "widget.image.settings.header"
 msgid "Image Settings"
-msgstr ""
+msgstr "Bildeinstellungen"
 
 #. Dropdown header
 msgctxt "widget.image.image_source"
 msgid "Image source"
-msgstr ""
+msgstr "Bildquelle"
 
 #. Dropdown option
 msgctxt "widget.image.image_source.static"
@@ -570,27 +570,27 @@ msgstr ""
 #. Dropdown option
 msgctxt "widget.image.image_source.item-string"
 msgid "openHAB String Item"
-msgstr ""
+msgstr "openHAB String-Item"
 
 #. Dropdown option
 msgctxt "widget.image.image_source.item-image"
 msgid "openHAB Image Item"
-msgstr ""
+msgstr "openHAB Bild-Item"
 
 #. Textbox header
 msgctxt "widget.image.refresh_interval"
 msgid "Refresh interval"
-msgstr ""
+msgstr "Aktualisierungsintervall"
 
 #. Radio button label
 msgctxt "widget.image.refresh_interval.seconds"
 msgid "seconds"
-msgstr ""
+msgstr "Sekunden"
 
 #. Radio button label
 msgctxt "widget.image.refresh_interval.milliseconds"
 msgid "milliseconds"
-msgstr ""
+msgstr "Millisekunden"
 
 #. Checkbox header - appears only if the refresh interval is set
 msgctxt "widget.image.nosuffix"
@@ -605,7 +605,7 @@ msgstr ""
 #. Color picker header
 msgctxt "widget.image.background_color"
 msgid "Background color"
-msgstr ""
+msgstr "Hintergrundfarbe"
 
 #. Display name of the widget (appears in the Add Widget dropdown menu in the designer)
 msgctxt "widget.knob"
@@ -890,32 +890,32 @@ msgstr ""
 #. Displayed in small text below the textbox
 msgctxt "widget.selection.choices.hint"
 msgid "You can optionally use the syntax: 'cmd=label' for each choice<br />Example: 18=Cold,20,22,24,26,28=Warm"
-msgstr ""
+msgstr "Sie können optional die Syntax 'cmd=label' für jede Auswahl nutzen<br />Beispiel: 18=Kalt,20,22,24,26,28=Warm"
 
 #. Header
 msgctxt "widget.selection.display"
 msgid "Display options"
-msgstr ""
+msgstr "Anzeigeoptionen"
 
 #. Checkbox label (very small)
 msgctxt "widget.selection.display.hidelabel"
 msgid "Hide name"
-msgstr ""
+msgstr "Namen ausblenden"
 
 #. Checkbox label (very small)
 msgctxt "widget.selection.display.hideicon"
 msgid "Hide icon"
-msgstr ""
+msgstr "Symbol ausblenden"
 
 #. Checkbox label (very small)
 msgctxt "widget.selection.display.hidestate"
 msgid "Hide current value"
-msgstr ""
+msgstr "Aktuelle Wertbeschriftung ausblenden"
 
 #. Header
 msgctxt "widget.selection.choices_window"
 msgid "Choices window"
-msgstr ""
+msgstr "Auswahlfenster"
 
 #. Textbox (very small)
 msgctxt "widget.selection.choices_window.columns"
@@ -930,27 +930,27 @@ msgstr "Mobilen Modus deaktivieren"
 #. Checkbox label (very small)
 msgctxt "widget.selection.choices_window.no_squares"
 msgid "No square tiles"
-msgstr ""
+msgstr "Keine quadratischen Kacheln"
 
 #. Header
 msgctxt "widget.selection.selection_options"
 msgid "Selection options"
-msgstr ""
+msgstr "Auswahloptionen"
 
 #. Checkbox label (small)
 msgctxt "widget.selection.selection_options.no_highlight"
 msgid "Don't highlight current selection"
-msgstr ""
+msgstr "Aktuelle Auswahl nicht markieren"
 
 #. Checkbox label (small)
 msgctxt "widget.selection.selection_options.keep_open"
 msgid "Keep window open upon selection"
-msgstr ""
+msgstr "Fenster bleibt nach Auswahl geöffnet"
 
 #. Displayed when running the widget if no choices available
 msgctxt "widget.selection.nochoices"
 msgid "No choices available - check widget config"
-msgstr ""
+msgstr "Keine Wahlmöglichkeiten - überprüfen Sie die Konfiguration des Widgets"
 
 #. Display name of the widget (appears in the Add Widget dropdown menu in the designer)
 msgctxt "widget.slider"
@@ -985,7 +985,7 @@ msgstr "Titel ausblenden"
 #. Checkbox label
 msgctxt "widget.slider.advanced.hidelimits"
 msgid "Hide limits labels"
-msgstr ""
+msgstr "Limitbeschriftung ausblenden"
 
 #. Checkbox label
 msgctxt "widget.slider.advanced.hidepointer"
@@ -995,17 +995,17 @@ msgstr ""
 #. Checkbox label
 msgctxt "widget.slider.advanced.showticks"
 msgid "Show ticks"
-msgstr ""
+msgstr "Teilstriche anzeigen"
 
 #. Checkbox label
 msgctxt "widget.slider.advanced.showticksvalues"
 msgid "Show ticks labels"
-msgstr ""
+msgstr "Beschriftung der Teilstriche anzeigen"
 
 #. Checkbox label
 msgctxt "widget.slider.advanced.inverted"
 msgid "Reverse direction"
-msgstr ""
+msgstr "Umgekehrte Richtung"
 
 #. Checkbox label
 msgctxt "widget.slider.advanced.bigslider"
@@ -1075,7 +1075,7 @@ msgstr ""
 #. Checkbox label (small)
 msgctxt "widget.template.dontwrap"
 msgid "Don't wrap in container"
-msgstr ""
+msgstr "Nicht in Container einbetten"
 
 #. Checkbox label (small)
 msgctxt "widget.template.nobackground"
@@ -1085,7 +1085,7 @@ msgstr "Kein Hintergrund"
 #. Section header (displayed above the code editor)
 msgctxt "widget.template.template"
 msgid "Template"
-msgstr ""
+msgstr "Vorlage"
 
 #. Menu entry (top-right above the code editor)
 msgctxt "widget.template.importfromfile"
@@ -1100,12 +1100,12 @@ msgstr "In eine Datei exportieren"
 #. Menu entry (top-right above the code editor)
 msgctxt "widget.template.communitysupport"
 msgid "Community support"
-msgstr ""
+msgstr "Community-Support"
 
 #. Menu entry (top-right above the code editor)
 msgctxt "widget.template.knowledgebase"
 msgid "Knowledge base"
-msgstr ""
+msgstr "Wissensdatenbank"
 
 #. Display name of the widget (appears in the Add Widget dropdown menu in the designer)
 msgctxt "widget.timeline"
