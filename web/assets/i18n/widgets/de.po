@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: German\n"
 "Language: de_DE\n"
-"PO-Revision-Date: 2018-01-21 11:41-0500\n"
+"PO-Revision-Date: 2018-01-21 11:51-0500\n"
 
 #. Common term in widget settings dialogs
 msgctxt "widget.common.min"
@@ -520,12 +520,12 @@ msgstr ""
 #. Color picker header
 msgctxt "widget.frame.background_color"
 msgid "Frame background color"
-msgstr ""
+msgstr "Hintergrundfarbe des Rahmens"
 
 #. Checkbox header
 msgctxt "widget.frame.frameless"
 msgid "Frameless"
-msgstr ""
+msgstr "Rahmenlos"
 
 #. Checkbox label
 msgctxt "widget.frame.frameless.description"
