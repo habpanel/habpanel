@@ -11,72 +11,72 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: German\n"
 "Language: de_DE\n"
-"PO-Revision-Date: 2018-01-21 11:01-0500\n"
+"PO-Revision-Date: 2018-01-21 11:11-0500\n"
 
 #. Common term in widget settings dialogs
 msgctxt "widget.common.min"
 msgid "Min"
-msgstr ""
+msgstr "Min"
 
 #. Common term in widget settings dialogs
 msgctxt "widget.common.max"
 msgid "Max"
-msgstr ""
+msgstr "Max"
 
 #. Common term in widget settings dialogs
 msgctxt "widget.common.step"
 msgid "Step"
-msgstr ""
+msgstr "Schritt"
 
 #. Common term in widget settings dialogs
 msgctxt "widget.common.unit"
 msgid "Unit"
-msgstr ""
+msgstr "Einheit"
 
 #. Common term in widget settings dialogs
 msgctxt "widget.common.format"
 msgid "Format"
-msgstr ""
+msgstr "Format"
 
 #. Common option label in widget settings dialogs
 msgctxt "widget.common.format.useserverprovided"
 msgid "Use server-provided format if available"
-msgstr ""
+msgstr "Nutze serverseitig bereitgestelltes Format falls vorhanden"
 
 #. Common option label in widget settings dialogs
 msgctxt "widget.common.dontwrap"
 msgid "Value right of label"
-msgstr ""
+msgstr "Wert rechts vom Label"
 
 #. Common option label in widget settings dialogs
 msgctxt "widget.common.backdrop_center"
 msgid "Center backdrop horizontally"
-msgstr ""
+msgstr "Hintergrund horizontal zentrieren"
 
 #. Common option label in widget settings dialogs
 msgctxt "widget.common.icon_nolinebreak"
 msgid "Icon left of label instead of below"
-msgstr ""
+msgstr "Symbol links des Labels statt darunter"
 
 #. Common option label in widget settings dialogs
 msgctxt "widget.common.icon_replacestext"
 msgid "Icon replaces textual value display"
-msgstr ""
+msgstr "Symbol ersetzt textuelle Anzeige"
 
 #. Common tab header label
 msgctxt "widget.common.general"
 msgid "General"
-msgstr ""
+msgstr "Allgemein"
 
 #. Common tab header label
 msgctxt "widget.common.advanced"
 msgid "Advanced"
-msgstr ""
+msgstr "Erweitert"
 
 #. Display name of the widget (appears in the Add Widget dropdown menu in the designer)
 msgctxt "widget.button"
 msgid "Button"
-msgstr ""
+msgstr "Schaltfläche"
 
 #. Description of the widget, displayed in a tooltip when hovering the option in the Add Widget dropdown menu in the designer
 msgctxt "widget.button.description"
@@ -86,17 +86,17 @@ msgstr ""
 #. Settings dialog title
 msgctxt "widget.button.settings.header"
 msgid "Button Settings"
-msgstr ""
+msgstr "Schaltflächeneinstellungen"
 
 #. Tab header
 msgctxt "widget.button.general"
 msgid "General"
-msgstr ""
+msgstr "Allgemein"
 
 #. Dropdown header
 msgctxt "widget.button.general.action_type"
 msgid "Action type"
-msgstr ""
+msgstr "Aktionstyp"
 
 #. Dropdown option
 msgctxt "widget.button.general.action_type.command"
@@ -111,102 +111,102 @@ msgstr ""
 #. Dropdown option
 msgctxt "widget.button.general.action_type.navigate"
 msgid "Navigate"
-msgstr ""
+msgstr "Navigieren"
 
 #. Textbox header
 msgctxt "widget.button.general.command"
 msgid "Command value"
-msgstr ""
+msgstr "Befehlswert"
 
 #. Textbox header
 msgctxt "widget.button.general.command_alt"
 msgid "Alternate command value"
-msgstr ""
+msgstr "Alternativer Befehlswert"
 
 #. Radio buttons header
 msgctxt "widget.button.general.navigation_type"
 msgid "Navigation type"
-msgstr ""
+msgstr "Navigationstyp"
 
 #. Radio button label
 msgctxt "widget.button.general.navigation_type.dashboard"
 msgid "Dashboard"
-msgstr ""
+msgstr "Dashboard"
 
 #. Radio buttons header
 msgctxt "widget.button.general.navigation_target"
 msgid "Open in"
-msgstr ""
+msgstr "Öffnen in"
 
 #. Radio button label
 msgctxt "widget.button.general.navigation_target.self"
 msgid "Current tab"
-msgstr ""
+msgstr "Aktueller Reiter"
 
 #. Radio button label
 msgctxt "widget.button.general.navigation_target.new_tab"
 msgid "New tab"
-msgstr ""
+msgstr "Neuer Reiter"
 
 #. Radio button label
 msgctxt "widget.button.general.navigation_target.new_window"
 msgid "New window"
-msgstr ""
+msgstr "Neues Fenster"
 
 #. Tab header
 msgctxt "widget.button.display"
 msgid "Display"
-msgstr ""
+msgstr "Anzeige"
 
 #. Section header
 msgctxt "widget.button.display.label"
 msgid "Label"
-msgstr ""
+msgstr "Label"
 
 #. Section header
 msgctxt "widget.button.display.value"
 msgid "Value"
-msgstr ""
+msgstr "Wert"
 
 #. Checkbox label (when there's an item configured in the General tab)
 msgctxt "widget.button.display.value.showitemvalue"
 msgid "Show the item's state value"
-msgstr ""
+msgstr "Den Wert des Item-Zustandes zeigen"
 
 #. Checkbox label (when there's no item configured in the General tab)
 msgctxt "widget.button.display.value.showitemvalue_noitem"
 msgid "Show an item's state value"
-msgstr ""
+msgstr "Den Wert des Item-Zustandes zeigen"
 
 #. Textbox header
 msgctxt "widget.button.display.value.active_state"
 msgid "Active state"
-msgstr ""
+msgstr "Status \"aktiv\""
 
 #. Checkboxes header
 msgctxt "widget.button.display.value.layout"
 msgid "Layout"
-msgstr ""
+msgstr "Layout"
 
 #. Tab header
 msgctxt "widget.button.inactive"
 msgid "Inactive"
-msgstr ""
+msgstr "Inaktiv"
 
 #. Tab header
 msgctxt "widget.button.active"
 msgid "Active"
-msgstr ""
+msgstr "Aktiv"
 
 #. Tab header (when there's no item configured in the General tab)
 msgctxt "widget.button.colors"
 msgid "Colors"
-msgstr ""
+msgstr "Farben"
 
 #. Color picker header
 msgctxt "widget.button.background_color"
 msgid "Background color"
-msgstr ""
+msgstr "Hintergrundfarbe"
 
 #. Color picker header
 msgctxt "widget.button.foreground_color"
@@ -220,12 +220,12 @@ msgstr ""
 
 msgctxt "widget.button.preview.state"
 msgid "State"
-msgstr ""
+msgstr "Zustand"
 
 #. Display name of the widget (appears in the Add Widget dropdown menu in the designer)
 msgctxt "widget.chart"
 msgid "Chart"
-msgstr ""
+msgstr "Diagramm"
 
 #. Description of the widget, displayed in a tooltip when hovering the option in the Add Widget dropdown menu in the designer
 msgctxt "widget.chart.description"
@@ -235,32 +235,32 @@ msgstr ""
 #. Settings dialog title
 msgctxt "widget.chart.settings.header"
 msgid "Chart Settings"
-msgstr ""
+msgstr "Diagramm-Einstellungen"
 
 #. Tab header
 msgctxt "widget.chart.general"
 msgid "General"
-msgstr ""
+msgstr "Allgemein"
 
 #. Dropdown header
 msgctxt "widget.chart.general.type"
 msgid "Type"
-msgstr ""
+msgstr "Typ"
 
 #. Dropdown option
 msgctxt "widget.chart.general.type.default"
 msgid "Default"
-msgstr ""
+msgstr "Standard"
 
 #. Dropdown option
 msgctxt "widget.chart.general.type.rrd4j"
 msgid "RRD4j (rrd4j persistence service only)"
-msgstr ""
+msgstr "RRD4j (nur für rrd4j Persistenz)"
 
 #. Dropdown option
 msgctxt "widget.chart.general.type.interactive"
 msgid "n3-line-chart (interactive)"
-msgstr ""
+msgstr "n3-line-chart (interaktiv)"
 
 #. Textbox header
 msgctxt "widget.chart.general.service"
@@ -275,32 +275,32 @@ msgstr ""
 #. Item picker header
 msgctxt "widget.chart.general.itemgroup"
 msgid "openHAB Item or Group"
-msgstr ""
+msgstr "openHAB Item oder Gruppe"
 
 #. Dropdown header
 msgctxt "widget.chart.general.period"
 msgid "Period"
-msgstr ""
+msgstr "Zeitraum"
 
 #. Tab header
 msgctxt "widget.chart.axis"
 msgid "Axis"
-msgstr ""
+msgstr "Achse"
 
 #. Section header
 msgctxt "widget.chart.axis.primary"
 msgid "Primary axis (y)"
-msgstr ""
+msgstr "Primäre Achse (y)"
 
 #. Section header
 msgctxt "widget.chart.axis.secondary"
 msgid "Secondary axis (y2)"
-msgstr ""
+msgstr "Sekundäre Achse (y2)"
 
 #. Checkbox label
 msgctxt "widget.chart.axis.enabled"
 msgid "Enabled"
-msgstr ""
+msgstr "Aktiviert"
 
 #. Checkbox label
 msgctxt "widget.chart.axis.includezero"
@@ -310,47 +310,47 @@ msgstr ""
 #. Tab header
 msgctxt "widget.chart.series"
 msgid "Series"
-msgstr ""
+msgstr "Serie"
 
 #. Radio buttons header
 msgctxt "widget.chart.series.axis"
 msgid "Axis"
-msgstr ""
+msgstr "Achse"
 
 #. Radio button label
 msgctxt "widget.chart.series.axis.primary"
 msgid "Primary"
-msgstr ""
+msgstr "Primäre"
 
 #. Radio button label
 msgctxt "widget.chart.series.axis.secondary"
 msgid "Secondary"
-msgstr ""
+msgstr "Sekundäre"
 
 #. Radio buttons header
 msgctxt "widget.chart.series.display"
 msgid "Display"
-msgstr ""
+msgstr "Anzeige"
 
 #. Radio button label
 msgctxt "widget.chart.series.display.line"
 msgid "Line"
-msgstr ""
+msgstr "Linie"
 
 #. Radio button label
 msgctxt "widget.chart.series.display.area"
 msgid "Area"
-msgstr ""
+msgstr "Bereich"
 
 #. Radio button label
 msgctxt "widget.chart.series.display.dots"
 msgid "Dots"
-msgstr ""
+msgstr "Punkte"
 
 #. Checkbox label
 msgctxt "widget.chart.series.liveupdate"
 msgid "Live update (experimental)"
-msgstr ""
+msgstr "Live-Update (experimentell)"
 
 #. Checkbox label
 msgctxt "widget.chart.series.liveupdate.fillvalues"
@@ -360,32 +360,32 @@ msgstr ""
 #. Display name of the widget (appears in the Add Widget dropdown menu in the designer)
 msgctxt "widget.clock"
 msgid "Clock"
-msgstr ""
+msgstr "Uhr"
 
 #. Description of the widget, displayed in a tooltip when hovering the option in the Add Widget dropdown menu in the designer
 msgctxt "widget.clock.description"
 msgid "A clock widget - displays an analog or digital clock"
-msgstr ""
+msgstr "Ein Uhr-Widget - zeigt eine analoge oder digitale Uhr"
 
 #. Settings dialog title
 msgctxt "widget.clock.settings.header"
 msgid "Clock Settings"
-msgstr ""
+msgstr "Uhr-Einstellungen"
 
 #. Dropdown header
 msgctxt "widget.clock.mode"
 msgid "Mode"
-msgstr ""
+msgstr "Modus"
 
 #. Dropdown option
 msgctxt "widget.clock.mode.analog"
 msgid "Analog"
-msgstr ""
+msgstr "Analog"
 
 #. Dropdown option
 msgctxt "widget.clock.mode.digital"
 msgid "Digital"
-msgstr ""
+msgstr "Digital"
 
 #. Dropdown header
 msgctxt "widget.clock.theme"
@@ -395,22 +395,22 @@ msgstr ""
 #. Dropdown option
 msgctxt "widget.clock.theme.light"
 msgid "light"
-msgstr ""
+msgstr "hell"
 
 #. Dropdown option
 msgctxt "widget.clock.theme.dark"
 msgid "dark"
-msgstr ""
+msgstr "dunkel"
 
 #. Textbox header
 msgctxt "widget.clock.digital_format"
 msgid "Digital Format"
-msgstr ""
+msgstr "Digitales Format"
 
 #. Textbox header
 msgctxt "widget.clock.font_size"
 msgid "Digital Font Size"
-msgstr ""
+msgstr "Digitale Schriftgröße"
 
 #. Display name of the widget (appears in the Add Widget dropdown menu in the designer)
 msgctxt "widget.colorpicker"
@@ -430,7 +430,7 @@ msgstr ""
 #. Dropdown header
 msgctxt "widget.colorpicker.type"
 msgid "Type"
-msgstr ""
+msgstr "Typ"
 
 #. Dropdown option
 msgctxt "widget.colorpicker.type.hsl"
@@ -445,37 +445,37 @@ msgstr ""
 #. Checkbox label
 msgctxt "widget.colorpicker.blur_background"
 msgid "Apply blurring effect to background"
-msgstr ""
+msgstr "Unschärfe-Effekt für Hintergrund aktivieren"
 
 #. Displayed below the checkbox in small text
 msgctxt "widget.colorpicker.blur_background.warning"
 msgid "Warning: This can cause performance problems on tablets"
-msgstr ""
+msgstr "Warnung: dies kann zu Performanceproblemen auf Tabletts führen"
 
 #. Display name of the widget (appears in the Add Widget dropdown menu in the designer)
 msgctxt "widget.dummy"
 msgid "Dummy"
-msgstr ""
+msgstr "Dummy"
 
 #. Description of the widget, displayed in a tooltip when hovering the option in the Add Widget dropdown menu in the designer
 msgctxt "widget.dummy.description"
 msgid "A dummy widget - displays the value of an openHAB item"
-msgstr ""
+msgstr "Ein Dummy-Widget - zeigt den Wert eines openHAB-Items"
 
 #. Settings dialog title
 msgctxt "widget.dummy.settings.header"
 msgid "Dummy Settings"
-msgstr ""
+msgstr "Dummy-Einstellungen"
 
 #. Checkboxes header
 msgctxt "widget.dummy.layout"
 msgid "Layout"
-msgstr ""
+msgstr "Layout"
 
 #. Display name of the widget (appears in the Add Widget dropdown menu in the designer)
 msgctxt "widget.frame"
 msgid "Frame"
-msgstr ""
+msgstr "Rahmen"
 
 #. Description of the widget, displayed in a tooltip when hovering the option in the Add Widget dropdown menu in the designer
 msgctxt "widget.frame.description"
@@ -625,27 +625,27 @@ msgstr ""
 #. Checkbox header
 msgctxt "widget.knob.general.readonly"
 msgid "Read only"
-msgstr ""
+msgstr "Nur lesen"
 
 #. Checkbox label
 msgctxt "widget.knob.general.readonly.description"
 msgid "Disable interaction"
-msgstr ""
+msgstr "Interaktion deaktivieren"
 
 #. Checkboxes header
 msgctxt "widget.knob.general.centraldisplay"
 msgid "Central display"
-msgstr ""
+msgstr "Zentrierte Anzeige"
 
 #. Checkbox label
 msgctxt "widget.knob.general.centraldisplay.showvalue"
 msgid "Show value"
-msgstr ""
+msgstr "Wert anzeigen"
 
 #. Checkbox label
 msgctxt "widget.knob.general.centraldisplay.showlabel"
 msgid "Show name (below value)"
-msgstr ""
+msgstr "Name anzeigen (unterhalb des Wertes)"
 
 #. Tab header
 msgctxt "widget.knob.bartrack"
@@ -655,17 +655,17 @@ msgstr ""
 #. Section header
 msgctxt "widget.knob.bartrack.angles"
 msgid "Angles (°)"
-msgstr ""
+msgstr "Winkel (°)"
 
 #. Textbox header (small)
 msgctxt "widget.knob.bartrack.angles.start"
 msgid "Start"
-msgstr ""
+msgstr "Start"
 
 #. Textbox header (small)
 msgctxt "widget.knob.bartrack.angles.end"
 msgid "End"
-msgstr ""
+msgstr "Ende"
 
 #. Textbox header (small)
 msgctxt "widget.knob.bartrack.width"
