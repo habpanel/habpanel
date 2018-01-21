@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: German\n"
 "Language: de_DE\n"
-"PO-Revision-Date: 2018-01-21 11:21-0500\n"
+"PO-Revision-Date: 2018-01-21 11:32-0500\n"
 
 #. Save button in the dashboard designer
 msgctxt "designer.save"
@@ -135,7 +135,7 @@ msgstr "Diese Optionen sind derzeit experimentell, instabil oder für fortgeschr
 #. Tab header
 msgctxt "dashboard.settings.customwidgets"
 msgid "Custom widgets"
-msgstr ""
+msgstr "Benutzerdefinierte Widgets"
 
 #. Alert displayed at the top
 msgctxt "dashboard.settings.customwidgets.warning"
@@ -145,12 +145,12 @@ msgstr "Diese Option ist derzeit experimentell und für fortgeschrittene Benutze
 #. Checkbox header
 msgctxt "dashboard.settings.customwidgets.usecustomwidget"
 msgid "Use a custom widget"
-msgstr ""
+msgstr "Verwende ein benutzerdefiniertes Widget"
 
 #. Dropdown header
 msgctxt "dashboard.settings.customwidgets.customwidget"
 msgid "Custom Widget"
-msgstr ""
+msgstr "Benutzerdefiniertes Widget"
 
 #. Accordion header
 msgctxt "dashboard.settings.customwidgets.tile"
