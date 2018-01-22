@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: German\n"
 "Language: de_DE\n"
-"PO-Revision-Date: 2018-01-21 16:21-0500\n"
+"PO-Revision-Date: 2018-01-22 02:33-0500\n"
 
 #. Common term in widget settings dialogs
 msgctxt "widget.common.min"
@@ -390,7 +390,7 @@ msgstr "Digital"
 #. Dropdown header
 msgctxt "widget.clock.theme"
 msgid "Analog Theme"
-msgstr ""
+msgstr "Analoges Theme"
 
 #. Dropdown option
 msgctxt "widget.clock.theme.light"
@@ -435,7 +435,7 @@ msgstr "Typ"
 #. Dropdown option
 msgctxt "widget.colorpicker.type.hsl"
 msgid "HSL Sliders"
-msgstr ""
+msgstr "HSL-Slider"
 
 #. Dropdown option
 msgctxt "widget.colorpicker.type.ackolor"
