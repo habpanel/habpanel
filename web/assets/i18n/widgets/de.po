@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: German\n"
 "Language: de_DE\n"
-"PO-Revision-Date: 2018-01-22 02:51-0500\n"
+"PO-Revision-Date: 2018-01-22 07:52-0500\n"
 
 #. Common term in widget settings dialogs
 msgctxt "widget.common.min"
@@ -216,7 +216,7 @@ msgstr "Labelfarbe"
 #. Color picker header
 msgctxt "widget.button.value_color"
 msgid "Value color"
-msgstr ""
+msgstr "Farbe des Werts"
 
 msgctxt "widget.button.preview.state"
 msgid "State"
@@ -305,7 +305,7 @@ msgstr "Aktiviert"
 #. Checkbox label
 msgctxt "widget.chart.axis.includezero"
 msgid "Include zero"
-msgstr ""
+msgstr "Null enthalten"
 
 #. Tab header
 msgctxt "widget.chart.series"
@@ -515,7 +515,7 @@ msgstr "Kein Cache-busting (fortgeschritten)"
 #. Checkbox label - appears only if the refresh interval is set
 msgctxt "widget.frame.nosuffix.description"
 msgid "Don't add URL suffixes to prevent reusing cached pages"
-msgstr ""
+msgstr "Fügen Sie keine URL-Suffixe hinzu, um das Wiederverwenden gecachter Seiten zu vermeiden"
 
 #. Color picker header
 msgctxt "widget.frame.background_color"
@@ -600,7 +600,7 @@ msgstr "Kein Cache-busting (fortgeschritten)"
 #. Checkbox label - appears only if the refresh interval is set
 msgctxt "widget.image.nosuffix.description"
 msgid "Don't add URL suffixes to prevent reusing cached images"
-msgstr ""
+msgstr "Fügen Sie keine URL-Suffixe hinzu, um das Wiederverwenden gecachter Bilder zu vermeiden"
 
 #. Color picker header
 msgctxt "widget.image.background_color"
@@ -705,7 +705,7 @@ msgstr "Skala"
 #. Checkbox header
 msgctxt "widget.knob.scale.display"
 msgid "Display scale"
-msgstr ""
+msgstr "Skala anzeigen"
 
 #. Checkbox label
 msgctxt "widget.knob.scale.display.enabled"
@@ -805,7 +805,7 @@ msgstr "bis"
 #. Color picker header
 msgctxt "widget.knob.ranges.bar"
 msgid "Bar"
-msgstr ""
+msgstr "Balken"
 
 #. Tab header
 msgctxt "widget.knob.misc"
@@ -990,7 +990,7 @@ msgstr "Limitbeschriftung ausblenden"
 #. Checkbox label
 msgctxt "widget.slider.advanced.hidepointer"
 msgid "Hide current value label"
-msgstr ""
+msgstr "Beschriftung des aktuellen Wertes ausblenden"
 
 #. Checkbox label
 msgctxt "widget.slider.advanced.showticks"
