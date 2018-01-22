@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: French\n"
 "Language: fr_FR\n"
-"PO-Revision-Date: 2018-01-18 14:33-0500\n"
+"PO-Revision-Date: 2018-01-22 17:51-0500\n"
 
 #. Common term in widget settings dialogs
 msgctxt "widget.common.min"
@@ -890,7 +890,7 @@ msgstr "Liste de choix séparés par des virgules"
 #. Displayed in small text below the textbox
 msgctxt "widget.selection.choices.hint"
 msgid "You can optionally use the syntax: 'cmd=label' for each choice<br />Example: 18=Cold,20,22,24,26,28=Warm"
-msgstr "Vous pouvez utilisez la syntaxe: 'cmd=label' pour chaque choix<br />Exemple : 18=Froid,20,22,24,26,28=Chaud"
+msgstr "Vous pouvez utiliser la syntaxe: 'cmd=label' pour chaque choix<br />Exemple : 18=Froid,20,22,24,26,28=Chaud"
 
 #. Header
 msgctxt "widget.selection.display"
