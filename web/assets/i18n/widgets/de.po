@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: German\n"
 "Language: de_DE\n"
-"PO-Revision-Date: 2018-01-22 07:52-0500\n"
+"PO-Revision-Date: 2018-01-22 17:41-0500\n"
 
 #. Common term in widget settings dialogs
 msgctxt "widget.common.min"
@@ -515,7 +515,7 @@ msgstr "Kein Cache-busting (fortgeschritten)"
 #. Checkbox label - appears only if the refresh interval is set
 msgctxt "widget.frame.nosuffix.description"
 msgid "Don't add URL suffixes to prevent reusing cached pages"
-msgstr "Fügen Sie keine URL-Suffixe hinzu, um das Wiederverwenden gecachter Seiten zu vermeiden"
+msgstr "Keine URL-Suffixe anfügen um die Wiederverwendung zwischengespeicherter Inhalte zu verhindern"
 
 #. Color picker header
 msgctxt "widget.frame.background_color"
@@ -600,7 +600,7 @@ msgstr "Kein Cache-busting (fortgeschritten)"
 #. Checkbox label - appears only if the refresh interval is set
 msgctxt "widget.image.nosuffix.description"
 msgid "Don't add URL suffixes to prevent reusing cached images"
-msgstr "Fügen Sie keine URL-Suffixe hinzu, um das Wiederverwenden gecachter Bilder zu vermeiden"
+msgstr "Keine URL-Suffixe anfügen um die Wiederverwendung zwischengespeicherter Bilder zu verhindern"
 
 #. Color picker header
 msgctxt "widget.image.background_color"
