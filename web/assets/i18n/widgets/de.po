@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: German\n"
 "Language: de_DE\n"
-"PO-Revision-Date: 2018-01-22 02:42-0500\n"
+"PO-Revision-Date: 2018-01-22 02:51-0500\n"
 
 #. Common term in widget settings dialogs
 msgctxt "widget.common.min"
@@ -265,7 +265,7 @@ msgstr "n3-line-chart (interaktiv)"
 #. Textbox header
 msgctxt "widget.chart.general.service"
 msgid "Persistence service"
-msgstr ""
+msgstr "Persistenzdienst"
 
 #. Textbox placeholder
 msgctxt "widget.chart.general.service.hint"
@@ -675,7 +675,7 @@ msgstr "Breite"
 #. Textbox header (small)
 msgctxt "widget.knob.bartrack.cap"
 msgid "Cap"
-msgstr ""
+msgstr "Abrundung"
 
 #. Section header
 msgctxt "widget.knob.bartrack.bar"
@@ -745,7 +745,7 @@ msgstr "Abstand"
 #. Tab header
 msgctxt "widget.knob.skin"
 msgid "Skin"
-msgstr ""
+msgstr "Oberfläche"
 
 #. Radio buttons header
 msgctxt "widget.knob.skin.type"
@@ -765,7 +765,7 @@ msgstr "Tron"
 #. Section header
 msgctxt "widget.knob.skin.tronsettings"
 msgid "Tron skin settings"
-msgstr ""
+msgstr "Einstellungen der Tron-Oberfläche"
 
 #. Textbox header (small)
 msgctxt "widget.knob.skin.tronsettings.width"
@@ -1125,7 +1125,7 @@ msgstr "Zeitleisteneinstellungen"
 #. Textbox header
 msgctxt "widget.timeline.general.service"
 msgid "Persistence service"
-msgstr ""
+msgstr "Persistenzdienst"
 
 #. Textbox placeholder
 msgctxt "widget.timeline.general.service.hint"
