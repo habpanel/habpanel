@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: German\n"
 "Language: de_DE\n"
-"PO-Revision-Date: 2018-01-22 02:33-0500\n"
+"PO-Revision-Date: 2018-01-22 02:42-0500\n"
 
 #. Common term in widget settings dialogs
 msgctxt "widget.common.min"
@@ -595,7 +595,7 @@ msgstr "Millisekunden"
 #. Checkbox header - appears only if the refresh interval is set
 msgctxt "widget.image.nosuffix"
 msgid "No cache busting (advanced)"
-msgstr ""
+msgstr "Kein Cache-busting (fortgeschritten)"
 
 #. Checkbox label - appears only if the refresh interval is set
 msgctxt "widget.image.nosuffix.description"
@@ -650,7 +650,7 @@ msgstr "Name anzeigen (unterhalb des Wertes)"
 #. Tab header
 msgctxt "widget.knob.bartrack"
 msgid "Bar & Track"
-msgstr ""
+msgstr "Balken & Spur"
 
 #. Section header
 msgctxt "widget.knob.bartrack.angles"
@@ -680,12 +680,12 @@ msgstr ""
 #. Section header
 msgctxt "widget.knob.bartrack.bar"
 msgid "Bar"
-msgstr ""
+msgstr "Balken"
 
 #. Section header
 msgctxt "widget.knob.bartrack.track"
 msgid "Track"
-msgstr ""
+msgstr "Spur"
 
 #. Section header
 msgctxt "widget.knob.bartrack.previousvalue"
@@ -700,7 +700,7 @@ msgstr "Zeige vorherigen Wert beim Ziehen"
 #. Tab header
 msgctxt "widget.knob.scale"
 msgid "Scale"
-msgstr ""
+msgstr "Skala"
 
 #. Checkbox header
 msgctxt "widget.knob.scale.display"
@@ -715,7 +715,7 @@ msgstr "Aktiviert"
 #. Radio buttons header
 msgctxt "widget.knob.scale.type"
 msgid "Scale Type"
-msgstr ""
+msgstr "Skalentyp"
 
 #. Radio button label
 msgctxt "widget.knob.scale.type.lines"
