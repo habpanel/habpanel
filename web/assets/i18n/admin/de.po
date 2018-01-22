@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: German\n"
 "Language: de_DE\n"
-"PO-Revision-Date: 2018-01-21 12:32-0500\n"
+"PO-Revision-Date: 2018-01-22 02:23-0500\n"
 
 #. Save button in the dashboard designer
 msgctxt "designer.save"
@@ -605,7 +605,7 @@ msgstr "Widget klonen"
 #. Dialog box message
 msgctxt "customwidgets.list.clone.dialog.message"
 msgid "This will clone the globally provisioned widget: <id> to be modified as part of the panel configuration. Enter an unique identifier below - it must be different from the widget being cloned, and should avoid spaces and special chars. If an user-defined widget with the same identifier already exists, it will be replaced!"
-msgstr ""
+msgstr "Dies wird das global bereitgestellte Widget klonen: <id> verändern als Teil der Panel Konfiguration. Trage unten einen eindeutigen Namen ein - er muss anders lauten als der des geklonten Widgets und sollten keine Leerzeichen und Sonderzeichen enthalten. Wenn ein benutzerdefiniertes Widget mit diesem Namen bereits existiert, wird es ersetzt!"
 
 #. Screen title, followed by the widget name - beware of size!
 msgctxt "customwidgets.designer.heading"
