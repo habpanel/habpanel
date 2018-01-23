@@ -91,28 +91,40 @@
             } else {
                 $http.get('/rest/services/org.eclipse.smarthome.core.i18nprovider/config')
                 .then(function (response) {
+                    var language;
                     if (!response.data.language) {
-                        locale = "en-US";
+                        if (navigator && navigator.languages) {
+                            locale = navigator.languages[0];
+                            language = locale.split('-')[0];
+                        } else if (navigator && navigator.language) {
+                            locale = navigator.language;
+                            language = locale.split('-')[0];
+                        } else {
+                            locale = language = 'en';
+                        }
                     } else {
+                        language = response.data.language;
                         locale = response.data.language + ((response.data.region) ? '-' + response.data.region : '');
-
-                        /* consider the region only for selected common exceptions where the date/number formats
-                           are significantly different than the language's default.
-                           If more are needed change the gulpfile.js too and run the 'vendor-angular-i18n' gulp task */
-                        if (['es-ar', 'de-at', 'en-au', 'fr-be', 'es-bo', 'pt-br', 'en-ca',
-                             'fr-ca', 'fr-ch', 'es-co', 'en-gb', 'en-hk', 'zh-hk', 'en-ie',
-                             'en-in', 'fr-lu', 'es-mx', 'en-nz', 'en-sg', 'zh-sg',
-                             'es-us', 'zh-tw', 'en-za'].indexOf(locale.toLowerCase()) < 0) {
-                            locale = response.data.language;
-                        }
-
-                        if (response.data.language && response.data.language !== "en") {
-                            $translate.use(response.data.language);
-                        }
-
-                        console.log('Setting locale to: ' + locale);
-                        tmhDynamicLocale.set(locale.toLowerCase());
                     }
+
+                    /* consider the region only for selected common exceptions where the date/number formats
+                        are significantly different than the language's default.
+                        If more are needed change the gulpfile.js too and run the 'vendor-angular-i18n' gulp task */
+                    if (['es-ar', 'de-at', 'en-au', 'fr-be', 'es-bo', 'pt-br', 'en-ca',
+                            'fr-ca', 'fr-ch', 'es-co', 'en-gb', 'en-hk', 'zh-hk', 'en-ie',
+                            'en-in', 'fr-lu', 'es-mx', 'en-nz', 'en-sg', 'zh-sg',
+                            'es-us', 'zh-tw', 'en-za'].indexOf(locale.toLowerCase()) < 0) {
+                        locale = language;
+                    }
+
+                    if (language !== "en") {
+                        console.log('Setting interface language to: ' + language);
+                        $translate.use(language);
+                    }
+
+                    console.log('Setting locale to: ' + locale);
+                    tmhDynamicLocale.set(locale.toLowerCase());
+
                     deferred.resolve(locale);
                 }, function(error) {
                     console.warn('Couldn\'t retrieve locale settings. Setting default to "en-US"');
