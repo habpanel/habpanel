@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Swedish\n"
 "Language: sv_SE\n"
-"PO-Revision-Date: 2018-01-18 13:21-0500\n"
+"PO-Revision-Date: 2018-01-23 16:03-0500\n"
 
 #. Common term in widget settings dialogs
 msgctxt "widget.common.min"
@@ -260,7 +260,7 @@ msgstr ""
 #. Dropdown option
 msgctxt "widget.chart.general.type.interactive"
 msgid "n3-line-chart (interactive)"
-msgstr ""
+msgstr "n3-line-chart (interaktiv)"
 
 #. Textbox header
 msgctxt "widget.chart.general.service"
@@ -305,7 +305,7 @@ msgstr ""
 #. Checkbox label
 msgctxt "widget.chart.axis.includezero"
 msgid "Include zero"
-msgstr ""
+msgstr "Inkludera noll"
 
 #. Tab header
 msgctxt "widget.chart.series"
@@ -930,7 +930,7 @@ msgstr ""
 #. Checkbox label (very small)
 msgctxt "widget.selection.choices_window.no_squares"
 msgid "No square tiles"
-msgstr ""
+msgstr "Ej kvadratiska rutor"
 
 #. Header
 msgctxt "widget.selection.selection_options"
@@ -1050,7 +1050,7 @@ msgstr ""
 #. Checkbox label (very small)
 msgctxt "widget.switch.display.hideonoff"
 msgid "Hide ON/OFF"
-msgstr ""
+msgstr "Dölj ON/OFF"
 
 #. Display name of the widget (appears in the Add Widget dropdown menu in the designer)
 msgctxt "widget.template"
