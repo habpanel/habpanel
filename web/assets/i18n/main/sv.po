@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Swedish\n"
 "Language: sv_SE\n"
-"PO-Revision-Date: 2018-01-23 16:03-0500\n"
+"PO-Revision-Date: 2018-01-23 16:12-0500\n"
 
 #. Common term
 msgctxt "OK"
@@ -146,12 +146,12 @@ msgstr ""
 #. Hint for the bottom left link when in edit mode and only one dashboard is present - please use the Chrome developer tools and check with phone resolutions: iPhone 6, Nexus 5 etc.!
 msgctxt "tutorial.saveonserver"
 msgid "Save on the openHAB server when done!"
-msgstr ""
+msgstr "Spara på openHAB-servern när du är klar!"
 
 #. Displayed when no dashboard is present and editing is locked in the service configuration
 msgctxt "tutorial.editingdisabled"
 msgid "Editing is disabled on the server!"
-msgstr ""
+msgstr "Redigering är låst på servern!"
 
 #. Displayed when no dashboard is present and editing is locked in the service configuration
 msgctxt "tutorial.unlockedit"
@@ -166,7 +166,7 @@ msgstr "Lägg till ny sida"
 #. Label of the bottom-right link in edit mode - please also test with phone resolutions!
 msgctxt "menu.panelsettings"
 msgid "Panel settings"
-msgstr ""
+msgstr "Panelinställningar"
 
 #. New dashboard dialog box title
 msgctxt "menu.dialog.newdashboard.title"
@@ -191,7 +191,7 @@ msgstr ""
 #. Dashboard toolbar Speak button tooltip
 msgctxt "dashboard.toolbar.speak"
 msgid "Speak"
-msgstr ""
+msgstr "Tala"
 
 #. Dashboard toolbar Refresh button tooltip
 msgctxt "dashboard.toolbar.refresh"
@@ -206,10 +206,10 @@ msgstr ""
 #. Displayed at the bottom after clicking on the Speak button
 msgctxt "dashboard.speaknow"
 msgid "Speak now..."
-msgstr ""
+msgstr "Tala nu..."
 
 #. Prefix of an error message, displayed at the bottom after clicking on the Speak button
 msgctxt "dashboard.speakerror"
 msgid "Error: "
-msgstr ""
+msgstr "Fel: "
 
