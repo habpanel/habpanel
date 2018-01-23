@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Swedish\n"
 "Language: sv_SE\n"
-"PO-Revision-Date: 2018-01-23 16:12-0500\n"
+"PO-Revision-Date: 2018-01-23 16:32-0500\n"
 
 #. Common term
 msgctxt "OK"
@@ -76,7 +76,7 @@ msgstr "Färger"
 #. Common term
 msgctxt "Transparent"
 msgid "Transparent"
-msgstr ""
+msgstr "Transparent"
 
 #. Common term
 msgctxt "openHAB Item"
@@ -91,7 +91,7 @@ msgstr "Tala"
 #. Common term (e.g. tooltip in the dashboard header toolbar)
 msgctxt "Refresh"
 msgid "Refresh"
-msgstr ""
+msgstr "Uppdatera"
 
 #. Common term (e.g. tooltip in the dashboard header toolbar)
 msgctxt "Fullscreen"
@@ -196,7 +196,7 @@ msgstr "Tala"
 #. Dashboard toolbar Refresh button tooltip
 msgctxt "dashboard.toolbar.refresh"
 msgid "Refresh"
-msgstr ""
+msgstr "Uppdatera"
 
 #. Dashboard toolbar Fullscreen button tooltip
 msgctxt "dashboard.toolbar.fullscreen"
