@@ -22,7 +22,7 @@
         $scope.togglePin = function () {
             $rootScope.pinnedDrawer = !$rootScope.pinnedDrawer;
             localStorageService.set('pinneddrawer', $rootScope.pinnedDrawer);
-            var container = angular.element(window.document).find('main')[0];
+            var container = angular.element($document).find('main')[0];
             container.style.transform = null;
             refreshMenu();
         }

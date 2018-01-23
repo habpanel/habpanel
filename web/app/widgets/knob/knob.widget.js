@@ -14,8 +14,8 @@
             });
         });
 
-    widgetKnob.$inject = ['$rootScope', '$timeout', '$window', '$uibModal', 'OHService'];
-    function widgetKnob($rootScope, $timeout, $window, $modal, OHService) {
+    widgetKnob.$inject = ['$rootScope', '$timeout', '$uibModal', 'OHService'];
+    function widgetKnob($rootScope, $timeout, $modal, OHService) {
         // Usage: <widget-knob ng-model="widget" />
         //
         // Creates: A knob widget
