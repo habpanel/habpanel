@@ -82,7 +82,7 @@
                 '<img width="64px" height="64px" ng-src="{{iconUrl}}" />&nbsp;{{icon}}&nbsp;<span class="caret" />' +
                 '</a>' +
                 '<ul style="width: 420px" class="dropdown-menu" role="menu" aria-labelledby="icon-picker-btn">' +
-                '<li class="iconpicker-icon" style="display: inline-flex" ng-repeat="icon in icons"><a style="display:inline" ng-click="selectIcon(icon)"><img width="64px" height="64px" ng-src="{{iconService.getIconUrl(iconset, icon)}}" /><!--&nbsp;{{icon}}--></a></li> ' +
+                '<li class="iconpicker-icon" style="display: inline-flex" ng-repeat="icon in icons"><a style="display:inline" ng-click="selectIcon(icon)"><img width="64px" height="64px" ng-src="{{iconService.getIconUrl(iconset, icon)}}" title="{{icon}}" /></a></li> ' +
                 '</ul>' +
                 '<br /><br /><small ng-if="notice" style="display:inherit"><a target="_blank" href="{{noticeUrl}}">{{notice}}</a></small><br />' +
                 '</div>' +
