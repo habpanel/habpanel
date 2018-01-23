@@ -106,14 +106,14 @@
     <div class="reconnecting" ng-if="reconnecting">
         &nbsp;<i class="glyphicon glyphicon-ban-circle"></i>&nbsp;<span translate-keep-content translate="error.connectionlost">Connection lost! Trying to reconnect...</span>&nbsp;
     </div>
-    <div class="container"
+    <main class="container"
          snap-content
          snap-opt-disable="'right'"
          snap-opt-hyperextensible="false"
          ng-view
-         ng-class="{ 'image-bg': settings.background_image, kiosk: kioskMode }"
+         ng-class="{ 'image-bg': settings.background_image, kiosk: kioskMode, 'pinneddrawer': settings.pindrawer }"
          ng-style="{ 'background-image': (settings.background_image) ? 'url(' + settings.background_image +')' : '' }">
-    </div>
+    </main>
 </body>
 
 </html>

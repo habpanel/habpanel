@@ -76,6 +76,11 @@ input {
     height: 100%;
     padding-top: 48px;
     box-shadow: 0 0 20px var(--body-bg, #000);
+
+    &.pinneddrawer {
+        left: 265px;
+        width: calc(100% - 265px);
+    }
 }
 
 .container.kiosk {
@@ -216,4 +221,10 @@ input {
             color: white;
         }
     }
+}
+
+.pinneddrawer .header a[title="Menu"] {
+    visibility: hidden;
+    width: 0;
+    padding-right: 0;
 }

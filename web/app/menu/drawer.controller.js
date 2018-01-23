@@ -5,8 +5,8 @@
         .module('app')
         .controller('DrawerController', DrawerController);
 
-    DrawerController.$inject = ['$scope', '$rootScope', '$timeout', '$filter', '$location', 'OHService', 'PersistenceService', 'tmhDynamicLocaleCache', 'snapRemote'];
-    function DrawerController($scope, $rootScope, $timeout, $filter, $location, OHService, PersistenceService, tmhDynamicLocaleCache, snapRemote) {
+    DrawerController.$inject = ['$scope', '$rootScope', '$timeout', '$filter', '$document', '$location', 'OHService', 'PersistenceService', 'tmhDynamicLocaleCache', 'snapRemote'];
+    function DrawerController($scope, $rootScope, $timeout, $filter, $document, $location, OHService, PersistenceService, tmhDynamicLocaleCache, snapRemote) {
         $scope.goHome = function () {
             $location.url('/');
         }
@@ -17,6 +17,13 @@
 
         $scope.goToDashboard = function (name) {
             $location.url('/view/' + name);
+        }
+
+        $scope.togglePin = function () {
+            $rootScope.settings.pindrawer = !$rootScope.settings.pindrawer;
+            var container = angular.element(window.document).find("main")[0];
+            container.style.transform = null;
+            refreshMenu();
         }
 
         $scope.isActive = function (name) {
@@ -53,8 +60,12 @@
             snapRemote.getSnapper().then(function (snapper) {
                 var drawer = angular.element(window.document).find("aside")[0];
                 drawer.style.display = '';
-                if ($rootScope.kioskMode)
+                if ($rootScope.kioskMode || $rootScope.settings.pindrawer) {
+                    //snapper.close();
                     snapper.disable();
+                } else {
+                    snapper.enable();
+                }
             });
         }
 
