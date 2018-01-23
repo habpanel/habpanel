@@ -35,8 +35,8 @@
 
         function link(scope, element, attrs) {
 
-            scope.$watch("data", function (data) {
-                if (!data) return;
+            function redraw() {
+                if (!scope.data) return;
 
                 var el = element[0].firstElementChild.firstElementChild;
 
@@ -112,10 +112,15 @@
                 });
 
                 var svg = d3.select(el).append("svg").attr("width", width).attr("height", height)
-                .datum(data).call(chart);
+                .datum(scope.data).call(chart);
 
-            });
+            }
 
+            var dataWatcher = scope.$watch("data", redraw);
+            var resizeHandler = scope.$on('gridster-resized', redraw);
+
+            scope.$on('$destroy', dataWatcher);
+            scope.$on('$destroy', resizeHandler);
             if (scope.vm.refreshInterval) {
                 element.on('$destroy', function () {
                     $interval.cancel(scope.vm.refreshInterval);

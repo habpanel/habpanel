@@ -35,52 +35,63 @@
         
         function link(scope, element, attrs) {
 
-            var el = element;
-
-            var width = element[0].parentNode.parentNode.parentNode.style.width.replace('px', '') - 80;
-            var height = element[0].parentNode.parentNode.parentNode.style.height.replace('px', '');
-            if (scope.vm.widget.name) height -= 20;
-
-            scope.value = { h: -1, s: -1, l: -1 }; 
-
-            angular.forEach(angular.element(element).find("canvas"), function (el) {
-                el.width = width;
-                el.style.width = width + 'px';
-                el.style.height = (height / 3 - 30) + 'px';
-            });
-            angular.forEach(angular.element(element).find("svg"), function (el) {
-                //el.width = width + 60;
-                el.style.width = (width + 60) + 'px';
-            });
-
-
             // from https://bl.ocks.org/mbostock/debaad4fcce9bcee14cf
-            var white = d3.rgb("white"),
-                black = d3.rgb("black");
-                //width = d3.select("canvas").property("width");
 
-            var channels = scope.channels = {
-                h: {scale: d3.scale.linear().domain([0, 360]).range([0, width]), x: width / 2},
-                s: {scale: d3.scale.linear().domain([0, 1]).range([0, width]), x: width / 2},
-                l: {scale: d3.scale.linear().domain([0, 1]).range([0, width]), x: width / 2}
-            };
+            var el = element;
+            var channel, channels, canvas;
+            var width, height;
+            var white = d3.rgb("white"), black = d3.rgb("black");
 
-            var channel = scope.channel = d3.selectAll(element).selectAll(".channel")
-                .data(d3.entries(channels));
+            scope.redraw = function () {
 
-            channel.select(".axis")
-                .each(function(d) { d3.select(this).call(d3.svg.axis().scale(d.value.scale).orient("bottom")); })
-                .append("text")
-                .attr("x", width)
-                .attr("y", 9)
-                .attr("dy", ".72em")
-                .style("text-anchor", "middle")
-                .style("text-transform", "uppercase")
-                .text(function(d) { return d.key; });
+                width = element[0].parentNode.parentNode.parentNode.style.width.replace('px', '') - 80;
+                height = element[0].parentNode.parentNode.parentNode.style.height.replace('px', '');
+                if (scope.vm.widget.name) height -= 20;
 
-            var canvas = channel.select("canvas")
-                .call(d3.behavior.drag().on("drag", dragging).on("dragend", dragged))
-                .each(render);
+                scope.value = { h: -1, s: -1, l: -1 };
+
+                angular.forEach(angular.element(element).find("canvas"), function (el) {
+                    el.width = width;
+                    el.style.width = width + 'px';
+                    el.style.height = (height / 3 - 30) + 'px';
+                    // clear existing color swatches
+                    while (el.firstChild) {
+                        el.removeChild(el.firstChild);
+                    }
+                });
+                angular.forEach(angular.element(element).find("svg"), function (el) {
+                    el.style.width = (width + 60) + 'px';
+                    // clear existing axes
+                    while (el.firstChild.firstChild) {
+                        el.firstChild.removeChild(el.firstChild.firstChild);
+                    }
+                });
+
+
+
+                channels = scope.channels = {
+                    h: {scale: d3.scale.linear().domain([0, 360]).range([0, width]), x: width / 2},
+                    s: {scale: d3.scale.linear().domain([0, 1]).range([0, width]), x: width / 2},
+                    l: {scale: d3.scale.linear().domain([0, 1]).range([0, width]), x: width / 2}
+                };
+
+                channel = scope.channel = d3.selectAll(element).selectAll(".channel")
+                    .data(d3.entries(channels));
+
+                channel.select(".axis")
+                    .each(function(d) { d3.select(this).call(d3.svg.axis().scale(d.value.scale).orient("bottom")); })
+                    .append("text")
+                    .attr("x", width)
+                    .attr("y", 9)
+                    .attr("dy", ".72em")
+                    .style("text-anchor", "middle")
+                    .style("text-transform", "uppercase")
+                    .text(function(d) { return d.key; });
+
+                canvas = channel.select("canvas")
+                    .call(d3.behavior.drag().on("drag", dragging).on("dragend", dragged))
+                    .each(render);
+            }
 
             function dragging(d) {
                 d.value.x = Math.max(0, Math.min(this.width - 1, d3.mouse(this)[0]));
@@ -138,7 +149,9 @@
                 this.channels.l.x = Math.round(scope.value.l / 100 * width);
 
                 channel.select("canvas").each(render);
-            };         
+            };
+
+            scope.redraw();
         }
     }
     ColorpickerController.$inject = ['$rootScope', '$scope', '$timeout', 'OHService'];
@@ -203,6 +216,11 @@
             vm.ready = true;
         }
 
+        function onResize() {
+            $scope.redraw();
+            updateValue();
+        }
+
         OHService.onUpdate($scope, vm.widget.item, function () {
             updateValue();
         });
@@ -229,6 +247,9 @@
 
             OHService.sendCmd(vm.widget.item, vm.value);
         }
+
+        var resizeHandler = $scope.$on('gridster-resized', onResize);
+        $scope.$on('$destroy', onResize);
     }
 
 

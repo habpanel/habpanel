@@ -55,6 +55,9 @@
                 deferred.resolve($rootScope.dashboards);
             });
 
+            // the drawer pinned setting is stored in local storage only
+            $rootScope.pinnedDrawer = localStorageService.get("pinneddrawer") === true;
+
             return deferred.promise;
         }
 

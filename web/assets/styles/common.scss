@@ -76,15 +76,16 @@ input {
     height: 100%;
     padding-top: 48px;
     box-shadow: 0 0 20px var(--body-bg, #000);
-
-    &.pinneddrawer {
-        left: 265px;
-        width: calc(100% - 265px);
-    }
 }
 
 .container.kiosk {
     padding-top: 15px;
+}
+
+.pinneddrawer .container {
+    left: 265px;
+    right: 0;
+    width: auto;
 }
 
 .scrollable {

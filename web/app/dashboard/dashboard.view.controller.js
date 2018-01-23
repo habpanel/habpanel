@@ -23,13 +23,16 @@
         resizable: { enabled: false }
     };
 
-    var fullscreenhandler = Fullscreen.$on('FBFullscreen.change', function(evt, enabled) {
+    var fullscreenhandler = Fullscreen.$on('FBFullscreen.change', function (evt, enabled) {
         vm.fullscreen = enabled;
+    });
+    var resizehandler = $scope.$on('gridster-resized', function () {
+        $scope.$broadcast('rzSliderForceRender');
     });
 
     $scope.$on('$destroy', function() {
         fullscreenhandler();
-        //OHService.clearAllLongPollings();
+        resizehandler();
     });
 
     OHService.onUpdate($scope, '', function () {

@@ -14,8 +14,8 @@
             });
         });
 
-    widgetKnob.$inject = ['$rootScope', '$timeout', '$uibModal', 'OHService'];
-    function widgetKnob($rootScope, $timeout, $modal, OHService) {
+    widgetKnob.$inject = ['$rootScope', '$timeout', '$window', '$uibModal', 'OHService'];
+    function widgetKnob($rootScope, $timeout, $window, $modal, OHService) {
         // Usage: <widget-knob ng-model="widget" />
         //
         // Creates: A knob widget
@@ -32,16 +32,24 @@
             }
         };
         return directive;
+
         
         function link(scope, element, attrs) {
-            $timeout(function () {
-                var width = element[0].parentNode.parentNode.parentNode.style.width.replace('px', '');
-                scope.vm.knob.options.size = width - 20;
-                if (!scope.vm.widget.trackWidth)
-                    scope.vm.knob.options.trackWidth = width / 5;
-                if (!scope.vm.widget.barWidth)
-                    scope.vm.knob.options.barWidth = width / 5;
-            });
+
+            function computeSize() {
+                $timeout(function () {
+                    var width = element[0].parentNode.parentNode.parentNode.style.width.replace('px', '');
+                    scope.vm.knob.options.size = width - 20;
+                    if (!scope.vm.widget.trackWidth)
+                        scope.vm.knob.options.trackWidth = width / 5;
+                    if (!scope.vm.widget.barWidth)
+                        scope.vm.knob.options.barWidth = width / 5;
+                });
+            }
+
+            computeSize();
+            var resizeHandler = scope.$on('gridster-resized', computeSize);
+            scope.$on('$destroy', resizeHandler);
         }
     }
     KnobController.$inject = ['$rootScope', '$scope', 'OHService', '$timeout', 'themeValueFilter'];

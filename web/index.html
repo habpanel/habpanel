@@ -100,7 +100,7 @@
 
 </head>
 
-<body>
+<body ng-class="{ 'pinneddrawer': pinnedDrawer }">
     <aside class="drawer" snap-drawer style="display: none" ng-controller="DrawerController" ng-include="'app/menu/drawer.tpl.html'">
     </aside>
     <div class="reconnecting" ng-if="reconnecting">
@@ -111,7 +111,7 @@
          snap-opt-disable="'right'"
          snap-opt-hyperextensible="false"
          ng-view
-         ng-class="{ 'image-bg': settings.background_image, kiosk: kioskMode, 'pinneddrawer': settings.pindrawer }"
+         ng-class="{ 'image-bg': settings.background_image, kiosk: kioskMode }"
          ng-style="{ 'background-image': (settings.background_image) ? 'url(' + settings.background_image +')' : '' }">
     </main>
 </body>
