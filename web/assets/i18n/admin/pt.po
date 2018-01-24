@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Portuguese\n"
 "Language: pt_PT\n"
-"PO-Revision-Date: 2018-01-24 10:14-0500\n"
+"PO-Revision-Date: 2018-01-24 10:26-0500\n"
 
 #. Save button in the dashboard designer
 msgctxt "designer.save"
@@ -510,7 +510,7 @@ msgstr "Abrir Ajuda"
 #. Custom widget context menu entry - update the widget from its source
 msgctxt "customwidgets.list.contextmenu.update"
 msgid "Update..."
-msgstr ""
+msgstr "Atualizar..."
 
 #. Blue button opening a dialog
 msgctxt "customwidgets.list.newwidget"
