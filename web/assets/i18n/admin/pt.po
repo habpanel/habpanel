@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Portuguese\n"
 "Language: pt_PT\n"
-"PO-Revision-Date: 2018-01-24 10:26-0500\n"
+"PO-Revision-Date: 2018-01-24 14:03-0500\n"
 
 #. Save button in the dashboard designer
 msgctxt "designer.save"
@@ -790,7 +790,7 @@ msgstr "Ir"
 #. Suffix displayed after a number, i.e. "24 community contributions"
 msgctxt "widgetgallery.toolbar.communitycontributions"
 msgid "community&nbsp;contributions"
-msgstr "contribuições&nbsp; da comunidade"
+msgstr "contribuições&nbsp;da comunidade"
 
 #. On the right with the sort options
 msgctxt "widgetgallery.toolbar.sortby"
@@ -800,22 +800,22 @@ msgstr "ordenar por:"
 #. Link to change the sort criteria - keep the non breaking spaces (&nbsp;)
 msgctxt "widgetgallery.toolbar.sortby.mostrecent"
 msgid "most&nbsp;recent"
-msgstr "mais recentes"
+msgstr "mais&nbsp;recentes"
 
 #. Link to change the sort criteria - keep the non breaking spaces (&nbsp;)
 msgctxt "widgetgallery.toolbar.sortby.mostliked"
 msgid "most&nbsp;liked"
-msgstr "mais&nbsp; gostados"
+msgstr "mais&nbsp;gostados"
 
 #. Link to change the sort criteria - keep the non breaking spaces (&nbsp;)
 msgctxt "widgetgallery.toolbar.sortby.mostpopular"
 msgid "most&nbsp;popular"
-msgstr "mais populares"
+msgstr "mais&nbsp;populares"
 
 #. Link to change the sort criteria - keep the non breaking spaces (&nbsp;)
 msgctxt "widgetgallery.toolbar.sortby.mostdiscussed"
 msgid "most&nbsp;discussed"
-msgstr "mais&nbsp; debatidos"
+msgstr "mais&nbsp;debatidos"
 
 #. Prefix before the author's name
 msgctxt "widgetgallery.details.authorby"
