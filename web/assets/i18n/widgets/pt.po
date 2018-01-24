@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Portuguese\n"
 "Language: pt_PT\n"
-"PO-Revision-Date: 2018-01-24 11:55-0500\n"
+"PO-Revision-Date: 2018-01-24 12:02-0500\n"
 
 #. Common term in widget settings dialogs
 msgctxt "widget.common.min"
@@ -980,32 +980,32 @@ msgstr "Botão deslizante vertical"
 #. Checkbox label
 msgctxt "widget.slider.advanced.hidelabel"
 msgid "Hide title label"
-msgstr ""
+msgstr "Ocultar o rótulo do título"
 
 #. Checkbox label
 msgctxt "widget.slider.advanced.hidelimits"
 msgid "Hide limits labels"
-msgstr ""
+msgstr "Ocultar rótulos dos limites"
 
 #. Checkbox label
 msgctxt "widget.slider.advanced.hidepointer"
 msgid "Hide current value label"
-msgstr ""
+msgstr "Ocultar o rótulo do valor atual"
 
 #. Checkbox label
 msgctxt "widget.slider.advanced.showticks"
 msgid "Show ticks"
-msgstr ""
+msgstr "Mostrar marcas"
 
 #. Checkbox label
 msgctxt "widget.slider.advanced.showticksvalues"
 msgid "Show ticks labels"
-msgstr ""
+msgstr "Mostrar rótulos nas marcas"
 
 #. Checkbox label
 msgctxt "widget.slider.advanced.inverted"
 msgid "Reverse direction"
-msgstr ""
+msgstr "Direção invertida"
 
 #. Checkbox label
 msgctxt "widget.slider.advanced.bigslider"
