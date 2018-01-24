@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Portuguese\n"
 "Language: pt_PT\n"
-"PO-Revision-Date: 2018-01-24 12:02-0500\n"
+"PO-Revision-Date: 2018-01-24 13:52-0500\n"
 
 #. Common term in widget settings dialogs
 msgctxt "widget.common.min"
@@ -260,7 +260,7 @@ msgstr "RRD4j (apenas serviço de armazenamento rrd4j)"
 #. Dropdown option
 msgctxt "widget.chart.general.type.interactive"
 msgid "n3-line-chart (interactive)"
-msgstr "gráfico de linhas n3 (interativo)"
+msgstr "n3-line-chart (interativo)"
 
 #. Textbox header
 msgctxt "widget.chart.general.service"
