@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Portuguese\n"
 "Language: pt_PT\n"
-"PO-Revision-Date: 2018-01-24 06:02-0500\n"
+"PO-Revision-Date: 2018-01-24 07:12-0500\n"
 
 #. Save button in the dashboard designer
 msgctxt "designer.save"
@@ -41,7 +41,7 @@ msgstr "Widgets personalizados"
 #. Open widget gallery
 msgctxt "designer.addwidget.getmore"
 msgid "Get more..."
-msgstr ""
+msgstr "Obter mais..."
 
 #. Tooltip when hovering the "Get more" menu entry
 msgctxt "designer.addwidget.getmore.tooltip"
@@ -61,81 +61,81 @@ msgstr "Copiar/mover para..."
 #. Delete option in a widget placeholder context menu (3-dot icon)
 msgctxt "designer.contextmenu.delete"
 msgid "Delete"
-msgstr ""
+msgstr "Eliminar"
 
 #. Title of copy/move widget dialog
 msgctxt "designer.copymove.header"
 msgid "Copy/move {{widgetName}}"
-msgstr ""
+msgstr "Copiar/mover {{widgetName}}"
 
 #. Alongside the dropdown dashboard selection
 msgctxt "designer.copymove.todashboard"
 msgid "To dashboard"
-msgstr ""
+msgstr "Para painel"
 
 #. Move button
 msgctxt "designer.copymove.move"
 msgid "Move"
-msgstr ""
+msgstr "Mover"
 
 #. Copy button
 msgctxt "designer.copymove.copy"
 msgid "Copy"
-msgstr ""
+msgstr "Copiar"
 
 #. Default name of a newly created widget
 msgctxt "designer.newwidget.defaultname"
 msgid "New Widget"
-msgstr ""
+msgstr "Novo widget"
 
 msgctxt "designer.serversavefailed"
 msgid "Server save failed!"
-msgstr ""
+msgstr "Falha ao gravar no servidor!"
 
 #. Title of the dashboard settings dialog
 msgctxt "dashboard.settings.dialog.title"
 msgid "Dashboard Settings"
-msgstr ""
+msgstr "Definições do painel"
 
 #. Tab header
 msgctxt "dashboard.settings.tile"
 msgid "Menu tile"
-msgstr ""
+msgstr "Caixa do menu"
 
 #. Textbox header
 msgctxt "dashboard.settings.tile.background_image_url"
 msgid "Background Image URL"
-msgstr ""
+msgstr "URL da imagem de fundo"
 
 #. Color picker header
 msgctxt "dashboard.settings.tile.title_text_color"
 msgid "Title Text color"
-msgstr ""
+msgstr "Cor do texto do título"
 
 #. Checkbox header
 msgctxt "dashboard.settings.tile.click_feedback"
 msgid "Click feedback"
-msgstr ""
+msgstr "Reação ao clique"
 
 #. Checkbox label
 msgctxt "dashboard.settings.tile.click_feedback.description"
 msgid "Don't brighten tile on click/tap"
-msgstr ""
+msgstr "Não realçar caixa quando clicado /premido"
 
 #. Tab header
 msgctxt "dashboard.settings.advanced"
 msgid "Advanced"
-msgstr ""
+msgstr "Avançado"
 
 #. Alert display at the top
 msgctxt "dashboard.settings.advanced.warning"
 msgid "These options are currently experimental, unstable or targeted at advanced users! Use at your own risk."
-msgstr ""
+msgstr "Estas opções são experimentais, instáveis ou vocacionadas para utilizadores avançados! Usa por tua conta e risco."
 
 #. Tab header
 msgctxt "dashboard.settings.customwidgets"
 msgid "Custom widgets"
-msgstr ""
+msgstr "Widgets personalizados"
 
 #. Alert displayed at the top
 msgctxt "dashboard.settings.customwidgets.warning"
