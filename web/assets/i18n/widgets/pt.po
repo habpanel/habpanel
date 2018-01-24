@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Portuguese\n"
 "Language: pt_PT\n"
-"PO-Revision-Date: 2018-01-24 11:27-0500\n"
+"PO-Revision-Date: 2018-01-24 11:42-0500\n"
 
 #. Common term in widget settings dialogs
 msgctxt "widget.common.min"
@@ -435,7 +435,7 @@ msgstr "Tipo"
 #. Dropdown option
 msgctxt "widget.colorpicker.type.hsl"
 msgid "HSL Sliders"
-msgstr ""
+msgstr "controlo deslizante Tom/Satur./Lumin."
 
 #. Dropdown option
 msgctxt "widget.colorpicker.type.ackolor"
