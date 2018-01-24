@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Portuguese\n"
 "Language: pt_PT\n"
-"PO-Revision-Date: 2018-01-24 07:33-0500\n"
+"PO-Revision-Date: 2018-01-24 09:24-0500\n"
 
 #. Save button in the dashboard designer
 msgctxt "designer.save"
@@ -765,62 +765,62 @@ msgstr "Importar do repositório GitHub"
 #. Dialog box title (when displaying a community gallery item)
 msgctxt "widgetgallery.heading.importgallery"
 msgid "Import Gallery Item"
-msgstr ""
+msgstr "Importar item da Galeria"
 
 #. Alert banner message
 msgctxt "widgetgallery.warning.githubratelimit"
 msgid "Warning: rate limiting on the GitHub API will temporarily block further requests!"
-msgstr ""
+msgstr "Aviso: limitação na API do GitHub irá bloquear temporariamente novos pedidos!"
 
 #. Alert banner message (2nd part)
 msgctxt "widgetgallery.warning.githubratelimit.wait"
 msgid "Wait until this time and try again:"
-msgstr ""
+msgstr "Esperar até esta hora e tenta novamente:"
 
 #. Textbox placeholder
 msgctxt "widgetgallery.addressbar.hint"
 msgid "GitHub repository full name (owner/name) or URL"
-msgstr ""
+msgstr "Nome completo do repositório do GitHub (proprietário/nome) ou URL"
 
 #. Button on the right of the addressbar
 msgctxt "widgetgallery.addressbar.go"
 msgid "Go"
-msgstr ""
+msgstr "Ir"
 
 #. Suffix displayed after a number, i.e. "24 community contributions"
 msgctxt "widgetgallery.toolbar.communitycontributions"
 msgid "community&nbsp;contributions"
-msgstr ""
+msgstr "contribuições&nbsp; da comunidade"
 
 #. On the right with the sort options
 msgctxt "widgetgallery.toolbar.sortby"
 msgid "sort by:"
-msgstr ""
+msgstr "ordenar por:"
 
 #. Link to change the sort criteria - keep the non breaking spaces (&nbsp;)
 msgctxt "widgetgallery.toolbar.sortby.mostrecent"
 msgid "most&nbsp;recent"
-msgstr ""
+msgstr "mais recentes"
 
 #. Link to change the sort criteria - keep the non breaking spaces (&nbsp;)
 msgctxt "widgetgallery.toolbar.sortby.mostliked"
 msgid "most&nbsp;liked"
-msgstr ""
+msgstr "mais&nbsp; gostados"
 
 #. Link to change the sort criteria - keep the non breaking spaces (&nbsp;)
 msgctxt "widgetgallery.toolbar.sortby.mostpopular"
 msgid "most&nbsp;popular"
-msgstr ""
+msgstr "mais populares"
 
 #. Link to change the sort criteria - keep the non breaking spaces (&nbsp;)
 msgctxt "widgetgallery.toolbar.sortby.mostdiscussed"
 msgid "most&nbsp;discussed"
-msgstr ""
+msgstr "mais&nbsp; discutidos"
 
 #. Prefix before the author's name
 msgctxt "widgetgallery.details.authorby"
 msgid "by"
-msgstr ""
+msgstr "por"
 
 #. Suffix displayed after a number, i.e. "24 posts on this topic"
 msgctxt "widgetgallery.details.forumposts"
