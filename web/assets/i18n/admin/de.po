@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: German\n"
 "Language: de_DE\n"
-"PO-Revision-Date: 2018-01-22 02:23-0500\n"
+"PO-Revision-Date: 2018-01-24 04:03-0500\n"
 
 #. Save button in the dashboard designer
 msgctxt "designer.save"
@@ -130,7 +130,7 @@ msgstr "Erweitert"
 #. Alert display at the top
 msgctxt "dashboard.settings.advanced.warning"
 msgid "These options are currently experimental, unstable or targeted at advanced users! Use at your own risk."
-msgstr "Diese Optionen sind derzeit experimentell, instabil oder für fortgeschrittene Benutzer! Verwenden Sie diese auf eigene Gefahr."
+msgstr "Diese Optionen sind derzeit experimentell, instabil oder für fortgeschrittene Benutzer! Verwendung auf eigene Gefahr."
 
 #. Tab header
 msgctxt "dashboard.settings.customwidgets"
@@ -230,7 +230,7 @@ msgstr "Lokaler Speicher"
 #. Explanation of the "local storage only" option
 msgctxt "settings.storage.localstorage.hint"
 msgid "The configuration is saved for this browser and device only. It will be kept as long as you don't clean up the browser's historical data."
-msgstr "Die Konfiguration wird nur für diesen Browser und dieses Gerät gespeichert. Es wird so lange der Browser-Cache/Verlauf nicht gelöscht wird verfügbar sein."
+msgstr "Die Konfiguration wird nur für diesen Browser und dieses Gerät gespeichert. Diese ist solange verfügbar, bis der Browser-Cache/Verlauf gelöscht wird."
 
 #. Link below the "local storage" option
 msgctxt "settings.storage.localstorage.edit"
