@@ -150,6 +150,10 @@ ul {
     -ms-user-select: none;
 }
 
+.box-content:not(.editMode) {
+    position: relative;
+}
+
 .box-header-btns {
     top: 0;
     right: .5rem;
