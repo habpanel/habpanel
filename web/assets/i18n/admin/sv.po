@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Swedish\n"
 "Language: sv_SE\n"
-"PO-Revision-Date: 2018-01-23 16:32-0500\n"
+"PO-Revision-Date: 2018-01-26 06:44-0500\n"
 
 #. Save button in the dashboard designer
 msgctxt "designer.save"
@@ -175,7 +175,7 @@ msgstr ""
 #. Accordion header
 msgctxt "dashboard.settings.customwidgets.header"
 msgid "Dashboard header"
-msgstr ""
+msgstr "Sidhuvud"
 
 #. Checkbox label
 msgctxt "dashboard.settings.customwidgets.header.description"
@@ -235,7 +235,7 @@ msgstr ""
 #. Link below the "local storage" option
 msgctxt "settings.storage.localstorage.edit"
 msgid "Edit the local panel configuration (experts only)"
-msgstr ""
+msgstr "Redigera lokal panelkonfiguration (avancerat)"
 
 #. Prefix of a panel configuration before its name
 msgctxt "settings.storage.panelconfiguration"
@@ -245,7 +245,7 @@ msgstr "Panelkonfiguration:"
 #. Prefix of the last synced line, before the date
 msgctxt "settings.storage.panelconfiguration.lastsynced"
 msgid "Last synced on"
-msgstr ""
+msgstr "Senast synkroniserad"
 
 #. Displayed before the list of dashboard the panel configuration contains
 msgctxt "settings.storage.panelconfiguration.contains"
@@ -340,7 +340,7 @@ msgstr ""
 #. Checkbox
 msgctxt "settings.panel.appearance.show_clock"
 msgid "Show a clock on the header"
-msgstr ""
+msgstr "Visa en klocka i sidhuvudet"
 
 #. Textbox setting header, only displayed when the "Show a clock on the header" option is checked
 msgctxt "settings.panel.appearance.show_clock.header_format"
@@ -365,12 +365,12 @@ msgstr "Hantera"
 #. Voice support (section header) - formerly (<=2.2.0) : "Voice feedback"
 msgctxt "settings.panel.voicesupport.header"
 msgid "Voice Support"
-msgstr ""
+msgstr "Tal"
 
 #. Dropdown header - formerly (<=2.2.0) : "Voice"
 msgctxt "settings.panel.voicesupport.speech_synthesis_voice"
 msgid "Speech synthesis voice"
-msgstr ""
+msgstr "Talsyntes-röst"
 
 #. Displayed below the voice dropdown
 msgctxt "settings.panel.voicesupport.speech_synthesis_voice.hint"
@@ -450,7 +450,7 @@ msgstr "MISSLYCKADES!"
 #. Displayed in a dialog box
 msgctxt "settings.localconfig.error.nodashboardsfound"
 msgid "No dashboards found!"
-msgstr ""
+msgstr "Inga sidor hittade!"
 
 #. Title of a a dialog box
 msgctxt "settings.localconfig.parsingerror.dialog.title"
@@ -675,7 +675,7 @@ msgstr "Typ"
 #. Dropdown option
 msgctxt "customwidgets.designer.settings.config.type.string"
 msgid "String"
-msgstr ""
+msgstr "Text"
 
 #. Dropdown option
 msgctxt "customwidgets.designer.settings.config.type.number"
