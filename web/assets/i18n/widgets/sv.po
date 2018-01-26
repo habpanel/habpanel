@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Swedish\n"
 "Language: sv_SE\n"
-"PO-Revision-Date: 2018-01-26 06:33-0500\n"
+"PO-Revision-Date: 2018-01-26 06:44-0500\n"
 
 #. Common term in widget settings dialogs
 msgctxt "widget.common.min"
@@ -101,7 +101,7 @@ msgstr ""
 #. Dropdown option
 msgctxt "widget.button.general.action_type.command"
 msgid "Send a fixed command to an item"
-msgstr ""
+msgstr "Skicka ett bestämt kommando till en item"
 
 #. Dropdown option
 msgctxt "widget.button.general.action_type.toggle"
@@ -116,12 +116,12 @@ msgstr "Navigera"
 #. Textbox header
 msgctxt "widget.button.general.command"
 msgid "Command value"
-msgstr ""
+msgstr "Kommando"
 
 #. Textbox header
 msgctxt "widget.button.general.command_alt"
 msgid "Alternate command value"
-msgstr ""
+msgstr "Alternativt kommando"
 
 #. Radio buttons header
 msgctxt "widget.button.general.navigation_type"
@@ -550,12 +550,12 @@ msgstr "Bild"
 #. Description of the widget, displayed in a tooltip when hovering the option in the Add Widget dropdown menu in the designer
 msgctxt "widget.image.description"
 msgid "Displays an image (not necessarily from openHAB)"
-msgstr ""
+msgstr "Visar en bild (inte nödvändigtvis från openHAB)"
 
 #. Settings dialog title
 msgctxt "widget.image.settings.header"
 msgid "Image Settings"
-msgstr ""
+msgstr "Inställningar för bild"
 
 #. Dropdown header
 msgctxt "widget.image.image_source"
@@ -625,7 +625,7 @@ msgstr ""
 #. Checkbox header
 msgctxt "widget.knob.general.readonly"
 msgid "Read only"
-msgstr ""
+msgstr "Endast visning"
 
 #. Checkbox label
 msgctxt "widget.knob.general.readonly.description"
@@ -635,12 +635,12 @@ msgstr ""
 #. Checkboxes header
 msgctxt "widget.knob.general.centraldisplay"
 msgid "Central display"
-msgstr ""
+msgstr "Visa i mitten"
 
 #. Checkbox label
 msgctxt "widget.knob.general.centraldisplay.showvalue"
 msgid "Show value"
-msgstr ""
+msgstr "Visa värde"
 
 #. Checkbox label
 msgctxt "widget.knob.general.centraldisplay.showlabel"
@@ -745,7 +745,7 @@ msgstr "Avstånd"
 #. Tab header
 msgctxt "widget.knob.skin"
 msgid "Skin"
-msgstr ""
+msgstr "Utseende"
 
 #. Radio buttons header
 msgctxt "widget.knob.skin.type"
@@ -875,7 +875,7 @@ msgstr ""
 #. Dropdown option
 msgctxt "widget.selection.choices_source.server"
 msgid "Server-provided item options"
-msgstr ""
+msgstr "Item på servern"
 
 #. Dropdown option
 msgctxt "widget.selection.choices_source.csv"
@@ -990,12 +990,12 @@ msgstr ""
 #. Checkbox label
 msgctxt "widget.slider.advanced.hidepointer"
 msgid "Hide current value label"
-msgstr ""
+msgstr "Dölj aktuellt värde"
 
 #. Checkbox label
 msgctxt "widget.slider.advanced.showticks"
 msgid "Show ticks"
-msgstr ""
+msgstr "Visa steg"
 
 #. Checkbox label
 msgctxt "widget.slider.advanced.showticksvalues"
@@ -1035,7 +1035,7 @@ msgstr ""
 #. Header
 msgctxt "widget.switch.display"
 msgid "Display options"
-msgstr ""
+msgstr "Visningsalternativ"
 
 #. Checkbox label (very small)
 msgctxt "widget.switch.display.hidelabel"
@@ -1105,22 +1105,22 @@ msgstr "Hjälp från communityn"
 #. Menu entry (top-right above the code editor)
 msgctxt "widget.template.knowledgebase"
 msgid "Knowledge base"
-msgstr ""
+msgstr "Kunskapsdatabas"
 
 #. Display name of the widget (appears in the Add Widget dropdown menu in the designer)
 msgctxt "widget.timeline"
 msgid "Timeline"
-msgstr ""
+msgstr "Tidslinje"
 
 #. Description of the widget, displayed in a tooltip when hovering the option in the Add Widget dropdown menu in the designer
 msgctxt "widget.timeline.description"
 msgid "Displays a timeline of several items"
-msgstr ""
+msgstr "Visar en tidslinje för en eller flera items"
 
 #. Settings dialog title
 msgctxt "widget.timeline.settings.header"
 msgid "Timeline Settings"
-msgstr ""
+msgstr "Inställningar för tidslinje"
 
 #. Textbox header
 msgctxt "widget.timeline.general.service"
@@ -1130,7 +1130,7 @@ msgstr ""
 #. Textbox placeholder
 msgctxt "widget.timeline.general.service.hint"
 msgid "rrd4j, mysql, influxdb... Leave blank for default"
-msgstr ""
+msgstr "rrd4j, mysql, influxdb... Lämna tomt för standard"
 
 #. Dropdown placeholder
 msgctxt "widget.timeline.general.period"
@@ -1145,7 +1145,7 @@ msgstr "Färger"
 #. Accordion header (followed by the state value)
 msgctxt "widget.timeline.colors.state"
 msgid "State"
-msgstr ""
+msgstr "Värde"
 
 #. Tab header
 msgctxt "widget.timeline.series"
