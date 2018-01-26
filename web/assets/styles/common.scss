@@ -47,7 +47,7 @@ h1 {
     font-size: $font-size-base;
     text-align: center;
     margin-left: 80px;
-    margin-right: 80px;
+    margin-right: 80px; 
     //line-height: 1.5;
     //padding-top: 6px;
     position: absolute;
@@ -228,4 +228,22 @@ input {
     visibility: hidden;
     width: 0;
     padding-right: 0;
+}
+
+.widget-container.ng-enter {
+    transition: 2s linear all;
+    opacity: 0;
+}
+
+.widget-container.ng-enter-active {
+    opacity: 1;
+}
+
+.widget-container.ng-leave {
+    transition: 2s linear all;
+    opacity: 1;
+}
+
+.widget-container.ng-leave-active {
+    opacity: 0;
 }

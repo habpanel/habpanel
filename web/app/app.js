@@ -18,7 +18,8 @@
         'ngFileSaver',
         'snap',
         'tmh.dynamicLocale',
-        'pascalprecht.translate'
+        'pascalprecht.translate',
+        'ngAnimate'
     ])
     .config(['$routeProvider', 'localStorageServiceProvider', 'tmhDynamicLocaleProvider', '$translateProvider', '$translatePartialLoaderProvider', function($routeProvider, localStorageServiceProvider, tmhDynamicLocaleProvider, $translateProvider, $translatePartialLoaderProvider) {
         localStorageServiceProvider.setStorageType('localStorage');

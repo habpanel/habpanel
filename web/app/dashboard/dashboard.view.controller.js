@@ -2,13 +2,14 @@
         .module('app')
         .controller('DashboardViewCtrl', DashboardViewController);
 
-  DashboardViewController.$inject = ['$scope', '$location', '$rootScope', '$routeParams', '$timeout', 'dashboard', 'PersistenceService', 'OHService', 'Fullscreen', 'snapRemote', 'SpeechService', 'TranslationService'];
-  function DashboardViewController($scope, $location, $rootScope, $routeParams, $timeout, dashboard, PersistenceService, OHService, Fullscreen, snapRemote, SpeechService, TranslationService) {
+  DashboardViewController.$inject = ['$scope', '$location', '$rootScope', '$routeParams', '$timeout', 'dashboard', 'PersistenceService', 'OHService', 'Fullscreen', 'snapRemote', 'SpeechService', 'TranslationService', 'DashboardSlideshowService'];
+  function DashboardViewController($scope, $location, $rootScope, $routeParams, $timeout, dashboard, PersistenceService, OHService, Fullscreen, snapRemote, SpeechService, TranslationService, DashboardSlideshowService) {
     var vm = this;
     vm.dashboard = dashboard;
     vm.speakTooltip = TranslationService.translate('dashboard.toolbar.speak', 'Speak');
     vm.refreshTooltip = TranslationService.translate('dashboard.toolbar.refresh', 'Refresh');
     vm.fullscreenTooltip = TranslationService.translate('dashboard.toolbar.fullscreen', 'Fullscreen');
+    vm.slideshowToolTip = TranslationService.translate('dashboard.toolbar.slideshow', 'Slideshow');
     
     vm.gridsterOptions = {
         margins: (vm.dashboard.widget_margin) ?
@@ -73,6 +74,11 @@
         $location.url("/edit/" + dashboard.id);
     };
 
+    vm.startSlideshow = function() {
+        DashboardSlideshowService.start(true);
+    }
+
+    vm.isSlideshowRunning = DashboardSlideshowService.isRunning;
 
     // Speech recognition
     vm.isListening = false;

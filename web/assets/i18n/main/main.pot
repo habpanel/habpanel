@@ -204,6 +204,11 @@ msgctxt "dashboard.toolbar.fullscreen"
 msgid "Fullscreen"
 msgstr ""
 
+#. Dashboard toolbar Slideshow button tooltip
+msgctxt "dashboard.toolbar.slideshow"
+msgid "Slideshow"
+msgstr ""
+
 #. Displayed at the bottom after clicking on the Speak button
 msgctxt "dashboard.speaknow"
 msgid "Speak now..."

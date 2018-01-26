@@ -78,6 +78,7 @@
         <div class="input-group">
             <label translate-keep-content translate="settings.panel.appearance.hide_toolbar_buttons">Hide toolbar buttons:</label> &nbsp;
             <div style="display:inline-block">
+                <input type="checkbox" ng-model="settings.hide_slideshow_button" ng-change="vm.saveOptions()" id="hide_slideshow_button" /><label for="hide_slideshow_button">&nbsp;<span translate-keep-content translate="dashboard.toolbar.slideshow">Slideshow</span></label> &nbsp;
                 <input type="checkbox" ng-model="settings.hide_speak_button" ng-change="vm.saveOptions()" id="hide_speak_button" /><label for="hide_speak_button">&nbsp;<span translate-keep-content translate="dashboard.toolbar.speak">Speak</span></label> &nbsp;
                 <input type="checkbox" ng-model="settings.hide_refresh_button" ng-change="vm.saveOptions()" id="hide_refresh_button" /><label for="hide_refresh_button">&nbsp;<span translate-keep-content translate="dashboard.toolbar.refresh">Refresh</span></label> &nbsp;
                 <input type="checkbox" ng-model="settings.hide_fullscreen_button" ng-change="vm.saveOptions()" id="hide_fullscreen_button" /><label for="hide_fullscreen_button">&nbsp;<span translate-keep-content translate="dashboard.toolbar.fullscreen">Fullscreen</span></label>

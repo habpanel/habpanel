@@ -2,7 +2,6 @@
     <a class="btn pull-left" title="Menu" snap-toggle="left">
         <i class="glyphicon glyphicon-menu-hamburger"></i>
     </a>
-
     <a class="btn pull-right" ng-click="vm.goFullscreen()" title="{{vm.fullscreenTooltip}}" ng-if="!settings.hide_fullscreen_button && !vm.dashboard.header.use_custom_widget">
         <i class="glyphicon glyphicon-resize-full"></i>
     </a>
@@ -14,6 +13,9 @@
         ng-click="vm.isListening ? vm.stopListening() : vm.listen()" 
         title="{{vm.speakTooltip}}">
         <i class="glyphicon" ng-class="vm.isListening ? 'glyphicon-stop' : 'glyphicon-comment'"></i>
+    </a>
+    <a class="btn pull-right" ng-click="vm.startSlideshow()" title="{{vm.startSlideshowTooltip}}" ng-if="!settings.hide_slideshow_button && !vm.dashboard.header.use_custom_widget">
+        <i class="glyphicon glyphicon-play" ng-class="{'text-success':vm.isSlideshowRunning()}"></i>
     </a>
     <h2 class="dashboard-title" ng-if="!vm.dashboard.header.use_custom_widget">
         <small class="header-clock" ng-if="settings.show_header_clock"><ds-widget-clock show-digital digital-format="settings.header_clock_format || 'shortTime'"></ds-widget-clock></small>
@@ -40,7 +42,7 @@
     tooltip-placement="top">
     <i class="glyphicon" ng-class="vm.isListening ? 'glyphicon-stop' : 'glyphicon-comment'"></i>
 </a>
-<div class="scrollable" ng-show="vm.ready" gridster="vm.gridsterOptions">
+<div class="scrollable widget-container" ng-show="vm.ready" gridster="vm.gridsterOptions">
     <ul>
         <li gridster-item="widget" ng-repeat="widget in vm.dashboard.widgets">
             <div class="box" ng-style="{'font-size': vm.dashboard.font_scale ? vm.dashboard.font_scale + '%' : undefined }">
