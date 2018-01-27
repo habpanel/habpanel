@@ -145,7 +145,7 @@ Apart from the storage configuration discussed above, the settings screen contai
 | Additional stylesheet | Reference the relative URL of an additional CSS file which will be included and can be used to override the styles defined by the theme. For additional information on how you can customize HABPanel's styles, go to: [HABPanel Development & Advanced Features: Start Here!](https://community.openhab.org/t/habpanel-development-advanced-features-start-here/30755/1)
 | Drawer heading image | Reference the URL of an image (expected width: 265 pixels) which will replace the header in the side drawer
 | Hide the drawer's footer | Check to remove the bottom black part of the side drawer containing the date & time
-| Hide toolbar buttons (slideshow/speak/refresh/fullscreen) | Check those boxes to hide the corresponding button in the default dashboard header top-right corner
+| Hide toolbar buttons (screensaver/speak/refresh/fullscreen) | Check those boxes to hide the corresponding button in the default dashboard header top-right corner
 | Show a clock in the header | If checked, a clock will be displayed in the main menu and the dashboards
 | Header clock format (shown if "Show a clock in the header" is checked) | Use an [AngularJS' date filter format string](https://docs.angularjs.org/api/ng/filter/date) to customize the clock format in the header. The default is `HH:mm`
 | Prevent scrolling (when not editing) | When enabled, it is impossible to scroll the dashboard on a tablet (and it prevents the "elastic" bouncing effect on iOS/Safari)

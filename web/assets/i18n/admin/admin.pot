@@ -365,6 +365,21 @@ msgctxt "settings.panel.customwidgets.manage"
 msgid "Manage"
 msgstr ""
 
+#. Screensaver settings
+msgctxt "settings.panel.screensaver"
+msgid "ScreenSaver"
+msgstr ""
+
+#. Screensaver settings enable
+msgctxt "settings.panel.screensaver.enable"
+msgid "Enable"
+msgstr ""
+
+#. Screensaver Settings Button
+msgctxt "settings.panel.screensaver.settings"
+msgid "Settings"
+msgstr ""
+
 #. Voice support (section header) - formerly (<=2.2.0) : "Voice feedback"
 msgctxt "settings.panel.voicesupport.header"
 msgid "Voice Support"
@@ -939,3 +954,9 @@ msgctxt "widgetgallery.widgetsdetected.dialog.message"
 msgid "Warning: please confirm you wish to update <nbexisting> existing widgets, overwriting any eventual changes made locally! If unsure, cancel and click Show details to review the list of affected widgets."
 msgstr ""
 
+# DASHBOARD SCREENSAVER SETTINGS
+
+#. Screensaver Settings Header
+msgctxt "screensaver.settings.header"
+msgid "Dashboard screensaver/Screensaver"
+msgstr ""

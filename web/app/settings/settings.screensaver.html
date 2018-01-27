@@ -1,0 +1,127 @@
+<style>
+    .screensaver-settings {
+        font-size: 16px;
+    }
+
+    .flex-outer,
+    .flex-inner {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .flex-outer {
+        max-width: 800px;
+    }
+
+    .flex-outer li,
+    .flex-inner {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .flex-inner {
+        padding: 0 8px;
+        justify-content: space-between;
+    }
+
+    .flex-outer>li:not(:last-child) {
+        margin-bottom: 20px;
+    }
+
+    .flex-outer li label,
+    .flex-outer li p {
+        padding: 8px;
+        font-weight: 300;
+        letter-spacing: .09em;
+    }
+
+    .flex-outer>li>label,
+    .flex-outer li p {
+        flex: 1 0 30%;
+        max-width: 220px;
+    }
+
+    .flex-outer>li>label+*,
+    .flex-inner {
+        flex: 1 0 220px;
+    }
+
+    .flex-outer li p {
+        margin: 0;
+    }
+
+    .flex-outer li input:not([type='checkbox']),
+    .flex-outer li textarea {
+        padding: 15px;
+        border: none;
+    }
+
+    .flex-outer li button {
+        margin-left: auto;
+        padding: 8px 16px;
+        border: none;
+        background: #333;
+        color: #f2f2f2;
+        text-transform: uppercase;
+        letter-spacing: .09em;
+        border-radius: 2px;
+    }
+
+    .flex-inner li {
+        width: 100px;
+    }
+
+    .screensaver-settings div.cancelsave {
+        margin-top: 20px;
+    }
+</style>
+<section class="screensaver-settings">
+    <div class="header">
+        <a class="btn pull-left" title="Menu" snap-toggle="left">
+            <i class="glyphicon glyphicon-menu-hamburger"></i>
+        </a>
+        <h2 translate-keep-content translate="screensaver.settings.header">Dashboard screensaver/Screensaver</h2>
+    </div>
+
+    <div uib-alert ng-if="vm.updatedMessage" type="info" close="vm.updatedMessage = null">{{vm.updatedMessage}}</div>
+    <div uib-alert ng-if="vm.updateErrorMessage" type="danger" close="vm.updateErrorMessage = null">{{vm.updateErrorMessage}}</div>
+
+    <form name="_ssSettings">
+        <div class="scrollable box">
+            <ul class="flex-outer">
+                <li>
+                    <label for="ss_idleTimeout">Idle Timeout: </label>
+
+                    <input type="number" name="idleTimeout" ng-model="config.idleTimeoutSec">
+                    <span>
+                        <em>Seconds from being idle until screensaver kicks in</em>
+                    </span>
+
+                </li>
+
+                <li>
+                    <label for="ss_dashboardTimeout">Slideshow Interval: </label>
+
+                    <input type="number" name="dashboardTimeout" id="ss_dashboardTimeout" ng-model="config.slideshowIntervalSec">
+                    <span>
+                        <em>Seconds until slideshow switches to the next dashboard</em>
+                    </span>
+
+                </li>
+
+                <li>
+                    <label for="ss_dashboardTimeout">Events to Watch: </label>
+                    <span>
+                        {{config.eventsToWatch}}
+                    </span>
+                </li>
+            </ul>
+
+            <div class="cancelsave pull-right">
+                <button class="btn btn-warn" ng-click="cancel()">Cancel</button>
+                <button class="btn btn-success" ng-click="save()">Save</button>
+            </div>
+        </div>
+    </form>
+</section>

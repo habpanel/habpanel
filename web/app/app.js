@@ -181,6 +181,20 @@
                     }]
                 }
             })
+            .when('/settings/screensaver', {
+                templateUrl: 'app/settings/settings.screensaver.html',
+                controller: 'ScreensaverSettingsCtrl',
+                resolve: {
+                    dashboards: ['PersistenceService', '$q', function (persistenceService, $q) {
+                        var dashboards = persistenceService.getDashboards(true);
+                        if (persistenceService.isEditingLocked()) return $q.reject("Editing is locked");
+                        return dashboards;
+                    }],
+                    translations: ['TranslationService', function (TranslationService) {
+                        return TranslationService.enterPart('admin');
+                    }]
+                }
+            })            
             .otherwise({
                 redirectTo: '/'
             });

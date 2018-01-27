@@ -14,8 +14,8 @@
         title="{{vm.speakTooltip}}">
         <i class="glyphicon" ng-class="vm.isListening ? 'glyphicon-stop' : 'glyphicon-comment'"></i>
     </a>
-    <a class="btn pull-right" ng-click="vm.startSlideshow()" title="{{vm.startSlideshowTooltip}}" ng-if="!settings.hide_slideshow_button && !vm.dashboard.header.use_custom_widget">
-        <i class="glyphicon glyphicon-play" ng-class="{'text-success':vm.isSlideshowRunning()}"></i>
+    <a class="btn pull-right" ng-click="vm.startScreensaver()" title="{{vm.startscreensaverToolTip}}" ng-if="!settings.hide_screensaver_button && !vm.dashboard.header.use_custom_widget">
+        <i class="glyphicon glyphicon-play" ng-class="{'text-success':vm.isScreensaverRunning()}"></i>
     </a>
     <h2 class="dashboard-title" ng-if="!vm.dashboard.header.use_custom_widget">
         <small class="header-clock" ng-if="settings.show_header_clock"><ds-widget-clock show-digital digital-format="settings.header_clock_format || 'shortTime'"></ds-widget-clock></small>

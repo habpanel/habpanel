@@ -3,12 +3,12 @@
 
     angular
         .module('app.services')
-        .service('DashboardSlideshowService', DashboardSlideshowService)
-        .run(['DashboardSlideshowService', (DashboardSlideshowService) => {
-            DashboardSlideshowService.init()
+        .service('ScreensaverService', ScreensaverService)
+        .run(['ScreensaverService', (ScreensaverService) => {
+            ScreensaverService.init()
         }]);
 
-    DashboardSlideshowService.$inject = [
+    ScreensaverService.$inject = [
         'PersistenceService',
         '$location',
         '$interval',
@@ -20,7 +20,7 @@
         '$document'
     ];
 
-    function DashboardSlideshowService(
+    function ScreensaverService(
         PersistenceService,
         $location,
         $interval,
@@ -39,16 +39,16 @@
         }
 
         //TODO: REMOVE
-        localStorageService.set('dashboardSlideshowConfig', {
+        localStorageService.set('screensaverConfig', {
             idleTimeoutSec: 5,
             slideshowIntervalSec: 5,
             isEnabled: false,
-            eventsToWatch: 'keydown DOMMouseScroll mousewheel mousedown touchstart touchmove'
+            eventsToWatch: 'keydown mousewheel mousedown touchstart touchmove'
         });
 
         let _isIdle = false;
         let _isRunning = false;
-        let _config = localStorageService.get('dashboardSlideshowConfig');
+        let _config = localStorageService.get('screensaverConfig');
         let _slideshowTimer = null;
         let _idleTimer = null;
         let _dashboards = null;
@@ -83,7 +83,7 @@
             _dashboards = PersistenceService.getDashboards();
             let currentDbIndex = _dashboards.findIndex(db => db.id == $route.current.params.id);
             currentDbIndex = currentDbIndex < 0 ? 0 : currentDbIndex;
-            $log.log(`Dashboard slideshow started in dashboard "${_dashboards[currentDbIndex].id}"`);
+            $log.log(`Screensaver started in dashboard "${_dashboards[currentDbIndex].id}"`);
 
             let nextDashboard = () => {
                 _isRunning = true;
@@ -102,7 +102,7 @@
             $interval.cancel(_slideshowTimer);
             _slideshowTimer = null;
             _isRunning = false;
-            $log.log(`Dashboard slideshow stopped.`);
+            $log.log(`Screensaver stopped.`);
 
             if (_config.isEnabled) {
                 idleTimerStart();
@@ -130,6 +130,7 @@
         this.start = start;
         this.stop = stop;
         this.isRunning = isRunning;
+        this.config = _config;
 
         return this;
     }
