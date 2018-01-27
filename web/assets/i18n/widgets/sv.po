@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Swedish\n"
 "Language: sv_SE\n"
-"PO-Revision-Date: 2018-01-26 06:44-0500\n"
+"PO-Revision-Date: 2018-01-27 11:03-0500\n"
 
 #. Common term in widget settings dialogs
 msgctxt "widget.common.min"
@@ -131,7 +131,7 @@ msgstr "Typ av navigering"
 #. Radio button label
 msgctxt "widget.button.general.navigation_type.dashboard"
 msgid "Dashboard"
-msgstr "Sida"
+msgstr "Vy"
 
 #. Radio buttons header
 msgctxt "widget.button.general.navigation_target"
