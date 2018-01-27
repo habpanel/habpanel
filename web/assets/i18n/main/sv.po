@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Swedish\n"
 "Language: sv_SE\n"
-"PO-Revision-Date: 2018-01-26 06:33-0500\n"
+"PO-Revision-Date: 2018-01-27 11:03-0500\n"
 
 #. Common term
 msgctxt "OK"
@@ -121,12 +121,12 @@ msgstr "Klicka här för att börja."
 #. Appears at the top of the screen when in edit mode and no dashboards are present
 msgctxt "tutorial.editmode"
 msgid "You're now in edit mode, where you can design dashboards."
-msgstr "Du är nu i redigeringsläge, där du kan designa dina sidor."
+msgstr "Du är nu i redigeringsläge, där du kan designa dina vyer."
 
 #. Hint for the bottom left link when in edit mode and no dashboards are present - please use the Chrome developer tools and check with phone resolutions: iPhone 6, Nexus 5 etc.!
 msgctxt "tutorial.createfirstdashboard"
 msgid "Click or tap here to create your first dashboard..."
-msgstr "Klicka här för att skapa din första sida..."
+msgstr "Klicka här för att skapa din första vy..."
 
 #. Hint for the bottom right link when in edit mode and no dashboards are present - please use the Chrome developer tools and check with phone resolutions: iPhone 6, Nexus 5 etc.!
 msgctxt "tutorial.importpanel"
@@ -136,7 +136,7 @@ msgstr "...eller här för att återställa en panel från servern"
 #. Hint in the bottom left part of the page when in edit mode and only one dashboard is present - please use the Chrome developer tools and check with phone resolutions: iPhone 6, Nexus 5 etc.!
 msgctxt "tutorial.enterdesigner"
 msgid "Click or tap inside the tile to enter the dashboard designer."
-msgstr "Klicka i rutan för att öppna sidredigeraren."
+msgstr "Klicka i rutan för att öppna vyredigeraren."
 
 #. Hint in the bottom center part of the page above the column number slider when in edit mode and only one dashboard is present - please use the Chrome developer tools and check with phone resolutions: iPhone 6, Nexus 5 etc.!
 msgctxt "tutorial.adjustnbcolumns"
@@ -161,7 +161,7 @@ msgstr "Vänligen gå till Paper UI och lås upp redigering för att använda HA
 #. Label of the bottom-left link in edit mode - please also test with phone resolutions!
 msgctxt "menu.addnewdashboard"
 msgid "Add new dashboard"
-msgstr "Lägg till ny sida"
+msgstr "Lägg till ny vy"
 
 #. Label of the bottom-right link in edit mode - please also test with phone resolutions!
 msgctxt "menu.panelsettings"
@@ -171,22 +171,22 @@ msgstr "Panelinställningar"
 #. New dashboard dialog box title
 msgctxt "menu.dialog.newdashboard.title"
 msgid "New dashboard"
-msgstr "Ny sida"
+msgstr "Ny vy"
 
 #. New dashboard dialog box message
 msgctxt "menu.dialog.newdashboard.message"
 msgid "Name of your new dashboard:"
-msgstr "Namn på din nya sida:"
+msgstr "Namn på din nya vy:"
 
 #. Remove dashboard dialog box title
 msgctxt "menu.dialog.removedashboard.title"
 msgid "Remove dashboard"
-msgstr "Radera sida"
+msgstr "Radera vy"
 
 #. Remove dashboard dialog box message, followed by the dashboard id
 msgctxt "menu.dialog.removedashboard.message"
 msgid "Please confirm you want to delete this dashboard: "
-msgstr "Bekräfta borttagning av sida: "
+msgstr "Bekräfta borttagning av vy: "
 
 #. Dashboard toolbar Speak button tooltip
 msgctxt "dashboard.toolbar.speak"
