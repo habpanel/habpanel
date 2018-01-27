@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Swedish\n"
 "Language: sv_SE\n"
-"PO-Revision-Date: 2018-01-26 06:44-0500\n"
+"PO-Revision-Date: 2018-01-27 10:52-0500\n"
 
 #. Save button in the dashboard designer
 msgctxt "designer.save"
@@ -21,7 +21,7 @@ msgstr "Spara"
 #. Run button in the dashboard designer
 msgctxt "designer.run"
 msgid "Run"
-msgstr ""
+msgstr "Kör"
 
 #. Add widget button in the dashboard designer
 msgctxt "designer.addwidget"
@@ -31,7 +31,7 @@ msgstr "Lägg till widget"
 #. Tutorial text with arrow when on an empty dashboard
 msgctxt "designer.addwidget.hint"
 msgid "Add some widgets"
-msgstr ""
+msgstr "Lägg till några widgets"
 
 #. Header of the custom widget section (beware, it might overlap the cogs icon on the right)
 msgctxt "designer.addwidget.customwidgets"
