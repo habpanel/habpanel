@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Swedish\n"
 "Language: sv_SE\n"
-"PO-Revision-Date: 2018-01-27 10:52-0500\n"
+"PO-Revision-Date: 2018-01-27 11:03-0500\n"
 
 #. Save button in the dashboard designer
 msgctxt "designer.save"
@@ -450,7 +450,7 @@ msgstr "MISSLYCKADES!"
 #. Displayed in a dialog box
 msgctxt "settings.localconfig.error.nodashboardsfound"
 msgid "No dashboards found!"
-msgstr "Inga sidor hittade!"
+msgstr "Inga vyer hittade!"
 
 #. Title of a a dialog box
 msgctxt "settings.localconfig.parsingerror.dialog.title"
