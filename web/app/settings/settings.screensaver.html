@@ -13,7 +13,7 @@
         <span translate-keep-content translate="screensaver.settings.error.missingdashboard">You need at least 1 dashboard to enable screensaver.</span>
     </div>
 
-    <form name="_form" ng-if="dashboards && dashboards.length > 0">
+    <form name="_form.mainForm" ng-if="dashboards && dashboards.length > 0">
         <div class="scrollable box modal-body">
             <uib-tabset>
                 <uib-tab heading="General">
@@ -119,15 +119,15 @@
                                     <option translate-keep-content translate="screensaver.settings.common.gotodashboard" value='gotodashboard'>Go to dashboard</option>
                                 </select>
                                 <span class='helpinfo' ng-click='onStopTypeHelp = !onStopTypeHelp'>
-                                        <em>
-                                            <span translate-keep-content translate="screensaver.settings.onstop.info">What to do when screensaver starts</span>
-                                            <span class='text-info glyphicon glyphicon-question-sign'></span>
-                                        </em>
-                                        <ul ng-if="onStopTypeHelp">
-                                            <li translate-keep-content translate="screensaver.settings.onstoptype.help.line1">Stop - simply stops screensaver wherever it may be.</li>
-                                            <li translate-keep-content translate="screensaver.settings.onstoptype.help.line2">Go to dashboard - activates the selected dashboard.</li>
-                                        </ul>
-                                    </span>
+                                    <em>
+                                        <span translate-keep-content translate="screensaver.settings.onstop.info">What to do when screensaver starts</span>
+                                        <span class='text-info glyphicon glyphicon-question-sign'></span>
+                                    </em>
+                                    <ul ng-if="onStopTypeHelp">
+                                        <li translate-keep-content translate="screensaver.settings.onstoptype.help.line1">Stop - simply stops screensaver wherever it may be.</li>
+                                        <li translate-keep-content translate="screensaver.settings.onstoptype.help.line2">Go to dashboard - activates the selected dashboard.</li>
+                                    </ul>
+                                </span>
                             </div>
                         </li>
                         <section ng-if="config.onStop.type!=='stop'">
@@ -145,8 +145,11 @@
             </uib-tabset>
 
             <div class="cancelsave pull-right">
-                <button class="btn btn-lg btn-danger" ng-click="cancel()">{{ _form.$pristine ? 'Back' : 'Cancel'}}</button>
-                <button class="btn btn-lg btn-success" ng-click="save()" ng-disabled="_form.$invalid " translate-keep-content translate="screensaver.settings.XXXXXX">Save</button>
+                <button class="btn btn-lg btn-danger" ng-click="cancel()">
+                    <span ng-if="_form.mainForm.$pristine" translate-keep-content translate="screensaver.settings.button.back">Back</span>
+                    <span ng-if="_form.mainForm.$dirty" translate-keep-content translate="screensaver.settings.button.cancel">Cancel</span>
+                </button>
+                <button class="btn btn-lg btn-success" ng-click="save()" ng-disabled="_form.mainForm.$invalid " translate-keep-content translate="screensaver.settings.button.save">Save</button>
             </div>
         </div>
     </form>

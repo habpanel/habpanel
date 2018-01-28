@@ -26,21 +26,20 @@
         $location,
         prompt
     ) {
-
-        $scope._form = {};
+        $scope._form = { mainForm: {} };
         $scope.dashboards = angular.copy(dashboards);
         $scope.config = angular.copy(ScreensaverService.config);
         $scope.save = () => {
             if (ScreensaverService.saveSettings($scope.config)) {
                 $scope.updatedMessage = TranslationService.translate("settings.screensaver.update.success", "Screensaver settings updated.");
-                $scope._form.$setPristine();
+                $scope._form.mainForm.$setPristine();
             }
             else
                 $scope.updateErrorMessage = TranslationService.translate("settings.screensaver.update.fail", "Screensaver settings update failed.");
         }
 
         $scope.cancel = () => {
-            if (!$scope._form.$pristine) {
+            if (!$scope._form.mainForm.$pristine) {
                 prompt({
                     title: TranslationService.translate("settings.screensaver.cancelconfirm.title", "Cancel Changes?"),
                     message: TranslationService.translate("settings.screensaver.cancelconfirm.message", "You have unsaved changes. Clicking OK will revert to previous settings.")

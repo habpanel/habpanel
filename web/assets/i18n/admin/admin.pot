@@ -1076,6 +1076,21 @@ msgctxt "screensaver.settings.dialog.cancelconfirm.message"
 msgid "You have unsaved changes. Clicking OK will revert to previous settings."
 msgstr ""
 
+#. Screensaver Settings Save Button Text
+msgctxt "screensaver.settings.button.save"
+msgid "Save"
+msgstr ""
+
+#. Screensaver Settings Cancel Button Text
+msgctxt "screensaver.settings.button.cancel"
+msgid "Cancel"
+msgstr ""
+
+#. Screensaver Settings Back Button Text
+msgctxt "screensaver.settings.button.back"
+msgid "Back"
+msgstr ""
+
 #. Screensaver Settings Update Success
 msgctxt "settings.screensaver.update.success"
 msgid "Screensaver settings updated."
