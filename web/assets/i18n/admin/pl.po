@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Polish\n"
 "Language: pl_PL\n"
-"PO-Revision-Date: 2018-01-28 04:02-0500\n"
+"PO-Revision-Date: 2018-01-28 04:11-0500\n"
 
 #. Save button in the dashboard designer
 msgctxt "designer.save"
@@ -230,7 +230,7 @@ msgstr "Magazyn lokalny"
 #. Explanation of the "local storage only" option
 msgctxt "settings.storage.localstorage.hint"
 msgid "The configuration is saved for this browser and device only. It will be kept as long as you don't clean up the browser's historical data."
-msgstr "Konfiguracja jest zapisywana tylko dla tej przeglądarki, na tym urządzenia. Będzie to przechowywane dopóki nie zostanie wyczyszczona historia danych przeglądarki."
+msgstr "Konfiguracja jest zapisywana tylko dla tej przeglądarki, na tym urządzeniu. Gdy zostanie wyczyszczona historia danych przeglądarki, konfiguracja zniknie."
 
 #. Link below the "local storage" option
 msgctxt "settings.storage.localstorage.edit"
