@@ -63,6 +63,7 @@
                     additionalEventsToWatch: [],
                     onStart: {
                         type: 'slideshow',
+                        dashboardsExcluded: [],
                         dashboards: (() => {
                             _dashboards = PersistenceService.getDashboards();
                             let dbs = [];

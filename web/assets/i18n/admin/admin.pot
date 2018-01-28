@@ -1078,7 +1078,7 @@ msgstr ""
 
 #. Screensaver Settings Error Number of Dashboard
 msgctxt "screensaver.settings.error.atleast2dashboard"
-msgid "You need at least 2 configured dashboards to enable slideshow."
+msgid "You need at least 2 configured dashboards in the rotation settings to enable slideshow."
 msgstr ""
 
 #. Screensaver Settings Cancel Dialog Title

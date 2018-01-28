@@ -13,7 +13,8 @@
         'ScreensaverService',
         'dashboards',
         '$location',
-        'prompt'
+        'prompt',
+        '$route'
     ];
 
     function ScreensaverSettingsCtrl(
@@ -24,30 +25,57 @@
         ScreensaverService,
         dashboards,
         $location,
-        prompt
+        prompt,
+        $route
     ) {
 
         $scope._form = { mainForm: {} };
         $scope.dashboards = angular.copy(dashboards);
         $scope.config = angular.copy(ScreensaverService.config);
-        $scope.config.onStart.dashboardsExcluded = $scope.config.onStart.dashboardsExcluded || [];
 
         $scope.translations = {
             reorder: TranslationService.translate("screensaver.settings.common.reorder", "Reorder"),
             updateSuccess: TranslationService.translate("settings.screensaver.update.success", "Screensaver settings updated."),
             updateFail: TranslationService.translate("settings.screensaver.update.fail", "Screensaver settings update failed."),
-            atleast2Db: TranslationService.translate("screensaver.settings.error.atleast2dashboard", "You need at least 2 configured dashboard to enable slideshow."),
+            atleast2Db: TranslationService.translate("screensaver.settings.error.atleast2dashboard", "You need at least 2 configured dashboards in the rotation settings to enable slideshow."),
             cancelconfirmTitle: TranslationService.translate("settings.screensaver.cancelconfirm.title", "Cancel Changes?"),
             cancelconfirmMsg: TranslationService.translate("settings.screensaver.cancelconfirm.message", "You have unsaved changes. Clicking OK will revert to previous settings.")
         }
 
+        let errorMessage = (m) => {
+            $scope.errorMessage = m;
+        }
+
+        let infoMessage = (m) => {
+            $scope.infoMessage = m;
+        }
+
+        let getErrors = () => {
+            $scope._form.mainForm.$setValidity('dashboards', $scope.config.onStart.dashboards.length > 1);
+            if ($scope._form.mainForm.$error['dashboards'])
+                return $scope.translations.atleast2Db
+
+            if (Object.keys($scope._form.mainForm.$error).length)
+                return $scope.translations.updateFail;
+
+            return null;
+        }
+
         $scope.save = () => {
+            let error = getErrors();
+            if (error) {
+                errorMessage(error);
+                return;
+            }
+
             if (ScreensaverService.saveSettings($scope.config)) {
-                $scope.updatedMessage = $scope.translations.updateSuccess;
+                infoMessage($scope.translations.updateSuccess);
                 $scope._form.mainForm.$setPristine();
             }
-            else
-                $scope.updateErrorMessage = $scope.translations.updateFail;
+            else {
+                errorMessage($scope.translations.updateFail);
+            }
+
         }
 
         $scope.cancel = () => {
@@ -55,7 +83,9 @@
                 prompt({
                     title: $scope.translations.cancelconfirmTitle,
                     message: $scope.translations.cancelconfirmMsg
-                }).then(() => { $location.url('/settings'); });
+                }).then(() => {
+                    $route.reload();
+                });
                 return;
             }
 
@@ -63,12 +93,13 @@
         }
 
         $scope.sortableOptions = {
-            placeholder: "sortable-placeholder",
             connectWith: ".db-sortable",
             update: () => {
                 $scope._form.mainForm.$setDirty();
-                $scope._form.mainForm.$setValidity('dashboards', $scope.config.onStart.dashboards.length > 0);
-                $scope.updateErrorMessage = $scope.translations.atleast2Db
+                let error = getErrors();
+                if (error) {
+                    errorMessage(error);
+                }
             }
         }
 

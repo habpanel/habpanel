@@ -6,15 +6,17 @@
         <h2 translate-keep-content translate="screensaver.settings.header">Dashboard screensaver/Screensaver</h2>
     </div>
 
-    <div uib-alert ng-if="updatedMessage" type="info" close="updatedMessage = null">{{updatedMessage}}</div>
-    <div uib-alert ng-if="updateErrorMessage" type="danger" close="updateErrorMessage = null">{{updateErrorMessage}}</div>
+    <div uib-alert ng-if="infoMessage" type="info" close="infoMessage = null">{{infoMessage}}</div>
+    <div uib-alert ng-if="errorMessage" type="danger" close="errorMessage = null">{{errorMessage}}</div>
 
-    <div class="alert alert-warning" ng-if="!(dashboards && dashboards.length > 0)">
-        <span translate-keep-content translate="screensaver.settings.error.missingdashboard">You need at least 1 dashboard to enable screensaver.</span>
-    </div>
-
-    <form name="_form.mainForm" ng-if="dashboards && dashboards.length > 0">
-        <div class="scrollable box modal-body">
+    <form name="_form.mainForm">
+        <div ng-if="!(dashboards && dashboards.length > 0)">
+            <div class="alert alert-warning" translate-keep-content translate="screensaver.settings.error.missingdashboard">You need at least 1 dashboard to enable screensaver.</div>
+            <button class="btn btn-lg btn-primary" ng-click="cancel()" translate-keep-content translate="screensaver.settings.button.back">
+                Back
+            </button>
+        </div>
+        <div class="scrollable box" ng-if="dashboards && dashboards.length > 0">
             <uib-tabset>
                 <uib-tab heading="General">
                     <ul class="settings-outer">
@@ -90,9 +92,9 @@
                                     <em translate-keep-content translate="screensaver.settings.slideshow.dashboards.label">Dashboards to rotate:</em>
                                 </label>
                                 <div class="db-sortable positive" ui-sortable="sortableOptions" ng-model="config.onStart.dashboards">
-                                    <div ng-repeat="db in config.onStart.dashboards | orderBy: db.order" for="onStart_{{db.id}}" class="d-block f-normal">
+                                    <div ng-repeat="db in config.onStart.dashboards | orderBy: db.order" class="d-block f-normal">
                                         <span>{{db.id}} </span>
-                                        <span class="glyphicon glyphicon-move pull-right" title="Reorder"></span>
+                                        <span class="glyphicon glyphicon-move pull-right" title="{{::translations.reorder}}"></span>
                                     </div>
                                 </div>
                             </li>
@@ -101,7 +103,7 @@
                                     <em translate-keep-content translate="screensaver.settings.slideshow.dashboardsExcluded.label">Excluded Dashboards:</em>
                                 </label>
                                 <div class="db-sortable negative" ui-sortable="sortableOptions" ng-model="config.onStart.dashboardsExcluded">
-                                    <div ng-repeat="db in list2 | orderBy: db.order" class="d-block f-normal" type="checkbox" name="{{db.id}}">
+                                    <div ng-repeat="db in config.onStart.dashboardsExcluded | orderBy: db.order" class="d-block f-normal">
                                         <span>{{db.id}} </span>
                                         <span class="glyphicon glyphicon-move pull-right" title="{{::translations.reorder}}"></span>
                                     </div>
@@ -156,7 +158,8 @@
             </uib-tabset>
 
             <div class="cancelsave pull-right">
-                <button class="btn btn-lg btn-danger" ng-click="cancel()">
+                <button class="btn btn-lg btn-danger" ng-class="{'btn-primary': _form.mainForm.$pristine, 'btn-danger': _form.mainForm.$dirty}"
+                    ng-click="cancel()">
                     <span ng-if="_form.mainForm.$pristine" translate-keep-content translate="screensaver.settings.button.back">Back</span>
                     <span ng-if="_form.mainForm.$dirty" translate-keep-content translate="screensaver.settings.button.cancel">Cancel</span>
                 </button>
