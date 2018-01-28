@@ -956,7 +956,88 @@ msgstr ""
 
 # DASHBOARD SCREENSAVER SETTINGS
 
-#. Screensaver Settings Header
-msgctxt "screensaver.settings.header"
-msgid "Dashboard screensaver/Screensaver"
+#. Screensaver Settings Additionalevents Example
+msgctxt "screensaver.settings.additionalevents.example"
+msgid "Example: keypress,keyup"
 msgstr ""
+
+#. Screensaver Settings Additionalevents Info
+msgctxt "screensaver.settings.additionalevents.info"
+msgid "Additional events to watch to determine idleness, separated by a comma (,)."
+msgstr ""
+
+#. Screensaver Settings Additionalevents Label
+msgctxt "screensaver.settings.additionalevents.label"
+msgid "Additional Events (optional): "
+msgstr ""
+
+#. Screensaver Settings Common Dashboard 
+msgctxt "screensaver.settings.common.dashboard"
+msgid "Dashboard: "
+msgstr ""
+
+#. Screensaver Settings Common Gotodashboard
+msgctxt "screensaver.settings.common.gotodashboard"
+msgid "Go to dashboard"
+msgstr ""
+
+#. Screensaver Settings Common Perform
+msgctxt "screensaver.settings.common.perform"
+msgid "Perform: "
+msgstr ""
+
+#. Screensaver Settings Common Stop
+msgctxt "screensaver.settings.common.stop"
+msgid "Stop"
+msgstr ""
+
+#. Screensaver Settings Eventstowatch Info
+msgctxt "screensaver.settings.eventstowatch.info"
+msgid "Events to watch to determine idleness."
+msgstr ""
+
+#. Screensaver Settings Eventstowatch Label
+msgctxt "screensaver.settings.eventstowatch.label"
+msgid "Events to Watch: "
+msgstr ""
+
+#. Screensaver Settings Idletimeout Info
+msgctxt "screensaver.settings.idletimeout.info"
+msgid "Seconds of being idle until screensaver kicks in"
+msgstr ""
+
+#. Screensaver Settings Idletimeout Label
+msgctxt "screensaver.settings.idletimeout.label"
+msgid "Idle Timeout: "
+msgstr ""
+
+#. Screensaver Settings Onstarttype Info
+msgctxt "screensaver.settings.onstarttype.info"
+msgid "What to do when screensaver starts"
+msgstr ""
+
+#. Screensaver Settings Onstarttype Options Slideshow
+msgctxt "screensaver.settings.onstarttype.options.slideshow"
+msgid "Dashboard Slideshow"
+msgstr ""
+
+#. Screensaver Settings Onstop Info
+msgctxt "screensaver.settings.onstop.info"
+msgid "What to do when screensaver stops"
+msgstr ""
+
+#. Screensaver Settings Slideshow Dashboards Label
+msgctxt "screensaver.settings.slideshow.dashboards.label"
+msgid "Dashboards to rotate:"
+msgstr ""
+
+#. Screensaver Settings Slideshow Dashboardtimeout Info
+msgctxt "screensaver.settings.slideshow.dashboardtimeout.info"
+msgid "Seconds from being idle until screensaver kicks in"
+msgstr ""
+
+#. Screensaver Settings Slideshow Dashboardtimeout Label
+msgctxt "screensaver.settings.slideshow.dashboardtimeout.label"
+msgid "Slideshow Interval: "
+msgstr ""
+

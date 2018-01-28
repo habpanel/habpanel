@@ -1,79 +1,90 @@
 <style>
     .screensaver-settings {
         font-size: 16px;
+        color: #000;
     }
 
-    .flex-outer,
-    .flex-inner {
+    .screensaver-settings .helpinfo {
+        cursor: pointer;
+    }
+
+    .screensaver-settings .helpinfo .glyphicon-question-sign {
+        color: #5bc0de !important
+    }
+
+    .screensaver-settings input:not([type='checkbox']),
+    .screensaver-settings option,
+    .screensaver-settings select {
+        color: #000;
+        padding: .25em;
+        min-width: 20rem;
+    }
+
+    .screensaver-settings .scrollable.box {
+        padding: 1em;
+    }
+
+    .screensaver-settings .scrollable.box .tab-content {
+        padding: 1em;
+    }
+
+    .screensaver-settings .d-block {
+        display: block;
+    }
+
+    .screensaver-settings .f-normal {
+        font-weight: normal;
+    }
+
+    .screensaver-settings .settings-outer,
+    .screensaver-settings .settings-inner {
         list-style-type: none;
         padding: 0;
     }
 
-    .flex-outer {
-        max-width: 800px;
+    .screensaver-settings .settings-outer {
+        max-width: 50em;
     }
 
-    .flex-outer li,
-    .flex-inner {
+    .screensaver-settings .settings-outer li,
+    .screensaver-settings .settings-inner {
         display: flex;
         flex-wrap: wrap;
-        align-items: center;
+        align-items: baseline;
     }
 
-    .flex-inner {
-        padding: 0 8px;
+    .screensaver-settings .settings-inner {
+        padding: 0 .5em;
         justify-content: space-between;
     }
 
-    .flex-outer>li:not(:last-child) {
-        margin-bottom: 20px;
+    .screensaver-settings .settings-outer li:not(:last-child) {
+        margin-bottom: 1.25em;
     }
 
-    .flex-outer li label,
-    .flex-outer li p {
-        padding: 8px;
-        font-weight: 300;
-        letter-spacing: .09em;
-    }
-
-    .flex-outer>li>label,
-    .flex-outer li p {
+    .screensaver-settings .settings-outer li>label,
+    .screensaver-settings .settings-outer li p {
         flex: 1 0 30%;
-        max-width: 220px;
+        max-width: 8.75em;
+        text-align: left;
+        margin-right: 1em;
     }
 
-    .flex-outer>li>label+*,
-    .flex-inner {
-        flex: 1 0 220px;
+    .screensaver-settings .settings-outer li>label,
+    .screensaver-settings .settings-inner {
+        flex: 1 0 13.75em;
     }
 
-    .flex-outer li p {
+    .screensaver-settings .settings-outer li p {
         margin: 0;
     }
 
-    .flex-outer li input:not([type='checkbox']),
-    .flex-outer li textarea {
-        padding: 15px;
-        border: none;
-    }
-
-    .flex-outer li button {
-        margin-left: auto;
-        padding: 8px 16px;
-        border: none;
-        background: #333;
-        color: #f2f2f2;
-        text-transform: uppercase;
-        letter-spacing: .09em;
-        border-radius: 2px;
-    }
-
-    .flex-inner li {
-        width: 100px;
+    .screensaver-settings .settings-inner li {
+        width: 6.25em;
     }
 
     .screensaver-settings div.cancelsave {
-        margin-top: 20px;
+        margin-top: 1.25em;
     }
 </style>
 <section class="screensaver-settings">
@@ -84,43 +95,135 @@
         <h2 translate-keep-content translate="screensaver.settings.header">Dashboard screensaver/Screensaver</h2>
     </div>
 
-    <div uib-alert ng-if="vm.updatedMessage" type="info" close="vm.updatedMessage = null">{{vm.updatedMessage}}</div>
-    <div uib-alert ng-if="vm.updateErrorMessage" type="danger" close="vm.updateErrorMessage = null">{{vm.updateErrorMessage}}</div>
+    <div uib-alert ng-if="updatedMessage" type="info" close="updatedMessage = null">{{updatedMessage}}</div>
+    <div uib-alert ng-if="updateErrorMessage" type="danger" close="updateErrorMessage = null">{{updateErrorMessage}}</div>
 
-    <form name="_ssSettings">
-        <div class="scrollable box">
-            <ul class="flex-outer">
-                <li>
-                    <label for="ss_idleTimeout">Idle Timeout: </label>
+    <form name="_form">
+        <div class="scrollable box modal-body">
+            <uib-tabset>
+                <uib-tab heading="General">
+                    <ul class="settings-outer">
+                        <li>
+                            <label for="ss_idleTimeout" translate-keep-content translate="screensaver.settings.idletimeout.label">Idle Timeout: </label>
+                            <div>
+                                <input id="ss_idleTimeout" class="d-block" type="number" name="idleTimeout" ng-model="config.idleTimeoutSec" required>
+                                <span>
+                                    <em translate-keep-content translate="screensaver.settings.idletimeout.info">Seconds of being idle until screensaver kicks in</em>
+                                </span>
+                            </div>
+                        </li>
+                        <li>
+                            <label translate-keep-content translate="screensaver.settings.eventstowatch.label">Events to Watch: </label>
+                            <div>
+                                <span>
+                                    <em translate-keep-content translate="screensaver.settings.eventstowatch.info">Events to watch to determine idleness.</em>
+                                </span>
+                                <label ng-repeat="(key, val) in config.eventsToWatch" for="eventsToWatch_{{key}}" class="d-block f-normal">
+                                    <input id="eventsToWatch_{{key}}" type="checkbox" name="{{key}}" ng-model="config.eventsToWatch[key]"> {{key}}
+                                </label>
+                            </div>
+                        </li>
 
-                    <input type="number" name="idleTimeout" ng-model="config.idleTimeoutSec">
-                    <span>
-                        <em>Seconds from being idle until screensaver kicks in</em>
-                    </span>
+                        <li>
+                            <label translate-keep-content translate="screensaver.settings.additionalevents.label" for="ss_additionalEvents">Additional Events (optional): </label>
+                            <div>
+                                <input id="ss_additionalEvents" class="d-block" type="text" name="additionalEvents" ng-model="config.additionalEventsToWatch">
+                                <span>
+                                    <em translate-keep-content translate="screensaver.settings.additionalevents.info">Additional events to watch to determine idleness, separated by a comma (,).
+                                        <br>
+                                        <span translate-keep-content translate="screensaver.settings.additionalevents.example">Example: keypress,keyup</span>
+                                    </em>
+                                </span>
+                            </div>
+                        </li>
+                    </ul>
+                </uib-tab>
+                <uib-tab heading="On Start">
+                    <ul class="settings-outer">
+                        <li>
+                            <label translate-keep-content translate="screensaver.settings.common.perform" for="ss_onStarType">Perform: </label>
+                            <div>
+                                <select id="ss_onStarType" class="d-block" name='onStarType' ng-model="config.onStart.type">
+                                    <option translate-keep-content translate="screensaver.settings.common.gotodashboard" value='gotodashboard'>Go to dashboard</option>
+                                    <option translate-keep-content translate="screensaver.settings.onstarttype.options.slideshow" value='slideshow'>Dashboard Slideshow</option>
+                                </select>
+                                <span class='helpinfo' ng-click='onStartTypeHelp = !onStartTypeHelp'>
+                                    <em>
+                                        <span translate-keep-content translate="screensaver.settings.onstarttype.info">What to do when screensaver starts</span>
+                                        <span class='text-info glyphicon glyphicon-question-sign'></span>
+                                    </em>
+                                    <p ng-if="onStartTypeHelp">
+                                        <span translate-keep-content translate="screensaver.settings.onstart.help">XXX</span>
+                                    </p>
+                                </span>
+                            </div>
+                        </li>
+                        <section ng-if="config.onStart.type==='slideshow'">
+                            <li>
+                                <label translate-keep-content translate="screensaver.settings.slideshow.dashboardtimeout.label" for="ss_dashboardTimeout">Slideshow Interval: </label>
+                                <div>
+                                    <input class="d-block" type="number" name="dashboardTimeout" id="ss_dashboardTimeout" ng-model="config.slideshowIntervalSec"
+                                        required>
+                                    <span>
+                                        <em translate-keep-content translate="screensaver.settings.slideshow.dashboardtimeout.info">Seconds from being idle until screensaver kicks in</em>
+                                    </span>
+                                </div>
+                            </li>
+                            <li>
+                                <label>
+                                    <em translate-keep-content translate="screensaver.settings.slideshow.dashboards.label">Dashboards to rotate:</em>
+                                </label>
+                                <div>
+                                    <label ng-repeat="db in config.onStart.dashboards | orderBy: db.order" for="onStart_{{db.id}}" class="d-block f-normal">
+                                        <input id="onStart_{{db.id}}" type="checkbox" name="{{db.id}}" ng-model="db.enabled"> {{db.id}}
+                                    </label>
+                                </div>
+                            </li>
 
-                </li>
-
-                <li>
-                    <label for="ss_dashboardTimeout">Slideshow Interval: </label>
-
-                    <input type="number" name="dashboardTimeout" id="ss_dashboardTimeout" ng-model="config.slideshowIntervalSec">
-                    <span>
-                        <em>Seconds until slideshow switches to the next dashboard</em>
-                    </span>
-
-                </li>
-
-                <li>
-                    <label for="ss_dashboardTimeout">Events to Watch: </label>
-                    <span>
-                        {{config.eventsToWatch}}
-                    </span>
-                </li>
-            </ul>
+                        </section>
+                        <section ng-if="config.onStart.type!=='slideshow'">
+                            <li>
+                                <label>
+                                    <em translate-keep-content translate="screensaver.settings.common.dashboard">Dashboard:</em>
+                                </label>
+                                <select class="d-block" name='dashboard' ng-model="config.onStart.dashboard" ng-init="config.onStart.dashboard = config.onStart.dashboard ? config.onStart.dashboard : dashboards[0].id">
+                                    <option ng-repeat="db in dashboards | orderBy: db.id" value="{{db.id}}">{{db.id}}</option>
+                                </select>
+                            </li>
+                        </section>
+                    </ul>
+                </uib-tab>
+                <uib-tab heading="On Stop">
+                    <ul class="settings-outer">
+                        <li>
+                            <label translate-keep-content translate="screensaver.settings.common.perform" for="ss_onStopType">Perform: </label>
+                            <div>
+                                <select id="ss_onStopType" class="d-block" name='onStopType' ng-model="config.onStop.type">
+                                    <option translate-keep-content translate="screensaver.settings.common.stop" value='stop'>Stop</option>
+                                    <option translate-keep-content translate="screensaver.settings.common.gotodashboard" value='gotodashboard'>Go to dashboard</option>
+                                </select>
+                                <span>
+                                    <em translate-keep-content translate="screensaver.settings.onstop.info">What to do when screensaver stops</em>
+                                </span>
+                            </div>
+                        </li>
+                        <section ng-if="config.onStop.type!=='stop'">
+                            <li>
+                                <label>
+                                    <em translate-keep-content translate="screensaver.settings.common.dashboard">Dashboard:</em>
+                                </label>
+                                <select class="d-block" name='dashboard' ng-model="config.onStop.dashboard" ng-init="config.onStop.dashboard = config.onStop.dashboard ? config.onStop.dashboard : dashboards[0].id">
+                                    <option ng-repeat="db in dashboards | orderBy: db.id" value="{{db.id}}">{{db.id}}</option>
+                                </select>
+                            </li>
+                        </section>
+                    </ul>
+                </uib-tab>
+            </uib-tabset>
 
             <div class="cancelsave pull-right">
-                <button class="btn btn-warn" ng-click="cancel()">Cancel</button>
-                <button class="btn btn-success" ng-click="save()">Save</button>
+                <button class="btn btn-lg btn-danger" ng-click="cancel()">{{ _form.$pristine ? 'Back' : 'Cancel'}}</button>
+                <button class="btn btn-lg btn-success" ng-click="save()" ng-disabled="_form.$invalid " translate-keep-content translate="screensaver.settings.XXXXXX">Save</button>
             </div>
         </div>
     </form>

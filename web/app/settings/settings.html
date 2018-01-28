@@ -100,10 +100,11 @@
         <br />
         <br /> 
         <h4 translate-keep-content translate="settings.panel.screensaver">Dashboard screensaver/ScreenSaver</h4>
-        <input type="checkbox" ng-model="settings.slideshow_enabled" ng-change="vm.saveOptions()" id="slideshow_enabled" />
-        <label for="slideshow_enabled" translate-keep-content translate="settings.panel.screensaver.enable">Enable</label>
+        <h1>{{vm.isScreensaverEnable}}</h1>
+        <input type="checkbox" ng-model="vm.screensaver.isEnabled" id="screensaver_enabled" ng-change="vm.screensaver.toggle()" />
+        <label for="screensaver_enabled" translate-keep-content translate="settings.panel.screensaver.enable">Enable</label>
         <div>
-            <a ng-if="settings.slideshow_enabled" class="btn btn-lg btn-primary" href="#/settings/screensaver">
+            <a ng-if="vm.screensaver.isEnabled" class="btn btn-lg btn-primary" href="#/settings/screensaver">
                 <span translate-keep-content translate="settings.panel.screensaver.settings">Settings</span>
             </a>
         </div>

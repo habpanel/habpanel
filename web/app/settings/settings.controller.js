@@ -1,12 +1,12 @@
-(function() {
-'use strict';
+(function () {
+    'use strict';
 
     angular
         .module('app')
         .controller('SettingsCtrl', SettingsController);
 
-    SettingsController.$inject = ['$rootScope', '$timeout', '$window', 'OHService', 'OH2ServiceConfiguration', 'OH2StorageService', 'PersistenceService', 'SpeechService', 'themes', 'prompt', 'TranslationService'];
-    function SettingsController($rootScope, $timeout, $window, OHService, OH2ServiceConfiguration, OH2StorageService, PersistenceService, SpeechService, themes, prompt, TranslationService) {
+    SettingsController.$inject = ['$rootScope', '$timeout', '$window', 'OHService', 'OH2ServiceConfiguration', 'OH2StorageService', 'PersistenceService', 'SpeechService', 'themes', 'prompt', 'TranslationService', 'ScreensaverService'];
+    function SettingsController($rootScope, $timeout, $window, OHService, OH2ServiceConfiguration, OH2StorageService, PersistenceService, SpeechService, themes, prompt, TranslationService, ScreensaverService) {
         var vm = this;
 
         vm.themes = themes.data;
@@ -31,12 +31,12 @@
                 message: TranslationService.translate("settings.storage.panelconfiguration.dialog.message", "Please choose a name for the new panel configuration (letters and digits only please):"),
                 input: true
             }).then(function (name) {
-                vm.panelsRegistry[name] = { 
-                    "dashboards"   : $rootScope.dashboards,
-                    "menucolumns"  : $rootScope.menucolumns,
+                vm.panelsRegistry[name] = {
+                    "dashboards": $rootScope.dashboards,
+                    "menucolumns": $rootScope.menucolumns,
                     "customwidgets": $rootScope.customwidgets,
-                    "settings"     : $rootScope.settings,
-                    "updatedTime"  : new Date().toISOString()
+                    "settings": $rootScope.settings,
+                    "updatedTime": new Date().toISOString()
                 };
                 vm.storageOption = name;
                 OH2StorageService.setCurrentPanelConfig(name);
@@ -101,6 +101,14 @@
             clock_format: TranslationService.translate('settings.panel.appearance.show_clock.header_format.hint', 'Default: shortTime, use AngularJS date format')
         };
 
+        vm.screensaver = {
+            isEnabled: ScreensaverService.isEnabled,
+            toggle: () => {
+                ScreensaverService.toggle(vm.screensaver.isEnabled)
+            }
+        };
+
+
         activate();
 
         ////////////////
@@ -123,9 +131,9 @@
                     vm.voices = speechSynthesis.getVoices();
                 });
             }
-    
+
             iNoBounce.disable();
-            
+
         }
     }
 })();
