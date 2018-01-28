@@ -1,5 +1,5 @@
-(function() {
-'use strict';
+(function () {
+    'use strict';
 
     angular
         .module('app.services')
@@ -30,29 +30,29 @@
 
         function loadItems() {
             $http.get('/rest/items')
-            .then(function (data) {
-                if (angular.isArray(data.data)) {
-                    console.log("Loaded " + data.data.length + " openHAB items");
-                    $rootScope.reconnecting = false;
-                    $rootScope.items = data.data;
-                    if (!liveUpdatesEnabled) registerEventSource();
-                } else {
-                    console.warn("Items not found? Retrying in 5 seconds");
+                .then(function (data) {
+                    if (angular.isArray(data.data)) {
+                        console.log("Loaded " + data.data.length + " openHAB items");
+                        $rootScope.reconnecting = false;
+                        $rootScope.items = data.data;
+                        if (!liveUpdatesEnabled) registerEventSource();
+                    } else {
+                        console.warn("Items not found? Retrying in 5 seconds");
+                        $rootScope.reconnecting = true;
+                        $rootScope.items = [];
+                        $timeout(loadItems, 5000);
+                    }
+                    $rootScope.$emit('openhab-update');
+                },
+                function (err) {
+                    console.warn("Error loading openHAB items... retrying in 5 seconds");
                     $rootScope.reconnecting = true;
-                    $rootScope.items = [];
                     $timeout(loadItems, 5000);
-                }
-                $rootScope.$emit('openhab-update');
-            },
-            function (err) {
-                console.warn("Error loading openHAB items... retrying in 5 seconds");
-                $rootScope.reconnecting = true;
-                $timeout(loadItems, 5000);
-            });
+                });
         }
 
         function getItem(name) {
-            var item = $filter('filter')($rootScope.items, {name: name}, true); 
+            var item = $filter('filter')($rootScope.items, { name: name }, true);
             return (item) ? item[0] : null;
         }
 
@@ -67,9 +67,9 @@
          */
         function sendCmd(item, cmd) {
             $http({
-                method : 'POST',
-                url    : '/rest/items/' + item,
-                data   : cmd,
+                method: 'POST',
+                url: '/rest/items/' + item,
+                data: cmd,
                 headers: { 'Content-Type': 'text/plain' }
             }).then(function (data) {
                 console.log('Command sent: ' + item + '=' + cmd);
@@ -90,47 +90,47 @@
                 deferred.resolve(locale);
             } else {
                 $http.get('/rest/services/org.eclipse.smarthome.core.i18nprovider/config')
-                .then(function (response) {
-                    var language;
-                    if (!response.data.language) {
-                        if (navigator && navigator.languages) {
-                            locale = navigator.languages[0];
-                            language = locale.split('-')[0];
-                        } else if (navigator && navigator.language) {
-                            locale = navigator.language;
-                            language = locale.split('-')[0];
+                    .then(function (response) {
+                        var language;
+                        if (!response.data.language) {
+                            if (navigator && navigator.languages) {
+                                locale = navigator.languages[0];
+                                language = locale.split('-')[0];
+                            } else if (navigator && navigator.language) {
+                                locale = navigator.language;
+                                language = locale.split('-')[0];
+                            } else {
+                                locale = language = 'en';
+                            }
                         } else {
-                            locale = language = 'en';
+                            language = response.data.language;
+                            locale = response.data.language + ((response.data.region) ? '-' + response.data.region : '');
                         }
-                    } else {
-                        language = response.data.language;
-                        locale = response.data.language + ((response.data.region) ? '-' + response.data.region : '');
-                    }
 
-                    /* consider the region only for selected common exceptions where the date/number formats
-                        are significantly different than the language's default.
-                        If more are needed change the gulpfile.js too and run the 'vendor-angular-i18n' gulp task */
-                    if (['es-ar', 'de-at', 'en-au', 'fr-be', 'es-bo', 'pt-br', 'en-ca',
+                        /* consider the region only for selected common exceptions where the date/number formats
+                            are significantly different than the language's default.
+                            If more are needed change the gulpfile.js too and run the 'vendor-angular-i18n' gulp task */
+                        if (['es-ar', 'de-at', 'en-au', 'fr-be', 'es-bo', 'pt-br', 'en-ca',
                             'fr-ca', 'fr-ch', 'es-co', 'en-gb', 'en-hk', 'zh-hk', 'en-ie',
                             'en-in', 'fr-lu', 'es-mx', 'en-nz', 'en-sg', 'zh-sg',
                             'es-us', 'zh-tw', 'en-za'].indexOf(locale.toLowerCase()) < 0) {
-                        locale = language;
-                    }
+                            locale = language;
+                        }
 
-                    if (language !== "en") {
-                        console.log('Setting interface language to: ' + language);
-                        $translate.use(language);
-                    }
+                        if (language !== "en") {
+                            console.log('Setting interface language to: ' + language);
+                            $translate.use(language);
+                        }
 
-                    console.log('Setting locale to: ' + locale);
-                    tmhDynamicLocale.set(locale.toLowerCase());
+                        console.log('Setting locale to: ' + locale);
+                        tmhDynamicLocale.set(locale.toLowerCase());
 
-                    deferred.resolve(locale);
-                }, function(error) {
-                    console.warn('Couldn\'t retrieve locale settings. Setting default to "en-US"');
-                    locale = 'en-US';
-                    deferred.resolve(locale);
-                });
+                        deferred.resolve(locale);
+                    }, function (error) {
+                        console.warn('Couldn\'t retrieve locale settings. Setting default to "en-US"');
+                        locale = 'en-US';
+                        deferred.resolve(locale);
+                    });
             }
 
             return deferred.promise;
@@ -143,13 +143,13 @@
          */
         function sendVoice(text) {
             $http({
-                method : 'POST',
-                url    : '/rest/voice/interpreters',
-                data   : text,
+                method: 'POST',
+                url: '/rest/voice/interpreters',
+                data: text,
                 headers: { 'Content-Type': 'text/plain' }
             }).then(function (data) {
                 console.log('Voice command sent: "' + text + '"');
-            }, function(error) {
+            }, function (error) {
                 console.error('Error occured while sending voice command.');
             });
         }
@@ -157,9 +157,9 @@
         function reloadItems() {
             loadItems();
         }
-        
+
         function registerEventSource() {
-            if (typeof(EventSource) !== "undefined") {
+            if (typeof (EventSource) !== "undefined") {
                 var source = new EventSource('/rest/events');
                 liveUpdatesEnabled = true;
 
@@ -171,7 +171,7 @@
                         if (evtdata.type === 'ItemStateEvent' || evtdata.type === 'ItemStateChangedEvent' || evtdata.type === 'GroupItemStateChangedEvent') {
                             var payload = JSON.parse(evtdata.payload);
                             var newstate = payload.value;
-                            var item = $filter('filter')($rootScope.items, {name: topicparts[2]}, true)[0];
+                            var item = $filter('filter')($rootScope.items, { name: topicparts[2] }, true)[0];
                             if (item && item.state !== payload.value) {
                                 $rootScope.$apply(function () {
                                     console.log("Updating " + item.name + " state from " + item.state + " to " + payload.value);
@@ -220,11 +220,11 @@
                                 if (prevAudioUrl !== audioUrl) {
                                     if (context) {
                                         $http({
-                                            url : audioUrl,
-                                            method : 'GET',
-                                            responseType : 'arraybuffer'
-                                        }).then(function(response) {
-                                            context.decodeAudioData(response.data, function(buffer) {
+                                            url: audioUrl,
+                                            method: 'GET',
+                                            responseType: 'arraybuffer'
+                                        }).then(function (response) {
+                                            context.decodeAudioData(response.data, function (buffer) {
                                                 audioBuffer = buffer;
                                                 var source = context.createBufferSource();
                                                 source.buffer = buffer;
@@ -248,7 +248,7 @@
                             catch (e) {
                                 console.warn("Error while handling audio event: " + e.toString());
                                 if (context)
-                                  context.close();
+                                    context.close();
                             }
                         }
                     } catch (e) {
@@ -325,7 +325,7 @@
                 url: '/rest/services/' + SERVICE_NAME + '/config',
                 data: OH2ServiceConfiguration,
                 headers: { 'Content-Type': 'application/json' }
-            }).then (function (resp) {
+            }).then(function (resp) {
                 console.log('openHAB 2 service configuration saved');
                 deferred.resolve();
             }, function (err) {
@@ -340,14 +340,14 @@
         function saveCurrentPanelConfig() {
             var deferred = $q.defer();
 
-            var lastUpdatedTime = $rootScope.panelsRegistry[getCurrentPanelConfig()].updatedTime; 
+            var lastUpdatedTime = $rootScope.panelsRegistry[getCurrentPanelConfig()].updatedTime;
 
             // fetch the current configuration again (to perform optimistic concurrency on the current panel config only)
             tryGetServiceConfiguration().then(function () {
                 var config = $rootScope.panelsRegistry[getCurrentPanelConfig()];
                 if (!config) {
                     console.warn('Warning: creating new panel config!');
-                    config = $rootScope.panelsRegistry[getCurrentPanelConfig()] = { };
+                    config = $rootScope.panelsRegistry[getCurrentPanelConfig()] = {};
                 }
                 var currentUpdatedTime = config.updatedTime;
                 if (Date.parse(currentUpdatedTime) > Date.parse(lastUpdatedTime)) {
