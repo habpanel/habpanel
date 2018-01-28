@@ -166,7 +166,7 @@
             }
         };
 
-        let stop = () => {
+        let stop = (isFromOHService) => {
             if (!_isRunning)
                 return;
 
@@ -179,6 +179,9 @@
             if (_config.isEnabled) {
                 idleTimerStart();
             }
+
+            if (isFromOHService)
+                return;
 
             if (_config.onStop.type === 'gotodashboard') {
                 $location.url(`/view/${_config.onStop.dashboard}`);

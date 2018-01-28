@@ -7,8 +7,32 @@
         .value('OH2ServiceConfiguration', {})
         .service('OH2StorageService', OH2StorageService);
 
-    OHService.$inject = ['$rootScope', '$http', '$q', '$timeout', '$interval', '$filter', '$location', 'SpeechService', 'tmhDynamicLocale', '$translate'];
-    function OHService($rootScope, $http, $q, $timeout, $interval, $filter, $location, SpeechService, tmhDynamicLocale, $translate) {
+    OHService.$inject = [
+        '$rootScope',
+        '$http',
+        '$q',
+        '$timeout',
+        '$interval',
+        '$filter',
+        '$location',
+        'SpeechService',
+        'tmhDynamicLocale',
+        '$translate',
+        'ScreensaverService'
+    ];
+    function OHService(
+        $rootScope,
+        $http,
+        $q,
+        $timeout,
+        $interval,
+        $filter,
+        $location,
+        SpeechService,
+        tmhDynamicLocale,
+        $translate,
+        ScreensaverService
+    ) {
         this.getItem = getItem;
         this.getItems = getItems;
         this.getLocale = getLocale;
@@ -187,6 +211,7 @@
                                         }
                                         if (item.state && $rootScope.settings.dashboard_control_item === item.name) {
                                             console.log('Dashboard control item state changed, attempting navigation to: ' + item.state);
+                                            ScreensaverService.stop(true);
                                             $location.url('/view/' + item.state);
                                         }
                                     } else {

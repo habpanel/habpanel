@@ -98,7 +98,11 @@
     <div uib-alert ng-if="updatedMessage" type="info" close="updatedMessage = null">{{updatedMessage}}</div>
     <div uib-alert ng-if="updateErrorMessage" type="danger" close="updateErrorMessage = null">{{updateErrorMessage}}</div>
 
-    <form name="_form">
+    <div class="alert alert-warning" ng-if="!(dashboards && dashboards.length > 0)">
+        <span translate-keep-content translate="screensaver.settings.error.missingdashboard">You need at least 1 dashboard to enable screensaver.</span>
+    </div>
+
+    <form name="_form" ng-if="dashboards && dashboards.length > 0">
         <div class="scrollable box modal-body">
             <uib-tabset>
                 <uib-tab heading="General">

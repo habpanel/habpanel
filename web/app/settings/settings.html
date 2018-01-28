@@ -101,10 +101,16 @@
         <br /> 
         <h4 translate-keep-content translate="settings.panel.screensaver">Dashboard screensaver/ScreenSaver</h4>
         <h1>{{vm.isScreensaverEnable}}</h1>
-        <input type="checkbox" ng-model="vm.screensaver.isEnabled" id="screensaver_enabled" ng-change="vm.screensaver.toggle()" />
-        <label for="screensaver_enabled" translate-keep-content translate="settings.panel.screensaver.enable">Enable</label>
+        <input type="checkbox" ng-model="vm.screensaver.isEnabled" ng-checked="vm.dashboardsConfigured() ? vm.screensaver.isEnabled : false" id="screensaver_enabled" ng-change="vm.screensaver.toggle()" ng-disabled="!vm.dashboardsConfigured()" />
+        <label for="screensaver_enabled" translate-keep-content translate="settings.panel.screensaver.enable">
+            Enable 
+            <span ng-if="!vm.dashboardsConfigured()" ng-click="vm.screensaverDisabledInfo = !vm.screensaverDisabledInfo" class="glyphicon glyphicon-exclamation-sign text-warning"></span>
+        </label>
+        <div class="alert alert-warning" ng-if="vm.screensaverDisabledInfo">
+            <span translate-keep-content translate="screensaver.settings.error.missingdashboard">You need at least 1 dashboard to enable screensaver.</span>
+        </div>        
         <div>
-            <a ng-if="vm.screensaver.isEnabled" class="btn btn-lg btn-primary" href="#/settings/screensaver">
+            <a ng-if="vm.dashboardsConfigured() && vm.screensaver.isEnabled" class="btn btn-lg btn-primary" href="#/settings/screensaver">
                 <span translate-keep-content translate="settings.panel.screensaver.settings">Settings</span>
             </a>
         </div>

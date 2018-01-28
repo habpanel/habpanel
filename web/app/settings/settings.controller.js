@@ -108,6 +108,8 @@
             }
         };
 
+        vm.dashboardsConfigured = () => $rootScope.dashboards.length > 0;
+
 
         activate();
 

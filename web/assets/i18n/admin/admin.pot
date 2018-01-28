@@ -1041,3 +1041,28 @@ msgctxt "screensaver.settings.slideshow.dashboardtimeout.label"
 msgid "Slideshow Interval: "
 msgstr ""
 
+#. Screensaver Settings Error No Dashboard
+msgctxt "screensaver.settings.error.missingdashboard"
+msgid "You need at least 1 dashboard to enable screensaver."
+msgstr ""
+
+#. Screensaver Settings Cancel Dialog Title
+msgctxt "screensaver.settings.dialog.cancelconfirm.title"
+msgid "Cancel Changes?"
+msgstr ""
+
+#. Screensaver Settings Cancel Dialog MEssage
+msgctxt "screensaver.settings.dialog.cancelconfirm.message"
+msgid "You have unsaved changes. Clicking OK will revert to previous settings."
+msgstr ""
+
+#. Screensaver Settings Update Success
+msgctxt "settings.screensaver.update.success"
+msgid "Screensaver settings updated."
+msgstr ""
+
+#. Screensaver Settings Update Fail
+msgctxt "settings.screensaver.update.fail"
+msgid "Screensaver settings update failed."
+msgstr ""
+
