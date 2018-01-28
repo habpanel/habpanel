@@ -81,7 +81,7 @@
                                     <input class="d-block" type="number" name="dashboardTimeout" id="ss_dashboardTimeout" ng-model="config.slideshowIntervalSec"
                                         required>
                                     <span>
-                                        <em translate-keep-content translate="screensaver.settings.slideshow.dashboardtimeout.info">Seconds from being idle until screensaver kicks in</em>
+                                        <em translate-keep-content translate="screensaver.settings.slideshow.dashboardtimeout.info">Duration to switch to the next dashboard</em>
                                     </span>
                                 </div>
                             </li>
@@ -89,13 +89,15 @@
                                 <label>
                                     <em translate-keep-content translate="screensaver.settings.slideshow.dashboards.label">Dashboards to rotate:</em>
                                 </label>
-                                <div>
-                                    <label ng-repeat="db in config.onStart.dashboards | orderBy: db.order" for="onStart_{{db.id}}" class="d-block f-normal">
-                                        <input id="onStart_{{db.id}}" type="checkbox" name="{{db.id}}" ng-model="db.enabled"> {{db.id}}
+                                <div ui-sortable ng-model="config.onStart.dashboards">
+                                    <label class="sortable" ng-repeat="db in config.onStart.dashboards | orderBy: db.order" for="onStart_{{db.id}}" class="d-block f-normal">
+                                        <div id="onStart_{{db.id}}" type="checkbox" name="{{db.id}}" ng-model="db.enabled">
+                                            <span>{{db.id}} </span>
+                                            <span class="glyphicon glyphicon-move pull-right" title="Reorder"></span>
+                                        </div>
                                     </label>
                                 </div>
                             </li>
-
                         </section>
                         <section ng-if="config.onStart.type!=='slideshow'">
                             <li>

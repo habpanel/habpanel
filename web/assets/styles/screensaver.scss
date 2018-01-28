@@ -78,4 +78,21 @@
             top: .125em;
         }
     }
+    div {
+        .ui-sortable {
+            width: 20em;
+            .ui-sortable-handle {
+                cursor: move;
+                padding: 10px;
+                border: solid 1px #ddd;
+                border-radius: 4px;
+                background: #fff;
+                width: 100%;
+                .glyphicon {
+                    top: .25em;
+                    opacity: .25
+                }
+            }
+        }
+    }
 }

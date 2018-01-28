@@ -1053,7 +1053,7 @@ msgstr ""
 
 #. Screensaver Settings Slideshow Dashboardtimeout Info
 msgctxt "screensaver.settings.slideshow.dashboardtimeout.info"
-msgid "Seconds from being idle until screensaver kicks in"
+msgid "Duration to switch to the next dashboard"
 msgstr ""
 
 #. Screensaver Settings Slideshow Dashboardtimeout Label
