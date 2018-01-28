@@ -11,157 +11,157 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Danish\n"
 "Language: da_DK\n"
-"PO-Revision-Date: 2018-01-18 13:22-0500\n"
+"PO-Revision-Date: 2018-01-28 05:01-0500\n"
 
 #. Common term
 msgctxt "OK"
 msgid "OK"
-msgstr ""
+msgstr "Ok"
 
 #. Common term
 msgctxt "Cancel"
 msgid "Cancel"
-msgstr ""
+msgstr "Annuller"
 
 #. Common term
 msgctxt "Delete"
 msgid "Delete"
-msgstr ""
+msgstr "Slet"
 
 #. Common term
 msgctxt "Save"
 msgid "Save"
-msgstr ""
+msgstr "Gem"
 
 #. Common term
 msgctxt "Name"
 msgid "Name"
-msgstr ""
+msgstr "Navn"
 
 #. Common term
 msgctxt "Icon"
 msgid "Icon"
-msgstr ""
+msgstr "Ikon"
 
 #. Common term (plural)
 msgctxt "Icons"
 msgid "Icons"
-msgstr ""
+msgstr "Ikoner"
 
 #. Common term
 msgctxt "Backdrop Icon"
 msgid "Backdrop Icon"
-msgstr ""
+msgstr "Baggrund ikon"
 
 #. Common term
 msgctxt "Size"
 msgid "Size"
-msgstr ""
+msgstr "Størrelse"
 
 #. Common term
 msgctxt "Font size"
 msgid "Font Size"
-msgstr ""
+msgstr "Skriftstørrelse"
 
 #. Common term
 msgctxt "Color"
 msgid "Color"
-msgstr ""
+msgstr "Farve"
 
 #. Common term (plural)
 msgctxt "Colors"
 msgid "Colors"
-msgstr ""
+msgstr "Farver"
 
 #. Common term
 msgctxt "Transparent"
 msgid "Transparent"
-msgstr ""
+msgstr "Gennemsigtig"
 
 #. Common term
 msgctxt "openHAB Item"
 msgid "openHAB Item"
-msgstr ""
+msgstr "openHAB produkt"
 
 #. Common term (e.g. tooltip in the dashboard header toolbar)
 msgctxt "Speak"
 msgid "Speak"
-msgstr ""
+msgstr "Tal"
 
 #. Common term (e.g. tooltip in the dashboard header toolbar)
 msgctxt "Refresh"
 msgid "Refresh"
-msgstr ""
+msgstr "Opdater"
 
 #. Common term (e.g. tooltip in the dashboard header toolbar)
 msgctxt "Fullscreen"
 msgid "Fullscreen"
-msgstr ""
+msgstr "Fuldskærm"
 
 #. Common term
 msgctxt "Help"
 msgid "Help"
-msgstr ""
+msgstr "Hjælp"
 
 #. Appears in a red background in the bottom of the screen when openHAB is not responding
 msgctxt "error.connectionlost"
 msgid "Connection lost! Trying to reconnect..."
-msgstr ""
+msgstr "Forbindelsen mistet, forsøger at oprette forbindelse igen..."
 
 #. Appears below the edit mode button when there's no dashboard - please use the Chrome developer tools and check with phone resolutions: iPhone 6, Nexus 5 etc.!
 msgctxt "tutorial.welcome"
 msgid "Welcome to HABPanel!"
-msgstr ""
+msgstr "Velkommen til HABPanel!"
 
 #. Appears below the edit mode button when there's no dashboard - please use the Chrome developer tools and check with phone resolutions: iPhone 6, Nexus 5 etc.!
 msgctxt "tutorial.clickheretobegin"
 msgid "Click or tap here to begin."
-msgstr ""
+msgstr "Klik på eller tryk her for at begynde."
 
 #. Appears at the top of the screen when in edit mode and no dashboards are present
 msgctxt "tutorial.editmode"
 msgid "You're now in edit mode, where you can design dashboards."
-msgstr ""
+msgstr "Du er nu i redigeringstilstand, hvor du kan designe dashboards."
 
 #. Hint for the bottom left link when in edit mode and no dashboards are present - please use the Chrome developer tools and check with phone resolutions: iPhone 6, Nexus 5 etc.!
 msgctxt "tutorial.createfirstdashboard"
 msgid "Click or tap here to create your first dashboard..."
-msgstr ""
+msgstr "Klik på eller tryk her for at oprette din første dashboard..."
 
 #. Hint for the bottom right link when in edit mode and no dashboards are present - please use the Chrome developer tools and check with phone resolutions: iPhone 6, Nexus 5 etc.!
 msgctxt "tutorial.importpanel"
 msgid "...or here to restore a panel from the server"
-msgstr ""
+msgstr "...eller her at gendanne et panel fra serveren"
 
 #. Hint in the bottom left part of the page when in edit mode and only one dashboard is present - please use the Chrome developer tools and check with phone resolutions: iPhone 6, Nexus 5 etc.!
 msgctxt "tutorial.enterdesigner"
 msgid "Click or tap inside the tile to enter the dashboard designer."
-msgstr ""
+msgstr "Klik eller tryk i feltet for at få adgang til dashboard designer."
 
 #. Hint in the bottom center part of the page above the column number slider when in edit mode and only one dashboard is present - please use the Chrome developer tools and check with phone resolutions: iPhone 6, Nexus 5 etc.!
 msgctxt "tutorial.adjustnbcolumns"
 msgid "Adjust the number of columns"
-msgstr ""
+msgstr "Justere antallet af kolonner"
 
 #. Hint for the bottom left link when in edit mode and only one dashboard is present - please use the Chrome developer tools and check with phone resolutions: iPhone 6, Nexus 5 etc.!
 msgctxt "tutorial.saveonserver"
 msgid "Save on the openHAB server when done!"
-msgstr ""
+msgstr "Gem på openHAB server når du er færdig!"
 
 #. Displayed when no dashboard is present and editing is locked in the service configuration
 msgctxt "tutorial.editingdisabled"
 msgid "Editing is disabled on the server!"
-msgstr ""
+msgstr "Redigering er deaktiveret på serveren!"
 
 #. Displayed when no dashboard is present and editing is locked in the service configuration
 msgctxt "tutorial.unlockedit"
 msgid "Please go to Paper UI and unlock editing to use HABPanel on this device."
-msgstr ""
+msgstr "Gå til Paper UI og vælg redigering for at bruge HABPanel på denne enhed."
 
 #. Label of the bottom-left link in edit mode - please also test with phone resolutions!
 msgctxt "menu.addnewdashboard"
 msgid "Add new dashboard"
-msgstr ""
+msgstr "Tilføj dashboard"
 
 #. Label of the bottom-right link in edit mode - please also test with phone resolutions!
 msgctxt "menu.panelsettings"
