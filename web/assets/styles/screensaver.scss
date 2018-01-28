@@ -1,0 +1,81 @@
+.screensaver-settings {
+    font-size: 16px;
+    color: #000;
+    input:not([type='checkbox']),
+    option,
+    select {
+        color: #000;
+        padding: .25em;
+        min-width: 20rem;
+    }
+    .scrollable {
+        &.box {
+            padding: 1em;
+            .tab-content {
+                padding: 1em;
+            }
+        }
+    }
+    .d-block {
+        display: block;
+    }
+    .f-normal {
+        font-weight: normal;
+    }
+    .settings-outer,
+    .settings-inner {
+        list-style-type: none;
+        padding: 0;
+    }
+    .settings-outer {
+        max-width: 50em;
+    }
+    .settings-outer li,
+    .settings-inner {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+    }
+    .settings-inner {
+        padding: 0 .5em;
+        justify-content: space-between;
+    }
+    .settings-outer li:not(:last-child) {
+        margin-bottom: 1.25em;
+    }
+    .settings-outer li>label,
+    .settings-outer li p {
+        flex: 1 0 30%;
+        max-width: 8.75em;
+        text-align: left;
+        margin-right: 1em;
+    }
+    .settings-outer li>label,
+    .settings-inner {
+        flex: 1 0 13.75em;
+    }
+    .settings-inner li {
+        width: 6.25em;
+        p {
+            margin: 0;
+        }
+    }
+    div.cancelsave {
+        margin-top: 1.25em;
+    }
+    .helpinfo {
+        cursor: pointer;
+        ul {
+            list-style: circle;
+            li {
+                display: list-item;
+                margin-bottom: auto !important;
+            }
+        }
+        .glyphicon-question-sign {
+            color: #5bc0de !important;
+            position: relative;
+            top: .125em;
+        }
+    }
+}

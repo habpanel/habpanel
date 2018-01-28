@@ -1016,6 +1016,26 @@ msgctxt "screensaver.settings.onstarttype.info"
 msgid "What to do when screensaver starts"
 msgstr ""
 
+#. Screensaver Settings On Start Type Help Line 1
+msgctxt "screensaver.settings.onstarttype.help.line1"
+msgid "Dashboard Slideshow - rotates between dashboards."
+msgstr ""
+
+#. Screensaver Settings On Start Type Help Line 2
+msgctxt "screensaver.settings.onstarttype.help.line2"
+msgid "Go to dashboard - activates the selected dashboard."
+msgstr ""
+
+#. Screensaver Settings On Stop Type Help Line 1
+msgctxt "screensaver.settings.onstoptype.help.line1"
+msgid "Stop - simply stops screensaver wherever it may be"
+msgstr ""
+
+#. Screensaver Settings On Stop Type Help Line 2
+msgctxt "screensaver.settings.onstoptype.help.line2"
+msgid "Go to dashboard - activates the selected dashboard."
+msgstr ""
+
 #. Screensaver Settings Onstarttype Options Slideshow
 msgctxt "screensaver.settings.onstarttype.options.slideshow"
 msgid "Dashboard Slideshow"
