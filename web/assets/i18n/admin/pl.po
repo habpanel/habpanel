@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Polish\n"
 "Language: pl_PL\n"
-"PO-Revision-Date: 2018-01-21 09:22-0500\n"
+"PO-Revision-Date: 2018-01-28 04:02-0500\n"
 
 #. Save button in the dashboard designer
 msgctxt "designer.save"
@@ -255,7 +255,7 @@ msgstr "Zawiera:"
 #. Link to create a panel configuration from the current configuration
 msgctxt "settings.storage.panelconfiguration.save"
 msgid "Save the current configuration to a new panel configuration"
-msgstr "Zapisać bieżącą konfigurację do nowego panelu"
+msgstr "Zapisz bieżącą konfigurację do nowego panelu"
 
 #. Title of the dialog box when creating a new panel configuration
 msgctxt "settings.storage.panelconfiguration.dialog.title"
