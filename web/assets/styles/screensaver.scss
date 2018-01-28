@@ -34,7 +34,9 @@
     .settings-inner {
         display: flex;
         flex-wrap: wrap;
-        align-items: baseline;
+        align-items: flex-start;
+        top: .25em;
+        position: relative;
     }
     .settings-inner {
         padding: 0 .5em;
@@ -80,6 +82,8 @@
     }
     div {
         .ui-sortable {
+            color: #000;
+            min-height: 3.75em;
             width: 20em;
             .ui-sortable-handle {
                 cursor: move;
@@ -87,11 +91,18 @@
                 border: solid 1px #ddd;
                 border-radius: 4px;
                 background: #fff;
-                width: 100%;
+                width: calc(100% - 1em);
+                margin: .5em;
                 .glyphicon {
                     top: .25em;
                     opacity: .25
                 }
+            }
+            &.positive {
+                background: rgb(177, 218, 177);
+            }
+            &.negative {
+                background: rgb(255, 173, 173);
             }
         }
     }

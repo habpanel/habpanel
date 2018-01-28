@@ -971,6 +971,11 @@ msgctxt "screensaver.settings.additionalevents.label"
 msgid "Additional Events (optional): "
 msgstr ""
 
+#. Screensaver Settings Common Reorder 
+msgctxt "screensaver.settings.common.reorder"
+msgid "Reorder"
+msgstr ""
+
 #. Screensaver Settings Common Dashboard 
 msgctxt "screensaver.settings.common.dashboard"
 msgid "Dashboard: "
@@ -1051,6 +1056,11 @@ msgctxt "screensaver.settings.slideshow.dashboards.label"
 msgid "Dashboards to rotate:"
 msgstr ""
 
+#. Screensaver Settings Slideshow Excluded Dashboards Label
+msgctxt "screensaver.settings.slideshow.dashboardsExcluded.label"
+msgid "Excluded Dashboards: "
+msgstr ""
+
 #. Screensaver Settings Slideshow Dashboardtimeout Info
 msgctxt "screensaver.settings.slideshow.dashboardtimeout.info"
 msgid "Duration to switch to the next dashboard"
@@ -1064,6 +1074,11 @@ msgstr ""
 #. Screensaver Settings Error No Dashboard
 msgctxt "screensaver.settings.error.missingdashboard"
 msgid "You need at least 1 dashboard to enable screensaver."
+msgstr ""
+
+#. Screensaver Settings Error Number of Dashboard
+msgctxt "screensaver.settings.error.atleast2dashboard"
+msgid "You need at least 2 configured dashboards to enable slideshow."
 msgstr ""
 
 #. Screensaver Settings Cancel Dialog Title
