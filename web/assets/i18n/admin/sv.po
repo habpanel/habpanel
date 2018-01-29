@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Swedish\n"
 "Language: sv_SE\n"
-"PO-Revision-Date: 2018-01-29 13:52-0500\n"
+"PO-Revision-Date: 2018-01-29 14:41-0500\n"
 
 #. Save button in the dashboard designer
 msgctxt "designer.save"
@@ -265,7 +265,7 @@ msgstr "Ny panelkonfiguration"
 #. Message of the dialog box when creating a new panel configuration
 msgctxt "settings.storage.panelconfiguration.dialog.message"
 msgid "Please choose a name for the new panel configuration (letters and digits only please):"
-msgstr ""
+msgstr "Välj ett namn på den nya panelkonfigurationen (endast bokstäver och siffror):"
 
 #. Panel name (section header)
 msgctxt "settings.panel.name"
@@ -295,7 +295,7 @@ msgstr "Denna webbläsare är inte kompatibel med teman."
 #. Setting header
 msgctxt "settings.panel.appearance.additional_stylesheet"
 msgid "Additional stylesheet (optional)"
-msgstr ""
+msgstr "Ytterligare stylesheet (valfritt)"
 
 #. Placeholder inside the text box
 msgctxt "settings.panel.appearance.additional_stylesheet.hint"
@@ -375,7 +375,7 @@ msgstr "Talsyntes-röst"
 #. Displayed below the voice dropdown
 msgctxt "settings.panel.voicesupport.speech_synthesis_voice.hint"
 msgid "Available voices depend on the operating system and browser environments."
-msgstr ""
+msgstr "Tillgängliga röster beror på operativsystem och webbläsare."
 
 #. Test button below the voice selection - make the voice say "habpanel 1 2 3"
 msgctxt "settings.panel.voicesupport.speech_synthesis_voice.test"
@@ -385,7 +385,7 @@ msgstr "Testa"
 #. Checkbox
 msgctxt "settings.panel.voicesupport.floating_speech_button"
 msgid "Display a floating speech button at the bottom of the screen"
-msgstr ""
+msgstr "Visa en flytande tal-knapp längst ner på skärmen"
 
 #. Dropdown header
 msgctxt "settings.panel.voicesupport.speech_synthesis_item"
@@ -540,12 +540,12 @@ msgstr "Ny anpassad widget"
 #. Dialog box message
 msgctxt "customwidgets.list.add.dialog.message"
 msgid "Please choose a short name as an identifier for your widget (for example, 'window-shutter=up-down-button, 'weather-forecast' etc.). If a widget with the same identifier already exists, it will be replaced!"
-msgstr ""
+msgstr "Välj ett kort namn på din widget (till exempel 'rullgardin', 'upp-ner-knpp', 'väderprognos'). Om en widget med samma namn redan existerar kommer den att ersättas!"
 
 #. Error message, displayed in an alert box
 msgctxt "customwidgets.list.import.nojson"
 msgid "The file must have a .json extension!"
-msgstr ""
+msgstr "Filen måste ha filtillägget .json!"
 
 #. Dialog box title
 msgctxt "customwidgets.list.import.dialog.title"
@@ -625,7 +625,7 @@ msgstr "Sparat!"
 #. Tab header
 msgctxt "customwidgets.designer.code"
 msgid "Code"
-msgstr ""
+msgstr "Källkod"
 
 #. Tab header
 msgctxt "customwidgets.designer.settings"
