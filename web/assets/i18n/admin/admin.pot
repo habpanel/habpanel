@@ -956,6 +956,11 @@ msgstr ""
 
 # DASHBOARD SCREENSAVER SETTINGS
 
+#. Screensaver Settings Main Header
+msgctxt "screensaver.settings.header"
+msgid "Screensaver"
+msgstr ""
+
 #. Screensaver Settings Additionalevents Example
 msgctxt "screensaver.settings.additionalevents.example"
 msgid "Example: keypress,keyup"

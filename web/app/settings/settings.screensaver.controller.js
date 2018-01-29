@@ -110,7 +110,7 @@
             connectWith: ".db-sortable",
             update: () => {
                 $scope._form.mainForm.$setDirty();
-                validate();
+                $scope.validate();
             }
         }
 
