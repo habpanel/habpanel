@@ -33,7 +33,7 @@
     ) {
 
         const _fallbackEventsToWatch = 'keydown DOMMouseScroll mousewheel mousedown touchstart touchmove';
-        
+
         let _isIdle = false;
         let _isRunning = false;
         let _config = localStorageService.get('screensaverConfig');
@@ -192,7 +192,7 @@
             log(`Screensaver (${_config.onStart.type}) started in dashboard "${$route.current.params.id}"`);
             _currentDbIndex = 0;
             nextDashboard();
-            _slideshowTimer = $interval(nextDashboard, (_config.slideshowInterval || 10) * 1000);
+            _slideshowTimer = $interval(nextDashboard, (_config.slideshowIntervalSec || 10) * 1000);
         }
 
         let start = () => {
