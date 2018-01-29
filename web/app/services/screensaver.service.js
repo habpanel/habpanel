@@ -269,7 +269,19 @@
             }
         })
 
+        Object.defineProperty(this, "config", {
+            get: () => _config
+        })        
+
         let reConfig = () => {
+
+            var freshDashboards = PersistenceService.getDashboards();
+            if (!freshDashboards) {
+                _config.isEnabled = false;
+                saveSettings();
+                return;
+            }
+            
             // Iterate through _config.onStart.dashboards, remove all dashboards not in $rootScope.dashboards
             for (let ours of _config.onStart.dashboards) {
                 if ($rootScope.dashboards.findIndex(theirs => theirs.id == ours.id) === -1)
@@ -313,7 +325,6 @@
         this.start = start;
         this.stop = stop;
         this.isRunning = isRunning;
-        this.config = _config;
         this.saveSettings = saveSettings;
         this.toggle = toggle;
 
