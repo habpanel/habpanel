@@ -271,7 +271,7 @@
 
         Object.defineProperty(this, "config", {
             get: () => _config
-        })        
+        })
 
         let reConfig = () => {
 
@@ -281,7 +281,7 @@
                 saveSettings();
                 return;
             }
-            
+
             // Iterate through _config.onStart.dashboards, remove all dashboards not in $rootScope.dashboards
             for (let ours of _config.onStart.dashboards) {
                 if ($rootScope.dashboards.findIndex(theirs => theirs.id == ours.id) === -1)
@@ -312,6 +312,14 @@
                 if (!_config.onStart.dashboard || !dashboardExists(_config.onStart.dashboard))
                     _config.onStart.dashboard = combined[0].id;
             }
+
+            if (!_config.onStop.dashboard || !dashboardExists(_config.onStop.dashboard)) {
+                _config.onStop.dashboard = freshDashboards[0].id;
+                if (_config.onStop.type === 'gotodashboard') {
+                    _config.onStop.type = 'stop';
+                }
+            }
+
 
             saveSettings();
         }
