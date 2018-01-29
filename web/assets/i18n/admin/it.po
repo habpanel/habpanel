@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Italian\n"
 "Language: it_IT\n"
-"PO-Revision-Date: 2018-01-29 11:34-0500\n"
+"PO-Revision-Date: 2018-01-29 11:43-0500\n"
 
 #. Save button in the dashboard designer
 msgctxt "designer.save"
@@ -895,22 +895,22 @@ msgstr "Nessun widget trovato (files *.widget)! Per cortesia segnalalo."
 #. Explanation in the expanded details section
 msgctxt "widgetgallery.details.widget.hint.checkrepo"
 msgid "The widgets are likely in the referenced GitHub repository. Click the 'Go to the repository' button to open it."
-msgstr ""
+msgstr "I widget si trovano probabilmente nel repository GitHub indicato. Clicca sul bottone \"Vai al repository\" per aprirlo."
 
 #. Green button in the expanded details section
 msgctxt "widgetgallery.details.widget.import"
 msgid "Import widget"
-msgstr ""
+msgstr "Importa widget"
 
 #. Orange button in the expanded details section
 msgctxt "widgetgallery.details.widget.update"
 msgid "Update widget"
-msgstr ""
+msgstr "Aggiorna widget"
 
 #. Disabled button in the expanded details section after a widget was imported/updated
 msgctxt "widgetgallery.details.widget.imported"
 msgid "Widget imported!"
-msgstr ""
+msgstr "Widget importato!"
 
 #. Alert banner, followed by a technical exception message
 msgctxt "widgetgallery.error"
@@ -920,10 +920,10 @@ msgstr "Errore:"
 #. Dialog box title
 msgctxt "widgetgallery.widgetsdetected.dialog.title"
 msgid "Existing widgets detected"
-msgstr ""
+msgstr "Sono stati trovati dei widget esistenti"
 
 #. Dialog box message
 msgctxt "widgetgallery.widgetsdetected.dialog.message"
 msgid "Warning: please confirm you wish to update <nbexisting> existing widgets, overwriting any eventual changes made locally! If unsure, cancel and click Show details to review the list of affected widgets."
-msgstr ""
+msgstr "Attenzione: conferma di voler aggiornare <nbexisting> widget esistenti, sovrascrivendo ogni eventuale modifica locale! Se non sei sicuro, cancella e clicca 'Mostra dettagli' per rivedere la lista dei widget interessati."
 
