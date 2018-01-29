@@ -6,8 +6,8 @@
         <h2 translate-keep-content translate="screensaver.settings.header">Screensaver</h2>
     </div>
 
-    <div uib-alert ng-if="infoMessage" class="alert-info" close="setInfoMessage(null)">{{infoMessage}}</div>
-    <div uib-alert ng-if="errorMessage" class="alert-danger" close="setErrorMessage(null)">{{errorMessage}}</div>
+    <div ng-repeat="infoMessage in infoMessages" uib-alert class="alert-info" close="clearInfoMessage($index)">{{infoMessage}}</div>
+    <div ng-repeat="errorMessage in errorMessages" uib-alert class="alert-danger" close="clearErrorMessage($index)">{{errorMessage}}</div>
 
     <form name="_form.mainForm">
         <div ng-if="!(dashboards && dashboards.length > 0)">
@@ -23,7 +23,7 @@
                         <li>
                             <label for="ss_idleTimeout" translate-keep-content translate="screensaver.settings.idletimeout.label">Idle Timeout: </label>
                             <div>
-                                <input id="ss_idleTimeout" class="d-block" type="number" name="idleTimeout" ng-model="config.idleTimeoutSec" required>
+                                <input id="ss_idleTimeout" class="d-block" type="number" ng-min="10" ng-change="validate()" name="idleTimeout" ng-model="config.idleTimeoutSec" required>
                                 <span>
                                     <em translate-keep-content translate="screensaver.settings.idletimeout.info">Seconds of being idle until screensaver kicks in</em>
                                 </span>
@@ -36,7 +36,7 @@
                                     <em translate-keep-content translate="screensaver.settings.eventstowatch.info">Events to watch to determine idleness.</em>
                                 </span>
                                 <label ng-repeat="(key, val) in config.eventsToWatch" for="eventsToWatch_{{key}}" class="d-block f-normal">
-                                    <input id="eventsToWatch_{{key}}" type="checkbox" name="{{key}}" ng-model="config.eventsToWatch[key]"> {{key}}
+                                    <input id="eventsToWatch_{{key}}" type="checkbox" name="{{key}}" ng-model="config.eventsToWatch[key]" ng-change="validate()"> {{key}}
                                 </label>
                             </div>
                         </li>
@@ -44,7 +44,7 @@
                         <li>
                             <label translate-keep-content translate="screensaver.settings.additionalevents.label" for="ss_additionalEvents">Additional Events (optional): </label>
                             <div>
-                                <input id="ss_additionalEvents" class="d-block" type="text" name="additionalEvents" ng-model="config.additionalEventsToWatch">
+                                <input id="ss_additionalEvents" class="d-block" type="text" name="additionalEvents" ng-model="config.additionalEventsToWatch" ng-change="validate()">
                                 <span>
                                     <em translate-keep-content translate="screensaver.settings.additionalevents.info">Additional events to watch to determine idleness, separated by a comma (,).
                                         <br>
@@ -80,8 +80,8 @@
                             <li>
                                 <label translate-keep-content translate="screensaver.settings.slideshow.dashboardtimeout.label" for="ss_dashboardTimeout">Slideshow Interval: </label>
                                 <div>
-                                    <input class="d-block" type="number" name="dashboardTimeout" id="ss_dashboardTimeout" ng-model="config.slideshowIntervalSec"
-                                        required>
+                                    <input class="d-block" type="number" ng-min="1" name="dashboardTimeout" id="ss_dashboardTimeout" ng-model="config.slideshowIntervalSec"
+                                        ng-change="validate()" ng-model-options="{allowInvalid: true}" required>
                                     <span>
                                         <em translate-keep-content translate="screensaver.settings.slideshow.dashboardtimeout.info">Duration to switch to the next dashboard</em>
                                     </span>
@@ -115,7 +115,7 @@
                                 <label>
                                     <em translate-keep-content translate="screensaver.settings.common.dashboard">Dashboard:</em>
                                 </label>
-                                <select class="d-block" name='dashboard' ng-model="config.onStart.dashboard" ng-init="config.onStart.dashboard = config.onStart.dashboard ? config.onStart.dashboard : dashboards[0].id">
+                                <select class="d-block" name='dashboard' ng-model="config.onStart.dashboard" ng-change="validate()" ng-init="config.onStart.dashboard = config.onStart.dashboard ? config.onStart.dashboard : dashboards[0].id">
                                     <option ng-repeat="db in dashboards | orderBy: db.id" value="{{db.id}}">{{db.id}}</option>
                                 </select>
                             </li>
@@ -127,7 +127,7 @@
                         <li>
                             <label translate-keep-content translate="screensaver.settings.common.perform" for="ss_onStopType">Perform: </label>
                             <div>
-                                <select id="ss_onStopType" class="d-block" name='onStopType' ng-model="config.onStop.type">
+                                <select id="ss_onStopType" class="d-block" name='onStopType' ng-model="config.onStop.type" ng-change="validate()">
                                     <option translate-keep-content translate="screensaver.settings.common.stop" value='stop'>Stop</option>
                                     <option translate-keep-content translate="screensaver.settings.common.gotodashboard" value='gotodashboard'>Go to dashboard</option>
                                 </select>
@@ -148,7 +148,7 @@
                                 <label>
                                     <em translate-keep-content translate="screensaver.settings.common.dashboard">Dashboard:</em>
                                 </label>
-                                <select class="d-block" name='dashboard' ng-model="config.onStop.dashboard" ng-init="config.onStop.dashboard = config.onStop.dashboard ? config.onStop.dashboard : dashboards[0].id">
+                                <select class="d-block" name='dashboard' ng-model="config.onStop.dashboard" ng-change="validate()" ng-init="config.onStop.dashboard = config.onStop.dashboard ? config.onStop.dashboard : dashboards[0].id">
                                     <option ng-repeat="db in dashboards | orderBy: db.id" value="{{db.id}}">{{db.id}}</option>
                                 </select>
                             </li>
@@ -158,8 +158,7 @@
             </uib-tabset>
 
             <div class="cancelsave pull-right">
-                <button class="btn btn-lg" ng-class="{'btn-primary': _form.mainForm.$pristine, 'btn-danger': _form.mainForm.$dirty}"
-                    ng-click="cancel()">
+                <button class="btn btn-lg" ng-class="{'btn-primary': _form.mainForm.$pristine, 'btn-danger': _form.mainForm.$dirty}" ng-click="cancel()">
                     <span ng-if="_form.mainForm.$pristine" translate-keep-content translate="screensaver.settings.button.back">Back</span>
                     <span ng-if="_form.mainForm.$dirty" translate-keep-content translate="screensaver.settings.button.cancel">Cancel</span>
                 </button>

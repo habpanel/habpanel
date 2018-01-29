@@ -34,51 +34,64 @@
         $scope._form = { mainForm: {} };
         $scope.dashboards = angular.copy(dashboards);
         $scope.config = angular.copy(ScreensaverService.config);
-
+        $scope.errorMessages = [];
+        $scope.infoMessages = [];
         $scope.translations = {
             reorder: TranslationService.translate("screensaver.settings.common.reorder", "Reorder"),
-            updateSuccess: TranslationService.translate("settings.screensaver.update.success", "Screensaver settings updated."),
-            updateFail: TranslationService.translate("settings.screensaver.update.fail", "Screensaver settings update failed."),
+            updateSuccess: TranslationService.translate("screensaver.settings.update.success", "Screensaver settings updated."),
+            updateFail: TranslationService.translate("screensaver.settings.update.fail", "Screensaver settings update failed."),
             atleast2Db: TranslationService.translate("screensaver.settings.error.atleast2dashboard", "You need at least 2 configured dashboards in the rotation settings to enable slideshow."),
-            cancelconfirmTitle: TranslationService.translate("settings.screensaver.cancelconfirm.title", "Cancel Changes?"),
-            cancelconfirmMsg: TranslationService.translate("settings.screensaver.cancelconfirm.message", "You have unsaved changes. Clicking OK will revert to previous settings."),
-            tabheadingGeneral: TranslationService.translate("settings.screensaver.tabheading.general", "General"),
-            tabheadingonstart: TranslationService.translate("settings.screensaver.tabheading.general", "On Start"),
-            tabheadingonstop: TranslationService.translate("settings.screensaver.tabheading.general", "On Stop")
+            cancelconfirmTitle: TranslationService.translate("screensaver.settings.cancelconfirm.title", "Cancel Changes?"),
+            cancelconfirmMsg: TranslationService.translate("screensaver.settings.cancelconfirm.message", "You have unsaved changes. Clicking OK will revert to previous settings."),
+            tabheadingGeneral: TranslationService.translate("screensaver.settings.tabheading.general", "General"),
+            tabheadingonstart: TranslationService.translate("screensaver.settings.tabheading.general", "On Start"),
+            tabheadingonstop: TranslationService.translate("screensaver.settings.tabheading.general", "On Stop"),
+            errorAtLeast1Sec: TranslationService.translate("screensaver.settings.error.errorAtLeast1Sec", "Interval must be at least 1 second."),
+            idleTimeouterror: TranslationService.translate("screensaver.settings.error.errorAtLeast10Secs", "Timeout must be at least 10 seconds."),
         }
 
-        $scope.setErrorMessage = (m) => {
-            $scope.errorMessage = m;
+        let errorMap = {
+            dashboards: $scope.translations.atleast2Db,
+            dashboardTimeout: $scope.translations.errorAtLeast1Sec,
+            idleTimeout: $scope.translations.idleTimeouterror,
         }
 
-        $scope.setInfoMessage = (m) => {
-            $scope.infoMessage = m;
-        }
+        let addErrorMessage = (m) => { $scope.errorMessages.indexOf(m) === -1 && $scope.errorMessages.push(m); }
+        let addInfoMessage = (m) => { $scope.infoMessages.indexOf(m) === -1 && $scope.infoMessages.push(m); }
+        $scope.clearErrorMessage = (idx) => { $scope.errorMessages.splice(idx, 1); }
+        $scope.clearInfoMessage = (idx) => { $scope.infoMessages.splice(idx, 1); }
 
-        let getErrors = () => {
+        let checkErrors = () => {
             $scope._form.mainForm.$setValidity('dashboards', $scope.config.onStart.type == 'gotodashboard' || $scope.config.onStart.dashboards.length > 1);
-            if ($scope._form.mainForm.$error['dashboards'])
-                return $scope.translations.atleast2Db
 
-            if (Object.keys($scope._form.mainForm.$error).length)
-                return $scope.translations.updateFail;
+            for (let k of Object.keys($scope._form.mainForm.$error)) {
+                let error = errorMap[k];
+                if (error) {
+                    addErrorMessage(error);
+                    continue;
+                }
 
-            return null;
+                if (Array.isArray($scope._form.mainForm.$error[k])) {
+                    for (let err of $scope._form.mainForm.$error[k]) {
+                        err.$name
+                            && errorMap[err.$name]
+                            && addErrorMessage(errorMap[err.$name]);
+                    }
+                }
+            }
         }
 
         $scope.save = () => {
-            let error = getErrors();
-            if (error) {
-                $scope.setErrorMessage(error);
+            checkErrors();
+            if ($scope._form.mainForm.$invalid)
                 return;
-            }
 
             if (ScreensaverService.saveSettings($scope.config)) {
-                $scope.setInfoMessage($scope.translations.updateSuccess);
+                addInfoMessage($scope.translations.updateSuccess);
                 $scope._form.mainForm.$setPristine();
             }
             else {
-                $scope.setErrorMessage($scope.translations.updateFail);
+                addErrorMessage($scope.translations.updateFail);
             }
 
         }
@@ -98,11 +111,11 @@
         }
 
         $scope.validate = () => {
-            let error = getErrors();
-            if (error) {
-                $scope.setErrorMessage(error);
-            } else {
-                $scope.setErrorMessage(null);
+            $scope.errorMessages = [];
+            $scope.infoMessages = [];
+            checkErrors();
+            if ($scope._form.mainForm.$dirty) {
+                $scope.clearInfoMessage($scope.infoMessages.indexOf($scope.translations.updateSuccess));
             }
         }
 
