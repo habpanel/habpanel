@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Italian\n"
 "Language: it_IT\n"
-"PO-Revision-Date: 2018-01-29 07:52-0500\n"
+"PO-Revision-Date: 2018-01-29 10:14-0500\n"
 
 #. Common term
 msgctxt "OK"
@@ -171,12 +171,12 @@ msgstr ""
 #. New dashboard dialog box title
 msgctxt "menu.dialog.newdashboard.title"
 msgid "New dashboard"
-msgstr ""
+msgstr "Nuovo pannello"
 
 #. New dashboard dialog box message
 msgctxt "menu.dialog.newdashboard.message"
 msgid "Name of your new dashboard:"
-msgstr ""
+msgstr "Nome del nuovo pannello:"
 
 #. Remove dashboard dialog box title
 msgctxt "menu.dialog.removedashboard.title"
