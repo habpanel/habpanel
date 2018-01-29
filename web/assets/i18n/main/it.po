@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Italian\n"
 "Language: it_IT\n"
-"PO-Revision-Date: 2018-01-29 11:13-0500\n"
+"PO-Revision-Date: 2018-01-29 11:55-0500\n"
 
 #. Common term
 msgctxt "OK"
@@ -121,7 +121,7 @@ msgstr "Clicca o tocca qui per iniziare."
 #. Appears at the top of the screen when in edit mode and no dashboards are present
 msgctxt "tutorial.editmode"
 msgid "You're now in edit mode, where you can design dashboards."
-msgstr "Ora sei in modalità modifica, dove puoi progettare i cruscotti."
+msgstr ""
 
 #. Hint for the bottom left link when in edit mode and no dashboards are present - please use the Chrome developer tools and check with phone resolutions: iPhone 6, Nexus 5 etc.!
 msgctxt "tutorial.createfirstdashboard"
