@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Swedish\n"
 "Language: sv_SE\n"
-"PO-Revision-Date: 2018-01-29 13:52-0500\n"
+"PO-Revision-Date: 2018-01-29 14:03-0500\n"
 
 #. Common term in widget settings dialogs
 msgctxt "widget.common.min"
@@ -340,7 +340,7 @@ msgstr "Linje"
 #. Radio button label
 msgctxt "widget.chart.series.display.area"
 msgid "Area"
-msgstr ""
+msgstr "Yta"
 
 #. Radio button label
 msgctxt "widget.chart.series.display.dots"
@@ -355,7 +355,7 @@ msgstr "Liveuppdatering (experimentell)"
 #. Checkbox label
 msgctxt "widget.chart.series.liveupdate.fillvalues"
 msgid "Repeat other series' current values on update if necessary"
-msgstr ""
+msgstr "Upprepa andra seriers nuvarande värden om nödvändigt"
 
 #. Display name of the widget (appears in the Add Widget dropdown menu in the designer)
 msgctxt "widget.clock"
@@ -390,7 +390,7 @@ msgstr "Digital"
 #. Dropdown header
 msgctxt "widget.clock.theme"
 msgid "Analog Theme"
-msgstr ""
+msgstr "Tema (analog)"
 
 #. Dropdown option
 msgctxt "widget.clock.theme.light"
@@ -405,12 +405,12 @@ msgstr "mörk"
 #. Textbox header
 msgctxt "widget.clock.digital_format"
 msgid "Digital Format"
-msgstr ""
+msgstr "Format (digital)"
 
 #. Textbox header
 msgctxt "widget.clock.font_size"
 msgid "Digital Font Size"
-msgstr ""
+msgstr "Textstorlek (digital)"
 
 #. Display name of the widget (appears in the Add Widget dropdown menu in the designer)
 msgctxt "widget.colorpicker"
@@ -435,7 +435,7 @@ msgstr "Typ"
 #. Dropdown option
 msgctxt "widget.colorpicker.type.hsl"
 msgid "HSL Sliders"
-msgstr ""
+msgstr "HSL-reglage"
 
 #. Dropdown option
 msgctxt "widget.colorpicker.type.ackolor"
