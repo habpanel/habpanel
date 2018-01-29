@@ -43,8 +43,12 @@
         let _config = localStorageService.get('screensaverConfig');
         let _slideshowTimer = null;
         let _idleTimer = null;
-        let _dashboards = null;
+        let _slideshowDashboards = null;
         const _fallbackEventsToWatch = 'keydown DOMMouseScroll mousewheel mousedown touchstart touchmove';
+
+        let log = (m) => {
+            $log.log(`ScreensaverService: ${m}`);
+        }
 
         let initConfig = () => {
             if (!_config) {
@@ -65,10 +69,10 @@
                         type: 'slideshow',
                         dashboardsExcluded: [],
                         dashboards: (() => {
-                            _dashboards = PersistenceService.getDashboards();
+                            _slideshowDashboards = PersistenceService.getDashboards();
                             let dbs = [];
                             let order = 0;
-                            for (let db of _dashboards) {
+                            for (let db of _slideshowDashboards) {
                                 dbs.push({
                                     id: db.id,
                                     enabled: true,
@@ -101,12 +105,12 @@
 
         let enable = () => {
             _config.isEnabled = true;
-            saveSettings(_config);
+            saveSettings();
         }
 
         let disable = () => {
             _config.isEnabled = false;
-            saveSettings(_config);
+            saveSettings();
         }
 
         let toggle = (isEnabled) => {
@@ -138,22 +142,58 @@
             $document.off(getEventsToWatch(), onAwake);
         }
 
-        let slideshow = () => {
-            _dashboards = PersistenceService.getDashboards();
-            let currentDbIndex = _dashboards.findIndex(db => db.id == $route.current.params.id);
-            currentDbIndex = currentDbIndex < 0 ? 0 : currentDbIndex;
-            $log.log(`Screensaver started in dashboard "${_dashboards[currentDbIndex].id}"`);
+        let dashboardExists = (dbId) => {
+            return $rootScope.dashboards.findIndex(db => db.id == dbId) != -1;
+        }
 
-            let nextDashboard = () => {
-                currentDbIndex = ++currentDbIndex < _dashboards.length ? currentDbIndex : 0;
-                $location.url(`/view/${_dashboards[currentDbIndex].id}`);
+        let removeDashboardFromSlideshow = (dbId) => {
+            let idx = _config.onStart.dashboards.findIndex(db => db.id == dbId);
+            if (idx != -1) {
+                _config.onStart.dashboards.splice(idx, 1);
+            }
+            saveSettings();
+        }
+
+        let nextDashboard = () => {
+            _slideshowDashboards = (_config.onStart.dashboards || []).sort((a, b) => a.order - b.order);
+            
+            // No dashboards found
+            if (_slideshowDashboards.length <= 0) {
+                log("Stopping slideshow. No dashboard found.");
+                stop();
+                return;
             }
 
+            // Only 1 dashboard found
+            if (_slideshowDashboards.length == 1) {
+                // Change configuration to gotodashboard
+                _config.onStop.type === 'gotodashboard';
+                saveSettings();
+                $interval.cancel(_slideshowTimer);
+                _slideshowTimer = null;
+                log("Stopping slideshow. No dashboard found.");
+                $location.url(`/view/${_config.onStart.dashboard}`);
+                return;
+            }
+
+            let nextDbId = _slideshowDashboards[currentDbIndex].id;
+            if (!dashboardExists(nextDbId)) {
+                removeDashboardFromSlideshow(nextDbId);
+                nextDashboard();
+                return;
+            }
+            currentDbIndex = ++currentDbIndex < _slideshowDashboards.length ? currentDbIndex : 0;
+            $location.url(`/view/${nextDbId}`);
+        }
+
+        let slideshow = () => {
+            log(`Screensaver (${_config.onStart.type}) started in dashboard "${$route.current.params.id}"`);
+            currentDbIndex = 0;
             nextDashboard();
             _slideshowTimer = $interval(nextDashboard, (_config.slideshowInterval || 10) * 1000);
         }
 
-        let start = (isManual) => {
+        let start = () => {
             if (_isRunning)
                 return;
 
@@ -175,7 +215,7 @@
             $interval.cancel(_slideshowTimer);
             _slideshowTimer = null;
             _isRunning = false;
-            $log.log(`Screensaver stopped.`);
+            log(`Screensaver stopped.`);
 
             if (_config.isEnabled) {
                 idleTimerStart();

@@ -6,8 +6,8 @@
         <h2 translate-keep-content translate="screensaver.settings.header">Dashboard screensaver/Screensaver</h2>
     </div>
 
-    <div uib-alert ng-if="infoMessage" type="info" close="infoMessage = null">{{infoMessage}}</div>
-    <div uib-alert ng-if="errorMessage" type="danger" close="errorMessage = null">{{errorMessage}}</div>
+    <div uib-alert ng-if="infoMessage" class="alert-info" close="setInfoMessage(null)">{{infoMessage}}</div>
+    <div uib-alert ng-if="errorMessage" class="alert-danger" close="setErrorMessage(null)">{{errorMessage}}</div>
 
     <form name="_form.mainForm">
         <div ng-if="!(dashboards && dashboards.length > 0)">
@@ -158,7 +158,7 @@
             </uib-tabset>
 
             <div class="cancelsave pull-right">
-                <button class="btn btn-lg btn-danger" ng-class="{'btn-primary': _form.mainForm.$pristine, 'btn-danger': _form.mainForm.$dirty}"
+                <button class="btn btn-lg" ng-class="{'btn-primary': _form.mainForm.$pristine, 'btn-danger': _form.mainForm.$dirty}"
                     ng-click="cancel()">
                     <span ng-if="_form.mainForm.$pristine" translate-keep-content translate="screensaver.settings.button.back">Back</span>
                     <span ng-if="_form.mainForm.$dirty" translate-keep-content translate="screensaver.settings.button.cancel">Cancel</span>

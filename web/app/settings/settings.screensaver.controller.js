@@ -42,11 +42,11 @@
             cancelconfirmMsg: TranslationService.translate("settings.screensaver.cancelconfirm.message", "You have unsaved changes. Clicking OK will revert to previous settings.")
         }
 
-        let errorMessage = (m) => {
+        $scope.setErrorMessage = (m) => {
             $scope.errorMessage = m;
         }
 
-        let infoMessage = (m) => {
+        $scope.setInfoMessage = (m) => {
             $scope.infoMessage = m;
         }
 
@@ -64,16 +64,16 @@
         $scope.save = () => {
             let error = getErrors();
             if (error) {
-                errorMessage(error);
+                $scope.setErrorMessage(error);
                 return;
             }
 
             if (ScreensaverService.saveSettings($scope.config)) {
-                infoMessage($scope.translations.updateSuccess);
+                $scope.setInfoMessage($scope.translations.updateSuccess);
                 $scope._form.mainForm.$setPristine();
             }
             else {
-                errorMessage($scope.translations.updateFail);
+                $scope.setErrorMessage($scope.translations.updateFail);
             }
 
         }
@@ -98,7 +98,9 @@
                 $scope._form.mainForm.$setDirty();
                 let error = getErrors();
                 if (error) {
-                    errorMessage(error);
+                    $scope.setErrorMessage(error);
+                } else {
+                    $scope.setErrorMessage(null);
                 }
             }
         }
