@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Swedish\n"
 "Language: sv_SE\n"
-"PO-Revision-Date: 2018-01-29 13:43-0500\n"
+"PO-Revision-Date: 2018-01-29 13:52-0500\n"
 
 #. Save button in the dashboard designer
 msgctxt "designer.save"
@@ -105,12 +105,12 @@ msgstr ""
 #. Textbox header
 msgctxt "dashboard.settings.tile.background_image_url"
 msgid "Background Image URL"
-msgstr "URL till bakgrundsbild"
+msgstr "URL för bakgrundsbild"
 
 #. Color picker header
 msgctxt "dashboard.settings.tile.title_text_color"
 msgid "Title Text color"
-msgstr ""
+msgstr "Färg på rubrik"
 
 #. Checkbox header
 msgctxt "dashboard.settings.tile.click_feedback"
@@ -120,17 +120,17 @@ msgstr "Feedback vid klick"
 #. Checkbox label
 msgctxt "dashboard.settings.tile.click_feedback.description"
 msgid "Don't brighten tile on click/tap"
-msgstr ""
+msgstr "Lys ej upp vid klick"
 
 #. Tab header
 msgctxt "dashboard.settings.advanced"
 msgid "Advanced"
-msgstr ""
+msgstr "Avancerat"
 
 #. Alert display at the top
 msgctxt "dashboard.settings.advanced.warning"
 msgid "These options are currently experimental, unstable or targeted at advanced users! Use at your own risk."
-msgstr ""
+msgstr "Dessa inställningar är för närvarande experimentella, instabila eller riktade till avancerade användare! Använd på egen risk."
 
 #. Tab header
 msgctxt "dashboard.settings.customwidgets"
@@ -140,7 +140,7 @@ msgstr "Anpassade widgets"
 #. Alert displayed at the top
 msgctxt "dashboard.settings.customwidgets.warning"
 msgid "This feature is currently experimental, and targeted at advanced users! Use at your own risk."
-msgstr ""
+msgstr "Denna funktion är för tillfället experimentell och riktad till avancerade användare! Använd på egen risk."
 
 #. Checkbox header
 msgctxt "dashboard.settings.customwidgets.usecustomwidget"
@@ -180,17 +180,17 @@ msgstr "Sidhuvud"
 #. Checkbox label
 msgctxt "dashboard.settings.customwidgets.header.description"
 msgid "Replace the contents of the dashboard header by a custom widget"
-msgstr ""
+msgstr "Ersätt vyns sidhuvud med en anpassad widget"
 
 #. Displayed in the item picker when no item selected
 msgctxt "itempicker.placeholder"
 msgid "Search or select an openHAB item"
-msgstr ""
+msgstr "Sök eller välj en openHAB-item"
 
 #. Icon picker dropdown placeholder
 msgctxt "iconpicker.selecticonset"
 msgid "Select icon set"
-msgstr ""
+msgstr "Välj ikonuppsättning"
 
 #. Icon picker dropdown entry
 msgctxt "iconpicker.customicon"
@@ -210,7 +210,7 @@ msgstr "(ingen)"
 #. Appears when focusing the icon textbox when the "Custom icon" iconset is selected
 msgctxt "iconpicker.customicontooltip"
 msgid "Type the name of a <a href='http://docs.openhab.org/configuration/items.html#icons' target='_blank'>registered icon</a> (only SVG supported)<br />Examples: <em>switch</em>, <em>temperature</em> or an additional icon in your configuration's <code>icons/classic</code> folder"
-msgstr ""
+msgstr "Ange namnet på en <a href='http://docs.openhab.org/configuration/items.html#icons' target='_blank'>registrerad ikon</a> (endast SVG stöds)<br />Exempel: <em>switch</em>, <em>temperature</em> eller någon annan ikon i openHABs <code>icons/classic</code>-mapp"
 
 #. Screen title
 msgctxt "settings.header"
@@ -220,17 +220,17 @@ msgstr "Inställningar"
 #. Header of the storage section
 msgctxt "settings.storage.header"
 msgid "Current storage configuration"
-msgstr ""
+msgstr "Aktuell lagringskonfiguration"
 
 #. Radio button for local storage
 msgctxt "settings.storage.localstorage"
 msgid "Local storage"
-msgstr ""
+msgstr "Lokal lagring"
 
 #. Explanation of the "local storage only" option
 msgctxt "settings.storage.localstorage.hint"
 msgid "The configuration is saved for this browser and device only. It will be kept as long as you don't clean up the browser's historical data."
-msgstr ""
+msgstr "Konfigurationen är endast sparad för denna enhet och webbläsare. Den finns kvar så länge du inte rensar webbläsarens historik."
 
 #. Link below the "local storage" option
 msgctxt "settings.storage.localstorage.edit"
