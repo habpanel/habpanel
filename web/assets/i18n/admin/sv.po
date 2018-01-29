@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Swedish\n"
 "Language: sv_SE\n"
-"PO-Revision-Date: 2018-01-27 11:03-0500\n"
+"PO-Revision-Date: 2018-01-29 13:43-0500\n"
 
 #. Save button in the dashboard designer
 msgctxt "designer.save"
@@ -56,7 +56,7 @@ msgstr "Redigera..."
 #. Copy/move option in a widget placeholder context menu (3-dot icon)
 msgctxt "designer.contextmenu.copymove"
 msgid "Copy/move to..."
-msgstr ""
+msgstr "Kopiera/flytta..."
 
 #. Delete option in a widget placeholder context menu (3-dot icon)
 msgctxt "designer.contextmenu.delete"
@@ -71,7 +71,7 @@ msgstr "Kopiera/flytta {{widgetName}}"
 #. Alongside the dropdown dashboard selection
 msgctxt "designer.copymove.todashboard"
 msgid "To dashboard"
-msgstr ""
+msgstr "Till vy"
 
 #. Move button
 msgctxt "designer.copymove.move"
@@ -95,7 +95,7 @@ msgstr "Spara till servern misslyckades!"
 #. Title of the dashboard settings dialog
 msgctxt "dashboard.settings.dialog.title"
 msgid "Dashboard Settings"
-msgstr ""
+msgstr "Vyinställningar"
 
 #. Tab header
 msgctxt "dashboard.settings.tile"
