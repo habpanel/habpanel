@@ -32,20 +32,15 @@
         $document
     ) {
 
-        let statuses = {
-            stop: 0,
-            play: 1,
-            pause: 2
-        }
-
+        const _fallbackEventsToWatch = 'keydown DOMMouseScroll mousewheel mousedown touchstart touchmove';
+        
         let _isIdle = false;
         let _isRunning = false;
         let _config = localStorageService.get('screensaverConfig');
         let _slideshowTimer = null;
         let _idleTimer = null;
         let _slideshowDashboards = null;
-        const _fallbackEventsToWatch = 'keydown DOMMouseScroll mousewheel mousedown touchstart touchmove';
-
+        let _currentDbIndex = 0;
         let log = (m) => {
             $log.log(`ScreensaverService: ${m}`);
         }
@@ -183,19 +178,19 @@
                 return;
             }
 
-            let nextDbId = _slideshowDashboards[currentDbIndex].id;
+            let nextDbId = _slideshowDashboards[_currentDbIndex].id;
             if (!dashboardExists(nextDbId)) {
                 removeDashboard(nextDbId);
                 nextDashboard();
                 return;
             }
-            currentDbIndex = ++currentDbIndex < _slideshowDashboards.length ? currentDbIndex : 0;
+            _currentDbIndex = ++_currentDbIndex < _slideshowDashboards.length ? _currentDbIndex : 0;
             $location.url(`/view/${nextDbId}`);
         }
 
         let slideshow = () => {
             log(`Screensaver (${_config.onStart.type}) started in dashboard "${$route.current.params.id}"`);
-            currentDbIndex = 0;
+            _currentDbIndex = 0;
             nextDashboard();
             _slideshowTimer = $interval(nextDashboard, (_config.slideshowInterval || 10) * 1000);
         }
