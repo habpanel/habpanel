@@ -18,7 +18,7 @@
         </div>
         <div class="scrollable box" ng-if="dashboards && dashboards.length > 0">
             <uib-tabset>
-                <uib-tab heading="General">
+                <uib-tab heading="{{::translations.tabheadingGeneral}}">
                     <ul class="settings-outer">
                         <li>
                             <label for="ss_idleTimeout" translate-keep-content translate="screensaver.settings.idletimeout.label">Idle Timeout: </label>
@@ -55,12 +55,12 @@
                         </li>
                     </ul>
                 </uib-tab>
-                <uib-tab heading="On Start">
+                <uib-tab heading="{{::translations.tabheadingonstart}}">
                     <ul class="settings-outer">
                         <li>
                             <label translate-keep-content translate="screensaver.settings.common.perform" for="ss_onStarType">Perform: </label>
                             <div>
-                                <select id="ss_onStarType" class="d-block" name='onStarType' ng-model="config.onStart.type">
+                                <select id="ss_onStarType" class="d-block" name='onStarType' ng-model="config.onStart.type" ng-change="validate()">
                                     <option translate-keep-content translate="screensaver.settings.common.gotodashboard" value='gotodashboard'>Go to dashboard</option>
                                     <option translate-keep-content translate="screensaver.settings.onstarttype.options.slideshow" value='slideshow'>Dashboard Slideshow</option>
                                 </select>
@@ -122,7 +122,7 @@
                         </section>
                     </ul>
                 </uib-tab>
-                <uib-tab heading="On Stop">
+                <uib-tab heading="{{::translations.tabheadingonstop}}">
                     <ul class="settings-outer">
                         <li>
                             <label translate-keep-content translate="screensaver.settings.common.perform" for="ss_onStopType">Perform: </label>

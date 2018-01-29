@@ -41,7 +41,10 @@
             updateFail: TranslationService.translate("settings.screensaver.update.fail", "Screensaver settings update failed."),
             atleast2Db: TranslationService.translate("screensaver.settings.error.atleast2dashboard", "You need at least 2 configured dashboards in the rotation settings to enable slideshow."),
             cancelconfirmTitle: TranslationService.translate("settings.screensaver.cancelconfirm.title", "Cancel Changes?"),
-            cancelconfirmMsg: TranslationService.translate("settings.screensaver.cancelconfirm.message", "You have unsaved changes. Clicking OK will revert to previous settings.")
+            cancelconfirmMsg: TranslationService.translate("settings.screensaver.cancelconfirm.message", "You have unsaved changes. Clicking OK will revert to previous settings."),
+            tabheadingGeneral: TranslationService.translate("settings.screensaver.tabheading.general", "General"),
+            tabheadingonstart: TranslationService.translate("settings.screensaver.tabheading.general", "On Start"),
+            tabheadingonstop: TranslationService.translate("settings.screensaver.tabheading.general", "On Stop")
         }
 
         $scope.setErrorMessage = (m) => {
@@ -53,7 +56,7 @@
         }
 
         let getErrors = () => {
-            $scope._form.mainForm.$setValidity('dashboards', $scope.config.onStart.dashboards.length > 1);
+            $scope._form.mainForm.$setValidity('dashboards', $scope.config.onStart.type == 'gotodashboard' || $scope.config.onStart.dashboards.length > 1);
             if ($scope._form.mainForm.$error['dashboards'])
                 return $scope.translations.atleast2Db
 
@@ -94,7 +97,7 @@
             $location.url('/settings');
         }
 
-        let validate = () => {
+        $scope.validate = () => {
             let error = getErrors();
             if (error) {
                 $scope.setErrorMessage(error);
@@ -111,7 +114,7 @@
             }
         }
 
-        $timeout(validate);
+        $timeout($scope.validate);
 
         return ScreensaverSettingsCtrl;
     }

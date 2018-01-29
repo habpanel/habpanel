@@ -1116,3 +1116,17 @@ msgctxt "settings.screensaver.update.fail"
 msgid "Screensaver settings update failed."
 msgstr ""
 
+#. Screensaver Settings Tab Heading General
+msgctxt "settings.screensaver.tabheading.general"
+msgid "General"
+msgstr ""
+
+#. Screensaver Settings Tab Heading On Start
+msgctxt settings.screensaver.tabheading.onstart"
+msgid "On Start"
+msgstr ""
+
+#. Screensaver Settings Tab Heading On Stop
+msgctxt settings.screensaver.tabheading.onstop"
+msgid "On Stop"
+msgstr ""

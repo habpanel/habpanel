@@ -295,6 +295,17 @@
                     _config.onStart.dashboardsExcluded.push({ id: theirs.id });
             }
 
+            if (!combined.length) {
+                _config.isEnabled = false;
+                stop();
+            }
+
+            if (combined.length < 2) {
+                _config.onStart.type = 'gotodashboard';
+                if (!_config.onStart.dashboard || !dashboardExists(_config.onStart.dashboard))
+                    _config.onStart.dashboard = combined[0].id;
+            }
+
             saveSettings();
         }
 
