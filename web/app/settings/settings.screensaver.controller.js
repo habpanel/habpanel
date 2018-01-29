@@ -111,12 +111,14 @@
         }
 
         $scope.validate = () => {
-            $scope.errorMessages = [];
-            $scope.infoMessages = [];
-            checkErrors();
-            if ($scope._form.mainForm.$dirty) {
-                $scope.clearInfoMessage($scope.infoMessages.indexOf($scope.translations.updateSuccess));
-            }
+            $timeout(() => {
+                $scope.errorMessages = [];
+                $scope.infoMessages = [];
+                checkErrors();
+                if ($scope._form.mainForm.$dirty) {
+                    $scope.clearInfoMessage($scope.infoMessages.indexOf($scope.translations.updateSuccess));
+                }
+            });
         }
 
         $scope.sortableOptions = {
