@@ -19,6 +19,8 @@
             $rootScope.menucolumns = localStorageService.get("menucolumns") || 1;
             $rootScope.settings = localStorageService.get("settings") || {};
             $rootScope.customwidgets = localStorageService.get("customwidgets") || {};
+
+            $rootScope.$broadcast('configurationLoaded');
         }
 
         function saveConfigurationToLocalStorage() {
@@ -28,6 +30,8 @@
             localStorageService.set("menucolumns", $rootScope.menucolumns);
             localStorageService.set("settings", $rootScope.settings);
             localStorageService.set("customwidgets", $rootScope.customwidgets);
+
+            $rootScope.$broadcast('configurationChanged');
         }
 
         ////////////////
