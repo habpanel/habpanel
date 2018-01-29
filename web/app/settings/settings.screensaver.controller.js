@@ -14,7 +14,8 @@
         'dashboards',
         '$location',
         'prompt',
-        '$route'
+        '$route',
+        '$timeout'
     ];
 
     function ScreensaverSettingsCtrl(
@@ -26,7 +27,8 @@
         dashboards,
         $location,
         prompt,
-        $route
+        $route,
+        $timeout
     ) {
 
         $scope._form = { mainForm: {} };
@@ -92,18 +94,24 @@
             $location.url('/settings');
         }
 
+        let validate = () => {
+            let error = getErrors();
+            if (error) {
+                $scope.setErrorMessage(error);
+            } else {
+                $scope.setErrorMessage(null);
+            }
+        }
+
         $scope.sortableOptions = {
             connectWith: ".db-sortable",
             update: () => {
                 $scope._form.mainForm.$setDirty();
-                let error = getErrors();
-                if (error) {
-                    $scope.setErrorMessage(error);
-                } else {
-                    $scope.setErrorMessage(null);
-                }
+                validate();
             }
         }
+
+        $timeout(validate);
 
         return ScreensaverSettingsCtrl;
     }

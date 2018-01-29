@@ -51,44 +51,45 @@
         }
 
         let initConfig = () => {
-            if (!_config) {
-                // Set default
-                localStorageService.set('screensaverConfig', {
-                    idleTimeoutSec: 60 * 5,
-                    slideshowIntervalSec: 5,
-                    isEnabled: false,
-                    eventsToWatch: {
-                        'mousedown': true,
-                        'keydown': true,
-                        'mousewheel': true,
-                        'touchstart': true,
-                        'touchmove': true
-                    },
-                    additionalEventsToWatch: [],
-                    onStart: {
-                        type: 'slideshow',
-                        dashboardsExcluded: [],
-                        dashboards: (() => {
-                            _slideshowDashboards = PersistenceService.getDashboards();
-                            let dbs = [];
-                            let order = 0;
-                            for (let db of _slideshowDashboards) {
-                                dbs.push({
-                                    id: db.id,
-                                    enabled: true,
-                                    order: ++order
-                                });
-                            }
-                            return dbs;
-                        })(),
-                        dashboard: null
-                    },
-                    onStop: {
-                        type: 'stop',
-                        dashboard: null
-                    }
-                });
-            }
+            if (_config)
+                return;
+
+            // Set default
+            localStorageService.set('screensaverConfig', {
+                idleTimeoutSec: 60 * 5,
+                slideshowIntervalSec: 5,
+                isEnabled: false,
+                eventsToWatch: {
+                    'mousedown': true,
+                    'keydown': true,
+                    'mousewheel': true,
+                    'touchstart': true,
+                    'touchmove': true
+                },
+                additionalEventsToWatch: [],
+                onStart: {
+                    type: 'slideshow',
+                    dashboardsExcluded: [],
+                    dashboards: (() => {
+                        _slideshowDashboards = PersistenceService.getDashboards();
+                        let dbs = [];
+                        let order = 0;
+                        for (let db of _slideshowDashboards) {
+                            dbs.push({
+                                id: db.id,
+                                order: ++order
+                            });
+                        }
+                        return dbs;
+                    })(),
+                    dashboard: null
+                },
+                onStop: {
+                    type: 'stop',
+                    dashboard: null
+                }
+            });
+
         }
 
         let getEventsToWatch = () => {
@@ -146,17 +147,23 @@
             return $rootScope.dashboards.findIndex(db => db.id == dbId) != -1;
         }
 
-        let removeDashboardFromSlideshow = (dbId) => {
-            let idx = _config.onStart.dashboards.findIndex(db => db.id == dbId);
+        let removeDashboard = (dbId, whichDb, isSave) => {
+            whichDb = whichDb || _config.onStart.dashboards;
+            let idx = whichDb.findIndex(db => db.id == dbId);
             if (idx != -1) {
-                _config.onStart.dashboards.splice(idx, 1);
+                whichDb.splice(idx, 1);
             }
-            saveSettings();
+
+            if (typeof (isSave) === 'undefined')
+                isSave = true;
+
+            if (isSave)
+                saveSettings();
         }
 
         let nextDashboard = () => {
             _slideshowDashboards = (_config.onStart.dashboards || []).sort((a, b) => a.order - b.order);
-            
+
             // No dashboards found
             if (_slideshowDashboards.length <= 0) {
                 log("Stopping slideshow. No dashboard found.");
@@ -178,7 +185,7 @@
 
             let nextDbId = _slideshowDashboards[currentDbIndex].id;
             if (!dashboardExists(nextDbId)) {
-                removeDashboardFromSlideshow(nextDbId);
+                removeDashboard(nextDbId);
                 nextDashboard();
                 return;
             }
@@ -249,6 +256,9 @@
 
         let saveSettings = (config) => {
             config = config || _config;
+            // Uniqify our arrays
+            config.onStart.dashboards = [...new Set(config.onStart.dashboards)];
+            config.onStart.dashboardsExcluded = [...new Set(config.onStart.dashboardsExcluded)];
             let isSuccess = localStorageService.set('screensaverConfig', config);
             if (isSuccess)
                 _config = config;
@@ -263,6 +273,34 @@
                 saveSettings(_config);
             }
         })
+
+        let reConfig = () => {
+            // Iterate through _config.onStart.dashboards, remove all dashboards not in $rootScope.dashboards
+            for (let ours of _config.onStart.dashboards) {
+                if ($rootScope.dashboards.findIndex(theirs => theirs.id == ours.id) === -1)
+                    removeDashboard(ours.id, _config.onStart.dashboards, false);
+            }
+            // Iterate through _config.onStart.dashboardsExcluded, remove all dashboards not in $rootScope.dashboards
+            for (let ours of _config.onStart.dashboardsExcluded) {
+                if ($rootScope.dashboards.findIndex(theirs => theirs.id == ours.id) === -1)
+                    removeDashboard(ours.id, _config.onStart.dashboardsExcluded, false);
+            }
+
+            // Iterate through $rootScope.dashboards.
+            // Anything new here will be added to _config.onStart.dashboardsExcluded
+            let combined = _config.onStart.dashboards.concat(_config.onStart.dashboardsExcluded);
+            for (let theirs of $rootScope.dashboards) {
+                let isFound = combined.findIndex(ours => ours.id == theirs.id) !== -1;
+                if (!isFound)
+                    _config.onStart.dashboardsExcluded.push({ id: theirs.id });
+            }
+
+            saveSettings();
+        }
+
+        /* Monitor Configuration Changes to modify _config */
+        $rootScope.$on('configurationChanged', reConfig);
+        $rootScope.$on('configurationLoaded', reConfig);
 
         /* Exposed APIs */
         this.init = init;
