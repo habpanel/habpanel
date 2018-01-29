@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Italian\n"
 "Language: it_IT\n"
-"PO-Revision-Date: 2018-01-19 12:33-0500\n"
+"PO-Revision-Date: 2018-01-29 10:14-0500\n"
 
 #. Save button in the dashboard designer
 msgctxt "designer.save"
@@ -90,7 +90,7 @@ msgstr "Nuovo Widget"
 
 msgctxt "designer.serversavefailed"
 msgid "Server save failed!"
-msgstr ""
+msgstr "Salvataggio sul server non riuscito!"
 
 #. Title of the dashboard settings dialog
 msgctxt "dashboard.settings.dialog.title"
@@ -105,7 +105,7 @@ msgstr ""
 #. Textbox header
 msgctxt "dashboard.settings.tile.background_image_url"
 msgid "Background Image URL"
-msgstr ""
+msgstr "URL dell'immagine di sfondo"
 
 #. Color picker header
 msgctxt "dashboard.settings.tile.title_text_color"
@@ -125,7 +125,7 @@ msgstr ""
 #. Tab header
 msgctxt "dashboard.settings.advanced"
 msgid "Advanced"
-msgstr ""
+msgstr "Avanzate"
 
 #. Alert display at the top
 msgctxt "dashboard.settings.advanced.warning"
@@ -145,7 +145,7 @@ msgstr ""
 #. Checkbox header
 msgctxt "dashboard.settings.customwidgets.usecustomwidget"
 msgid "Use a custom widget"
-msgstr ""
+msgstr "Utilizzare un widget personalizzato"
 
 #. Dropdown header
 msgctxt "dashboard.settings.customwidgets.customwidget"
@@ -195,7 +195,7 @@ msgstr ""
 #. Icon picker dropdown entry
 msgctxt "iconpicker.customicon"
 msgid "Custom icon"
-msgstr ""
+msgstr "Icona personalizzata"
 
 #. Icon picker dropdown entry
 msgctxt "iconpicker.customurl"
@@ -205,7 +205,7 @@ msgstr ""
 #. Icon picker dropdown entry
 msgctxt "iconpicker.none"
 msgid "(none)"
-msgstr ""
+msgstr "(nessuno)"
 
 #. Appears when focusing the icon textbox when the "Custom icon" iconset is selected
 msgctxt "iconpicker.customicontooltip"
