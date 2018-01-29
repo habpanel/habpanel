@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Swedish\n"
 "Language: sv_SE\n"
-"PO-Revision-Date: 2018-01-29 14:32-0500\n"
+"PO-Revision-Date: 2018-01-29 14:41-0500\n"
 
 #. Common term in widget settings dialogs
 msgctxt "widget.common.min"
@@ -915,7 +915,7 @@ msgstr "Dölj aktuellt värde"
 #. Header
 msgctxt "widget.selection.choices_window"
 msgid "Choices window"
-msgstr ""
+msgstr "Alternativfönster"
 
 #. Textbox (very small)
 msgctxt "widget.selection.choices_window.columns"
@@ -925,7 +925,7 @@ msgstr "Kolumner"
 #. Checkbox label (very small)
 msgctxt "widget.selection.choices_window.disable_mobile"
 msgid "Disable mobile mode"
-msgstr ""
+msgstr "Inaktivera mobilläge"
 
 #. Checkbox label (very small)
 msgctxt "widget.selection.choices_window.no_squares"
@@ -935,47 +935,47 @@ msgstr "Ej kvadratiska rutor"
 #. Header
 msgctxt "widget.selection.selection_options"
 msgid "Selection options"
-msgstr ""
+msgstr "Inställningar för flerval"
 
 #. Checkbox label (small)
 msgctxt "widget.selection.selection_options.no_highlight"
 msgid "Don't highlight current selection"
-msgstr ""
+msgstr "Markera ej aktuellt val"
 
 #. Checkbox label (small)
 msgctxt "widget.selection.selection_options.keep_open"
 msgid "Keep window open upon selection"
-msgstr ""
+msgstr "Håll fönster öppet efter val"
 
 #. Displayed when running the widget if no choices available
 msgctxt "widget.selection.nochoices"
 msgid "No choices available - check widget config"
-msgstr ""
+msgstr "Inga val tillgängliga - kontrollera widget-inställningar"
 
 #. Display name of the widget (appears in the Add Widget dropdown menu in the designer)
 msgctxt "widget.slider"
 msgid "Slider"
-msgstr ""
+msgstr "Skjutreglage"
 
 #. Description of the widget, displayed in a tooltip when hovering the option in the Add Widget dropdown menu in the designer
 msgctxt "widget.slider.description"
 msgid "A slider for setting numerical openHAB items"
-msgstr ""
+msgstr "Ett reglage för att ställa in numeriska openHAB-items"
 
 #. Settings dialog title
 msgctxt "widget.slider.settings.header"
 msgid "Slider Settings"
-msgstr ""
+msgstr "Inställningar för reglage"
 
 #. Checkbox header
 msgctxt "widget.slider.general.orientation"
 msgid "Orientation"
-msgstr ""
+msgstr "Riktning"
 
 #. Checkbox label
 msgctxt "widget.slider.general.orientation.vertical"
 msgid "Vertical slider"
-msgstr ""
+msgstr "Vertikalt reglage"
 
 #. Checkbox label
 msgctxt "widget.slider.advanced.hidelabel"
@@ -1005,12 +1005,12 @@ msgstr ""
 #. Checkbox label
 msgctxt "widget.slider.advanced.inverted"
 msgid "Reverse direction"
-msgstr ""
+msgstr "Omvänd riktning"
 
 #. Checkbox label
 msgctxt "widget.slider.advanced.bigslider"
 msgid "Big slider (horizontal only)"
-msgstr ""
+msgstr "Brett reglage (endast horisontellt)"
 
 #. Tab header
 msgctxt "widget.slider.backdrop"
@@ -1020,17 +1020,17 @@ msgstr "Bakgrund"
 #. Display name of the widget (appears in the Add Widget dropdown menu in the designer)
 msgctxt "widget.switch"
 msgid "Switch"
-msgstr ""
+msgstr "Strömbrytare"
 
 #. Description of the widget, displayed in a tooltip when hovering the option in the Add Widget dropdown menu in the designer
 msgctxt "widget.switch.description"
 msgid "A ON/OFF toggle for openHAB switches"
-msgstr ""
+msgstr "ON/OFF-reglage för openHAB Switch-items"
 
 #. Settings dialog title
 msgctxt "widget.switch.settings.header"
 msgid "Switch Settings"
-msgstr ""
+msgstr "Inställningar för strömbrytare"
 
 #. Header
 msgctxt "widget.switch.display"
@@ -1055,17 +1055,17 @@ msgstr "Dölj ON/OFF"
 #. Display name of the widget (appears in the Add Widget dropdown menu in the designer)
 msgctxt "widget.template"
 msgid "Template"
-msgstr ""
+msgstr "Mall"
 
 #. Description of the widget, displayed in a tooltip when hovering the option in the Add Widget dropdown menu in the designer
 msgctxt "widget.template.description"
 msgid "A template widget - displays a custom dynamic template"
-msgstr ""
+msgstr "En mall-widget - visar en anpassningsbar mall"
 
 #. Settings dialog title
 msgctxt "widget.template.settings.header"
 msgid "Template Settings"
-msgstr ""
+msgstr "Inställningar för mall"
 
 #. Settings dialog title for a custom widget (don't translate the variable)
 msgctxt "widget.template.settings.header.customwidget"
@@ -1075,7 +1075,7 @@ msgstr "Inställningar för {{customwidget_name}}"
 #. Checkbox label (small)
 msgctxt "widget.template.dontwrap"
 msgid "Don't wrap in container"
-msgstr ""
+msgstr "Anpassa ej till ruta"
 
 #. Checkbox label (small)
 msgctxt "widget.template.nobackground"
@@ -1085,7 +1085,7 @@ msgstr "Ingen bakgrund"
 #. Section header (displayed above the code editor)
 msgctxt "widget.template.template"
 msgid "Template"
-msgstr ""
+msgstr "Mall"
 
 #. Menu entry (top-right above the code editor)
 msgctxt "widget.template.importfromfile"
