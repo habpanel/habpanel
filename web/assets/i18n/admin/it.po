@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Italian\n"
 "Language: it_IT\n"
-"PO-Revision-Date: 2018-01-29 11:55-0500\n"
+"PO-Revision-Date: 2018-01-29 12:22-0500\n"
 
 #. Save button in the dashboard designer
 msgctxt "designer.save"
@@ -71,7 +71,7 @@ msgstr "Copia/sposta {{widgetName}}"
 #. Alongside the dropdown dashboard selection
 msgctxt "designer.copymove.todashboard"
 msgid "To dashboard"
-msgstr ""
+msgstr "Al pannello"
 
 #. Move button
 msgctxt "designer.copymove.move"
@@ -255,7 +255,7 @@ msgstr "Contiene:"
 #. Link to create a panel configuration from the current configuration
 msgctxt "settings.storage.panelconfiguration.save"
 msgid "Save the current configuration to a new panel configuration"
-msgstr ""
+msgstr "Salvare la configurazione corrente in un nuova configurazione pannello"
 
 #. Title of the dialog box when creating a new panel configuration
 msgctxt "settings.storage.panelconfiguration.dialog.title"
