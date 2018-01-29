@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Italian\n"
 "Language: it_IT\n"
-"PO-Revision-Date: 2018-01-29 10:25-0500\n"
+"PO-Revision-Date: 2018-01-29 11:23-0500\n"
 
 #. Save button in the dashboard designer
 msgctxt "designer.save"
@@ -41,7 +41,7 @@ msgstr ""
 #. Open widget gallery
 msgctxt "designer.addwidget.getmore"
 msgid "Get more..."
-msgstr ""
+msgstr "Ottieni di più..."
 
 #. Tooltip when hovering the "Get more" menu entry
 msgctxt "designer.addwidget.getmore.tooltip"
@@ -95,12 +95,12 @@ msgstr "Salvataggio sul server non riuscito!"
 #. Title of the dashboard settings dialog
 msgctxt "dashboard.settings.dialog.title"
 msgid "Dashboard Settings"
-msgstr ""
+msgstr "Impostazioni Pannello"
 
 #. Tab header
 msgctxt "dashboard.settings.tile"
 msgid "Menu tile"
-msgstr ""
+msgstr "Elemento menu"
 
 #. Textbox header
 msgctxt "dashboard.settings.tile.background_image_url"
@@ -110,17 +110,17 @@ msgstr "URL dell'immagine di sfondo"
 #. Color picker header
 msgctxt "dashboard.settings.tile.title_text_color"
 msgid "Title Text color"
-msgstr ""
+msgstr "Colore del testo del titolo"
 
 #. Checkbox header
 msgctxt "dashboard.settings.tile.click_feedback"
 msgid "Click feedback"
-msgstr ""
+msgstr "Clic feedback"
 
 #. Checkbox label
 msgctxt "dashboard.settings.tile.click_feedback.description"
 msgid "Don't brighten tile on click/tap"
-msgstr ""
+msgstr "Non illuminare l'elemento al clic/tap"
 
 #. Tab header
 msgctxt "dashboard.settings.advanced"
@@ -130,7 +130,7 @@ msgstr "Avanzate"
 #. Alert display at the top
 msgctxt "dashboard.settings.advanced.warning"
 msgid "These options are currently experimental, unstable or targeted at advanced users! Use at your own risk."
-msgstr ""
+msgstr "Queste opzioni sono attualmente sperimentali, instabili o mirate a utenti avanzati! Utilizzare a proprio rischio."
 
 #. Tab header
 msgctxt "dashboard.settings.customwidgets"
@@ -140,7 +140,7 @@ msgstr ""
 #. Alert displayed at the top
 msgctxt "dashboard.settings.customwidgets.warning"
 msgid "This feature is currently experimental, and targeted at advanced users! Use at your own risk."
-msgstr ""
+msgstr "Queste opzioni sono attualmente sperimentali, instabili o mirate a utenti avanzati! Utilizzare a proprio rischio."
 
 #. Checkbox header
 msgctxt "dashboard.settings.customwidgets.usecustomwidget"
@@ -155,7 +155,7 @@ msgstr ""
 #. Accordion header
 msgctxt "dashboard.settings.customwidgets.tile"
 msgid "Main menu tile"
-msgstr ""
+msgstr "Menu principale"
 
 #. Checkbox label
 msgctxt "dashboard.settings.customwidgets.tile.description"
@@ -165,7 +165,7 @@ msgstr ""
 #. Accordion header
 msgctxt "dashboard.settings.customwidgets.drawer"
 msgid "Drawer"
-msgstr ""
+msgstr "Modalità disegno"
 
 #. Checkbox label
 msgctxt "dashboard.settings.customwidgets.drawer.description"
@@ -175,7 +175,7 @@ msgstr ""
 #. Accordion header
 msgctxt "dashboard.settings.customwidgets.header"
 msgid "Dashboard header"
-msgstr ""
+msgstr "Intestazione del pannello"
 
 #. Checkbox label
 msgctxt "dashboard.settings.customwidgets.header.description"
@@ -185,12 +185,12 @@ msgstr ""
 #. Displayed in the item picker when no item selected
 msgctxt "itempicker.placeholder"
 msgid "Search or select an openHAB item"
-msgstr ""
+msgstr "Cercare o selezionare un elemento di openHAB"
 
 #. Icon picker dropdown placeholder
 msgctxt "iconpicker.selecticonset"
 msgid "Select icon set"
-msgstr ""
+msgstr "Selezione il set di icone"
 
 #. Icon picker dropdown entry
 msgctxt "iconpicker.customicon"
@@ -200,7 +200,7 @@ msgstr "Icona personalizzata"
 #. Icon picker dropdown entry
 msgctxt "iconpicker.customurl"
 msgid "Custom URL"
-msgstr ""
+msgstr "URL personalizzato"
 
 #. Icon picker dropdown entry
 msgctxt "iconpicker.none"
@@ -210,32 +210,32 @@ msgstr "(nessuno)"
 #. Appears when focusing the icon textbox when the "Custom icon" iconset is selected
 msgctxt "iconpicker.customicontooltip"
 msgid "Type the name of a <a href='http://docs.openhab.org/configuration/items.html#icons' target='_blank'>registered icon</a> (only SVG supported)<br />Examples: <em>switch</em>, <em>temperature</em> or an additional icon in your configuration's <code>icons/classic</code> folder"
-msgstr ""
+msgstr "Digitare il nome di una <a href='http://docs.openhab.org/configuration/items.html#icons' target='_blank'> icona definita</a> (solo il formato SVG è supportato) <br/>Esempi: <em>switch</em>, <em>temperature</em> o di un'icona aggiuntiva nella tua cartella di configurazione <code>icons/classic</code>"
 
 #. Screen title
 msgctxt "settings.header"
 msgid "Settings"
-msgstr ""
+msgstr "Impostazioni"
 
 #. Header of the storage section
 msgctxt "settings.storage.header"
 msgid "Current storage configuration"
-msgstr ""
+msgstr "Configurazione di archiviazione corrente"
 
 #. Radio button for local storage
 msgctxt "settings.storage.localstorage"
 msgid "Local storage"
-msgstr ""
+msgstr "Archiviazione locale"
 
 #. Explanation of the "local storage only" option
 msgctxt "settings.storage.localstorage.hint"
 msgid "The configuration is saved for this browser and device only. It will be kept as long as you don't clean up the browser's historical data."
-msgstr ""
+msgstr "La configurazione è stata salvata solo per questo browser e dispositivo. Verrà mantenuta fino a che non verrà ripulita la history del browser."
 
 #. Link below the "local storage" option
 msgctxt "settings.storage.localstorage.edit"
 msgid "Edit the local panel configuration (experts only)"
-msgstr ""
+msgstr "Modificare la configurazione del pannello locale (solo per esperti)"
 
 #. Prefix of a panel configuration before its name
 msgctxt "settings.storage.panelconfiguration"
@@ -245,7 +245,7 @@ msgstr "Configurazione pannello:"
 #. Prefix of the last synced line, before the date
 msgctxt "settings.storage.panelconfiguration.lastsynced"
 msgid "Last synced on"
-msgstr ""
+msgstr "Ultima sincronizzazione %s"
 
 #. Displayed before the list of dashboard the panel configuration contains
 msgctxt "settings.storage.panelconfiguration.contains"
@@ -255,72 +255,72 @@ msgstr "Contiene:"
 #. Link to create a panel configuration from the current configuration
 msgctxt "settings.storage.panelconfiguration.save"
 msgid "Save the current configuration to a new panel configuration"
-msgstr ""
+msgstr "Salvare la configurazione corrente in un nuovo pannello di configurazione"
 
 #. Title of the dialog box when creating a new panel configuration
 msgctxt "settings.storage.panelconfiguration.dialog.title"
 msgid "New panel configuration"
-msgstr ""
+msgstr "Aggiungere una nuova configurazione del pannello"
 
 #. Message of the dialog box when creating a new panel configuration
 msgctxt "settings.storage.panelconfiguration.dialog.message"
 msgid "Please choose a name for the new panel configuration (letters and digits only please):"
-msgstr ""
+msgstr "Si prega di scegliere un nome per la nuova configurazione del pannello (solo lettere e cifre per favore):"
 
 #. Panel name (section header)
 msgctxt "settings.panel.name"
 msgid "Panel name"
-msgstr ""
+msgstr "Nome del pannello"
 
 #. Placeholder inside the text box
 msgctxt "settings.panel.name.hint"
 msgid "Replaces 'HABPanel' in the side drawer when set"
-msgstr ""
+msgstr "Sostituisce 'HABPanel' nel menu laterale se impostato"
 
 #. Appearance (section header)
 msgctxt "settings.panel.appearance.header"
 msgid "Appearance"
-msgstr ""
+msgstr "Aspetto"
 
 #. Dropown menu header
 msgctxt "settings.panel.appearance.theme"
 msgid "Theme"
-msgstr ""
+msgstr "Tema"
 
 #. Alert banner displayed when the browsers doesn't support themes (CSS variables)
 msgctxt "settings.panel.appearance.theme.not_supported"
 msgid "Themes are not compatible with this browser."
-msgstr ""
+msgstr "Temi non sono compatibili con questo browser."
 
 #. Setting header
 msgctxt "settings.panel.appearance.additional_stylesheet"
 msgid "Additional stylesheet (optional)"
-msgstr ""
+msgstr "Ulteriori fogli di stile (opzionale)"
 
 #. Placeholder inside the text box
 msgctxt "settings.panel.appearance.additional_stylesheet.hint"
 msgid "Relative URL only; example: /static/example.css"
-msgstr ""
+msgstr "Solo URL relativi; esempio: /static/example.css"
 
 #. Setting header
 msgctxt "settings.panel.appearance.background_image"
 msgid "Background image (optional)"
-msgstr ""
+msgstr "Immagine sfondo (opzionale)"
 
 #. Placeholder inside the text box
 msgctxt "settings.panel.appearance.background_image.hint"
 msgid "Example: //source.unsplash.com/random"
-msgstr ""
+msgstr "Esempio: //source.unsplash.com/random"
 
 #. Setting header
 msgctxt "settings.panel.appearance.drawer_heading_image"
 msgid "Drawer heading image (optional)"
-msgstr ""
+msgstr "Immagine come intestazione del menu (opzionale)"
 
 #. Placeholder inside the text box
 msgctxt "settings.panel.appearance.drawer_heading_image.hint"
 msgid "Example: //via.placeholder.com/265x95"
-msgstr ""
+msgstr "Esempio: //via.placeholder.com/265x95"
 
 #. Checkbox
 msgctxt "settings.panel.appearance.prevent_scrolling"
@@ -330,12 +330,12 @@ msgstr "Impedire lo scorrimento (quando non si sta editando)"
 #. Checkbox
 msgctxt "settings.panel.appearance.hide_drawer_footer"
 msgid "Hide the drawer's footer"
-msgstr ""
+msgstr "Nascondi il piè di pagina del menu"
 
 #. Checkbox
 msgctxt "settings.panel.appearance.hide_toolbar_buttons"
 msgid "Hide toolbar buttons:"
-msgstr ""
+msgstr "Nascondi i pulsanti della barra degli strumenti:"
 
 #. Checkbox
 msgctxt "settings.panel.appearance.show_clock"
@@ -350,7 +350,7 @@ msgstr "Formato dell'orologio nel titolo"
 #. Textbox placeholder, only displayed when the "Show a clock on the header" option is checked
 msgctxt "settings.panel.appearance.show_clock.header_format.hint"
 msgid "Default: shortTime, use AngularJS date format"
-msgstr ""
+msgstr "Valore predefinito: shortTime, utilizzare il formato di data AngularJS"
 
 #. Custom widgets settings (section header)
 msgctxt "settings.panel.customwidgets.header"
@@ -360,12 +360,12 @@ msgstr ""
 #. Big "manage" button label (a > suffix is added)
 msgctxt "settings.panel.customwidgets.manage"
 msgid "Manage"
-msgstr ""
+msgstr "Gestione"
 
 #. Voice support (section header) - formerly (<=2.2.0) : "Voice feedback"
 msgctxt "settings.panel.voicesupport.header"
 msgid "Voice Support"
-msgstr ""
+msgstr "Supporto Vocale"
 
 #. Dropdown header - formerly (<=2.2.0) : "Voice"
 msgctxt "settings.panel.voicesupport.speech_synthesis_voice"
@@ -615,47 +615,47 @@ msgstr ""
 #. Save button on the right, default label - can be hidden on phones
 msgctxt "customwidgets.designer.save"
 msgid "Save"
-msgstr ""
+msgstr "Salva"
 
 #. Save button on the right, displayed for a few seconds after a save - can be hidden on phones
 msgctxt "customwidgets.designer.saved"
 msgid "Saved!"
-msgstr ""
+msgstr "Salvato!"
 
 #. Tab header
 msgctxt "customwidgets.designer.code"
 msgid "Code"
-msgstr ""
+msgstr "Codice"
 
 #. Tab header
 msgctxt "customwidgets.designer.settings"
 msgid "Settings"
-msgstr ""
+msgstr "Impostazioni"
 
 #. Section header in the Settings tab
 msgctxt "customwidgets.designer.settings.general"
 msgid "General settings"
-msgstr ""
+msgstr "Impostazioni generali"
 
 #. Textbox header
 msgctxt "customwidgets.designer.settings.general.display_name"
 msgid "Display name"
-msgstr ""
+msgstr "Nome visualizzato"
 
 #. Textbox header
 msgctxt "customwidgets.designer.settings.general.author"
 msgid "Author"
-msgstr ""
+msgstr "Autore"
 
 #. Textbox header
 msgctxt "customwidgets.designer.settings.general.description"
 msgid "Description"
-msgstr ""
+msgstr "Descrizione"
 
 #. Section header in the Settings tab
 msgctxt "customwidgets.designer.settings.config"
 msgid "Configuration settings"
-msgstr ""
+msgstr "Impostazioni di configurazione"
 
 #. Displayed in small text below the section header, with an information icon
 msgctxt "customwidgets.designer.settings.config.warning"
@@ -665,92 +665,92 @@ msgstr ""
 #. Button label
 msgctxt "customwidgets.designer.settings.config.add"
 msgid "Add setting"
-msgstr ""
+msgstr "Aggiungi impostazioni"
 
 #. Dropdown header
 msgctxt "customwidgets.designer.settings.config.type"
 msgid "Type"
-msgstr ""
+msgstr "Tipo"
 
 #. Dropdown option
 msgctxt "customwidgets.designer.settings.config.type.string"
 msgid "String"
-msgstr ""
+msgstr "Stringa"
 
 #. Dropdown option
 msgctxt "customwidgets.designer.settings.config.type.number"
 msgid "Number"
-msgstr ""
+msgstr "Numero"
 
 #. Dropdown option
 msgctxt "customwidgets.designer.settings.config.type.checkbox"
 msgid "Checkbox"
-msgstr ""
+msgstr "Checkbox"
 
 #. Dropdown option
 msgctxt "customwidgets.designer.settings.config.type.item"
 msgid "Item"
-msgstr ""
+msgstr "Item"
 
 #. Dropdown option
 msgctxt "customwidgets.designer.settings.config.type.color"
 msgid "Color"
-msgstr ""
+msgstr "Colore"
 
 #. Dropdown option
 msgctxt "customwidgets.designer.settings.config.type.choices"
 msgid "Choices"
-msgstr ""
+msgstr "Scelte"
 
 #. Dropdown option
 msgctxt "customwidgets.designer.settings.config.type.icon"
 msgid "Icon"
-msgstr ""
+msgstr "Icona"
 
 #. Dropdown option
 msgctxt "customwidgets.designer.settings.config.type.heading"
 msgid "Heading"
-msgstr ""
+msgstr "Titolo"
 
 #. Tooltip displayed when hovering the help icon alongside the ID field
 msgctxt "customwidgets.designer.settings.config.id.hint"
 msgid "Enter a JSON friendly key for this setting - ideally, use only lowercase letters, digits and underscores. Examples: my_setting, first_item, text_size, font_color"
-msgstr ""
+msgstr "Inserire una chiave in formato JSON per questa impostazione - idealmente, utilizzare solo lettere minuscole, cifre e '_'. Esempio: first_item, my_setting, font_color, text_size"
 
 #. Textbox header
 msgctxt "customwidgets.designer.settings.config.label"
 msgid "Label"
-msgstr ""
+msgstr "Etichetta"
 
 #. Textbox header
 msgctxt "customwidgets.designer.settings.config.default"
 msgid "Default value"
-msgstr ""
+msgstr "Valore predefinito"
 
 #. Textbox header
 msgctxt "customwidgets.designer.settings.config.choices"
 msgid "Choices"
-msgstr ""
+msgstr "Scelte"
 
 #. Textbox placeholder
 msgctxt "customwidgets.designer.settings.config.choices.hint"
 msgid "Comma-separated possible values"
-msgstr ""
+msgstr "Valori possibili separati da virgola"
 
 #. Textbox header
 msgctxt "customwidgets.designer.settings.config.description"
 msgid "Description"
-msgstr ""
+msgstr "Descrizione"
 
 #. Banner displayed when selecting the Icon type for the settings, followed by the defined settings themselves
 msgctxt "customwidgets.designer.settings.config.icon.hint"
 msgid "This will define 2 config elements:"
-msgstr ""
+msgstr "Questo definirà 2 elementi di configurazione:"
 
 #. Tab header
 msgctxt "customwidgets.designer.preview"
 msgid "Preview"
-msgstr ""
+msgstr "Anteprima"
 
 #. Dialog box title
 msgctxt "widgetgallery.heading"
@@ -760,62 +760,62 @@ msgstr ""
 #. Dialog box title (when displaying a repository)
 msgctxt "widgetgallery.heading.importrepo"
 msgid "Import GitHub Repository"
-msgstr ""
+msgstr "Importa un Repository GitHub"
 
 #. Dialog box title (when displaying a community gallery item)
 msgctxt "widgetgallery.heading.importgallery"
 msgid "Import Gallery Item"
-msgstr ""
+msgstr "Importa Elemento dalla Galleria"
 
 #. Alert banner message
 msgctxt "widgetgallery.warning.githubratelimit"
 msgid "Warning: rate limiting on the GitHub API will temporarily block further requests!"
-msgstr ""
+msgstr "Attenzione: il limite di invocazioni su GitHub API bloccherà temporaneamente ulteriori richieste!"
 
 #. Alert banner message (2nd part)
 msgctxt "widgetgallery.warning.githubratelimit.wait"
 msgid "Wait until this time and try again:"
-msgstr ""
+msgstr "Attendere fino a questo momento e riprovare:"
 
 #. Textbox placeholder
 msgctxt "widgetgallery.addressbar.hint"
 msgid "GitHub repository full name (owner/name) or URL"
-msgstr ""
+msgstr "Nome completo del repository GitHub (owner/name) o URL"
 
 #. Button on the right of the addressbar
 msgctxt "widgetgallery.addressbar.go"
 msgid "Go"
-msgstr ""
+msgstr "Vai"
 
 #. Suffix displayed after a number, i.e. "24 community contributions"
 msgctxt "widgetgallery.toolbar.communitycontributions"
 msgid "community&nbsp;contributions"
-msgstr ""
+msgstr "contributo&nbsp;della&nbsp;community"
 
 #. On the right with the sort options
 msgctxt "widgetgallery.toolbar.sortby"
 msgid "sort by:"
-msgstr ""
+msgstr "ordina per:"
 
 #. Link to change the sort criteria - keep the non breaking spaces (&nbsp;)
 msgctxt "widgetgallery.toolbar.sortby.mostrecent"
 msgid "most&nbsp;recent"
-msgstr ""
+msgstr "più&nbsp;recenti"
 
 #. Link to change the sort criteria - keep the non breaking spaces (&nbsp;)
 msgctxt "widgetgallery.toolbar.sortby.mostliked"
 msgid "most&nbsp;liked"
-msgstr ""
+msgstr "più&nbsp;votati"
 
 #. Link to change the sort criteria - keep the non breaking spaces (&nbsp;)
 msgctxt "widgetgallery.toolbar.sortby.mostpopular"
 msgid "most&nbsp;popular"
-msgstr ""
+msgstr "più&nbsp;popolari"
 
 #. Link to change the sort criteria - keep the non breaking spaces (&nbsp;)
 msgctxt "widgetgallery.toolbar.sortby.mostdiscussed"
 msgid "most&nbsp;discussed"
-msgstr ""
+msgstr "più&nbsp;discussi"
 
 #. Prefix before the author's name
 msgctxt "widgetgallery.details.authorby"
