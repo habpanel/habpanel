@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Swedish\n"
 "Language: sv_SE\n"
-"PO-Revision-Date: 2018-01-29 14:41-0500\n"
+"PO-Revision-Date: 2018-02-01 15:12-0500\n"
 
 #. Save button in the dashboard designer
 msgctxt "designer.save"
@@ -570,22 +570,22 @@ msgstr "Uppdatera widget"
 #. Dialog box message
 msgctxt "customwidgets.list.update.dialog.message"
 msgid "This will update widget <id> from <source_url>. Any changes you made will be overwritten! Continue?"
-msgstr ""
+msgstr "Widget <id> från <source_url> kommer uppdateras. Alla ändringar du gjort kommer att skrivas över! Fortsätt?"
 
 #. Alert banner message
 msgctxt "customwidgets.list.update.error.notemplatefound"
 msgid "Couldn't update widget <id> from <source_url>: no template found"
-msgstr ""
+msgstr "Kunde inte uppdatera widget <id> från <source_url>: ingen mall hittad"
 
 #. Alert banner message
 msgctxt "customwidgets.list.update.error.unknown"
 msgid "Couldn't update widget <id> from <source_url>: "
-msgstr ""
+msgstr "Kunde inte uppdatera widget <id> från <source_url>: "
 
 #. Alert banner message
 msgctxt "customwidgets.list.update.success"
 msgid "Widget <id> updated successfully from <source_url>"
-msgstr ""
+msgstr "Widget <id> från <source_url> uppdaterad"
 
 #. Dialog box title
 msgctxt "customwidgets.list.delete.dialog.title"
@@ -595,7 +595,7 @@ msgstr "Radera widget"
 #. Dialog box message
 msgctxt "customwidgets.list.delete.dialog.message"
 msgid "Please confirm you want to delete this widget: "
-msgstr ""
+msgstr "Bekräfta borttagning av widget: "
 
 #. Dialog box title
 msgctxt "customwidgets.list.clone.dialog.title"
@@ -660,12 +660,12 @@ msgstr "Konfigurationsinställningar"
 #. Displayed in small text below the section header, with an information icon
 msgctxt "customwidgets.designer.settings.config.warning"
 msgid "Beware: always bear in mind instances of this widget might be existing when altering configuration settings!"
-msgstr ""
+msgstr "OBS! Tänk på att det kan finnas instanser av denna widget som påverkas av ändringar som görs!"
 
 #. Button label
 msgctxt "customwidgets.designer.settings.config.add"
 msgid "Add setting"
-msgstr ""
+msgstr "Lägg till inställning"
 
 #. Dropdown header
 msgctxt "customwidgets.designer.settings.config.type"
@@ -735,7 +735,7 @@ msgstr ""
 #. Textbox placeholder
 msgctxt "customwidgets.designer.settings.config.choices.hint"
 msgid "Comma-separated possible values"
-msgstr ""
+msgstr "Komma-separerade möjliga värden"
 
 #. Textbox header
 msgctxt "customwidgets.designer.settings.config.description"
@@ -745,7 +745,7 @@ msgstr "Beskrivning"
 #. Banner displayed when selecting the Icon type for the settings, followed by the defined settings themselves
 msgctxt "customwidgets.designer.settings.config.icon.hint"
 msgid "This will define 2 config elements:"
-msgstr ""
+msgstr "Detta kommer att lägga till 2 inställnings-element:"
 
 #. Tab header
 msgctxt "customwidgets.designer.preview"
