@@ -54,7 +54,16 @@
                 // slider received HSB value, use the 3rd (brightness)
                 value = parseFloat(parts[2]);
             } else if (parts.length == 1) {
-                value = parseFloat(parts[0]);
+                 var state = parts[0];
+                
+                // Handle dimmer-as-switch case for strings, avoids NaN when ON/OFF sent to dimmers
+                if (state == "ON"){
+                    value = 100;
+                } else if (state == "OFF"){
+                    value = 0;
+                } else {
+                    value = parseFloat(state);
+                }
             } else {
                 return undefined;
             }
