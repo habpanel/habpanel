@@ -16,7 +16,7 @@ msgstr ""
 #. Save button in the dashboard designer
 msgctxt "designer.save"
 msgid "Save"
-msgstr ""
+msgstr "Guardar"
 
 #. Run button in the dashboard designer
 msgctxt "designer.run"
