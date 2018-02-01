@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Swedish\n"
 "Language: sv_SE\n"
-"PO-Revision-Date: 2018-02-01 15:12-0500\n"
+"PO-Revision-Date: 2018-02-01 15:21-0500\n"
 
 #. Save button in the dashboard designer
 msgctxt "designer.save"
@@ -860,12 +860,12 @@ msgstr "Visa detaljer"
 #. Little white button label with a up caret
 msgctxt "widgetgallery.details.hidedetails"
 msgid "Hide details"
-msgstr ""
+msgstr "Dölj detaljer"
 
 #. Little white button label
 msgctxt "widgetgallery.details.downloadzip"
 msgid "Download ZIP"
-msgstr ""
+msgstr "Ladda ner ZIP"
 
 #. 1. Prefix of the explanation in the expanded details section
 msgctxt "widgetgallery.details.widget.hint.prefix"
@@ -915,7 +915,7 @@ msgstr "Widget importerad!"
 #. Alert banner, followed by a technical exception message
 msgctxt "widgetgallery.error"
 msgid "Error:"
-msgstr ""
+msgstr "Fel:"
 
 #. Dialog box title
 msgctxt "widgetgallery.widgetsdetected.dialog.title"
