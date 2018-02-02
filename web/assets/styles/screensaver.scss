@@ -123,21 +123,3 @@
         }
     }
 }
-
-.widget-container.ng-enter {
-    transition: 2s linear all;
-    opacity: 0;
-}
-
-.widget-container.ng-enter-active {
-    opacity: 1;
-}
-
-.widget-container.ng-leave {
-    transition: 2s linear all;
-    opacity: 1;
-}
-
-.widget-container.ng-leave-active {
-    opacity: 0;
-}

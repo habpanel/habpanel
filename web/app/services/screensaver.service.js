@@ -32,7 +32,7 @@
         $document
     ) {
 
-        const _fallbackEventsToWatch = 'keydown DOMMouseScroll mousewheel mousedown touchstart touchmove';
+        var _fallbackEventsToWatch = 'keydown DOMMouseScroll mousewheel mousedown touchstart touchmove';
 
         var _isIdle = false;
         var _isRunning = false;
