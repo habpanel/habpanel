@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Dutch\n"
 "Language: nl_NL\n"
-"PO-Revision-Date: 2018-02-02 15:29-0500\n"
+"PO-Revision-Date: 2018-02-02 16:20-0500\n"
 
 #. Save button in the dashboard designer
 msgctxt "designer.save"
@@ -46,47 +46,47 @@ msgstr ""
 #. Tooltip when hovering the "Get more" menu entry
 msgctxt "designer.addwidget.getmore.tooltip"
 msgid "Open the widget gallery to import more widgets"
-msgstr ""
+msgstr "Open de widget galerij om meer widgets te importeren"
 
 #. Edit option in a widget placeholder context menu (3-dot icon)
 msgctxt "designer.contextmenu.edit"
 msgid "Edit..."
-msgstr ""
+msgstr "Bewerken..."
 
 #. Copy/move option in a widget placeholder context menu (3-dot icon)
 msgctxt "designer.contextmenu.copymove"
 msgid "Copy/move to..."
-msgstr ""
+msgstr "Kopieer/verplaats naar..."
 
 #. Delete option in a widget placeholder context menu (3-dot icon)
 msgctxt "designer.contextmenu.delete"
 msgid "Delete"
-msgstr ""
+msgstr "Verwijderen"
 
 #. Title of copy/move widget dialog
 msgctxt "designer.copymove.header"
 msgid "Copy/move {{widgetName}}"
-msgstr ""
+msgstr "Kopieer/verplaats {{widgetName}}"
 
 #. Alongside the dropdown dashboard selection
 msgctxt "designer.copymove.todashboard"
 msgid "To dashboard"
-msgstr ""
+msgstr "Naar dashboard"
 
 #. Move button
 msgctxt "designer.copymove.move"
 msgid "Move"
-msgstr ""
+msgstr "Verplaats"
 
 #. Copy button
 msgctxt "designer.copymove.copy"
 msgid "Copy"
-msgstr ""
+msgstr "Kopieer"
 
 #. Default name of a newly created widget
 msgctxt "designer.newwidget.defaultname"
 msgid "New Widget"
-msgstr ""
+msgstr "Nieuw Widget"
 
 msgctxt "designer.serversavefailed"
 msgid "Server save failed!"
@@ -95,17 +95,17 @@ msgstr ""
 #. Title of the dashboard settings dialog
 msgctxt "dashboard.settings.dialog.title"
 msgid "Dashboard Settings"
-msgstr ""
+msgstr "Dashboard instellingen"
 
 #. Tab header
 msgctxt "dashboard.settings.tile"
 msgid "Menu tile"
-msgstr ""
+msgstr "Menu tegel"
 
 #. Textbox header
 msgctxt "dashboard.settings.tile.background_image_url"
 msgid "Background Image URL"
-msgstr ""
+msgstr "Achtergrondafbeelding URL"
 
 #. Color picker header
 msgctxt "dashboard.settings.tile.title_text_color"
@@ -130,7 +130,7 @@ msgstr ""
 #. Alert display at the top
 msgctxt "dashboard.settings.advanced.warning"
 msgid "These options are currently experimental, unstable or targeted at advanced users! Use at your own risk."
-msgstr ""
+msgstr "Deze opties zijn momenteel experimenteel en voor gevorderde gebruikers! Gebruik op eigen risico."
 
 #. Tab header
 msgctxt "dashboard.settings.customwidgets"
@@ -155,7 +155,7 @@ msgstr ""
 #. Accordion header
 msgctxt "dashboard.settings.customwidgets.tile"
 msgid "Main menu tile"
-msgstr ""
+msgstr "Hoofdmenu tegel"
 
 #. Checkbox label
 msgctxt "dashboard.settings.customwidgets.tile.description"
@@ -175,7 +175,7 @@ msgstr ""
 #. Accordion header
 msgctxt "dashboard.settings.customwidgets.header"
 msgid "Dashboard header"
-msgstr ""
+msgstr "Dashboard titel"
 
 #. Checkbox label
 msgctxt "dashboard.settings.customwidgets.header.description"
@@ -205,7 +205,7 @@ msgstr ""
 #. Icon picker dropdown entry
 msgctxt "iconpicker.none"
 msgid "(none)"
-msgstr ""
+msgstr "(geen)"
 
 #. Appears when focusing the icon textbox when the "Custom icon" iconset is selected
 msgctxt "iconpicker.customicontooltip"
@@ -220,12 +220,12 @@ msgstr ""
 #. Header of the storage section
 msgctxt "settings.storage.header"
 msgid "Current storage configuration"
-msgstr ""
+msgstr "Huidige opslagconfiguratie"
 
 #. Radio button for local storage
 msgctxt "settings.storage.localstorage"
 msgid "Local storage"
-msgstr ""
+msgstr "Lokale opslag"
 
 #. Explanation of the "local storage only" option
 msgctxt "settings.storage.localstorage.hint"
@@ -250,7 +250,7 @@ msgstr ""
 #. Displayed before the list of dashboard the panel configuration contains
 msgctxt "settings.storage.panelconfiguration.contains"
 msgid "Contains:"
-msgstr ""
+msgstr "Bevat:"
 
 #. Link to create a panel configuration from the current configuration
 msgctxt "settings.storage.panelconfiguration.save"
@@ -285,7 +285,7 @@ msgstr ""
 #. Dropown menu header
 msgctxt "settings.panel.appearance.theme"
 msgid "Theme"
-msgstr ""
+msgstr "Thema"
 
 #. Alert banner displayed when the browsers doesn't support themes (CSS variables)
 msgctxt "settings.panel.appearance.theme.not_supported"
@@ -630,22 +630,22 @@ msgstr ""
 #. Tab header
 msgctxt "customwidgets.designer.settings"
 msgid "Settings"
-msgstr ""
+msgstr "Instellingen"
 
 #. Section header in the Settings tab
 msgctxt "customwidgets.designer.settings.general"
 msgid "General settings"
-msgstr ""
+msgstr "Algemene instellingen"
 
 #. Textbox header
 msgctxt "customwidgets.designer.settings.general.display_name"
 msgid "Display name"
-msgstr ""
+msgstr "Weergavenaam"
 
 #. Textbox header
 msgctxt "customwidgets.designer.settings.general.author"
 msgid "Author"
-msgstr ""
+msgstr "Auteur"
 
 #. Textbox header
 msgctxt "customwidgets.designer.settings.general.description"
@@ -670,17 +670,17 @@ msgstr ""
 #. Dropdown header
 msgctxt "customwidgets.designer.settings.config.type"
 msgid "Type"
-msgstr ""
+msgstr "Type"
 
 #. Dropdown option
 msgctxt "customwidgets.designer.settings.config.type.string"
 msgid "String"
-msgstr ""
+msgstr "Tekst"
 
 #. Dropdown option
 msgctxt "customwidgets.designer.settings.config.type.number"
 msgid "Number"
-msgstr ""
+msgstr "Getal"
 
 #. Dropdown option
 msgctxt "customwidgets.designer.settings.config.type.checkbox"
@@ -690,17 +690,17 @@ msgstr ""
 #. Dropdown option
 msgctxt "customwidgets.designer.settings.config.type.item"
 msgid "Item"
-msgstr ""
+msgstr "Item"
 
 #. Dropdown option
 msgctxt "customwidgets.designer.settings.config.type.color"
 msgid "Color"
-msgstr ""
+msgstr "Kleur"
 
 #. Dropdown option
 msgctxt "customwidgets.designer.settings.config.type.choices"
 msgid "Choices"
-msgstr ""
+msgstr "Keuzes"
 
 #. Dropdown option
 msgctxt "customwidgets.designer.settings.config.type.icon"
@@ -785,7 +785,7 @@ msgstr ""
 #. Button on the right of the addressbar
 msgctxt "widgetgallery.addressbar.go"
 msgid "Go"
-msgstr ""
+msgstr "Start"
 
 #. Suffix displayed after a number, i.e. "24 community contributions"
 msgctxt "widgetgallery.toolbar.communitycontributions"
