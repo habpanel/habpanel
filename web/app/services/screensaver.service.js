@@ -46,8 +46,6 @@
         }
 
         var initConfig = function () {
-            _config = null;
-            localStorageService.set('screensaverConfig', _config);
             if (_config)
                 return;
 

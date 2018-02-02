@@ -61,15 +61,21 @@
         $scope.clearErrorMessage = function (idx) { $scope.errorMessages.splice(idx, 1); }
         $scope.clearInfoMessage = function (idx) { $scope.infoMessages.splice(idx, 1); }
 
+        var reorderModel = function (model) {
+            var i = 0;
+            angular.forEach(model, function (d) {
+                d.order = i++;
+            });
+        }
+
         var checkErrors = function () {
             $scope.config.onStart.type == 'slideshow'
                 && $scope._form.mainForm.dashboards.$setValidity('atleast2Db', $scope.config.onStart.dashboards.length > 1);
-                
+
             angular.forEach($scope._form.mainForm.$error, function (v, k) {
                 var isAdded = errorMap[k] && (addErrorMessage(errorMap[k]) || true);
                 if (!isAdded) {
                     angular.forEach(v, function (err) {
-                        debugger;
                         err.$name
                             && errorMap[err.$name]
                             && addErrorMessage(errorMap[err.$name]);
@@ -118,11 +124,19 @@
             });
         }
 
+        var onMovedOrChanged = function (model) {
+            $scope._form.mainForm.$setDirty();
+            $scope.validate();
+            reorderModel(model);
+        };
+
         $scope.sortableOptions = {
-            connectWith: ".db-sortable",
-            update: function () {
-                $scope._form.mainForm.$setDirty();
-                $scope.validate();
+            allowDuplicates: false,
+            itemMoved: function (event) {
+                onMovedOrChanged(event.dest.sortableScope.modelValue);
+            },
+            orderChanged: function (event) {
+                onMovedOrChanged(event.dest.sortableScope.modelValue);
             }
         }
 

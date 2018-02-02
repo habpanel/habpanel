@@ -23,7 +23,8 @@
                         <li>
                             <label for="ss_idleTimeout" translate-keep-content translate="screensaver.settings.idletimeout.label">Idle Timeout: </label>
                             <div>
-                                <input id="ss_idleTimeout" class="d-block" type="number" ng-min="10" ng-change="validate()" name="idleTimeout" ng-model="config.idleTimeoutSec" required>
+                                <input id="ss_idleTimeout" class="d-block" type="number" ng-min="10" ng-change="validate()" name="idleTimeout" ng-model="config.idleTimeoutSec"
+                                    required>
                                 <span>
                                     <em translate-keep-content translate="screensaver.settings.idletimeout.info">Seconds of being idle until screensaver kicks in</em>
                                 </span>
@@ -44,7 +45,8 @@
                         <li>
                             <label translate-keep-content translate="screensaver.settings.additionalevents.label" for="ss_additionalEvents">Additional Events (optional): </label>
                             <div>
-                                <input id="ss_additionalEvents" class="d-block" type="text" name="additionalEvents" ng-model="config.additionalEventsToWatch" ng-change="validate()">
+                                <input id="ss_additionalEvents" class="d-block" type="text" name="additionalEvents" ng-model="config.additionalEventsToWatch"
+                                    ng-change="validate()">
                                 <span>
                                     <em translate-keep-content translate="screensaver.settings.additionalevents.info">Additional events to watch to determine idleness, separated by a comma (,).
                                         <br>
@@ -91,10 +93,12 @@
                                 <label>
                                     <em translate-keep-content translate="screensaver.settings.slideshow.dashboards.label">Dashboards to rotate:</em>
                                 </label>
-                                <div class="db-sortable positive" ui-sortable="sortableOptions" ng-model="config.onStart.dashboards" name="dashboards">
-                                    <div ng-repeat="db in config.onStart.dashboards | orderBy: db.order" class="d-block f-normal">
-                                        <span>{{db.id}} </span>
-                                        <span class="glyphicon glyphicon-move pull-right" title="{{::translations.reorder}}"></span>
+                                <div class="positive as-sortable" as-sortable="sortableOptions" ng-model="config.onStart.dashboards" name="dashboards">
+                                    <div as-sortable-item ng-repeat="db in config.onStart.dashboards | orderBy: db.order" class="d-block f-normal ss as-sortable-handle">
+                                        <div as-sortable-item-handle>
+                                            <span>{{db.id}} </span>
+                                            <span class="glyphicon glyphicon-move pull-right" title="{{::translations.reorder}}"></span>
+                                        </div>
                                     </div>
                                 </div>
                             </li>
@@ -102,10 +106,12 @@
                                 <label>
                                     <em translate-keep-content translate="screensaver.settings.slideshow.dashboardsExcluded.label">Excluded Dashboards:</em>
                                 </label>
-                                <div class="db-sortable negative" ui-sortable="sortableOptions" ng-model="config.onStart.dashboardsExcluded">
-                                    <div ng-repeat="db in config.onStart.dashboardsExcluded | orderBy: db.order" class="d-block f-normal">
-                                        <span>{{db.id}} </span>
-                                        <span class="glyphicon glyphicon-move pull-right" title="{{::translations.reorder}}"></span>
+                                <div class="negative as-sortable" as-sortable="sortableOptions" ng-model="config.onStart.dashboardsExcluded">
+                                    <div as-sortable-item ng-repeat="db in config.onStart.dashboardsExcluded | orderBy: db.order" class="d-block f-normal ss as-sortable-handle">
+                                        <div as-sortable-item-handle>
+                                            <span>{{db.id}} </span>
+                                            <span class="glyphicon glyphicon-move pull-right" title="{{::translations.reorder}}"></span>
+                                        </div>
                                     </div>
                                 </div>
                             </li>

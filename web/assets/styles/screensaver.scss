@@ -1,3 +1,21 @@
+.ss.as-sortable-handle {
+    display: block;
+    cursor: move;
+    padding: .625em;
+    border: solid 1px #ddd;
+    background: #fff;
+    width: calc(100% - 1em);
+    margin: .5em;
+    .glyphicon {
+        opacity: .25
+    }
+}
+
+.as-sortable-placeholder {
+    @extend .ss.as-sortable-handle;
+    opacity: .6;
+}
+
 .screensaver-settings {
     font-size: 16px;
     color: #000;
@@ -81,28 +99,45 @@
         }
     }
     div {
-        .ui-sortable {
+        .as-sortable {
             color: #000;
             min-height: 3.75em;
             width: 20em;
-            .ui-sortable-handle {
-                cursor: move;
-                padding: 10px;
-                border: solid 1px #ddd;
-                background: #fff;
-                width: calc(100% - 1em);
-                margin: .5em;
-                .glyphicon {
-                    top: .25em;
-                    opacity: .25
-                }
-            }
             &.positive {
                 background: rgb(177, 218, 177);
             }
             &.negative {
                 background: rgb(255, 173, 173);
             }
+            .as-sortable-item-handle {
+                margin: 0;
+                padding: 0;
+            }
+            .as-sortable-handle .glyphicon {
+                top: .25em;
+                opacity: .25
+            }
+            .as-sortable-drag {
+                opacity: .8 !important;                
+            }
         }
     }
+}
+
+.widget-container.ng-enter {
+    transition: 2s linear all;
+    opacity: 0;
+}
+
+.widget-container.ng-enter-active {
+    opacity: 1;
+}
+
+.widget-container.ng-leave {
+    transition: 2s linear all;
+    opacity: 1;
+}
+
+.widget-container.ng-leave-active {
+    opacity: 0;
 }

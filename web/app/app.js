@@ -19,8 +19,7 @@
         'snap',
         'tmh.dynamicLocale',
         'pascalprecht.translate',
-        'ngAnimate',
-        'ui.sortable'
+        'as.sortable'
     ])
     .config(['$routeProvider', 'localStorageServiceProvider', 'tmhDynamicLocaleProvider', '$translateProvider', '$translatePartialLoaderProvider', function($routeProvider, localStorageServiceProvider, tmhDynamicLocaleProvider, $translateProvider, $translatePartialLoaderProvider) {
         localStorageServiceProvider.setStorageType('localStorage');

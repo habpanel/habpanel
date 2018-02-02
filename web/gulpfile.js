@@ -161,8 +161,6 @@ gulp.task('vendor-js', ['uglify-timeline'], function() {
     //            .pipe(gulp.dest('lib'));
 
     return gulp.src([
-        'bower_components/jquery/dist/jquery.min.js',
-        'bower_components/jquery-ui/jquery-ui.min.js',
         'bower_components/angular/angular.min.js',
         'bower_components/angular-route/angular-route.min.js',
         'bower_components/angular-touch/angular-touch.min.js',
@@ -193,10 +191,9 @@ gulp.task('vendor-js', ['uglify-timeline'], function() {
         'bower_components/event-source-polyfill/eventsource.min.js',
         'bower_components/d3-timeline/dist/d3-timeline.js',
         'bower_components/aCKolor/dist/js/aCKolor.min.js',
-        'bower_components/angular-animate/angular-animate.min.js',
         'node_modules/n3-charts/build/LineChart.min.js',
         'vendor/angular-web-colorpicker.js',
-        'bower_components/angular-ui-sortable/sortable.min.js'
+        'bower_components/ng-sortable/dist/ng-sortable.min.js'
     ]).pipe(concat('vendor.js')).pipe(gulp.dest('vendor'));
 
 });
