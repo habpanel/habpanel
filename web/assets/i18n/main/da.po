@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Danish\n"
 "Language: da_DK\n"
-"PO-Revision-Date: 2018-01-28 05:11-0500\n"
+"PO-Revision-Date: 2018-02-02 16:20-0500\n"
 
 #. Common term
 msgctxt "OK"
@@ -166,7 +166,7 @@ msgstr "Tilføj dashboard"
 #. Label of the bottom-right link in edit mode - please also test with phone resolutions!
 msgctxt "menu.panelsettings"
 msgid "Panel settings"
-msgstr ""
+msgstr "Panel indstillinger"
 
 #. New dashboard dialog box title
 msgctxt "menu.dialog.newdashboard.title"
