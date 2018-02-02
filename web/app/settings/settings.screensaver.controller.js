@@ -50,38 +50,35 @@
             idleTimeouterror: TranslationService.translate("screensaver.settings.error.errorAtLeast10Secs", "Timeout must be at least 10 seconds."),
         }
 
-        let errorMap = {
-            dashboards: $scope.translations.atleast2Db,
+        var errorMap = {
+            atleast2Db: $scope.translations.atleast2Db,
             dashboardTimeout: $scope.translations.errorAtLeast1Sec,
             idleTimeout: $scope.translations.idleTimeouterror,
         }
 
-        let addErrorMessage = (m) => { $scope.errorMessages.indexOf(m) === -1 && $scope.errorMessages.push(m); }
-        let addInfoMessage = (m) => { $scope.infoMessages.indexOf(m) === -1 && $scope.infoMessages.push(m); }
-        $scope.clearErrorMessage = (idx) => { $scope.errorMessages.splice(idx, 1); }
-        $scope.clearInfoMessage = (idx) => { $scope.infoMessages.splice(idx, 1); }
+        var addErrorMessage = function (m) { $scope.errorMessages.indexOf(m) === -1 && $scope.errorMessages.push(m); }
+        var addInfoMessage = function (m) { $scope.infoMessages.indexOf(m) === -1 && $scope.infoMessages.push(m); }
+        $scope.clearErrorMessage = function (idx) { $scope.errorMessages.splice(idx, 1); }
+        $scope.clearInfoMessage = function (idx) { $scope.infoMessages.splice(idx, 1); }
 
-        let checkErrors = () => {
-            $scope._form.mainForm.$setValidity('dashboards', $scope.config.onStart.type == 'gotodashboard' || $scope.config.onStart.dashboards.length > 1);
-
-            for (let k of Object.keys($scope._form.mainForm.$error)) {
-                let error = errorMap[k];
-                if (error) {
-                    addErrorMessage(error);
-                    continue;
-                }
-
-                if (Array.isArray($scope._form.mainForm.$error[k])) {
-                    for (let err of $scope._form.mainForm.$error[k]) {
+        var checkErrors = function () {
+            $scope.config.onStart.type == 'slideshow'
+                && $scope._form.mainForm.dashboards.$setValidity('atleast2Db', $scope.config.onStart.dashboards.length > 1);
+                
+            angular.forEach($scope._form.mainForm.$error, function (v, k) {
+                var isAdded = errorMap[k] && (addErrorMessage(errorMap[k]) || true);
+                if (!isAdded) {
+                    angular.forEach(v, function (err) {
+                        debugger;
                         err.$name
                             && errorMap[err.$name]
                             && addErrorMessage(errorMap[err.$name]);
-                    }
+                    });
                 }
-            }
+            });
         }
 
-        $scope.save = () => {
+        $scope.save = function () {
             checkErrors();
             if ($scope._form.mainForm.$invalid)
                 return;
@@ -96,12 +93,12 @@
 
         }
 
-        $scope.cancel = () => {
+        $scope.cancel = function () {
             if (!$scope._form.mainForm.$pristine) {
                 prompt({
                     title: $scope.translations.cancelconfirmTitle,
                     message: $scope.translations.cancelconfirmMsg
-                }).then(() => {
+                }).then(function () {
                     $route.reload();
                 });
                 return;
@@ -110,8 +107,8 @@
             $location.url('/settings');
         }
 
-        $scope.validate = () => {
-            $timeout(() => {
+        $scope.validate = function () {
+            $timeout(function () {
                 $scope.errorMessages = [];
                 $scope.infoMessages = [];
                 checkErrors();
@@ -123,7 +120,7 @@
 
         $scope.sortableOptions = {
             connectWith: ".db-sortable",
-            update: () => {
+            update: function () {
                 $scope._form.mainForm.$setDirty();
                 $scope.validate();
             }

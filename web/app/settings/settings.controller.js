@@ -103,12 +103,12 @@
 
         vm.screensaver = {
             isEnabled: ScreensaverService.isEnabled,
-            toggle: () => {
+            toggle: function () {
                 ScreensaverService.toggle(vm.screensaver.isEnabled)
             }
         };
 
-        vm.dashboardsConfigured = () => $rootScope.dashboards.length > 0;
+        vm.dashboardsConfigured = function () { return $rootScope.dashboards.length > 0 };
 
 
         activate();

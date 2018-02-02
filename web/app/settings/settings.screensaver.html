@@ -91,7 +91,7 @@
                                 <label>
                                     <em translate-keep-content translate="screensaver.settings.slideshow.dashboards.label">Dashboards to rotate:</em>
                                 </label>
-                                <div class="db-sortable positive" ui-sortable="sortableOptions" ng-model="config.onStart.dashboards">
+                                <div class="db-sortable positive" ui-sortable="sortableOptions" ng-model="config.onStart.dashboards" name="dashboards">
                                     <div ng-repeat="db in config.onStart.dashboards | orderBy: db.order" class="d-block f-normal">
                                         <span>{{db.id}} </span>
                                         <span class="glyphicon glyphicon-move pull-right" title="{{::translations.reorder}}"></span>
