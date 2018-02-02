@@ -11,3 +11,4 @@ bower_components
 .sass-cache
 nbproject
 coverage
+.bowerrc
