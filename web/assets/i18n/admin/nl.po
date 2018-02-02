@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Dutch\n"
 "Language: nl_NL\n"
-"PO-Revision-Date: 2018-02-02 15:21-0500\n"
+"PO-Revision-Date: 2018-02-02 15:29-0500\n"
 
 #. Save button in the dashboard designer
 msgctxt "designer.save"
@@ -26,7 +26,7 @@ msgstr ""
 #. Add widget button in the dashboard designer
 msgctxt "designer.addwidget"
 msgid "Add Widget"
-msgstr ""
+msgstr "Widget toevoegen"
 
 #. Tutorial text with arrow when on an empty dashboard
 msgctxt "designer.addwidget.hint"
