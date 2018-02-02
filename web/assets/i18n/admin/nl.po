@@ -11,12 +11,12 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Dutch\n"
 "Language: nl_NL\n"
-"PO-Revision-Date: 2018-01-18 13:31-0500\n"
+"PO-Revision-Date: 2018-02-02 15:21-0500\n"
 
 #. Save button in the dashboard designer
 msgctxt "designer.save"
 msgid "Save"
-msgstr ""
+msgstr "Opslaan"
 
 #. Run button in the dashboard designer
 msgctxt "designer.run"
