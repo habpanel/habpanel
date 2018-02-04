@@ -1121,19 +1121,29 @@ msgctxt "screensaver.settings.update.fail"
 msgid "Screensaver settings update failed."
 msgstr ""
 
-#. Screensaver Settings Tab Heading General
-msgctxt "screensaver.settings.tabheading.general"
+#. Screensaver Settings Heading General
+msgctxt "screensaver.settings.heading.general"
 msgid "General"
 msgstr ""
 
-#. Screensaver Settings Tab Heading On Start
-msgctxt "screensaver.settings.tabheading.onstart"
+#. Screensaver Settings Heading On Start
+msgctxt "screensaver.settings.heading.onstart"
 msgid "On Start"
 msgstr ""
 
-#. Screensaver Settings Tab Heading On Stop
-msgctxt "screensaver.settings.tabheading.onstop"
+#. Screensaver Settings Heading On Stop
+msgctxt "screensaver.settings.heading.onstop"
 msgid "On Stop"
+msgstr ""
+
+#. Screensaver Settings Heading Advanced
+msgctxt "screensaver.settings.heading.advanced"
+msgid "Advanced"
+msgstr ""
+
+#. Screensaver Settings Advanced Settings Toggle
+msgctxt "screensaver.settings.heading.showadvanced"
+msgid "Show advanced settings"
 msgstr ""
 
 #. Screensaver Settings Error At Least 1 Second

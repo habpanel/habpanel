@@ -1,3 +1,17 @@
+<style>
+    .screensaver-settings .box {
+        margin-top: .625em;
+        margin-bottom: .625em;
+    }
+
+    .screensaver-settings label {
+        font-weight: normal;
+    }
+
+    .screensaver-settings h4.inline {
+        display: inline;
+    }
+</style>
 <section class="screensaver-settings">
     <div class="header">
         <a class="btn pull-left" title="Menu" snap-toggle="left">
@@ -16,152 +30,174 @@
                 Back
             </button>
         </div>
-        <div class="scrollable box" ng-if="dashboards && dashboards.length > 0">
-            <uib-tabset>
-                <uib-tab heading="{{::translations.tabheadingGeneral}}">
-                    <ul class="settings-outer">
-                        <li>
-                            <label for="ss_idleTimeout" translate-keep-content translate="screensaver.settings.idletimeout.label">Idle Timeout: </label>
-                            <div>
-                                <input id="ss_idleTimeout" class="d-block" type="number" ng-min="10" ng-change="validate()" name="idleTimeout" ng-model="config.idleTimeoutSec"
-                                    required>
-                                <span>
-                                    <em translate-keep-content translate="screensaver.settings.idletimeout.info">Seconds of being idle until screensaver kicks in</em>
-                                </span>
-                            </div>
-                        </li>
-                        <li>
-                            <label translate-keep-content translate="screensaver.settings.eventstowatch.label">Events to Watch: </label>
-                            <div>
-                                <span>
-                                    <em translate-keep-content translate="screensaver.settings.eventstowatch.info">Events to watch to determine idleness.</em>
-                                </span>
-                                <label ng-repeat="(key, val) in config.eventsToWatch" for="eventsToWatch_{{key}}" class="d-block f-normal">
-                                    <input id="eventsToWatch_{{key}}" type="checkbox" name="{{key}}" ng-model="config.eventsToWatch[key]" ng-change="validate()"> {{key}}
-                                </label>
-                            </div>
-                        </li>
+        <div ng-if="dashboards && dashboards.length > 0">
+            <!-- <uib-tabset>
+                <uib-tab heading="{{::translations.headingGeneral}}"> -->
 
-                        <li>
-                            <label translate-keep-content translate="screensaver.settings.additionalevents.label" for="ss_additionalEvents">Additional Events (optional): </label>
-                            <div>
-                                <input id="ss_additionalEvents" class="d-block" type="text" name="additionalEvents" ng-model="config.additionalEventsToWatch"
-                                    ng-change="validate()">
-                                <span>
-                                    <em translate-keep-content translate="screensaver.settings.additionalevents.info">Additional events to watch to determine idleness, separated by a comma (,).
-                                        <br>
-                                        <span translate-keep-content translate="screensaver.settings.additionalevents.example">Example: keypress,keyup</span>
-                                    </em>
-                                </span>
-                            </div>
-                        </li>
-                    </ul>
-                </uib-tab>
-                <uib-tab heading="{{::translations.tabheadingonstart}}">
-                    <ul class="settings-outer">
-                        <li>
-                            <label translate-keep-content translate="screensaver.settings.common.perform" for="ss_onStarType">Perform: </label>
-                            <div>
-                                <select id="ss_onStarType" class="d-block" name='onStarType' ng-model="config.onStart.type" ng-change="validate()">
-                                    <option translate-keep-content translate="screensaver.settings.common.gotodashboard" value='gotodashboard'>Go to dashboard</option>
-                                    <option translate-keep-content translate="screensaver.settings.onstarttype.options.slideshow" value='slideshow'>Dashboard Slideshow</option>
-                                </select>
-                                <span class='helpinfo' ng-click='onStartTypeHelp = !onStartTypeHelp'>
+            <div class="scrollable box">
+                <h4 translate="{{::translations.headingGeneral}}"></h4>
+                <ul class="settings-outer">
+                    <li>
+                        <label for="ss_idleTimeout" translate-keep-content translate="screensaver.settings.idletimeout.label">Idle Timeout: </label>
+                        <div>
+                            <input id="ss_idleTimeout" class="d-block" type="number" ng-min="10" ng-change="validate()" name="idleTimeout" ng-model="config.idleTimeoutSec"
+                                required>
+                            <span>
+                                <em translate-keep-content translate="screensaver.settings.idletimeout.info">Seconds of being idle until screensaver kicks in</em>
+                            </span>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+            <!-- </uib-tab>
+                <uib-tab heading="{{::translations.headingonstart}}"> -->
+            <div class="scrollable box">
+                <h4 translate="{{::translations.headingonstart}}"></h4>
+                <ul class="settings-outer">
+                    <li>
+                        <label translate-keep-content translate="screensaver.settings.common.perform" for="ss_onStarType">Perform: </label>
+                        <div>
+                            <select id="ss_onStarType" class="d-block" name='onStarType' ng-model="config.onStart.type" ng-change="validate()">
+                                <option translate-keep-content translate="screensaver.settings.common.gotodashboard" value='gotodashboard'>Go to dashboard</option>
+                                <option translate-keep-content translate="screensaver.settings.onstarttype.options.slideshow" value='slideshow'>Dashboard Slideshow</option>
+                            </select>
+                            <span class='helpinfo'>
+                                <a ng-click='onStartTypeHelp = !onStartTypeHelp'>
                                     <em>
                                         <span translate-keep-content translate="screensaver.settings.onstarttype.info">What to do when screensaver starts</span>
                                         <span class='text-info glyphicon glyphicon-question-sign'></span>
                                     </em>
-                                    <ul ng-if="onStartTypeHelp">
-                                        <li translate-keep-content translate="screensaver.settings.onstarttype.help.line1">Dashboard Slideshow - rotates between dashboards.</li>
-                                        <li translate-keep-content translate="screensaver.settings.onstarttype.help.line2">Go to dashboard - activates the selected dashboard.</li>
-                                    </ul>
+                                </a>
+                                <ul ng-if="onStartTypeHelp">
+                                    <li translate-keep-content translate="screensaver.settings.onstarttype.help.line1">Dashboard Slideshow - rotates between dashboards.</li>
+                                    <li translate-keep-content translate="screensaver.settings.onstarttype.help.line2">Go to dashboard - activates the selected dashboard.</li>
+                                </ul>
+                            </span>
+                        </div>
+                    </li>
+                    <section ng-if="config.onStart.type==='slideshow'">
+                        <li>
+                            <label translate-keep-content translate="screensaver.settings.slideshow.dashboardtimeout.label" for="ss_dashboardTimeout">Slideshow Interval: </label>
+                            <div>
+                                <input class="d-block" type="number" ng-min="1" name="dashboardTimeout" id="ss_dashboardTimeout" ng-model="config.slideshowIntervalSec"
+                                    ng-change="validate()" ng-model-options="{allowInvalid: true}" required>
+                                <span>
+                                    <em translate-keep-content translate="screensaver.settings.slideshow.dashboardtimeout.info">Duration to switch to the next dashboard</em>
                                 </span>
                             </div>
                         </li>
-                        <section ng-if="config.onStart.type==='slideshow'">
-                            <li>
-                                <label translate-keep-content translate="screensaver.settings.slideshow.dashboardtimeout.label" for="ss_dashboardTimeout">Slideshow Interval: </label>
-                                <div>
-                                    <input class="d-block" type="number" ng-min="1" name="dashboardTimeout" id="ss_dashboardTimeout" ng-model="config.slideshowIntervalSec"
-                                        ng-change="validate()" ng-model-options="{allowInvalid: true}" required>
-                                    <span>
-                                        <em translate-keep-content translate="screensaver.settings.slideshow.dashboardtimeout.info">Duration to switch to the next dashboard</em>
-                                    </span>
-                                </div>
-                            </li>
-                            <li>
-                                <label>
-                                    <em translate-keep-content translate="screensaver.settings.slideshow.dashboards.label">Dashboards to rotate:</em>
-                                </label>
-                                <div class="positive as-sortable" as-sortable="sortableOptions" ng-model="config.onStart.dashboards" name="dashboards">
-                                    <div as-sortable-item ng-repeat="db in config.onStart.dashboards | orderBy: db.order" class="d-block f-normal ss as-sortable-handle">
-                                        <div as-sortable-item-handle>
-                                            <span>{{db.id}} </span>
-                                            <span class="glyphicon glyphicon-move pull-right" title="{{::translations.reorder}}"></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <label>
-                                    <em translate-keep-content translate="screensaver.settings.slideshow.dashboardsExcluded.label">Excluded Dashboards:</em>
-                                </label>
-                                <div class="negative as-sortable" as-sortable="sortableOptions" ng-model="config.onStart.dashboardsExcluded">
-                                    <div as-sortable-item ng-repeat="db in config.onStart.dashboardsExcluded | orderBy: db.order" class="d-block f-normal ss as-sortable-handle">
-                                        <div as-sortable-item-handle>
-                                            <span>{{db.id}} </span>
-                                            <span class="glyphicon glyphicon-move pull-right" title="{{::translations.reorder}}"></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                        </section>
-                        <section ng-if="config.onStart.type!=='slideshow'">
-                            <li>
-                                <label>
-                                    <em translate-keep-content translate="screensaver.settings.common.dashboard">Dashboard:</em>
-                                </label>
-                                <select class="d-block" name='dashboard' ng-model="config.onStart.dashboard" ng-change="validate()" ng-init="config.onStart.dashboard = config.onStart.dashboard ? config.onStart.dashboard : dashboards[0].id">
-                                    <option ng-repeat="db in dashboards | orderBy: db.id" value="{{db.id}}">{{db.id}}</option>
-                                </select>
-                            </li>
-                        </section>
-                    </ul>
-                </uib-tab>
-                <uib-tab heading="{{::translations.tabheadingonstop}}">
-                    <ul class="settings-outer">
                         <li>
-                            <label translate-keep-content translate="screensaver.settings.common.perform" for="ss_onStopType">Perform: </label>
-                            <div>
-                                <select id="ss_onStopType" class="d-block" name='onStopType' ng-model="config.onStop.type" ng-change="validate()">
-                                    <option translate-keep-content translate="screensaver.settings.common.stop" value='stop'>Stop</option>
-                                    <option translate-keep-content translate="screensaver.settings.common.gotodashboard" value='gotodashboard'>Go to dashboard</option>
-                                </select>
-                                <span class='helpinfo' ng-click='onStopTypeHelp = !onStopTypeHelp'>
+                            <label>
+                                <em translate-keep-content translate="screensaver.settings.slideshow.dashboards.label">Dashboards to rotate:</em>
+                            </label>
+                            <div class="positive as-sortable" as-sortable="sortableOptions" ng-model="config.onStart.dashboards" name="dashboards">
+                                <div as-sortable-item ng-repeat="db in config.onStart.dashboards | orderBy: db.order" class="d-block f-normal ss as-sortable-handle">
+                                    <div as-sortable-item-handle>
+                                        <span>{{db.id}} </span>
+                                        <span class="glyphicon glyphicon-move pull-right" title="{{::translations.reorder}}"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <label>
+                                <em translate-keep-content translate="screensaver.settings.slideshow.dashboardsExcluded.label">Excluded Dashboards:</em>
+                            </label>
+                            <div class="negative as-sortable" as-sortable="sortableOptions" ng-model="config.onStart.dashboardsExcluded">
+                                <div as-sortable-item ng-repeat="db in config.onStart.dashboardsExcluded | orderBy: db.order" class="d-block f-normal ss as-sortable-handle">
+                                    <div as-sortable-item-handle>
+                                        <span>{{db.id}} </span>
+                                        <span class="glyphicon glyphicon-move pull-right" title="{{::translations.reorder}}"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </section>
+                    <section ng-if="config.onStart.type!=='slideshow'">
+                        <li>
+                            <label>
+                                <em translate-keep-content translate="screensaver.settings.common.dashboard">Dashboard:</em>
+                            </label>
+                            <select class="d-block" name='dashboard' ng-model="config.onStart.dashboard" ng-change="validate()" ng-init="config.onStart.dashboard = config.onStart.dashboard ? config.onStart.dashboard : dashboards[0].id">
+                                <option ng-repeat="db in dashboards | orderBy: db.id" value="{{db.id}}">{{db.id}}</option>
+                            </select>
+                        </li>
+                    </section>
+                </ul>
+            </div>
+            <div class="scrollable box">
+                <h4 translate="{{::translations.headingonstop}}"></h4>
+                <ul class="settings-outer">
+                    <li>
+                        <label translate-keep-content translate="screensaver.settings.common.perform" for="ss_onStopType">Perform: </label>
+                        <div>
+                            <select id="ss_onStopType" class="d-block" name='onStopType' ng-model="config.onStop.type" ng-change="validate()">
+                                <option translate-keep-content translate="screensaver.settings.common.stop" value='stop'>Stop</option>
+                                <option translate-keep-content translate="screensaver.settings.common.gotodashboard" value='gotodashboard'>Go to dashboard</option>
+                            </select>
+                            <span class='helpinfo'>
+                                <a ng-click='onStopTypeHelp = !onStopTypeHelp'>
                                     <em>
                                         <span translate-keep-content translate="screensaver.settings.onstop.info">What to do when screensaver starts</span>
                                         <span class='text-info glyphicon glyphicon-question-sign'></span>
                                     </em>
-                                    <ul ng-if="onStopTypeHelp">
-                                        <li translate-keep-content translate="screensaver.settings.onstoptype.help.line1">Stop - simply stops screensaver wherever it may be.</li>
-                                        <li translate-keep-content translate="screensaver.settings.onstoptype.help.line2">Go to dashboard - activates the selected dashboard.</li>
-                                    </ul>
-                                </span>
-                            </div>
+                                </a>
+                                <ul ng-if="onStopTypeHelp">
+                                    <li translate-keep-content translate="screensaver.settings.onstoptype.help.line1">Stop - simply stops screensaver wherever it may be.</li>
+                                    <li translate-keep-content translate="screensaver.settings.onstoptype.help.line2">Go to dashboard - activates the selected dashboard.</li>
+                                </ul>
+                            </span>
+                        </div>
+                    </li>
+                    <section ng-if="config.onStop.type!=='stop'">
+                        <li>
+                            <label>
+                                <em translate-keep-content translate="screensaver.settings.common.dashboard">Dashboard:</em>
+                            </label>
+                            <select class="d-block" name='dashboard' ng-model="config.onStop.dashboard" ng-change="validate()" ng-init="config.onStop.dashboard = config.onStop.dashboard ? config.onStop.dashboard : dashboards[0].id">
+                                <option ng-repeat="db in dashboards | orderBy: db.id" value="{{db.id}}">{{db.id}}</option>
+                            </select>
                         </li>
-                        <section ng-if="config.onStop.type!=='stop'">
-                            <li>
-                                <label>
-                                    <em translate-keep-content translate="screensaver.settings.common.dashboard">Dashboard:</em>
-                                </label>
-                                <select class="d-block" name='dashboard' ng-model="config.onStop.dashboard" ng-change="validate()" ng-init="config.onStop.dashboard = config.onStop.dashboard ? config.onStop.dashboard : dashboards[0].id">
-                                    <option ng-repeat="db in dashboards | orderBy: db.id" value="{{db.id}}">{{db.id}}</option>
-                                </select>
-                            </li>
-                        </section>
-                    </ul>
-                </uib-tab>
-            </uib-tabset>
+                    </section>
+                </ul>
+            </div>
+            <div class="scrollable box" ng-init="showAdvancedSettings=false">
+                <div>
+                    <h4 class="inline" translate="{{::translations.headingadvanced}}"></h4>
+                    <label ng-click="showAdvancedSettings=!showAdvancedSettings">
+                        <input type="checkbox" ng-model="showAdvancedSettings" id="showAdvancedSettings" ng-change="showAdvancedSettings=!showAdvancedSettings">
+                        <a>{{::translations.showadvanced}}</a>
+                    </label>
+                </div>
+                <ul class="settings-outer" ng-if="showAdvancedSettings">
+                    <li>
+                        <label translate-keep-content translate="screensaver.settings.eventstowatch.label">Events to Watch: </label>
+                        <div>
+                            <span>
+                                <em translate-keep-content translate="screensaver.settings.eventstowatch.info">Events to watch to determine idleness.</em>
+                            </span>
+                            <label ng-repeat="(key, val) in config.eventsToWatch" for="eventsToWatch_{{key}}" class="d-block f-normal">
+                                <input id="eventsToWatch_{{key}}" type="checkbox" name="{{key}}" ng-model="config.eventsToWatch[key]" ng-change="validate()"> {{key}}
+                            </label>
+                        </div>
+                    </li>
+
+                    <li>
+                        <label translate-keep-content translate="screensaver.settings.additionalevents.label" for="ss_additionalEvents">Additional Events (optional): </label>
+                        <div>
+                            <input id="ss_additionalEvents" class="d-block" type="text" name="additionalEvents" ng-model="config.additionalEventsToWatch"
+                                ng-change="validate()">
+                            <span>
+                                <em translate-keep-content translate="screensaver.settings.additionalevents.info">Additional events to watch to determine idleness, separated by a comma (,).
+                                    <br>
+                                    <span translate-keep-content translate="screensaver.settings.additionalevents.example">Example: keypress,keyup</span>
+                                </em>
+                            </span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
 
             <div class="cancelsave pull-right">
                 <button class="btn btn-lg" ng-class="{'btn-primary': _form.mainForm.$pristine, 'btn-danger': _form.mainForm.$dirty}" ng-click="cancel()">
