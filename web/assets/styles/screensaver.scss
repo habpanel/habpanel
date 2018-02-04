@@ -118,8 +118,18 @@
                 opacity: .25
             }
             .as-sortable-drag {
-                opacity: .8 !important;                
+                opacity: .8 !important;
             }
         }
+    }
+    .box {
+        margin-top: .625em;
+        margin-bottom: .625em;
+    }
+    label {
+        font-weight: normal;
+    }
+    h4.inline {
+        display: inline;
     }
 }
