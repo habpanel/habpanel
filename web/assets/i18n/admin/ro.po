@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Romanian\n"
 "Language: ro_RO\n"
-"PO-Revision-Date: 2018-02-05 07:42-0500\n"
+"PO-Revision-Date: 2018-02-05 16:40-0500\n"
 
 #. Save button in the dashboard designer
 msgctxt "designer.save"
@@ -71,7 +71,7 @@ msgstr ""
 #. Alongside the dropdown dashboard selection
 msgctxt "designer.copymove.todashboard"
 msgid "To dashboard"
-msgstr ""
+msgstr "Accesează dashboard"
 
 #. Move button
 msgctxt "designer.copymove.move"
@@ -95,7 +95,7 @@ msgstr ""
 #. Title of the dashboard settings dialog
 msgctxt "dashboard.settings.dialog.title"
 msgid "Dashboard Settings"
-msgstr ""
+msgstr "Setări dashboard"
 
 #. Tab header
 msgctxt "dashboard.settings.tile"
@@ -175,12 +175,12 @@ msgstr ""
 #. Accordion header
 msgctxt "dashboard.settings.customwidgets.header"
 msgid "Dashboard header"
-msgstr ""
+msgstr "Dashboard antet"
 
 #. Checkbox label
 msgctxt "dashboard.settings.customwidgets.header.description"
 msgid "Replace the contents of the dashboard header by a custom widget"
-msgstr ""
+msgstr "Înlocuiţi antetul dashboard-ului cu un widget personalizat"
 
 #. Displayed in the item picker when no item selected
 msgctxt "itempicker.placeholder"
@@ -450,7 +450,7 @@ msgstr ""
 #. Displayed in a dialog box
 msgctxt "settings.localconfig.error.nodashboardsfound"
 msgid "No dashboards found!"
-msgstr ""
+msgstr "Nu s-au găsit dashboards!"
 
 #. Title of a a dialog box
 msgctxt "settings.localconfig.parsingerror.dialog.title"
