@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Romanian\n"
 "Language: ro_RO\n"
-"PO-Revision-Date: 2018-02-05 07:11-0500\n"
+"PO-Revision-Date: 2018-02-05 07:21-0500\n"
 
 #. Common term in widget settings dialogs
 msgctxt "widget.common.min"
@@ -86,12 +86,12 @@ msgstr "Un buton efectuează o anumită acţiune, cum ar fi trimiterea unei come
 #. Settings dialog title
 msgctxt "widget.button.settings.header"
 msgid "Button Settings"
-msgstr ""
+msgstr "Setări buton"
 
 #. Tab header
 msgctxt "widget.button.general"
 msgid "General"
-msgstr ""
+msgstr "General"
 
 #. Dropdown header
 msgctxt "widget.button.general.action_type"
@@ -111,7 +111,7 @@ msgstr ""
 #. Dropdown option
 msgctxt "widget.button.general.action_type.navigate"
 msgid "Navigate"
-msgstr ""
+msgstr "Navighează"
 
 #. Textbox header
 msgctxt "widget.button.general.command"
@@ -136,7 +136,7 @@ msgstr ""
 #. Radio buttons header
 msgctxt "widget.button.general.navigation_target"
 msgid "Open in"
-msgstr ""
+msgstr "Deschide în"
 
 #. Radio button label
 msgctxt "widget.button.general.navigation_target.self"
@@ -220,37 +220,37 @@ msgstr ""
 
 msgctxt "widget.button.preview.state"
 msgid "State"
-msgstr ""
+msgstr "Stare"
 
 #. Display name of the widget (appears in the Add Widget dropdown menu in the designer)
 msgctxt "widget.chart"
 msgid "Chart"
-msgstr ""
+msgstr "Diagramă"
 
 #. Description of the widget, displayed in a tooltip when hovering the option in the Add Widget dropdown menu in the designer
 msgctxt "widget.chart.description"
 msgid "Displays a chart"
-msgstr ""
+msgstr "Afişează o diagramă"
 
 #. Settings dialog title
 msgctxt "widget.chart.settings.header"
 msgid "Chart Settings"
-msgstr ""
+msgstr "Setările de diagramă"
 
 #. Tab header
 msgctxt "widget.chart.general"
 msgid "General"
-msgstr ""
+msgstr "General"
 
 #. Dropdown header
 msgctxt "widget.chart.general.type"
 msgid "Type"
-msgstr ""
+msgstr "Tip"
 
 #. Dropdown option
 msgctxt "widget.chart.general.type.default"
 msgid "Default"
-msgstr ""
+msgstr "Prestabilit"
 
 #. Dropdown option
 msgctxt "widget.chart.general.type.rrd4j"
@@ -300,32 +300,32 @@ msgstr ""
 #. Checkbox label
 msgctxt "widget.chart.axis.enabled"
 msgid "Enabled"
-msgstr ""
+msgstr "Activat"
 
 #. Checkbox label
 msgctxt "widget.chart.axis.includezero"
 msgid "Include zero"
-msgstr ""
+msgstr "Include zero"
 
 #. Tab header
 msgctxt "widget.chart.series"
 msgid "Series"
-msgstr ""
+msgstr "Serii"
 
 #. Radio buttons header
 msgctxt "widget.chart.series.axis"
 msgid "Axis"
-msgstr ""
+msgstr "Axele"
 
 #. Radio button label
 msgctxt "widget.chart.series.axis.primary"
 msgid "Primary"
-msgstr ""
+msgstr "Principal"
 
 #. Radio button label
 msgctxt "widget.chart.series.axis.secondary"
 msgid "Secondary"
-msgstr ""
+msgstr "Secundar"
 
 #. Radio buttons header
 msgctxt "widget.chart.series.display"
@@ -335,22 +335,22 @@ msgstr ""
 #. Radio button label
 msgctxt "widget.chart.series.display.line"
 msgid "Line"
-msgstr ""
+msgstr "Linie"
 
 #. Radio button label
 msgctxt "widget.chart.series.display.area"
 msgid "Area"
-msgstr ""
+msgstr "Suprafață"
 
 #. Radio button label
 msgctxt "widget.chart.series.display.dots"
 msgid "Dots"
-msgstr ""
+msgstr "Puncte"
 
 #. Checkbox label
 msgctxt "widget.chart.series.liveupdate"
 msgid "Live update (experimental)"
-msgstr ""
+msgstr "Actualizare live (experimental)"
 
 #. Checkbox label
 msgctxt "widget.chart.series.liveupdate.fillvalues"
@@ -360,7 +360,7 @@ msgstr ""
 #. Display name of the widget (appears in the Add Widget dropdown menu in the designer)
 msgctxt "widget.clock"
 msgid "Clock"
-msgstr ""
+msgstr "Ceas"
 
 #. Description of the widget, displayed in a tooltip when hovering the option in the Add Widget dropdown menu in the designer
 msgctxt "widget.clock.description"
@@ -395,27 +395,27 @@ msgstr ""
 #. Dropdown option
 msgctxt "widget.clock.theme.light"
 msgid "light"
-msgstr ""
+msgstr "luminos"
 
 #. Dropdown option
 msgctxt "widget.clock.theme.dark"
 msgid "dark"
-msgstr ""
+msgstr "întunecat"
 
 #. Textbox header
 msgctxt "widget.clock.digital_format"
 msgid "Digital Format"
-msgstr ""
+msgstr "Format digital"
 
 #. Textbox header
 msgctxt "widget.clock.font_size"
 msgid "Digital Font Size"
-msgstr ""
+msgstr "Mărime font digital"
 
 #. Display name of the widget (appears in the Add Widget dropdown menu in the designer)
 msgctxt "widget.colorpicker"
 msgid "Color Picker"
-msgstr ""
+msgstr "Selector de Culoare"
 
 #. Description of the widget, displayed in a tooltip when hovering the option in the Add Widget dropdown menu in the designer
 msgctxt "widget.colorpicker.description"
@@ -425,17 +425,17 @@ msgstr ""
 #. Settings dialog title
 msgctxt "widget.colorpicker.settings.header"
 msgid "Color Picker Settings"
-msgstr ""
+msgstr "Setări selector de culoare"
 
 #. Dropdown header
 msgctxt "widget.colorpicker.type"
 msgid "Type"
-msgstr ""
+msgstr "Tip"
 
 #. Dropdown option
 msgctxt "widget.colorpicker.type.hsl"
 msgid "HSL Sliders"
-msgstr ""
+msgstr "Cursor HSL"
 
 #. Dropdown option
 msgctxt "widget.colorpicker.type.ackolor"
@@ -580,17 +580,17 @@ msgstr ""
 #. Textbox header
 msgctxt "widget.image.refresh_interval"
 msgid "Refresh interval"
-msgstr ""
+msgstr "Interval de reîmprospătare"
 
 #. Radio button label
 msgctxt "widget.image.refresh_interval.seconds"
 msgid "seconds"
-msgstr ""
+msgstr "secunde"
 
 #. Radio button label
 msgctxt "widget.image.refresh_interval.milliseconds"
 msgid "milliseconds"
-msgstr ""
+msgstr "milisecunde"
 
 #. Checkbox header - appears only if the refresh interval is set
 msgctxt "widget.image.nosuffix"
@@ -605,7 +605,7 @@ msgstr ""
 #. Color picker header
 msgctxt "widget.image.background_color"
 msgid "Background color"
-msgstr ""
+msgstr "Culoare de fundal"
 
 #. Display name of the widget (appears in the Add Widget dropdown menu in the designer)
 msgctxt "widget.knob"
@@ -660,37 +660,37 @@ msgstr ""
 #. Textbox header (small)
 msgctxt "widget.knob.bartrack.angles.start"
 msgid "Start"
-msgstr ""
+msgstr "Început"
 
 #. Textbox header (small)
 msgctxt "widget.knob.bartrack.angles.end"
 msgid "End"
-msgstr ""
+msgstr "Sfârșit"
 
 #. Textbox header (small)
 msgctxt "widget.knob.bartrack.width"
 msgid "Width"
-msgstr ""
+msgstr "Lățime"
 
 #. Textbox header (small)
 msgctxt "widget.knob.bartrack.cap"
 msgid "Cap"
-msgstr ""
+msgstr "Vârf"
 
 #. Section header
 msgctxt "widget.knob.bartrack.bar"
 msgid "Bar"
-msgstr ""
+msgstr "Bară"
 
 #. Section header
 msgctxt "widget.knob.bartrack.track"
 msgid "Track"
-msgstr ""
+msgstr "Pistă"
 
 #. Section header
 msgctxt "widget.knob.bartrack.previousvalue"
 msgid "Previous value"
-msgstr ""
+msgstr "Valoare anterioară"
 
 #. Checkbox label
 msgctxt "widget.knob.bartrack.previousvalue.description"
