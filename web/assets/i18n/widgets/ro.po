@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Romanian\n"
 "Language: ro_RO\n"
-"PO-Revision-Date: 2018-02-05 07:21-0500\n"
+"PO-Revision-Date: 2018-02-05 07:30-0500\n"
 
 #. Common term in widget settings dialogs
 msgctxt "widget.common.min"
@@ -700,47 +700,47 @@ msgstr ""
 #. Tab header
 msgctxt "widget.knob.scale"
 msgid "Scale"
-msgstr ""
+msgstr "Scală"
 
 #. Checkbox header
 msgctxt "widget.knob.scale.display"
 msgid "Display scale"
-msgstr ""
+msgstr "Afișează scala"
 
 #. Checkbox label
 msgctxt "widget.knob.scale.display.enabled"
 msgid "Enabled"
-msgstr ""
+msgstr "Activat"
 
 #. Radio buttons header
 msgctxt "widget.knob.scale.type"
 msgid "Scale Type"
-msgstr ""
+msgstr "Tip de scală"
 
 #. Radio button label
 msgctxt "widget.knob.scale.type.lines"
 msgid "Lines"
-msgstr ""
+msgstr "Linii"
 
 #. Checkbox label
 msgctxt "widget.knob.scale.type.dots"
 msgid "Dots"
-msgstr ""
+msgstr "Puncte"
 
 #. Textbox header (small)
 msgctxt "widget.knob.scale.width"
 msgid "Width"
-msgstr ""
+msgstr "Lăţime"
 
 #. Textbox header (small)
 msgctxt "widget.knob.scale.qty"
 msgid "Qty."
-msgstr ""
+msgstr "Cantitate"
 
 #. Textbox header (small)
 msgctxt "widget.knob.scale.space"
 msgid "Space"
-msgstr ""
+msgstr "Spaţiu"
 
 #. Tab header
 msgctxt "widget.knob.skin"
@@ -750,12 +750,12 @@ msgstr ""
 #. Radio buttons header
 msgctxt "widget.knob.skin.type"
 msgid "Type"
-msgstr ""
+msgstr "Tip"
 
 #. Radio button label
 msgctxt "widget.knob.skin.type.simple"
 msgid "Simple"
-msgstr ""
+msgstr "Simplu"
 
 #. Radio button label
 msgctxt "widget.knob.skin.type.tron"
@@ -770,22 +770,22 @@ msgstr ""
 #. Textbox header (small)
 msgctxt "widget.knob.skin.tronsettings.width"
 msgid "Width"
-msgstr ""
+msgstr "Lăţime"
 
 #. Textbox header (small)
 msgctxt "widget.knob.skin.tronsettings.space"
 msgid "Space"
-msgstr ""
+msgstr "Spaţiu"
 
 #. Tab header
 msgctxt "widget.knob.ranges"
 msgid "Ranges"
-msgstr ""
+msgstr "Intervale"
 
 #. Checkbox label
 msgctxt "widget.knob.ranges.enable"
 msgid "Enable Ranges"
-msgstr ""
+msgstr "Activează intervale"
 
 #. Checkbox label
 msgctxt "widget.knob.ranges.match_text_color"
@@ -795,17 +795,17 @@ msgstr ""
 #. Textbox header (small)
 msgctxt "widget.knob.ranges.from"
 msgid "from"
-msgstr ""
+msgstr "de la"
 
 #. Textbox header (small)
 msgctxt "widget.knob.ranges.to"
 msgid "to"
-msgstr ""
+msgstr "până la"
 
 #. Color picker header
 msgctxt "widget.knob.ranges.bar"
 msgid "Bar"
-msgstr ""
+msgstr "Bară"
 
 #. Tab header
 msgctxt "widget.knob.misc"
@@ -815,17 +815,17 @@ msgstr ""
 #. Color picker header
 msgctxt "widget.knob.misc.text"
 msgid "Text"
-msgstr ""
+msgstr "Text"
 
 #. Color picker header
 msgctxt "widget.knob.misc.background"
 msgid "Background"
-msgstr ""
+msgstr "Fundal"
 
 #. Display name of the widget (appears in the Add Widget dropdown menu in the designer)
 msgctxt "widget.label"
 msgid "Label"
-msgstr ""
+msgstr "Etichetă"
 
 #. Description of the widget, displayed in a tooltip when hovering the option in the Add Widget dropdown menu in the designer
 msgctxt "widget.label.description"
@@ -835,17 +835,17 @@ msgstr ""
 #. Settings dialog title
 msgctxt "widget.label.settings.header"
 msgid "Label Settings"
-msgstr ""
+msgstr "Configurări etichetă"
 
 #. Preview widget label in the top-right corner
 msgctxt "widget.label.preview"
 msgid "Preview"
-msgstr ""
+msgstr "Previzualizare"
 
 #. Color picker label
 msgctxt "widget.label.background_color"
 msgid "Background color"
-msgstr ""
+msgstr "Culoare de fundal"
 
 #. Color picker label
 msgctxt "widget.label.foreground_color"
@@ -1135,20 +1135,20 @@ msgstr ""
 #. Dropdown placeholder
 msgctxt "widget.timeline.general.period"
 msgid "Period"
-msgstr ""
+msgstr "Perioadă"
 
 #. Tab header
 msgctxt "widget.timeline.colors"
 msgid "Colors"
-msgstr ""
+msgstr "Culori"
 
 #. Accordion header (followed by the state value)
 msgctxt "widget.timeline.colors.state"
 msgid "State"
-msgstr ""
+msgstr "Stare"
 
 #. Tab header
 msgctxt "widget.timeline.series"
 msgid "Series"
-msgstr ""
+msgstr "Serii"
 
