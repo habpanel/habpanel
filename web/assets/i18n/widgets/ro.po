@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Romanian\n"
 "Language: ro_RO\n"
-"PO-Revision-Date: 2018-02-05 15:51-0500\n"
+"PO-Revision-Date: 2018-02-05 16:05-0500\n"
 
 #. Common term in widget settings dialogs
 msgctxt "widget.common.min"
@@ -131,7 +131,7 @@ msgstr ""
 #. Radio button label
 msgctxt "widget.button.general.navigation_type.dashboard"
 msgid "Dashboard"
-msgstr ""
+msgstr "Dashboard"
 
 #. Radio buttons header
 msgctxt "widget.button.general.navigation_target"
@@ -995,12 +995,12 @@ msgstr ""
 #. Checkbox label
 msgctxt "widget.slider.advanced.showticks"
 msgid "Show ticks"
-msgstr ""
+msgstr "Arată gradații"
 
 #. Checkbox label
 msgctxt "widget.slider.advanced.showticksvalues"
 msgid "Show ticks labels"
-msgstr ""
+msgstr "Arată etichetele gradate"
 
 #. Checkbox label
 msgctxt "widget.slider.advanced.inverted"
