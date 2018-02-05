@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Romanian\n"
 "Language: ro_RO\n"
-"PO-Revision-Date: 2018-02-05 17:01-0500\n"
+"PO-Revision-Date: 2018-02-05 17:11-0500\n"
 
 #. Common term
 msgctxt "OK"
@@ -51,7 +51,7 @@ msgstr "Pictograme"
 #. Common term
 msgctxt "Backdrop Icon"
 msgid "Backdrop Icon"
-msgstr ""
+msgstr "Pictograma de fundal"
 
 #. Common term
 msgctxt "Size"
@@ -111,7 +111,7 @@ msgstr "Conexiune pierdută! Încearcă să se reconecteze..."
 #. Appears below the edit mode button when there's no dashboard - please use the Chrome developer tools and check with phone resolutions: iPhone 6, Nexus 5 etc.!
 msgctxt "tutorial.welcome"
 msgid "Welcome to HABPanel!"
-msgstr ""
+msgstr "Bine ați venit la HABPanel!"
 
 #. Appears below the edit mode button when there's no dashboard - please use the Chrome developer tools and check with phone resolutions: iPhone 6, Nexus 5 etc.!
 msgctxt "tutorial.clickheretobegin"
@@ -131,7 +131,7 @@ msgstr "Click sau apăsă aici pentru a crea primul dashboard..."
 #. Hint for the bottom right link when in edit mode and no dashboards are present - please use the Chrome developer tools and check with phone resolutions: iPhone 6, Nexus 5 etc.!
 msgctxt "tutorial.importpanel"
 msgid "...or here to restore a panel from the server"
-msgstr ""
+msgstr "...sau aici pentru a folosi un panou de pe server"
 
 #. Hint in the bottom left part of the page when in edit mode and only one dashboard is present - please use the Chrome developer tools and check with phone resolutions: iPhone 6, Nexus 5 etc.!
 msgctxt "tutorial.enterdesigner"
@@ -141,22 +141,22 @@ msgstr "Click sau apasă pe titlu să intri în modul de editare dashboard."
 #. Hint in the bottom center part of the page above the column number slider when in edit mode and only one dashboard is present - please use the Chrome developer tools and check with phone resolutions: iPhone 6, Nexus 5 etc.!
 msgctxt "tutorial.adjustnbcolumns"
 msgid "Adjust the number of columns"
-msgstr ""
+msgstr "Ajustează numărul de coloane"
 
 #. Hint for the bottom left link when in edit mode and only one dashboard is present - please use the Chrome developer tools and check with phone resolutions: iPhone 6, Nexus 5 etc.!
 msgctxt "tutorial.saveonserver"
 msgid "Save on the openHAB server when done!"
-msgstr ""
+msgstr "Când ai terminat, salvează pe serverul openHAB!"
 
 #. Displayed when no dashboard is present and editing is locked in the service configuration
 msgctxt "tutorial.editingdisabled"
 msgid "Editing is disabled on the server!"
-msgstr ""
+msgstr "Editarea pe server este dezactivată!"
 
 #. Displayed when no dashboard is present and editing is locked in the service configuration
 msgctxt "tutorial.unlockedit"
 msgid "Please go to Paper UI and unlock editing to use HABPanel on this device."
-msgstr ""
+msgstr "Pentru a utiliza HABPanel pe acest aparat, activează editarea folosind Paper UI."
 
 #. Label of the bottom-left link in edit mode - please also test with phone resolutions!
 msgctxt "menu.addnewdashboard"
@@ -166,7 +166,7 @@ msgstr "Adaugă un nou dashboard"
 #. Label of the bottom-right link in edit mode - please also test with phone resolutions!
 msgctxt "menu.panelsettings"
 msgid "Panel settings"
-msgstr ""
+msgstr "Setări panou"
 
 #. New dashboard dialog box title
 msgctxt "menu.dialog.newdashboard.title"
@@ -191,7 +191,7 @@ msgstr "Vă rugăm să confirmaţi că ştergeţi acest dashboard: "
 #. Dashboard toolbar Speak button tooltip
 msgctxt "dashboard.toolbar.speak"
 msgid "Speak"
-msgstr ""
+msgstr "Vorbește"
 
 #. Dashboard toolbar Refresh button tooltip
 msgctxt "dashboard.toolbar.refresh"
@@ -206,7 +206,7 @@ msgstr "Ecran complet"
 #. Displayed at the bottom after clicking on the Speak button
 msgctxt "dashboard.speaknow"
 msgid "Speak now..."
-msgstr ""
+msgstr "Vorbește acum..."
 
 #. Prefix of an error message, displayed at the bottom after clicking on the Speak button
 msgctxt "dashboard.speakerror"
