@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Romanian\n"
 "Language: ro_RO\n"
-"PO-Revision-Date: 2018-01-18 13:21-0500\n"
+"PO-Revision-Date: 2018-02-05 07:30-0500\n"
 
 #. Save button in the dashboard designer
 msgctxt "designer.save"
@@ -900,7 +900,7 @@ msgstr ""
 #. Green button in the expanded details section
 msgctxt "widgetgallery.details.widget.import"
 msgid "Import widget"
-msgstr ""
+msgstr "Importă Widget"
 
 #. Orange button in the expanded details section
 msgctxt "widgetgallery.details.widget.update"
