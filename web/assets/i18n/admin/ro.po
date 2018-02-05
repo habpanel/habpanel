@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Romanian\n"
 "Language: ro_RO\n"
-"PO-Revision-Date: 2018-02-05 16:40-0500\n"
+"PO-Revision-Date: 2018-02-05 16:51-0500\n"
 
 #. Save button in the dashboard designer
 msgctxt "designer.save"
@@ -395,12 +395,12 @@ msgstr ""
 #. Section header
 msgctxt "settings.panel.dashboard_control.header"
 msgid "Switch dashboard with item value"
-msgstr ""
+msgstr "Schimbă dashboard cu valoarea unui Item"
 
 #. Dropdown header
 msgctxt "settings.panel.dashboard_control.item"
 msgid "When this item changes to a dashboard's name, switch to it:"
-msgstr ""
+msgstr "Când acest Item primește numele unui dashboard, afișează-l:"
 
 #. Local panel configuration editor header
 msgctxt "settings.localconfig.title"
@@ -690,7 +690,7 @@ msgstr ""
 #. Dropdown option
 msgctxt "customwidgets.designer.settings.config.type.item"
 msgid "Item"
-msgstr ""
+msgstr "Item"
 
 #. Dropdown option
 msgctxt "customwidgets.designer.settings.config.type.color"
