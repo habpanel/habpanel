@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Romanian\n"
 "Language: ro_RO\n"
-"PO-Revision-Date: 2018-02-05 07:30-0500\n"
+"PO-Revision-Date: 2018-02-05 07:42-0500\n"
 
 #. Save button in the dashboard designer
 msgctxt "designer.save"
@@ -620,7 +620,7 @@ msgstr ""
 #. Save button on the right, displayed for a few seconds after a save - can be hidden on phones
 msgctxt "customwidgets.designer.saved"
 msgid "Saved!"
-msgstr ""
+msgstr "Salvat!"
 
 #. Tab header
 msgctxt "customwidgets.designer.code"
@@ -680,7 +680,7 @@ msgstr ""
 #. Dropdown option
 msgctxt "customwidgets.designer.settings.config.type.number"
 msgid "Number"
-msgstr ""
+msgstr "Număr"
 
 #. Dropdown option
 msgctxt "customwidgets.designer.settings.config.type.checkbox"
@@ -705,7 +705,7 @@ msgstr ""
 #. Dropdown option
 msgctxt "customwidgets.designer.settings.config.type.icon"
 msgid "Icon"
-msgstr ""
+msgstr "Pictogramă"
 
 #. Dropdown option
 msgctxt "customwidgets.designer.settings.config.type.heading"
@@ -720,12 +720,12 @@ msgstr ""
 #. Textbox header
 msgctxt "customwidgets.designer.settings.config.label"
 msgid "Label"
-msgstr ""
+msgstr "Etichetă"
 
 #. Textbox header
 msgctxt "customwidgets.designer.settings.config.default"
 msgid "Default value"
-msgstr ""
+msgstr "Valoare implicită"
 
 #. Textbox header
 msgctxt "customwidgets.designer.settings.config.choices"
@@ -740,7 +740,7 @@ msgstr ""
 #. Textbox header
 msgctxt "customwidgets.designer.settings.config.description"
 msgid "Description"
-msgstr ""
+msgstr "Descriere"
 
 #. Banner displayed when selecting the Icon type for the settings, followed by the defined settings themselves
 msgctxt "customwidgets.designer.settings.config.icon.hint"
@@ -750,12 +750,12 @@ msgstr ""
 #. Tab header
 msgctxt "customwidgets.designer.preview"
 msgid "Preview"
-msgstr ""
+msgstr "Previzualizare"
 
 #. Dialog box title
 msgctxt "widgetgallery.heading"
 msgid "Widget Gallery"
-msgstr ""
+msgstr "Galerie Widget-uri"
 
 #. Dialog box title (when displaying a repository)
 msgctxt "widgetgallery.heading.importrepo"
@@ -795,7 +795,7 @@ msgstr ""
 #. On the right with the sort options
 msgctxt "widgetgallery.toolbar.sortby"
 msgid "sort by:"
-msgstr ""
+msgstr "Sortează după:"
 
 #. Link to change the sort criteria - keep the non breaking spaces (&nbsp;)
 msgctxt "widgetgallery.toolbar.sortby.mostrecent"
@@ -855,12 +855,12 @@ msgstr ""
 #. Little white button label with a down caret
 msgctxt "widgetgallery.details.showdetails"
 msgid "Show details"
-msgstr ""
+msgstr "Afișare detalii"
 
 #. Little white button label with a up caret
 msgctxt "widgetgallery.details.hidedetails"
 msgid "Hide details"
-msgstr ""
+msgstr "Ascunde detalii"
 
 #. Little white button label
 msgctxt "widgetgallery.details.downloadzip"
@@ -905,17 +905,17 @@ msgstr "Importă Widget"
 #. Orange button in the expanded details section
 msgctxt "widgetgallery.details.widget.update"
 msgid "Update widget"
-msgstr ""
+msgstr "Actualizare widget"
 
 #. Disabled button in the expanded details section after a widget was imported/updated
 msgctxt "widgetgallery.details.widget.imported"
 msgid "Widget imported!"
-msgstr ""
+msgstr "Widget importat!"
 
 #. Alert banner, followed by a technical exception message
 msgctxt "widgetgallery.error"
 msgid "Error:"
-msgstr ""
+msgstr "Eroare:"
 
 #. Dialog box title
 msgctxt "widgetgallery.widgetsdetected.dialog.title"
