@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Romanian\n"
 "Language: ro_RO\n"
-"PO-Revision-Date: 2018-02-05 17:11-0500\n"
+"PO-Revision-Date: 2018-02-06 02:23-0500\n"
 
 #. Common term
 msgctxt "OK"
@@ -136,7 +136,7 @@ msgstr "...sau aici pentru a folosi un panou de pe server"
 #. Hint in the bottom left part of the page when in edit mode and only one dashboard is present - please use the Chrome developer tools and check with phone resolutions: iPhone 6, Nexus 5 etc.!
 msgctxt "tutorial.enterdesigner"
 msgid "Click or tap inside the tile to enter the dashboard designer."
-msgstr "Click sau apasă pe titlu să intri în modul de editare dashboard."
+msgstr "Click sau apasă pe dală să intri în modul de editare dashboard."
 
 #. Hint in the bottom center part of the page above the column number slider when in edit mode and only one dashboard is present - please use the Chrome developer tools and check with phone resolutions: iPhone 6, Nexus 5 etc.!
 msgctxt "tutorial.adjustnbcolumns"
