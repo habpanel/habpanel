@@ -439,6 +439,7 @@
                 else
                     $rootScope.customwidgets = {};
             }
+            $rootScope.$broadcast("currentPanelConfigLoaded");
         }
 
         function setCurrentPanelConfig(name) {

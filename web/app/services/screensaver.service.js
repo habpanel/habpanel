@@ -10,6 +10,7 @@
 
     ScreensaverService.$inject = [
         'PersistenceService',
+        'OH2StorageService',
         '$location',
         '$interval',
         '$timeout',
@@ -22,6 +23,7 @@
 
     function ScreensaverService(
         PersistenceService,
+        OH2StorageService,
         $location,
         $interval,
         $timeout,
@@ -33,16 +35,15 @@
     ) {
 
         var _fallbackEventsToWatch = 'keydown DOMMouseScroll mousewheel mousedown touchstart touchmove';
-
         var _isIdle = false;
         var _isRunning = false;
-        var _config = localStorageService.get('screensaverConfig');
+        var _config = null;
         var _slideshowTimer = null;
         var _idleTimer = null;
         var _slideshowDashboards = null;
         var _currentDbIndex = 0;
         var log = function (m) {
-            $log.log(`ScreensaverService: ${m}`);
+            $log.log("ScreensaverService: " + m);
         }
 
         var initConfig = function () {
@@ -84,7 +85,6 @@
                     dashboard: null
                 }
             };
-            localStorageService.set('screensaverConfig', _config);
         }
 
         var getEventsToWatch = function () {
@@ -176,7 +176,7 @@
                 $interval.cancel(_slideshowTimer);
                 _slideshowTimer = null;
                 log("Stopping slideshow. No dashboard found.");
-                $location.url(`/view/${_config.onStart.dashboard}`);
+                $location.url("/view/ " + _config.onStart.dashboard);
                 return;
             }
 
@@ -187,11 +187,11 @@
                 return;
             }
             _currentDbIndex = ++_currentDbIndex < _slideshowDashboards.length ? _currentDbIndex : 0;
-            $location.url(`/view/${nextDbId}`);
+            $location.url("/view/" + nextDbId);
         }
 
         var slideshow = function () {
-            log(`Screensaver (${_config.onStart.type}) started in dashboard "${$route.current.params.id}"`);
+            log("Screensaver (" + _config.onStart.type + ") started in dashboard " + $route.current.params.i);
             _currentDbIndex = 0;
             nextDashboard();
             _slideshowTimer = $interval(nextDashboard, (_config.slideshowIntervalSec || 10) * 1000);
@@ -207,7 +207,7 @@
             if (_config.onStart.type === 'slideshow') {
                 slideshow();
             } else {
-                $location.url(`/view/${_config.onStart.dashboard}`)
+                $location.url("/view/" + _config.onStart.dashboard)
             }
         };
 
@@ -219,7 +219,7 @@
             $interval.cancel(_slideshowTimer);
             _slideshowTimer = null;
             _isRunning = false;
-            log(`Screensaver stopped.`);
+            log("Screensaver stopped.");
 
             if (_config.isEnabled) {
                 idleTimerStart();
@@ -229,7 +229,7 @@
                 return;
 
             if (_config.onStop.type === 'gotodashboard') {
-                $location.url(`/view/${_config.onStop.dashboard}`);
+                $location.url("/view/" + _config.onStop.dashboard);
             }
         };
 
@@ -254,13 +254,15 @@
         var saveSettings = function (config) {
             config = config || _config;
             // Uniqify our arrays
-            config.onStart.dashboards = [...new Set(config.onStart.dashboards)];
-            config.onStart.dashboardsExcluded = [...new Set(config.onStart.dashboardsExcluded)];
-            var isSuccess = localStorageService.set('screensaverConfig', config);
-            if (isSuccess)
+            function onlyUnique(value, index, self) { return self.indexOf(value) === index; }
+            config.onStart.dashboards = config.onStart.dashboards.filter(onlyUnique);
+            config.onStart.dashboardsExcluded = config.onStart.dashboardsExcluded.filter(onlyUnique);
+            $rootScope.settings.screensaver = _config;
+            OH2StorageService.saveCurrentPanelConfig().then(function () {
                 _config = config;
-            init();
-            return isSuccess;
+                init();
+            });
+            return true;
         }
 
         Object.defineProperty(this, "isEnabled", {
@@ -276,6 +278,7 @@
         })
 
         var reConfig = function () {
+            _config = $rootScope.settings.screensaver || _config;
             if (!_config) {
                 initConfig();
             }
@@ -331,6 +334,7 @@
         /* Monitor Configuration Changes to modify _config */
         $rootScope.$on('configurationChanged', reConfig);
         $rootScope.$on('configurationLoaded', reConfig);
+        $rootScope.$on("currentPanelConfigLoaded", reConfig);
 
         /* Exposed APIs */
         this.init = init;
