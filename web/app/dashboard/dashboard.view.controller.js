@@ -77,6 +77,9 @@
     vm.startScreensaver = function() {
         ScreensaverService.start(true);
     }
+    vm.isScreensaverEnabled = function() {
+        return ScreensaverService.isEnabled;
+    }
 
     vm.isScreensaverRunning = ScreensaverService.isRunning;
 

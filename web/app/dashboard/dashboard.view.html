@@ -14,7 +14,7 @@
         title="{{vm.speakTooltip}}">
         <i class="glyphicon" ng-class="vm.isListening ? 'glyphicon-stop' : 'glyphicon-comment'"></i>
     </a>
-    <a class="btn pull-right" ng-click="vm.startScreensaver()" title="{{vm.startscreensaverToolTip}}" ng-if="!settings.hide_screensaver_button && !vm.dashboard.header.use_custom_widget">
+    <a class="btn pull-right" ng-if="vm.isScreensaverEnabled()" ng-click="vm.startScreensaver()" title="{{vm.startscreensaverToolTip}}" ng-if="!settings.hide_screensaver_button && !vm.dashboard.header.use_custom_widget">
         <i class="glyphicon glyphicon-play" ng-class="{'text-success':vm.isScreensaverRunning()}"></i>
     </a>
     <h2 class="dashboard-title" ng-if="!vm.dashboard.header.use_custom_widget">
