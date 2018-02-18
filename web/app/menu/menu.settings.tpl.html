@@ -45,7 +45,8 @@
                             <icon-picker iconset="form.tile.backdrop_iconset" icon="form.tile.backdrop_icon"></icon-picker>
                             <div ng-if="form.tile.backdrop_icon" class="checkbox">
                                 <label>
-                                    <input type="checkbox" name="vertical" ng-model="form.tile.backdrop_center" /> <span translate-keep-content translate="widget.common.backdrop_center">Center backdrop horizontally</span>
+                                    <input type="checkbox" name="vertical" ng-model="form.tile.backdrop_center" />
+                                    <span translate-keep-content translate="widget.common.backdrop_center">Center backdrop horizontally</span>
                                 </label>
                             </div>
                         </div>
@@ -62,12 +63,14 @@
                             </div>
                             <div ng-if="form.icon" class="checkbox">
                                 <label>
-                                    <input type="checkbox" name="vertical" ng-model="form.tile.icon_nolinebreak" /> <span translate-keep-content translate="widget.common.icon_nolinebreak">Icon left of label instead of below</span>
+                                    <input type="checkbox" name="vertical" ng-model="form.tile.icon_nolinebreak" />
+                                    <span translate-keep-content translate="widget.common.icon_nolinebreak">Icon left of label instead of below</span>
                                 </label>
                             </div>
                             <div ng-if="form.icon" class="checkbox">
                                 <label>
-                                    <input type="checkbox" name="vertical" ng-model="form.tile.icon_replacestext" /> <span translate-keep-content translate="widget.common.icon_replacestext">Icon replaces textual value display</span>
+                                    <input type="checkbox" name="vertical" ng-model="form.tile.icon_replacestext" />
+                                    <span translate-keep-content translate="widget.common.icon_replacestext">Icon replaces textual value display</span>
                                 </label>
                             </div>
                         </div>
@@ -76,7 +79,8 @@
                     <div class="form-group" ng-class="{error: _form.tile.title_color.$error && _form.submitted}">
                         <label class="control-label col-lg-3 col-md-3" translate-keep-content translate="dashboard.settings.tile.title_text_color">Title Text color</label>
                         <div class="col-lg-4 col-md-4">
-                            <div dab-model="form.tile.title_color" web-colorpicker dab-width="20" dab-height="20" dab-radius="50" dab-vertical="4" dab-rotate="0" show-grayscale="true"></div>
+                            <div dab-model="form.tile.title_color" web-colorpicker dab-width="20" dab-height="20" dab-radius="50" dab-vertical="4" dab-rotate="0"
+                                show-grayscale="true"></div>
                         </div>
                     </div>
                     <div class="form-group" ng-class="{error: _form.tile.no_click_feedback.$error && _form.submitted}">
@@ -84,7 +88,8 @@
                         <div class="col-lg-9 col-md-9">
                             <div class="checkbox">
                                 <label>
-                                    <input type="checkbox" name="vertical" ng-model="form.tile.no_click_feedback" /> <span translate-keep-content translate="dashboard.settings.tile.click_feedback.description">Don't brighten tile on click/tap</span>
+                                    <input type="checkbox" name="vertical" ng-model="form.tile.no_click_feedback" />
+                                    <span translate-keep-content translate="dashboard.settings.tile.click_feedback.description">Don't brighten tile on click/tap</span>
                                 </label>
                             </div>
                         </div>
@@ -160,7 +165,8 @@
                                 <div class="col-lg-9 col-md-9">
                                     <div class="checkbox">
                                         <label>
-                                            <input type="checkbox" name="vertical" ng-model="form.tile.use_custom_widget" /> <span translate-keep-content translate="dashboard.settings.customwidgets.tile.description">Replace the tile contents by a custom widget</span>
+                                            <input type="checkbox" name="vertical" ng-model="form.tile.use_custom_widget" />
+                                            <span translate-keep-content translate="dashboard.settings.customwidgets.tile.description">Replace the tile contents by a custom widget</span>
                                         </label>
                                     </div>
                                 </div>
@@ -183,11 +189,13 @@
                                     <div class="col-lg-8 col-md-8">
                                         <div class="checkbox">
                                             <label>
-                                                <input type="checkbox" name="vertical" ng-model="form.tile.custom_widget_dontwrap" /> <span translate-keep-content translate="widget.template.dontwrap">Don't wrap in container</span>
+                                                <input type="checkbox" name="vertical" ng-model="form.tile.custom_widget_dontwrap" />
+                                                <span translate-keep-content translate="widget.template.dontwrap">Don't wrap in container</span>
                                             </label>
                                             &nbsp;&nbsp;
                                             <label>
-                                                <input type="checkbox" name="vertical" ng-model="form.tile.custom_widget_nobackground" /> <span translate-keep-content translate="widget.template.nobackground">No background</span>
+                                                <input type="checkbox" name="vertical" ng-model="form.tile.custom_widget_nobackground" />
+                                                <span translate-keep-content translate="widget.template.nobackground">No background</span>
                                             </label>
                                         </div>
                                     </div>
@@ -207,7 +215,8 @@
                                 <div class="col-lg-9 col-md-9">
                                     <div class="checkbox">
                                         <label>
-                                            <input type="checkbox" name="vertical" ng-model="form.drawer.use_custom_widget" /> <span translate-keep-content translate="dashboard.settings.customwidgets.drawer.description">Replace the contents of the drawer menu by a custom widget</span>
+                                            <input type="checkbox" name="vertical" ng-model="form.drawer.use_custom_widget" />
+                                            <span translate-keep-content translate="dashboard.settings.customwidgets.drawer.description">Replace the contents of the drawer menu by a custom widget</span>
                                         </label>
                                     </div>
                                 </div>
@@ -239,7 +248,8 @@
                                 <div class="col-lg-9 col-md-9">
                                     <div class="checkbox">
                                         <label>
-                                            <input type="checkbox" name="vertical" ng-model="form.header.use_custom_widget" /> <span translate-keep-content translate="dashboard.settings.customwidgets.header.description">Replace the contents of the dashboard header by a custom widget</span>
+                                            <input type="checkbox" name="vertical" ng-model="form.header.use_custom_widget" />
+                                            <span translate-keep-content translate="dashboard.settings.customwidgets.header.description">Replace the contents of the dashboard header by a custom widget</span>
                                         </label>
                                     </div>
                                 </div>
@@ -269,12 +279,21 @@
             </uib-tabset>
 
         </div>
-        
+
 
         <div class="modal-footer">
-            <a ng-click="remove()" class="btn btn-danger pull-left" tabindex="-1"><i class="glyphicon glyphicon-trash"></i>&nbsp;<span translate>Delete</span></a>
-            <a ng-click="dismiss()" class="btn btn-default" tabindex="-1"><i class="glyphicon glyphicon-remove"></i>&nbsp;<span translate>Cancel</span></a>
-            <button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-ok"></i>&nbsp;<span translate>Save</span></button>
+            <a ng-click="remove()" class="btn btn-danger pull-left" tabindex="-1">
+                <i class="glyphicon glyphicon-trash"></i>&nbsp;
+                <span translate>Delete</span>
+            </a>
+            <a ng-click="dismiss()" class="btn btn-default" tabindex="-1">
+                <i class="glyphicon glyphicon-remove"></i>&nbsp;
+                <span translate>Cancel</span>
+            </a>
+            <button type="submit" class="btn btn-primary">
+                <i class="glyphicon glyphicon-ok"></i>&nbsp;
+                <span translate>Save</span>
+            </button>
         </div>
     </form>
 </div>

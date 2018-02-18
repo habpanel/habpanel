@@ -1,5 +1,5 @@
-(function() {
-'use strict';
+(function () {
+    'use strict';
 
     angular
         .module('app')
@@ -37,11 +37,11 @@
             swapping: true,
             //floating: false,
             mobileModeEnabled: false,
-            draggable: { enabled: true, handle: '.handle', stop: function(evt) { PersistenceService.saveDashboards() } },
-            resizable: { enabled: false, stop: function(evt) { PersistenceService.saveDashboards() } }
+            draggable: { enabled: true, handle: '.handle', stop: function (evt) { PersistenceService.saveDashboards() } },
+            resizable: { enabled: false, stop: function (evt) { PersistenceService.saveDashboards() } }
         }
 
-        vm.addNewDashboard = function() {
+        vm.addNewDashboard = function () {
             prompt({
                 title: TranslationService.translate("menu.dialog.newdashboard.title", "New dashboard"),
                 message: TranslationService.translate("menu.dialog.newdashboard.message", "Name of your new dashboard:"),
@@ -55,7 +55,7 @@
 
         vm.toggleEditMode = function () {
             vm.editMode = !vm.editMode;
-            vm.gridsterOptions.resizable.enabled=vm.editMode;
+            vm.gridsterOptions.resizable.enabled = vm.editMode;
             if (vm.editMode)
                 iNoBounce.disable();
             else
@@ -85,12 +85,12 @@
             }
         }
 
-		vm.goFullscreen = function () {
-			Fullscreen.toggleAll();
-		}
+        vm.goFullscreen = function () {
+            Fullscreen.toggleAll();
+        }
 
 
-        vm.openDashboardSettings = function(dashboard) {
+        vm.openDashboardSettings = function (dashboard) {
             $modal.open({
                 scope: $scope,
                 templateUrl: 'app/menu/menu.settings.tpl.html',
@@ -98,7 +98,7 @@
                 backdrop: 'static',
                 size: 'lg',
                 resolve: {
-                    dashboard: function() {
+                    dashboard: function () {
                         return dashboard;
                     },
                     translations: ['TranslationService', function (TranslationService) {
@@ -139,7 +139,7 @@
                 background_image: dashboard.tile.background_image,
                 backdrop_iconset: dashboard.tile.backdrop_iconset,
                 backdrop_icon: dashboard.tile.backdrop_icon,
-                backdrop_center : dashboard.tile.backdrop_center,
+                backdrop_center: dashboard.tile.backdrop_center,
                 iconset: dashboard.tile.iconset,
                 icon: dashboard.tile.icon,
                 icon_size: dashboard.tile.icon_size,
@@ -166,11 +166,11 @@
             }
         };
 
-        $scope.dismiss = function() {
+        $scope.dismiss = function () {
             $modalInstance.dismiss();
         };
 
-        $scope.remove = function() {
+        $scope.remove = function () {
             prompt({
                 title: TranslationService.translate("menu.dialog.removedashboard.title", "Remove dashboard"),
                 message: TranslationService.translate("menu.dialog.removedashboard.message", "Please confirm you want to delete this dashboard: ") + dashboard.name
@@ -182,7 +182,7 @@
             });
         };
 
-        $scope.updateCustomWidgetSettings = function(erase_config, type) {
+        $scope.updateCustomWidgetSettings = function (erase_config, type) {
             if (!$scope.widgetsettings)
                 $scope.widgetsettings = {};
             delete $scope.widgetsettings[type];
@@ -198,7 +198,7 @@
             }
         };
 
-        $scope.submit = function() {
+        $scope.submit = function () {
             angular.extend(dashboard, $scope.form);
             PersistenceService.getDashboard(dashboard.id).tile = angular.copy(dashboard.tile);
             if (!dashboard.tile.use_custom_widget) {
@@ -229,5 +229,5 @@
         $scope.updateCustomWidgetSettings(false, 'drawer');
         $scope.updateCustomWidgetSettings(false, 'header');
     }
-    
+
 })();
