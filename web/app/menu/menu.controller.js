@@ -123,6 +123,16 @@
         if (!$scope.dashboard.header) $scope.dashboard.header = {};
         //$scope.items = OHService.getItems();
 
+        // Backward compatibility:
+        var backgroundType = "default";
+        if (!!dashboard.tile.background_image) {
+            dashboard.tile.background_type = "url";
+        } else if (!!dashboard.tile.background_color) { 
+            dashboard.tile.background_type = "color";
+        } else {
+            dashboard.tile.background_type = "default";
+        }
+
         $scope.form = {
             name: dashboard.name,
             sizeX: dashboard.sizeX,
@@ -136,7 +146,9 @@
             mobile_breakpoint: dashboard.mobile_breakpoint,
             mobile_mode_enabled: dashboard.mobile_mode_enabled,
             tile: {
+                background_type: dashboard.tile.background_type,
                 background_image: dashboard.tile.background_image,
+                background_color: dashboard.tile.background_color,
                 backdrop_iconset: dashboard.tile.backdrop_iconset,
                 backdrop_icon: dashboard.tile.backdrop_icon,
                 backdrop_center: dashboard.tile.backdrop_center,
@@ -217,6 +229,15 @@
             if (!dashboard.header.use_custom_widget) {
                 delete dashboard.header;
             }
+            if (dashboard.tile.background_type === "url") {
+                delete dashboard.tile.background_color;
+            } else if (dashboard.tile.background_type === "color") {
+                delete dashboard.tile.background_image;
+            } else {
+                delete dashboard.tile.background_color;
+                delete dashboard.tile.background_image;
+            }
+
 
             PersistenceService.saveDashboards().then(function () {
                 $modalInstance.close();

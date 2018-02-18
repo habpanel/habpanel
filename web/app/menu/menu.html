@@ -58,7 +58,7 @@
     </div>
     <div ng-if="!vm.editMode" gridster="vm.gridsterOptions" class="col-md-12 col-lg-12">
         <div gridster-item="dash" ng-init="tile=dash.tile" class="dash-card col-md-6 col-lg-6 col-sm-6 box" ng-class="{ activefeedback: !tile.no_click_feedback }" ng-repeat="dash in vm.dashboards">
-            <h3 ng-if="!tile.use_custom_widget" ng-style="{ color:(tile.title_color && tile.title_color!='transparent')?tile.title_color:'inherit' }" ng-click="vm.viewDashboard(dash)" class="card-title">
+            <h3 ng-if="!tile.use_custom_widget" ng-style="{ color:(tile.title_color && tile.title_color!='transparent')?tile.title_color:'inherit', 'background-color': tile.background_type === 'color' ? tile.background_color : 'unset' }" ng-click="vm.viewDashboard(dash)" class="card-title">
                 <img class="tile-background" ng-if="tile.background_image" ng-src="{{tile.background_image}}" />
                 <widget-icon ng-if="tile.backdrop_icon && !tile.background_image" backdrop="true" iconset="tile.backdrop_iconset" icon="tile.backdrop_icon" center="tile.backdrop_center"></widget-icon>
                 <!--<widget-icon iconset="'smarthome-set'" icon="'bulb'" backdrop="true"></widget-icon>-->
