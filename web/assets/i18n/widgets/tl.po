@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Tagalog\n"
 "Language: tl_PH\n"
-"PO-Revision-Date: 2018-02-20 10:38-0500\n"
+"PO-Revision-Date: 2018-02-20 10:53-0500\n"
 
 #. Common term in widget settings dialogs
 msgctxt "widget.common.min"
@@ -1105,7 +1105,7 @@ msgstr "Suporta ng komunidad"
 #. Menu entry (top-right above the code editor)
 msgctxt "widget.template.knowledgebase"
 msgid "Knowledge base"
-msgstr ""
+msgstr "Base sa kaalaman"
 
 #. Display name of the widget (appears in the Add Widget dropdown menu in the designer)
 msgctxt "widget.timeline"
