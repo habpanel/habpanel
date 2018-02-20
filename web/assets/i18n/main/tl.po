@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Tagalog\n"
 "Language: tl_PH\n"
-"PO-Revision-Date: 2018-02-20 01:52-0500\n"
+"PO-Revision-Date: 2018-02-20 04:13-0500\n"
 
 #. Common term
 msgctxt "OK"
@@ -121,7 +121,7 @@ msgstr "Mag-click o mag-tap dito upang magsimula."
 #. Appears at the top of the screen when in edit mode and no dashboards are present
 msgctxt "tutorial.editmode"
 msgid "You're now in edit mode, where you can design dashboards."
-msgstr "Ikaw ngayon ay nasa paraan ng pag-eedit, kung saan ay makakadesenyo ka ng mga dashboard."
+msgstr "Ikaw ngayon ay nasa mode ng pag-eedit, kung saan ay makakadesenyo ka ng mga dashboard."
 
 #. Hint for the bottom left link when in edit mode and no dashboards are present - please use the Chrome developer tools and check with phone resolutions: iPhone 6, Nexus 5 etc.!
 msgctxt "tutorial.createfirstdashboard"
