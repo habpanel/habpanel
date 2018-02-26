@@ -11,57 +11,57 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Czech\n"
 "Language: cs_CZ\n"
-"PO-Revision-Date: 2018-02-26 14:13-0500\n"
+"PO-Revision-Date: 2018-02-26 14:23-0500\n"
 
 #. Common term in widget settings dialogs
 msgctxt "widget.common.min"
 msgid "Min"
-msgstr ""
+msgstr "Min"
 
 #. Common term in widget settings dialogs
 msgctxt "widget.common.max"
 msgid "Max"
-msgstr ""
+msgstr "Max"
 
 #. Common term in widget settings dialogs
 msgctxt "widget.common.step"
 msgid "Step"
-msgstr ""
+msgstr "Krok"
 
 #. Common term in widget settings dialogs
 msgctxt "widget.common.unit"
 msgid "Unit"
-msgstr ""
+msgstr "Jednotka"
 
 #. Common term in widget settings dialogs
 msgctxt "widget.common.format"
 msgid "Format"
-msgstr ""
+msgstr "Formát"
 
 #. Common option label in widget settings dialogs
 msgctxt "widget.common.format.useserverprovided"
 msgid "Use server-provided format if available"
-msgstr ""
+msgstr "Použít formát ze serveru, je-li k dispozici"
 
 #. Common option label in widget settings dialogs
 msgctxt "widget.common.dontwrap"
 msgid "Value right of label"
-msgstr ""
+msgstr "Hodnota napravo od popisku"
 
 #. Common option label in widget settings dialogs
 msgctxt "widget.common.backdrop_center"
 msgid "Center backdrop horizontally"
-msgstr ""
+msgstr "Vycentrovat ikonu pozadí vodorovně"
 
 #. Common option label in widget settings dialogs
 msgctxt "widget.common.icon_nolinebreak"
 msgid "Icon left of label instead of below"
-msgstr ""
+msgstr "Ikona vlevo od popisku místo pod ním"
 
 #. Common option label in widget settings dialogs
 msgctxt "widget.common.icon_replacestext"
 msgid "Icon replaces textual value display"
-msgstr ""
+msgstr "Ikona nahradí textové hodnoty"
 
 #. Common tab header label
 msgctxt "widget.common.general"
@@ -126,141 +126,141 @@ msgstr ""
 #. Radio buttons header
 msgctxt "widget.button.general.navigation_type"
 msgid "Navigation type"
-msgstr "Typ navigace"
+msgstr ""
 
 #. Radio button label
 msgctxt "widget.button.general.navigation_type.dashboard"
 msgid "Dashboard"
-msgstr "Dashboard"
+msgstr ""
 
 #. Radio buttons header
 msgctxt "widget.button.general.navigation_target"
 msgid "Open in"
-msgstr "Otevřít v"
+msgstr ""
 
 #. Radio button label
 msgctxt "widget.button.general.navigation_target.self"
 msgid "Current tab"
-msgstr "Aktuální záložka"
+msgstr ""
 
 #. Radio button label
 msgctxt "widget.button.general.navigation_target.new_tab"
 msgid "New tab"
-msgstr "Nová záložka"
+msgstr ""
 
 #. Radio button label
 msgctxt "widget.button.general.navigation_target.new_window"
 msgid "New window"
-msgstr "Nové okno"
+msgstr ""
 
 #. Tab header
 msgctxt "widget.button.display"
 msgid "Display"
-msgstr "Zobrazit"
+msgstr ""
 
 #. Section header
 msgctxt "widget.button.display.label"
 msgid "Label"
-msgstr "Popisek"
+msgstr ""
 
 #. Section header
 msgctxt "widget.button.display.value"
 msgid "Value"
-msgstr "Hodnota"
+msgstr ""
 
 #. Checkbox label (when there's an item configured in the General tab)
 msgctxt "widget.button.display.value.showitemvalue"
 msgid "Show the item's state value"
-msgstr "Zobrazit stav / hodnotu Item"
+msgstr ""
 
 #. Checkbox label (when there's no item configured in the General tab)
 msgctxt "widget.button.display.value.showitemvalue_noitem"
 msgid "Show an item's state value"
-msgstr "Zobrazit stav / hodnotu Item"
+msgstr ""
 
 #. Textbox header
 msgctxt "widget.button.display.value.active_state"
 msgid "Active state"
-msgstr "Aktivní stav"
+msgstr ""
 
 #. Checkboxes header
 msgctxt "widget.button.display.value.layout"
 msgid "Layout"
-msgstr "Rozvržení"
+msgstr ""
 
 #. Tab header
 msgctxt "widget.button.inactive"
 msgid "Inactive"
-msgstr "Neaktivní"
+msgstr ""
 
 #. Tab header
 msgctxt "widget.button.active"
 msgid "Active"
-msgstr "Aktivní"
+msgstr ""
 
 #. Tab header (when there's no item configured in the General tab)
 msgctxt "widget.button.colors"
 msgid "Colors"
-msgstr "Barvy"
+msgstr ""
 
 #. Color picker header
 msgctxt "widget.button.background_color"
 msgid "Background color"
-msgstr "Barva pozadí"
+msgstr ""
 
 #. Color picker header
 msgctxt "widget.button.foreground_color"
 msgid "Label color"
-msgstr "Barva popisku"
+msgstr ""
 
 #. Color picker header
 msgctxt "widget.button.value_color"
 msgid "Value color"
-msgstr "Barva hodnoty"
+msgstr ""
 
 msgctxt "widget.button.preview.state"
 msgid "State"
-msgstr "Stav"
+msgstr ""
 
 #. Display name of the widget (appears in the Add Widget dropdown menu in the designer)
 msgctxt "widget.chart"
 msgid "Chart"
-msgstr "Graf"
+msgstr ""
 
 #. Description of the widget, displayed in a tooltip when hovering the option in the Add Widget dropdown menu in the designer
 msgctxt "widget.chart.description"
 msgid "Displays a chart"
-msgstr "Zobrazí graf"
+msgstr ""
 
 #. Settings dialog title
 msgctxt "widget.chart.settings.header"
 msgid "Chart Settings"
-msgstr "Nastavení grafu"
+msgstr ""
 
 #. Tab header
 msgctxt "widget.chart.general"
 msgid "General"
-msgstr "Obecné"
+msgstr ""
 
 #. Dropdown header
 msgctxt "widget.chart.general.type"
 msgid "Type"
-msgstr "Typ"
+msgstr ""
 
 #. Dropdown option
 msgctxt "widget.chart.general.type.default"
 msgid "Default"
-msgstr "Výchozí"
+msgstr ""
 
 #. Dropdown option
 msgctxt "widget.chart.general.type.rrd4j"
 msgid "RRD4j (rrd4j persistence service only)"
-msgstr "RRD4j (pouze služba persistence rrd4j)"
+msgstr ""
 
 #. Dropdown option
 msgctxt "widget.chart.general.type.interactive"
 msgid "n3-line-chart (interactive)"
-msgstr "n3-line-chart (interaktivní)"
+msgstr ""
 
 #. Textbox header
 msgctxt "widget.chart.general.service"
@@ -900,7 +900,7 @@ msgstr ""
 #. Checkbox label (very small)
 msgctxt "widget.selection.display.hidelabel"
 msgid "Hide name"
-msgstr ""
+msgstr "Skrýt název"
 
 #. Checkbox label (very small)
 msgctxt "widget.selection.display.hideicon"
@@ -1055,100 +1055,100 @@ msgstr ""
 #. Display name of the widget (appears in the Add Widget dropdown menu in the designer)
 msgctxt "widget.template"
 msgid "Template"
-msgstr "Šablona"
+msgstr ""
 
 #. Description of the widget, displayed in a tooltip when hovering the option in the Add Widget dropdown menu in the designer
 msgctxt "widget.template.description"
 msgid "A template widget - displays a custom dynamic template"
-msgstr "Widget šablona - zobrazí vlastní dynamický obsah na základě HTML AngularJS"
+msgstr ""
 
 #. Settings dialog title
 msgctxt "widget.template.settings.header"
 msgid "Template Settings"
-msgstr "Nastavení šablony"
+msgstr ""
 
 #. Settings dialog title for a custom widget (don't translate the variable)
 msgctxt "widget.template.settings.header.customwidget"
 msgid "{{customwidget_name}} Settings"
-msgstr "{{customwidget_name}} Nastavení"
+msgstr ""
 
 #. Checkbox label (small)
 msgctxt "widget.template.dontwrap"
 msgid "Don't wrap in container"
-msgstr "Obsah šablony nezarovnávat na střed"
+msgstr ""
 
 #. Checkbox label (small)
 msgctxt "widget.template.nobackground"
 msgid "No background"
-msgstr "Žádné pozadí"
+msgstr ""
 
 #. Section header (displayed above the code editor)
 msgctxt "widget.template.template"
 msgid "Template"
-msgstr "Šablona"
+msgstr ""
 
 #. Menu entry (top-right above the code editor)
 msgctxt "widget.template.importfromfile"
 msgid "Import from file..."
-msgstr "Importovat ze souboru..."
+msgstr ""
 
 #. Menu entry (top-right above the code editor)
 msgctxt "widget.template.exporttofile"
 msgid "Export to file"
-msgstr "Exportovat do souboru"
+msgstr ""
 
 #. Menu entry (top-right above the code editor)
 msgctxt "widget.template.communitysupport"
 msgid "Community support"
-msgstr "Podpora komunity"
+msgstr ""
 
 #. Menu entry (top-right above the code editor)
 msgctxt "widget.template.knowledgebase"
 msgid "Knowledge base"
-msgstr "Databáze znalostí"
+msgstr ""
 
 #. Display name of the widget (appears in the Add Widget dropdown menu in the designer)
 msgctxt "widget.timeline"
 msgid "Timeline"
-msgstr "Časová osa"
+msgstr ""
 
 #. Description of the widget, displayed in a tooltip when hovering the option in the Add Widget dropdown menu in the designer
 msgctxt "widget.timeline.description"
 msgid "Displays a timeline of several items"
-msgstr "Zobrazí časovou osu více Items"
+msgstr ""
 
 #. Settings dialog title
 msgctxt "widget.timeline.settings.header"
 msgid "Timeline Settings"
-msgstr "Nastavení časové osy"
+msgstr ""
 
 #. Textbox header
 msgctxt "widget.timeline.general.service"
 msgid "Persistence service"
-msgstr "Služba persistence"
+msgstr ""
 
 #. Textbox placeholder
 msgctxt "widget.timeline.general.service.hint"
 msgid "rrd4j, mysql, influxdb... Leave blank for default"
-msgstr "rrd4j, mysql, influxdb... Ponechte prázdné pro výchozí službu"
+msgstr ""
 
 #. Dropdown placeholder
 msgctxt "widget.timeline.general.period"
 msgid "Period"
-msgstr "Období"
+msgstr ""
 
 #. Tab header
 msgctxt "widget.timeline.colors"
 msgid "Colors"
-msgstr "Barvy"
+msgstr ""
 
 #. Accordion header (followed by the state value)
 msgctxt "widget.timeline.colors.state"
 msgid "State"
-msgstr "Stav"
+msgstr ""
 
 #. Tab header
 msgctxt "widget.timeline.series"
 msgid "Series"
-msgstr "Data"
+msgstr ""
 
