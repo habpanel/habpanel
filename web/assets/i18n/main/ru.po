@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
-"PO-Revision-Date: 2018-03-05 10:54-0500\n"
+"PO-Revision-Date: 2018-03-05 11:02-0500\n"
 
 #. Common term
 msgctxt "OK"
@@ -71,7 +71,7 @@ msgstr "Цвет"
 #. Common term (plural)
 msgctxt "Colors"
 msgid "Colors"
-msgstr ""
+msgstr "Цвета"
 
 #. Common term
 msgctxt "Transparent"
@@ -91,32 +91,32 @@ msgstr ""
 #. Common term (e.g. tooltip in the dashboard header toolbar)
 msgctxt "Refresh"
 msgid "Refresh"
-msgstr ""
+msgstr "Обновить"
 
 #. Common term (e.g. tooltip in the dashboard header toolbar)
 msgctxt "Fullscreen"
 msgid "Fullscreen"
-msgstr ""
+msgstr "Во весь экран"
 
 #. Common term
 msgctxt "Help"
 msgid "Help"
-msgstr ""
+msgstr "Справка"
 
 #. Appears in a red background in the bottom of the screen when openHAB is not responding
 msgctxt "error.connectionlost"
 msgid "Connection lost! Trying to reconnect..."
-msgstr ""
+msgstr "Соединение потеряно! Попытка переподключения..."
 
 #. Appears below the edit mode button when there's no dashboard - please use the Chrome developer tools and check with phone resolutions: iPhone 6, Nexus 5 etc.!
 msgctxt "tutorial.welcome"
 msgid "Welcome to HABPanel!"
-msgstr ""
+msgstr "Добро пожаловать в HABPanel!"
 
 #. Appears below the edit mode button when there's no dashboard - please use the Chrome developer tools and check with phone resolutions: iPhone 6, Nexus 5 etc.!
 msgctxt "tutorial.clickheretobegin"
 msgid "Click or tap here to begin."
-msgstr ""
+msgstr "Нажмите здесь, чтобы начать."
 
 #. Appears at the top of the screen when in edit mode and no dashboards are present
 msgctxt "tutorial.editmode"
@@ -131,7 +131,7 @@ msgstr ""
 #. Hint for the bottom right link when in edit mode and no dashboards are present - please use the Chrome developer tools and check with phone resolutions: iPhone 6, Nexus 5 etc.!
 msgctxt "tutorial.importpanel"
 msgid "...or here to restore a panel from the server"
-msgstr ""
+msgstr "...или здесь для восстановления панели с сервера"
 
 #. Hint in the bottom left part of the page when in edit mode and only one dashboard is present - please use the Chrome developer tools and check with phone resolutions: iPhone 6, Nexus 5 etc.!
 msgctxt "tutorial.enterdesigner"
@@ -141,7 +141,7 @@ msgstr ""
 #. Hint in the bottom center part of the page above the column number slider when in edit mode and only one dashboard is present - please use the Chrome developer tools and check with phone resolutions: iPhone 6, Nexus 5 etc.!
 msgctxt "tutorial.adjustnbcolumns"
 msgid "Adjust the number of columns"
-msgstr ""
+msgstr "Отрегулируйте количество столбцов"
 
 #. Hint for the bottom left link when in edit mode and only one dashboard is present - please use the Chrome developer tools and check with phone resolutions: iPhone 6, Nexus 5 etc.!
 msgctxt "tutorial.saveonserver"
@@ -166,7 +166,7 @@ msgstr ""
 #. Label of the bottom-right link in edit mode - please also test with phone resolutions!
 msgctxt "menu.panelsettings"
 msgid "Panel settings"
-msgstr ""
+msgstr "Настройки панели"
 
 #. New dashboard dialog box title
 msgctxt "menu.dialog.newdashboard.title"
@@ -196,20 +196,20 @@ msgstr ""
 #. Dashboard toolbar Refresh button tooltip
 msgctxt "dashboard.toolbar.refresh"
 msgid "Refresh"
-msgstr ""
+msgstr "Обновить"
 
 #. Dashboard toolbar Fullscreen button tooltip
 msgctxt "dashboard.toolbar.fullscreen"
 msgid "Fullscreen"
-msgstr ""
+msgstr "Во весь экран"
 
 #. Displayed at the bottom after clicking on the Speak button
 msgctxt "dashboard.speaknow"
 msgid "Speak now..."
-msgstr ""
+msgstr "Говорите..."
 
 #. Prefix of an error message, displayed at the bottom after clicking on the Speak button
 msgctxt "dashboard.speakerror"
 msgid "Error: "
-msgstr ""
+msgstr "Ошибка: "
 
