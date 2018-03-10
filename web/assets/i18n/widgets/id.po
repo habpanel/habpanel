@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Indonesian\n"
 "Language: id_ID\n"
-"PO-Revision-Date: 2018-01-18 13:51-0500\n"
+"PO-Revision-Date: 2018-03-10 07:21-0500\n"
 
 #. Common term in widget settings dialogs
 msgctxt "widget.common.min"
@@ -51,7 +51,7 @@ msgstr ""
 #. Common option label in widget settings dialogs
 msgctxt "widget.common.backdrop_center"
 msgid "Center backdrop horizontally"
-msgstr ""
+msgstr "Latar belakang pusat secara horisontal"
 
 #. Common option label in widget settings dialogs
 msgctxt "widget.common.icon_nolinebreak"
@@ -196,7 +196,7 @@ msgstr ""
 #. Tab header
 msgctxt "widget.button.active"
 msgid "Active"
-msgstr ""
+msgstr "Aktif"
 
 #. Tab header (when there's no item configured in the General tab)
 msgctxt "widget.button.colors"
@@ -1010,7 +1010,7 @@ msgstr ""
 #. Checkbox label
 msgctxt "widget.slider.advanced.bigslider"
 msgid "Big slider (horizontal only)"
-msgstr ""
+msgstr "Slider besar (horisontal saja)"
 
 #. Tab header
 msgctxt "widget.slider.backdrop"
