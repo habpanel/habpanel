@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Dutch\n"
 "Language: nl_NL\n"
-"PO-Revision-Date: 2018-03-17 03:30-0400\n"
+"PO-Revision-Date: 2018-03-17 03:40-0400\n"
 
 #. Save button in the dashboard designer
 msgctxt "designer.save"
@@ -230,7 +230,7 @@ msgstr "Lokale opslag"
 #. Explanation of the "local storage only" option
 msgctxt "settings.storage.localstorage.hint"
 msgid "The configuration is saved for this browser and device only. It will be kept as long as you don't clean up the browser's historical data."
-msgstr ""
+msgstr "De configuratie is alleen voor deze browser en dit apparaat opgeslagen. Het zal worden bewaard, zolang u de geschiedenis van de browser niet wist."
 
 #. Link below the "local storage" option
 msgctxt "settings.storage.localstorage.edit"
@@ -245,7 +245,7 @@ msgstr ""
 #. Prefix of the last synced line, before the date
 msgctxt "settings.storage.panelconfiguration.lastsynced"
 msgid "Last synced on"
-msgstr ""
+msgstr "Voor het laatst gesynchroniseerd op"
 
 #. Displayed before the list of dashboard the panel configuration contains
 msgctxt "settings.storage.panelconfiguration.contains"
