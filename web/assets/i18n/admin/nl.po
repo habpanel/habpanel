@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Dutch\n"
 "Language: nl_NL\n"
-"PO-Revision-Date: 2018-02-02 16:20-0500\n"
+"PO-Revision-Date: 2018-03-17 03:21-0400\n"
 
 #. Save button in the dashboard designer
 msgctxt "designer.save"
@@ -21,7 +21,7 @@ msgstr "Opslaan"
 #. Run button in the dashboard designer
 msgctxt "designer.run"
 msgid "Run"
-msgstr ""
+msgstr "Uitvoeren"
 
 #. Add widget button in the dashboard designer
 msgctxt "designer.addwidget"
@@ -31,7 +31,7 @@ msgstr "Widget toevoegen"
 #. Tutorial text with arrow when on an empty dashboard
 msgctxt "designer.addwidget.hint"
 msgid "Add some widgets"
-msgstr ""
+msgstr "Voeg enkele widgets toe"
 
 #. Header of the custom widget section (beware, it might overlap the cogs icon on the right)
 msgctxt "designer.addwidget.customwidgets"
@@ -41,7 +41,7 @@ msgstr ""
 #. Open widget gallery
 msgctxt "designer.addwidget.getmore"
 msgid "Get more..."
-msgstr ""
+msgstr "Meer widgets..."
 
 #. Tooltip when hovering the "Get more" menu entry
 msgctxt "designer.addwidget.getmore.tooltip"
@@ -110,7 +110,7 @@ msgstr "Achtergrondafbeelding URL"
 #. Color picker header
 msgctxt "dashboard.settings.tile.title_text_color"
 msgid "Title Text color"
-msgstr ""
+msgstr "Titel Tekstkleur"
 
 #. Checkbox header
 msgctxt "dashboard.settings.tile.click_feedback"
@@ -125,7 +125,7 @@ msgstr ""
 #. Tab header
 msgctxt "dashboard.settings.advanced"
 msgid "Advanced"
-msgstr ""
+msgstr "Geavanceerd"
 
 #. Alert display at the top
 msgctxt "dashboard.settings.advanced.warning"
