@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Dutch\n"
 "Language: nl_NL\n"
-"PO-Revision-Date: 2018-03-17 03:21-0400\n"
+"PO-Revision-Date: 2018-03-17 03:30-0400\n"
 
 #. Save button in the dashboard designer
 msgctxt "designer.save"
@@ -140,7 +140,7 @@ msgstr ""
 #. Alert displayed at the top
 msgctxt "dashboard.settings.customwidgets.warning"
 msgid "This feature is currently experimental, and targeted at advanced users! Use at your own risk."
-msgstr ""
+msgstr "Deze functie is momenteel experimenteel en voor gevorderde gebruikers! Gebruik op eigen risico."
 
 #. Checkbox header
 msgctxt "dashboard.settings.customwidgets.usecustomwidget"
@@ -185,7 +185,7 @@ msgstr ""
 #. Displayed in the item picker when no item selected
 msgctxt "itempicker.placeholder"
 msgid "Search or select an openHAB item"
-msgstr ""
+msgstr "Zoek of selecteer een openHAB item"
 
 #. Icon picker dropdown placeholder
 msgctxt "iconpicker.selecticonset"
@@ -215,7 +215,7 @@ msgstr ""
 #. Screen title
 msgctxt "settings.header"
 msgid "Settings"
-msgstr ""
+msgstr "Instellingen"
 
 #. Header of the storage section
 msgctxt "settings.storage.header"
