@@ -3,7 +3,7 @@
         "Project-Id-Version": "openhab-habpanel",
         "Report-Msgid-Bugs-To": "https://github.com/openhab/org.openhab.ui.habpanel/issues",
         "POT-Creation-Date": "",
-        "PO-Revision-Date": "2018-01-18 13:31-0500",
+        "PO-Revision-Date": "2018-01-27 14:01-0500",
         "Last-Translator": "openhab-bot <bot@openhab.org>",
         "Language": "da_DK",
         "Language-Team": "Danish",
@@ -14,5 +14,6 @@
         "X-Crowdin-Project": "openhab-habpanel",
         "X-Crowdin-Language": "da",
         "X-Crowdin-File": "/master/web/assets/i18n/widgets/widgets.pot"
-    }
+    },
+    "widget.selection.choices_source.csv": "Kommasepareret liste"
 }

@@ -3,7 +3,7 @@
         "Project-Id-Version": "openhab-habpanel",
         "Report-Msgid-Bugs-To": "https://github.com/openhab/org.openhab.ui.habpanel/issues",
         "POT-Creation-Date": "",
-        "PO-Revision-Date": "2018-01-18 13:22-0500",
+        "PO-Revision-Date": "2018-02-02 16:20-0500",
         "Last-Translator": "openhab-bot <bot@openhab.org>",
         "Language": "da_DK",
         "Language-Team": "Danish",
@@ -14,5 +14,21 @@
         "X-Crowdin-Project": "openhab-habpanel",
         "X-Crowdin-Language": "da",
         "X-Crowdin-File": "/master/web/assets/i18n/admin/admin.pot"
-    }
+    },
+    "designer.save": "Gem",
+    "designer.run": "Start",
+    "designer.addwidget": "Tilføj Widget",
+    "designer.addwidget.hint": "Tilføj nogle widgets",
+    "designer.addwidget.customwidgets": "Brugerdefinerede widgets",
+    "designer.addwidget.getmore": "Hent flere...",
+    "designer.addwidget.getmore.tooltip": "Åben widget galleriet for at hente flere widgets",
+    "designer.contextmenu.edit": "Ret...",
+    "designer.contextmenu.copymove": "Kopier/flyt til...",
+    "designer.contextmenu.delete": "Slet",
+    "designer.copymove.header": "Kopier/flyt {{widgetName}}",
+    "designer.copymove.todashboard": "Til dashboard",
+    "designer.copymove.move": "Flyt",
+    "designer.copymove.copy": "Kopier",
+    "designer.newwidget.defaultname": "Ny Widget",
+    "designer.serversavefailed": "Fejl - kunne ikke gemmes på serveren!"
 }
