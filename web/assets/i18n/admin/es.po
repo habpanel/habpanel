@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Spanish\n"
 "Language: es_ES\n"
-"PO-Revision-Date: 2018-01-18 13:22-0500\n"
+"PO-Revision-Date: 2018-04-10 14:03-0400\n"
 
 #. Save button in the dashboard designer
 msgctxt "designer.save"
@@ -185,7 +185,7 @@ msgstr ""
 #. Displayed in the item picker when no item selected
 msgctxt "itempicker.placeholder"
 msgid "Search or select an openHAB item"
-msgstr ""
+msgstr "Buscar o seleccionar un elemento de openHAB"
 
 #. Icon picker dropdown placeholder
 msgctxt "iconpicker.selecticonset"
@@ -245,7 +245,7 @@ msgstr ""
 #. Prefix of the last synced line, before the date
 msgctxt "settings.storage.panelconfiguration.lastsynced"
 msgid "Last synced on"
-msgstr ""
+msgstr "Última sincronización en"
 
 #. Displayed before the list of dashboard the panel configuration contains
 msgctxt "settings.storage.panelconfiguration.contains"
@@ -275,7 +275,7 @@ msgstr ""
 #. Placeholder inside the text box
 msgctxt "settings.panel.name.hint"
 msgid "Replaces 'HABPanel' in the side drawer when set"
-msgstr ""
+msgstr "Reemplaza 'HABPanel' en el cajón lateral cuando se establece"
 
 #. Appearance (section header)
 msgctxt "settings.panel.appearance.header"
