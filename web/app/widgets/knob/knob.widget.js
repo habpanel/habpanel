@@ -75,6 +75,12 @@
                 return undefined;
             }
 
+            if (vm.widget.useserverformat && item.stateDescription && item.stateDescription.pattern) {
+                vm.knob.options.inputFormatter = function (input) {
+                    return sprintf(item.stateDescription.pattern, input);
+                }
+            }
+
             return value;
         }
 
@@ -128,7 +134,11 @@
         };
         if (vm.widget.scaleQuantity) vm.knob.options.scale.quantity = vm.widget.scaleQuantity;
         if (vm.widget.scaleSpaceWidth) vm.knob.options.scale.spaceWidth = vm.widget.scaleSpaceWidth;
-
+        if (vm.widget.format && !vm.widget.useserverformat) {
+            vm.knob.options.inputFormatter = function (input) {
+                return sprintf(vm.widget.format, input);
+            }
+        }
 
         // if ranges are enabled update knob setings
         if ( vm.widget.rangesEnabled) {
@@ -196,6 +206,8 @@
             startAngle: widget.startAngle,
             endAngle: widget.endAngle,
             displayInput: angular.isDefined(widget.displayInput) ? widget.displayInput : true,
+            format: widget.format,
+            useserverformat: widget.useserverformat,
             readOnly: widget.readOnly,
             barWidth: widget.barWidth,
             trackWidth: widget.trackWidth,
