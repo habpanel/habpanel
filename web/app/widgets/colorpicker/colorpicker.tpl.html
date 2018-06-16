@@ -1,7 +1,7 @@
 <div class="box-content colorpicker">
     <div class="colorpicker-content" ng-show="(!vm.widget.style || vm.widget.style === 'default') && vm.ready">
 
-        <span>{{vm.widget.name}}</span>
+        <span ng-if="vm.widget.name">{{vm.widget.name}}</span>
 
         <div class="channel h" data-snap-ignore="true">
         <canvas height="1"></canvas>

@@ -16,13 +16,13 @@
 </script>
 <div class="box-content switch" ng-click="vm.openChoices()">
     <widget-icon ng-if="vm.widget.backdrop_icon" backdrop="true" iconset="vm.widget.backdrop_iconset" icon="vm.widget.backdrop_icon" center="vm.widget.backdrop_center"></widget-icon>
-    <div class="switch-content" ng-if="vm.widget.nolinebreak">
+    <div class="switch-content" ng-if="vm.widget.nolinebreak && vm.widget.name">
         <span class="pull-left">{{vm.widget.name}}</span>
     </div>
     <div class="switch-content">
         <widget-icon ng-if="vm.widget.icon && vm.widget.icon_nolinebreak && !vm.widget.hideicon" size="vm.widget.icon_size" iconset="vm.widget.iconset" icon="vm.widget.icon" inline="vm.widget.icon_nolinebreak" state="vm.state"></widget-icon>
-        <span ng-if="!vm.widget.nolinebreak">{{vm.widget.name}}</span>
-        <br ng-if="!vm.widget.nolinebreak" />
+        <span ng-if="!vm.widget.nolinebreak && vm.widget.name">{{vm.widget.name}}</span>
+        <br ng-if="!vm.widget.nolinebreak && vm.widget.name" />
         <widget-icon ng-if="vm.widget.icon && !vm.widget.icon_nolinebreak && !vm.widget.hideicon" size="vm.widget.icon_size" iconset="vm.widget.iconset" icon="vm.widget.icon" inline="vm.widget.icon_nolinebreak" state="vm.state"></widget-icon>
         <span ng-hide="vm.widget.hidestate" ng-style="{ 'font-size': vm.widget.font_size + 'pt' }" ng-class="{ 'dummy-value-right': vm.widget.nolinebreak }" class="value">{{vm.value}}</span>
     </div>
