@@ -33,7 +33,6 @@
         };
         return directive;
 
-        
         function link(scope, element, attrs) {
 
             function computeSize() {
@@ -77,7 +76,7 @@
 
             if (vm.widget.useserverformat && item.stateDescription && item.stateDescription.pattern) {
                 vm.knob.options.inputFormatter = function (input) {
-                    return sprintf(item.stateDescription.pattern, input);
+                    return sprintf(item.stateDescription.pattern.replace('%unit%', ''), input);
                 }
             }
 

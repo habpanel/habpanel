@@ -105,8 +105,8 @@
             link: link,
             restrict: 'AE',
             template:
-                '<strong ng-if="type === \'Number\'" title="Number" style="font-size: 1.2em; line-height: 0.9em; margin: -0.2em 0.1em;">#</strong>' +
-                '<i ng-if="type !== \'Number\'" title="{{type}}" class="glyphicon glyphicon-{{getGlyph()}}"></i>',
+                '<strong ng-if="type.indexOf(\'Number\') >= 0" title="Number" style="font-size: 1.2em; line-height: 0.9em; margin: -0.2em 0.1em;">#</strong>' +
+                '<i ng-if="type.indexOf(\'Number\') < 0" title="{{type}}" class="glyphicon glyphicon-{{getGlyph()}}"></i>',
             scope: {
                 type: '='
             }

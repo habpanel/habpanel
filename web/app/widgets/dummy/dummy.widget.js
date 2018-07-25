@@ -51,12 +51,21 @@
             if (vm.widget.format) {
                 if (item.type === "DateTime" || item.type === "DateTimeItem") {
                     value = $filter('date')(value, vm.widget.format);
+                } else if (item.type.indexOf('Number:') === 0 && value.indexOf(' ') > 0) {
+                    var format = vm.widget.format.replace('%unit%', value.split(' ')[1].replace('%', '%%'));
+                    value = sprintf(format, value.split(' ')[0]);
                 } else {
                     value = sprintf(vm.widget.format, value);
                 }
             }
-            if (vm.widget.useserverformat && item.stateDescription && item.stateDescription.pattern)
-                value = sprintf(item.stateDescription.pattern, value);
+            if (vm.widget.useserverformat && item.stateDescription && item.stateDescription.pattern) {
+                if (item.type.indexOf('Number:') === 0 && value.indexOf(' ') > 0) {
+                    var format = item.stateDescription.pattern.replace('%unit%', value.split(' ')[1].replace('%', '%%'));
+                    value = sprintf(format, value.split(' ')[0]);
+                } else {
+                    value = sprintf(item.stateDescription.pattern, value);
+                }
+            }
             vm.value = value;
             vm.state = item.state;
         }

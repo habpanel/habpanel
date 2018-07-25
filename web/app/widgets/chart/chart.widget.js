@@ -55,10 +55,20 @@
         function formatValue(itemname, val) {
             var item = OHService.getItem(itemname);
                 
-            if (item && item.stateDescription && item.stateDescription.pattern)
-                return sprintf(item.stateDescription.pattern, val);
-            else
-                return val;
+            if (item && item.stateDescription && item.stateDescription.pattern) {
+                if (item.type.indexOf('Number:') === 0 && item.state.indexOf(' ') > 0) {
+                    var format = item.stateDescription.pattern.replace('%unit%', item.state.split(' ')[1].replace('%', '%%'));
+                    return sprintf(format, val);
+                } else {
+                    return sprintf(item.stateDescription.pattern, val);
+                }
+            } else {
+                if (item.type.indexOf('Number:') === 0 && item.state.indexOf(' ') > 0) {
+                    return val + ' ' + item.state.split(' ')[1];
+                } else {
+                    return val;
+                }
+            }
         }
 
         function tooltipHook(values) {
