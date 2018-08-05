@@ -87,7 +87,7 @@
                 showTicksValues: vm.widget.showticksvalues,
                 rightToLeft: vm.widget.inverted,
                 enforceStep: false,
-                readOnly: (vm.widget.readonly) ? vm.widget.readonly : false,
+                readOnly: (vm.widget.readonly) ? vm.widget.readonly : false, 
                 disabled: (vm.widget.disabled) ? vm.widget.disabled : false,
                 translate: function (value) {
                     return (vm.widget.unit) ? value + vm.widget.unit : value;
