@@ -250,7 +250,7 @@
                                 if (context)
                                   context.close();
                             }
-                        } else {
+                        } else if (topicparts[0] !== 'smarthome') {
                             var payload = JSON.parse(evtdata.payload);
                             var ohEvent = { topic: evtdata.topic, type: evtdata.type, payload: payload };
                             $rootScope.$apply(function () {
