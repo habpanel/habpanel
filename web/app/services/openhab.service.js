@@ -250,6 +250,13 @@
                                 if (context)
                                   context.close();
                             }
+                        } else {
+                            var payload = JSON.parse(evtdata.payload);
+                            var ohEvent = { topic: evtdata.topic, type: evtdata.type, payload: payload };
+                            $rootScope.$apply(function () {
+                                console.log("Emitting event type=" + ohEvent.type + ", topic=" + ohEvent.topic);
+                                $rootScope.$emit('openhab-event', ohEvent);
+                            });
                         }
                     } catch (e) {
                         console.warn('SSE event issue: ' + e.message);
