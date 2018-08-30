@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
-"PO-Revision-Date: 2018-08-30 14:50\n"
+"PO-Revision-Date: 2018-08-30 15:01\n"
 
 #. Common term in widget settings dialogs
 msgctxt "widget.common.min"
@@ -515,7 +515,7 @@ msgstr "Отключить обновление кэша (дополнитель
 #. Checkbox label - appears only if the refresh interval is set
 msgctxt "widget.frame.nosuffix.description"
 msgid "Don't add URL suffixes to prevent reusing cached pages"
-msgstr "Не добавляйте URL суффиксы для предотвращения повторного использования кэшированных страниц"
+msgstr "Не добавляйте URL суффиксы для предотвращения использования кэшированных страниц"
 
 #. Color picker header
 msgctxt "widget.frame.background_color"
@@ -570,12 +570,12 @@ msgstr "URL-адрес изображения"
 #. Dropdown option
 msgctxt "widget.image.image_source.item-string"
 msgid "openHAB String Item"
-msgstr "Элемент строки openHAB"
+msgstr "Элемент openHAB типа String"
 
 #. Dropdown option
 msgctxt "widget.image.image_source.item-image"
 msgid "openHAB Image Item"
-msgstr "Элемент изображения openHAB"
+msgstr "Элемент openHAB типа Image"
 
 #. Textbox header
 msgctxt "widget.image.refresh_interval"
@@ -600,7 +600,7 @@ msgstr "Отключить обновление кэша (дополнитель
 #. Checkbox label - appears only if the refresh interval is set
 msgctxt "widget.image.nosuffix.description"
 msgid "Don't add URL suffixes to prevent reusing cached images"
-msgstr "Не добавляйте URL суффиксы для предотвращения повторного использования кэшированных страниц"
+msgstr "Не добавляйте URL суффиксы для предотвращения использования кэшированных страниц"
 
 #. Color picker header
 msgctxt "widget.image.background_color"
@@ -655,7 +655,7 @@ msgstr "Индикатор"
 #. Section header
 msgctxt "widget.knob.bartrack.angles"
 msgid "Angles (°)"
-msgstr "Угол (°)"
+msgstr "Углы (°)"
 
 #. Textbox header (small)
 msgctxt "widget.knob.bartrack.angles.start"
