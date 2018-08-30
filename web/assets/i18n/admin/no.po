@@ -11,42 +11,42 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Norwegian\n"
 "Language: no_NO\n"
-"PO-Revision-Date: 2018-01-18 13:21-0500\n"
+"PO-Revision-Date: 2018-08-30 13:02\n"
 
 #. Save button in the dashboard designer
 msgctxt "designer.save"
 msgid "Save"
-msgstr ""
+msgstr "Lagre"
 
 #. Run button in the dashboard designer
 msgctxt "designer.run"
 msgid "Run"
-msgstr ""
+msgstr "Kjør"
 
 #. Add widget button in the dashboard designer
 msgctxt "designer.addwidget"
 msgid "Add Widget"
-msgstr ""
+msgstr "Legg til Widget"
 
 #. Tutorial text with arrow when on an empty dashboard
 msgctxt "designer.addwidget.hint"
 msgid "Add some widgets"
-msgstr ""
+msgstr "Legg til noen widgets"
 
 #. Header of the custom widget section (beware, it might overlap the cogs icon on the right)
 msgctxt "designer.addwidget.customwidgets"
 msgid "Custom widgets"
-msgstr ""
+msgstr "Spesialtilpasset widgets"
 
 #. Open widget gallery
 msgctxt "designer.addwidget.getmore"
 msgid "Get more..."
-msgstr ""
+msgstr "Hent fler..."
 
 #. Tooltip when hovering the "Get more" menu entry
 msgctxt "designer.addwidget.getmore.tooltip"
 msgid "Open the widget gallery to import more widgets"
-msgstr ""
+msgstr "Åpne widgetgalleriet for å importere flere widgets"
 
 #. Edit option in a widget placeholder context menu (3-dot icon)
 msgctxt "designer.contextmenu.edit"
