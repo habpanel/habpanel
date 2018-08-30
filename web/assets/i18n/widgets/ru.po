@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
-"PO-Revision-Date: 2018-08-30 14:44\n"
+"PO-Revision-Date: 2018-08-30 14:50\n"
 
 #. Common term in widget settings dialogs
 msgctxt "widget.common.min"
@@ -445,12 +445,12 @@ msgstr "Стиль aCKolor (модальный сортировщик)"
 #. Checkbox label
 msgctxt "widget.colorpicker.blur_background"
 msgid "Apply blurring effect to background"
-msgstr "Применить эффект размытия к фону"
+msgstr "Эффект размытия фона"
 
 #. Displayed below the checkbox in small text
 msgctxt "widget.colorpicker.blur_background.warning"
 msgid "Warning: This can cause performance problems on tablets"
-msgstr "Предупреждение: Это может вызвать проблемы с производительностью на планшете"
+msgstr "Внимание! Это может вызвать проблемы с производительностью на планшете"
 
 #. Display name of the widget (appears in the Add Widget dropdown menu in the designer)
 msgctxt "widget.dummy"
@@ -500,7 +500,7 @@ msgstr "Статический URL-адрес"
 #. Dropdown option
 msgctxt "widget.frame.url_source.item"
 msgid "openHAB String Item"
-msgstr "Элемент строки openHAB"
+msgstr "Элемент openHAB типа String"
 
 #. Textbox header
 msgctxt "widget.frame.refresh_interval"
