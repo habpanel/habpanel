@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
-"PO-Revision-Date: 2018-06-20T13:21:12+0000\n"
+"PO-Revision-Date: 2018-08-30 10:33\n"
 
 #. Save button in the dashboard designer
 msgctxt "designer.save"
@@ -165,7 +165,7 @@ msgstr "Заменить плитку пользовательским видж�
 #. Accordion header
 msgctxt "dashboard.settings.customwidgets.drawer"
 msgid "Drawer"
-msgstr ""
+msgstr "Боковая панель"
 
 #. Checkbox label
 msgctxt "dashboard.settings.customwidgets.drawer.description"
@@ -277,7 +277,7 @@ msgstr "Имя панели"
 #. Placeholder inside the text box
 msgctxt "settings.panel.name.hint"
 msgid "Replaces 'HABPanel' in the side drawer when set"
-msgstr ""
+msgstr "Заменить 'HABPanel' боковой панелью"
 
 #. Appearance (section header)
 msgctxt "settings.panel.appearance.header"
@@ -317,7 +317,7 @@ msgstr "Пример: //source.unsplash.com/random"
 #. Setting header
 msgctxt "settings.panel.appearance.drawer_heading_image"
 msgid "Drawer heading image (optional)"
-msgstr ""
+msgstr "Главная иконка боковой панели (опционально)"
 
 #. Placeholder inside the text box
 msgctxt "settings.panel.appearance.drawer_heading_image.hint"
@@ -332,7 +332,7 @@ msgstr "Запрет прокрутки (кроме режима редакти�
 #. Checkbox
 msgctxt "settings.panel.appearance.hide_drawer_footer"
 msgid "Hide the drawer's footer"
-msgstr ""
+msgstr "Скрыть нижнюю часть боковой панели"
 
 #. Checkbox
 msgctxt "settings.panel.appearance.hide_toolbar_buttons"
@@ -702,7 +702,7 @@ msgstr "Цвет"
 #. Dropdown option
 msgctxt "customwidgets.designer.settings.config.type.choices"
 msgid "Choices"
-msgstr ""
+msgstr "Варианты"
 
 #. Dropdown option
 msgctxt "customwidgets.designer.settings.config.type.icon"
@@ -747,7 +747,7 @@ msgstr "Описание"
 #. Banner displayed when selecting the Icon type for the settings, followed by the defined settings themselves
 msgctxt "customwidgets.designer.settings.config.icon.hint"
 msgid "This will define 2 config elements:"
-msgstr ""
+msgstr "Это настроит 2 элемента конфигурации:"
 
 #. Tab header
 msgctxt "customwidgets.designer.preview"
@@ -792,32 +792,32 @@ msgstr "Перейти"
 #. Suffix displayed after a number, i.e. "24 community contributions"
 msgctxt "widgetgallery.toolbar.communitycontributions"
 msgid "community&nbsp;contributions"
-msgstr ""
+msgstr "вклад&nbsp;в&nbsp;сообщество"
 
 #. On the right with the sort options
 msgctxt "widgetgallery.toolbar.sortby"
 msgid "sort by:"
-msgstr ""
+msgstr "сортировать по:"
 
 #. Link to change the sort criteria - keep the non breaking spaces (&nbsp;)
 msgctxt "widgetgallery.toolbar.sortby.mostrecent"
 msgid "most&nbsp;recent"
-msgstr ""
+msgstr "самые&nbsp;последние"
 
 #. Link to change the sort criteria - keep the non breaking spaces (&nbsp;)
 msgctxt "widgetgallery.toolbar.sortby.mostliked"
 msgid "most&nbsp;liked"
-msgstr ""
+msgstr "по&nbsp;рейтингу"
 
 #. Link to change the sort criteria - keep the non breaking spaces (&nbsp;)
 msgctxt "widgetgallery.toolbar.sortby.mostpopular"
 msgid "most&nbsp;popular"
-msgstr ""
+msgstr "наиболее&nbsp;популярное"
 
 #. Link to change the sort criteria - keep the non breaking spaces (&nbsp;)
 msgctxt "widgetgallery.toolbar.sortby.mostdiscussed"
 msgid "most&nbsp;discussed"
-msgstr ""
+msgstr "наиболее&nbsp;обсуждаемое"
 
 #. Prefix before the author's name
 msgctxt "widgetgallery.details.authorby"
@@ -877,7 +877,7 @@ msgstr "Это"
 #. 2a. Name of a community contribution
 msgctxt "widgetgallery.details.widget.hint.communitycontribution"
 msgid "community contribution"
-msgstr ""
+msgstr "вклад в сообщество"
 
 #. 2b. Name of a community contribution
 msgctxt "widgetgallery.details.widget.hint.repository"
@@ -917,7 +917,7 @@ msgstr "Виджет импортирован!"
 #. Alert banner, followed by a technical exception message
 msgctxt "widgetgallery.error"
 msgid "Error:"
-msgstr ""
+msgstr "Ошибка:"
 
 #. Dialog box title
 msgctxt "widgetgallery.widgetsdetected.dialog.title"
