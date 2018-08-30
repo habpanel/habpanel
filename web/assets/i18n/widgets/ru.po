@@ -11,32 +11,32 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
-"PO-Revision-Date: 2018-06-20T13:21:15+0000\n"
+"PO-Revision-Date: 2018-08-30 10:33\n"
 
 #. Common term in widget settings dialogs
 msgctxt "widget.common.min"
 msgid "Min"
-msgstr ""
+msgstr "Мин."
 
 #. Common term in widget settings dialogs
 msgctxt "widget.common.max"
 msgid "Max"
-msgstr ""
+msgstr "Макс."
 
 #. Common term in widget settings dialogs
 msgctxt "widget.common.step"
 msgid "Step"
-msgstr ""
+msgstr "Шаг"
 
 #. Common term in widget settings dialogs
 msgctxt "widget.common.unit"
 msgid "Unit"
-msgstr ""
+msgstr "Единица"
 
 #. Common term in widget settings dialogs
 msgctxt "widget.common.format"
 msgid "Format"
-msgstr ""
+msgstr "Формат"
 
 #. Common option label in widget settings dialogs
 msgctxt "widget.common.format.useserverprovided"
@@ -51,92 +51,92 @@ msgstr "Значение справа"
 #. Common option label in widget settings dialogs
 msgctxt "widget.common.backdrop_center"
 msgid "Center backdrop horizontally"
-msgstr ""
+msgstr "Выравнивание фона по горизонтали"
 
 #. Common option label in widget settings dialogs
 msgctxt "widget.common.icon_nolinebreak"
 msgid "Icon left of label instead of below"
-msgstr ""
+msgstr "Иконка слева от метки, а не внизу неё"
 
 #. Common option label in widget settings dialogs
 msgctxt "widget.common.icon_replacestext"
 msgid "Icon replaces textual value display"
-msgstr ""
+msgstr "Иконка заменяет отображаемое текстовое значение"
 
 #. Common tab header label
 msgctxt "widget.common.general"
 msgid "General"
-msgstr ""
+msgstr "Общее"
 
 #. Common tab header label
 msgctxt "widget.common.advanced"
 msgid "Advanced"
-msgstr ""
+msgstr "Дополнительно"
 
 #. Display name of the widget (appears in the Add Widget dropdown menu in the designer)
 msgctxt "widget.button"
 msgid "Button"
-msgstr ""
+msgstr "Кнопка"
 
 #. Description of the widget, displayed in a tooltip when hovering the option in the Add Widget dropdown menu in the designer
 msgctxt "widget.button.description"
 msgid "A button performing a certain action, like sending a command to an openHAB item"
-msgstr ""
+msgstr "Кнопка, выполняющая определенное действие, например, отправка команды элементу openHAB"
 
 #. Settings dialog title
 msgctxt "widget.button.settings.header"
 msgid "Button Settings"
-msgstr ""
+msgstr "Настройка кнопки"
 
 #. Tab header
 msgctxt "widget.button.general"
 msgid "General"
-msgstr ""
+msgstr "Общее"
 
 #. Dropdown header
 msgctxt "widget.button.general.action_type"
 msgid "Action type"
-msgstr ""
+msgstr "Тип действия"
 
 #. Dropdown option
 msgctxt "widget.button.general.action_type.command"
 msgid "Send a fixed command to an item"
-msgstr ""
+msgstr "Отправить исправленную команду элементу"
 
 #. Dropdown option
 msgctxt "widget.button.general.action_type.toggle"
 msgid "Alternate item between 2 states"
-msgstr ""
+msgstr "Альтернативный элемент между 2 состояниями"
 
 #. Dropdown option
 msgctxt "widget.button.general.action_type.navigate"
 msgid "Navigate"
-msgstr ""
+msgstr "Навигация"
 
 #. Textbox header
 msgctxt "widget.button.general.command"
 msgid "Command value"
-msgstr ""
+msgstr "Значение команды"
 
 #. Textbox header
 msgctxt "widget.button.general.command_alt"
 msgid "Alternate command value"
-msgstr ""
+msgstr "Альтернативное значение команды"
 
 #. Radio buttons header
 msgctxt "widget.button.general.navigation_type"
 msgid "Navigation type"
-msgstr ""
+msgstr "Тип навигации"
 
 #. Radio button label
 msgctxt "widget.button.general.navigation_type.dashboard"
 msgid "Dashboard"
-msgstr ""
+msgstr "Панель мониторинга"
 
 #. Radio buttons header
 msgctxt "widget.button.general.navigation_target"
 msgid "Open in"
-msgstr ""
+msgstr "Открыть в"
 
 #. Radio button label
 msgctxt "widget.button.general.navigation_target.self"
@@ -390,222 +390,222 @@ msgstr ""
 #. Dropdown header
 msgctxt "widget.clock.theme"
 msgid "Analog Theme"
-msgstr ""
+msgstr "Аналоговая тема"
 
 #. Dropdown option
 msgctxt "widget.clock.theme.light"
 msgid "light"
-msgstr ""
+msgstr "Светлая"
 
 #. Dropdown option
 msgctxt "widget.clock.theme.dark"
 msgid "dark"
-msgstr ""
+msgstr "Темная"
 
 #. Textbox header
 msgctxt "widget.clock.digital_format"
 msgid "Digital Format"
-msgstr ""
+msgstr "Цифровой формат"
 
 #. Textbox header
 msgctxt "widget.clock.font_size"
 msgid "Digital Font Size"
-msgstr ""
+msgstr "Размер шрифта цифровых часов"
 
 #. Display name of the widget (appears in the Add Widget dropdown menu in the designer)
 msgctxt "widget.colorpicker"
 msgid "Color Picker"
-msgstr ""
+msgstr "Выбор цвета"
 
 #. Description of the widget, displayed in a tooltip when hovering the option in the Add Widget dropdown menu in the designer
 msgctxt "widget.colorpicker.description"
 msgid "Displays an color picker"
-msgstr ""
+msgstr "Отображает палитру выбора цветов"
 
 #. Settings dialog title
 msgctxt "widget.colorpicker.settings.header"
 msgid "Color Picker Settings"
-msgstr ""
+msgstr "Параметры выбора цвета"
 
 #. Dropdown header
 msgctxt "widget.colorpicker.type"
 msgid "Type"
-msgstr ""
+msgstr "Тип"
 
 #. Dropdown option
 msgctxt "widget.colorpicker.type.hsl"
 msgid "HSL Sliders"
-msgstr ""
+msgstr "Ползунки HSL"
 
 #. Dropdown option
 msgctxt "widget.colorpicker.type.ackolor"
 msgid "aCKolor style (modal picker)"
-msgstr ""
+msgstr "Стиль aCKolor (модальный сортировщик)"
 
 #. Checkbox label
 msgctxt "widget.colorpicker.blur_background"
 msgid "Apply blurring effect to background"
-msgstr ""
+msgstr "Применить эффект размытия к фону"
 
 #. Displayed below the checkbox in small text
 msgctxt "widget.colorpicker.blur_background.warning"
 msgid "Warning: This can cause performance problems on tablets"
-msgstr ""
+msgstr "Предупреждение: Это может вызвать проблемы с производительностью на планшете"
 
 #. Display name of the widget (appears in the Add Widget dropdown menu in the designer)
 msgctxt "widget.dummy"
 msgid "Dummy"
-msgstr ""
+msgstr "Модель"
 
 #. Description of the widget, displayed in a tooltip when hovering the option in the Add Widget dropdown menu in the designer
 msgctxt "widget.dummy.description"
 msgid "A dummy widget - displays the value of an openHAB item"
-msgstr ""
+msgstr "Виджет Модель - отображает значение элемента openHAB"
 
 #. Settings dialog title
 msgctxt "widget.dummy.settings.header"
 msgid "Dummy Settings"
-msgstr ""
+msgstr "Параметры Модели"
 
 #. Checkboxes header
 msgctxt "widget.dummy.layout"
 msgid "Layout"
-msgstr ""
+msgstr "Расположение"
 
 #. Display name of the widget (appears in the Add Widget dropdown menu in the designer)
 msgctxt "widget.frame"
 msgid "Frame"
-msgstr ""
+msgstr "Рамка"
 
 #. Description of the widget, displayed in a tooltip when hovering the option in the Add Widget dropdown menu in the designer
 msgctxt "widget.frame.description"
 msgid "Embedded website from predefined URL or openHAB item."
-msgstr ""
+msgstr "Встроенный веб-сайт из предопределенного URL или элемента openHAB."
 
 #. Settings dialog title
 msgctxt "widget.frame.settings.header"
 msgid "Frame Settings"
-msgstr ""
+msgstr "Параметры Рамки"
 
 #. Dropdown header
 msgctxt "widget.frame.url_source"
 msgid "URL Source"
-msgstr ""
+msgstr "URL источника"
 
 #. Dropdown option
 msgctxt "widget.frame.url_source.static"
 msgid "Static URL"
-msgstr ""
+msgstr "Статический URL-адрес"
 
 #. Dropdown option
 msgctxt "widget.frame.url_source.item"
 msgid "openHAB String Item"
-msgstr ""
+msgstr "Элемент строки openHAB"
 
 #. Textbox header
 msgctxt "widget.frame.refresh_interval"
 msgid "Refresh interval (seconds)"
-msgstr ""
+msgstr "Интервал обновления (в секундах)"
 
 #. Checkbox header - appears only if the refresh interval is set
 msgctxt "widget.frame.nosuffix"
 msgid "No cache busting (advanced)"
-msgstr ""
+msgstr "Отключить обновление кэша (дополнительно)"
 
 #. Checkbox label - appears only if the refresh interval is set
 msgctxt "widget.frame.nosuffix.description"
 msgid "Don't add URL suffixes to prevent reusing cached pages"
-msgstr ""
+msgstr "Не добавляйте URL суффиксы для предотвращения повторного использования кэшированных страниц"
 
 #. Color picker header
 msgctxt "widget.frame.background_color"
 msgid "Frame background color"
-msgstr ""
+msgstr "Цвет фона рамки"
 
 #. Checkbox header
 msgctxt "widget.frame.frameless"
 msgid "Frameless"
-msgstr ""
+msgstr "Без рамки"
 
 #. Checkbox label
 msgctxt "widget.frame.frameless.description"
 msgid "Fill to edges"
-msgstr ""
+msgstr "Заполнить по рамке"
 
 #. Checkbox header
 msgctxt "widget.frame.label"
 msgid "Label"
-msgstr ""
+msgstr "Метка"
 
 #. Checkbox label
 msgctxt "widget.frame.label.description"
 msgid "Hide title label"
-msgstr ""
+msgstr "Скрыть название"
 
 #. Display name of the widget (appears in the Add Widget dropdown menu in the designer)
 msgctxt "widget.image"
 msgid "Image"
-msgstr ""
+msgstr "Изображение"
 
 #. Description of the widget, displayed in a tooltip when hovering the option in the Add Widget dropdown menu in the designer
 msgctxt "widget.image.description"
 msgid "Displays an image (not necessarily from openHAB)"
-msgstr ""
+msgstr "Выводит изображение (не обязательно из openHAB)"
 
 #. Settings dialog title
 msgctxt "widget.image.settings.header"
 msgid "Image Settings"
-msgstr ""
+msgstr "Настройки изображения"
 
 #. Dropdown header
 msgctxt "widget.image.image_source"
 msgid "Image source"
-msgstr ""
+msgstr "Источник изображения"
 
 #. Dropdown option
 msgctxt "widget.image.image_source.static"
 msgid "Static image URL"
-msgstr ""
+msgstr "URL-адрес изображения"
 
 #. Dropdown option
 msgctxt "widget.image.image_source.item-string"
 msgid "openHAB String Item"
-msgstr ""
+msgstr "Элемент строки openHAB"
 
 #. Dropdown option
 msgctxt "widget.image.image_source.item-image"
 msgid "openHAB Image Item"
-msgstr ""
+msgstr "Элемент изображения openHAB"
 
 #. Textbox header
 msgctxt "widget.image.refresh_interval"
 msgid "Refresh interval"
-msgstr ""
+msgstr "Интервал обновления"
 
 #. Radio button label
 msgctxt "widget.image.refresh_interval.seconds"
 msgid "seconds"
-msgstr ""
+msgstr "секунды"
 
 #. Radio button label
 msgctxt "widget.image.refresh_interval.milliseconds"
 msgid "milliseconds"
-msgstr ""
+msgstr "миллисекунды"
 
 #. Checkbox header - appears only if the refresh interval is set
 msgctxt "widget.image.nosuffix"
 msgid "No cache busting (advanced)"
-msgstr ""
+msgstr "Отключить обновление кэша (дополнительно)"
 
 #. Checkbox label - appears only if the refresh interval is set
 msgctxt "widget.image.nosuffix.description"
 msgid "Don't add URL suffixes to prevent reusing cached images"
-msgstr ""
+msgstr "Не добавляйте URL суффиксы для предотвращения повторного использования кэшированных страниц"
 
 #. Color picker header
 msgctxt "widget.image.background_color"
 msgid "Background color"
-msgstr ""
+msgstr "Цвет фона"
 
 #. Display name of the widget (appears in the Add Widget dropdown menu in the designer)
 msgctxt "widget.knob"
