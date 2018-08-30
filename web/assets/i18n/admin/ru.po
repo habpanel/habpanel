@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
-"PO-Revision-Date: 2018-08-30 10:33\n"
+"PO-Revision-Date: 2018-08-30 14:21\n"
 
 #. Save button in the dashboard designer
 msgctxt "designer.save"
@@ -812,12 +812,12 @@ msgstr "по&nbsp;рейтингу"
 #. Link to change the sort criteria - keep the non breaking spaces (&nbsp;)
 msgctxt "widgetgallery.toolbar.sortby.mostpopular"
 msgid "most&nbsp;popular"
-msgstr "наиболее&nbsp;популярное"
+msgstr "по&nbsp;популярности"
 
 #. Link to change the sort criteria - keep the non breaking spaces (&nbsp;)
 msgctxt "widgetgallery.toolbar.sortby.mostdiscussed"
 msgid "most&nbsp;discussed"
-msgstr "наиболее&nbsp;обсуждаемое"
+msgstr "по&nbsp;обсуждениям"
 
 #. Prefix before the author's name
 msgctxt "widgetgallery.details.authorby"
