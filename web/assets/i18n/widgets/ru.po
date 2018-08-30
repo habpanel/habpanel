@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
-"PO-Revision-Date: 2018-08-30 10:41\n"
+"PO-Revision-Date: 2018-08-30 10:51\n"
 
 #. Common term in widget settings dialogs
 msgctxt "widget.common.min"
@@ -265,127 +265,127 @@ msgstr "n3-line-chart (interactive)"
 #. Textbox header
 msgctxt "widget.chart.general.service"
 msgid "Persistence service"
-msgstr ""
+msgstr "Служба базы данных"
 
 #. Textbox placeholder
 msgctxt "widget.chart.general.service.hint"
 msgid "rrd4j, mysql, influxdb... Leave blank for default"
-msgstr ""
+msgstr "rrd4j, mysql, influxdb... Оставьте пустым, по умолчанию"
 
 #. Item picker header
 msgctxt "widget.chart.general.itemgroup"
 msgid "openHAB Item or Group"
-msgstr ""
+msgstr "Элемент или Группа openHAB"
 
 #. Dropdown header
 msgctxt "widget.chart.general.period"
 msgid "Period"
-msgstr ""
+msgstr "Период"
 
 #. Tab header
 msgctxt "widget.chart.axis"
 msgid "Axis"
-msgstr ""
+msgstr "Ось"
 
 #. Section header
 msgctxt "widget.chart.axis.primary"
 msgid "Primary axis (y)"
-msgstr ""
+msgstr "Основная ось (y)"
 
 #. Section header
 msgctxt "widget.chart.axis.secondary"
 msgid "Secondary axis (y2)"
-msgstr ""
+msgstr "Второстепенная ось (y2)"
 
 #. Checkbox label
 msgctxt "widget.chart.axis.enabled"
 msgid "Enabled"
-msgstr ""
+msgstr "Включено"
 
 #. Checkbox label
 msgctxt "widget.chart.axis.includezero"
 msgid "Include zero"
-msgstr ""
+msgstr "Включая ноль"
 
 #. Tab header
 msgctxt "widget.chart.series"
 msgid "Series"
-msgstr ""
+msgstr "Последовательности"
 
 #. Radio buttons header
 msgctxt "widget.chart.series.axis"
 msgid "Axis"
-msgstr ""
+msgstr "Оси"
 
 #. Radio button label
 msgctxt "widget.chart.series.axis.primary"
 msgid "Primary"
-msgstr ""
+msgstr "Основной"
 
 #. Radio button label
 msgctxt "widget.chart.series.axis.secondary"
 msgid "Secondary"
-msgstr ""
+msgstr "Вторичный"
 
 #. Radio buttons header
 msgctxt "widget.chart.series.display"
 msgid "Display"
-msgstr ""
+msgstr "Отображать"
 
 #. Radio button label
 msgctxt "widget.chart.series.display.line"
 msgid "Line"
-msgstr ""
+msgstr "Линия"
 
 #. Radio button label
 msgctxt "widget.chart.series.display.area"
 msgid "Area"
-msgstr ""
+msgstr "Область"
 
 #. Radio button label
 msgctxt "widget.chart.series.display.dots"
 msgid "Dots"
-msgstr ""
+msgstr "Точки"
 
 #. Checkbox label
 msgctxt "widget.chart.series.liveupdate"
 msgid "Live update (experimental)"
-msgstr ""
+msgstr "Автоматическое обновление (экспериментальная)"
 
 #. Checkbox label
 msgctxt "widget.chart.series.liveupdate.fillvalues"
 msgid "Repeat other series' current values on update if necessary"
-msgstr ""
+msgstr "Повторять последние значение при отсутствии данных"
 
 #. Display name of the widget (appears in the Add Widget dropdown menu in the designer)
 msgctxt "widget.clock"
 msgid "Clock"
-msgstr ""
+msgstr "Часы"
 
 #. Description of the widget, displayed in a tooltip when hovering the option in the Add Widget dropdown menu in the designer
 msgctxt "widget.clock.description"
 msgid "A clock widget - displays an analog or digital clock"
-msgstr ""
+msgstr "Виджет - отображает аналоговые или цифровые часы"
 
 #. Settings dialog title
 msgctxt "widget.clock.settings.header"
 msgid "Clock Settings"
-msgstr ""
+msgstr "Настройки часов"
 
 #. Dropdown header
 msgctxt "widget.clock.mode"
 msgid "Mode"
-msgstr ""
+msgstr "Режим"
 
 #. Dropdown option
 msgctxt "widget.clock.mode.analog"
 msgid "Analog"
-msgstr ""
+msgstr "Аналоговые"
 
 #. Dropdown option
 msgctxt "widget.clock.mode.digital"
 msgid "Digital"
-msgstr ""
+msgstr "Цифровые"
 
 #. Dropdown header
 msgctxt "widget.clock.theme"
@@ -640,252 +640,252 @@ msgstr "Центральный дисплей"
 #. Checkbox label
 msgctxt "widget.knob.general.centraldisplay.showvalue"
 msgid "Show value"
-msgstr ""
+msgstr "Показать значение"
 
 #. Checkbox label
 msgctxt "widget.knob.general.centraldisplay.showlabel"
 msgid "Show name (below value)"
-msgstr ""
+msgstr "Показать имя (под значением)"
 
 #. Tab header
 msgctxt "widget.knob.bartrack"
 msgid "Bar & Track"
-msgstr ""
+msgstr "Индикатор"
 
 #. Section header
 msgctxt "widget.knob.bartrack.angles"
 msgid "Angles (°)"
-msgstr ""
+msgstr "Угол (°)"
 
 #. Textbox header (small)
 msgctxt "widget.knob.bartrack.angles.start"
 msgid "Start"
-msgstr ""
+msgstr "Начало"
 
 #. Textbox header (small)
 msgctxt "widget.knob.bartrack.angles.end"
 msgid "End"
-msgstr ""
+msgstr "Конец"
 
 #. Textbox header (small)
 msgctxt "widget.knob.bartrack.width"
 msgid "Width"
-msgstr ""
+msgstr "Ширина"
 
 #. Textbox header (small)
 msgctxt "widget.knob.bartrack.cap"
 msgid "Cap"
-msgstr ""
+msgstr "Оконцовка"
 
 #. Section header
 msgctxt "widget.knob.bartrack.bar"
 msgid "Bar"
-msgstr ""
+msgstr "Индикатор"
 
 #. Section header
 msgctxt "widget.knob.bartrack.track"
 msgid "Track"
-msgstr ""
+msgstr "Траектория"
 
 #. Section header
 msgctxt "widget.knob.bartrack.previousvalue"
 msgid "Previous value"
-msgstr ""
+msgstr "Предыдущее значение"
 
 #. Checkbox label
 msgctxt "widget.knob.bartrack.previousvalue.description"
 msgid "Display previous value when dragging"
-msgstr ""
+msgstr "Отображение предыдущего значения при перетаскивании"
 
 #. Tab header
 msgctxt "widget.knob.scale"
 msgid "Scale"
-msgstr ""
+msgstr "Масштаб"
 
 #. Checkbox header
 msgctxt "widget.knob.scale.display"
 msgid "Display scale"
-msgstr ""
+msgstr "Масштаб отображения"
 
 #. Checkbox label
 msgctxt "widget.knob.scale.display.enabled"
 msgid "Enabled"
-msgstr ""
+msgstr "Включено"
 
 #. Radio buttons header
 msgctxt "widget.knob.scale.type"
 msgid "Scale Type"
-msgstr ""
+msgstr "Тип масштабирования"
 
 #. Radio button label
 msgctxt "widget.knob.scale.type.lines"
 msgid "Lines"
-msgstr ""
+msgstr "Линии"
 
 #. Checkbox label
 msgctxt "widget.knob.scale.type.dots"
 msgid "Dots"
-msgstr ""
+msgstr "Точки"
 
 #. Textbox header (small)
 msgctxt "widget.knob.scale.width"
 msgid "Width"
-msgstr ""
+msgstr "Ширина"
 
 #. Textbox header (small)
 msgctxt "widget.knob.scale.qty"
 msgid "Qty."
-msgstr ""
+msgstr "Кол-во"
 
 #. Textbox header (small)
 msgctxt "widget.knob.scale.space"
 msgid "Space"
-msgstr ""
+msgstr "Промежуток"
 
 #. Tab header
 msgctxt "widget.knob.skin"
 msgid "Skin"
-msgstr ""
+msgstr "Тема оформления"
 
 #. Radio buttons header
 msgctxt "widget.knob.skin.type"
 msgid "Type"
-msgstr ""
+msgstr "Тип"
 
 #. Radio button label
 msgctxt "widget.knob.skin.type.simple"
 msgid "Simple"
-msgstr ""
+msgstr "Простой"
 
 #. Radio button label
 msgctxt "widget.knob.skin.type.tron"
 msgid "Tron"
-msgstr ""
+msgstr "Трон"
 
 #. Section header
 msgctxt "widget.knob.skin.tronsettings"
 msgid "Tron skin settings"
-msgstr ""
+msgstr "Настройки темы Трон"
 
 #. Textbox header (small)
 msgctxt "widget.knob.skin.tronsettings.width"
 msgid "Width"
-msgstr ""
+msgstr "Ширина"
 
 #. Textbox header (small)
 msgctxt "widget.knob.skin.tronsettings.space"
 msgid "Space"
-msgstr ""
+msgstr "Промежуток"
 
 #. Tab header
 msgctxt "widget.knob.ranges"
 msgid "Ranges"
-msgstr ""
+msgstr "Диапазоны"
 
 #. Checkbox label
 msgctxt "widget.knob.ranges.enable"
 msgid "Enable Ranges"
-msgstr ""
+msgstr "Включить диапазоны"
 
 #. Checkbox label
 msgctxt "widget.knob.ranges.match_text_color"
 msgid "Match Text Color to Range"
-msgstr ""
+msgstr "Цвет текста в соответствии с диапазоном"
 
 #. Textbox header (small)
 msgctxt "widget.knob.ranges.from"
 msgid "from"
-msgstr ""
+msgstr "от"
 
 #. Textbox header (small)
 msgctxt "widget.knob.ranges.to"
 msgid "to"
-msgstr ""
+msgstr "до"
 
 #. Color picker header
 msgctxt "widget.knob.ranges.bar"
 msgid "Bar"
-msgstr ""
+msgstr "Индикатор"
 
 #. Tab header
 msgctxt "widget.knob.misc"
 msgid "Misc."
-msgstr ""
+msgstr "Прочее"
 
 #. Color picker header
 msgctxt "widget.knob.misc.text"
 msgid "Text"
-msgstr ""
+msgstr "Текст"
 
 #. Color picker header
 msgctxt "widget.knob.misc.background"
 msgid "Background"
-msgstr ""
+msgstr "Фон"
 
 #. Display name of the widget (appears in the Add Widget dropdown menu in the designer)
 msgctxt "widget.label"
 msgid "Label"
-msgstr ""
+msgstr "Метка"
 
 #. Description of the widget, displayed in a tooltip when hovering the option in the Add Widget dropdown menu in the designer
 msgctxt "widget.label.description"
 msgid "A fixed label used for headers etc. (no openHAB item binding)"
-msgstr ""
+msgstr "Постоянная метка используемая для заголовков и т.д. (без привязки к элементам openHAB)"
 
 #. Settings dialog title
 msgctxt "widget.label.settings.header"
 msgid "Label Settings"
-msgstr ""
+msgstr "Настройки метки"
 
 #. Preview widget label in the top-right corner
 msgctxt "widget.label.preview"
 msgid "Preview"
-msgstr ""
+msgstr "Предварительный просмотр"
 
 #. Color picker label
 msgctxt "widget.label.background_color"
 msgid "Background color"
-msgstr ""
+msgstr "Цвет фона"
 
 #. Color picker label
 msgctxt "widget.label.foreground_color"
 msgid "Text color"
-msgstr ""
+msgstr "Цвет текста"
 
 #. Display name of the widget (appears in the Add Widget dropdown menu in the designer)
 msgctxt "widget.selection"
 msgid "Selection"
-msgstr ""
+msgstr "Выбор"
 
 #. Description of the widget, displayed in a tooltip when hovering the option in the Add Widget dropdown menu in the designer
 msgctxt "widget.selection.description"
 msgid "A widget allowing a selection between multiple choices"
-msgstr ""
+msgstr "Виджет позволяет выбрать между несколькими вариантами"
 
 #. Settings dialog title
 msgctxt "widget.selection.settings.header"
 msgid "Selection Settings"
-msgstr ""
+msgstr "Настройки подборки"
 
 #. Dropdown header
 msgctxt "widget.selection.choices_source"
 msgid "Choices source"
-msgstr ""
+msgstr "Выбор источника"
 
 #. Dropdown option
 msgctxt "widget.selection.choices_source.server"
 msgid "Server-provided item options"
-msgstr ""
+msgstr "Предоставленные сервером опции элемента"
 
 #. Dropdown option
 msgctxt "widget.selection.choices_source.csv"
 msgid "Comma-separated list"
-msgstr ""
+msgstr "Список с разделителями запятыми"
 
 #. Textbox header - appears only when the "comma-separated list" choice source is selected
 msgctxt "widget.selection.choices"
 msgid "List of comma-separated choices"
-msgstr ""
+msgstr "Список вариантов разделенный запятыми"
 
 #. Displayed in small text below the textbox
 msgctxt "widget.selection.choices.hint"
