@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
-"PO-Revision-Date: 2018-08-30 10:33\n"
+"PO-Revision-Date: 2018-08-30 14:11\n"
 
 #. Common term
 msgctxt "OK"
@@ -146,7 +146,7 @@ msgstr "Отрегулируйте количество столбцов"
 #. Hint for the bottom left link when in edit mode and only one dashboard is present - please use the Chrome developer tools and check with phone resolutions: iPhone 6, Nexus 5 etc.!
 msgctxt "tutorial.saveonserver"
 msgid "Save on the openHAB server when done!"
-msgstr "Сохранить на сервере openHAB после завершения!"
+msgstr "По окончанию, сохраните на сервере openHAB!"
 
 #. Displayed when no dashboard is present and editing is locked in the service configuration
 msgctxt "tutorial.editingdisabled"
