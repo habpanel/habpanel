@@ -161,7 +161,7 @@ msgstr "Пожалуйста перейдите в Paper UI и разблоки�
 #. Label of the bottom-left link in edit mode - please also test with phone resolutions!
 msgctxt "menu.addnewdashboard"
 msgid "Add new dashboard"
-msgstr ""
+msgstr "Добавить новую панель мониторинга"
 
 #. Label of the bottom-right link in edit mode - please also test with phone resolutions!
 msgctxt "menu.panelsettings"
@@ -171,7 +171,7 @@ msgstr "Настройки панели"
 #. New dashboard dialog box title
 msgctxt "menu.dialog.newdashboard.title"
 msgid "New dashboard"
-msgstr ""
+msgstr "Новая панель мониторинга"
 
 #. New dashboard dialog box message
 msgctxt "menu.dialog.newdashboard.message"
