@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
-"PO-Revision-Date: 2018-08-30 15:51\n"
+"PO-Revision-Date: 2018-08-30 16:01\n"
 
 #. Common term in widget settings dialogs
 msgctxt "widget.common.min"
@@ -1125,7 +1125,7 @@ msgstr "Настройки временной шкалы"
 #. Textbox header
 msgctxt "widget.timeline.general.service"
 msgid "Persistence service"
-msgstr "Постоянная служба"
+msgstr "Служба Persistence"
 
 #. Textbox placeholder
 msgctxt "widget.timeline.general.service.hint"
