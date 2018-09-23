@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Romanian\n"
 "Language: ro_RO\n"
-"PO-Revision-Date: 2018-09-23 08:29\n"
+"PO-Revision-Date: 2018-09-23 08:33\n"
 
 #. Save button in the dashboard designer
 msgctxt "designer.save"
@@ -31,7 +31,7 @@ msgstr "Adaugă widget"
 #. Tutorial text with arrow when on an empty dashboard
 msgctxt "designer.addwidget.hint"
 msgid "Add some widgets"
-msgstr ""
+msgstr "Adaugă unele widget-uri"
 
 #. Header of the custom widget section (beware, it might overlap the cogs icon on the right)
 msgctxt "designer.addwidget.customwidgets"
@@ -500,7 +500,7 @@ msgstr "Clonează widget-ul..."
 #. Custom widget context menu entry - downloads a widget's .widget.json file
 msgctxt "customwidgets.list.contextmenu.exporttofile"
 msgid "Export to file"
-msgstr ""
+msgstr "Exportă ca fișier"
 
 #. Custom widget context menu entry - opens a forum topic or GitHub readme
 msgctxt "customwidgets.list.contextmenu.openhelp"
@@ -515,7 +515,7 @@ msgstr ""
 #. Blue button opening a dialog
 msgctxt "customwidgets.list.newwidget"
 msgid "New widget"
-msgstr ""
+msgstr "Widget nou"
 
 #. Blue button with a dropdown menu
 msgctxt "customwidgets.list.importwidget"
@@ -855,12 +855,12 @@ msgstr ""
 #. Little white button label with a down caret
 msgctxt "widgetgallery.details.showdetails"
 msgid "Show details"
-msgstr "Afișare detalii"
+msgstr "Afișează detaliile"
 
 #. Little white button label with a up caret
 msgctxt "widgetgallery.details.hidedetails"
 msgid "Hide details"
-msgstr "Ascunde detalii"
+msgstr "Ascunde detaliile"
 
 #. Little white button label
 msgctxt "widgetgallery.details.downloadzip"
