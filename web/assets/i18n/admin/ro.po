@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Romanian\n"
 "Language: ro_RO\n"
-"PO-Revision-Date: 2018-09-23 09:10\n"
+"PO-Revision-Date: 2018-09-23 09:20\n"
 
 #. Save button in the dashboard designer
 msgctxt "designer.save"
@@ -257,12 +257,12 @@ msgstr "Conține:"
 #. Link to create a panel configuration from the current configuration
 msgctxt "settings.storage.panelconfiguration.save"
 msgid "Save the current configuration to a new panel configuration"
-msgstr ""
+msgstr "Salvează configuraţia curentă într-o nouă configurație de panou"
 
 #. Title of the dialog box when creating a new panel configuration
 msgctxt "settings.storage.panelconfiguration.dialog.title"
 msgid "New panel configuration"
-msgstr ""
+msgstr "Panou de configurare nou"
 
 #. Message of the dialog box when creating a new panel configuration
 msgctxt "settings.storage.panelconfiguration.dialog.message"
@@ -317,7 +317,7 @@ msgstr "Exemplu: //source.unsplash.com/random"
 #. Setting header
 msgctxt "settings.panel.appearance.drawer_heading_image"
 msgid "Drawer heading image (optional)"
-msgstr ""
+msgstr "Imagine meniu lateral (opțional)"
 
 #. Placeholder inside the text box
 msgctxt "settings.panel.appearance.drawer_heading_image.hint"
@@ -332,7 +332,7 @@ msgstr "Oprește derularea (atunci când nu se editează)"
 #. Checkbox
 msgctxt "settings.panel.appearance.hide_drawer_footer"
 msgid "Hide the drawer's footer"
-msgstr ""
+msgstr "Ascunde subsolul meniului lateral"
 
 #. Checkbox
 msgctxt "settings.panel.appearance.hide_toolbar_buttons"
@@ -392,7 +392,7 @@ msgstr ""
 #. Dropdown header
 msgctxt "settings.panel.voicesupport.speech_synthesis_item"
 msgid "Speak the new value of the following item when it changes:"
-msgstr ""
+msgstr "Spune noua valoare a următorului Item atunci când se schimbă:"
 
 #. Section header
 msgctxt "settings.panel.dashboard_control.header"
@@ -557,17 +557,17 @@ msgstr "Importă Widget"
 #. Dialog box message
 msgctxt "customwidgets.list.import.dialog.message"
 msgid "Please confirm or change the identifier of your widget (avoid spaces and special chars!). If a widget with the same identifier already exists, it will be replaced!"
-msgstr ""
+msgstr "Vă rugăm să confirmaţi sau schimbați identificatorul widget-ului (a se evita spaţiile şi caracterele speciale!). În cazul în care un widget cu acelaşi identificator există deja, acesta va fi înlocuit!"
 
 #. Prefix of an error message - followed by a technical exception message
 msgctxt "customwidgets.list.import.error"
 msgid "Widget import error: "
-msgstr ""
+msgstr "Eroare la importarea Widget-ului: "
 
 #. Dialog box title
 msgctxt "customwidgets.list.update.dialog.title"
 msgid "Update widget"
-msgstr ""
+msgstr "Actualizare widget"
 
 #. Dialog box message
 msgctxt "customwidgets.list.update.dialog.message"
