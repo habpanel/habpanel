@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Romanian\n"
 "Language: ro_RO\n"
-"PO-Revision-Date: 2018-02-05 16:05-0500\n"
+"PO-Revision-Date: 2018-09-23 13:00\n"
 
 #. Common term in widget settings dialogs
 msgctxt "widget.common.min"
@@ -26,7 +26,7 @@ msgstr "Maxim"
 #. Common term in widget settings dialogs
 msgctxt "widget.common.step"
 msgid "Step"
-msgstr ""
+msgstr "Pas"
 
 #. Common term in widget settings dialogs
 msgctxt "widget.common.unit"
