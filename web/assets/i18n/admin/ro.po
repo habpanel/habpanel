@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Romanian\n"
 "Language: ro_RO\n"
-"PO-Revision-Date: 2018-02-05 16:51-0500\n"
+"PO-Revision-Date: 2018-09-23 08:20\n"
 
 #. Save button in the dashboard designer
 msgctxt "designer.save"
@@ -105,7 +105,7 @@ msgstr ""
 #. Textbox header
 msgctxt "dashboard.settings.tile.background_image_url"
 msgid "Background Image URL"
-msgstr ""
+msgstr "URL-ul imaginii de fundal"
 
 #. Color picker header
 msgctxt "dashboard.settings.tile.title_text_color"
@@ -185,7 +185,7 @@ msgstr "Înlocuiţi antetul dashboard-ului cu un widget personalizat"
 #. Displayed in the item picker when no item selected
 msgctxt "itempicker.placeholder"
 msgid "Search or select an openHAB item"
-msgstr ""
+msgstr "Caută sau selectează un item openHAB"
 
 #. Icon picker dropdown placeholder
 msgctxt "iconpicker.selecticonset"
@@ -210,7 +210,7 @@ msgstr ""
 #. Appears when focusing the icon textbox when the "Custom icon" iconset is selected
 msgctxt "iconpicker.customicontooltip"
 msgid "Type the name of a <a href='http://docs.openhab.org/configuration/items.html#icons' target='_blank'>registered icon</a> (only SVG supported)<br />Examples: <em>switch</em>, <em>temperature</em> or an additional icon in your configuration's <code>icons/classic</code> folder"
-msgstr ""
+msgstr "Tastați numele unei <a href='http://docs.openhab.org/configuration/items.html#icons' target='_blank'> pictograme înregistrată</a> (numai SVG suportat) <br /> Exemplu: <em>switch</em>, <em>temperature</em> sau o pictogramă suplimentară din directorul cu configurări openHAB <code>icons/classic</code>"
 
 #. Screen title
 msgctxt "settings.header"
@@ -265,7 +265,7 @@ msgstr ""
 #. Message of the dialog box when creating a new panel configuration
 msgctxt "settings.storage.panelconfiguration.dialog.message"
 msgid "Please choose a name for the new panel configuration (letters and digits only please):"
-msgstr ""
+msgstr "Alege un nume pentru noul panou de configurare (numai litere și cifre):"
 
 #. Panel name (section header)
 msgctxt "settings.panel.name"
@@ -275,7 +275,7 @@ msgstr ""
 #. Placeholder inside the text box
 msgctxt "settings.panel.name.hint"
 msgid "Replaces 'HABPanel' in the side drawer when set"
-msgstr ""
+msgstr "Înlocuiește 'HABPanel' în meniul lateral când este setat"
 
 #. Appearance (section header)
 msgctxt "settings.panel.appearance.header"
@@ -495,7 +495,7 @@ msgstr ""
 #. Custom widget context menu entry - clone a globally-provisioned widget
 msgctxt "customwidgets.list.contextmenu.clone"
 msgid "Clone widget..."
-msgstr ""
+msgstr "Clonează widget-ul..."
 
 #. Custom widget context menu entry - downloads a widget's .widget.json file
 msgctxt "customwidgets.list.contextmenu.exporttofile"
@@ -920,7 +920,7 @@ msgstr "Eroare:"
 #. Dialog box title
 msgctxt "widgetgallery.widgetsdetected.dialog.title"
 msgid "Existing widgets detected"
-msgstr ""
+msgstr "Widget-uri existente, detectate"
 
 #. Dialog box message
 msgctxt "widgetgallery.widgetsdetected.dialog.message"
