@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Romanian\n"
 "Language: ro_RO\n"
-"PO-Revision-Date: 2018-09-23 09:31\n"
+"PO-Revision-Date: 2018-09-23 09:40\n"
 
 #. Save button in the dashboard designer
 msgctxt "designer.save"
@@ -737,7 +737,7 @@ msgstr "Opțiuni"
 #. Textbox placeholder
 msgctxt "customwidgets.designer.settings.config.choices.hint"
 msgid "Comma-separated possible values"
-msgstr ""
+msgstr "Valorile diferite se vor separa prin virgulă"
 
 #. Textbox header
 msgctxt "customwidgets.designer.settings.config.description"
@@ -747,7 +747,7 @@ msgstr "Descriere"
 #. Banner displayed when selecting the Icon type for the settings, followed by the defined settings themselves
 msgctxt "customwidgets.designer.settings.config.icon.hint"
 msgid "This will define 2 config elements:"
-msgstr ""
+msgstr "Se vor defini doua elemente de configurare:"
 
 #. Tab header
 msgctxt "customwidgets.designer.preview"
@@ -762,17 +762,17 @@ msgstr "Galerie Widget-uri"
 #. Dialog box title (when displaying a repository)
 msgctxt "widgetgallery.heading.importrepo"
 msgid "Import GitHub Repository"
-msgstr ""
+msgstr "Importare repository GitHub"
 
 #. Dialog box title (when displaying a community gallery item)
 msgctxt "widgetgallery.heading.importgallery"
 msgid "Import Gallery Item"
-msgstr ""
+msgstr "Importare obiect din galerie"
 
 #. Alert banner message
 msgctxt "widgetgallery.warning.githubratelimit"
 msgid "Warning: rate limiting on the GitHub API will temporarily block further requests!"
-msgstr ""
+msgstr "Avertizare: limitarea ratei pe API-ul GitHub va bloca temporar alte cereri!"
 
 #. Alert banner message (2nd part)
 msgctxt "widgetgallery.warning.githubratelimit.wait"
@@ -782,7 +782,7 @@ msgstr ""
 #. Textbox placeholder
 msgctxt "widgetgallery.addressbar.hint"
 msgid "GitHub repository full name (owner/name) or URL"
-msgstr ""
+msgstr "Numele întreg pentru repository GitHub (proprietar/nume) sau URL"
 
 #. Button on the right of the addressbar
 msgctxt "widgetgallery.addressbar.go"
@@ -792,7 +792,7 @@ msgstr "Start"
 #. Suffix displayed after a number, i.e. "24 community contributions"
 msgctxt "widgetgallery.toolbar.communitycontributions"
 msgid "community&nbsp;contributions"
-msgstr ""
+msgstr "comunitate&nbsp;contribuții"
 
 #. On the right with the sort options
 msgctxt "widgetgallery.toolbar.sortby"
