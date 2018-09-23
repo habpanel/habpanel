@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Romanian\n"
 "Language: ro_RO\n"
-"PO-Revision-Date: 2018-09-23 11:30\n"
+"PO-Revision-Date: 2018-09-23 11:40\n"
 
 #. Save button in the dashboard designer
 msgctxt "designer.save"
@@ -372,7 +372,7 @@ msgstr "Suport voce"
 #. Dropdown header - formerly (<=2.2.0) : "Voice"
 msgctxt "settings.panel.voicesupport.speech_synthesis_voice"
 msgid "Speech synthesis voice"
-msgstr ""
+msgstr "Voce sintetizată"
 
 #. Displayed below the voice dropdown
 msgctxt "settings.panel.voicesupport.speech_synthesis_voice.hint"
@@ -387,7 +387,7 @@ msgstr "Test"
 #. Checkbox
 msgctxt "settings.panel.voicesupport.floating_speech_button"
 msgid "Display a floating speech button at the bottom of the screen"
-msgstr ""
+msgstr "Afişează un buton voce plutitor în partea de jos a ecranului"
 
 #. Dropdown header
 msgctxt "settings.panel.voicesupport.speech_synthesis_item"
