@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Romanian\n"
 "Language: ro_RO\n"
-"PO-Revision-Date: 2018-09-23 08:50\n"
+"PO-Revision-Date: 2018-09-23 09:00\n"
 
 #. Save button in the dashboard designer
 msgctxt "designer.save"
@@ -327,7 +327,7 @@ msgstr "Exemplu: //via.placeholder.com/265x95"
 #. Checkbox
 msgctxt "settings.panel.appearance.prevent_scrolling"
 msgid "Prevent scrolling (when not editing)"
-msgstr ""
+msgstr "Oprește derularea (atunci când nu se editează)"
 
 #. Checkbox
 msgctxt "settings.panel.appearance.hide_drawer_footer"
@@ -342,12 +342,12 @@ msgstr "Ascunde butoanele barei de instrumente:"
 #. Checkbox
 msgctxt "settings.panel.appearance.show_clock"
 msgid "Show a clock on the header"
-msgstr ""
+msgstr "Arată un ceas pe antet"
 
 #. Textbox setting header, only displayed when the "Show a clock on the header" option is checked
 msgctxt "settings.panel.appearance.show_clock.header_format"
 msgid "Header clock format"
-msgstr ""
+msgstr "Format pentru ceas în antet"
 
 #. Textbox placeholder, only displayed when the "Show a clock on the header" option is checked
 msgctxt "settings.panel.appearance.show_clock.header_format.hint"
@@ -367,7 +367,7 @@ msgstr "Administrează"
 #. Voice support (section header) - formerly (<=2.2.0) : "Voice feedback"
 msgctxt "settings.panel.voicesupport.header"
 msgid "Voice Support"
-msgstr ""
+msgstr "Suport voce"
 
 #. Dropdown header - formerly (<=2.2.0) : "Voice"
 msgctxt "settings.panel.voicesupport.speech_synthesis_voice"
@@ -377,7 +377,7 @@ msgstr ""
 #. Displayed below the voice dropdown
 msgctxt "settings.panel.voicesupport.speech_synthesis_voice.hint"
 msgid "Available voices depend on the operating system and browser environments."
-msgstr ""
+msgstr "Vocile disponibile depind de sistemul de operare şi de browser."
 
 #. Test button below the voice selection - make the voice say "habpanel 1 2 3"
 msgctxt "settings.panel.voicesupport.speech_synthesis_voice.test"
@@ -407,12 +407,12 @@ msgstr "Când acest Item primește numele unui dashboard, afișează-l:"
 #. Local panel configuration editor header
 msgctxt "settings.localconfig.title"
 msgid "Local panel configuration editor"
-msgstr ""
+msgstr "Editor pentru panoul de configurare local"
 
 #. Displayed in a tooltip when hovering the exclamation mark in the local panel config editor
 msgctxt "settings.localconfig.warning"
 msgid "This is the raw configuration object representing your current configuration. Be careful while editing it by hand!"
-msgstr ""
+msgstr "Acesta este obiectul de configurare neprelucrat, reprezentând configurația actuala. Fiți atenți când îl etidați manual!"
 
 #. Blue button
 msgctxt "settings.localconfig.import"
@@ -447,7 +447,7 @@ msgstr "Salvat!"
 #. Label displayed for a few seconds on the copy or save button if an error occurred
 msgctxt "settings.localconfig.failed"
 msgid "FAILED!"
-msgstr ""
+msgstr "EŞUAT!"
 
 #. Displayed in a dialog box
 msgctxt "settings.localconfig.error.nodashboardsfound"
@@ -462,7 +462,7 @@ msgstr "Eroare"
 #. Message in a dialog box
 msgctxt "settings.localconfig.parsingerror.dialog.message"
 msgid "Configuration parsing error, nothing has been modified: "
-msgstr ""
+msgstr "Eroare de parsare a configurării, nu a fost modificat nimic: "
 
 #. Title of a a dialog box
 msgctxt "settings.localconfig.importerror.dialog.title"
