@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Romanian\n"
 "Language: ro_RO\n"
-"PO-Revision-Date: 2018-09-23 08:33\n"
+"PO-Revision-Date: 2018-09-23 08:40\n"
 
 #. Save button in the dashboard designer
 msgctxt "designer.save"
@@ -56,7 +56,7 @@ msgstr "Editare..."
 #. Copy/move option in a widget placeholder context menu (3-dot icon)
 msgctxt "designer.contextmenu.copymove"
 msgid "Copy/move to..."
-msgstr ""
+msgstr "Copie/mută la..."
 
 #. Delete option in a widget placeholder context menu (3-dot icon)
 msgctxt "designer.contextmenu.delete"
@@ -66,7 +66,7 @@ msgstr "Șterge"
 #. Title of copy/move widget dialog
 msgctxt "designer.copymove.header"
 msgid "Copy/move {{widgetName}}"
-msgstr ""
+msgstr "Copie/mută {{widgetName}}"
 
 #. Alongside the dropdown dashboard selection
 msgctxt "designer.copymove.todashboard"
@@ -90,7 +90,7 @@ msgstr "Widget nou"
 
 msgctxt "designer.serversavefailed"
 msgid "Server save failed!"
-msgstr ""
+msgstr "Salvarea pe server a eșuat!"
 
 #. Title of the dashboard settings dialog
 msgctxt "dashboard.settings.dialog.title"
@@ -100,7 +100,7 @@ msgstr "Setări dashboard"
 #. Tab header
 msgctxt "dashboard.settings.tile"
 msgid "Menu tile"
-msgstr ""
+msgstr "Meniu"
 
 #. Textbox header
 msgctxt "dashboard.settings.tile.background_image_url"
@@ -110,17 +110,17 @@ msgstr "URL-ul imaginii de fundal"
 #. Color picker header
 msgctxt "dashboard.settings.tile.title_text_color"
 msgid "Title Text color"
-msgstr ""
+msgstr "Culoarea textului din titlu"
 
 #. Checkbox header
 msgctxt "dashboard.settings.tile.click_feedback"
 msgid "Click feedback"
-msgstr ""
+msgstr "Faceţi clic pe feedback"
 
 #. Checkbox label
 msgctxt "dashboard.settings.tile.click_feedback.description"
 msgid "Don't brighten tile on click/tap"
-msgstr ""
+msgstr "Nu lumina butonul la click/atingere"
 
 #. Tab header
 msgctxt "dashboard.settings.advanced"
@@ -130,7 +130,8 @@ msgstr "Avansat"
 #. Alert display at the top
 msgctxt "dashboard.settings.advanced.warning"
 msgid "These options are currently experimental, unstable or targeted at advanced users! Use at your own risk."
-msgstr ""
+msgstr "Aceste opţiuni sunt în prezent experimentale, instabile sau adresate utilizatorilor avansați! \n"
+"Folosiți pe propria răspundere."
 
 #. Tab header
 msgctxt "dashboard.settings.customwidgets"
@@ -140,7 +141,8 @@ msgstr "Widget-uri personalizate"
 #. Alert displayed at the top
 msgctxt "dashboard.settings.customwidgets.warning"
 msgid "This feature is currently experimental, and targeted at advanced users! Use at your own risk."
-msgstr ""
+msgstr "Această opţiune este în prezent experimentală, sau adresată utilizatorilor avansați! \n"
+"Folosiți pe propria răspundere."
 
 #. Checkbox header
 msgctxt "dashboard.settings.customwidgets.usecustomwidget"
@@ -155,12 +157,12 @@ msgstr "Widget personalizat"
 #. Accordion header
 msgctxt "dashboard.settings.customwidgets.tile"
 msgid "Main menu tile"
-msgstr ""
+msgstr "Titlul meniului principal"
 
 #. Checkbox label
 msgctxt "dashboard.settings.customwidgets.tile.description"
 msgid "Replace the tile contents by a custom widget"
-msgstr ""
+msgstr "Înlocuiţi conţinutul titlului cu un widget personalizat"
 
 #. Accordion header
 msgctxt "dashboard.settings.customwidgets.drawer"
@@ -170,7 +172,7 @@ msgstr "Listă aplicaţii"
 #. Checkbox label
 msgctxt "dashboard.settings.customwidgets.drawer.description"
 msgid "Replace the contents of the drawer menu by a custom widget"
-msgstr ""
+msgstr "Înlocuiţi conţinutul meniului listă cu un widget personalizat"
 
 #. Accordion header
 msgctxt "dashboard.settings.customwidgets.header"
@@ -220,7 +222,7 @@ msgstr "Setări"
 #. Header of the storage section
 msgctxt "settings.storage.header"
 msgid "Current storage configuration"
-msgstr ""
+msgstr "Configurația actuală de stocare"
 
 #. Radio button for local storage
 msgctxt "settings.storage.localstorage"
