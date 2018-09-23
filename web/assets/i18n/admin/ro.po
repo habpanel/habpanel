@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Romanian\n"
 "Language: ro_RO\n"
-"PO-Revision-Date: 2018-09-23 08:40\n"
+"PO-Revision-Date: 2018-09-23 08:50\n"
 
 #. Save button in the dashboard designer
 msgctxt "designer.save"
@@ -232,12 +232,12 @@ msgstr "Stocare locală"
 #. Explanation of the "local storage only" option
 msgctxt "settings.storage.localstorage.hint"
 msgid "The configuration is saved for this browser and device only. It will be kept as long as you don't clean up the browser's historical data."
-msgstr ""
+msgstr "Configurările sunt salvate numai pentru acest browser şi acest dispozitiv. Vor fi păstrate atâta timp cât nu va fi curățat istoricul browser-ului."
 
 #. Link below the "local storage" option
 msgctxt "settings.storage.localstorage.edit"
 msgid "Edit the local panel configuration (experts only)"
-msgstr ""
+msgstr "Editează panoul de configurare local (numai pentru experţi)"
 
 #. Prefix of a panel configuration before its name
 msgctxt "settings.storage.panelconfiguration"
@@ -247,7 +247,7 @@ msgstr "Panoul de configurare:"
 #. Prefix of the last synced line, before the date
 msgctxt "settings.storage.panelconfiguration.lastsynced"
 msgid "Last synced on"
-msgstr ""
+msgstr "Ultima sincronizare pe"
 
 #. Displayed before the list of dashboard the panel configuration contains
 msgctxt "settings.storage.panelconfiguration.contains"
@@ -292,17 +292,17 @@ msgstr "Temă"
 #. Alert banner displayed when the browsers doesn't support themes (CSS variables)
 msgctxt "settings.panel.appearance.theme.not_supported"
 msgid "Themes are not compatible with this browser."
-msgstr ""
+msgstr "Temele nu sunt compatibile cu acest browser."
 
 #. Setting header
 msgctxt "settings.panel.appearance.additional_stylesheet"
 msgid "Additional stylesheet (optional)"
-msgstr ""
+msgstr "Stylesheet adițional (opțional)"
 
 #. Placeholder inside the text box
 msgctxt "settings.panel.appearance.additional_stylesheet.hint"
 msgid "Relative URL only; example: /static/example.css"
-msgstr ""
+msgstr "Doar URL relativ; exemplu: /static/exemple.css"
 
 #. Setting header
 msgctxt "settings.panel.appearance.background_image"
