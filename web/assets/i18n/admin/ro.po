@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Romanian\n"
 "Language: ro_RO\n"
-"PO-Revision-Date: 2018-09-23 11:40\n"
+"PO-Revision-Date: 2018-09-23 11:51\n"
 
 #. Save button in the dashboard designer
 msgctxt "designer.save"
@@ -777,7 +777,7 @@ msgstr "Avertizare: limitarea ratei pe API-ul GitHub va bloca temporar alte cere
 #. Alert banner message (2nd part)
 msgctxt "widgetgallery.warning.githubratelimit.wait"
 msgid "Wait until this time and try again:"
-msgstr ""
+msgstr "Aşteptați până la acest moment şi încercați din nou:"
 
 #. Textbox placeholder
 msgctxt "widgetgallery.addressbar.hint"
@@ -842,17 +842,17 @@ msgstr "Importare Widget"
 #. Label of the big green button when 2 or more widgets were found
 msgctxt "widgetgallery.details.importwidgets"
 msgid "Import {} Widgets"
-msgstr ""
+msgstr "Importă {} Widgets"
 
 #. Label of the big blue button when there is a referenced GitHub repo
 msgctxt "widgetgallery.details.gotorepository"
 msgid "Go to the repository"
-msgstr ""
+msgstr "Către repository"
 
 #. Displyed in orange inside the big green button after a number, when some widgets are already present
 msgctxt "widgetgallery.details.toupdate"
 msgid "to update"
-msgstr ""
+msgstr "actualizare"
 
 #. Little white button label with a down caret
 msgctxt "widgetgallery.details.showdetails"
@@ -927,5 +927,5 @@ msgstr "Widget-uri existente, detectate"
 #. Dialog box message
 msgctxt "widgetgallery.widgetsdetected.dialog.message"
 msgid "Warning: please confirm you wish to update <nbexisting> existing widgets, overwriting any eventual changes made locally! If unsure, cancel and click Show details to review the list of affected widgets."
-msgstr ""
+msgstr "Avertisment: vă rugam să confirmați că doriți sa actualizați <nbexisting> widget-uri existente, suprascriind orice schimbare făcuta manual! Dacă nu sunteți siguri, anulați şi apăsați pe afişare pentru a revizui lista de widget-uri afectate."
 
