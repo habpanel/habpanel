@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Romanian\n"
 "Language: ro_RO\n"
-"PO-Revision-Date: 2018-09-23 09:00\n"
+"PO-Revision-Date: 2018-09-23 09:10\n"
 
 #. Save button in the dashboard designer
 msgctxt "designer.save"
@@ -482,17 +482,17 @@ msgstr "Widget-uri personalizate"
 #. Prefix displayed before the author's name
 msgctxt "customwidgets.list.byauthor"
 msgid "by"
-msgstr ""
+msgstr "de către"
 
 #. Displayed in a tooltip when hovering the icon indicating a globally provisioned widget
 msgctxt "customwidgets.list.globallyprovisioned.hint"
 msgid "This widget was provisioned globally via a bundle. It cannot be modified, but may be cloned to an user-defined widget with another name."
-msgstr ""
+msgstr "Acest widget a fost furnizat global printr-un bundle. Nu poate fi modificat, dar poate fi clonat într-un widget cu alt nume definit de utilizator."
 
 #. Displayed in a tooltip when hovering the icon indicating a user defined widget
 msgctxt "customwidgets.list.userdefined.hint"
 msgid "This widget has been defined manually in this panel configuration and can be modified."
-msgstr ""
+msgstr "Acest widget a fost definit manual în acest panou de configurare şi poate fi modificat."
 
 #. Custom widget context menu entry - clone a globally-provisioned widget
 msgctxt "customwidgets.list.contextmenu.clone"
@@ -512,7 +512,7 @@ msgstr ""
 #. Custom widget context menu entry - update the widget from its source
 msgctxt "customwidgets.list.contextmenu.update"
 msgid "Update..."
-msgstr ""
+msgstr "Actualizează..."
 
 #. Blue button opening a dialog
 msgctxt "customwidgets.list.newwidget"
@@ -522,12 +522,12 @@ msgstr "Widget nou"
 #. Blue button with a dropdown menu
 msgctxt "customwidgets.list.importwidget"
 msgid "Import widget"
-msgstr ""
+msgstr "Importă Widget"
 
 #. Import button menu entry - opens a dialog
 msgctxt "customwidgets.list.importwidget.fromfile"
 msgid "Import from file..."
-msgstr ""
+msgstr "Importă din fișier..."
 
 #. Import button menu entry - opens a dialog
 msgctxt "customwidgets.list.importwidget.fromgallery"
@@ -537,17 +537,17 @@ msgstr "Import de la Galeria..."
 #. Dialog box title
 msgctxt "customwidgets.list.add.dialog.title"
 msgid "New custom widget"
-msgstr ""
+msgstr "Widget personalizat nou"
 
 #. Dialog box message
 msgctxt "customwidgets.list.add.dialog.message"
 msgid "Please choose a short name as an identifier for your widget (for example, 'window-shutter=up-down-button, 'weather-forecast' etc.). If a widget with the same identifier already exists, it will be replaced!"
-msgstr ""
+msgstr "Vă rugăm să alegeţi un nume scurt ca un identificator pentru widget (de exemplu, 'window-shutter=up-down-button, 'weather-forecast' etc.). În cazul în care un widget cu acelaşi identificator există deja, acesta va fi înlocuit!"
 
 #. Error message, displayed in an alert box
 msgctxt "customwidgets.list.import.nojson"
 msgid "The file must have a .json extension!"
-msgstr ""
+msgstr "Fişierul trebuie să aibă extensia .json!"
 
 #. Dialog box title
 msgctxt "customwidgets.list.import.dialog.title"
