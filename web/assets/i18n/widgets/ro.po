@@ -11,7 +11,7 @@ msgstr ""
 "Last-Translator: openhab-bot <bot@openhab.org>\n"
 "Language-Team: Romanian\n"
 "Language: ro_RO\n"
-"PO-Revision-Date: 2018-09-23 13:21\n"
+"PO-Revision-Date: 2018-09-23 13:31\n"
 
 #. Common term in widget settings dialogs
 msgctxt "widget.common.min"
@@ -46,7 +46,7 @@ msgstr "Utilizaţi formatul de server oferit dacă este disponibil"
 #. Common option label in widget settings dialogs
 msgctxt "widget.common.dontwrap"
 msgid "Value right of label"
-msgstr ""
+msgstr "Valoare dreapta de etichetă"
 
 #. Common option label in widget settings dialogs
 msgctxt "widget.common.backdrop_center"
@@ -355,7 +355,7 @@ msgstr "Actualizare live (experimental)"
 #. Checkbox label
 msgctxt "widget.chart.series.liveupdate.fillvalues"
 msgid "Repeat other series' current values on update if necessary"
-msgstr ""
+msgstr "Dacă e necesar, repetă valorile actuale ale altor serii"
 
 #. Display name of the widget (appears in the Add Widget dropdown menu in the designer)
 msgctxt "widget.clock"
@@ -465,117 +465,117 @@ msgstr "Widget fictiv - afișează valuarea unui articol openHAB"
 #. Settings dialog title
 msgctxt "widget.dummy.settings.header"
 msgid "Dummy Settings"
-msgstr ""
+msgstr "Setări fictive"
 
 #. Checkboxes header
 msgctxt "widget.dummy.layout"
 msgid "Layout"
-msgstr ""
+msgstr "Aspect"
 
 #. Display name of the widget (appears in the Add Widget dropdown menu in the designer)
 msgctxt "widget.frame"
 msgid "Frame"
-msgstr ""
+msgstr "Cadru"
 
 #. Description of the widget, displayed in a tooltip when hovering the option in the Add Widget dropdown menu in the designer
 msgctxt "widget.frame.description"
 msgid "Embedded website from predefined URL or openHAB item."
-msgstr ""
+msgstr "Site încorporat de la URL sau articol openHAB predefinit."
 
 #. Settings dialog title
 msgctxt "widget.frame.settings.header"
 msgid "Frame Settings"
-msgstr ""
+msgstr "Setări pentru ramă"
 
 #. Dropdown header
 msgctxt "widget.frame.url_source"
 msgid "URL Source"
-msgstr ""
+msgstr "URL sursă"
 
 #. Dropdown option
 msgctxt "widget.frame.url_source.static"
 msgid "Static URL"
-msgstr ""
+msgstr "URL static"
 
 #. Dropdown option
 msgctxt "widget.frame.url_source.item"
 msgid "openHAB String Item"
-msgstr ""
+msgstr "element string openHAB"
 
 #. Textbox header
 msgctxt "widget.frame.refresh_interval"
 msgid "Refresh interval (seconds)"
-msgstr ""
+msgstr "Interval de reîmprospătare(secunde)"
 
 #. Checkbox header - appears only if the refresh interval is set
 msgctxt "widget.frame.nosuffix"
 msgid "No cache busting (advanced)"
-msgstr ""
+msgstr "Ascunde memoria-busting (doar pentru experți)"
 
 #. Checkbox label - appears only if the refresh interval is set
 msgctxt "widget.frame.nosuffix.description"
 msgid "Don't add URL suffixes to prevent reusing cached pages"
-msgstr ""
+msgstr "Nu se adaugă sufixul URL pentru a preveni reutilizarea paginile stocate în cache"
 
 #. Color picker header
 msgctxt "widget.frame.background_color"
 msgid "Frame background color"
-msgstr ""
+msgstr "Culoarea de fundal a cadrului"
 
 #. Checkbox header
 msgctxt "widget.frame.frameless"
 msgid "Frameless"
-msgstr ""
+msgstr "Fară ramă"
 
 #. Checkbox label
 msgctxt "widget.frame.frameless.description"
 msgid "Fill to edges"
-msgstr ""
+msgstr "Umple până la margini"
 
 #. Checkbox header
 msgctxt "widget.frame.label"
 msgid "Label"
-msgstr ""
+msgstr "Etichetă"
 
 #. Checkbox label
 msgctxt "widget.frame.label.description"
 msgid "Hide title label"
-msgstr ""
+msgstr "Ascunde titlul etichetei"
 
 #. Display name of the widget (appears in the Add Widget dropdown menu in the designer)
 msgctxt "widget.image"
 msgid "Image"
-msgstr ""
+msgstr "Imagine"
 
 #. Description of the widget, displayed in a tooltip when hovering the option in the Add Widget dropdown menu in the designer
 msgctxt "widget.image.description"
 msgid "Displays an image (not necessarily from openHAB)"
-msgstr ""
+msgstr "Afişează o imagine (nu neapărat de la openHAB)"
 
 #. Settings dialog title
 msgctxt "widget.image.settings.header"
 msgid "Image Settings"
-msgstr ""
+msgstr "Setări imagine"
 
 #. Dropdown header
 msgctxt "widget.image.image_source"
 msgid "Image source"
-msgstr ""
+msgstr "Sursa Imaginii"
 
 #. Dropdown option
 msgctxt "widget.image.image_source.static"
 msgid "Static image URL"
-msgstr ""
+msgstr "URL-ul imaginii statice"
 
 #. Dropdown option
 msgctxt "widget.image.image_source.item-string"
 msgid "openHAB String Item"
-msgstr ""
+msgstr "openHAB String Item"
 
 #. Dropdown option
 msgctxt "widget.image.image_source.item-image"
 msgid "openHAB Image Item"
-msgstr ""
+msgstr "openHAB element de imagine"
 
 #. Textbox header
 msgctxt "widget.image.refresh_interval"
@@ -595,12 +595,12 @@ msgstr "milisecunde"
 #. Checkbox header - appears only if the refresh interval is set
 msgctxt "widget.image.nosuffix"
 msgid "No cache busting (advanced)"
-msgstr ""
+msgstr "Fără cache busting (avansat)"
 
 #. Checkbox label - appears only if the refresh interval is set
 msgctxt "widget.image.nosuffix.description"
 msgid "Don't add URL suffixes to prevent reusing cached images"
-msgstr ""
+msgstr "Nu se adaugă sufixul URL pentru a preveni reutilizarea paginile stocate în cache"
 
 #. Color picker header
 msgctxt "widget.image.background_color"
@@ -610,52 +610,52 @@ msgstr "Culoare de fundal"
 #. Display name of the widget (appears in the Add Widget dropdown menu in the designer)
 msgctxt "widget.knob"
 msgid "Knob"
-msgstr ""
+msgstr "Buton"
 
 #. Description of the widget, displayed in a tooltip when hovering the option in the Add Widget dropdown menu in the designer
 msgctxt "widget.knob.description"
 msgid "A knob for setting numerical openHAB items"
-msgstr ""
+msgstr "Un buton rotativ pentru elemente numerice openHAB"
 
 #. Settings dialog title
 msgctxt "widget.knob.settings.header"
 msgid "Knob Settings"
-msgstr ""
+msgstr "Serări buton rotativ"
 
 #. Checkbox header
 msgctxt "widget.knob.general.readonly"
 msgid "Read only"
-msgstr ""
+msgstr "Doar citire"
 
 #. Checkbox label
 msgctxt "widget.knob.general.readonly.description"
 msgid "Disable interaction"
-msgstr ""
+msgstr "Dezactivaţi interacţiunea"
 
 #. Checkboxes header
 msgctxt "widget.knob.general.centraldisplay"
 msgid "Central display"
-msgstr ""
+msgstr "Afișare centrată"
 
 #. Checkbox label
 msgctxt "widget.knob.general.centraldisplay.showvalue"
 msgid "Show value"
-msgstr ""
+msgstr "Afișare valoare"
 
 #. Checkbox label
 msgctxt "widget.knob.general.centraldisplay.showlabel"
 msgid "Show name (below value)"
-msgstr ""
+msgstr "Arată numele (sub valoare)"
 
 #. Tab header
 msgctxt "widget.knob.bartrack"
 msgid "Bar & Track"
-msgstr ""
+msgstr "Bară & Urmăritor"
 
 #. Section header
 msgctxt "widget.knob.bartrack.angles"
 msgid "Angles (°)"
-msgstr ""
+msgstr "Unghiuri (°)"
 
 #. Textbox header (small)
 msgctxt "widget.knob.bartrack.angles.start"
@@ -695,7 +695,7 @@ msgstr "Valoare anterioară"
 #. Checkbox label
 msgctxt "widget.knob.bartrack.previousvalue.description"
 msgid "Display previous value when dragging"
-msgstr ""
+msgstr "Arată valuarea anterioară cand trageți"
 
 #. Tab header
 msgctxt "widget.knob.scale"
@@ -745,7 +745,7 @@ msgstr "Spaţiu"
 #. Tab header
 msgctxt "widget.knob.skin"
 msgid "Skin"
-msgstr ""
+msgstr "Costum"
 
 #. Radio buttons header
 msgctxt "widget.knob.skin.type"
@@ -760,12 +760,12 @@ msgstr "Simplu"
 #. Radio button label
 msgctxt "widget.knob.skin.type.tron"
 msgid "Tron"
-msgstr ""
+msgstr "Tip neon"
 
 #. Section header
 msgctxt "widget.knob.skin.tronsettings"
 msgid "Tron skin settings"
-msgstr ""
+msgstr "Setări suprafață tip neon"
 
 #. Textbox header (small)
 msgctxt "widget.knob.skin.tronsettings.width"
@@ -830,7 +830,7 @@ msgstr "Etichetă"
 #. Description of the widget, displayed in a tooltip when hovering the option in the Add Widget dropdown menu in the designer
 msgctxt "widget.label.description"
 msgid "A fixed label used for headers etc. (no openHAB item binding)"
-msgstr ""
+msgstr "O etichetă fixă utilizată pentru anteturi etc. (Nu e obligatoriu să fie element openHAB)"
 
 #. Settings dialog title
 msgctxt "widget.label.settings.header"
@@ -850,42 +850,42 @@ msgstr "Culoare de fundal"
 #. Color picker label
 msgctxt "widget.label.foreground_color"
 msgid "Text color"
-msgstr ""
+msgstr "Culoare text"
 
 #. Display name of the widget (appears in the Add Widget dropdown menu in the designer)
 msgctxt "widget.selection"
 msgid "Selection"
-msgstr ""
+msgstr "Selecţie"
 
 #. Description of the widget, displayed in a tooltip when hovering the option in the Add Widget dropdown menu in the designer
 msgctxt "widget.selection.description"
 msgid "A widget allowing a selection between multiple choices"
-msgstr ""
+msgstr "Un widget care permite o selecție între mai multe opțiuni"
 
 #. Settings dialog title
 msgctxt "widget.selection.settings.header"
 msgid "Selection Settings"
-msgstr ""
+msgstr "Selecţie de setări"
 
 #. Dropdown header
 msgctxt "widget.selection.choices_source"
 msgid "Choices source"
-msgstr ""
+msgstr "Alege sursa"
 
 #. Dropdown option
 msgctxt "widget.selection.choices_source.server"
 msgid "Server-provided item options"
-msgstr ""
+msgstr "Opțiuni ale elementelor furnizate de server"
 
 #. Dropdown option
 msgctxt "widget.selection.choices_source.csv"
 msgid "Comma-separated list"
-msgstr ""
+msgstr "Listă cu separare prin virgulă"
 
 #. Textbox header - appears only when the "comma-separated list" choice source is selected
 msgctxt "widget.selection.choices"
 msgid "List of comma-separated choices"
-msgstr ""
+msgstr "Listă de opțiunii separate prin virgulă"
 
 #. Displayed in small text below the textbox
 msgctxt "widget.selection.choices.hint"
