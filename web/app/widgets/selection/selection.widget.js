@@ -75,8 +75,8 @@
                 if (choice.cmd === vm.state) return true;
                 return false;
             }
-            if ($filter('filter')(vm.choices, filterChoice).length > 0) {
-                vm.currentChoice = $filter('filter')(vm.choices, filterChoice)[0];
+            if ($filter('filter')(vm.choices, filterChoice, true).length > 0) {
+                vm.currentChoice = $filter('filter')(vm.choices, filterChoice, true)[0];
                 if (vm.currentChoice.label)
                     vm.value = vm.currentChoice.label;
             }
