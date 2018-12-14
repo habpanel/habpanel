@@ -47,20 +47,38 @@
         vm.font_size = this.widget.font_size;
 
         function updateValue() {
-            vm.value = OHService.getItem(vm.widget.item).state;
-            if (vm.value === vm.widget.command
-                || (vm.widget.action_type === 'navigate' && vm.widget.show_item_value && vm.value == vm.widget.navigate_active_state)) {
-                vm.background = vm.widget.background_active;
-                vm.foreground = vm.widget.foreground_active;
-                if (vm.widget.show_item_value) {
-                    vm.value_color = themeValueFilter(vm.widget.value_color_active, 'primary-color');
+            var item = OHService.getItem(vm.widget.item);
+            if (!item) {
+                vm.value = vm.state = "N/A";
+                return;
+            }
+            var value = item.transformedState || item.state;
+            if (vm.widget.value_format) {
+                if (item.type === "DateTime" || item.type === "DateTimeItem") {
+                    value = $filter('date')(value, vm.widget.value_format);
+                } else if (item.type.indexOf('Number:') === 0 && value.indexOf(' ') > 0) {
+                    var format = vm.widget.format.replace('%unit%', value.split(' ')[1].replace('%', '%%'));
+                    value = sprintf(format, value.split(' ')[0]);
+                } else {
+                    value = sprintf(vm.widget.value_format, value);
                 }
-            } else {
-                vm.background = vm.widget.background;
-                vm.foreground = vm.widget.foreground;
-                if (vm.widget.show_item_value) {
-                    vm.value_color = themeValueFilter(vm.widget.value_color, 'primary-color');
+            }
+            if (vm.widget.value_useserverformat && item.stateDescription && item.stateDescription.pattern) {
+                if (item.type.indexOf('Number:') === 0 && value.indexOf(' ') > 0) {
+                    var format = item.stateDescription.pattern.replace('%unit%', value.split(' ')[1].replace('%', '%%'));
+                    value = sprintf(format, value.split(' ')[0]);
+                } else {
+                    value = sprintf(item.stateDescription.pattern, value);
                 }
+            }
+            vm.value = value;
+            vm.state = item.state;
+
+            var isActive = (vm.state === vm.widget.command || (vm.widget.action_type === 'navigate' && vm.widget.show_item_value && vm.state == vm.widget.navigate_active_state));
+            vm.background = (isActive) ? vm.widget.background_active : vm.widget.background;
+            vm.foreground = (isActive) ? vm.widget.foreground_active : vm.widget.foreground;
+            if (vm.widget.show_item_value) {
+                vm.value_color = themeValueFilter((isActive) ? vm.widget.value_color_active : vm.widget.value_color, 'primary-color');
             }
         }
 
@@ -105,7 +123,7 @@
 
                 case "toggle":
                     if (vm.widget.command && vm.widget.command_alt) {
-                        if (vm.value === vm.widget.command) {
+                        if (vm.state === vm.widget.command) {
                             OHService.sendCmd(this.widget.item, this.widget.command_alt);
                         } else {
                             OHService.sendCmd(this.widget.item, this.widget.command);
