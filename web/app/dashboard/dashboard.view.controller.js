@@ -66,6 +66,9 @@
     };
 
     vm.goFullscreen = function() {
+        // fix for Chrome 71+ fullscreen
+        Element.prototype.webkitRequestFullscreen = function () { this.requestFullscreen(); }
+
         Fullscreen.toggleAll();
     };
 
