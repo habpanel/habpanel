@@ -99,10 +99,36 @@ msgctxt "dashboard.settings.tile"
 msgid "Menu tile"
 msgstr ""
 
-#. Textbox header
+#. Background Label Image
 msgctxt "dashboard.settings.tile.background_image_url"
 msgid "Background Image URL"
 msgstr ""
+
+#. Background Label Color
+msgctxt "dashboard.settings.tile.background_color"
+msgid "Background Color"
+msgstr ""
+
+#. Background Label Type
+msgctxt "dashboard.settings.tile.background_type"
+msgid "Background Type"
+msgstr ""
+
+#. Background Option Default Text 
+msgctxt "dashboard.settings.tile.background.type.default"
+msgid "Default"
+msgstr ""
+
+#. Background Option URL Text 
+msgctxt "dashboard.settings.tile.background.type.url"
+msgid "URL"
+msgstr ""
+
+#. Background Option Color Text 
+msgctxt "dashboard.settings.tile.background.type.color"
+msgid "Color"
+msgstr ""
+
 
 #. Color picker header
 msgctxt "dashboard.settings.tile.title_text_color"
