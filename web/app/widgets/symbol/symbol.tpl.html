@@ -1,0 +1,6 @@
+<div class="symbol">
+    <div style="position:absolute; width:100%; height:100%" ng-class="[vm.currentStyle.backgroundAnimation]"  ng-style="{ 'background-color': vm.currentStyle.background }"></div>
+    <div class="box-content symbol-content" ng-class="vm.currentStyle.iconAnimation" ng-style="{'transform': 'rotate(' + vm.currentStyle.iconRotation + 'deg)'}">
+        <widget-icon size="vm.currentStyle.iconSize" iconset="vm.currentStyle.iconSet" icon="vm.currentStyle.icon"></widget-icon>
+    </div>
+</div>

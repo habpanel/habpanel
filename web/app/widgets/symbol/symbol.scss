@@ -1,0 +1,87 @@
+// -----------------------------------
+// generic classes
+
+.switch {
+    display: flex;
+}
+
+.symbol-content {
+    margin: auto;
+    text-align: center;
+}
+
+.row-small-padding {
+    [class*="col-"] {
+        padding-right: 0px !important;
+    }
+}
+
+// -----------------------------------
+// animation classes
+
+.symbol-animation-duration-0-5s {
+    animation-duration: 500ms;
+}
+
+.symbol-animation-duration-1-0s {
+    animation-duration: 1000ms;
+}
+
+.symbol-animation-duration-1-5s {
+    animation-duration: 1500ms;
+}
+
+.symbol-animation-duration-2-0s {
+    animation-duration: 2000ms;
+}
+
+// spin animation
+@keyframes spin {
+    from { transform:rotate(0deg); }
+    to { transform:rotate(360deg); }
+}
+
+.symbol-animation-spin {
+    animation-name: spin;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+// spin-ccw animation
+@keyframes spin-ccw {
+    from { transform:rotate(360deg); }
+    to { transform:rotate(0deg); }
+}
+
+.symbol-animation-spin-ccw {
+    animation-name: spin-ccw;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+// flash animation
+@keyframes flash {
+    0% { opacity: 1; } 
+    50% { opacity: .1; } 
+    100% { opacity: 1; }
+}
+
+.symbol-animation-flash {
+    animation-name: flash;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+// blink animation
+@keyframes blink {
+    0% { opacity: 1; }
+    49% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+.symbol-animation-blink {
+    animation-name: blink;
+    animation-iteration-count: infinite;
+    animation-timing-function: step-end;
+}
